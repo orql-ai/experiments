@@ -1,0 +1,277 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        64508395
+hash randomization: on (PYTHONHASHSEED=3116835670)
+
+sympy/printing/tests/test_latex.py[1] .                                     [OK]
+
+================== tests finished: 1 passed, in 0.53 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-14774:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-14774
+e21c1e3e71bf: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+500327121db6: Pulling fs layer
+f716b7b90544: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Download complete
+2f341c31f3b7: Download complete
+e5a28c0c137e: Download complete
+f716b7b90544: Download complete
+5c809fd8a9af: Download complete
+ac5b61163589: Download complete
+ed3dada71338: Download complete
+e21c1e3e71bf: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+f716b7b90544: Pull complete
+5c809fd8a9af: Pull complete
+0b326ada86d1: Pull complete
+e21c1e3e71bf: Pull complete
+Digest: sha256:c3e8645cfa08da09c239097c54be4802eeb63cf3592fb66c8d75b6185d3a7881
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-14774:latest
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/vector/coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+
+
+===== PHASE: PASS_TO_PASS (114 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        4475930
+hash randomization: on (PYTHONHASHSEED=1333963019)
+
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/physics/vector/tests/test_printing.py[1] .                            [OK]
+sympy/printing/pretty/tests/test_pretty.py[1] .                             [OK]
+sympy/printing/tests/test_ccode.py[1] .                                     [OK]
+sympy/printing/tests/test_fcode.py[1] .                                     [OK]
+sympy/printing/tests/test_glsl.py[1] .                                      [OK]
+sympy/printing/tests/test_jscode.py[1] .                                    [OK]
+sympy/printing/tests/test_lambdarepr.py[1] .                                [OK]
+sympy/printing/tests/test_latex.py[78] .........f...............................
+.....................................                                       [OK]
+sympy/printing/tests/test_pycode.py[1] .                                    [OK]
+sympy/printing/tests/test_rcode.py[1] .                                     [OK]
+sympy/printing/tests/test_repr.py[1] .                                      [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[1] .                                       [OK]
+sympy/vector/tests/test_printing.py[1] .                                    [OK]
+
+======== tests finished: 91 passed, 1 expected to fail, in 1.41 seconds ========
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/physics/vector/printing.py:151: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if len(base_split) is not 1:
+/testbed/sympy/vector/coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        4803642
+hash randomization: on (PYTHONHASHSEED=361968525)
+
+sympy/assumptions/tests/test_query.py[1] w                                  [OK]
+Esympy/core/tests/test_expr.py[1] .                                         [OK]
+sympy/core/tests/test_relational.py[2] ..                                   [OK]
+sympy/core/tests/test_rules.py[1] .                                         [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/matrices/expressions/tests/test_hadamard.py[2] ..                     [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[2] ..                      [OK]
+sympy/matrices/expressions/tests/test_trace.py[6] ......                    [OK]
+sympy/polys/agca/tests/test_modules.py[1] .                                 [OK]
+sympy/polys/domains/tests/test_quotientring.py[2] ..                        [OK]
+sympy/polys/tests/test_partfrac.py[2] f.                                    [OK]
+sympy/polys/tests/test_polytools.py[1] .                                    [OK]
+sympy/printing/pretty/tests/test_pretty.py[7] .......                       [OK]
+sympy/printing/tests/test_fcode.py[1] .                                     [OK]
+sympy/printing/tests/test_gtk.py[1] .                                       [OK]
+sympy/printing/tests/test_lambdarepr.py[1] .                                [OK]
+sympy/printing/tests/test_latex.py[50] .........................................
+.........                                                                   [OK]
+sympy/printing/tests/test_python.py[1] .                                    [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[5] .....                                   [OK]
+sympy/unify/tests/test_rewrite.py[1] .                                      [OK]
+sympy/utilities/tests/test_misc.py[1] .                                     [OK]
+
+________________________________________________________________________________
+_____________ sympy/assumptions/tests/test_query.py:test_imaginary _____________
+  File "/testbed/sympy/assumptions/tests/test_satask.py", line 1, in <module>
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+
+ tests finished: 89 passed, 1 skipped, 1 expected to fail, 1 exceptions, 
+in 1.71 seconds 
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+/testbed/sympy/vector/coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        48332882
+hash randomization: on (PYTHONHASHSEED=4242106964)
+
+sympy/core/tests/test_arit.py[23] .......................                   [OK]
+sympy/core/tests/test_assumptions.py[5] .....                               [OK]
+sympy/core/tests/test_eval_power.py[1] .                                    [OK]
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/printing/pretty/tests/test_pretty.py[5] .....                         [OK]
+sympy/printing/tests/test_ccode.py[1] .                                     [OK]
+sympy/printing/tests/test_fcode.py[1] .                                     [OK]
+sympy/printing/tests/test_jscode.py[1] .                                    [OK]
+sympy/printing/tests/test_julia.py[2] ..                                    [OK]
+sympy/printing/tests/test_latex.py[14] ..............                       [OK]
+sympy/printing/tests/test_mathematica.py[2] ..                              [OK]
+sympy/printing/tests/test_octave.py[2] ..                                   [OK]
+sympy/printing/tests/test_precedence.py[2] ..                               [OK]
+sympy/printing/tests/test_rcode.py[1] .                                     [OK]
+sympy/printing/tests/test_repr.py[1] .                                      [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[4] ....                                    [OK]
+sympy/sets/tests/test_setexpr.py[1] .                                       [OK]
+
+================== tests finished: 68 passed, in 1.26 seconds ==================
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import defaultdict, Iterable
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/vector/coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_latex_DiracDelta', 'test_latex_Heaviside', 'test_latex_KroneckerDelta', 'test_latex_LeviCivita', 'test_mode', 'test_latex_Piecewise', 'test_latex_Matrix', 'test_latex_matrix_with_functions', 'test_latex_NDimArray', 'test_latex_mul_symbol', 'test_latex_issue_4381', 'test_latex_issue_4576', 'test_latex_pow_fraction', 'test_noncommutative', 'test_latex_order', 'test_latex_Lambda', 'test_latex_PolyElement', 'test_latex_FracElement', 'test_latex_Poly', 'test_latex_Poly_order', 'test_latex_ComplexRootOf', 'test_latex_RootSum', 'test_settings', 'test_latex_numbers', 'test_latex_euler', 'test_lamda', 'test_custom_symbol_names', 'test_matAdd', 'test_matMul', 'test_latex_MatrixSlice', 'test_latex_RandomDomain', 'test_PrettyPoly', 'test_integral_transforms', 'test_categories', 'test_Modules', 'test_QuotientRing', 'test_Tr', 'test_Adjoint', 'test_Hadamard', 'test_ZeroMatrix', 'test_boolean_args_order', 'test_imaginary', 'test_builtins_without_args', 'test_latex_greek_functions', 'test_translate', 'test_other_symbols', 'test_modifiers', 'test_greek_symbols', 'test_builtin_no_args', 'test_issue_6853']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

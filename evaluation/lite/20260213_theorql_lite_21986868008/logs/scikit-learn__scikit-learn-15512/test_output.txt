@@ -1,0 +1,85 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 1 item
+
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_non_convergence_regressiontest PASSED [100%]
+
+======================== 1 passed, 2 warnings in 0.25s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-15512:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-15512
+500327121db6: Pulling fs layer
+367ace4b43e3: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+f93009d70e27: Pulling fs layer
+466f0cbb5709: Pulling fs layer
+b1b86685def8: Pulling fs layer
+ddd45cdfc8c4: Pulling fs layer
+8e4f7d6b4d4a: Pulling fs layer
+09b61b6fd610: Pulling fs layer
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+09b61b6fd610: Download complete
+466f0cbb5709: Download complete
+b1b86685def8: Download complete
+ac5b61163589: Download complete
+8e4f7d6b4d4a: Download complete
+7478e0ac0f23: Download complete
+367ace4b43e3: Download complete
+f93009d70e27: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+ddd45cdfc8c4: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+09b61b6fd610: Pull complete
+466f0cbb5709: Pull complete
+f93009d70e27: Pull complete
+b1b86685def8: Pull complete
+ddd45cdfc8c4: Pull complete
+8e4f7d6b4d4a: Pull complete
+367ace4b43e3: Pull complete
+Digest: sha256:1bb474ea10bc1527d810aea55392afa459f5c393a862c9af2eb6cb86d3fa5621
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-15512:latest
+
+
+===== PHASE: PASS_TO_PASS (9 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 9 items
+
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation PASSED [ 11%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_predict PASSED [ 22%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_predict_error PASSED [ 33%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_fit_non_convergence PASSED [ 44%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_equal_mutual_similarities PASSED [ 55%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_predict_non_convergence PASSED [ 66%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_equal_similarities_and_preferences PASSED [ 77%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_convergence_warning_dense_sparse[centers0] PASSED [ 88%]
+sklearn/cluster/tests/test_affinity_propagation.py::test_affinity_propagation_convergence_warning_dense_sparse[centers1] PASSED [100%]
+
+========================= 9 passed, 1 warning in 0.32s =========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,26 @@
+diff --git a/sphinx/ext/autodoc/__init__.py b/sphinx/ext/autodoc/__init__.py
+index 978fd5df8..3aecd36bc 100644
+--- a/sphinx/ext/autodoc/__init__.py
++++ b/sphinx/ext/autodoc/__init__.py
+@@ -1262,11 +1262,17 @@ class FunctionDocumenter(DocstringSignatureMixin, ModuleLevelDocumenter):  # typ
+                     sigs.append(documenter.format_signature())
+         if overloaded:
+             __globals__ = safe_getattr(self.object, '__globals__', {})
+-            for overload in self.analyzer.overloads.get('.'.join(self.objpath)):
+-                overload = evaluate_signature(overload, __globals__,
+-                                              self.env.config.autodoc_type_aliases)
++            if self.env.config.autodoc_typehints not in ('none', 'description'):
++                for overload in self.analyzer.overloads.get('.'.join(self.objpath)):
++                    overload = evaluate_signature(overload, __globals__,
++                                                  self.env.config.autodoc_type_aliases)
+ 
+-                sig = stringify_signature(overload, **kwargs)
++                    sig = stringify_signature(overload, **kwargs)
++                    sigs.append(sig)
++            else:
++                # When autodoc_typehints is 'none' or 'description', 
++                # use the implementation signature without overloads
++                sig = super().format_signature(**kwargs)
+                 sigs.append(sig)
+ 
+         return "\n".join(sigs)

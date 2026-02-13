@@ -1,0 +1,174 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application defer
+Found 1 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, defer, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table defer_secondary
+    Creating table defer_primary
+    Creating table defer_child
+    Creating table defer_bigchild
+    Creating table defer_shadowparent
+    Creating table defer_shadowchild
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14667:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-14667
+7c7ca88c9579: Pulling fs layer
+0015a28029a7: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+9a976e8c0b17: Pulling fs layer
+ac5b61163589: Pulling fs layer
+925361aa7a6f: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+4023c12587a8: Pulling fs layer
+500327121db6: Pulling fs layer
+724625094df2: Pulling fs layer
+9f5a969c9678: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+9a976e8c0b17: Download complete
+925361aa7a6f: Download complete
+e5a28c0c137e: Download complete
+9f5a969c9678: Download complete
+ac5b61163589: Download complete
+4023c12587a8: Download complete
+836b79e2a6e5: Download complete
+7c7ca88c9579: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+724625094df2: Download complete
+500327121db6: Download complete
+0015a28029a7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+9a976e8c0b17: Pull complete
+9f5a969c9678: Pull complete
+0015a28029a7: Pull complete
+925361aa7a6f: Pull complete
+4023c12587a8: Pull complete
+724625094df2: Pull complete
+7c7ca88c9579: Pull complete
+Digest: sha256:ed7a64546e335d1fd43afb7296db41f8b9285443b30338a1ca4e481c6fdc1593
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14667:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_defer_only_chaining (defer.tests.DeferTests) ... FAIL
+
+======================================================================
+FAIL: test_defer_only_chaining (defer.tests.DeferTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/defer/tests.py", line 55, in test_defer_only_chaining
+    self.assert_delayed(qs.only('name').defer('name').defer('value')[0], 1)
+  File "/testbed/tests/defer/tests.py", line 18, in assert_delayed
+    self.assertEqual(count, num)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (27 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application defer
+Found 27 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, defer, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table defer_secondary
+    Creating table defer_primary
+    Creating table defer_child
+    Creating table defer_bigchild
+    Creating table defer_shadowparent
+    Creating table defer_shadowchild
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_custom_refresh_on_deferred_loading (defer.tests.TestDefer2) ... ok
+test_eq (defer.tests.TestDefer2) ... ok
+test_refresh_not_loading_deferred_fields (defer.tests.TestDefer2) ... ok
+test_defer_baseclass_when_subclass_has_added_field (defer.tests.BigChildDeferTests) ... ok
+test_defer_subclass (defer.tests.BigChildDeferTests) ... ok
+test_defer_subclass_both (defer.tests.BigChildDeferTests) ... ok
+test_only_baseclass_when_subclass_has_added_field (defer.tests.BigChildDeferTests) ... ok
+test_only_subclass (defer.tests.BigChildDeferTests) ... ok
+test_defer (defer.tests.DeferTests) ... ok
+test_defer_baseclass_when_subclass_has_no_added_fields (defer.tests.DeferTests) ... ok
+test_defer_extra (defer.tests.DeferTests) ... ok
+test_defer_foreign_keys_are_deferred_and_not_traversed (defer.tests.DeferTests) ... ok
+test_defer_none_to_clear_deferred_set (defer.tests.DeferTests) ... ok
+test_defer_of_overridden_scalar (defer.tests.DeferTests) ... ok
+test_defer_on_an_already_deferred_field (defer.tests.DeferTests) ... ok
+test_defer_only_clear (defer.tests.DeferTests) ... ok
+test_defer_select_related_raises_invalid_query (defer.tests.DeferTests) ... ok
+test_defer_values_does_not_defer (defer.tests.DeferTests) ... ok
+test_defer_with_select_related (defer.tests.DeferTests) ... ok
+test_get (defer.tests.DeferTests) ... ok
+test_only (defer.tests.DeferTests) ... ok
+test_only_baseclass_when_subclass_has_no_added_fields (defer.tests.DeferTests) ... ok
+test_only_none_raises_error (defer.tests.DeferTests) ... ok
+test_only_select_related_raises_invalid_query (defer.tests.DeferTests) ... ok
+test_only_values_does_not_defer (defer.tests.DeferTests) ... ok
+test_only_with_select_related (defer.tests.DeferTests) ... ok
+test_saving_object_with_deferred_field (defer.tests.DeferTests) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.058s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['defer.tests.DeferTests.test_defer_only_chaining']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

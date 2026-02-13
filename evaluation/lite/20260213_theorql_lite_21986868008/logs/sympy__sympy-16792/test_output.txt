@@ -1,0 +1,146 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        30614393
+hash randomization: on (PYTHONHASHSEED=2883783211)
+
+sympy/utilities/tests/test_codegen.py[1] .                                  [OK]
+
+================== tests finished: 1 passed, in 0.11 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-16792:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-16792
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+500327121db6: Pulling fs layer
+b08895a5c216: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+aee727dc928c: Pulling fs layer
+934949752a9e: Pulling fs layer
+ac5b61163589: Download complete
+ed3dada71338: Download complete
+5c809fd8a9af: Download complete
+2f341c31f3b7: Download complete
+e5a28c0c137e: Download complete
+aee727dc928c: Download complete
+836b79e2a6e5: Download complete
+934949752a9e: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+ed3dada71338: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+aee727dc928c: Pull complete
+0b326ada86d1: Pull complete
+934949752a9e: Pull complete
+Digest: sha256:fc0f475f40be4c500c393f4c4e26957d5a16fd76db03a3b39e0bd2c998851639
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-16792:latest
+/testbed/sympy/solvers/diophantine.py:3185: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:644: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:664: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:677: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:684: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/utilities/codegen.py:277: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if dt is "int" and not element.is_integer:
+/testbed/sympy/utilities/codegen.py:279: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if dt is "float" and not element.is_real:
+
+
+===== PHASE: PASS_TO_PASS (54 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        21046195
+hash randomization: on (PYTHONHASHSEED=62025484)
+
+sympy/external/tests/test_codegen.py[1] .                                   [OK]
+sympy/printing/tests/test_fcode.py[2] ..                                    [OK]
+sympy/printing/tests/test_rust.py[4] ....                                   [OK]
+sympy/utilities/tests/test_codegen.py[51] ......................................
+.............                                                               [OK]
+
+================== tests finished: 58 passed, in 0.70 seconds ==================
+
+/testbed/sympy/solvers/diophantine.py:3185: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:644: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:664: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:677: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:684: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/utilities/codegen.py:277: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if dt is "int" and not element.is_integer:
+/testbed/sympy/utilities/codegen.py:279: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if dt is "float" and not element.is_real:
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        22670110
+hash randomization: on (PYTHONHASHSEED=3743363583)
+
+sympy/utilities/tests/test_codegen.py[4] ....                               [OK]
+sympy/utilities/tests/test_codegen_julia.py[1] .                            [OK]
+sympy/utilities/tests/test_codegen_octave.py[1] .                           [OK]
+sympy/utilities/tests/test_codegen_rust.py[1] .                             [OK]
+
+================== tests finished: 7 passed, in 0.16 seconds ===================
+
+/testbed/sympy/solvers/diophantine.py:3185: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:644: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:664: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:677: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/plotting/plot.py:684: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+/testbed/sympy/utilities/codegen.py:277: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if dt is "int" and not element.is_integer:
+/testbed/sympy/utilities/codegen.py:279: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if dt is "float" and not element.is_real:
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

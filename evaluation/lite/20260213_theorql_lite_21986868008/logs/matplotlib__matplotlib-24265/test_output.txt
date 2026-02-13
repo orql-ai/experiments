@@ -1,0 +1,107 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_style.py::test_deprecated_seaborn_styles PASSED [100%]
+
+============================== 1 passed in 2.45s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-24265:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-24265
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+500327121db6: Pulling fs layer
+729e032d4f30: Pulling fs layer
+7e731192beca: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+11de44a65246: Pulling fs layer
+161f3b5664f5: Pulling fs layer
+b73a67583526: Pulling fs layer
+40187f30e4d2: Pulling fs layer
+22d3b1d58e22: Pulling fs layer
+836b79e2a6e5: Download complete
+11de44a65246: Download complete
+40187f30e4d2: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+b73a67583526: Download complete
+22d3b1d58e22: Download complete
+7478e0ac0f23: Download complete
+729e032d4f30: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+7e731192beca: Download complete
+500327121db6: Pull complete
+161f3b5664f5: Download complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+11de44a65246: Pull complete
+7e731192beca: Pull complete
+22d3b1d58e22: Pull complete
+40187f30e4d2: Pull complete
+b73a67583526: Pull complete
+161f3b5664f5: Pull complete
+729e032d4f30: Pull complete
+Digest: sha256:e989d00e50c90ce25c79b40ff5b3330c6aa12465b82eef1ad92d2211adeda64b
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-24265:latest
+/mnt/agent_patch.diff:12: trailing whitespace.
+    
+/mnt/agent_patch.diff:33: trailing whitespace.
+    
+warning: 2 lines add whitespace errors.
+
+
+===== PHASE: PASS_TO_PASS (16 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 16 items
+
+lib/matplotlib/tests/test_style.py::test_invalid_rc_warning_includes_filename PASSED [  6%]
+lib/matplotlib/tests/test_style.py::test_available PASSED                [ 12%]
+lib/matplotlib/tests/test_style.py::test_use PASSED                      [ 18%]
+lib/matplotlib/tests/test_style.py::test_use_url PASSED                  [ 25%]
+lib/matplotlib/tests/test_style.py::test_single_path PASSED              [ 31%]
+lib/matplotlib/tests/test_style.py::test_context PASSED                  [ 37%]
+lib/matplotlib/tests/test_style.py::test_context_with_dict PASSED        [ 43%]
+lib/matplotlib/tests/test_style.py::test_context_with_dict_after_namedstyle PASSED [ 50%]
+lib/matplotlib/tests/test_style.py::test_context_with_dict_before_namedstyle PASSED [ 56%]
+lib/matplotlib/tests/test_style.py::test_context_with_union_of_dict_and_namedstyle PASSED [ 62%]
+lib/matplotlib/tests/test_style.py::test_context_with_badparam PASSED    [ 68%]
+lib/matplotlib/tests/test_style.py::test_alias[mpl20] PASSED             [ 75%]
+lib/matplotlib/tests/test_style.py::test_alias[mpl15] PASSED             [ 81%]
+lib/matplotlib/tests/test_style.py::test_xkcd_no_cm PASSED               [ 87%]
+lib/matplotlib/tests/test_style.py::test_xkcd_cm PASSED                  [ 93%]
+lib/matplotlib/tests/test_style.py::test_up_to_date_blacklist PASSED     [100%]
+
+============================== 16 passed in 3.01s ==============================
+
+
+/mnt/agent_patch.diff:12: trailing whitespace.
+    
+/mnt/agent_patch.diff:33: trailing whitespace.
+    
+warning: 2 lines add whitespace errors.
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

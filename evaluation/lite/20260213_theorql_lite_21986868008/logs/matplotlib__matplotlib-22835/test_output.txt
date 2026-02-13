@@ -1,0 +1,94 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_artist.py::test_format_cursor_data_BoundaryNorm PASSED [100%]
+
+============================== 1 passed in 2.79s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-22835:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-22835
+2898e947a0fb: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+967545a58ea1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+892255432763: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+1d39182ad176: Pulling fs layer
+203ab5349554: Pulling fs layer
+532b6f849c59: Pulling fs layer
+85b465440a82: Pulling fs layer
+e5a28c0c137e: Download complete
+1d39182ad176: Download complete
+203ab5349554: Download complete
+ac5b61163589: Download complete
+892255432763: Download complete
+85b465440a82: Download complete
+836b79e2a6e5: Download complete
+7478e0ac0f23: Download complete
+2898e947a0fb: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+967545a58ea1: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+532b6f849c59: Download complete
+1d39182ad176: Pull complete
+892255432763: Pull complete
+967545a58ea1: Pull complete
+203ab5349554: Pull complete
+85b465440a82: Pull complete
+532b6f849c59: Pull complete
+2898e947a0fb: Pull complete
+Digest: sha256:858cb492753e26e3f128663bab2a6d7a5b26e10b1f443f0dbc2457f39ded20e1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-22835:latest
+
+
+===== PHASE: PASS_TO_PASS (24 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 20 items
+
+============================ no tests ran in 2.57s =============================
+
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[ACCEPTS:]
+(no match in any of [<Module test_artist.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[..]
+(no match in any of [<Module test_artist.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[arg]
+(no match in any of [<Module test_artist.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[*arg]
+(no match in any of [<Module test_artist.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_artist.py::test_patch_transform_of_none lib/matplotlib/tests/test_artist.py::test_collection_transform_of_none lib/matplotlib/tests/test_artist.py::test_clipping[png] lib/matplotlib/tests/test_artist.py::test_clipping[pdf] lib/matplotlib/tests/test_artist.py::test_clipping_zoom[png] lib/matplotlib/tests/test_artist.py::test_cull_markers lib/matplotlib/tests/test_artist.py::test_hatching[png] lib/matplotlib/tests/test_artist.py::test_hatching[pdf] lib/matplotlib/tests/test_artist.py::test_remove lib/matplotlib/tests/test_artist.py::test_default_edges[png] lib/matplotlib/tests/test_artist.py::test_properties lib/matplotlib/tests/test_artist.py::test_setp lib/matplotlib/tests/test_artist.py::test_None_zorder lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[-unknown] lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[ACCEPTS:] lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[..] lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[arg] lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[*arg] lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_aliases lib/matplotlib/tests/test_artist.py::test_set_alpha lib/matplotlib/tests/test_artist.py::test_set_alpha_for_array lib/matplotlib/tests/test_artist.py::test_callbacks lib/matplotlib/tests/test_artist.py::test_set_signature lib/matplotlib/tests/test_artist.py::test_set_is_overwritten` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['lib/matplotlib/tests/test_artist.py::test_patch_transform_of_none', 'lib/matplotlib/tests/test_artist.py::test_collection_transform_of_none', 'lib/matplotlib/tests/test_artist.py::test_clipping[png]', 'lib/matplotlib/tests/test_artist.py::test_clipping[pdf]', 'lib/matplotlib/tests/test_artist.py::test_clipping_zoom[png]', 'lib/matplotlib/tests/test_artist.py::test_cull_markers', 'lib/matplotlib/tests/test_artist.py::test_hatching[png]', 'lib/matplotlib/tests/test_artist.py::test_hatching[pdf]', 'lib/matplotlib/tests/test_artist.py::test_remove', 'lib/matplotlib/tests/test_artist.py::test_default_edges[png]', 'lib/matplotlib/tests/test_artist.py::test_properties', 'lib/matplotlib/tests/test_artist.py::test_setp', 'lib/matplotlib/tests/test_artist.py::test_None_zorder', 'lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[-unknown]', 'lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[ACCEPTS:]', 'lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[..]', 'lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[arg]', 'lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_valid_values[*arg]', 'lib/matplotlib/tests/test_artist.py::test_artist_inspector_get_aliases', 'lib/matplotlib/tests/test_artist.py::test_set_alpha', 'lib/matplotlib/tests/test_artist.py::test_set_alpha_for_array', 'lib/matplotlib/tests/test_artist.py::test_callbacks', 'lib/matplotlib/tests/test_artist.py::test_set_signature', 'lib/matplotlib/tests/test_artist.py::test_set_is_overwritten']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

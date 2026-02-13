@@ -1,0 +1,121 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 1 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15996:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15996
+836b79e2a6e5: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+440f2bf70467: Pulling fs layer
+500327121db6: Pulling fs layer
+5761dce31ebc: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+226153afd2c9: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+4e865410366e: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+b780fac9da70: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+396d2ca0167c: Download complete
+440f2bf70467: Download complete
+5761dce31ebc: Download complete
+ac5b61163589: Download complete
+226153afd2c9: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+187d94c4a868: Download complete
+4e865410366e: Download complete
+a2f6138ded93: Download complete
+500327121db6: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+4e865410366e: Pull complete
+b780fac9da70: Pull complete
+396d2ca0167c: Pull complete
+440f2bf70467: Pull complete
+5761dce31ebc: Pull complete
+187d94c4a868: Pull complete
+226153afd2c9: Pull complete
+Digest: sha256:b1fb344bccdffbb8e0d9846967aa97673f6358e130d47c1b97ed8f90dbbca256
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15996:latest
+test_serialize_enum_flags (migrations.test_writer.WriterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (42 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 42 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_args_kwargs_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_args_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_empty_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_expand_args_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_kwargs_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_multiline_args_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_nested_args_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_nested_operation_expand_args_signature (migrations.test_writer.OperationWriterTests) ... ok
+test_custom_operation (migrations.test_writer.WriterTests) ... ok
+test_deconstruct_class_arguments (migrations.test_writer.WriterTests) ... ok
+test_migration_path (migrations.test_writer.WriterTests) ... ok
+test_register_non_serializer (migrations.test_writer.WriterTests) ... ok
+test_register_serializer (migrations.test_writer.WriterTests) ... ok
+test_serialize_builtin_types (migrations.test_writer.WriterTests) ... ok
+test_serialize_builtins (migrations.test_writer.WriterTests) ... ok
+test_serialize_choices (migrations.test_writer.WriterTests) ... ok
+test_serialize_collections (migrations.test_writer.WriterTests) ... ok
+test_serialize_complex_func_index (migrations.test_writer.WriterTests) ... ok
+test_serialize_constants (migrations.test_writer.WriterTests) ... ok
+test_serialize_datetime (migrations.test_writer.WriterTests) ... ok
+test_serialize_enums (migrations.test_writer.WriterTests) ... ok
+test_serialize_fields (migrations.test_writer.WriterTests) ... ok
+test_serialize_frozensets (migrations.test_writer.WriterTests) ... ok
+test_serialize_functions (migrations.test_writer.WriterTests) ... ok
+test_serialize_functools_partial (migrations.test_writer.WriterTests) ... ok
+test_serialize_functools_partialmethod (migrations.test_writer.WriterTests) ... ok
+test_serialize_iterators (migrations.test_writer.WriterTests) ... ok
+test_serialize_lazy_objects (migrations.test_writer.WriterTests) ... ok
+test_serialize_managers (migrations.test_writer.WriterTests) ... ok
+test_serialize_multiline_strings (migrations.test_writer.WriterTests) ... ok
+test_serialize_nested_class (migrations.test_writer.WriterTests) ... ok
+test_serialize_numbers (migrations.test_writer.WriterTests) ... ok
+test_serialize_path_like (migrations.test_writer.WriterTests) ... ok
+test_serialize_pathlib (migrations.test_writer.WriterTests) ... ok
+test_serialize_range (migrations.test_writer.WriterTests) ... ok
+test_serialize_set (migrations.test_writer.WriterTests) ... ok
+test_serialize_settings (migrations.test_writer.WriterTests) ... ok
+test_serialize_strings (migrations.test_writer.WriterTests) ... ok
+test_serialize_timedelta (migrations.test_writer.WriterTests) ... ok
+test_serialize_type_model (migrations.test_writer.WriterTests) ... ok
+test_serialize_type_none (migrations.test_writer.WriterTests) ... ok
+test_serialize_uuid (migrations.test_writer.WriterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.064s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

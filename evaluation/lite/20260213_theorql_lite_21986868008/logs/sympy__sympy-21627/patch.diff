@@ -1,0 +1,58 @@
+diff --git a/sympy/functions/elementary/complexes.py b/sympy/functions/elementary/complexes.py
+index 66a96335eb..66c78d3547 100644
+--- a/sympy/functions/elementary/complexes.py
++++ b/sympy/functions/elementary/complexes.py
+@@ -514,6 +514,7 @@ class Abs(Function):
+     is_extended_nonnegative = True
+     unbranched = True
+     _singularities = True  # non-holomorphic
++    _eval_in_progress = False  # recursion guard
+ 
+     def fdiff(self, argindex=1):
+         """
+@@ -531,6 +532,10 @@ def eval(cls, arg):
+         from sympy.core.function import expand_mul
+         from sympy.core.power import Pow
+ 
++        # Recursion guard: if we're already evaluating Abs, don't recurse
++        if cls._eval_in_progress:
++            return None
++
+         if hasattr(arg, '_eval_Abs'):
+             obj = arg._eval_Abs()
+             if obj is not None:
+@@ -618,7 +623,12 @@ def eval(cls, arg):
+             abs_free_arg = arg.xreplace({i: Dummy(real=True) for i in ignore})
+             unk = [a for a in abs_free_arg.free_symbols if a.is_extended_real is None]
+             if not unk or not all(conj.has(conjugate(u)) for u in unk):
+-                return sqrt(expand_mul(arg*conj))
++                # Set recursion guard before potentially recursive computation
++                cls._eval_in_progress = True
++                try:
++                    return sqrt(expand_mul(arg*conj))
++                finally:
++                    cls._eval_in_progress = False
+ 
+     def _eval_is_real(self):
+         if self.args[0].is_finite:
+diff --git a/sympy/functions/elementary/hyperbolic.py b/sympy/functions/elementary/hyperbolic.py
+index 892e19cabb..c1894f60b9 100644
+--- a/sympy/functions/elementary/hyperbolic.py
++++ b/sympy/functions/elementary/hyperbolic.py
+@@ -499,6 +499,16 @@ def _eval_is_finite(self):
+         arg = self.args[0]
+         return arg.is_finite
+ 
++    def _eval_is_zero(self):
++        # cosh(x) = 0 when x = (2n+1)*pi*I/2 for integer n
++        # For real x, cosh(x) >= 1, so it's never zero
++        arg = self.args[0]
++        if arg.is_real:
++            return False
++        # For complex arguments, it's hard to determine in general
++        # without potentially causing recursion
++        return None
++
+ 
+ class tanh(HyperbolicFunction):
+     r"""

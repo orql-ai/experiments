@@ -1,0 +1,82 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        7454189
+hash randomization: on (PYTHONHASHSEED=3129642289)
+
+sympy/physics/units/tests/test_prefixes.py[1] .                             [OK]
+
+================== tests finished: 1 passed, in 0.27 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-24909:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-24909
+a2f6138ded93: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+642f0ee3dd14: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+781e729d7f67: Pulling fs layer
+500327121db6: Pulling fs layer
+96cf8013689e: Pulling fs layer
+ac5b61163589: Pulling fs layer
+ae494ef63d21: Pulling fs layer
+e984c1595062: Pulling fs layer
+7251771b04bb: Pulling fs layer
+74142b78c89a: Pulling fs layer
+ac5b61163589: Download complete
+e984c1595062: Download complete
+7251771b04bb: Download complete
+74142b78c89a: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+96cf8013689e: Download complete
+642f0ee3dd14: Download complete
+7478e0ac0f23: Download complete
+ae494ef63d21: Download complete
+500327121db6: Download complete
+781e729d7f67: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+e984c1595062: Pull complete
+96cf8013689e: Pull complete
+781e729d7f67: Pull complete
+7251771b04bb: Pull complete
+74142b78c89a: Pull complete
+ae494ef63d21: Pull complete
+642f0ee3dd14: Pull complete
+Digest: sha256:2a49dbe337cae3ce986fef4619f5b754192e66973f88974541819375a64d7c3c
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-24909:latest
+
+
+===== PHASE: PASS_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        65438574
+hash randomization: on (PYTHONHASHSEED=3899192956)
+
+sympy/combinatorics/tests/test_perm_groups.py[1] .                          [OK]
+sympy/physics/units/tests/test_prefixes.py[2] ..                            [OK]
+
+================== tests finished: 3 passed, in 0.39 seconds ===================
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

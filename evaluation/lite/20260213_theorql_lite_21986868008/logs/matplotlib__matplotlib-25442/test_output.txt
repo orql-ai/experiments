@@ -1,0 +1,400 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_offsetbox.py::test_remove_draggable PASSED     [100%]
+
+============================== 1 passed in 8.53s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25442:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25442
+a41db89aa8f3: Pulling fs layer
+ac5b61163589: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+4af3c06a3dd5: Pulling fs layer
+e2309197fa57: Pulling fs layer
+500327121db6: Pulling fs layer
+2f3f92c146c0: Pulling fs layer
+ff21019ca605: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+803a19ff22a0: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+4fd96bd63a28: Pulling fs layer
+836b79e2a6e5: Download complete
+803a19ff22a0: Download complete
+4fd96bd63a28: Download complete
+2f3f92c146c0: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+ff21019ca605: Download complete
+7478e0ac0f23: Download complete
+a41db89aa8f3: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+e2309197fa57: Download complete
+500327121db6: Pull complete
+4af3c06a3dd5: Download complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+803a19ff22a0: Pull complete
+ff21019ca605: Pull complete
+e2309197fa57: Pull complete
+4fd96bd63a28: Pull complete
+2f3f92c146c0: Pull complete
+4af3c06a3dd5: Pull complete
+a41db89aa8f3: Pull complete
+Digest: sha256:6b8599765aa7011b991676b35334ac2cbc2f257a5184b3198e22a92516f8c5ed
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25442:latest
+
+
+===== PHASE: PASS_TO_PASS (275 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_offsetbox.py::test_offsetbox_clipping[png] PASSED [  2%]
+lib/matplotlib/tests/test_offsetbox.py::test_offsetbox_clipping[pdf] PASSED [  4%]
+lib/matplotlib/tests/test_offsetbox.py::test_offsetbox_clip_children PASSED [  6%]
+lib/matplotlib/tests/test_offsetbox.py::test_offsetbox_loc_codes PASSED  [  8%]
+lib/matplotlib/tests/test_offsetbox.py::test_expand_with_tight_layout PASSED [ 10%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-250-widths0] PASSED [ 12%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-250-widths1] PASSED [ 14%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-250-widths2] PASSED [ 16%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-250-widths3] PASSED [ 18%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-100-widths0] PASSED [ 20%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-100-widths1] PASSED [ 22%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-100-widths2] PASSED [ 24%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-100-widths3] PASSED [ 26%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-0-widths0] PASSED [ 28%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-0-widths1] PASSED [ 30%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-0-widths2] PASSED [ 32%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-0-widths3] PASSED [ 34%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250--1-widths0] PASSED [ 36%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250--1-widths1] PASSED [ 38%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250--1-widths2] PASSED [ 40%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250--1-widths3] PASSED [ 42%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-None-widths0] PASSED [ 44%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-None-widths1] PASSED [ 46%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-None-widths2] PASSED [ 48%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-250-None-widths3] PASSED [ 50%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-250-widths0] PASSED [ 52%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-250-widths1] PASSED [ 54%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-250-widths2] PASSED [ 56%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-250-widths3] PASSED [ 58%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-100-widths0] PASSED [ 60%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-100-widths1] PASSED [ 62%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-100-widths2] PASSED [ 64%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-100-widths3] PASSED [ 66%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-0-widths0] PASSED [ 68%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-0-widths1] PASSED [ 70%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-0-widths2] PASSED [ 72%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-0-widths3] PASSED [ 74%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1--1-widths0] PASSED [ 76%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1--1-widths1] PASSED [ 78%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1--1-widths2] PASSED [ 80%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1--1-widths3] PASSED [ 82%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-None-widths0] PASSED [ 84%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-None-widths1] PASSED [ 86%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-None-widths2] PASSED [ 88%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-1-None-widths3] PASSED [ 90%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-250-widths0] PASSED [ 92%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-250-widths1] PASSED [ 94%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-250-widths2] PASSED [ 96%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-250-widths3] PASSED [ 98%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-100-widths0] PASSED [100%]
+
+============================== 50 passed in 9.81s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-100-widths1] PASSED [  2%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-100-widths2] PASSED [  4%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-100-widths3] PASSED [  6%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-0-widths0] PASSED [  8%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-0-widths1] PASSED [ 10%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-0-widths2] PASSED [ 12%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-0-widths3] PASSED [ 14%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0--1-widths0] PASSED [ 16%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0--1-widths1] PASSED [ 18%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0--1-widths2] PASSED [ 20%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0--1-widths3] PASSED [ 22%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-None-widths0] PASSED [ 24%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-None-widths1] PASSED [ 26%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-None-widths2] PASSED [ 28%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand-0-None-widths3] PASSED [ 30%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-250-widths0] PASSED [ 32%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-250-widths1] PASSED [ 34%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-250-widths2] PASSED [ 36%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-250-widths3] PASSED [ 38%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-100-widths0] PASSED [ 40%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-100-widths1] PASSED [ 42%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-100-widths2] PASSED [ 44%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-100-widths3] PASSED [ 46%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-0-widths0] PASSED [ 48%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-0-widths1] PASSED [ 50%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-0-widths2] PASSED [ 52%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-0-widths3] PASSED [ 54%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1--1-widths0] PASSED [ 56%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1--1-widths1] PASSED [ 58%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1--1-widths2] PASSED [ 60%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1--1-widths3] PASSED [ 62%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-None-widths0] PASSED [ 64%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-None-widths1] PASSED [ 66%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-None-widths2] PASSED [ 68%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[expand--1-None-widths3] PASSED [ 70%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-250-widths0] PASSED [ 72%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-250-widths1] PASSED [ 74%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-250-widths2] PASSED [ 76%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-250-widths3] PASSED [ 78%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-100-widths0] PASSED [ 80%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-100-widths1] PASSED [ 82%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-100-widths2] PASSED [ 84%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-100-widths3] PASSED [ 86%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-0-widths0] PASSED [ 88%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-0-widths1] PASSED [ 90%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-0-widths2] PASSED [ 92%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-0-widths3] PASSED [ 94%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250--1-widths0] PASSED [ 96%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250--1-widths1] PASSED [ 98%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250--1-widths2] PASSED [100%]
+
+============================== 50 passed in 9.23s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250--1-widths3] PASSED [  2%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-None-widths0] PASSED [  4%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-None-widths1] PASSED [  6%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-None-widths2] PASSED [  8%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-250-None-widths3] PASSED [ 10%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-250-widths0] PASSED [ 12%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-250-widths1] PASSED [ 14%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-250-widths2] PASSED [ 16%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-250-widths3] PASSED [ 18%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-100-widths0] PASSED [ 20%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-100-widths1] PASSED [ 22%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-100-widths2] PASSED [ 24%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-100-widths3] PASSED [ 26%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-0-widths0] PASSED [ 28%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-0-widths1] PASSED [ 30%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-0-widths2] PASSED [ 32%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-0-widths3] PASSED [ 34%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1--1-widths0] PASSED [ 36%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1--1-widths1] PASSED [ 38%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1--1-widths2] PASSED [ 40%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1--1-widths3] PASSED [ 42%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-None-widths0] PASSED [ 44%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-None-widths1] PASSED [ 46%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-None-widths2] PASSED [ 48%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-1-None-widths3] PASSED [ 50%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-250-widths0] PASSED [ 52%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-250-widths1] PASSED [ 54%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-250-widths2] PASSED [ 56%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-250-widths3] PASSED [ 58%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-100-widths0] PASSED [ 60%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-100-widths1] PASSED [ 62%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-100-widths2] PASSED [ 64%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-100-widths3] PASSED [ 66%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-0-widths0] PASSED [ 68%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-0-widths1] PASSED [ 70%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-0-widths2] PASSED [ 72%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-0-widths3] PASSED [ 74%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0--1-widths0] PASSED [ 76%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0--1-widths1] PASSED [ 78%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0--1-widths2] PASSED [ 80%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0--1-widths3] PASSED [ 82%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-None-widths0] PASSED [ 84%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-None-widths1] PASSED [ 86%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-None-widths2] PASSED [ 88%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed-0-None-widths3] PASSED [ 90%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-250-widths0] PASSED [ 92%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-250-widths1] PASSED [ 94%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-250-widths2] PASSED [ 96%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-250-widths3] PASSED [ 98%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-100-widths0] PASSED [100%]
+
+============================== 50 passed in 8.73s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-100-widths1] PASSED [  2%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-100-widths2] PASSED [  4%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-100-widths3] PASSED [  6%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-0-widths0] PASSED [  8%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-0-widths1] PASSED [ 10%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-0-widths2] PASSED [ 12%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-0-widths3] PASSED [ 14%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1--1-widths0] PASSED [ 16%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1--1-widths1] PASSED [ 18%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1--1-widths2] PASSED [ 20%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1--1-widths3] PASSED [ 22%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-None-widths0] PASSED [ 24%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-None-widths1] PASSED [ 26%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-None-widths2] PASSED [ 28%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[fixed--1-None-widths3] PASSED [ 30%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-250-widths0] PASSED [ 32%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-250-widths1] PASSED [ 34%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-250-widths2] PASSED [ 36%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-250-widths3] PASSED [ 38%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-100-widths0] PASSED [ 40%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-100-widths1] PASSED [ 42%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-100-widths2] PASSED [ 44%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-100-widths3] PASSED [ 46%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-0-widths0] PASSED [ 48%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-0-widths1] PASSED [ 50%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-0-widths2] PASSED [ 52%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-0-widths3] PASSED [ 54%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250--1-widths0] PASSED [ 56%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250--1-widths1] PASSED [ 58%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250--1-widths2] PASSED [ 60%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250--1-widths3] PASSED [ 62%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-None-widths0] PASSED [ 64%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-None-widths1] PASSED [ 66%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-None-widths2] PASSED [ 68%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-250-None-widths3] PASSED [ 70%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-250-widths0] PASSED [ 72%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-250-widths1] PASSED [ 74%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-250-widths2] PASSED [ 76%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-250-widths3] PASSED [ 78%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-100-widths0] PASSED [ 80%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-100-widths1] PASSED [ 82%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-100-widths2] PASSED [ 84%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-100-widths3] PASSED [ 86%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-0-widths0] PASSED [ 88%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-0-widths1] PASSED [ 90%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-0-widths2] PASSED [ 92%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-0-widths3] PASSED [ 94%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1--1-widths0] PASSED [ 96%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1--1-widths1] PASSED [ 98%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1--1-widths2] PASSED [100%]
+
+============================== 50 passed in 9.22s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1--1-widths3] PASSED [  2%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-None-widths0] PASSED [  4%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-None-widths1] PASSED [  6%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-None-widths2] PASSED [  8%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-1-None-widths3] PASSED [ 10%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-250-widths0] PASSED [ 12%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-250-widths1] PASSED [ 14%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-250-widths2] PASSED [ 16%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-250-widths3] PASSED [ 18%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-100-widths0] PASSED [ 20%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-100-widths1] PASSED [ 22%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-100-widths2] PASSED [ 24%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-100-widths3] PASSED [ 26%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-0-widths0] PASSED [ 28%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-0-widths1] PASSED [ 30%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-0-widths2] PASSED [ 32%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-0-widths3] PASSED [ 34%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0--1-widths0] PASSED [ 36%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0--1-widths1] PASSED [ 38%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0--1-widths2] PASSED [ 40%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0--1-widths3] PASSED [ 42%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-None-widths0] PASSED [ 44%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-None-widths1] PASSED [ 46%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-None-widths2] PASSED [ 48%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal-0-None-widths3] PASSED [ 50%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-250-widths0] PASSED [ 52%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-250-widths1] PASSED [ 54%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-250-widths2] PASSED [ 56%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-250-widths3] PASSED [ 58%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-100-widths0] PASSED [ 60%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-100-widths1] PASSED [ 62%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-100-widths2] PASSED [ 64%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-100-widths3] PASSED [ 66%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-0-widths0] PASSED [ 68%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-0-widths1] PASSED [ 70%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-0-widths2] PASSED [ 72%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-0-widths3] PASSED [ 74%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1--1-widths0] PASSED [ 76%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1--1-widths1] PASSED [ 78%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1--1-widths2] PASSED [ 80%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1--1-widths3] PASSED [ 82%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-None-widths0] PASSED [ 84%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-None-widths1] PASSED [ 86%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-None-widths2] PASSED [ 88%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets[equal--1-None-widths3] PASSED [ 90%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_fixed[widths0-None-1-expected0] PASSED [ 92%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_fixed[widths1-10-1-expected1] PASSED [ 94%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_fixed[widths2-5-1-expected2] PASSED [ 96%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_expand[widths0-None-None-expected0] PASSED [ 98%]
+lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_expand[widths1-10-1-expected1] PASSED [100%]
+
+============================== 50 passed in 8.85s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 24 items
+
+============================ no tests ran in 9.09s =============================
+
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_offsetbox.py::test_picking[axes]
+(no match in any of [<Module test_offsetbox.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_expand[widths2-5-1-expected2] lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal[widths0-6-None-expected0] lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal[widths1-2-None-expected1] lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal[widths2-None-1-expected2] lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal_total_none_sep_none lib/matplotlib/tests/test_offsetbox.py::test_picking[axes] lib/matplotlib/tests/test_offsetbox.py::test_picking[data-draw] lib/matplotlib/tests/test_offsetbox.py::test_picking[data-image] lib/matplotlib/tests/test_offsetbox.py::test_picking[data-text] lib/matplotlib/tests/test_offsetbox.py::test_anchoredtext_horizontal_alignment[png] lib/matplotlib/tests/test_offsetbox.py::test_annotationbbox_extents lib/matplotlib/tests/test_offsetbox.py::test_zorder lib/matplotlib/tests/test_offsetbox.py::test_arrowprops_copied lib/matplotlib/tests/test_offsetbox.py::test_packers[baseline] lib/matplotlib/tests/test_offsetbox.py::test_packers[bottom] lib/matplotlib/tests/test_offsetbox.py::test_packers[top] lib/matplotlib/tests/test_offsetbox.py::test_packers[left] lib/matplotlib/tests/test_offsetbox.py::test_packers[right] lib/matplotlib/tests/test_offsetbox.py::test_packers[center] lib/matplotlib/tests/test_offsetbox.py::test_paddedbox_default_values lib/matplotlib/tests/test_offsetbox.py::test_annotationbbox_properties lib/matplotlib/tests/test_offsetbox.py::test_textarea_properties lib/matplotlib/tests/test_offsetbox.py::test_textarea_set_text[png] lib/matplotlib/tests/test_offsetbox.py::test_textarea_set_text[pdf] lib/matplotlib/tests/test_offsetbox.py::test_paddedbox[png]` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_expand[widths2-5-1-expected2]', 'lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal[widths0-6-None-expected0]', 'lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal[widths1-2-None-expected1]', 'lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal[widths2-None-1-expected2]', 'lib/matplotlib/tests/test_offsetbox.py::test_get_packed_offsets_equal_total_none_sep_none', 'lib/matplotlib/tests/test_offsetbox.py::test_picking[axes]', 'lib/matplotlib/tests/test_offsetbox.py::test_picking[data-draw]', 'lib/matplotlib/tests/test_offsetbox.py::test_picking[data-image]', 'lib/matplotlib/tests/test_offsetbox.py::test_picking[data-text]', 'lib/matplotlib/tests/test_offsetbox.py::test_anchoredtext_horizontal_alignment[png]', 'lib/matplotlib/tests/test_offsetbox.py::test_annotationbbox_extents', 'lib/matplotlib/tests/test_offsetbox.py::test_zorder', 'lib/matplotlib/tests/test_offsetbox.py::test_arrowprops_copied', 'lib/matplotlib/tests/test_offsetbox.py::test_packers[baseline]', 'lib/matplotlib/tests/test_offsetbox.py::test_packers[bottom]', 'lib/matplotlib/tests/test_offsetbox.py::test_packers[top]', 'lib/matplotlib/tests/test_offsetbox.py::test_packers[left]', 'lib/matplotlib/tests/test_offsetbox.py::test_packers[right]', 'lib/matplotlib/tests/test_offsetbox.py::test_packers[center]', 'lib/matplotlib/tests/test_offsetbox.py::test_paddedbox_default_values', 'lib/matplotlib/tests/test_offsetbox.py::test_annotationbbox_properties', 'lib/matplotlib/tests/test_offsetbox.py::test_textarea_properties', 'lib/matplotlib/tests/test_offsetbox.py::test_textarea_set_text[png]', 'lib/matplotlib/tests/test_offsetbox.py::test_textarea_set_text[pdf]', 'lib/matplotlib/tests/test_offsetbox.py::test_paddedbox[png]']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

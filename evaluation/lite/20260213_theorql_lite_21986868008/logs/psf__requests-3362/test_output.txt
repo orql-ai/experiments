@@ -1,0 +1,952 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 1 item
+
+tests/test_requests.py::TestRequests::test_response_decode_unicode PASSED [100%]
+
+=============================== warnings summary ===============================
+requests/packages/urllib3/connectionpool.py:105
+  /testbed/requests/packages/urllib3/connectionpool.py:105: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/connectionpool.py:448
+  /testbed/requests/packages/urllib3/connectionpool.py:448: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/connectionpool.py:825
+  /testbed/requests/packages/urllib3/connectionpool.py:825: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/_collections.py:2
+requests/packages/urllib3/_collections.py:2
+  /testbed/requests/packages/urllib3/_collections.py:2: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, MutableMapping
+
+requests/packages/urllib3/poolmanager.py:33
+  /testbed/requests/packages/urllib3/poolmanager.py:33: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/models.py:796
+  /testbed/requests/models.py:796: DeprecationWarning: invalid escape sequence \*
+    """Returns the json-encoded content of a response, if any.
+
+requests/api.py:61
+  /testbed/requests/api.py:61: DeprecationWarning: invalid escape sequence \*
+    """Sends a GET request.
+
+requests/api.py:75
+  /testbed/requests/api.py:75: DeprecationWarning: invalid escape sequence \*
+    """Sends a OPTIONS request.
+
+requests/api.py:88
+  /testbed/requests/api.py:88: DeprecationWarning: invalid escape sequence \*
+    """Sends a HEAD request.
+
+requests/api.py:101
+  /testbed/requests/api.py:101: DeprecationWarning: invalid escape sequence \*
+    """Sends a POST request.
+
+requests/api.py:115
+  /testbed/requests/api.py:115: DeprecationWarning: invalid escape sequence \*
+    """Sends a PUT request.
+
+requests/api.py:128
+  /testbed/requests/api.py:128: DeprecationWarning: invalid escape sequence \*
+    """Sends a PATCH request.
+
+requests/api.py:141
+  /testbed/requests/api.py:141: DeprecationWarning: invalid escape sequence \*
+    """Sends a DELETE request.
+
+requests/sessions.py:482
+  /testbed/requests/sessions.py:482: DeprecationWarning: invalid escape sequence \*
+    """Sends a GET request. Returns :class:`Response` object.
+
+requests/sessions.py:492
+  /testbed/requests/sessions.py:492: DeprecationWarning: invalid escape sequence \*
+    """Sends a OPTIONS request. Returns :class:`Response` object.
+
+requests/sessions.py:502
+  /testbed/requests/sessions.py:502: DeprecationWarning: invalid escape sequence \*
+    """Sends a HEAD request. Returns :class:`Response` object.
+
+requests/sessions.py:512
+  /testbed/requests/sessions.py:512: DeprecationWarning: invalid escape sequence \*
+    """Sends a POST request. Returns :class:`Response` object.
+
+requests/sessions.py:523
+  /testbed/requests/sessions.py:523: DeprecationWarning: invalid escape sequence \*
+    """Sends a PUT request. Returns :class:`Response` object.
+
+requests/sessions.py:533
+  /testbed/requests/sessions.py:533: DeprecationWarning: invalid escape sequence \*
+    """Sends a PATCH request. Returns :class:`Response` object.
+
+requests/sessions.py:543
+  /testbed/requests/sessions.py:543: DeprecationWarning: invalid escape sequence \*
+    """Sends a DELETE request. Returns :class:`Response` object.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 1 passed, 21 warnings in 0.25s ========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.psf__requests-3362:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.psf__requests-3362
+836b79e2a6e5: Pulling fs layer
+cd36b34974ed: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+cfb9c7729bac: Pulling fs layer
+500327121db6: Pulling fs layer
+136d89f00a8d: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+3a99c706c7e4: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+c1dfad293124: Pulling fs layer
+85fa66a7c68f: Pulling fs layer
+b1be75d9ab9f: Pulling fs layer
+cd36b34974ed: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+3a99c706c7e4: Download complete
+e5a28c0c137e: Download complete
+b1be75d9ab9f: Download complete
+c1dfad293124: Download complete
+136d89f00a8d: Download complete
+85fa66a7c68f: Download complete
+7478e0ac0f23: Download complete
+cfb9c7729bac: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+85fa66a7c68f: Pull complete
+cd36b34974ed: Pull complete
+c1dfad293124: Pull complete
+3a99c706c7e4: Pull complete
+136d89f00a8d: Pull complete
+cfb9c7729bac: Pull complete
+b1be75d9ab9f: Pull complete
+Digest: sha256:7cc26b26033f38923c209a8e51b269667e01b44fa30045f8fcd1b7c076ddbc23
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.psf__requests-3362:latest
+
+
+===== PHASE: PASS_TO_PASS (75 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 50 items
+
+tests/test_requests.py::TestRequests::test_entry_points PASSED           [  2%]
+tests/test_requests.py::TestRequests::test_invalid_url[MissingSchema-hiwpefhipowhefopw] PASSED [  4%]
+tests/test_requests.py::TestRequests::test_invalid_url[InvalidSchema-localhost:3128] PASSED [  6%]
+tests/test_requests.py::TestRequests::test_invalid_url[InvalidSchema-localhost.localdomain:3128/] PASSED [  8%]
+tests/test_requests.py::TestRequests::test_invalid_url[InvalidSchema-10.122.1.1:3128/] PASSED [ 10%]
+tests/test_requests.py::TestRequests::test_invalid_url[InvalidURL-http://] PASSED [ 12%]
+tests/test_requests.py::TestRequests::test_basic_building PASSED         [ 14%]
+tests/test_requests.py::TestRequests::test_path_is_not_double_encoded PASSED [ 16%]
+tests/test_requests.py::TestRequests::test_params_are_added_before_fragment[http://example.com/path#fragment-http://example.com/path?a=b#fragment] PASSED [ 18%]
+tests/test_requests.py::TestRequests::test_params_are_added_before_fragment[http://example.com/path?key=value#fragment-http://example.com/path?key=value&a=b#fragment] PASSED [ 20%]
+tests/test_requests.py::TestRequests::test_params_original_order_is_preserved_by_default PASSED [ 22%]
+tests/test_requests.py::TestRequests::test_params_bytes_are_encoded PASSED [ 24%]
+tests/test_requests.py::TestRequests::test_binary_put PASSED             [ 26%]
+tests/test_requests.py::TestRequests::test_errors[http://doesnotexist.google.com-ConnectionError] PASSED [ 28%]
+tests/test_requests.py::TestRequests::test_errors[http://localhost:1-ConnectionError] PASSED [ 30%]
+tests/test_requests.py::TestRequests::test_errors[http://fe80::5054:ff:fe5a:fc0-InvalidURL] PASSED [ 32%]
+tests/test_requests.py::TestRequests::test_proxy_error PASSED            [ 34%]
+tests/test_requests.py::TestRequests::test_non_prepared_request_error PASSED [ 36%]
+tests/test_requests.py::TestRequests::test_prepare_request_with_bytestring_url PASSED [ 38%]
+tests/test_requests.py::TestRequests::test_links PASSED                  [ 40%]
+tests/test_requests.py::TestRequests::test_cookie_parameters PASSED      [ 42%]
+tests/test_requests.py::TestRequests::test_cookie_as_dict_keeps_len PASSED [ 44%]
+tests/test_requests.py::TestRequests::test_cookie_as_dict_keeps_items PASSED [ 46%]
+tests/test_requests.py::TestRequests::test_cookie_as_dict_keys PASSED    [ 48%]
+tests/test_requests.py::TestRequests::test_cookie_as_dict_values PASSED  [ 50%]
+tests/test_requests.py::TestRequests::test_cookie_as_dict_items PASSED   [ 52%]
+tests/test_requests.py::TestRequests::test_cookie_duplicate_names_different_domains PASSED [ 54%]
+tests/test_requests.py::TestRequests::test_cookie_duplicate_names_raises_cookie_conflict_error PASSED [ 56%]
+tests/test_requests.py::TestRequests::test_response_is_iterable PASSED   [ 58%]
+tests/test_requests.py::TestRequests::test_response_chunk_size_int PASSED [ 60%]
+tests/test_requests.py::TestRequests::test_http_error PASSED             [ 62%]
+tests/test_requests.py::TestRequests::test_transport_adapter_ordering PASSED [ 64%]
+tests/test_requests.py::TestRequests::test_long_authinfo_in_url PASSED   [ 66%]
+tests/test_requests.py::TestRequests::test_nonhttp_schemes_dont_check_URLs PASSED [ 68%]
+tests/test_requests.py::TestRequests::test_basic_auth_str_is_always_native PASSED [ 70%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_init[cid0] PASSED  [ 72%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_init[cid1] PASSED  [ 74%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_init[cid2] PASSED  [ 76%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_docstring_example PASSED [ 78%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_len PASSED         [ 80%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_getitem PASSED     [ 82%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_fixes_649 PASSED   [ 84%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_delitem PASSED     [ 86%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_contains PASSED    [ 88%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_get PASSED         [ 90%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_update PASSED      [ 92%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_update_retains_unchanged PASSED [ 94%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_iter PASSED        [ 96%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_equality PASSED    [ 98%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_setdefault PASSED  [100%]
+
+=============================== warnings summary ===============================
+requests/packages/urllib3/connectionpool.py:105
+  /testbed/requests/packages/urllib3/connectionpool.py:105: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/connectionpool.py:448
+  /testbed/requests/packages/urllib3/connectionpool.py:448: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/connectionpool.py:825
+  /testbed/requests/packages/urllib3/connectionpool.py:825: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/_collections.py:2
+requests/packages/urllib3/_collections.py:2
+  /testbed/requests/packages/urllib3/_collections.py:2: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, MutableMapping
+
+requests/packages/urllib3/poolmanager.py:33
+  /testbed/requests/packages/urllib3/poolmanager.py:33: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/models.py:796
+  /testbed/requests/models.py:796: DeprecationWarning: invalid escape sequence \*
+    """Returns the json-encoded content of a response, if any.
+
+requests/api.py:61
+  /testbed/requests/api.py:61: DeprecationWarning: invalid escape sequence \*
+    """Sends a GET request.
+
+requests/api.py:75
+  /testbed/requests/api.py:75: DeprecationWarning: invalid escape sequence \*
+    """Sends a OPTIONS request.
+
+requests/api.py:88
+  /testbed/requests/api.py:88: DeprecationWarning: invalid escape sequence \*
+    """Sends a HEAD request.
+
+requests/api.py:101
+  /testbed/requests/api.py:101: DeprecationWarning: invalid escape sequence \*
+    """Sends a POST request.
+
+requests/api.py:115
+  /testbed/requests/api.py:115: DeprecationWarning: invalid escape sequence \*
+    """Sends a PUT request.
+
+requests/api.py:128
+  /testbed/requests/api.py:128: DeprecationWarning: invalid escape sequence \*
+    """Sends a PATCH request.
+
+requests/api.py:141
+  /testbed/requests/api.py:141: DeprecationWarning: invalid escape sequence \*
+    """Sends a DELETE request.
+
+requests/sessions.py:482
+  /testbed/requests/sessions.py:482: DeprecationWarning: invalid escape sequence \*
+    """Sends a GET request. Returns :class:`Response` object.
+
+requests/sessions.py:492
+  /testbed/requests/sessions.py:492: DeprecationWarning: invalid escape sequence \*
+    """Sends a OPTIONS request. Returns :class:`Response` object.
+
+requests/sessions.py:502
+  /testbed/requests/sessions.py:502: DeprecationWarning: invalid escape sequence \*
+    """Sends a HEAD request. Returns :class:`Response` object.
+
+requests/sessions.py:512
+  /testbed/requests/sessions.py:512: DeprecationWarning: invalid escape sequence \*
+    """Sends a POST request. Returns :class:`Response` object.
+
+requests/sessions.py:523
+  /testbed/requests/sessions.py:523: DeprecationWarning: invalid escape sequence \*
+    """Sends a PUT request. Returns :class:`Response` object.
+
+requests/sessions.py:533
+  /testbed/requests/sessions.py:533: DeprecationWarning: invalid escape sequence \*
+    """Sends a PATCH request. Returns :class:`Response` object.
+
+requests/sessions.py:543
+  /testbed/requests/sessions.py:543: DeprecationWarning: invalid escape sequence \*
+    """Sends a DELETE request. Returns :class:`Response` object.
+
+tests/test_requests.py::TestRequests::test_invalid_url[InvalidSchema-localhost:3128]
+  /testbed/requests/models.py:170: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    if isinstance(hook, collections.Callable):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 22 warnings in 0.21s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 25 items
+
+tests/test_requests.py::TestCaseInsensitiveDict::test_lower_items PASSED [  4%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_preserve_key_case PASSED [  8%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_preserve_last_key_case PASSED [ 12%]
+tests/test_requests.py::TestCaseInsensitiveDict::test_copy PASSED        [ 16%]
+tests/test_requests.py::TestMorselToCookieExpires::test_expires_valid_str PASSED [ 20%]
+tests/test_requests.py::TestMorselToCookieExpires::test_expires_invalid_int[100-TypeError] PASSED [ 24%]
+tests/test_requests.py::TestMorselToCookieExpires::test_expires_invalid_int[woops-ValueError] PASSED [ 28%]
+tests/test_requests.py::TestMorselToCookieExpires::test_expires_none PASSED [ 32%]
+tests/test_requests.py::TestMorselToCookieMaxAge::test_max_age_valid_int PASSED [ 36%]
+tests/test_requests.py::TestMorselToCookieMaxAge::test_max_age_invalid_str PASSED [ 40%]
+tests/test_requests.py::TestTimeout::test_connect_timeout FAILED         [ 44%]
+
+=================================== FAILURES ===================================
+_______________________ TestTimeout.test_connect_timeout _______________________
+
+self = <requests.packages.urllib3.connection.HTTPConnection object at 0x7ffbd0126ac0>
+
+    def _new_conn(self):
+        """ Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        extra_kw = {}
+        if self.source_address:
+            extra_kw['source_address'] = self.source_address
+    
+        if self.socket_options:
+            extra_kw['socket_options'] = self.socket_options
+    
+        try:
+>           conn = connection.create_connection(
+                (self.host, self.port), self.timeout, **extra_kw)
+
+requests/packages/urllib3/connection.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/packages/urllib3/util/connection.py:91: in create_connection
+    raise err
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ('10.255.255.1', 80), timeout = 0.1, source_address = None
+socket_options = [(6, 1, 1)]
+
+    def create_connection(address, timeout=socket._GLOBAL_DEFAULT_TIMEOUT,
+                          source_address=None, socket_options=None):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        An host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        if host.startswith('['):
+            host = host.strip('[]')
+        err = None
+        for res in socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+    
+                # If provided, set socket level options before connecting.
+                # This is the only addition urllib3 makes to this function.
+                _set_socket_options(sock, socket_options)
+    
+                if timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               OSError: [Errno 101] Network is unreachable
+
+requests/packages/urllib3/util/connection.py:81: OSError
+
+During handling of the above exception, another exception occurred:
+
+self = <requests.packages.urllib3.connectionpool.HTTPConnectionPool object at 0x7ffbcff71f70>
+method = 'GET', url = '/', body = None
+headers = {'User-Agent': 'python-requests/2.10.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+retries = Retry(total=0, connect=None, read=False, redirect=None)
+redirect = False, assert_same_host = False
+timeout = <requests.packages.urllib3.util.timeout.Timeout object at 0x7ffbcff711c0>
+pool_timeout = None, release_conn = True, chunked = False
+response_kw = {'decode_content': False, 'preload_content': False}, conn = None
+err = None, clean_exit = False
+timeout_obj = <requests.packages.urllib3.util.timeout.Timeout object at 0x7ffbd0126970>
+is_new_proxy_conn = False
+
+    def urlopen(self, method, url, body=None, headers=None, retries=None,
+                redirect=True, assert_same_host=True, timeout=_Default,
+                pool_timeout=None, release_conn=None, chunked=False,
+                **response_kw):
+        """
+        Get a connection from the pool and perform an HTTP request. This is the
+        lowest level call for making a request, so you'll need to specify all
+        the raw details.
+    
+        .. note::
+    
+           More commonly, it's appropriate to use a convenience method provided
+           by :class:`.RequestMethods`, such as :meth:`request`.
+    
+        .. note::
+    
+           `release_conn` will only behave as expected if
+           `preload_content=False` because we want to make
+           `preload_content=False` the default behaviour someday soon without
+           breaking backwards compatibility.
+    
+        :param method:
+            HTTP request method (such as GET, POST, PUT, etc.)
+    
+        :param body:
+            Data to send in the request body (useful for creating
+            POST requests, see HTTPConnectionPool.post_url for
+            more convenience).
+    
+        :param headers:
+            Dictionary of custom headers to send, such as User-Agent,
+            If-None-Match, etc. If None, pool headers are used. If provided,
+            these headers completely replace any pool-specific headers.
+    
+        :param retries:
+            Configure the number of retries to allow before raising a
+            :class:`~urllib3.exceptions.MaxRetryError` exception.
+    
+            Pass ``None`` to retry until you receive a response. Pass a
+            :class:`~urllib3.util.retry.Retry` object for fine-grained control
+            over different types of retries.
+            Pass an integer number to retry connection errors that many times,
+            but no other types of errors. Pass zero to never retry.
+    
+            If ``False``, then retries are disabled and any exception is raised
+            immediately. Also, instead of raising a MaxRetryError on redirects,
+            the redirect response will be returned.
+    
+        :type retries: :class:`~urllib3.util.retry.Retry`, False, or an int.
+    
+        :param redirect:
+            If True, automatically handle redirects (status codes 301, 302,
+            303, 307, 308). Each redirect counts as a retry. Disabling retries
+            will disable redirect, too.
+    
+        :param assert_same_host:
+            If ``True``, will make sure that the host of the pool requests is
+            consistent else will raise HostChangedError. When False, you can
+            use the pool on an HTTP proxy and request foreign hosts.
+    
+        :param timeout:
+            If specified, overrides the default timeout for this one
+            request. It may be a float (in seconds) or an instance of
+            :class:`urllib3.util.Timeout`.
+    
+        :param pool_timeout:
+            If set and the pool is set to block=True, then this method will
+            block for ``pool_timeout`` seconds and raise EmptyPoolError if no
+            connection is available within the time period.
+    
+        :param release_conn:
+            If False, then the urlopen call will not release the connection
+            back into the pool once a response is received (but will release if
+            you read the entire contents of the response such as when
+            `preload_content=True`). This is useful if you're not preloading
+            the response's content immediately. You will need to call
+            ``r.release_conn()`` on the response ``r`` to return the connection
+            back into the pool. If None, it takes the value of
+            ``response_kw.get('preload_content', True)``.
+    
+        :param chunked:
+            If True, urllib3 will send the body using chunked transfer
+            encoding. Otherwise, urllib3 will send the body using the standard
+            content-length form. Defaults to False.
+    
+        :param \**response_kw:
+            Additional parameters are passed to
+            :meth:`urllib3.response.HTTPResponse.from_httplib`
+        """
+        if headers is None:
+            headers = self.headers
+    
+        if not isinstance(retries, Retry):
+            retries = Retry.from_int(retries, redirect=redirect, default=self.retries)
+    
+        if release_conn is None:
+            release_conn = response_kw.get('preload_content', True)
+    
+        # Check host
+        if assert_same_host and not self.is_same_host(url):
+            raise HostChangedError(self, url, retries)
+    
+        conn = None
+    
+        # Merge the proxy headers. Only do this in HTTP. We have to copy the
+        # headers dict so we can safely change it without those changes being
+        # reflected in anyone else's copy.
+        if self.scheme == 'http':
+            headers = headers.copy()
+            headers.update(self.proxy_headers)
+    
+        # Must keep the exception bound to a separate variable or else Python 3
+        # complains about UnboundLocalError.
+        err = None
+    
+        # Keep track of whether we cleanly exited the except block. This
+        # ensures we do proper cleanup in finally.
+        clean_exit = False
+    
+        try:
+            # Request a connection from the queue.
+            timeout_obj = self._get_timeout(timeout)
+            conn = self._get_conn(timeout=pool_timeout)
+    
+            conn.timeout = timeout_obj.connect_timeout
+    
+            is_new_proxy_conn = self.proxy is not None and not getattr(conn, 'sock', None)
+            if is_new_proxy_conn:
+                self._prepare_proxy(conn)
+    
+            # Make the request on the httplib connection object.
+>           httplib_response = self._make_request(conn, method, url,
+                                                  timeout=timeout_obj,
+                                                  body=body, headers=headers,
+                                                  chunked=chunked)
+
+requests/packages/urllib3/connectionpool.py:575: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/packages/urllib3/connectionpool.py:362: in _make_request
+    conn.request(method, url, **httplib_request_kw)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1285: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1331: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1280: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1040: in _send_output
+    self.send(msg)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:980: in send
+    self.connect()
+requests/packages/urllib3/connection.py:167: in connect
+    conn = self._new_conn()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <requests.packages.urllib3.connection.HTTPConnection object at 0x7ffbd0126ac0>
+
+    def _new_conn(self):
+        """ Establish a socket connection and set nodelay settings on it.
+    
+        :return: New socket connection.
+        """
+        extra_kw = {}
+        if self.source_address:
+            extra_kw['source_address'] = self.source_address
+    
+        if self.socket_options:
+            extra_kw['socket_options'] = self.socket_options
+    
+        try:
+            conn = connection.create_connection(
+                (self.host, self.port), self.timeout, **extra_kw)
+    
+        except SocketTimeout as e:
+            raise ConnectTimeoutError(
+                self, "Connection to %s timed out. (connect timeout=%s)" %
+                (self.host, self.timeout))
+    
+        except SocketError as e:
+>           raise NewConnectionError(
+                self, "Failed to establish a new connection: %s" % e)
+E           requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x7ffbd0126ac0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+requests/packages/urllib3/connection.py:150: NewConnectionError
+
+During handling of the above exception, another exception occurred:
+
+self = <requests.adapters.HTTPAdapter object at 0x7ffbd0127e50>
+request = <PreparedRequest [GET]>, stream = False
+timeout = <requests.packages.urllib3.util.timeout.Timeout object at 0x7ffbcff711c0>
+verify = True, cert = None, proxies = OrderedDict()
+
+    def send(self, request, stream=False, timeout=None, verify=True, cert=None, proxies=None):
+        """Sends PreparedRequest object. Returns Response object.
+    
+        :param request: The :class:`PreparedRequest <PreparedRequest>` being sent.
+        :param stream: (optional) Whether to stream the request content.
+        :param timeout: (optional) How long to wait for the server to send
+            data before giving up, as a float, or a :ref:`(connect timeout,
+            read timeout) <timeouts>` tuple.
+        :type timeout: float or tuple
+        :param verify: (optional) Whether to verify SSL certificates.
+        :param cert: (optional) Any user-provided SSL certificate to be trusted.
+        :param proxies: (optional) The proxies dictionary to apply to the request.
+        """
+    
+        conn = self.get_connection(request.url, proxies)
+    
+        self.cert_verify(conn, request.url, verify, cert)
+        url = self.request_url(request, proxies)
+        self.add_headers(request)
+    
+        chunked = not (request.body is None or 'Content-Length' in request.headers)
+    
+        if isinstance(timeout, tuple):
+            try:
+                connect, read = timeout
+                timeout = TimeoutSauce(connect=connect, read=read)
+            except ValueError as e:
+                # this may raise a string formatting error.
+                err = ("Invalid timeout {0}. Pass a (connect, read) "
+                       "timeout tuple, or a single float to set "
+                       "both timeouts to the same value".format(timeout))
+                raise ValueError(err)
+        else:
+            timeout = TimeoutSauce(connect=timeout, read=timeout)
+    
+        try:
+            if not chunked:
+>               resp = conn.urlopen(
+                    method=request.method,
+                    url=url,
+                    body=request.body,
+                    headers=request.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.max_retries,
+                    timeout=timeout
+                )
+
+requests/adapters.py:407: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/packages/urllib3/connectionpool.py:622: in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Retry(total=0, connect=None, read=False, redirect=None), method = 'GET'
+url = '/', response = None
+error = NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7ffbd0126ac0>: Failed to establish a new connection: [Errno 101] Network is unreachable')
+_pool = <requests.packages.urllib3.connectionpool.HTTPConnectionPool object at 0x7ffbcff71f70>
+_stacktrace = <traceback object at 0x7ffbd00acb40>
+
+    def increment(self, method=None, url=None, response=None, error=None,
+                  _pool=None, _stacktrace=None):
+        """ Return a new Retry object with incremented retry counters.
+    
+        :param response: A response object, or None, if the server did not
+            return a response.
+        :type response: :class:`~urllib3.response.HTTPResponse`
+        :param Exception error: An error encountered during the request, or
+            None if the response was received successfully.
+    
+        :return: A new ``Retry`` object.
+        """
+        if self.total is False and error:
+            # Disabled, indicate to re-raise the error.
+            raise six.reraise(type(error), error, _stacktrace)
+    
+        total = self.total
+        if total is not None:
+            total -= 1
+    
+        _observed_errors = self._observed_errors
+        connect = self.connect
+        read = self.read
+        redirect = self.redirect
+        cause = 'unknown'
+    
+        if error and self._is_connection_error(error):
+            # Connect retry?
+            if connect is False:
+                raise six.reraise(type(error), error, _stacktrace)
+            elif connect is not None:
+                connect -= 1
+            _observed_errors += 1
+    
+        elif error and self._is_read_error(error):
+            # Read retry?
+            if read is False:
+                raise six.reraise(type(error), error, _stacktrace)
+            elif read is not None:
+                read -= 1
+            _observed_errors += 1
+    
+        elif response and response.get_redirect_location():
+            # Redirect retry?
+            if redirect is not None:
+                redirect -= 1
+            cause = 'too many redirects'
+    
+        else:
+            # Incrementing because of a server error like a 500 in
+            # status_forcelist and a the given method is in the whitelist
+            _observed_errors += 1
+            cause = ResponseError.GENERIC_ERROR
+            if response and response.status:
+                cause = ResponseError.SPECIFIC_ERROR.format(
+                    status_code=response.status)
+    
+        new_retry = self.new(
+            total=total,
+            connect=connect, read=read, redirect=redirect,
+            _observed_errors=_observed_errors)
+    
+        if new_retry.is_exhausted():
+>           raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E           requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.255.255.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7ffbd0126ac0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+requests/packages/urllib3/util/retry.py:281: MaxRetryError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.test_requests.TestTimeout object at 0x7ffbd01273d0>
+
+    def test_connect_timeout(self):
+        try:
+>           requests.get(TARPIT, timeout=(0.1, None))
+
+tests/test_requests.py:1534: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/api.py:71: in get
+    return request('get', url, params=params, **kwargs)
+requests/api.py:57: in request
+    return session.request(method=method, url=url, **kwargs)
+requests/sessions.py:477: in request
+    resp = self.send(prep, **send_kwargs)
+requests/sessions.py:587: in send
+    r = adapter.send(request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <requests.adapters.HTTPAdapter object at 0x7ffbd0127e50>
+request = <PreparedRequest [GET]>, stream = False
+timeout = <requests.packages.urllib3.util.timeout.Timeout object at 0x7ffbcff711c0>
+verify = True, cert = None, proxies = OrderedDict()
+
+    def send(self, request, stream=False, timeout=None, verify=True, cert=None, proxies=None):
+        """Sends PreparedRequest object. Returns Response object.
+    
+        :param request: The :class:`PreparedRequest <PreparedRequest>` being sent.
+        :param stream: (optional) Whether to stream the request content.
+        :param timeout: (optional) How long to wait for the server to send
+            data before giving up, as a float, or a :ref:`(connect timeout,
+            read timeout) <timeouts>` tuple.
+        :type timeout: float or tuple
+        :param verify: (optional) Whether to verify SSL certificates.
+        :param cert: (optional) Any user-provided SSL certificate to be trusted.
+        :param proxies: (optional) The proxies dictionary to apply to the request.
+        """
+    
+        conn = self.get_connection(request.url, proxies)
+    
+        self.cert_verify(conn, request.url, verify, cert)
+        url = self.request_url(request, proxies)
+        self.add_headers(request)
+    
+        chunked = not (request.body is None or 'Content-Length' in request.headers)
+    
+        if isinstance(timeout, tuple):
+            try:
+                connect, read = timeout
+                timeout = TimeoutSauce(connect=connect, read=read)
+            except ValueError as e:
+                # this may raise a string formatting error.
+                err = ("Invalid timeout {0}. Pass a (connect, read) "
+                       "timeout tuple, or a single float to set "
+                       "both timeouts to the same value".format(timeout))
+                raise ValueError(err)
+        else:
+            timeout = TimeoutSauce(connect=timeout, read=timeout)
+    
+        try:
+            if not chunked:
+                resp = conn.urlopen(
+                    method=request.method,
+                    url=url,
+                    body=request.body,
+                    headers=request.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.max_retries,
+                    timeout=timeout
+                )
+    
+            # Send the request.
+            else:
+                if hasattr(conn, 'proxy_pool'):
+                    conn = conn.proxy_pool
+    
+                low_conn = conn._get_conn(timeout=DEFAULT_POOL_TIMEOUT)
+    
+                try:
+                    low_conn.putrequest(request.method,
+                                        url,
+                                        skip_accept_encoding=True)
+    
+                    for header, value in request.headers.items():
+                        low_conn.putheader(header, value)
+    
+                    low_conn.endheaders()
+    
+                    for i in request.body:
+                        low_conn.send(hex(len(i))[2:].encode('utf-8'))
+                        low_conn.send(b'\r\n')
+                        low_conn.send(i)
+                        low_conn.send(b'\r\n')
+                    low_conn.send(b'0\r\n\r\n')
+    
+                    # Receive the response from the server
+                    try:
+                        # For Python 2.7+ versions, use buffering of HTTP
+                        # responses
+                        r = low_conn.getresponse(buffering=True)
+                    except TypeError:
+                        # For compatibility with Python 2.6 versions and back
+                        r = low_conn.getresponse()
+    
+                    resp = HTTPResponse.from_httplib(
+                        r,
+                        pool=conn,
+                        connection=low_conn,
+                        preload_content=False,
+                        decode_content=False
+                    )
+                except:
+                    # If we hit any problems here, clean up the connection.
+                    # Then, reraise so that we can handle the actual exception.
+                    low_conn.close()
+                    raise
+    
+        except (ProtocolError, socket.error) as err:
+            raise ConnectionError(err, request=request)
+    
+        except MaxRetryError as e:
+            if isinstance(e.reason, ConnectTimeoutError):
+                # TODO: Remove this in 3.0.0: see #2811
+                if not isinstance(e.reason, NewConnectionError):
+                    raise ConnectTimeout(e, request=request)
+    
+            if isinstance(e.reason, ResponseError):
+                raise RetryError(e, request=request)
+    
+            if isinstance(e.reason, _ProxyError):
+                raise ProxyError(e, request=request)
+    
+>           raise ConnectionError(e, request=request)
+E           requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.255.255.1', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7ffbd0126ac0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+requests/adapters.py:481: ConnectionError
+=============================== warnings summary ===============================
+requests/packages/urllib3/connectionpool.py:105
+  /testbed/requests/packages/urllib3/connectionpool.py:105: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/connectionpool.py:448
+  /testbed/requests/packages/urllib3/connectionpool.py:448: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/connectionpool.py:825
+  /testbed/requests/packages/urllib3/connectionpool.py:825: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/packages/urllib3/_collections.py:2
+requests/packages/urllib3/_collections.py:2
+  /testbed/requests/packages/urllib3/_collections.py:2: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, MutableMapping
+
+requests/packages/urllib3/poolmanager.py:33
+  /testbed/requests/packages/urllib3/poolmanager.py:33: DeprecationWarning: invalid escape sequence \*
+    """
+
+requests/models.py:796
+  /testbed/requests/models.py:796: DeprecationWarning: invalid escape sequence \*
+    """Returns the json-encoded content of a response, if any.
+
+requests/api.py:61
+  /testbed/requests/api.py:61: DeprecationWarning: invalid escape sequence \*
+    """Sends a GET request.
+
+requests/api.py:75
+  /testbed/requests/api.py:75: DeprecationWarning: invalid escape sequence \*
+    """Sends a OPTIONS request.
+
+requests/api.py:88
+  /testbed/requests/api.py:88: DeprecationWarning: invalid escape sequence \*
+    """Sends a HEAD request.
+
+requests/api.py:101
+  /testbed/requests/api.py:101: DeprecationWarning: invalid escape sequence \*
+    """Sends a POST request.
+
+requests/api.py:115
+  /testbed/requests/api.py:115: DeprecationWarning: invalid escape sequence \*
+    """Sends a PUT request.
+
+requests/api.py:128
+  /testbed/requests/api.py:128: DeprecationWarning: invalid escape sequence \*
+    """Sends a PATCH request.
+
+requests/api.py:141
+  /testbed/requests/api.py:141: DeprecationWarning: invalid escape sequence \*
+    """Sends a DELETE request.
+
+requests/sessions.py:482
+  /testbed/requests/sessions.py:482: DeprecationWarning: invalid escape sequence \*
+    """Sends a GET request. Returns :class:`Response` object.
+
+requests/sessions.py:492
+  /testbed/requests/sessions.py:492: DeprecationWarning: invalid escape sequence \*
+    """Sends a OPTIONS request. Returns :class:`Response` object.
+
+requests/sessions.py:502
+  /testbed/requests/sessions.py:502: DeprecationWarning: invalid escape sequence \*
+    """Sends a HEAD request. Returns :class:`Response` object.
+
+requests/sessions.py:512
+  /testbed/requests/sessions.py:512: DeprecationWarning: invalid escape sequence \*
+    """Sends a POST request. Returns :class:`Response` object.
+
+requests/sessions.py:523
+  /testbed/requests/sessions.py:523: DeprecationWarning: invalid escape sequence \*
+    """Sends a PUT request. Returns :class:`Response` object.
+
+requests/sessions.py:533
+  /testbed/requests/sessions.py:533: DeprecationWarning: invalid escape sequence \*
+    """Sends a PATCH request. Returns :class:`Response` object.
+
+requests/sessions.py:543
+  /testbed/requests/sessions.py:543: DeprecationWarning: invalid escape sequence \*
+    """Sends a DELETE request. Returns :class:`Response` object.
+
+tests/test_requests.py::TestTimeout::test_connect_timeout
+  /testbed/requests/models.py:170: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    if isinstance(hook, collections.Callable):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_requests.py::TestTimeout::test_connect_timeout - requests.e...
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+================== 1 failed, 10 passed, 22 warnings in 0.29s ===================
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/test_requests.py::TestCaseInsensitiveDict::test_lower_items tests/test_requests.py::TestCaseInsensitiveDict::test_preserve_key_case tests/test_requests.py::TestCaseInsensitiveDict::test_preserve_last_key_case tests/test_requests.py::TestCaseInsensitiveDict::test_copy tests/test_requests.py::TestMorselToCookieExpires::test_expires_valid_str tests/test_requests.py::TestMorselToCookieExpires::test_expires_invalid_int[100-TypeError] tests/test_requests.py::TestMorselToCookieExpires::test_expires_invalid_int[woops-ValueError] tests/test_requests.py::TestMorselToCookieExpires::test_expires_none tests/test_requests.py::TestMorselToCookieMaxAge::test_max_age_valid_int tests/test_requests.py::TestMorselToCookieMaxAge::test_max_age_invalid_str tests/test_requests.py::TestTimeout::test_connect_timeout tests/test_requests.py::TestTimeout::test_total_timeout_connect tests/test_requests.py::test_json_encodes_as_bytes tests/test_requests.py::test_proxy_env_vars_override_default[http_proxy-http://example.com-socks5://proxy.com:9876] tests/test_requests.py::test_proxy_env_vars_override_default[https_proxy-https://example.com-socks5://proxy.com:9876] tests/test_requests.py::test_proxy_env_vars_override_default[all_proxy-http://example.com-socks5://proxy.com:9876] tests/test_requests.py::test_proxy_env_vars_override_default[all_proxy-https://example.com-socks5://proxy.com:9876] tests/test_requests.py::test_data_argument_accepts_tuples[data0] tests/test_requests.py::test_data_argument_accepts_tuples[data1] tests/test_requests.py::test_data_argument_accepts_tuples[data2] tests/test_requests.py::test_prepared_copy[None] tests/test_requests.py::test_prepared_copy[kwargs1] tests/test_requests.py::test_prepared_copy[kwargs2] tests/test_requests.py::test_prepared_copy[kwargs3] tests/test_requests.py::test_vendor_aliases` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['tests/test_requests.py::TestCaseInsensitiveDict::test_lower_items', 'tests/test_requests.py::TestCaseInsensitiveDict::test_preserve_key_case', 'tests/test_requests.py::TestCaseInsensitiveDict::test_preserve_last_key_case', 'tests/test_requests.py::TestCaseInsensitiveDict::test_copy', 'tests/test_requests.py::TestMorselToCookieExpires::test_expires_valid_str', 'tests/test_requests.py::TestMorselToCookieExpires::test_expires_invalid_int[100-TypeError]', 'tests/test_requests.py::TestMorselToCookieExpires::test_expires_invalid_int[woops-ValueError]', 'tests/test_requests.py::TestMorselToCookieExpires::test_expires_none', 'tests/test_requests.py::TestMorselToCookieMaxAge::test_max_age_valid_int', 'tests/test_requests.py::TestMorselToCookieMaxAge::test_max_age_invalid_str', 'tests/test_requests.py::TestTimeout::test_connect_timeout', 'tests/test_requests.py::TestTimeout::test_total_timeout_connect', 'tests/test_requests.py::test_json_encodes_as_bytes', 'tests/test_requests.py::test_proxy_env_vars_override_default[http_proxy-http://example.com-socks5://proxy.com:9876]', 'tests/test_requests.py::test_proxy_env_vars_override_default[https_proxy-https://example.com-socks5://proxy.com:9876]', 'tests/test_requests.py::test_proxy_env_vars_override_default[all_proxy-http://example.com-socks5://proxy.com:9876]', 'tests/test_requests.py::test_proxy_env_vars_override_default[all_proxy-https://example.com-socks5://proxy.com:9876]', 'tests/test_requests.py::test_data_argument_accepts_tuples[data0]', 'tests/test_requests.py::test_data_argument_accepts_tuples[data1]', 'tests/test_requests.py::test_data_argument_accepts_tuples[data2]', 'tests/test_requests.py::test_prepared_copy[None]', 'tests/test_requests.py::test_prepared_copy[kwargs1]', 'tests/test_requests.py::test_prepared_copy[kwargs2]', 'tests/test_requests.py::test_prepared_copy[kwargs3]', 'tests/test_requests.py::test_vendor_aliases']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

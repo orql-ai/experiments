@@ -1,0 +1,1278 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (4 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 4 items
+
+tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES_WITH_HEADERS FAILED [ 25%]
+
+=================================== FAILURES ===================================
+__________ RequestsTestSuite.test_POSTBIN_GET_POST_FILES_WITH_HEADERS __________
+
+self = <Request [POST]>, anyway = False, prefetch = True
+
+    def send(self, anyway=False, prefetch=None):
+        """Sends the request. Returns True if successful, False if not.
+        If there was an HTTPError during transmission,
+        self.response.status_code will contain the HTTPError code.
+    
+        Once a request is successfully sent, `sent` will equal True.
+    
+        :param anyway: If True, request will be sent, even if it has
+        already been sent.
+    
+        :param prefetch: If not None, will override the request's own setting
+        for prefetch.
+        """
+    
+        # Build the URL
+        url = self.full_url
+    
+        # Pre-request hook.
+        r = dispatch_hook('pre_request', self.hooks, self)
+        self.__dict__.update(r.__dict__)
+    
+        # Logging
+        if self.config.get('verbose'):
+            self.config.get('verbose').write('%s   %s   %s\n' % (
+                datetime.now().isoformat(), self.method, url
+            ))
+    
+        # Use .netrc auth if none was provided.
+        if not self.auth and self.config.get('trust_env'):
+            self.auth = get_netrc_auth(url)
+    
+        if self.auth:
+            if isinstance(self.auth, tuple) and len(self.auth) == 2:
+                # special-case basic HTTP auth
+                self.auth = HTTPBasicAuth(*self.auth)
+    
+            # Allow auth to make its changes.
+            r = self.auth(self)
+    
+            # Update self to reflect the auth changes.
+            self.__dict__.update(r.__dict__)
+    
+        # Nottin' on you.
+        body = None
+        content_type = None
+    
+        # Multi-part file uploads.
+        if self.files:
+            (body, content_type) = self._encode_files(self.files)
+        else:
+            if self.data:
+    
+                body = self._encode_params(self.data)
+                if isinstance(self.data, str) or isinstance(self.data, builtin_str) or hasattr(self.data, 'read'):
+                    content_type = None
+                else:
+                    content_type = 'application/x-www-form-urlencoded'
+    
+        # Add content-type if it wasn't explicitly provided.
+        if (content_type) and (not 'content-type' in self.headers):
+            self.headers['Content-Type'] = content_type
+    
+        _p = urlparse(url)
+        no_proxy = filter(lambda x: x.strip(), self.proxies.get('no', '').split(','))
+        proxy = self.proxies.get(_p.scheme)
+    
+        if proxy and not any(map(_p.hostname.endswith, no_proxy)):
+            conn = poolmanager.proxy_from_url(proxy)
+            _proxy = urlparse(proxy)
+            if '@' in _proxy.netloc:
+                auth, url = _proxy.netloc.split('@', 1)
+                self.proxy_auth = HTTPProxyAuth(*auth.split(':', 1))
+                r = self.proxy_auth(self)
+                self.__dict__.update(r.__dict__)
+        else:
+            # Check to see if keep_alive is allowed.
+            try:
+                if self.config.get('keep_alive'):
+                    conn = self._poolmanager.connection_from_url(url)
+                else:
+                    conn = connectionpool.connection_from_url(url)
+                    self.headers['Connection'] = 'close'
+            except LocationParseError as e:
+                raise InvalidURL(e)
+    
+        if url.startswith('https') and self.verify:
+    
+            cert_loc = None
+    
+            # Allow self-specified cert location.
+            if self.verify is not True:
+                cert_loc = self.verify
+    
+            # Look for configuration.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('REQUESTS_CA_BUNDLE')
+    
+            # Curl compatibility.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('CURL_CA_BUNDLE')
+    
+            if not cert_loc:
+                cert_loc = DEFAULT_CA_BUNDLE_PATH
+    
+            if not cert_loc:
+                raise Exception("Could not find a suitable SSL CA certificate bundle.")
+    
+            conn.cert_reqs = 'CERT_REQUIRED'
+            conn.ca_certs = cert_loc
+        else:
+            conn.cert_reqs = 'CERT_NONE'
+            conn.ca_certs = None
+    
+        if self.cert:
+            if len(self.cert) == 2:
+                conn.cert_file = self.cert[0]
+                conn.key_file = self.cert[1]
+            else:
+                conn.cert_file = self.cert
+    
+        if not self.sent or anyway:
+    
+            # Skip if 'cookie' header is explicitly set.
+            if 'cookie' not in self.headers:
+                cookie_header = get_cookie_header(self.cookies, self)
+                if cookie_header is not None:
+                    self.headers['Cookie'] = cookie_header
+    
+            # Pre-send hook.
+            r = dispatch_hook('pre_send', self.hooks, self)
+            self.__dict__.update(r.__dict__)
+    
+            # catch urllib3 exceptions and throw Requests exceptions
+            try:
+                # Send the request.
+>               r = conn.urlopen(
+                    method=self.method,
+                    url=self.path_url,
+                    body=body,
+                    headers=self.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.config.get('max_retries', 0),
+                    timeout=self.timeout,
+                )
+
+requests/models.py:617: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/packages/urllib3/connectionpool.py:421: in urlopen
+    httplib_response = self._make_request(conn, method, url,
+requests/packages/urllib3/connectionpool.py:275: in _make_request
+    conn.request(method, url, **httplib_request_kw)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1285: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1331: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1280: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1040: in _send_output
+    self.send(msg)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:980: in send
+    self.connect()
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:946: in connect
+    self.sock = self._create_connection(
+/opt/miniconda3/envs/testbed/lib/python3.9/socket.py:835: in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+host = 'httpbin.org', port = 80, family = 0, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, flags = 0
+
+    def getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+        """Resolve host and port into list of address info entries.
+    
+        Translate the host/port argument into a sequence of 5-tuples that contain
+        all the necessary arguments for creating a socket connected to that service.
+        host is a domain name, a string representation of an IPv4/v6 address or
+        None. port is a string service name such as 'http', a numeric port number or
+        None. By passing None as the value of host and port, you can pass NULL to
+        the underlying C API.
+    
+        The family, type and proto arguments can be optionally specified in order to
+        narrow the list of addresses returned. Passing zero as a value for each of
+        these arguments selects the full range of results.
+        """
+        # We override this function since we want to translate the numeric family
+        # and socket type values to enum constants.
+        addrlist = []
+>       for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+E       socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+/opt/miniconda3/envs/testbed/lib/python3.9/socket.py:966: gaierror
+
+During handling of the above exception, another exception occurred:
+
+self = <test_requests.RequestsTestSuite testMethod=test_POSTBIN_GET_POST_FILES_WITH_HEADERS>
+
+    def test_POSTBIN_GET_POST_FILES_WITH_HEADERS(self):
+    
+        for service in SERVICES:
+    
+            url = service('post')
+    
+            with open(__file__) as f:
+    
+>               post2 = post(url,
+                    files={'some': f},
+                    headers={'User-Agent': 'requests-tests'})
+
+tests/test_requests.py:358: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/api.py:98: in post
+    return request('post', url, data=data, **kwargs)
+requests/safe_mode.py:39: in wrapped
+    return function(method, url, **kwargs)
+requests/api.py:51: in request
+    return session.request(method=method, url=url, **kwargs)
+requests/sessions.py:241: in request
+    r.send(prefetch=prefetch)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Request [POST]>, anyway = False, prefetch = True
+
+    def send(self, anyway=False, prefetch=None):
+        """Sends the request. Returns True if successful, False if not.
+        If there was an HTTPError during transmission,
+        self.response.status_code will contain the HTTPError code.
+    
+        Once a request is successfully sent, `sent` will equal True.
+    
+        :param anyway: If True, request will be sent, even if it has
+        already been sent.
+    
+        :param prefetch: If not None, will override the request's own setting
+        for prefetch.
+        """
+    
+        # Build the URL
+        url = self.full_url
+    
+        # Pre-request hook.
+        r = dispatch_hook('pre_request', self.hooks, self)
+        self.__dict__.update(r.__dict__)
+    
+        # Logging
+        if self.config.get('verbose'):
+            self.config.get('verbose').write('%s   %s   %s\n' % (
+                datetime.now().isoformat(), self.method, url
+            ))
+    
+        # Use .netrc auth if none was provided.
+        if not self.auth and self.config.get('trust_env'):
+            self.auth = get_netrc_auth(url)
+    
+        if self.auth:
+            if isinstance(self.auth, tuple) and len(self.auth) == 2:
+                # special-case basic HTTP auth
+                self.auth = HTTPBasicAuth(*self.auth)
+    
+            # Allow auth to make its changes.
+            r = self.auth(self)
+    
+            # Update self to reflect the auth changes.
+            self.__dict__.update(r.__dict__)
+    
+        # Nottin' on you.
+        body = None
+        content_type = None
+    
+        # Multi-part file uploads.
+        if self.files:
+            (body, content_type) = self._encode_files(self.files)
+        else:
+            if self.data:
+    
+                body = self._encode_params(self.data)
+                if isinstance(self.data, str) or isinstance(self.data, builtin_str) or hasattr(self.data, 'read'):
+                    content_type = None
+                else:
+                    content_type = 'application/x-www-form-urlencoded'
+    
+        # Add content-type if it wasn't explicitly provided.
+        if (content_type) and (not 'content-type' in self.headers):
+            self.headers['Content-Type'] = content_type
+    
+        _p = urlparse(url)
+        no_proxy = filter(lambda x: x.strip(), self.proxies.get('no', '').split(','))
+        proxy = self.proxies.get(_p.scheme)
+    
+        if proxy and not any(map(_p.hostname.endswith, no_proxy)):
+            conn = poolmanager.proxy_from_url(proxy)
+            _proxy = urlparse(proxy)
+            if '@' in _proxy.netloc:
+                auth, url = _proxy.netloc.split('@', 1)
+                self.proxy_auth = HTTPProxyAuth(*auth.split(':', 1))
+                r = self.proxy_auth(self)
+                self.__dict__.update(r.__dict__)
+        else:
+            # Check to see if keep_alive is allowed.
+            try:
+                if self.config.get('keep_alive'):
+                    conn = self._poolmanager.connection_from_url(url)
+                else:
+                    conn = connectionpool.connection_from_url(url)
+                    self.headers['Connection'] = 'close'
+            except LocationParseError as e:
+                raise InvalidURL(e)
+    
+        if url.startswith('https') and self.verify:
+    
+            cert_loc = None
+    
+            # Allow self-specified cert location.
+            if self.verify is not True:
+                cert_loc = self.verify
+    
+            # Look for configuration.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('REQUESTS_CA_BUNDLE')
+    
+            # Curl compatibility.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('CURL_CA_BUNDLE')
+    
+            if not cert_loc:
+                cert_loc = DEFAULT_CA_BUNDLE_PATH
+    
+            if not cert_loc:
+                raise Exception("Could not find a suitable SSL CA certificate bundle.")
+    
+            conn.cert_reqs = 'CERT_REQUIRED'
+            conn.ca_certs = cert_loc
+        else:
+            conn.cert_reqs = 'CERT_NONE'
+            conn.ca_certs = None
+    
+        if self.cert:
+            if len(self.cert) == 2:
+                conn.cert_file = self.cert[0]
+                conn.key_file = self.cert[1]
+            else:
+                conn.cert_file = self.cert
+    
+        if not self.sent or anyway:
+    
+            # Skip if 'cookie' header is explicitly set.
+            if 'cookie' not in self.headers:
+                cookie_header = get_cookie_header(self.cookies, self)
+                if cookie_header is not None:
+                    self.headers['Cookie'] = cookie_header
+    
+            # Pre-send hook.
+            r = dispatch_hook('pre_send', self.hooks, self)
+            self.__dict__.update(r.__dict__)
+    
+            # catch urllib3 exceptions and throw Requests exceptions
+            try:
+                # Send the request.
+                r = conn.urlopen(
+                    method=self.method,
+                    url=self.path_url,
+                    body=body,
+                    headers=self.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.config.get('max_retries', 0),
+                    timeout=self.timeout,
+                )
+                self.sent = True
+    
+            except socket.error as sockerr:
+>               raise ConnectionError(sockerr)
+E               requests.exceptions.ConnectionError: [Errno -3] Temporary failure in name resolution
+
+requests/models.py:632: ConnectionError
+=============================== warnings summary ===============================
+requests/packages/urllib3/_collections.py:7
+  /testbed/requests/packages/urllib3/_collections.py:7: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import MutableMapping
+
+requests/models.py:796
+  /testbed/requests/models.py:796: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.status_code is 0:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES_WITH_HEADERS
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================== 1 failed, 2 warnings in 0.20s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.psf__requests-863:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.psf__requests-863
+a29e40fa8689: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+85fa66a7c68f: Pulling fs layer
+cd36b34974ed: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+cfb9c7729bac: Pulling fs layer
+136d89f00a8d: Pulling fs layer
+500327121db6: Pulling fs layer
+3db417bb9bd8: Pulling fs layer
+ac5b61163589: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+c1dfad293124: Pulling fs layer
+836b79e2a6e5: Download complete
+c1dfad293124: Download complete
+e5a28c0c137e: Download complete
+136d89f00a8d: Download complete
+a29e40fa8689: Download complete
+3db417bb9bd8: Download complete
+ac5b61163589: Download complete
+cd36b34974ed: Download complete
+85fa66a7c68f: Download complete
+7478e0ac0f23: Download complete
+cfb9c7729bac: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+c1dfad293124: Pull complete
+cd36b34974ed: Pull complete
+85fa66a7c68f: Pull complete
+136d89f00a8d: Pull complete
+3db417bb9bd8: Pull complete
+cfb9c7729bac: Pull complete
+a29e40fa8689: Pull complete
+Digest: sha256:2df5e549498b1416f276e9532ee6e41ce7e71b08b54f1074e11daefda73ffc14
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.psf__requests-863:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES_WITH_HEADERS tests/test_requests.py::RequestsTestSuite::test_nonurlencoded_postdata tests/test_requests.py::RequestsTestSuite::test_prefetch_redirect_bug tests/test_requests.py::RequestsTestSuite::test_urlencoded_post_data` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (60 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 50 items
+
+tests/test_requests.py::RequestsTestSuite::test_BASICAUTH_HTTP_200_OK_GET FAILED [  2%]
+
+=================================== FAILURES ===================================
+_______________ RequestsTestSuite.test_BASICAUTH_HTTP_200_OK_GET _______________
+
+self = <Request [GET]>, anyway = False, prefetch = True
+
+    def send(self, anyway=False, prefetch=None):
+        """Sends the request. Returns True if successful, False if not.
+        If there was an HTTPError during transmission,
+        self.response.status_code will contain the HTTPError code.
+    
+        Once a request is successfully sent, `sent` will equal True.
+    
+        :param anyway: If True, request will be sent, even if it has
+        already been sent.
+    
+        :param prefetch: If not None, will override the request's own setting
+        for prefetch.
+        """
+    
+        # Build the URL
+        url = self.full_url
+    
+        # Pre-request hook.
+        r = dispatch_hook('pre_request', self.hooks, self)
+        self.__dict__.update(r.__dict__)
+    
+        # Logging
+        if self.config.get('verbose'):
+            self.config.get('verbose').write('%s   %s   %s\n' % (
+                datetime.now().isoformat(), self.method, url
+            ))
+    
+        # Use .netrc auth if none was provided.
+        if not self.auth and self.config.get('trust_env'):
+            self.auth = get_netrc_auth(url)
+    
+        if self.auth:
+            if isinstance(self.auth, tuple) and len(self.auth) == 2:
+                # special-case basic HTTP auth
+                self.auth = HTTPBasicAuth(*self.auth)
+    
+            # Allow auth to make its changes.
+            r = self.auth(self)
+    
+            # Update self to reflect the auth changes.
+            self.__dict__.update(r.__dict__)
+    
+        # Nottin' on you.
+        body = None
+        content_type = None
+    
+        # Multi-part file uploads.
+        if self.files:
+            (body, content_type) = self._encode_files(self.files)
+        else:
+            if self.data:
+    
+                body = self._encode_params(self.data)
+                if isinstance(self.data, str) or isinstance(self.data, builtin_str) or hasattr(self.data, 'read'):
+                    content_type = None
+                else:
+                    content_type = 'application/x-www-form-urlencoded'
+    
+        # Add content-type if it wasn't explicitly provided.
+        if (content_type) and (not 'content-type' in self.headers):
+            self.headers['Content-Type'] = content_type
+    
+        _p = urlparse(url)
+        no_proxy = filter(lambda x: x.strip(), self.proxies.get('no', '').split(','))
+        proxy = self.proxies.get(_p.scheme)
+    
+        if proxy and not any(map(_p.hostname.endswith, no_proxy)):
+            conn = poolmanager.proxy_from_url(proxy)
+            _proxy = urlparse(proxy)
+            if '@' in _proxy.netloc:
+                auth, url = _proxy.netloc.split('@', 1)
+                self.proxy_auth = HTTPProxyAuth(*auth.split(':', 1))
+                r = self.proxy_auth(self)
+                self.__dict__.update(r.__dict__)
+        else:
+            # Check to see if keep_alive is allowed.
+            try:
+                if self.config.get('keep_alive'):
+                    conn = self._poolmanager.connection_from_url(url)
+                else:
+                    conn = connectionpool.connection_from_url(url)
+                    self.headers['Connection'] = 'close'
+            except LocationParseError as e:
+                raise InvalidURL(e)
+    
+        if url.startswith('https') and self.verify:
+    
+            cert_loc = None
+    
+            # Allow self-specified cert location.
+            if self.verify is not True:
+                cert_loc = self.verify
+    
+            # Look for configuration.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('REQUESTS_CA_BUNDLE')
+    
+            # Curl compatibility.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('CURL_CA_BUNDLE')
+    
+            if not cert_loc:
+                cert_loc = DEFAULT_CA_BUNDLE_PATH
+    
+            if not cert_loc:
+                raise Exception("Could not find a suitable SSL CA certificate bundle.")
+    
+            conn.cert_reqs = 'CERT_REQUIRED'
+            conn.ca_certs = cert_loc
+        else:
+            conn.cert_reqs = 'CERT_NONE'
+            conn.ca_certs = None
+    
+        if self.cert:
+            if len(self.cert) == 2:
+                conn.cert_file = self.cert[0]
+                conn.key_file = self.cert[1]
+            else:
+                conn.cert_file = self.cert
+    
+        if not self.sent or anyway:
+    
+            # Skip if 'cookie' header is explicitly set.
+            if 'cookie' not in self.headers:
+                cookie_header = get_cookie_header(self.cookies, self)
+                if cookie_header is not None:
+                    self.headers['Cookie'] = cookie_header
+    
+            # Pre-send hook.
+            r = dispatch_hook('pre_send', self.hooks, self)
+            self.__dict__.update(r.__dict__)
+    
+            # catch urllib3 exceptions and throw Requests exceptions
+            try:
+                # Send the request.
+>               r = conn.urlopen(
+                    method=self.method,
+                    url=self.path_url,
+                    body=body,
+                    headers=self.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.config.get('max_retries', 0),
+                    timeout=self.timeout,
+                )
+
+requests/models.py:617: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/packages/urllib3/connectionpool.py:421: in urlopen
+    httplib_response = self._make_request(conn, method, url,
+requests/packages/urllib3/connectionpool.py:275: in _make_request
+    conn.request(method, url, **httplib_request_kw)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1285: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1331: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1280: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1040: in _send_output
+    self.send(msg)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:980: in send
+    self.connect()
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:946: in connect
+    self.sock = self._create_connection(
+/opt/miniconda3/envs/testbed/lib/python3.9/socket.py:835: in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+host = 'httpbin.org', port = 80, family = 0, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, flags = 0
+
+    def getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+        """Resolve host and port into list of address info entries.
+    
+        Translate the host/port argument into a sequence of 5-tuples that contain
+        all the necessary arguments for creating a socket connected to that service.
+        host is a domain name, a string representation of an IPv4/v6 address or
+        None. port is a string service name such as 'http', a numeric port number or
+        None. By passing None as the value of host and port, you can pass NULL to
+        the underlying C API.
+    
+        The family, type and proto arguments can be optionally specified in order to
+        narrow the list of addresses returned. Passing zero as a value for each of
+        these arguments selects the full range of results.
+        """
+        # We override this function since we want to translate the numeric family
+        # and socket type values to enum constants.
+        addrlist = []
+>       for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+E       socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+/opt/miniconda3/envs/testbed/lib/python3.9/socket.py:966: gaierror
+
+During handling of the above exception, another exception occurred:
+
+self = <test_requests.RequestsTestSuite testMethod=test_BASICAUTH_HTTP_200_OK_GET>
+
+    def test_BASICAUTH_HTTP_200_OK_GET(self):
+    
+        for service in SERVICES:
+    
+            auth = HTTPBasicAuth('user', 'pass')
+            url = service('basic-auth', 'user', 'pass')
+    
+>           r = get(url, auth=auth)
+
+tests/test_requests.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/api.py:65: in get
+    return request('get', url, **kwargs)
+requests/safe_mode.py:39: in wrapped
+    return function(method, url, **kwargs)
+requests/api.py:51: in request
+    return session.request(method=method, url=url, **kwargs)
+requests/sessions.py:241: in request
+    r.send(prefetch=prefetch)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Request [GET]>, anyway = False, prefetch = True
+
+    def send(self, anyway=False, prefetch=None):
+        """Sends the request. Returns True if successful, False if not.
+        If there was an HTTPError during transmission,
+        self.response.status_code will contain the HTTPError code.
+    
+        Once a request is successfully sent, `sent` will equal True.
+    
+        :param anyway: If True, request will be sent, even if it has
+        already been sent.
+    
+        :param prefetch: If not None, will override the request's own setting
+        for prefetch.
+        """
+    
+        # Build the URL
+        url = self.full_url
+    
+        # Pre-request hook.
+        r = dispatch_hook('pre_request', self.hooks, self)
+        self.__dict__.update(r.__dict__)
+    
+        # Logging
+        if self.config.get('verbose'):
+            self.config.get('verbose').write('%s   %s   %s\n' % (
+                datetime.now().isoformat(), self.method, url
+            ))
+    
+        # Use .netrc auth if none was provided.
+        if not self.auth and self.config.get('trust_env'):
+            self.auth = get_netrc_auth(url)
+    
+        if self.auth:
+            if isinstance(self.auth, tuple) and len(self.auth) == 2:
+                # special-case basic HTTP auth
+                self.auth = HTTPBasicAuth(*self.auth)
+    
+            # Allow auth to make its changes.
+            r = self.auth(self)
+    
+            # Update self to reflect the auth changes.
+            self.__dict__.update(r.__dict__)
+    
+        # Nottin' on you.
+        body = None
+        content_type = None
+    
+        # Multi-part file uploads.
+        if self.files:
+            (body, content_type) = self._encode_files(self.files)
+        else:
+            if self.data:
+    
+                body = self._encode_params(self.data)
+                if isinstance(self.data, str) or isinstance(self.data, builtin_str) or hasattr(self.data, 'read'):
+                    content_type = None
+                else:
+                    content_type = 'application/x-www-form-urlencoded'
+    
+        # Add content-type if it wasn't explicitly provided.
+        if (content_type) and (not 'content-type' in self.headers):
+            self.headers['Content-Type'] = content_type
+    
+        _p = urlparse(url)
+        no_proxy = filter(lambda x: x.strip(), self.proxies.get('no', '').split(','))
+        proxy = self.proxies.get(_p.scheme)
+    
+        if proxy and not any(map(_p.hostname.endswith, no_proxy)):
+            conn = poolmanager.proxy_from_url(proxy)
+            _proxy = urlparse(proxy)
+            if '@' in _proxy.netloc:
+                auth, url = _proxy.netloc.split('@', 1)
+                self.proxy_auth = HTTPProxyAuth(*auth.split(':', 1))
+                r = self.proxy_auth(self)
+                self.__dict__.update(r.__dict__)
+        else:
+            # Check to see if keep_alive is allowed.
+            try:
+                if self.config.get('keep_alive'):
+                    conn = self._poolmanager.connection_from_url(url)
+                else:
+                    conn = connectionpool.connection_from_url(url)
+                    self.headers['Connection'] = 'close'
+            except LocationParseError as e:
+                raise InvalidURL(e)
+    
+        if url.startswith('https') and self.verify:
+    
+            cert_loc = None
+    
+            # Allow self-specified cert location.
+            if self.verify is not True:
+                cert_loc = self.verify
+    
+            # Look for configuration.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('REQUESTS_CA_BUNDLE')
+    
+            # Curl compatibility.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('CURL_CA_BUNDLE')
+    
+            if not cert_loc:
+                cert_loc = DEFAULT_CA_BUNDLE_PATH
+    
+            if not cert_loc:
+                raise Exception("Could not find a suitable SSL CA certificate bundle.")
+    
+            conn.cert_reqs = 'CERT_REQUIRED'
+            conn.ca_certs = cert_loc
+        else:
+            conn.cert_reqs = 'CERT_NONE'
+            conn.ca_certs = None
+    
+        if self.cert:
+            if len(self.cert) == 2:
+                conn.cert_file = self.cert[0]
+                conn.key_file = self.cert[1]
+            else:
+                conn.cert_file = self.cert
+    
+        if not self.sent or anyway:
+    
+            # Skip if 'cookie' header is explicitly set.
+            if 'cookie' not in self.headers:
+                cookie_header = get_cookie_header(self.cookies, self)
+                if cookie_header is not None:
+                    self.headers['Cookie'] = cookie_header
+    
+            # Pre-send hook.
+            r = dispatch_hook('pre_send', self.hooks, self)
+            self.__dict__.update(r.__dict__)
+    
+            # catch urllib3 exceptions and throw Requests exceptions
+            try:
+                # Send the request.
+                r = conn.urlopen(
+                    method=self.method,
+                    url=self.path_url,
+                    body=body,
+                    headers=self.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.config.get('max_retries', 0),
+                    timeout=self.timeout,
+                )
+                self.sent = True
+    
+            except socket.error as sockerr:
+>               raise ConnectionError(sockerr)
+E               requests.exceptions.ConnectionError: [Errno -3] Temporary failure in name resolution
+
+requests/models.py:632: ConnectionError
+=============================== warnings summary ===============================
+requests/packages/urllib3/_collections.py:7
+  /testbed/requests/packages/urllib3/_collections.py:7: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import MutableMapping
+
+requests/models.py:796
+  /testbed/requests/models.py:796: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.status_code is 0:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_requests.py::RequestsTestSuite::test_BASICAUTH_HTTP_200_OK_GET
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================== 1 failed, 2 warnings in 0.20s =========================
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/test_requests.py::RequestsTestSuite::test_BASICAUTH_HTTP_200_OK_GET tests/test_requests.py::RequestsTestSuite::test_BASICAUTH_TUPLE_HTTP_200_OK_GET tests/test_requests.py::RequestsTestSuite::test_GET_no_redirect tests/test_requests.py::RequestsTestSuite::test_HEAD_no_redirect tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_GET tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_GET_WITH_MIXED_PARAMS tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_GET_WITH_PARAMS tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_HEAD tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_PUT tests/test_requests.py::RequestsTestSuite::test_HTTP_302_ALLOW_REDIRECT_GET tests/test_requests.py::RequestsTestSuite::test_HTTP_302_GET tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES_WITH_PARAMS tests/test_requests.py::RequestsTestSuite::test_accept_objects_with_string_representations_as_urls tests/test_requests.py::RequestsTestSuite::test_bytes_files tests/test_requests.py::RequestsTestSuite::test_cached_response tests/test_requests.py::RequestsTestSuite::test_can_have_none_in_header_values tests/test_requests.py::RequestsTestSuite::test_connection_error tests/test_requests.py::RequestsTestSuite::test_connection_error_with_safe_mode tests/test_requests.py::RequestsTestSuite::test_connection_keepalive_and_close tests/test_requests.py::RequestsTestSuite::test_danger_mode_redirects tests/test_requests.py::RequestsTestSuite::test_decompress_gzip tests/test_requests.py::RequestsTestSuite::test_default_status_raising tests/test_requests.py::RequestsTestSuite::test_empty_response tests/test_requests.py::RequestsTestSuite::test_entry_points tests/test_requests.py::RequestsTestSuite::test_file_post_data tests/test_requests.py::RequestsTestSuite::test_head_content tests/test_requests.py::RequestsTestSuite::test_httpauth_recursion tests/test_requests.py::RequestsTestSuite::test_invalid_url tests/test_requests.py::RequestsTestSuite::test_invalid_urls_throw_requests_exception tests/test_requests.py::RequestsTestSuite::test_iter_lines tests/test_requests.py::RequestsTestSuite::test_max_redirects tests/test_requests.py::RequestsTestSuite::test_multiple_hooks tests/test_requests.py::RequestsTestSuite::test_nonurlencoded_post_data tests/test_requests.py::RequestsTestSuite::test_nonzero_evaluation tests/test_requests.py::RequestsTestSuite::test_params_accepts_kv_list tests/test_requests.py::RequestsTestSuite::test_params_are_added_before_fragment tests/test_requests.py::RequestsTestSuite::test_path_is_not_double_encoded tests/test_requests.py::RequestsTestSuite::test_post_fields_with_multiple_values_and_files tests/test_requests.py::RequestsTestSuite::test_post_fields_with_multiple_values_and_files_as_tuples tests/test_requests.py::RequestsTestSuite::test_prefetch_return_response_interaction tests/test_requests.py::RequestsTestSuite::test_redirect_history tests/test_requests.py::RequestsTestSuite::test_relative_redirect_history tests/test_requests.py::RequestsTestSuite::test_request_ok_set tests/test_requests.py::RequestsTestSuite::test_response_has_unicode_url tests/test_requests.py::RequestsTestSuite::test_response_sent tests/test_requests.py::RequestsTestSuite::test_session_HTTP_200_OK_GET tests/test_requests.py::RequestsTestSuite::test_session_persistent_headers tests/test_requests.py::RequestsTestSuite::test_session_pickling tests/test_requests.py::RequestsTestSuite::test_status_raising` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 10 items
+
+tests/test_requests.py::RequestsTestSuite::test_unicode_get FAILED       [ 10%]
+
+=================================== FAILURES ===================================
+______________________ RequestsTestSuite.test_unicode_get ______________________
+
+self = <Request [GET]>, anyway = False, prefetch = True
+
+    def send(self, anyway=False, prefetch=None):
+        """Sends the request. Returns True if successful, False if not.
+        If there was an HTTPError during transmission,
+        self.response.status_code will contain the HTTPError code.
+    
+        Once a request is successfully sent, `sent` will equal True.
+    
+        :param anyway: If True, request will be sent, even if it has
+        already been sent.
+    
+        :param prefetch: If not None, will override the request's own setting
+        for prefetch.
+        """
+    
+        # Build the URL
+        url = self.full_url
+    
+        # Pre-request hook.
+        r = dispatch_hook('pre_request', self.hooks, self)
+        self.__dict__.update(r.__dict__)
+    
+        # Logging
+        if self.config.get('verbose'):
+            self.config.get('verbose').write('%s   %s   %s\n' % (
+                datetime.now().isoformat(), self.method, url
+            ))
+    
+        # Use .netrc auth if none was provided.
+        if not self.auth and self.config.get('trust_env'):
+            self.auth = get_netrc_auth(url)
+    
+        if self.auth:
+            if isinstance(self.auth, tuple) and len(self.auth) == 2:
+                # special-case basic HTTP auth
+                self.auth = HTTPBasicAuth(*self.auth)
+    
+            # Allow auth to make its changes.
+            r = self.auth(self)
+    
+            # Update self to reflect the auth changes.
+            self.__dict__.update(r.__dict__)
+    
+        # Nottin' on you.
+        body = None
+        content_type = None
+    
+        # Multi-part file uploads.
+        if self.files:
+            (body, content_type) = self._encode_files(self.files)
+        else:
+            if self.data:
+    
+                body = self._encode_params(self.data)
+                if isinstance(self.data, str) or isinstance(self.data, builtin_str) or hasattr(self.data, 'read'):
+                    content_type = None
+                else:
+                    content_type = 'application/x-www-form-urlencoded'
+    
+        # Add content-type if it wasn't explicitly provided.
+        if (content_type) and (not 'content-type' in self.headers):
+            self.headers['Content-Type'] = content_type
+    
+        _p = urlparse(url)
+        no_proxy = filter(lambda x: x.strip(), self.proxies.get('no', '').split(','))
+        proxy = self.proxies.get(_p.scheme)
+    
+        if proxy and not any(map(_p.hostname.endswith, no_proxy)):
+            conn = poolmanager.proxy_from_url(proxy)
+            _proxy = urlparse(proxy)
+            if '@' in _proxy.netloc:
+                auth, url = _proxy.netloc.split('@', 1)
+                self.proxy_auth = HTTPProxyAuth(*auth.split(':', 1))
+                r = self.proxy_auth(self)
+                self.__dict__.update(r.__dict__)
+        else:
+            # Check to see if keep_alive is allowed.
+            try:
+                if self.config.get('keep_alive'):
+                    conn = self._poolmanager.connection_from_url(url)
+                else:
+                    conn = connectionpool.connection_from_url(url)
+                    self.headers['Connection'] = 'close'
+            except LocationParseError as e:
+                raise InvalidURL(e)
+    
+        if url.startswith('https') and self.verify:
+    
+            cert_loc = None
+    
+            # Allow self-specified cert location.
+            if self.verify is not True:
+                cert_loc = self.verify
+    
+            # Look for configuration.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('REQUESTS_CA_BUNDLE')
+    
+            # Curl compatibility.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('CURL_CA_BUNDLE')
+    
+            if not cert_loc:
+                cert_loc = DEFAULT_CA_BUNDLE_PATH
+    
+            if not cert_loc:
+                raise Exception("Could not find a suitable SSL CA certificate bundle.")
+    
+            conn.cert_reqs = 'CERT_REQUIRED'
+            conn.ca_certs = cert_loc
+        else:
+            conn.cert_reqs = 'CERT_NONE'
+            conn.ca_certs = None
+    
+        if self.cert:
+            if len(self.cert) == 2:
+                conn.cert_file = self.cert[0]
+                conn.key_file = self.cert[1]
+            else:
+                conn.cert_file = self.cert
+    
+        if not self.sent or anyway:
+    
+            # Skip if 'cookie' header is explicitly set.
+            if 'cookie' not in self.headers:
+                cookie_header = get_cookie_header(self.cookies, self)
+                if cookie_header is not None:
+                    self.headers['Cookie'] = cookie_header
+    
+            # Pre-send hook.
+            r = dispatch_hook('pre_send', self.hooks, self)
+            self.__dict__.update(r.__dict__)
+    
+            # catch urllib3 exceptions and throw Requests exceptions
+            try:
+                # Send the request.
+>               r = conn.urlopen(
+                    method=self.method,
+                    url=self.path_url,
+                    body=body,
+                    headers=self.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.config.get('max_retries', 0),
+                    timeout=self.timeout,
+                )
+
+requests/models.py:617: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/packages/urllib3/connectionpool.py:421: in urlopen
+    httplib_response = self._make_request(conn, method, url,
+requests/packages/urllib3/connectionpool.py:275: in _make_request
+    conn.request(method, url, **httplib_request_kw)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1285: in request
+    self._send_request(method, url, body, headers, encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1331: in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1280: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:1040: in _send_output
+    self.send(msg)
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:980: in send
+    self.connect()
+/opt/miniconda3/envs/testbed/lib/python3.9/http/client.py:946: in connect
+    self.sock = self._create_connection(
+/opt/miniconda3/envs/testbed/lib/python3.9/socket.py:835: in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+host = 'httpbin.org', port = 80, family = 0, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, flags = 0
+
+    def getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+        """Resolve host and port into list of address info entries.
+    
+        Translate the host/port argument into a sequence of 5-tuples that contain
+        all the necessary arguments for creating a socket connected to that service.
+        host is a domain name, a string representation of an IPv4/v6 address or
+        None. port is a string service name such as 'http', a numeric port number or
+        None. By passing None as the value of host and port, you can pass NULL to
+        the underlying C API.
+    
+        The family, type and proto arguments can be optionally specified in order to
+        narrow the list of addresses returned. Passing zero as a value for each of
+        these arguments selects the full range of results.
+        """
+        # We override this function since we want to translate the numeric family
+        # and socket type values to enum constants.
+        addrlist = []
+>       for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+E       socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+/opt/miniconda3/envs/testbed/lib/python3.9/socket.py:966: gaierror
+
+During handling of the above exception, another exception occurred:
+
+self = <test_requests.RequestsTestSuite testMethod=test_unicode_get>
+
+    def test_unicode_get(self):
+    
+        for service in SERVICES:
+    
+            url = service('/get')
+    
+>           get(url, params={'foo': 'føø'})
+
+tests/test_requests.py:481: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+requests/api.py:65: in get
+    return request('get', url, **kwargs)
+requests/safe_mode.py:39: in wrapped
+    return function(method, url, **kwargs)
+requests/api.py:51: in request
+    return session.request(method=method, url=url, **kwargs)
+requests/sessions.py:241: in request
+    r.send(prefetch=prefetch)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Request [GET]>, anyway = False, prefetch = True
+
+    def send(self, anyway=False, prefetch=None):
+        """Sends the request. Returns True if successful, False if not.
+        If there was an HTTPError during transmission,
+        self.response.status_code will contain the HTTPError code.
+    
+        Once a request is successfully sent, `sent` will equal True.
+    
+        :param anyway: If True, request will be sent, even if it has
+        already been sent.
+    
+        :param prefetch: If not None, will override the request's own setting
+        for prefetch.
+        """
+    
+        # Build the URL
+        url = self.full_url
+    
+        # Pre-request hook.
+        r = dispatch_hook('pre_request', self.hooks, self)
+        self.__dict__.update(r.__dict__)
+    
+        # Logging
+        if self.config.get('verbose'):
+            self.config.get('verbose').write('%s   %s   %s\n' % (
+                datetime.now().isoformat(), self.method, url
+            ))
+    
+        # Use .netrc auth if none was provided.
+        if not self.auth and self.config.get('trust_env'):
+            self.auth = get_netrc_auth(url)
+    
+        if self.auth:
+            if isinstance(self.auth, tuple) and len(self.auth) == 2:
+                # special-case basic HTTP auth
+                self.auth = HTTPBasicAuth(*self.auth)
+    
+            # Allow auth to make its changes.
+            r = self.auth(self)
+    
+            # Update self to reflect the auth changes.
+            self.__dict__.update(r.__dict__)
+    
+        # Nottin' on you.
+        body = None
+        content_type = None
+    
+        # Multi-part file uploads.
+        if self.files:
+            (body, content_type) = self._encode_files(self.files)
+        else:
+            if self.data:
+    
+                body = self._encode_params(self.data)
+                if isinstance(self.data, str) or isinstance(self.data, builtin_str) or hasattr(self.data, 'read'):
+                    content_type = None
+                else:
+                    content_type = 'application/x-www-form-urlencoded'
+    
+        # Add content-type if it wasn't explicitly provided.
+        if (content_type) and (not 'content-type' in self.headers):
+            self.headers['Content-Type'] = content_type
+    
+        _p = urlparse(url)
+        no_proxy = filter(lambda x: x.strip(), self.proxies.get('no', '').split(','))
+        proxy = self.proxies.get(_p.scheme)
+    
+        if proxy and not any(map(_p.hostname.endswith, no_proxy)):
+            conn = poolmanager.proxy_from_url(proxy)
+            _proxy = urlparse(proxy)
+            if '@' in _proxy.netloc:
+                auth, url = _proxy.netloc.split('@', 1)
+                self.proxy_auth = HTTPProxyAuth(*auth.split(':', 1))
+                r = self.proxy_auth(self)
+                self.__dict__.update(r.__dict__)
+        else:
+            # Check to see if keep_alive is allowed.
+            try:
+                if self.config.get('keep_alive'):
+                    conn = self._poolmanager.connection_from_url(url)
+                else:
+                    conn = connectionpool.connection_from_url(url)
+                    self.headers['Connection'] = 'close'
+            except LocationParseError as e:
+                raise InvalidURL(e)
+    
+        if url.startswith('https') and self.verify:
+    
+            cert_loc = None
+    
+            # Allow self-specified cert location.
+            if self.verify is not True:
+                cert_loc = self.verify
+    
+            # Look for configuration.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('REQUESTS_CA_BUNDLE')
+    
+            # Curl compatibility.
+            if not cert_loc and self.config.get('trust_env'):
+                cert_loc = os.environ.get('CURL_CA_BUNDLE')
+    
+            if not cert_loc:
+                cert_loc = DEFAULT_CA_BUNDLE_PATH
+    
+            if not cert_loc:
+                raise Exception("Could not find a suitable SSL CA certificate bundle.")
+    
+            conn.cert_reqs = 'CERT_REQUIRED'
+            conn.ca_certs = cert_loc
+        else:
+            conn.cert_reqs = 'CERT_NONE'
+            conn.ca_certs = None
+    
+        if self.cert:
+            if len(self.cert) == 2:
+                conn.cert_file = self.cert[0]
+                conn.key_file = self.cert[1]
+            else:
+                conn.cert_file = self.cert
+    
+        if not self.sent or anyway:
+    
+            # Skip if 'cookie' header is explicitly set.
+            if 'cookie' not in self.headers:
+                cookie_header = get_cookie_header(self.cookies, self)
+                if cookie_header is not None:
+                    self.headers['Cookie'] = cookie_header
+    
+            # Pre-send hook.
+            r = dispatch_hook('pre_send', self.hooks, self)
+            self.__dict__.update(r.__dict__)
+    
+            # catch urllib3 exceptions and throw Requests exceptions
+            try:
+                # Send the request.
+                r = conn.urlopen(
+                    method=self.method,
+                    url=self.path_url,
+                    body=body,
+                    headers=self.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.config.get('max_retries', 0),
+                    timeout=self.timeout,
+                )
+                self.sent = True
+    
+            except socket.error as sockerr:
+>               raise ConnectionError(sockerr)
+E               requests.exceptions.ConnectionError: [Errno -3] Temporary failure in name resolution
+
+requests/models.py:632: ConnectionError
+=============================== warnings summary ===============================
+requests/packages/urllib3/_collections.py:7
+  /testbed/requests/packages/urllib3/_collections.py:7: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import MutableMapping
+
+requests/models.py:796
+  /testbed/requests/models.py:796: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.status_code is 0:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_requests.py::RequestsTestSuite::test_unicode_get - requests...
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================== 1 failed, 2 warnings in 0.20s =========================
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/test_requests.py::RequestsTestSuite::test_unicode_get tests/test_requests.py::RequestsTestSuite::test_upload_binary_data tests/test_requests.py::RequestsTestSuite::test_urlencoded_get_query_multivalued_param tests/test_requests.py::RequestsTestSuite::test_urlencoded_post_query_and_data tests/test_requests.py::RequestsTestSuite::test_urlencoded_post_query_multivalued_and_data tests/test_requests.py::RequestsTestSuite::test_urlencoded_post_querystring tests/test_requests.py::RequestsTestSuite::test_urlencoded_post_querystring_multivalued tests/test_requests.py::RequestsTestSuite::test_useful_exception_for_invalid_port tests/test_requests.py::RequestsTestSuite::test_useful_exception_for_invalid_scheme tests/test_requests.py::RequestsTestSuite::test_user_agent_transfers` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES_WITH_HEADERS', 'tests/test_requests.py::RequestsTestSuite::test_nonurlencoded_postdata', 'tests/test_requests.py::RequestsTestSuite::test_prefetch_redirect_bug', 'tests/test_requests.py::RequestsTestSuite::test_urlencoded_post_data']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['tests/test_requests.py::RequestsTestSuite::test_BASICAUTH_HTTP_200_OK_GET', 'tests/test_requests.py::RequestsTestSuite::test_BASICAUTH_TUPLE_HTTP_200_OK_GET', 'tests/test_requests.py::RequestsTestSuite::test_GET_no_redirect', 'tests/test_requests.py::RequestsTestSuite::test_HEAD_no_redirect', 'tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_GET', 'tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_GET_WITH_MIXED_PARAMS', 'tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_GET_WITH_PARAMS', 'tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_HEAD', 'tests/test_requests.py::RequestsTestSuite::test_HTTP_200_OK_PUT', 'tests/test_requests.py::RequestsTestSuite::test_HTTP_302_ALLOW_REDIRECT_GET', 'tests/test_requests.py::RequestsTestSuite::test_HTTP_302_GET', 'tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES', 'tests/test_requests.py::RequestsTestSuite::test_POSTBIN_GET_POST_FILES_WITH_PARAMS', 'tests/test_requests.py::RequestsTestSuite::test_accept_objects_with_string_representations_as_urls', 'tests/test_requests.py::RequestsTestSuite::test_bytes_files', 'tests/test_requests.py::RequestsTestSuite::test_cached_response', 'tests/test_requests.py::RequestsTestSuite::test_can_have_none_in_header_values', 'tests/test_requests.py::RequestsTestSuite::test_connection_error', 'tests/test_requests.py::RequestsTestSuite::test_connection_error_with_safe_mode', 'tests/test_requests.py::RequestsTestSuite::test_connection_keepalive_and_close', 'tests/test_requests.py::RequestsTestSuite::test_danger_mode_redirects', 'tests/test_requests.py::RequestsTestSuite::test_decompress_gzip', 'tests/test_requests.py::RequestsTestSuite::test_default_status_raising', 'tests/test_requests.py::RequestsTestSuite::test_empty_response', 'tests/test_requests.py::RequestsTestSuite::test_entry_points', 'tests/test_requests.py::RequestsTestSuite::test_file_post_data', 'tests/test_requests.py::RequestsTestSuite::test_head_content', 'tests/test_requests.py::RequestsTestSuite::test_httpauth_recursion', 'tests/test_requests.py::RequestsTestSuite::test_invalid_url', 'tests/test_requests.py::RequestsTestSuite::test_invalid_urls_throw_requests_exception', 'tests/test_requests.py::RequestsTestSuite::test_iter_lines', 'tests/test_requests.py::RequestsTestSuite::test_max_redirects', 'tests/test_requests.py::RequestsTestSuite::test_multiple_hooks', 'tests/test_requests.py::RequestsTestSuite::test_nonurlencoded_post_data', 'tests/test_requests.py::RequestsTestSuite::test_nonzero_evaluation', 'tests/test_requests.py::RequestsTestSuite::test_params_accepts_kv_list', 'tests/test_requests.py::RequestsTestSuite::test_params_are_added_before_fragment', 'tests/test_requests.py::RequestsTestSuite::test_path_is_not_double_encoded', 'tests/test_requests.py::RequestsTestSuite::test_post_fields_with_multiple_values_and_files', 'tests/test_requests.py::RequestsTestSuite::test_post_fields_with_multiple_values_and_files_as_tuples', 'tests/test_requests.py::RequestsTestSuite::test_prefetch_return_response_interaction', 'tests/test_requests.py::RequestsTestSuite::test_redirect_history', 'tests/test_requests.py::RequestsTestSuite::test_relative_redirect_history', 'tests/test_requests.py::RequestsTestSuite::test_request_ok_set', 'tests/test_requests.py::RequestsTestSuite::test_response_has_unicode_url', 'tests/test_requests.py::RequestsTestSuite::test_response_sent', 'tests/test_requests.py::RequestsTestSuite::test_session_HTTP_200_OK_GET', 'tests/test_requests.py::RequestsTestSuite::test_session_persistent_headers', 'tests/test_requests.py::RequestsTestSuite::test_session_pickling', 'tests/test_requests.py::RequestsTestSuite::test_status_raising']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

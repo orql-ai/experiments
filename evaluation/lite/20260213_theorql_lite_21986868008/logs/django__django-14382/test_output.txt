@@ -1,0 +1,134 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_scripts
+Found 1 tests.
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14382:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-14382
+436996f91350: Pulling fs layer
+0015a28029a7: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+9f5a969c9678: Pulling fs layer
+9a976e8c0b17: Pulling fs layer
+724625094df2: Pulling fs layer
+500327121db6: Pulling fs layer
+925361aa7a6f: Pulling fs layer
+c29801d3bd74: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Download complete
+9a976e8c0b17: Download complete
+c29801d3bd74: Download complete
+836b79e2a6e5: Download complete
+9f5a969c9678: Download complete
+925361aa7a6f: Download complete
+ac5b61163589: Download complete
+436996f91350: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+724625094df2: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+0015a28029a7: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+9a976e8c0b17: Pull complete
+9f5a969c9678: Pull complete
+0015a28029a7: Pull complete
+c29801d3bd74: Pull complete
+925361aa7a6f: Pull complete
+724625094df2: Pull complete
+436996f91350: Pull complete
+Digest: sha256:ef1a70bef2b854b46ba76506e76458bc789a8b0a2eb0424af26aa2ea850aeb34
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14382:latest
+test_trailing_slash_in_target_app_directory_name (admin_scripts.tests.StartApp) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.212s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (32 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_scripts
+Found 32 tests.
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_scripts, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_params_to_runserver (admin_scripts.tests.ManageTestserver) ... ok
+test_testserver_handle_params (admin_scripts.tests.ManageTestserver) ... ok
+test_migration_warning_multiple_apps (admin_scripts.tests.ManageRunserverMigrationWarning) ... ok
+test_migration_warning_one_app (admin_scripts.tests.ManageRunserverMigrationWarning) ... ok
+test_runner_addrport_ipv6 (admin_scripts.tests.ManageRunserver) ... ok
+test_runner_ambiguous (admin_scripts.tests.ManageRunserver) ... ok
+test_runner_custom_defaults (admin_scripts.tests.ManageRunserver) ... ok
+test_runner_custom_defaults_ipv6 (admin_scripts.tests.ManageRunserver) ... ok
+test_runner_hostname (admin_scripts.tests.ManageRunserver) ... ok
+test_runner_hostname_ipv6 (admin_scripts.tests.ManageRunserver) ... ok
+test_runserver_addrport (admin_scripts.tests.ManageRunserver) ... ok
+test_skip_checks (admin_scripts.tests.ManageRunserver) ... ok
+test_program_name_in_help (admin_scripts.tests.MainModule) ... ok
+test_non_existent_command_output (admin_scripts.tests.ManageManuallyConfiguredSettings) ... ok
+test_key_error (admin_scripts.tests.ManageSettingsWithSettingsErrors) ... ok
+test_empty_allowed_hosts_error (admin_scripts.tests.ManageRunserverEmptyAllowedHosts) ... ok
+test_dynamic_settings_configured (admin_scripts.tests.DiffSettings) ... ok
+test_settings_configured (admin_scripts.tests.DiffSettings) ... ok
+test_no_suggestions (admin_scripts.tests.DjangoAdminSuggestions) ... ok
+test_suggestions (admin_scripts.tests.DjangoAdminSuggestions) ... ok
+test_color_style (admin_scripts.tests.CommandTypes) ... ok
+test_command_color (admin_scripts.tests.CommandTypes) ... ok
+test_custom_stderr (admin_scripts.tests.CommandTypes) ... ok
+test_custom_stdout (admin_scripts.tests.CommandTypes) ... ok
+test_force_color_command_init (admin_scripts.tests.CommandTypes) ... ok
+test_force_color_execute (admin_scripts.tests.CommandTypes) ... ok
+test_no_color_force_color_mutually_exclusive_command_init (admin_scripts.tests.CommandTypes) ... ok
+test_no_color_force_color_mutually_exclusive_execute (admin_scripts.tests.CommandTypes) ... ok
+test_importable_target_name (admin_scripts.tests.StartApp) ... ok
+test_invalid_target_name (admin_scripts.tests.StartApp) ... ok
+test_overlaying_app (admin_scripts.tests.StartApp) ... ok
+test_template (admin_scripts.tests.StartApp) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 2.272s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

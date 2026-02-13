@@ -1,0 +1,172 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        24307440
+hash randomization: on (PYTHONHASHSEED=2489314481)
+
+sympy/core/tests/test_arit.py[1] F                                        [FAIL]
+
+________________________________________________________________________________
+______________ sympy/core/tests/test_arit.py:test_Mul_is_integer _______________
+Traceback (most recent call last):
+  File "/testbed/sympy/core/tests/test_arit.py", line 400, in test_Mul_is_integer
+    assert Mul(2., S.Half, evaluate=False).is_integer is None
+AssertionError
+
+============= tests finished: 0 passed, 1 failed, in 0.24 seconds ==============
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20322:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-20322
+836b79e2a6e5: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+b08895a5c216: Pulling fs layer
+19c2237c9c41: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ac5b61163589: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+0cb93f65d58a: Pulling fs layer
+2f341c31f3b7: Download complete
+5c809fd8a9af: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ed3dada71338: Download complete
+19c2237c9c41: Download complete
+ac5b61163589: Download complete
+0cb93f65d58a: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+19c2237c9c41: Pull complete
+0b326ada86d1: Pull complete
+0cb93f65d58a: Pull complete
+Digest: sha256:abb4a7bae4b7c88c80ce2b7a68c4650583b566c51b2e9cf9fe0a4b9a9df9efbc
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20322:latest
+
+
+===== PHASE: PASS_TO_PASS (89 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        30527426
+hash randomization: on (PYTHONHASHSEED=538276521)
+
+sympy/assumptions/tests/test_query.py[2] ..                                 [OK]
+sympy/assumptions/tests/test_refine.py[2] ..                                [OK]
+sympy/assumptions/tests/test_satask.py[1] .                                 [OK]
+sympy/core/tests/test_arit.py[51] ..............................................
+.....                                                                       [OK]
+sympy/core/tests/test_complex.py[1] .                                       [OK]
+sympy/core/tests/test_eval.py[2] .f                                         [OK]
+sympy/core/tests/test_expand.py[1] .                                        [OK]
+sympy/core/tests/test_function.py[2] ..                                     [OK]
+sympy/core/tests/test_match.py[1] .                                         [OK]
+sympy/core/tests/test_numbers.py[5] .....                                   [OK]
+sympy/core/tests/test_power.py[4] ....                                      [OK]
+sympy/core/tests/test_priority.py[2] ..                                     [OK]
+sympy/core/tests/test_subs.py[3] ...                                        [OK]
+sympy/core/tests/test_symbol.py[1] .                                        [OK]
+sympy/integrals/tests/test_integrals.py[1] .                                [OK]
+sympy/matrices/expressions/tests/test_indexing.py[1] .                      [OK]
+sympy/matrices/tests/test_commonmatrix.py[2] ..                             [OK]
+sympy/matrices/tests/test_matrices.py[2] ..                                 [OK]
+sympy/ntheory/tests/test_factor_.py[4] ....                                 [OK]
+sympy/physics/vector/tests/test_fieldfunctions.py[1] .                      [OK]
+sympy/polys/tests/test_polyoptions.py[2] ..                                 [OK]
+sympy/polys/tests/test_polytools.py[1] .                                    [OK]
+sympy/polys/tests/test_ring_series.py[1] .                                  [OK]
+sympy/printing/tests/test_numpy.py[1] s                                     [OK]
+sympy/printing/tests/test_precedence.py[1] .                                [OK]
+sympy/printing/tests/test_repr.py[3] ...                                    [OK]
+sympy/printing/tests/test_str.py[1] .                                       [OK]
+sympy/series/tests/test_nseries.py[5] .....                                 [OK]
+sympy/sets/tests/test_powerset.py[7] .......                                [OK]
+sympy/simplify/tests/test_cse.py[2] f.                                      [OK]
+sympy/simplify/tests/test_powsimp.py[6] ......                              [OK]
+sympy/simplify/tests/test_trigsimp.py[1] .                                  [OK]
+sympy/solvers/diophantine/tests/test_diophantine.py[1] .                    [OK]
+sympy/tensor/tests/test_tensor.py[1] f                                      [OK]
+
+== tests finished: 118 passed, 1 skipped, 3 expected to fail, in 9.46 seconds ==
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        97018739
+hash randomization: on (PYTHONHASHSEED=3942652170)
+
+sympy/codegen/tests/test_fnodes.py[1] E                                   [FAIL]
+sympy/core/tests/test_arit.py[39] .......................................   [OK]
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/functions/elementary/tests/test_complexes.py[1] .                     [OK]
+sympy/functions/elementary/tests/test_exponential.py[1] .                   [OK]
+sympy/physics/continuum_mechanics/tests/test_beam.py[1] .                   [OK]
+sympy/physics/optics/tests/test_polarization.py[1] .                        [OK]
+sympy/polys/agca/tests/test_modules.py[2] ..                                [OK]
+sympy/polys/domains/tests/test_domains.py[1] .                              [OK]
+sympy/polys/tests/test_polyoptions.py[2] ..                                 [OK]
+sympy/printing/tests/test_latex.py[1] .                                     [OK]
+sympy/simplify/tests/test_hyperexpand.py[1] .                               [OK]
+
+________________________________________________________________________________
+________________ sympy/codegen/tests/test_fnodes.py:test_Module ________________
+Traceback (most recent call last):
+  File "/testbed/sympy/codegen/tests/test_fnodes.py", line 107, in test_Module
+    if not has_fortran():
+  File "/testbed/sympy/utilities/_compilation/availability.py", line 8, in has_fortran
+    (stdout, stderr), info = compile_run_strings(
+  File "/testbed/sympy/utilities/_compilation/compilation.py", line 609, in compile_run_strings
+    objs = compile_sources(list(map(get_abspath, source_files)), destdir=build_dir,
+  File "/testbed/sympy/utilities/_compilation/compilation.py", line 92, in compile_sources
+    dstpaths.append(src2obj(f, Runner, cwd=cwd, **file_kwargs))
+  File "/testbed/sympy/utilities/_compilation/compilation.py", line 377, in src2obj
+    runner = Runner([srcpath], objpath, include_dirs=include_dirs,
+  File "/testbed/sympy/utilities/_compilation/runners.py", line 81, in __init__
+    self.compiler_name, self.compiler_binary, self.compiler_vendor = self.find_compiler(preferred_vendor)
+  File "/testbed/sympy/utilities/_compilation/runners.py", line 135, in find_compiler
+    name, path = find_binary_of_command([cls.compiler_dict[x] for x in candidates])
+  File "/testbed/sympy/utilities/_compilation/util.py", line 270, in find_binary_of_command
+    binary_path = find_executable(c)
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/setuptools/_distutils/spawn.py", line 87, in find_executable
+    warnings.warn(
+DeprecationWarning: Use shutil.which instead of find_executable
+
+=========== tests finished: 51 passed, 1 exceptions, in 3.21 seconds ===========
+DO *NOT* COMMIT!
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_Mul_is_integer']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_AssocOp_doit', 'test_Add_Mul_Expr_args', 'test_Add_as_coeff_mul', 'test_Pow_as_coeff_mul_doesnt_expand', 'test_issue_3514_18626', 'test_make_args', 'test_issue_5126', 'test_Rational_as_content_primitive', 'test_Add_as_content_primitive', 'test_Mul_as_content_primitive', 'test_Pow_as_content_primitive', 'test_issue_5460', 'test_product_irrational', 'test_issue_5919', 'test_Mod', 'test_Mod_Pow', 'test_Mod_is_integer', 'test_Mod_is_nonposneg', 'test_issue_6001', 'test_polar', 'test_issue_6040', 'test_issue_6082', 'test_issue_6077', 'test_mul_flatten_oo', 'test_add_flatten', 'test_issue_5160_6087_6089_6090', 'test_float_int_round', 'test_issue_6611a', 'test_denest_add_mul', 'test_mul_coeff', 'test_mul_zero_detection', 'test_Mul_with_zero_infinite', 'test_Mul_does_not_cancel_infinities', 'test_Mul_does_not_distribute_infinity', 'test_issue_8247_8354', 'test_Add_is_zero', 'test_issue_14392', 'test_divmod', 'test__neg__']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

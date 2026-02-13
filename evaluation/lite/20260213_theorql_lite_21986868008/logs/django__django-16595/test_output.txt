@@ -1,0 +1,186 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 1 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16595:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16595
+0b1865115312: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+ac5b61163589: Pulling fs layer
+13035d994a31: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+48d09a4d2bd0: Download complete
+788ea9f0fbb4: Download complete
+ac5b61163589: Download complete
+13035d994a31: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+aef50d31cf01: Download complete
+0b1865115312: Download complete
+7478e0ac0f23: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+1c04d89b98c3: Download complete
+56cfd456d2c9: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+48d09a4d2bd0: Pull complete
+56cfd456d2c9: Pull complete
+aef50d31cf01: Pull complete
+788ea9f0fbb4: Pull complete
+1c04d89b98c3: Pull complete
+13035d994a31: Pull complete
+0b1865115312: Pull complete
+Digest: sha256:142f250779e6b771ac411df833c6976e7074571871d2c865017263fdd7195fc6
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16595:latest
+test_alter_alter_field (unittest.loader._FailedTest.test_alter_alter_field) ... ERROR
+
+======================================================================
+ERROR: test_alter_alter_field (unittest.loader._FailedTest.test_alter_alter_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_field'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+
+===== PHASE: PASS_TO_PASS (17 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 17 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_alter_alter_index_model (unittest.loader._FailedTest.test_alter_alter_index_model) ... ERROR
+test_alter_alter_owrt_model (unittest.loader._FailedTest.test_alter_alter_owrt_model) ... ERROR
+test_alter_alter_table_model (unittest.loader._FailedTest.test_alter_alter_table_model) ... ERROR
+test_alter_alter_unique_model (unittest.loader._FailedTest.test_alter_alter_unique_model) ... ERROR
+test_create_alter_index_delete_model (unittest.loader._FailedTest.test_create_alter_index_delete_model) ... ERROR
+test_create_alter_index_field (unittest.loader._FailedTest.test_create_alter_index_field) ... ERROR
+test_create_alter_model_managers (unittest.loader._FailedTest.test_create_alter_model_managers) ... ERROR
+test_create_alter_model_options (unittest.loader._FailedTest.test_create_alter_model_options) ... ERROR
+test_create_alter_owrt_delete_model (unittest.loader._FailedTest.test_create_alter_owrt_delete_model) ... ERROR
+test_create_alter_owrt_field (unittest.loader._FailedTest.test_create_alter_owrt_field) ... ERROR
+test_create_alter_unique_delete_model (unittest.loader._FailedTest.test_create_alter_unique_delete_model) ... ERROR
+test_create_alter_unique_field (unittest.loader._FailedTest.test_create_alter_unique_field) ... ERROR
+test_create_model_and_remove_model_options (unittest.loader._FailedTest.test_create_model_and_remove_model_options) ... ERROR
+test_none_app_label (unittest.loader._FailedTest.test_none_app_label) ... ERROR
+test_optimize_elidable_operation (unittest.loader._FailedTest.test_optimize_elidable_operation) ... ERROR
+test_rename_index (unittest.loader._FailedTest.test_rename_index) ... ERROR
+test_swapping_fields_names (unittest.loader._FailedTest.test_swapping_fields_names) ... ERROR
+
+======================================================================
+ERROR: test_alter_alter_index_model (unittest.loader._FailedTest.test_alter_alter_index_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_index_model'
+
+======================================================================
+ERROR: test_alter_alter_owrt_model (unittest.loader._FailedTest.test_alter_alter_owrt_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_owrt_model'
+
+======================================================================
+ERROR: test_alter_alter_table_model (unittest.loader._FailedTest.test_alter_alter_table_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_table_model'
+
+======================================================================
+ERROR: test_alter_alter_unique_model (unittest.loader._FailedTest.test_alter_alter_unique_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_unique_model'
+
+======================================================================
+ERROR: test_create_alter_index_delete_model (unittest.loader._FailedTest.test_create_alter_index_delete_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_index_delete_model'
+
+======================================================================
+ERROR: test_create_alter_index_field (unittest.loader._FailedTest.test_create_alter_index_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_index_field'
+
+======================================================================
+ERROR: test_create_alter_model_managers (unittest.loader._FailedTest.test_create_alter_model_managers)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_model_managers'
+
+======================================================================
+ERROR: test_create_alter_model_options (unittest.loader._FailedTest.test_create_alter_model_options)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_model_options'
+
+======================================================================
+ERROR: test_create_alter_owrt_delete_model (unittest.loader._FailedTest.test_create_alter_owrt_delete_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_owrt_delete_model'
+
+======================================================================
+ERROR: test_create_alter_owrt_field (unittest.loader._FailedTest.test_create_alter_owrt_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_owrt_field'
+
+======================================================================
+ERROR: test_create_alter_unique_delete_model (unittest.loader._FailedTest.test_create_alter_unique_delete_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_unique_delete_model'
+
+======================================================================
+ERROR: test_create_alter_unique_field (unittest.loader._FailedTest.test_create_alter_unique_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_unique_field'
+
+======================================================================
+ERROR: test_create_model_and_remove_model_options (unittest.loader._FailedTest.test_create_model_and_remove_model_options)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_and_remove_model_options'
+
+======================================================================
+ERROR: test_none_app_label (unittest.loader._FailedTest.test_none_app_label)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_none_app_label'
+
+======================================================================
+ERROR: test_optimize_elidable_operation (unittest.loader._FailedTest.test_optimize_elidable_operation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_optimize_elidable_operation'
+
+======================================================================
+ERROR: test_rename_index (unittest.loader._FailedTest.test_rename_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_index'
+
+======================================================================
+ERROR: test_swapping_fields_names (unittest.loader._FailedTest.test_swapping_fields_names)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_swapping_fields_names'
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.003s
+
+FAILED (errors=17)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['migrations.test_optimizer.OptimizerTests.test_alter_alter_field.test_alter_alter_field']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['migrations.test_optimizer.OptimizerTests.test_alter_alter_index_model.test_alter_alter_index_model', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_owrt_model.test_alter_alter_owrt_model', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_table_model.test_alter_alter_table_model', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_unique_model.test_alter_alter_unique_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_index_delete_model.test_create_alter_index_delete_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_index_field.test_create_alter_index_field', 'migrations.test_optimizer.OptimizerTests.test_create_alter_model_managers.test_create_alter_model_managers', 'migrations.test_optimizer.OptimizerTests.test_create_alter_model_options.test_create_alter_model_options', 'migrations.test_optimizer.OptimizerTests.test_create_alter_owrt_delete_model.test_create_alter_owrt_delete_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_owrt_field.test_create_alter_owrt_field', 'migrations.test_optimizer.OptimizerTests.test_create_alter_unique_delete_model.test_create_alter_unique_delete_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_unique_field.test_create_alter_unique_field', 'migrations.test_optimizer.OptimizerTests.test_create_model_and_remove_model_options.test_create_model_and_remove_model_options', 'migrations.test_optimizer.OptimizerTests.test_none_app_label.test_none_app_label', 'migrations.test_optimizer.OptimizerTests.test_optimize_elidable_operation.test_optimize_elidable_operation', 'migrations.test_optimizer.OptimizerTests.test_rename_index.test_rename_index', 'migrations.test_optimizer.OptimizerTests.test_swapping_fields_names.test_swapping_fields_names']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

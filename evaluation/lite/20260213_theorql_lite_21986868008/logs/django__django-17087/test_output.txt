@@ -1,0 +1,348 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 1 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-17087:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-17087
+9c6049d13e43: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+500327121db6: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+ac5b61163589: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+dedf27c911f2: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+836b79e2a6e5: Download complete
+aef50d31cf01: Download complete
+dedf27c911f2: Download complete
+48d09a4d2bd0: Download complete
+ac5b61163589: Download complete
+788ea9f0fbb4: Download complete
+e5a28c0c137e: Download complete
+9c6049d13e43: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+1c04d89b98c3: Download complete
+56cfd456d2c9: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+48d09a4d2bd0: Pull complete
+56cfd456d2c9: Pull complete
+aef50d31cf01: Pull complete
+dedf27c911f2: Pull complete
+788ea9f0fbb4: Pull complete
+1c04d89b98c3: Pull complete
+9c6049d13e43: Pull complete
+Digest: sha256:519714092a5824c5b52e97e4f2fe859b66000aa24717a7fd568a409cd1a5b0c1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-17087:latest
+test_serialize_nested_class_method (unittest.loader._FailedTest.test_serialize_nested_class_method) ... ERROR
+
+======================================================================
+ERROR: test_serialize_nested_class_method (unittest.loader._FailedTest.test_serialize_nested_class_method)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_nested_class_method'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+
+===== PHASE: PASS_TO_PASS (44 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 44 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_args_kwargs_signature (unittest.loader._FailedTest.test_args_kwargs_signature) ... ERROR
+test_args_signature (unittest.loader._FailedTest.test_args_signature) ... ERROR
+test_empty_signature (unittest.loader._FailedTest.test_empty_signature) ... ERROR
+test_expand_args_signature (unittest.loader._FailedTest.test_expand_args_signature) ... ERROR
+test_kwargs_signature (unittest.loader._FailedTest.test_kwargs_signature) ... ERROR
+test_multiline_args_signature (unittest.loader._FailedTest.test_multiline_args_signature) ... ERROR
+test_nested_args_signature (unittest.loader._FailedTest.test_nested_args_signature) ... ERROR
+test_nested_operation_expand_args_signature (unittest.loader._FailedTest.test_nested_operation_expand_args_signature) ... ERROR
+test_custom_operation (unittest.loader._FailedTest.test_custom_operation) ... ERROR
+test_deconstruct_class_arguments (unittest.loader._FailedTest.test_deconstruct_class_arguments) ... ERROR
+test_migration_path (unittest.loader._FailedTest.test_migration_path) ... ERROR
+test_register_non_serializer (unittest.loader._FailedTest.test_register_non_serializer) ... ERROR
+test_register_serializer (unittest.loader._FailedTest.test_register_serializer) ... ERROR
+test_serialize_builtin_types (unittest.loader._FailedTest.test_serialize_builtin_types) ... ERROR
+test_serialize_builtins (unittest.loader._FailedTest.test_serialize_builtins) ... ERROR
+test_serialize_choices (unittest.loader._FailedTest.test_serialize_choices) ... ERROR
+test_serialize_collections (unittest.loader._FailedTest.test_serialize_collections) ... ERROR
+test_serialize_complex_func_index (unittest.loader._FailedTest.test_serialize_complex_func_index) ... ERROR
+test_serialize_constants (unittest.loader._FailedTest.test_serialize_constants) ... ERROR
+test_serialize_datetime (unittest.loader._FailedTest.test_serialize_datetime) ... ERROR
+test_serialize_enum_flags (unittest.loader._FailedTest.test_serialize_enum_flags) ... ERROR
+test_serialize_enums (unittest.loader._FailedTest.test_serialize_enums) ... ERROR
+test_serialize_fields (unittest.loader._FailedTest.test_serialize_fields) ... ERROR
+test_serialize_frozensets (unittest.loader._FailedTest.test_serialize_frozensets) ... ERROR
+test_serialize_functions (unittest.loader._FailedTest.test_serialize_functions) ... ERROR
+test_serialize_functools_partial (unittest.loader._FailedTest.test_serialize_functools_partial) ... ERROR
+test_serialize_functools_partialmethod (unittest.loader._FailedTest.test_serialize_functools_partialmethod) ... ERROR
+test_serialize_iterators (unittest.loader._FailedTest.test_serialize_iterators) ... ERROR
+test_serialize_lazy_objects (unittest.loader._FailedTest.test_serialize_lazy_objects) ... ERROR
+test_serialize_managers (unittest.loader._FailedTest.test_serialize_managers) ... ERROR
+test_serialize_multiline_strings (unittest.loader._FailedTest.test_serialize_multiline_strings) ... ERROR
+test_serialize_nested_class (unittest.loader._FailedTest.test_serialize_nested_class) ... ERROR
+test_serialize_numbers (unittest.loader._FailedTest.test_serialize_numbers) ... ERROR
+test_serialize_path_like (unittest.loader._FailedTest.test_serialize_path_like) ... ERROR
+test_serialize_pathlib (unittest.loader._FailedTest.test_serialize_pathlib) ... ERROR
+test_serialize_range (unittest.loader._FailedTest.test_serialize_range) ... ERROR
+test_serialize_set (unittest.loader._FailedTest.test_serialize_set) ... ERROR
+test_serialize_settings (unittest.loader._FailedTest.test_serialize_settings) ... ERROR
+test_serialize_strings (unittest.loader._FailedTest.test_serialize_strings) ... ERROR
+test_serialize_timedelta (unittest.loader._FailedTest.test_serialize_timedelta) ... ERROR
+test_serialize_type_model (unittest.loader._FailedTest.test_serialize_type_model) ... ERROR
+test_serialize_type_none (unittest.loader._FailedTest.test_serialize_type_none) ... ERROR
+test_serialize_uuid (unittest.loader._FailedTest.test_serialize_uuid) ... ERROR
+test_sorted_dependencies (unittest.loader._FailedTest.test_sorted_dependencies) ... ERROR
+
+======================================================================
+ERROR: test_args_kwargs_signature (unittest.loader._FailedTest.test_args_kwargs_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_args_kwargs_signature'
+
+======================================================================
+ERROR: test_args_signature (unittest.loader._FailedTest.test_args_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_args_signature'
+
+======================================================================
+ERROR: test_empty_signature (unittest.loader._FailedTest.test_empty_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_empty_signature'
+
+======================================================================
+ERROR: test_expand_args_signature (unittest.loader._FailedTest.test_expand_args_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_expand_args_signature'
+
+======================================================================
+ERROR: test_kwargs_signature (unittest.loader._FailedTest.test_kwargs_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_kwargs_signature'
+
+======================================================================
+ERROR: test_multiline_args_signature (unittest.loader._FailedTest.test_multiline_args_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_multiline_args_signature'
+
+======================================================================
+ERROR: test_nested_args_signature (unittest.loader._FailedTest.test_nested_args_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_nested_args_signature'
+
+======================================================================
+ERROR: test_nested_operation_expand_args_signature (unittest.loader._FailedTest.test_nested_operation_expand_args_signature)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_nested_operation_expand_args_signature'
+
+======================================================================
+ERROR: test_custom_operation (unittest.loader._FailedTest.test_custom_operation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_custom_operation'
+
+======================================================================
+ERROR: test_deconstruct_class_arguments (unittest.loader._FailedTest.test_deconstruct_class_arguments)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_deconstruct_class_arguments'
+
+======================================================================
+ERROR: test_migration_path (unittest.loader._FailedTest.test_migration_path)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_migration_path'
+
+======================================================================
+ERROR: test_register_non_serializer (unittest.loader._FailedTest.test_register_non_serializer)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_register_non_serializer'
+
+======================================================================
+ERROR: test_register_serializer (unittest.loader._FailedTest.test_register_serializer)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_register_serializer'
+
+======================================================================
+ERROR: test_serialize_builtin_types (unittest.loader._FailedTest.test_serialize_builtin_types)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_builtin_types'
+
+======================================================================
+ERROR: test_serialize_builtins (unittest.loader._FailedTest.test_serialize_builtins)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_builtins'
+
+======================================================================
+ERROR: test_serialize_choices (unittest.loader._FailedTest.test_serialize_choices)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_choices'
+
+======================================================================
+ERROR: test_serialize_collections (unittest.loader._FailedTest.test_serialize_collections)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_collections'
+
+======================================================================
+ERROR: test_serialize_complex_func_index (unittest.loader._FailedTest.test_serialize_complex_func_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_complex_func_index'
+
+======================================================================
+ERROR: test_serialize_constants (unittest.loader._FailedTest.test_serialize_constants)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_constants'
+
+======================================================================
+ERROR: test_serialize_datetime (unittest.loader._FailedTest.test_serialize_datetime)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_datetime'
+
+======================================================================
+ERROR: test_serialize_enum_flags (unittest.loader._FailedTest.test_serialize_enum_flags)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_enum_flags'
+
+======================================================================
+ERROR: test_serialize_enums (unittest.loader._FailedTest.test_serialize_enums)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_enums'
+
+======================================================================
+ERROR: test_serialize_fields (unittest.loader._FailedTest.test_serialize_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_fields'
+
+======================================================================
+ERROR: test_serialize_frozensets (unittest.loader._FailedTest.test_serialize_frozensets)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_frozensets'
+
+======================================================================
+ERROR: test_serialize_functions (unittest.loader._FailedTest.test_serialize_functions)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_functions'
+
+======================================================================
+ERROR: test_serialize_functools_partial (unittest.loader._FailedTest.test_serialize_functools_partial)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_functools_partial'
+
+======================================================================
+ERROR: test_serialize_functools_partialmethod (unittest.loader._FailedTest.test_serialize_functools_partialmethod)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_functools_partialmethod'
+
+======================================================================
+ERROR: test_serialize_iterators (unittest.loader._FailedTest.test_serialize_iterators)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_iterators'
+
+======================================================================
+ERROR: test_serialize_lazy_objects (unittest.loader._FailedTest.test_serialize_lazy_objects)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_lazy_objects'
+
+======================================================================
+ERROR: test_serialize_managers (unittest.loader._FailedTest.test_serialize_managers)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_managers'
+
+======================================================================
+ERROR: test_serialize_multiline_strings (unittest.loader._FailedTest.test_serialize_multiline_strings)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_multiline_strings'
+
+======================================================================
+ERROR: test_serialize_nested_class (unittest.loader._FailedTest.test_serialize_nested_class)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_nested_class'
+
+======================================================================
+ERROR: test_serialize_numbers (unittest.loader._FailedTest.test_serialize_numbers)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_numbers'
+
+======================================================================
+ERROR: test_serialize_path_like (unittest.loader._FailedTest.test_serialize_path_like)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_path_like'
+
+======================================================================
+ERROR: test_serialize_pathlib (unittest.loader._FailedTest.test_serialize_pathlib)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_pathlib'
+
+======================================================================
+ERROR: test_serialize_range (unittest.loader._FailedTest.test_serialize_range)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_range'
+
+======================================================================
+ERROR: test_serialize_set (unittest.loader._FailedTest.test_serialize_set)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_set'
+
+======================================================================
+ERROR: test_serialize_settings (unittest.loader._FailedTest.test_serialize_settings)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_settings'
+
+======================================================================
+ERROR: test_serialize_strings (unittest.loader._FailedTest.test_serialize_strings)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_strings'
+
+======================================================================
+ERROR: test_serialize_timedelta (unittest.loader._FailedTest.test_serialize_timedelta)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_timedelta'
+
+======================================================================
+ERROR: test_serialize_type_model (unittest.loader._FailedTest.test_serialize_type_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_type_model'
+
+======================================================================
+ERROR: test_serialize_type_none (unittest.loader._FailedTest.test_serialize_type_none)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_type_none'
+
+======================================================================
+ERROR: test_serialize_uuid (unittest.loader._FailedTest.test_serialize_uuid)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_serialize_uuid'
+
+======================================================================
+ERROR: test_sorted_dependencies (unittest.loader._FailedTest.test_sorted_dependencies)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_sorted_dependencies'
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.004s
+
+FAILED (errors=44)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['migrations.test_writer.WriterTests.test_serialize_nested_class_method.test_serialize_nested_class_method']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['migrations.test_writer.OperationWriterTests.test_args_kwargs_signature.test_args_kwargs_signature', 'migrations.test_writer.OperationWriterTests.test_args_signature.test_args_signature', 'migrations.test_writer.OperationWriterTests.test_empty_signature.test_empty_signature', 'migrations.test_writer.OperationWriterTests.test_expand_args_signature.test_expand_args_signature', 'migrations.test_writer.OperationWriterTests.test_kwargs_signature.test_kwargs_signature', 'migrations.test_writer.OperationWriterTests.test_multiline_args_signature.test_multiline_args_signature', 'migrations.test_writer.OperationWriterTests.test_nested_args_signature.test_nested_args_signature', 'migrations.test_writer.OperationWriterTests.test_nested_operation_expand_args_signature.test_nested_operation_expand_args_signature', 'migrations.test_writer.WriterTests.test_custom_operation.test_custom_operation', 'migrations.test_writer.WriterTests.test_deconstruct_class_arguments.test_deconstruct_class_arguments', 'migrations.test_writer.WriterTests.test_migration_path.test_migration_path', 'migrations.test_writer.WriterTests.test_register_non_serializer.test_register_non_serializer', 'migrations.test_writer.WriterTests.test_register_serializer.test_register_serializer', 'migrations.test_writer.WriterTests.test_serialize_builtin_types.test_serialize_builtin_types', 'migrations.test_writer.WriterTests.test_serialize_builtins.test_serialize_builtins', 'migrations.test_writer.WriterTests.test_serialize_choices.test_serialize_choices', 'migrations.test_writer.WriterTests.test_serialize_collections.test_serialize_collections', 'migrations.test_writer.WriterTests.test_serialize_complex_func_index.test_serialize_complex_func_index', 'migrations.test_writer.WriterTests.test_serialize_constants.test_serialize_constants', 'migrations.test_writer.WriterTests.test_serialize_datetime.test_serialize_datetime', 'migrations.test_writer.WriterTests.test_serialize_enum_flags.test_serialize_enum_flags', 'migrations.test_writer.WriterTests.test_serialize_enums.test_serialize_enums', 'migrations.test_writer.WriterTests.test_serialize_fields.test_serialize_fields', 'migrations.test_writer.WriterTests.test_serialize_frozensets.test_serialize_frozensets', 'migrations.test_writer.WriterTests.test_serialize_functions.test_serialize_functions', 'migrations.test_writer.WriterTests.test_serialize_functools_partial.test_serialize_functools_partial', 'migrations.test_writer.WriterTests.test_serialize_functools_partialmethod.test_serialize_functools_partialmethod', 'migrations.test_writer.WriterTests.test_serialize_iterators.test_serialize_iterators', 'migrations.test_writer.WriterTests.test_serialize_lazy_objects.test_serialize_lazy_objects', 'migrations.test_writer.WriterTests.test_serialize_managers.test_serialize_managers', 'migrations.test_writer.WriterTests.test_serialize_multiline_strings.test_serialize_multiline_strings', 'migrations.test_writer.WriterTests.test_serialize_nested_class.test_serialize_nested_class', 'migrations.test_writer.WriterTests.test_serialize_numbers.test_serialize_numbers', 'migrations.test_writer.WriterTests.test_serialize_path_like.test_serialize_path_like', 'migrations.test_writer.WriterTests.test_serialize_pathlib.test_serialize_pathlib', 'migrations.test_writer.WriterTests.test_serialize_range.test_serialize_range', 'migrations.test_writer.WriterTests.test_serialize_set.test_serialize_set', 'migrations.test_writer.WriterTests.test_serialize_settings.test_serialize_settings', 'migrations.test_writer.WriterTests.test_serialize_strings.test_serialize_strings', 'migrations.test_writer.WriterTests.test_serialize_timedelta.test_serialize_timedelta', 'migrations.test_writer.WriterTests.test_serialize_type_model.test_serialize_type_model', 'migrations.test_writer.WriterTests.test_serialize_type_none.test_serialize_type_none', 'migrations.test_writer.WriterTests.test_serialize_uuid.test_serialize_uuid', 'migrations.test_writer.WriterTests.test_sorted_dependencies.test_sorted_dependencies']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

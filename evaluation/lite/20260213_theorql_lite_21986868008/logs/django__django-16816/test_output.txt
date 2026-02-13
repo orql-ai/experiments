@@ -1,0 +1,548 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application modeladmin
+Found 2 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16816:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16816
+500327121db6: Pulling fs layer
+ed943e5a71d4: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+ac5b61163589: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+b3e46d1007f8: Pulling fs layer
+48d09a4d2bd0: Download complete
+aef50d31cf01: Download complete
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+788ea9f0fbb4: Download complete
+b3e46d1007f8: Download complete
+836b79e2a6e5: Download complete
+ed943e5a71d4: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+56cfd456d2c9: Download complete
+a2f6138ded93: Download complete
+1c04d89b98c3: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+48d09a4d2bd0: Pull complete
+aef50d31cf01: Pull complete
+56cfd456d2c9: Pull complete
+788ea9f0fbb4: Pull complete
+1c04d89b98c3: Pull complete
+b3e46d1007f8: Pull complete
+ed943e5a71d4: Pull complete
+Digest: sha256:ad68f2c83a4a74287787bf0b22451fae1e40e4838b80b1df8ea603215d883d8b
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16816:latest
+test_invalid_m2m_related_name (unittest.loader._FailedTest.test_invalid_m2m_related_name) ... ERROR
+test_invalid_related_field (unittest.loader._FailedTest.test_invalid_related_field) ... ERROR
+
+======================================================================
+ERROR: test_invalid_m2m_related_name (unittest.loader._FailedTest.test_invalid_m2m_related_name)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_m2m_related_name'
+
+======================================================================
+ERROR: test_invalid_related_field (unittest.loader._FailedTest.test_invalid_related_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_related_field'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)
+
+
+===== PHASE: PASS_TO_PASS (116 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application modeladmin
+Found 23 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_inline_without_formset_class (unittest.loader._FailedTest.test_inline_without_formset_class) ... ERROR
+test_invalid_type (unittest.loader._FailedTest.test_invalid_type) ... ERROR
+test_valid_case (unittest.loader._FailedTest.test_valid_case) ... ERROR
+test_not_boolean (unittest.loader._FailedTest.test_not_boolean) ... ERROR
+test_not_integer (unittest.loader._FailedTest.test_not_integer) ... ERROR
+test_invalid_expression (unittest.loader._FailedTest.test_invalid_expression) ... ERROR
+test_not_iterable (unittest.loader._FailedTest.test_not_iterable) ... ERROR
+test_random_marker_not_alone (unittest.loader._FailedTest.test_random_marker_not_alone) ... ERROR
+test_valid_complex_case (unittest.loader._FailedTest.test_valid_complex_case) ... ERROR
+test_valid_expression (unittest.loader._FailedTest.test_valid_expression) ... ERROR
+test_valid_random_marker_case (unittest.loader._FailedTest.test_valid_random_marker_case) ... ERROR
+test_invalid_field_type (unittest.loader._FailedTest.test_invalid_field_type) ... ERROR
+test_invalid_reverse_related_field (unittest.loader._FailedTest.test_invalid_reverse_related_field) ... ERROR
+test_missing_field (unittest.loader._FailedTest.test_missing_field) ... ERROR
+test_valid_field_accessible_via_instance (unittest.loader._FailedTest.test_valid_field_accessible_via_instance) ... ERROR
+test_actions_not_unique (unittest.loader._FailedTest.test_actions_not_unique) ... ERROR
+test_actions_unique (unittest.loader._FailedTest.test_actions_unique) ... ERROR
+test_custom_permissions_require_matching_has_method (unittest.loader._FailedTest.test_custom_permissions_require_matching_has_method) ... ERROR
+test_duplicate_fields_in_fields (unittest.loader._FailedTest.test_duplicate_fields_in_fields) ... ERROR
+test_inline (unittest.loader._FailedTest.test_inline) ... ERROR
+test_fieldsets_with_custom_form_validation (unittest.loader._FailedTest.test_fieldsets_with_custom_form_validation) ... ERROR
+test_None_is_valid_case (unittest.loader._FailedTest.test_None_is_valid_case) ... ERROR
+test_missing_in_list_display (unittest.loader._FailedTest.test_missing_in_list_display) ... ERROR
+
+======================================================================
+ERROR: test_inline_without_formset_class (unittest.loader._FailedTest.test_inline_without_formset_class)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_inline_without_formset_class'
+
+======================================================================
+ERROR: test_invalid_type (unittest.loader._FailedTest.test_invalid_type)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_type'
+
+======================================================================
+ERROR: test_valid_case (unittest.loader._FailedTest.test_valid_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_valid_case'
+
+======================================================================
+ERROR: test_not_boolean (unittest.loader._FailedTest.test_not_boolean)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_boolean'
+
+======================================================================
+ERROR: test_not_integer (unittest.loader._FailedTest.test_not_integer)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_integer'
+
+======================================================================
+ERROR: test_invalid_expression (unittest.loader._FailedTest.test_invalid_expression)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_expression'
+
+======================================================================
+ERROR: test_not_iterable (unittest.loader._FailedTest.test_not_iterable)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_iterable'
+
+======================================================================
+ERROR: test_random_marker_not_alone (unittest.loader._FailedTest.test_random_marker_not_alone)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_random_marker_not_alone'
+
+======================================================================
+ERROR: test_valid_complex_case (unittest.loader._FailedTest.test_valid_complex_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_valid_complex_case'
+
+======================================================================
+ERROR: test_valid_expression (unittest.loader._FailedTest.test_valid_expression)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_valid_expression'
+
+======================================================================
+ERROR: test_valid_random_marker_case (unittest.loader._FailedTest.test_valid_random_marker_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_valid_random_marker_case'
+
+======================================================================
+ERROR: test_invalid_field_type (unittest.loader._FailedTest.test_invalid_field_type)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_field_type'
+
+======================================================================
+ERROR: test_invalid_reverse_related_field (unittest.loader._FailedTest.test_invalid_reverse_related_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_reverse_related_field'
+
+======================================================================
+ERROR: test_missing_field (unittest.loader._FailedTest.test_missing_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_missing_field'
+
+======================================================================
+ERROR: test_valid_field_accessible_via_instance (unittest.loader._FailedTest.test_valid_field_accessible_via_instance)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_valid_field_accessible_via_instance'
+
+======================================================================
+ERROR: test_actions_not_unique (unittest.loader._FailedTest.test_actions_not_unique)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_actions_not_unique'
+
+======================================================================
+ERROR: test_actions_unique (unittest.loader._FailedTest.test_actions_unique)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_actions_unique'
+
+======================================================================
+ERROR: test_custom_permissions_require_matching_has_method (unittest.loader._FailedTest.test_custom_permissions_require_matching_has_method)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_custom_permissions_require_matching_has_method'
+
+======================================================================
+ERROR: test_duplicate_fields_in_fields (unittest.loader._FailedTest.test_duplicate_fields_in_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_duplicate_fields_in_fields'
+
+======================================================================
+ERROR: test_inline (unittest.loader._FailedTest.test_inline)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_inline'
+
+======================================================================
+ERROR: test_fieldsets_with_custom_form_validation (unittest.loader._FailedTest.test_fieldsets_with_custom_form_validation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_fieldsets_with_custom_form_validation'
+
+======================================================================
+ERROR: test_None_is_valid_case (unittest.loader._FailedTest.test_None_is_valid_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_None_is_valid_case'
+
+======================================================================
+ERROR: test_missing_in_list_display (unittest.loader._FailedTest.test_missing_in_list_display)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_missing_in_list_display'
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.003s
+
+FAILED (errors=23)
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application modeladmin
+Found 34 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_invalid_field_type (unittest.loader._FailedTest.test_invalid_field_type) ... ERROR
+test_missing_field (unittest.loader._FailedTest.test_missing_field) ... ERROR
+test_related_invalid_field_type (unittest.loader._FailedTest.test_related_invalid_field_type) ... ERROR
+test_related_valid_case (unittest.loader._FailedTest.test_related_valid_case) ... ERROR
+test_valid_case (unittest.loader._FailedTest.test_valid_case) ... ERROR
+test_both_list_editable_and_list_display_links (unittest.loader._FailedTest.test_both_list_editable_and_list_display_links) ... ERROR
+test_not_boolean (unittest.loader._FailedTest.test_not_boolean) ... ERROR
+test_autocomplete_e036 (unittest.loader._FailedTest.test_autocomplete_e036) ... ERROR
+test_autocomplete_e037 (unittest.loader._FailedTest.test_autocomplete_e037) ... ERROR
+test_autocomplete_e039 (unittest.loader._FailedTest.test_autocomplete_e039) ... ERROR
+test_autocomplete_e040 (unittest.loader._FailedTest.test_autocomplete_e040) ... ERROR
+test_autocomplete_e38 (unittest.loader._FailedTest.test_autocomplete_e38) ... ERROR
+test_autocomplete_is_onetoone (unittest.loader._FailedTest.test_autocomplete_is_onetoone) ... ERROR
+test_autocomplete_is_valid (unittest.loader._FailedTest.test_autocomplete_is_valid) ... ERROR
+test_not_integer (unittest.loader._FailedTest.test_not_integer) ... ERROR
+test_duplicate_fields (unittest.loader._FailedTest.test_duplicate_fields) ... ERROR
+test_duplicate_fields_in_fieldsets (unittest.loader._FailedTest.test_duplicate_fields_in_fieldsets) ... ERROR
+test_fieldsets_with_custom_form_validation (unittest.loader._FailedTest.test_fieldsets_with_custom_form_validation) ... ERROR
+test_item_not_a_pair (unittest.loader._FailedTest.test_item_not_a_pair) ... ERROR
+test_missing_fields_key (unittest.loader._FailedTest.test_missing_fields_key) ... ERROR
+test_non_iterable_item (unittest.loader._FailedTest.test_non_iterable_item) ... ERROR
+test_not_iterable (unittest.loader._FailedTest.test_not_iterable) ... ERROR
+test_second_element_of_item_not_a_dict (unittest.loader._FailedTest.test_second_element_of_item_not_a_dict) ... ERROR
+test_specified_both_fields_and_fieldsets (unittest.loader._FailedTest.test_specified_both_fields_and_fieldsets) ... ERROR
+test_field_attname (unittest.loader._FailedTest.test_field_attname) ... ERROR
+test_invalid_value (unittest.loader._FailedTest.test_invalid_value) ... ERROR
+test_not_dictionary (unittest.loader._FailedTest.test_not_dictionary) ... ERROR
+test_proxy_model_parent (unittest.loader._FailedTest.test_proxy_model_parent) ... ERROR
+test_missing_field_again (unittest.loader._FailedTest.test_missing_field_again) ... ERROR
+test_not_list_or_tuple (unittest.loader._FailedTest.test_not_list_or_tuple) ... ERROR
+test_one_to_one_field (unittest.loader._FailedTest.test_one_to_one_field) ... ERROR
+test_invalid_callable (unittest.loader._FailedTest.test_invalid_callable) ... ERROR
+test_invalid_model (unittest.loader._FailedTest.test_invalid_model) ... ERROR
+test_invalid_model_type (unittest.loader._FailedTest.test_invalid_model_type) ... ERROR
+
+======================================================================
+ERROR: test_invalid_field_type (unittest.loader._FailedTest.test_invalid_field_type)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_field_type'
+
+======================================================================
+ERROR: test_missing_field (unittest.loader._FailedTest.test_missing_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_missing_field'
+
+======================================================================
+ERROR: test_related_invalid_field_type (unittest.loader._FailedTest.test_related_invalid_field_type)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_related_invalid_field_type'
+
+======================================================================
+ERROR: test_related_valid_case (unittest.loader._FailedTest.test_related_valid_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_related_valid_case'
+
+======================================================================
+ERROR: test_valid_case (unittest.loader._FailedTest.test_valid_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_valid_case'
+
+======================================================================
+ERROR: test_both_list_editable_and_list_display_links (unittest.loader._FailedTest.test_both_list_editable_and_list_display_links)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_both_list_editable_and_list_display_links'
+
+======================================================================
+ERROR: test_not_boolean (unittest.loader._FailedTest.test_not_boolean)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_boolean'
+
+======================================================================
+ERROR: test_autocomplete_e036 (unittest.loader._FailedTest.test_autocomplete_e036)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_autocomplete_e036'
+
+======================================================================
+ERROR: test_autocomplete_e037 (unittest.loader._FailedTest.test_autocomplete_e037)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_autocomplete_e037'
+
+======================================================================
+ERROR: test_autocomplete_e039 (unittest.loader._FailedTest.test_autocomplete_e039)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_autocomplete_e039'
+
+======================================================================
+ERROR: test_autocomplete_e040 (unittest.loader._FailedTest.test_autocomplete_e040)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_autocomplete_e040'
+
+======================================================================
+ERROR: test_autocomplete_e38 (unittest.loader._FailedTest.test_autocomplete_e38)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_autocomplete_e38'
+
+======================================================================
+ERROR: test_autocomplete_is_onetoone (unittest.loader._FailedTest.test_autocomplete_is_onetoone)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_autocomplete_is_onetoone'
+
+======================================================================
+ERROR: test_autocomplete_is_valid (unittest.loader._FailedTest.test_autocomplete_is_valid)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_autocomplete_is_valid'
+
+======================================================================
+ERROR: test_not_integer (unittest.loader._FailedTest.test_not_integer)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_integer'
+
+======================================================================
+ERROR: test_duplicate_fields (unittest.loader._FailedTest.test_duplicate_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_duplicate_fields'
+
+======================================================================
+ERROR: test_duplicate_fields_in_fieldsets (unittest.loader._FailedTest.test_duplicate_fields_in_fieldsets)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_duplicate_fields_in_fieldsets'
+
+======================================================================
+ERROR: test_fieldsets_with_custom_form_validation (unittest.loader._FailedTest.test_fieldsets_with_custom_form_validation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_fieldsets_with_custom_form_validation'
+
+======================================================================
+ERROR: test_item_not_a_pair (unittest.loader._FailedTest.test_item_not_a_pair)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_item_not_a_pair'
+
+======================================================================
+ERROR: test_missing_fields_key (unittest.loader._FailedTest.test_missing_fields_key)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_missing_fields_key'
+
+======================================================================
+ERROR: test_non_iterable_item (unittest.loader._FailedTest.test_non_iterable_item)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_non_iterable_item'
+
+======================================================================
+ERROR: test_not_iterable (unittest.loader._FailedTest.test_not_iterable)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_iterable'
+
+======================================================================
+ERROR: test_second_element_of_item_not_a_dict (unittest.loader._FailedTest.test_second_element_of_item_not_a_dict)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_second_element_of_item_not_a_dict'
+
+======================================================================
+ERROR: test_specified_both_fields_and_fieldsets (unittest.loader._FailedTest.test_specified_both_fields_and_fieldsets)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_specified_both_fields_and_fieldsets'
+
+======================================================================
+ERROR: test_field_attname (unittest.loader._FailedTest.test_field_attname)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_field_attname'
+
+======================================================================
+ERROR: test_invalid_value (unittest.loader._FailedTest.test_invalid_value)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_value'
+
+======================================================================
+ERROR: test_not_dictionary (unittest.loader._FailedTest.test_not_dictionary)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_dictionary'
+
+======================================================================
+ERROR: test_proxy_model_parent (unittest.loader._FailedTest.test_proxy_model_parent)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_proxy_model_parent'
+
+======================================================================
+ERROR: test_missing_field_again (unittest.loader._FailedTest.test_missing_field_again)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_missing_field_again'
+
+======================================================================
+ERROR: test_not_list_or_tuple (unittest.loader._FailedTest.test_not_list_or_tuple)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_list_or_tuple'
+
+======================================================================
+ERROR: test_one_to_one_field (unittest.loader._FailedTest.test_one_to_one_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_one_to_one_field'
+
+======================================================================
+ERROR: test_invalid_callable (unittest.loader._FailedTest.test_invalid_callable)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_callable'
+
+======================================================================
+ERROR: test_invalid_model (unittest.loader._FailedTest.test_invalid_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_model'
+
+======================================================================
+ERROR: test_invalid_model_type (unittest.loader._FailedTest.test_invalid_model_type)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_model_type'
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.005s
+
+FAILED (errors=34)
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application modeladmin
+Found 15 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_missing_model_field (unittest.loader._FailedTest.test_missing_model_field) ... ERROR
+test_not_correct_inline_field (unittest.loader._FailedTest.test_not_correct_inline_field) ... ERROR
+test_not_iterable (unittest.loader._FailedTest.test_not_iterable) ... ERROR
+test_not_model_admin (unittest.loader._FailedTest.test_not_model_admin) ... ERROR
+test_valid_case (unittest.loader._FailedTest.test_valid_case) ... ERROR
+test_callable (unittest.loader._FailedTest.test_callable) ... ERROR
+test_list_filter_is_func (unittest.loader._FailedTest.test_list_filter_is_func) ... ERROR
+test_list_filter_validation (unittest.loader._FailedTest.test_list_filter_validation) ... ERROR
+test_missing_field (unittest.loader._FailedTest.test_missing_field) ... ERROR
+test_not_associated_with_field_name (unittest.loader._FailedTest.test_not_associated_with_field_name) ... ERROR
+test_not_callable (unittest.loader._FailedTest.test_not_callable) ... ERROR
+test_not_filter (unittest.loader._FailedTest.test_not_filter) ... ERROR
+test_not_filter_again (unittest.loader._FailedTest.test_not_filter_again) ... ERROR
+test_not_filter_again_again (unittest.loader._FailedTest.test_not_filter_again_again) ... ERROR
+test_not_list_filter_class (unittest.loader._FailedTest.test_not_list_filter_class) ... ERROR
+
+======================================================================
+ERROR: test_missing_model_field (unittest.loader._FailedTest.test_missing_model_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_missing_model_field'
+
+======================================================================
+ERROR: test_not_correct_inline_field (unittest.loader._FailedTest.test_not_correct_inline_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_correct_inline_field'
+
+======================================================================
+ERROR: test_not_iterable (unittest.loader._FailedTest.test_not_iterable)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_iterable'
+
+======================================================================
+ERROR: test_not_model_admin (unittest.loader._FailedTest.test_not_model_admin)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_model_admin'
+
+======================================================================
+ERROR: test_valid_case (unittest.loader._FailedTest.test_valid_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_valid_case'
+
+======================================================================
+ERROR: test_callable (unittest.loader._FailedTest.test_callable)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_callable'
+
+======================================================================
+ERROR: test_list_filter_is_func (unittest.loader._FailedTest.test_list_filter_is_func)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_list_filter_is_func'
+
+======================================================================
+ERROR: test_list_filter_validation (unittest.loader._FailedTest.test_list_filter_validation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_list_filter_validation'
+
+======================================================================
+ERROR: test_missing_field (unittest.loader._FailedTest.test_missing_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_missing_field'
+
+======================================================================
+ERROR: test_not_associated_with_field_name (unittest.loader._FailedTest.test_not_associated_with_field_name)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_associated_with_field_name'
+
+======================================================================
+ERROR: test_not_callable (unittest.loader._FailedTest.test_not_callable)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_callable'
+
+======================================================================
+ERROR: test_not_filter (unittest.loader._FailedTest.test_not_filter)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_filter'
+
+======================================================================
+ERROR: test_not_filter_again (unittest.loader._FailedTest.test_not_filter_again)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_filter_again'
+
+======================================================================
+ERROR: test_not_filter_again_again (unittest.loader._FailedTest.test_not_filter_again_again)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_filter_again_again'
+
+======================================================================
+ERROR: test_not_list_filter_class (unittest.loader._FailedTest.test_not_list_filter_class)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_list_filter_class'
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+FAILED (errors=15)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['modeladmin.test_checks.ListDisplayTests.test_invalid_m2m_related_name.test_invalid_m2m_related_name', 'modeladmin.test_checks.ListDisplayTests.test_invalid_related_field.test_invalid_related_field']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['modeladmin.test_checks.FormsetCheckTests.test_inline_without_formset_class.test_inline_without_formset_class', 'modeladmin.test_checks.FormsetCheckTests.test_invalid_type.test_invalid_type', 'modeladmin.test_checks.FormsetCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.ListSelectRelatedCheckTests.test_invalid_type.test_invalid_type', 'modeladmin.test_checks.ListSelectRelatedCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.SaveAsCheckTests.test_not_boolean.test_not_boolean', 'modeladmin.test_checks.SaveAsCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.MinNumCheckTests.test_not_integer.test_not_integer', 'modeladmin.test_checks.MinNumCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.ExtraCheckTests.test_not_integer.test_not_integer', 'modeladmin.test_checks.ExtraCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.ListMaxShowAllCheckTests.test_not_integer.test_not_integer', 'modeladmin.test_checks.ListMaxShowAllCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.OrderingCheckTests.test_invalid_expression.test_invalid_expression', 'modeladmin.test_checks.OrderingCheckTests.test_not_iterable.test_not_iterable', 'modeladmin.test_checks.OrderingCheckTests.test_random_marker_not_alone.test_random_marker_not_alone', 'modeladmin.test_checks.OrderingCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.OrderingCheckTests.test_valid_complex_case.test_valid_complex_case', 'modeladmin.test_checks.OrderingCheckTests.test_valid_expression.test_valid_expression', 'modeladmin.test_checks.OrderingCheckTests.test_valid_random_marker_case.test_valid_random_marker_case', 'modeladmin.test_checks.ListDisplayTests.test_invalid_field_type.test_invalid_field_type', 'modeladmin.test_checks.ListDisplayTests.test_invalid_reverse_related_field.test_invalid_reverse_related_field', 'modeladmin.test_checks.ListDisplayTests.test_missing_field.test_missing_field', 'modeladmin.test_checks.ListDisplayTests.test_not_iterable.test_not_iterable', 'modeladmin.test_checks.ListDisplayTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.ListDisplayTests.test_valid_field_accessible_via_instance.test_valid_field_accessible_via_instance', 'modeladmin.test_checks.FilterVerticalCheckTests.test_invalid_field_type.test_invalid_field_type', 'modeladmin.test_checks.FilterVerticalCheckTests.test_missing_field.test_missing_field', 'modeladmin.test_checks.FilterVerticalCheckTests.test_not_iterable.test_not_iterable', 'modeladmin.test_checks.FilterVerticalCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.ActionsCheckTests.test_actions_not_unique.test_actions_not_unique', 'modeladmin.test_checks.ActionsCheckTests.test_actions_unique.test_actions_unique', 'modeladmin.test_checks.ActionsCheckTests.test_custom_permissions_require_matching_has_method.test_custom_permissions_require_matching_has_method', 'modeladmin.test_checks.FieldsCheckTests.test_duplicate_fields_in_fields.test_duplicate_fields_in_fields', 'modeladmin.test_checks.FieldsCheckTests.test_inline.test_inline', 'modeladmin.test_checks.FormCheckTests.test_fieldsets_with_custom_form_validation.test_fieldsets_with_custom_form_validation', 'modeladmin.test_checks.FormCheckTests.test_invalid_type.test_invalid_type', 'modeladmin.test_checks.FormCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.FilterHorizontalCheckTests.test_invalid_field_type.test_invalid_field_type', 'modeladmin.test_checks.FilterHorizontalCheckTests.test_missing_field.test_missing_field', 'modeladmin.test_checks.FilterHorizontalCheckTests.test_not_iterable.test_not_iterable', 'modeladmin.test_checks.FilterHorizontalCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.ListDisplayLinksCheckTests.test_None_is_valid_case.test_None_is_valid_case', 'modeladmin.test_checks.ListDisplayLinksCheckTests.test_missing_field.test_missing_field', 'modeladmin.test_checks.ListDisplayLinksCheckTests.test_missing_in_list_display.test_missing_in_list_display', 'modeladmin.test_checks.ListDisplayLinksCheckTests.test_not_iterable.test_not_iterable', 'modeladmin.test_checks.ListDisplayLinksCheckTests.test_valid_case.test_valid_case', 'modeladmin.test_checks.SearchFieldsCheckTests.test_not_iterable.test_not_iterable', 'modeladmin.test_checks.ListPerPageCheckTests.test_not_integer.test_not_integer', 'modeladmin.test_checks.ListPerPageCheckTests.test_valid_case.test_valid_case']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

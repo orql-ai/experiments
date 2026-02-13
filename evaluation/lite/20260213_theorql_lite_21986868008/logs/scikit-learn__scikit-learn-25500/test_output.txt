@@ -1,0 +1,123 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 1 item
+
+sklearn/tests/test_isotonic.py::test_isotonic_regression_output_predict [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m1 passed[0m[32m in 0.25s[0m[32m ===============================[0m
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25500:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25500
+836b79e2a6e5: Pulling fs layer
+33a66b05d6af: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e11f28e03bd1: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+4257b4928851: Pulling fs layer
+f93009d70e27: Pulling fs layer
+a5d33d85f717: Pulling fs layer
+ac5b61163589: Pulling fs layer
+bbaa409e0685: Pulling fs layer
+3833ab80c4aa: Pulling fs layer
+33a66b05d6af: Download complete
+e11f28e03bd1: Download complete
+ac5b61163589: Download complete
+bbaa409e0685: Download complete
+3833ab80c4aa: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+7478e0ac0f23: Download complete
+4257b4928851: Download complete
+f93009d70e27: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+a5d33d85f717: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+33a66b05d6af: Pull complete
+e11f28e03bd1: Pull complete
+f93009d70e27: Pull complete
+bbaa409e0685: Pull complete
+3833ab80c4aa: Pull complete
+a5d33d85f717: Pull complete
+4257b4928851: Pull complete
+Digest: sha256:b873309abb2d5c54d59f13268d735a8a5fcc762e8412ab3ee6f9a74dcf37c865
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25500:latest
+
+
+===== PHASE: PASS_TO_PASS (45 selectors) =====
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 45 items
+
+sklearn/tests/test_isotonic.py::test_permutation_invariance [32mPASSED[0m[32m       [  2%][0m
+sklearn/tests/test_isotonic.py::test_check_increasing_small_number_of_samples [32mPASSED[0m[32m [  4%][0m
+sklearn/tests/test_isotonic.py::test_check_increasing_up [32mPASSED[0m[32m          [  6%][0m
+sklearn/tests/test_isotonic.py::test_check_increasing_up_extreme [32mPASSED[0m[32m  [  8%][0m
+sklearn/tests/test_isotonic.py::test_check_increasing_down [32mPASSED[0m[32m        [ 11%][0m
+sklearn/tests/test_isotonic.py::test_check_increasing_down_extreme [32mPASSED[0m[32m [ 13%][0m
+sklearn/tests/test_isotonic.py::test_check_ci_warn [32mPASSED[0m[32m                [ 15%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression [32mPASSED[0m[32m          [ 17%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_ties_min [32mPASSED[0m[32m [ 20%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_ties_max [32mPASSED[0m[32m [ 22%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_ties_secondary_ [32mPASSED[0m[32m [ 24%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_with_ties_in_differently_sized_groups [32mPASSED[0m[32m [ 26%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_reversed [32mPASSED[0m[32m [ 28%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_auto_decreasing [32mPASSED[0m[32m [ 31%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_auto_increasing [32mPASSED[0m[32m [ 33%][0m
+sklearn/tests/test_isotonic.py::test_assert_raises_exceptions [32mPASSED[0m[32m     [ 35%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_sample_weight_parameter_default_value [32mPASSED[0m[32m [ 37%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_min_max_boundaries [32mPASSED[0m[32m  [ 40%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_sample_weight [32mPASSED[0m[32m       [ 42%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_oob_raise [32mPASSED[0m[32m [ 44%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_oob_clip [32mPASSED[0m[32m [ 46%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_oob_nan [32mPASSED[0m[32m  [ 48%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_pickle [32mPASSED[0m[32m   [ 51%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_duplicate_min_entry [32mPASSED[0m[32m [ 53%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_ymin_ymax [32mPASSED[0m[32m           [ 55%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_zero_weight_loop [32mPASSED[0m[32m    [ 57%][0m
+sklearn/tests/test_isotonic.py::test_fast_predict [32mPASSED[0m[32m                 [ 60%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_copy_before_fit [32mPASSED[0m[32m     [ 62%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_dtype [32mPASSED[0m[32m               [ 64%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_mismatched_dtype[int32] [32mPASSED[0m[32m [ 66%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_mismatched_dtype[int64] [32mPASSED[0m[32m [ 68%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_mismatched_dtype[float32] [32mPASSED[0m[32m [ 71%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_mismatched_dtype[float64] [32mPASSED[0m[32m [ 73%][0m
+sklearn/tests/test_isotonic.py::test_make_unique_dtype [32mPASSED[0m[32m            [ 75%][0m
+sklearn/tests/test_isotonic.py::test_make_unique_tolerance[float64] [32mPASSED[0m[32m [ 77%][0m
+sklearn/tests/test_isotonic.py::test_make_unique_tolerance[float32] [32mPASSED[0m[32m [ 80%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_make_unique_tolerance [32mPASSED[0m[32m [ 82%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_non_regression_inf_slope [32mPASSED[0m[32m [ 84%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_thresholds[True] [32mPASSED[0m[32m    [ 86%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_thresholds[False] [32mPASSED[0m[32m   [ 88%][0m
+sklearn/tests/test_isotonic.py::test_input_shape_validation [32mPASSED[0m[32m       [ 91%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_2darray_more_than_1_feature [32mPASSED[0m[32m [ 93%][0m
+sklearn/tests/test_isotonic.py::test_isotonic_regression_sample_weight_not_overwritten [32mPASSED[0m[32m [ 95%][0m
+sklearn/tests/test_isotonic.py::test_get_feature_names_out[1d] [32mPASSED[0m[32m    [ 97%][0m
+sklearn/tests/test_isotonic.py::test_get_feature_names_out[2d] [32mPASSED[0m[32m    [100%][0m
+
+[32m============================== [32m[1m45 passed[0m[32m in 0.17s[0m[32m ==============================[0m
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

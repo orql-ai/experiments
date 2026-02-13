@@ -1,0 +1,94 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        11053340
+hash randomization: on (PYTHONHASHSEED=3378097061)
+
+sympy/simplify/tests/test_trigsimp.py[1] F                                [FAIL]
+
+________________________________________________________________________________
+___ sympy/simplify/tests/test_trigsimp.py:test_issue_15129_trigsimp_methods ____
+Traceback (most recent call last):
+  File "/testbed/sympy/simplify/tests/test_trigsimp.py", line 367, in test_issue_15129_trigsimp_methods
+    assert trigsimp(r1) == cos(S(1)/50)
+AssertionError
+
+============= tests finished: 0 passed, 1 failed, in 0.11 seconds ==============
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-15346:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-15346
+ac5b61163589: Pulling fs layer
+b08895a5c216: Pulling fs layer
+a21e3407525a: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ed3dada71338: Pulling fs layer
+500327121db6: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+e360e302b6d5: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+ed3dada71338: Download complete
+e360e302b6d5: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+2f341c31f3b7: Download complete
+5c809fd8a9af: Download complete
+e5a28c0c137e: Download complete
+a21e3407525a: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+ed3dada71338: Pull complete
+e360e302b6d5: Pull complete
+5c809fd8a9af: Pull complete
+0b326ada86d1: Pull complete
+a21e3407525a: Pull complete
+Digest: sha256:25ee48824d3efac10fef9787c0dc706f65202dae1402002f33978b1553772a4c
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-15346:latest
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+
+
+===== PHASE: PASS_TO_PASS (22 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        23458170
+hash randomization: on (PYTHONHASHSEED=2429478250)
+
+sympy/simplify/tests/test_trigsimp.py[22] ......................            [OK]
+
+================== tests finished: 22 passed, in 8.24 seconds ==================
+
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_issue_15129_trigsimp_methods']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

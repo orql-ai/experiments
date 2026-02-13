@@ -1,0 +1,168 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 1 item
+
+xarray/tests/test_formatting.py::test_inline_variable_array_repr_custom_repr PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:58
+xarray/tests/__init__.py:58
+  /testbed/xarray/tests/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 1 passed, 11 warnings in 2.75s ========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pydata__xarray-4248:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pydata__xarray-4248
+ac5b61163589: Pulling fs layer
+9e815d95687c: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+676e056c2548: Pulling fs layer
+5d8672667496: Pulling fs layer
+ad8164044f92: Pulling fs layer
+363b1493afdc: Pulling fs layer
+bb5c21b398dc: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+f2c552d5e015: Pulling fs layer
+ac5b61163589: Download complete
+676e056c2548: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ad8164044f92: Download complete
+bb5c21b398dc: Download complete
+f2c552d5e015: Download complete
+5d8672667496: Download complete
+7478e0ac0f23: Download complete
+9e815d95687c: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+363b1493afdc: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+9e815d95687c: Pull complete
+ad8164044f92: Pull complete
+5d8672667496: Pull complete
+bb5c21b398dc: Pull complete
+f2c552d5e015: Pull complete
+363b1493afdc: Pull complete
+676e056c2548: Pull complete
+Digest: sha256:d118c5df6a0c9dad42493b42154a880b32cf553b9de214794ee2c9f306c9989a
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pydata__xarray-4248:latest
+
+
+===== PHASE: PASS_TO_PASS (18 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 18 items
+
+xarray/tests/test_formatting.py::TestFormatting::test_get_indexer_at_least_n_items PASSED [  5%]
+xarray/tests/test_formatting.py::TestFormatting::test_first_n_items PASSED [ 11%]
+xarray/tests/test_formatting.py::TestFormatting::test_last_n_items PASSED [ 16%]
+xarray/tests/test_formatting.py::TestFormatting::test_last_item PASSED   [ 22%]
+xarray/tests/test_formatting.py::TestFormatting::test_format_item PASSED [ 27%]
+xarray/tests/test_formatting.py::TestFormatting::test_format_items PASSED [ 33%]
+xarray/tests/test_formatting.py::TestFormatting::test_format_array_flat PASSED [ 38%]
+xarray/tests/test_formatting.py::TestFormatting::test_pretty_print PASSED [ 44%]
+xarray/tests/test_formatting.py::TestFormatting::test_maybe_truncate PASSED [ 50%]
+xarray/tests/test_formatting.py::TestFormatting::test_format_timestamp_out_of_bounds PASSED [ 55%]
+xarray/tests/test_formatting.py::TestFormatting::test_attribute_repr PASSED [ 61%]
+xarray/tests/test_formatting.py::TestFormatting::test_diff_array_repr PASSED [ 66%]
+xarray/tests/test_formatting.py::TestFormatting::test_diff_attrs_repr_with_array PASSED [ 72%]
+xarray/tests/test_formatting.py::TestFormatting::test_diff_dataset_repr PASSED [ 77%]
+xarray/tests/test_formatting.py::TestFormatting::test_array_repr PASSED  [ 83%]
+xarray/tests/test_formatting.py::test_set_numpy_options PASSED           [ 88%]
+xarray/tests/test_formatting.py::test_short_numpy_repr PASSED            [ 94%]
+xarray/tests/test_formatting.py::test_large_array_repr_length PASSED     [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:58
+xarray/tests/__init__.py:58
+  /testbed/xarray/tests/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 18 passed, 11 warnings in 2.76s ========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

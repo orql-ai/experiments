@@ -1,0 +1,102 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_views
+Found 1 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (1 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16527:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16527
+3178645a715a: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+500327121db6: Pulling fs layer
+ac5b61163589: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+dd3f14937b85: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+aef50d31cf01: Download complete
+48d09a4d2bd0: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+788ea9f0fbb4: Download complete
+dd3f14937b85: Download complete
+3178645a715a: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+1c04d89b98c3: Download complete
+56cfd456d2c9: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+aef50d31cf01: Pull complete
+48d09a4d2bd0: Pull complete
+56cfd456d2c9: Pull complete
+788ea9f0fbb4: Pull complete
+dd3f14937b85: Pull complete
+1c04d89b98c3: Pull complete
+3178645a715a: Pull complete
+Digest: sha256:6a8ec1671551fab4b6a1c6d6bbe44ad79821669cddfbf55f681feeee706aef63
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16527:latest
+test_submit_row_save_as_new_add_permission_required (unittest.loader._FailedTest.test_submit_row_save_as_new_add_permission_required) ... ERROR
+
+======================================================================
+ERROR: test_submit_row_save_as_new_add_permission_required (unittest.loader._FailedTest.test_submit_row_save_as_new_add_permission_required)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_submit_row_save_as_new_add_permission_required'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+
+===== PHASE: PASS_TO_PASS (3 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_views
+Found 3 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (1 silenced).
+
+test_choice_links (unittest.loader._FailedTest.test_choice_links) ... ERROR
+test_choice_links_datetime (unittest.loader._FailedTest.test_choice_links_datetime) ... ERROR
+test_override_show_save_and_add_another (unittest.loader._FailedTest.test_override_show_save_and_add_another) ... ERROR
+
+======================================================================
+ERROR: test_choice_links (unittest.loader._FailedTest.test_choice_links)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_choice_links'
+
+======================================================================
+ERROR: test_choice_links_datetime (unittest.loader._FailedTest.test_choice_links_datetime)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_choice_links_datetime'
+
+======================================================================
+ERROR: test_override_show_save_and_add_another (unittest.loader._FailedTest.test_override_show_save_and_add_another)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_override_show_save_and_add_another'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+FAILED (errors=3)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['admin_views.test_templatetags.AdminTemplateTagsTest.test_submit_row_save_as_new_add_permission_required.test_submit_row_save_as_new_add_permission_required']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['admin_views.test_templatetags.DateHierarchyTests.test_choice_links.test_choice_links', 'admin_views.test_templatetags.DateHierarchyTests.test_choice_links_datetime.test_choice_links_datetime', 'admin_views.test_templatetags.AdminTemplateTagsTest.test_override_show_save_and_add_another.test_override_show_save_and_add_another']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

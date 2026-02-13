@@ -1,0 +1,92 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 1 item
+
+sklearn/utils/tests/test_set_output.py::test_set_output_pandas_keep_index [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m1 passed[0m[32m in 0.20s[0m[32m ===============================[0m
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25747:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25747
+500327121db6: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+f94bee6dceed: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e11f28e03bd1: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+f93009d70e27: Pulling fs layer
+33a66b05d6af: Pulling fs layer
+20fe307f59a9: Pulling fs layer
+a5d33d85f717: Pulling fs layer
+bbaa409e0685: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+33a66b05d6af: Download complete
+bbaa409e0685: Download complete
+20fe307f59a9: Download complete
+e11f28e03bd1: Download complete
+7478e0ac0f23: Download complete
+f94bee6dceed: Download complete
+7478e0ac0f23: Pull complete
+f93009d70e27: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+a5d33d85f717: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+33a66b05d6af: Pull complete
+e11f28e03bd1: Pull complete
+f93009d70e27: Pull complete
+bbaa409e0685: Pull complete
+20fe307f59a9: Pull complete
+a5d33d85f717: Pull complete
+f94bee6dceed: Pull complete
+Digest: sha256:adb1d448903ae2251dbd368850bd4a34e586535ca1985e895793cd521b92d706
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25747:latest
+
+
+===== PHASE: PASS_TO_PASS (14 selectors) =====
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 14 items
+
+sklearn/utils/tests/test_set_output.py::test__wrap_in_pandas_container_dense [32mPASSED[0m[32m [  7%][0m
+sklearn/utils/tests/test_set_output.py::test__wrap_in_pandas_container_dense_update_columns_and_index [32mPASSED[0m[32m [ 14%][0m
+sklearn/utils/tests/test_set_output.py::test__wrap_in_pandas_container_error_validation [32mPASSED[0m[32m [ 21%][0m
+sklearn/utils/tests/test_set_output.py::test__safe_set_output [32mPASSED[0m[32m     [ 28%][0m
+sklearn/utils/tests/test_set_output.py::test_set_output_mixin [32mPASSED[0m[32m     [ 35%][0m
+sklearn/utils/tests/test_set_output.py::test__safe_set_output_error [32mPASSED[0m[32m [ 42%][0m
+sklearn/utils/tests/test_set_output.py::test_set_output_method [32mPASSED[0m[32m    [ 50%][0m
+sklearn/utils/tests/test_set_output.py::test_set_output_method_error [32mPASSED[0m[32m [ 57%][0m
+sklearn/utils/tests/test_set_output.py::test__get_output_config [32mPASSED[0m[32m   [ 64%][0m
+sklearn/utils/tests/test_set_output.py::test_get_output_auto_wrap_false [32mPASSED[0m[32m [ 71%][0m
+sklearn/utils/tests/test_set_output.py::test_auto_wrap_output_keys_errors_with_incorrect_input [32mPASSED[0m[32m [ 78%][0m
+sklearn/utils/tests/test_set_output.py::test_set_output_mixin_custom_mixin [32mPASSED[0m[32m [ 85%][0m
+sklearn/utils/tests/test_set_output.py::test__wrap_in_pandas_container_column_errors [32mPASSED[0m[32m [ 92%][0m
+sklearn/utils/tests/test_set_output.py::test_set_output_mro [32mPASSED[0m[32m       [100%][0m
+
+[32m============================== [32m[1m14 passed[0m[32m in 0.21s[0m[32m ==============================[0m
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

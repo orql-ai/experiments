@@ -1,0 +1,111 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        51675522
+hash randomization: on (PYTHONHASHSEED=3708969031)
+
+sympy/simplify/tests/test_cse.py[1] .                                       [OK]
+sympy/utilities/tests/test_codegen.py[1] .                                  [OK]
+
+================== tests finished: 2 passed, in 0.25 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-22840:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-22840
+19465ca341e8: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+335a17657002: Pulling fs layer
+b08895a5c216: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+2f341c31f3b7: Download complete
+ac5b61163589: Download complete
+ed3dada71338: Download complete
+5c809fd8a9af: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+335a17657002: Download complete
+19465ca341e8: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+b08895a5c216: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+5c809fd8a9af: Pull complete
+335a17657002: Pull complete
+0b326ada86d1: Pull complete
+19465ca341e8: Pull complete
+Digest: sha256:14f01d7aaca4f3b71f3e0607cfa19183a1430e21bfe75d2b4f7fd04834c486c0
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-22840:latest
+
+
+===== PHASE: PASS_TO_PASS (95 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        65173351
+hash randomization: on (PYTHONHASHSEED=1981178812)
+
+sympy/assumptions/tests/test_refine.py[1] .                                 [OK]
+sympy/functions/elementary/tests/test_piecewise.py[1] .                     [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/simplify/tests/test_cse.py[40] ........................................ 
+                                                                            [OK]
+sympy/simplify/tests/test_simplify.py[1] .                                  [OK]
+sympy/simplify/tests/test_trigsimp.py[1] .                                  [OK]
+sympy/utilities/tests/test_codegen.py[10] ..........                        [OK]
+sympy/utilities/tests/test_iterables.py[1] .                                [OK]
+
+================== tests finished: 56 passed, in 4.69 seconds ==================
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        11961020
+hash randomization: on (PYTHONHASHSEED=1240479170)
+
+sympy/external/tests/test_codegen.py[1] .                                   [OK]
+sympy/printing/tests/test_fortran.py[2] ..                                  [OK]
+sympy/printing/tests/test_rust.py[4] ....                                   [OK]
+sympy/utilities/tests/test_codegen.py[45] ......................................
+.......                                                                     [OK]
+sympy/utilities/tests/test_codegen_julia.py[1] .                            [OK]
+sympy/utilities/tests/test_codegen_octave.py[1] .                           [OK]
+sympy/utilities/tests/test_codegen_rust.py[1] .                             [OK]
+
+================== tests finished: 55 passed, in 0.95 seconds ==================
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

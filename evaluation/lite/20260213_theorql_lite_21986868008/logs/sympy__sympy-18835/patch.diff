@@ -1,0 +1,53 @@
+diff --git a/sympy/utilities/iterables.py b/sympy/utilities/iterables.py
+index d96e76263b..a74821c44c 100644
+--- a/sympy/utilities/iterables.py
++++ b/sympy/utilities/iterables.py
+@@ -2106,22 +2106,36 @@ def uniq(seq, result=None):
+     >>> list(uniq([[1], [2, 1], [1]]))
+     [[1], [2, 1]]
+     """
++    # Check if seq has a __len__ method to detect modifications
+     try:
+-        seen = set()
+-        result = result or []
+-        for i, s in enumerate(seq):
+-            if not (s in seen or seen.add(s)):
+-                yield s
++        initial_len = len(seq)
++        has_len = True
+     except TypeError:
+-        if s not in result:
+-            yield s
+-            result.append(s)
+-        if hasattr(seq, '__getitem__'):
+-            for s in uniq(seq[i + 1:], result):
++        has_len = False
++    
++    seen = set()
++    result = result or []
++    
++    for i, s in enumerate(seq):
++        # Check length first, before any operations that might raise TypeError
++        if has_len and len(seq) != initial_len:
++            raise RuntimeError('sequence changed size during iteration')
++        
++        try:
++            if not (s in seen or seen.add(s)):
+                 yield s
+-        else:
+-            for s in uniq(seq, result):
++        except TypeError:
++            # unhashable type
++            if s not in result:
+                 yield s
++                result.append(s)
++            if hasattr(seq, '__getitem__'):
++                for s in uniq(seq[i + 1:], result):
++                    yield s
++            else:
++                for s in uniq(seq, result):
++                    yield s
++            return
+ 
+ 
+ def generate_bell(n):

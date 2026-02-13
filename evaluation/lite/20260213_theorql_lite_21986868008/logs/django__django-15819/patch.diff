@@ -1,0 +1,27 @@
+diff --git a/django/core/management/commands/inspectdb.py b/django/core/management/commands/inspectdb.py
+index f33bcbdccf..54bc3eb9a5 100644
+--- a/django/core/management/commands/inspectdb.py
++++ b/django/core/management/commands/inspectdb.py
+@@ -133,6 +133,7 @@ class Command(BaseCommand):
+                 known_models.append(table2model(table_name))
+                 used_column_names = []  # Holds column names used in the table so far
+                 column_to_field_name = {}  # Maps column names to names of model fields
++                used_relations = {}  # Maps related model names to field names for related_name
+                 for row in table_description:
+                     comment_notes = (
+                         []
+@@ -186,6 +187,14 @@ class Command(BaseCommand):
+                             field_type = "%s(%s" % (rel_type, rel_to)
+                         else:
+                             field_type = "%s('%s'" % (rel_type, rel_to)
++                        # Add related_name if this relation has been used before
++                        if rel_to in used_relations:
++                            extra_params["related_name"] = "%s_%s_set" % (
++                                table2model(table_name).lower(),
++                                att_name,
++                            )
++                        else:
++                            used_relations[rel_to] = att_name
+                     else:
+                         # Calling `get_field_type` to get the field type string and any
+                         # additional parameters and notes.

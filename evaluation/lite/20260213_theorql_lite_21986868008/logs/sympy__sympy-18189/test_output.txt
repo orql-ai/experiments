@@ -1,0 +1,93 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        69304047
+hash randomization: on (PYTHONHASHSEED=24003299)
+
+sympy/solvers/tests/test_diophantine.py[2] ..                               [OK]
+
+================== tests finished: 2 passed, in 0.83 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18189:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-18189
+836b79e2a6e5: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+500327121db6: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ed3dada71338: Pulling fs layer
+ac5b61163589: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+d89e2c15195e: Pulling fs layer
+3cc341fc45e5: Pulling fs layer
+b08895a5c216: Pulling fs layer
+5c809fd8a9af: Download complete
+2f341c31f3b7: Download complete
+836b79e2a6e5: Download complete
+ed3dada71338: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+3cc341fc45e5: Download complete
+d89e2c15195e: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+0b326ada86d1: Download complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+3cc341fc45e5: Pull complete
+0b326ada86d1: Pull complete
+d89e2c15195e: Pull complete
+Digest: sha256:e09864b5db654f48db82acf2e82f4177edb81b0170ded1cae1d1978bc03acbd1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18189:latest
+
+
+===== PHASE: PASS_TO_PASS (41 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        76070396
+hash randomization: on (PYTHONHASHSEED=3083062506)
+
+sympy/core/tests/test_relational.py[1] .                                    [OK]
+sympy/geometry/tests/test_curve.py[1] .                                     [OK]
+sympy/geometry/tests/test_line.py[1] .                                      [OK]
+sympy/integrals/tests/test_meijerint.py[1] .                                [OK]
+sympy/physics/mechanics/tests/test_functions.py[1] .                        [OK]
+sympy/physics/mechanics/tests/test_kane.py[1] .                             [OK]
+sympy/physics/mechanics/tests/test_linearize.py[6] w.....                   [OK]
+sympy/solvers/tests/test_diophantine.py[41] ....................................
+.....                                                                       [OK]
+sympy/solvers/tests/test_ode.py[10] ....w..f..                              [OK]
+sympy/solvers/tests/test_solvers.py[3] ...                                  [OK]
+sympy/solvers/tests/test_solveset.py[2] ..                                  [OK]
+sympy/unify/tests/test_rewrite.py[1] .                                      [OK]
+
+== tests finished: 66 passed, 2 skipped, 1 expected to fail, in 13.75 seconds ==
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

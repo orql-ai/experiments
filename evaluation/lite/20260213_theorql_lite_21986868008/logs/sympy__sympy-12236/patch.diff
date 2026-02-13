@@ -1,0 +1,14 @@
+diff --git a/sympy/polys/partfrac.py b/sympy/polys/partfrac.py
+index 612b8f4607..b388d81287 100644
+--- a/sympy/polys/partfrac.py
++++ b/sympy/polys/partfrac.py
+@@ -77,6 +77,9 @@ def apart(f, x=None, full=False, **options):
+     else:
+         P, Q = f.as_numer_denom()
+ 
++    if x is not None and x not in f.free_symbols:
++        return f
++
+     _options = options.copy()
+     options = set_defaults(options, extension=True)
+     try:

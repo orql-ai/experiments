@@ -1,0 +1,88 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_backend_ps.py::test_empty_line PASSED          [100%]
+
+============================== 1 passed in 5.67s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23964:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23964
+836b79e2a6e5: Pulling fs layer
+22d3b1d58e22: Pulling fs layer
+161f3b5664f5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+3c26378340fc: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+3749b7a1e8c6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+40187f30e4d2: Pulling fs layer
+ac5b61163589: Pulling fs layer
+7e731192beca: Pulling fs layer
+11de44a65246: Pulling fs layer
+11de44a65246: Download complete
+40187f30e4d2: Download complete
+3c26378340fc: Download complete
+836b79e2a6e5: Download complete
+22d3b1d58e22: Download complete
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+7478e0ac0f23: Download complete
+3749b7a1e8c6: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+7e731192beca: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+161f3b5664f5: Download complete
+11de44a65246: Pull complete
+22d3b1d58e22: Pull complete
+7e731192beca: Pull complete
+40187f30e4d2: Pull complete
+3c26378340fc: Pull complete
+161f3b5664f5: Pull complete
+3749b7a1e8c6: Pull complete
+Digest: sha256:b0276d8e60435a7565520dbde6b1ce73b826f92db8bcc53ed717c766eecc063e
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23964:latest
+
+
+===== PHASE: PASS_TO_PASS (16 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 14 items
+
+============================ no tests ran in 3.98s =============================
+
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[ps]
+(no match in any of [<Module test_backend_ps.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[eps]
+(no match in any of [<Module test_backend_ps.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[ps-portrait] lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[ps-landscape] lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[ps] lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[eps-portrait] lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[eps-landscape] lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[eps] lib/matplotlib/tests/test_backend_ps.py::test_patheffects lib/matplotlib/tests/test_backend_ps.py::test_transparency[eps] lib/matplotlib/tests/test_backend_ps.py::test_bbox lib/matplotlib/tests/test_backend_ps.py::test_failing_latex lib/matplotlib/tests/test_backend_ps.py::test_text_clip[eps] lib/matplotlib/tests/test_backend_ps.py::test_d_glyph lib/matplotlib/tests/test_backend_ps.py::test_fonttype[3] lib/matplotlib/tests/test_backend_ps.py::test_fonttype[42] lib/matplotlib/tests/test_backend_ps.py::test_linedash lib/matplotlib/tests/test_backend_ps.py::test_no_duplicate_definition` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[ps-portrait]', 'lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[ps-landscape]', 'lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[ps]', 'lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[eps-portrait]', 'lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[eps-landscape]', 'lib/matplotlib/tests/test_backend_ps.py::test_savefig_to_stringio[eps]', 'lib/matplotlib/tests/test_backend_ps.py::test_patheffects', 'lib/matplotlib/tests/test_backend_ps.py::test_transparency[eps]', 'lib/matplotlib/tests/test_backend_ps.py::test_bbox', 'lib/matplotlib/tests/test_backend_ps.py::test_failing_latex', 'lib/matplotlib/tests/test_backend_ps.py::test_text_clip[eps]', 'lib/matplotlib/tests/test_backend_ps.py::test_d_glyph', 'lib/matplotlib/tests/test_backend_ps.py::test_fonttype[3]', 'lib/matplotlib/tests/test_backend_ps.py::test_fonttype[42]', 'lib/matplotlib/tests/test_backend_ps.py::test_linedash', 'lib/matplotlib/tests/test_backend_ps.py::test_no_duplicate_definition']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

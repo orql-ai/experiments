@@ -1,0 +1,19 @@
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index a0eb97792e..740e4939ae 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -864,6 +864,14 @@ def _print_Abs(self, expr, exp=None):
+             return tex
+     _print_Determinant = _print_Abs
+ 
++    def _print_Trace(self, expr, exp=None):
++        tex = r"\mathrm{tr}\left (%s \right )" % self._print(expr.args[0])
++
++        if exp is not None:
++            return r"%s^{%s}" % (tex, exp)
++        else:
++            return tex
++
+     def _print_re(self, expr, exp=None):
+         tex = r"\Re{%s}" % self.parenthesize(expr.args[0], PRECEDENCE['Atom'])
+ 

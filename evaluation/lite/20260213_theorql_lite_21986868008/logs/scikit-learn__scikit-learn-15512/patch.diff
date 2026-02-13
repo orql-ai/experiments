@@ -1,0 +1,35 @@
+diff --git a/sklearn/cluster/_affinity_propagation.py b/sklearn/cluster/_affinity_propagation.py
+index 4806afee90..dee70093d4 100644
+--- a/sklearn/cluster/_affinity_propagation.py
++++ b/sklearn/cluster/_affinity_propagation.py
+@@ -148,6 +148,7 @@ def affinity_propagation(S, preference=None, convergence_iter=15, max_iter=200,
+           random_state.randn(n_samples, n_samples))
+ 
+     # Execute parallel affinity propagation updates
++    converged = False
+     e = np.zeros((n_samples, convergence_iter))
+ 
+     ind = np.arange(n_samples)
+@@ -193,18 +194,20 @@ def affinity_propagation(S, preference=None, convergence_iter=15, max_iter=200,
+             se = np.sum(e, axis=1)
+             unconverged = (np.sum((se == convergence_iter) + (se == 0))
+                            != n_samples)
+-            if (not unconverged and (K > 0)) or (it == max_iter):
++            if (not unconverged and (K > 0)):
+                 if verbose:
+                     print("Converged after %d iterations." % it)
++                converged = True
+                 break
+     else:
++        converged = False
+         if verbose:
+             print("Did not converge")
+ 
+     I = np.flatnonzero(E)
+     K = I.size  # Identify exemplars
+ 
+-    if K > 0:
++    if converged:
+         c = np.argmax(S[:, I], axis=1)
+         c[I] = np.arange(K)  # Identify clusters
+         # Refine the final set of exemplars and clusters and return results

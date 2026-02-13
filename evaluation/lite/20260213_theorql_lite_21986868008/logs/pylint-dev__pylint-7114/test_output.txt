@@ -1,0 +1,171 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-3.0.0, benchmark-4.0.0, forked-1.6.0, xdist-2.5.0, timeout-2.3.1, profiling-1.7.0
+collecting ... collected 1 item
+
+tests/lint/unittest_lint.py::test_identically_named_nested_module FAILED [100%]
+
+=================================== FAILURES ===================================
+_____________________ test_identically_named_nested_module _____________________
+
+initialized_linter = Checker 'main' (responsible for 'F0001', 'F0002', 'F0010', 'F0011', 'I0001', 'I0010', 'I0011', 'I0013', 'I0020', 'I0021', 'I0022', 'E0001', 'E0011', 'W0012', 'R0022', 'E0013', 'E0014', 'E0015')
+
+    def test_identically_named_nested_module(initialized_linter: PyLinter) -> None:
+        with tempdir():
+            create_files(["identical/identical.py"])
+            with open("identical/identical.py", "w", encoding="utf-8") as f:
+                f.write("import imp")
+            initialized_linter.check(["identical"])
+>       assert initialized_linter.stats.by_msg["deprecated-module"] == 1
+E       KeyError: 'deprecated-module'
+
+tests/lint/unittest_lint.py:953: KeyError
+=========================== short test summary info ============================
+FAILED tests/lint/unittest_lint.py::test_identically_named_nested_module - Ke...
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================== 1 failed in 0.21s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-7114:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-7114
+7da84843a603: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+c7d857fa84a8: Pulling fs layer
+70c2a3067f55: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+3d96f88a5c28: Pulling fs layer
+500327121db6: Pulling fs layer
+9959bb11b056: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+a32f6c3f9904: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7404ca78e689: Pulling fs layer
+e5a28c0c137e: Download complete
+7404ca78e689: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+3d96f88a5c28: Download complete
+a32f6c3f9904: Download complete
+70c2a3067f55: Download complete
+7da84843a603: Download complete
+7478e0ac0f23: Download complete
+c7d857fa84a8: Download complete
+9959bb11b056: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+70c2a3067f55: Pull complete
+c7d857fa84a8: Pull complete
+3d96f88a5c28: Pull complete
+7404ca78e689: Pull complete
+a32f6c3f9904: Pull complete
+9959bb11b056: Pull complete
+7da84843a603: Pull complete
+Digest: sha256:f99e771c919960599d818c21ccdbd11fc93fc06537c32749bcbddeeb0dc2d05f
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-7114:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/lint/unittest_lint.py::test_identically_named_nested_module` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (56 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-3.0.0, benchmark-4.0.0, forked-1.6.0, xdist-2.5.0, timeout-2.3.1, profiling-1.7.0
+collecting ... collected 50 items
+
+tests/checkers/unittest_imports.py::TestImportsChecker::test_relative_beyond_top_level PASSED [  2%]
+tests/checkers/unittest_imports.py::TestImportsChecker::test_relative_beyond_top_level_three PASSED [  4%]
+tests/checkers/unittest_imports.py::TestImportsChecker::test_relative_beyond_top_level_four PASSED [  6%]
+tests/lint/unittest_lint.py::test_no_args PASSED                         [  8%]
+tests/lint/unittest_lint.py::test_one_arg[case0] PASSED                  [ 10%]
+tests/lint/unittest_lint.py::test_one_arg[case1] PASSED                  [ 12%]
+tests/lint/unittest_lint.py::test_one_arg[case2] PASSED                  [ 14%]
+tests/lint/unittest_lint.py::test_one_arg[case3] PASSED                  [ 16%]
+tests/lint/unittest_lint.py::test_one_arg[case4] PASSED                  [ 18%]
+tests/lint/unittest_lint.py::test_two_similar_args[case0] PASSED         [ 20%]
+tests/lint/unittest_lint.py::test_two_similar_args[case1] PASSED         [ 22%]
+tests/lint/unittest_lint.py::test_two_similar_args[case2] PASSED         [ 24%]
+tests/lint/unittest_lint.py::test_two_similar_args[case3] PASSED         [ 26%]
+tests/lint/unittest_lint.py::test_more_args[case0] PASSED                [ 28%]
+tests/lint/unittest_lint.py::test_more_args[case1] PASSED                [ 30%]
+tests/lint/unittest_lint.py::test_more_args[case2] PASSED                [ 32%]
+tests/lint/unittest_lint.py::test_pylint_visit_method_taken_in_account PASSED [ 34%]
+tests/lint/unittest_lint.py::test_enable_message PASSED                  [ 36%]
+tests/lint/unittest_lint.py::test_enable_message_category PASSED         [ 38%]
+tests/lint/unittest_lint.py::test_message_state_scope PASSED             [ 40%]
+tests/lint/unittest_lint.py::test_enable_message_block PASSED            [ 42%]
+tests/lint/unittest_lint.py::test_enable_by_symbol PASSED                [ 44%]
+tests/lint/unittest_lint.py::test_enable_report PASSED                   [ 46%]
+tests/lint/unittest_lint.py::test_report_output_format_aliased PASSED    [ 48%]
+tests/lint/unittest_lint.py::test_set_unsupported_reporter PASSED        [ 50%]
+tests/lint/unittest_lint.py::test_set_option_1 PASSED                    [ 52%]
+tests/lint/unittest_lint.py::test_set_option_2 PASSED                    [ 54%]
+tests/lint/unittest_lint.py::test_enable_checkers PASSED                 [ 56%]
+tests/lint/unittest_lint.py::test_errors_only PASSED                     [ 58%]
+tests/lint/unittest_lint.py::test_disable_similar PASSED                 [ 60%]
+tests/lint/unittest_lint.py::test_disable_alot PASSED                    [ 62%]
+tests/lint/unittest_lint.py::test_addmessage PASSED                      [ 64%]
+tests/lint/unittest_lint.py::test_addmessage_invalid PASSED              [ 66%]
+tests/lint/unittest_lint.py::test_load_plugin_command_line PASSED        [ 68%]
+tests/lint/unittest_lint.py::test_load_plugin_config_file PASSED         [ 70%]
+tests/lint/unittest_lint.py::test_load_plugin_configuration PASSED       [ 72%]
+tests/lint/unittest_lint.py::test_init_hooks_called_before_load_plugins PASSED [ 74%]
+tests/lint/unittest_lint.py::test_analyze_explicit_script PASSED         [ 76%]
+tests/lint/unittest_lint.py::test_full_documentation PASSED              [ 78%]
+tests/lint/unittest_lint.py::test_list_msgs_enabled PASSED               [ 80%]
+tests/lint/unittest_lint.py::test_pylint_home PASSED                     [ 82%]
+tests/lint/unittest_lint.py::test_pylint_home_from_environ PASSED        [ 84%]
+tests/lint/unittest_lint.py::test_warn_about_old_home PASSED             [ 86%]
+tests/lint/unittest_lint.py::test_pylintrc PASSED                        [ 88%]
+tests/lint/unittest_lint.py::test_pylintrc_parentdir PASSED              [ 90%]
+tests/lint/unittest_lint.py::test_pylintrc_parentdir_no_package PASSED   [ 92%]
+tests/lint/unittest_lint.py::test_filename_with__init__ PASSED           [ 94%]
+tests/lint/unittest_lint.py::test_by_module_statement_value PASSED       [ 96%]
+tests/lint/unittest_lint.py::test_recursive_ignore[--ignore-failing.py] PASSED [ 98%]
+tests/lint/unittest_lint.py::test_recursive_ignore[--ignore-ignored_subdirectory] PASSED [100%]
+
+============================== 50 passed in 1.67s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-3.0.0, benchmark-4.0.0, forked-1.6.0, xdist-2.5.0, timeout-2.3.1, profiling-1.7.0
+collecting ... collected 6 items
+
+tests/lint/unittest_lint.py::test_recursive_ignore[--ignore-patterns-failing.*] PASSED [ 16%]
+tests/lint/unittest_lint.py::test_recursive_ignore[--ignore-patterns-ignored_*] PASSED [ 33%]
+tests/lint/unittest_lint.py::test_recursive_ignore[--ignore-paths-.*directory/ignored.*] PASSED [ 50%]
+tests/lint/unittest_lint.py::test_recursive_ignore[--ignore-paths-.*ignored.*/failing.*] PASSED [ 66%]
+tests/lint/unittest_lint.py::test_import_sibling_module_from_namespace PASSED [ 83%]
+tests/lint/unittest_lint.py::test_lint_namespace_package_under_dir PASSED [100%]
+
+============================== 6 passed in 0.32s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['tests/lint/unittest_lint.py::test_identically_named_nested_module']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

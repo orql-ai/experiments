@@ -1,0 +1,275 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        77363738
+hash randomization: on (PYTHONHASHSEED=1986514337)
+
+sympy/matrices/expressions/tests/test_matexpr.py[1] .                       [OK]
+sympy/matrices/expressions/tests/test_matmul.py[4] ....                     [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+
+================== tests finished: 6 passed, in 0.18 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13773:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-13773
+2ea74b047d4b: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ac5b61163589: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+b1dbafa6c452: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Download complete
+2f341c31f3b7: Download complete
+ac5b61163589: Download complete
+ed3dada71338: Download complete
+5c809fd8a9af: Download complete
+b1dbafa6c452: Download complete
+e5a28c0c137e: Download complete
+2ea74b047d4b: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+0b326ada86d1: Pull complete
+b1dbafa6c452: Pull complete
+2ea74b047d4b: Pull complete
+Digest: sha256:ccd3252632b00323e291abc6759883c40aa00d72d8603a709c02e330ff155e58
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13773:latest
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+===== PHASE: PASS_TO_PASS (69 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        97824105
+hash randomization: on (PYTHONHASHSEED=3959088851)
+
+sympy/assumptions/tests/test_assumptions_2.py[1] .                          [OK]
+sympy/assumptions/tests/test_matrices.py[1] .                               [OK]
+sympy/assumptions/tests/test_query.py[3] ...                                [OK]
+sympy/assumptions/tests/test_satask.py[1] .                                 [OK]
+sympy/combinatorics/tests/test_fp_groups.py[1] .                            [OK]
+sympy/combinatorics/tests/test_perm_groups.py[4] ..f.                       [OK]
+sympy/combinatorics/tests/test_subsets.py[1] .                              [OK]
+sympy/concrete/tests/test_products.py[2] ..                                 [OK]
+sympy/concrete/tests/test_sums_products.py[10] ..........                   [OK]
+sympy/core/tests/test_arit.py[2] ..                                         [OK]
+sympy/core/tests/test_assumptions.py[13] ........f....                      [OK]
+sympy/core/tests/test_basic.py[6] ......                                    [OK]
+sympy/core/tests/test_complex.py[6] ......                                  [OK]
+sympy/core/tests/test_eval.py[2] ..                                         [OK]
+sympy/core/tests/test_eval_power.py[4] ....                                 [OK]
+sympy/core/tests/test_evalf.py[27] .....f.f...................              [OK]
+sympy/core/tests/test_evaluate.py[1] .                                      [OK]
+sympy/core/tests/test_expand.py[11] ...........                             [OK]
+sympy/core/tests/test_expr.py[15] ...............                           [OK]
+sympy/core/tests/test_exprtools.py[1] .                                     [OK]
+sympy/core/tests/test_function.py[3] ...                                    [OK]
+sympy/core/tests/test_match.py[2] ..                                        [OK]
+sympy/core/tests/test_noncommutative.py[5] .....                            [OK]
+sympy/core/tests/test_numbers.py[7] .......                                 [OK]
+sympy/core/tests/test_priority.py[2] ..                                     [OK]
+sympy/core/tests/test_relational.py[2] ..                                   [OK]
+sympy/core/tests/test_subs.py[18] ..................                        [OK]
+sympy/core/tests/test_trace.py[3] ...                                       [OK]
+sympy/diffgeom/tests/test_class_structure.py[1] .                           [OK]
+sympy/diffgeom/tests/test_diffgeom.py[1] .                                  [OK]
+sympy/functions/combinatorial/tests/test_comb_factorials.py[1] .            [OK]
+sympy/functions/elementary/tests/test_complexes.py[5] .....                 [OK]
+sympy/functions/elementary/tests/test_piecewise.py[2] ..                    [OK]
+sympy/functions/special/tests/test_bessel.py[2] ..                          [OK]
+sympy/functions/special/tests/test_hyper.py[1] .                            [OK]
+sympy/geometry/tests/test_curve.py[1] w                                     [OK]
+sympy/geometry/tests/test_entity.py[1] .                                    [OK]
+sympy/holonomic/tests/test_holonomic.py[4] ....                             [OK]
+sympy/integrals/tests/test_integrals.py[15] .w.............                 [OK]
+sympy/integrals/tests/test_transforms.py[1] .                               [OK]
+sympy/logic/tests/test_boolalg.py[2] ..                                     [OK]
+sympy/matrices/expressions/tests/test_adjoint.py[1] .                       [OK]
+sympy/matrices/expressions/tests/test_determinant.py[1] .                   [OK]
+sympy/matrices/expressions/tests/test_indexing.py[1] .                      [OK]
+sympy/matrices/expressions/tests/test_matadd.py[1] .                        [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[4] ....                    [OK]
+sympy/matrices/expressions/tests/test_matmul.py[5] .....                    [OK]
+sympy/matrices/expressions/tests/test_matpow.py[5] .....                    [OK]
+sympy/matrices/expressions/tests/test_slice.py[2] ..                        [OK]
+sympy/matrices/expressions/tests/test_trace.py[1] .                         [OK]
+sympy/matrices/tests/test_commonmatrix.py[50] ..................................
+................                                                            [OK]
+sympy/matrices/tests/test_densearith.py[2] ..                               [OK]
+sympy/matrices/tests/test_densetools.py[1] .                                [OK]
+sympy/matrices/tests/test_immutable.py[2] ..                                [OK]
+sympy/matrices/tests/test_matrices.py[41] ......................................
+...                                                                         [OK]
+sympy/matrices/tests/test_sparse.py[2] ..                                   [OK]
+sympy/ntheory/tests/test_primetest.py[1] .                                  [OK]
+sympy/physics/mechanics/tests/test_kane2.py[2] ..                           [OK]
+sympy/physics/quantum/tests/test_cg.py[1] .                                 [OK]
+sympy/physics/quantum/tests/test_circuitutils.py[1] .                       [OK]
+sympy/physics/quantum/tests/test_density.py[1] .                            [OK]
+sympy/physics/quantum/tests/test_innerproduct.py[1] .                       [OK]
+sympy/physics/tests/test_secondquant.py[5] .....                            [OK]
+sympy/physics/units/tests/test_quantities.py[1] E                         [FAIL]
+sympy/physics/vector/tests/test_printing.py[3] ...                          [OK]
+sympy/physics/vector/tests/test_vector.py[2] ..                             [OK]
+sympy/plotting/intervalmath/tests/test_intervalmath.py[1] .                 [OK]
+sympy/polys/tests/test_polytools.py[2] ..                                   [OK]
+sympy/polys/tests/test_ring_series.py[1] .                                  [OK]
+sympy/polys/tests/test_subresultants_qq_zz.py[7] .......                    [OK]
+sympy/printing/pretty/tests/test_pretty.py[2] ..                            [OK]
+sympy/printing/tests/test_ccode.py[1] .                                     [OK]
+sympy/printing/tests/test_cxxcode.py[2] ..                                  [OK]
+sympy/printing/tests/test_julia.py[1] .                                     [OK]
+sympy/printing/tests/test_octave.py[1] .                                    [OK]
+sympy/series/tests/test_limits.py[3] ..f                                    [OK]
+sympy/series/tests/test_nseries.py[3] ...                                   [OK]
+sympy/series/tests/test_order.py[2] ..                                      [OK]
+sympy/series/tests/test_sequences.py[3] ...                                 [OK]
+sympy/sets/tests/test_sets.py[1] .                                          [OK]
+sympy/simplify/tests/test_cse.py[2] .f                                      [OK]
+sympy/simplify/tests/test_function.py[1] .                                  [OK]
+sympy/simplify/tests/test_rewrite.py[1] .                                   [OK]
+sympy/simplify/tests/test_simplify.py[11] .........f.                       [OK]
+sympy/simplify/tests/test_sqrtdenest.py[1] .                                [OK]
+sympy/solvers/tests/test_diophantine.py[1] .                                [OK]
+sympy/solvers/tests/test_solvers.py[1] .                                    [OK]
+sympy/solvers/tests/test_solveset.py[1] .                                   [OK]
+sympy/stats/tests/test_continuous_rv.py[1] .                                [OK]
+sympy/strategies/tests/test_rl.py[1] .                                      [OK]
+sympy/strategies/tests/test_tools.py[2] ..                                  [OK]
+sympy/tensor/array/tests/test_immutable_ndim_array.py[1] .                  [OK]
+sympy/tensor/array/tests/test_mutable_ndim_array.py[1] .                    [OK]
+sympy/tensor/tests/test_tensor.py[5] .....                                  [OK]
+sympy/utilities/tests/test_enumerative.py[2] .w                             [OK]
+sympy/utilities/tests/test_iterables.py[3] ...                              [OK]
+sympy/utilities/tests/test_lambdify.py[3] ...                               [OK]
+sympy/utilities/tests/test_misc.py[1] .                                     [OK]
+sympy/vector/tests/test_coordsysrect.py[2] ..                               [OK]
+sympy/vector/tests/test_vector.py[7] .......                                [OK]
+
+________________________________________________________________________________
+__________ sympy/physics/units/tests/test_quantities.py:test_add_sub ___________
+  File "/testbed/sympy/physics/units/tests/test_quantities.py", line 112, in test_add_sub
+    assert (u + v.convert_to(u)) == (1 + S.Half)*u
+  File "/testbed/sympy/physics/units/quantities.py", line 199, in convert_to
+    return convert_to(self, other)
+  File "/testbed/sympy/physics/units/util.py", line 105, in convert_to
+    if not isinstance(target_units, (collections.Iterable, Tuple)):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+
+ tests finished: 395 passed, 3 skipped, 7 expected to fail, 1 exceptions, 
+in 36.90 seconds 
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+/testbed/sympy/physics/vector/printing.py:150: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if len(base_split) is not 1:
+/testbed/sympy/vector/coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        21583804
+hash randomization: on (PYTHONHASHSEED=1116088160)
+
+sympy/assumptions/tests/test_matrices.py[1] .                               [OK]
+sympy/categories/tests/test_baseclasses.py[1] .                             [OK]
+sympy/core/tests/test_expr.py[1] .                                          [OK]
+sympy/holonomic/tests/test_holonomic.py[1] .                                [OK]
+sympy/integrals/tests/test_integrals.py[14] ..........f..f                  [OK]
+sympy/integrals/tests/test_risch.py[6] ......                               [OK]
+sympy/matrices/tests/test_commonmatrix.py[21] .....................         [OK]
+sympy/matrices/tests/test_densesolve.py[1] .                                [OK]
+sympy/matrices/tests/test_immutable.py[1] .                                 [OK]
+sympy/matrices/tests/test_matrices.py[9] .........                          [OK]
+
+======= tests finished: 54 passed, 2 expected to fail, in 10.29 seconds ========
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test__MinimalMatrix', 'test_vec', 'test_tolist', 'test_row_col_del', 'test_get_diag_blocks1', 'test_get_diag_blocks2', 'test_shape', 'test_reshape', 'test_row_col', 'test_row_join', 'test_col_join', 'test_row_insert', 'test_col_insert', 'test_extract', 'test_hstack', 'test_vstack', 'test_atoms', 'test_free_symbols', 'test_has', 'test_is_anti_symmetric', 'test_diagonal_symmetrical', 'test_is_hermitian', 'test_is_Identity', 'test_is_symbolic', 'test_is_upper', 'test_is_lower', 'test_is_square', 'test_is_symmetric', 'test_is_hessenberg', 'test_is_zero', 'test_values', 'test_adjoint', 'test_as_real_imag', 'test_conjugate', 'test_doit', 'test_evalf', 'test_expand', 'test_replace', 'test_replace_map', 'test_simplify', 'test_subs', 'test_trace', 'test_xreplace', 'test_permute', 'test_abs', 'test_add', 'test_power', 'test_neg', 'test_sub', 'test_det']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

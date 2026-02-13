@@ -1,0 +1,283 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (3 selectors) =====
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 3 items
+
+sklearn/compose/tests/test_column_transformer.py::test_empty_selection_pandas_output[list] [32mPASSED[0m[32m [ 33%][0m
+sklearn/compose/tests/test_column_transformer.py::test_empty_selection_pandas_output[bool] [32mPASSED[0m[32m [ 66%][0m
+sklearn/compose/tests/test_column_transformer.py::test_empty_selection_pandas_output[bool_int] [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m3 passed[0m[32m in 0.40s[0m[32m ===============================[0m
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25570:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25570
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+a5d33d85f717: Pulling fs layer
+bbaa409e0685: Pulling fs layer
+f93009d70e27: Pulling fs layer
+254bc3b92874: Pulling fs layer
+33a66b05d6af: Pulling fs layer
+78057bfa2d3e: Pulling fs layer
+e11f28e03bd1: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+254bc3b92874: Download complete
+ac5b61163589: Download complete
+bbaa409e0685: Download complete
+33a66b05d6af: Download complete
+e11f28e03bd1: Download complete
+7478e0ac0f23: Download complete
+78057bfa2d3e: Download complete
+7478e0ac0f23: Pull complete
+f93009d70e27: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+a5d33d85f717: Download complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+33a66b05d6af: Pull complete
+e11f28e03bd1: Pull complete
+f93009d70e27: Pull complete
+254bc3b92874: Pull complete
+bbaa409e0685: Pull complete
+a5d33d85f717: Pull complete
+78057bfa2d3e: Pull complete
+Digest: sha256:a54f57691a80e3c1f483d6cb3320407fcfdd28ced0ef9f379c45f81868b85df3
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-25570:latest
+
+
+===== PHASE: PASS_TO_PASS (184 selectors) =====
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 50 items
+
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer [32mPASSED[0m[32m [  2%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_tuple_transformers_parameter [32mPASSED[0m[32m [  4%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_dataframe [32mPASSED[0m[32m [  6%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[False-list-pandas] [32mPASSED[0m[32m [  8%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[False-list-numpy] [32mPASSED[0m[32m [ 10%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[False-bool-pandas] [32mPASSED[0m[32m [ 12%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[False-bool-numpy] [32mPASSED[0m[32m [ 14%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[False-bool_int-pandas] [32mPASSED[0m[32m [ 16%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[False-bool_int-numpy] [32mPASSED[0m[32m [ 18%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[True-list-pandas] [32mPASSED[0m[32m [ 20%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[True-list-numpy] [32mPASSED[0m[32m [ 22%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[True-bool-pandas] [32mPASSED[0m[32m [ 24%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[True-bool-numpy] [32mPASSED[0m[32m [ 26%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[True-bool_int-pandas] [32mPASSED[0m[32m [ 28%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_empty_columns[True-bool_int-numpy] [32mPASSED[0m[32m [ 30%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_output_indices [32mPASSED[0m[32m [ 32%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_output_indices_df [32mPASSED[0m[32m [ 34%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_sparse_array [32mPASSED[0m[32m [ 36%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_list [32mPASSED[0m[32m [ 38%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_sparse_stacking [32mPASSED[0m[32m [ 40%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_mixed_cols_sparse [32mPASSED[0m[32m [ 42%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_sparse_threshold [32mPASSED[0m[32m [ 44%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_error_msg_1D [32mPASSED[0m[32m [ 46%][0m
+sklearn/compose/tests/test_column_transformer.py::test_2D_transformer_output [32mPASSED[0m[32m [ 48%][0m
+sklearn/compose/tests/test_column_transformer.py::test_2D_transformer_output_pandas [32mPASSED[0m[32m [ 50%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_invalid_columns[drop] [32mPASSED[0m[32m [ 52%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_invalid_columns[passthrough] [32mPASSED[0m[32m [ 54%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_invalid_transformer [32mPASSED[0m[32m [ 56%][0m
+sklearn/compose/tests/test_column_transformer.py::test_make_column_transformer [32mPASSED[0m[32m [ 58%][0m
+sklearn/compose/tests/test_column_transformer.py::test_make_column_transformer_pandas [32mPASSED[0m[32m [ 60%][0m
+sklearn/compose/tests/test_column_transformer.py::test_make_column_transformer_kwargs [32mPASSED[0m[32m [ 62%][0m
+sklearn/compose/tests/test_column_transformer.py::test_make_column_transformer_remainder_transformer [32mPASSED[0m[32m [ 64%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_get_set_params [32mPASSED[0m[32m [ 66%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_named_estimators [32mPASSED[0m[32m [ 68%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_cloning [32mPASSED[0m[32m [ 70%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_get_feature_names [32mPASSED[0m[32m [ 72%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_special_strings [32mPASSED[0m[32m [ 74%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder [32mPASSED[0m[32m [ 76%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_numpy[key0] [32mPASSED[0m[32m [ 78%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_numpy[key1] [32mPASSED[0m[32m [ 80%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_numpy[key2] [32mPASSED[0m[32m [ 82%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_numpy[key3] [32mPASSED[0m[32m [ 84%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key0] [32mPASSED[0m[32m [ 86%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key1] [32mPASSED[0m[32m [ 88%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key2] [32mPASSED[0m[32m [ 90%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key3] [32mPASSED[0m[32m [ 92%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[pd-index] [32mPASSED[0m[32m [ 94%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key5] [32mPASSED[0m[32m [ 96%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key6] [32mPASSED[0m[32m [ 98%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key7] [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m50 passed[0m[32m in 0.71s[0m[32m ==============================[0m
+
+
+
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 36 items
+
+[33m============================ [33mno tests ran[0m[33m in 0.19s[0m[33m =============================[0m
+
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est0-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est0-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est1-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est1-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est2-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est2-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est3-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est3-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est4-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est4-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est5-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est5-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est6-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est6-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est0-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est0-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est1-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est1-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est2-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est2-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est3-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est3-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est4-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est4-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est5-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est5-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est6-[ColumnTransformer].*(1
+(no name '/testbed/sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est6-[ColumnTransformer].*(1' in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key8] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key0] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key1] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key2] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key3] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_no_remaining_remainder_transformer sklearn/compose/tests/test_column_transformer.py::test_column_transformer_drops_all_remainder_transformer sklearn/compose/tests/test_column_transformer.py::test_column_transformer_sparse_remainder_transformer sklearn/compose/tests/test_column_transformer.py::test_column_transformer_drop_all_sparse_remainder_transformer sklearn/compose/tests/test_column_transformer.py::test_column_transformer_get_set_params_with_remainder sklearn/compose/tests/test_column_transformer.py::test_column_transformer_no_estimators sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est0-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est1-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est2-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est3-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est4-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est5-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est6-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est0-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est1-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est2-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est3-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est4-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est5-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est6-[ColumnTransformer].*(1 sklearn/compose/tests/test_column_transformer.py::test_column_transformer_no_estimators_set_params sklearn/compose/tests/test_column_transformer.py::test_column_transformer_callable_specifier sklearn/compose/tests/test_column_transformer.py::test_column_transformer_callable_specifier_dataframe sklearn/compose/tests/test_column_transformer.py::test_column_transformer_negative_column_indexes sklearn/compose/tests/test_column_transformer.py::test_column_transformer_mask_indexing[asarray] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_mask_indexing[csr_matrix] sklearn/compose/tests/test_column_transformer.py::test_n_features_in sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols0-None-number-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols1-None-None-object] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols2-None-include2-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols3-None-include3-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols4-None-object-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols5-None-float-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols6-at$-include6-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols7-None-include7-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols8-^col_int-include8-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols9-float|str-None-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols10-^col_s-None-exclude10] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols11-str$-float-None] sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols12-None-include12-None] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_with_make_column_selector sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_error sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_pickle sklearn/compose/tests/test_column_transformer.py::test_feature_names_empty_columns[list] sklearn/compose/tests/test_column_transformer.py::test_feature_names_empty_columns[array]` failed. (See above for error)
+
+
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 50 items
+
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_empty_columns[callable] [32mPASSED[0m[32m [  2%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_pandas[selector0] [32mPASSED[0m[32m [  4%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_pandas[<lambda>0] [32mPASSED[0m[32m [  6%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_pandas[selector2] [32mPASSED[0m[32m [  8%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_pandas[<lambda>1] [32mPASSED[0m[32m [ 10%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_pandas[selector4] [32mPASSED[0m[32m [ 12%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_pandas[<lambda>2] [32mPASSED[0m[32m [ 14%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_non_pandas[selector0] [32mPASSED[0m[32m [ 16%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_non_pandas[<lambda>0] [32mPASSED[0m[32m [ 18%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_non_pandas[selector2] [32mPASSED[0m[32m [ 20%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_out_non_pandas[<lambda>1] [32mPASSED[0m[32m [ 22%][0m
+sklearn/compose/tests/test_column_transformer.py::test_sk_visual_block_remainder[passthrough] [32mPASSED[0m[32m [ 24%][0m
+sklearn/compose/tests/test_column_transformer.py::test_sk_visual_block_remainder[remainder1] [32mPASSED[0m[32m [ 26%][0m
+sklearn/compose/tests/test_column_transformer.py::test_sk_visual_block_remainder_drop [32mPASSED[0m[32m [ 28%][0m
+sklearn/compose/tests/test_column_transformer.py::test_sk_visual_block_remainder_fitted_pandas[passthrough] [32mPASSED[0m[32m [ 30%][0m
+sklearn/compose/tests/test_column_transformer.py::test_sk_visual_block_remainder_fitted_pandas[remainder1] [32mPASSED[0m[32m [ 32%][0m
+sklearn/compose/tests/test_column_transformer.py::test_sk_visual_block_remainder_fitted_numpy[passthrough] [32mPASSED[0m[32m [ 34%][0m
+sklearn/compose/tests/test_column_transformer.py::test_sk_visual_block_remainder_fitted_numpy[remainder1] [32mPASSED[0m[32m [ 36%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[remainder0-first] [32mPASSED[0m[32m [ 38%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[remainder0-second] [32mPASSED[0m[32m [ 40%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[remainder0-0] [32mPASSED[0m[32m [ 42%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[remainder0-1] [32mPASSED[0m[32m [ 44%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[passthrough-first] [32mPASSED[0m[32m [ 46%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[passthrough-second] [32mPASSED[0m[32m [ 48%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[passthrough-0] [32mPASSED[0m[32m [ 50%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[passthrough-1] [32mPASSED[0m[32m [ 52%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[drop-first] [32mPASSED[0m[32m [ 54%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[drop-second] [32mPASSED[0m[32m [ 56%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[drop-0] [32mPASSED[0m[32m [ 58%][0m
+sklearn/compose/tests/test_column_transformer.py::test_column_transformer_reordered_column_names_remainder[drop-1] [32mPASSED[0m[32m [ 60%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_name_validation_missing_columns_drop_passthough [32mPASSED[0m[32m [ 62%][0m
+sklearn/compose/tests/test_column_transformer.py::test_feature_names_in_ [32mPASSED[0m[32m [ 64%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers0-passthrough-expected_names0] [32mPASSED[0m[32m [ 66%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers1-drop-expected_names1] [32mPASSED[0m[32m [ 68%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers2-passthrough-expected_names2] [32mPASSED[0m[32m [ 70%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers3-passthrough-expected_names3] [32mPASSED[0m[32m [ 72%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers4-drop-expected_names4] [32mPASSED[0m[32m [ 74%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers5-passthrough-expected_names5] [32mPASSED[0m[32m [ 76%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers6-drop-expected_names6] [32mPASSED[0m[32m [ 78%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers7-drop-expected_names7] [32mPASSED[0m[32m [ 80%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers8-passthrough-expected_names8] [32mPASSED[0m[32m [ 82%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers9-passthrough-expected_names9] [32mPASSED[0m[32m [ 84%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers10-drop-expected_names10] [32mPASSED[0m[32m [ 86%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers11-passthrough-expected_names11] [32mPASSED[0m[32m [ 88%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_true[transformers12-passthrough-expected_names12] [32mPASSED[0m[32m [ 90%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers0-passthrough-expected_names0] [32mPASSED[0m[32m [ 92%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers1-drop-expected_names1] [32mPASSED[0m[32m [ 94%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers2-passthrough-expected_names2] [32mPASSED[0m[32m [ 96%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers3-passthrough-expected_names3] [32mPASSED[0m[32m [ 98%][0m
+sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers4-drop-expected_names4] [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m50 passed[0m[32m in 0.53s[0m[32m ==============================[0m
+
+
+
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: setup.cfg
+[1mcollecting ... [0mcollected 27 items
+
+[33m============================ [33mno tests ran[0m[33m in 0.18s[0m[33m =============================[0m
+
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers4-drop-['b',]
+(no name "/testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers4-drop-['b',]" in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers6-passthrough-['a',]
+(no name "/testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers6-passthrough-['a',]" in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers7-passthrough-['pca0',]
+(no name "/testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers7-passthrough-['pca0',]" in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers8-passthrough-['a',]
+(no name "/testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers8-passthrough-['a',]" in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers9-passthrough-['a',]
+(no name "/testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers9-passthrough-['a',]" in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers10-passthrough-['a',]
+(no name "/testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers10-passthrough-['a',]" in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+ERROR: not found: /testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers11-passthrough-['a',]
+(no name "/testbed/sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers11-passthrough-['a',]" in any of [<DoctestModule sklearn/compose/tests/test_column_transformer.py>, <Module sklearn/compose/tests/test_column_transformer.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers5-passthrough-expected_names5] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers6-drop-expected_names6] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers7-passthrough-expected_names7] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers8-passthrough-expected_names8] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers9-drop-expected_names9] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers10-passthrough-expected_names10] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers11-passthrough-expected_names11] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers12-drop-expected_names12] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false[transformers13-drop-expected_names13] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers0-drop-['b']] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers1-drop-['c']] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers2-passthrough-['a']] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers3-passthrough-['a']] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers4-drop-['b',] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers5-passthrough-['a']] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers6-passthrough-['a',] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers7-passthrough-['pca0',] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers8-passthrough-['a',] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers9-passthrough-['a',] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers10-passthrough-['a',] sklearn/compose/tests/test_column_transformer.py::test_verbose_feature_names_out_false_errors[transformers11-passthrough-['a',] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_set_output[drop-True] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_set_output[drop-False] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_set_output[passthrough-True] sklearn/compose/tests/test_column_transformer.py::test_column_transformer_set_output[passthrough-False] sklearn/compose/tests/test_column_transformer.py::test_column_transform_set_output_mixed[True-drop] sklearn/compose/tests/test_column_transformer.py::test_column_transform_set_output_mixed[True-passthrough] sklearn/compose/tests/test_column_transformer.py::test_column_transform_set_output_mixed[False-drop] sklearn/compose/tests/test_column_transformer.py::test_column_transform_set_output_mixed[False-passthrough] sklearn/compose/tests/test_column_transformer.py::test_column_transform_set_output_after_fitting[drop] sklearn/compose/tests/test_column_transformer.py::test_column_transform_set_output_after_fitting[passthrough] sklearn/compose/tests/test_column_transformer.py::test_transformers_with_pandas_out_but_not_feature_names_out[trans_10-expected_verbose_names0-expected_non_verbose_names0] sklearn/compose/tests/test_column_transformer.py::test_transformers_with_pandas_out_but_not_feature_names_out[drop-expected_verbose_names1-expected_non_verbose_names1] sklearn/compose/tests/test_column_transformer.py::test_transformers_with_pandas_out_but_not_feature_names_out[passthrough-expected_verbose_names2-expected_non_verbose_names2]` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_pandas[key8]', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key0]', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key1]', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key2]', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_remainder_transformer[key3]', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_no_remaining_remainder_transformer', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_drops_all_remainder_transformer', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_sparse_remainder_transformer', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_drop_all_sparse_remainder_transformer', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_get_set_params_with_remainder', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_no_estimators', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est0-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est1-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est2-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est3-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est4-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est5-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit-est6-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est0-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est1-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est2-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est3-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est4-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est5-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_verbose[fit_transform-est6-[ColumnTransformer].*(1', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_no_estimators_set_params', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_callable_specifier', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_callable_specifier_dataframe', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_negative_column_indexes', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_mask_indexing[asarray]', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_mask_indexing[csr_matrix]', 'sklearn/compose/tests/test_column_transformer.py::test_n_features_in', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols0-None-number-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols1-None-None-object]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols2-None-include2-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols3-None-include3-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols4-None-object-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols5-None-float-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols6-at$-include6-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols7-None-include7-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols8-^col_int-include8-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols9-float|str-None-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols10-^col_s-None-exclude10]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols11-str$-float-None]', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_with_select_dtypes[cols12-None-include12-None]', 'sklearn/compose/tests/test_column_transformer.py::test_column_transformer_with_make_column_selector', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_error', 'sklearn/compose/tests/test_column_transformer.py::test_make_column_selector_pickle', 'sklearn/compose/tests/test_column_transformer.py::test_feature_names_empty_columns[list]', 'sklearn/compose/tests/test_column_transformer.py::test_feature_names_empty_columns[array]']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

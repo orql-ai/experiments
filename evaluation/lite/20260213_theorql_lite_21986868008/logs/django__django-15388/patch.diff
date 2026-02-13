@@ -1,0 +1,50 @@
+diff --git a/django/template/autoreload.py b/django/template/autoreload.py
+index cf1b20ba95..f50ecc2316 100644
+--- a/django/template/autoreload.py
++++ b/django/template/autoreload.py
+@@ -19,16 +19,26 @@ def get_template_directories():
+         if not isinstance(backend, DjangoTemplates):
+             continue
+ 
+-        items.update(cwd / to_path(dir) for dir in backend.engine.dirs)
++        for dir in backend.engine.dirs:
++            dir_path = cwd / to_path(dir)
++            # Skip directories that are ancestors of cwd (like BASE_DIR)
++            # as they would cause all files to be treated as templates.
++            if dir_path in cwd.parents or dir_path == cwd:
++                continue
++            items.add(dir_path)
+ 
+         for loader in backend.engine.template_loaders:
+             if not hasattr(loader, 'get_dirs'):
+                 continue
+-            items.update(
+-                cwd / to_path(directory)
+-                for directory in loader.get_dirs()
+-                if not is_django_path(directory)
+-            )
++            for directory in loader.get_dirs():
++                if is_django_path(directory):
++                    continue
++                dir_path = cwd / to_path(directory)
++                # Skip directories that are ancestors of cwd (like BASE_DIR)
++                # as they would cause all files to be treated as templates.
++                if dir_path in cwd.parents or dir_path == cwd:
++                    continue
++                items.add(dir_path)
+     return items
+ 
+ 
+@@ -50,5 +60,10 @@ def watch_for_template_changes(sender, **kwargs):
+ def template_changed(sender, file_path, **kwargs):
+     for template_dir in get_template_directories():
+         if template_dir in file_path.parents:
+-            reset_loaders()
+-            return True
++            # Only reset loaders for actual template files, not for
++            # non-template files like Python files that happen to be
++            # in a template directory.
++            if file_path.suffix in {'.html', '.txt', '.j2', '.jinja2'}:
++                reset_loaders()
++                return True
++            return None

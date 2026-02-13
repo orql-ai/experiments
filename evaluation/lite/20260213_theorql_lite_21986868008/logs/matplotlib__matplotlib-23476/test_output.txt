@@ -1,0 +1,192 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_figure.py::test_unpickle_with_device_pixel_ratio FAILED [100%]
+
+=================================== FAILURES ===================================
+____________________ test_unpickle_with_device_pixel_ratio _____________________
+
+    def test_unpickle_with_device_pixel_ratio():
+        fig = Figure(dpi=42)
+        fig.canvas._set_device_pixel_ratio(7)
+        assert fig.dpi == 42*7
+        fig2 = pickle.loads(pickle.dumps(fig))
+>       assert fig2.dpi == 42
+E       assert 294 == 42
+E        +  where 294 = <Figure size 2352x1764 with 0 Axes>.dpi
+
+lib/matplotlib/tests/test_figure.py:1391: AssertionError
+=========================== short test summary info ============================
+FAILED lib/matplotlib/tests/test_figure.py::test_unpickle_with_device_pixel_ratio - assert 294 == 42
+ +  where 294 = <Figure size 2352x1764 with 0 Axes>.dpi
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================== 1 failed in 3.58s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23476:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23476
+ac5b61163589: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+967545a58ea1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+892255432763: Pulling fs layer
+500327121db6: Pulling fs layer
+0824fa708fa9: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+532b6f849c59: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+1d39182ad176: Pulling fs layer
+203ab5349554: Pulling fs layer
+6bb1cfed48f1: Pulling fs layer
+ac5b61163589: Download complete
+203ab5349554: Download complete
+6bb1cfed48f1: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+892255432763: Download complete
+1d39182ad176: Download complete
+7478e0ac0f23: Download complete
+0824fa708fa9: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+967545a58ea1: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+532b6f849c59: Download complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+967545a58ea1: Pull complete
+892255432763: Pull complete
+1d39182ad176: Pull complete
+203ab5349554: Pull complete
+6bb1cfed48f1: Pull complete
+532b6f849c59: Pull complete
+0824fa708fa9: Pull complete
+Digest: sha256:9270c9324240f35d71a2a1deac3730098151161a860b6d9bf68ac66a3952cd77
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23476:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_figure.py::test_unpickle_with_device_pixel_ratio` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (104 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_figure.py::test_align_labels[png] PASSED       [  2%]
+lib/matplotlib/tests/test_figure.py::test_align_labels_stray_axes PASSED [  4%]
+lib/matplotlib/tests/test_figure.py::test_figure_label PASSED            [  6%]
+lib/matplotlib/tests/test_figure.py::test_fignum_exists PASSED           [  8%]
+lib/matplotlib/tests/test_figure.py::test_clf_keyword PASSED             [ 10%]
+lib/matplotlib/tests/test_figure.py::test_figure[png] PASSED             [ 12%]
+lib/matplotlib/tests/test_figure.py::test_figure[pdf] PASSED             [ 14%]
+lib/matplotlib/tests/test_figure.py::test_figure_legend[png] PASSED      [ 16%]
+lib/matplotlib/tests/test_figure.py::test_figure_legend[pdf] PASSED      [ 18%]
+lib/matplotlib/tests/test_figure.py::test_gca PASSED                     [ 20%]
+lib/matplotlib/tests/test_figure.py::test_add_subplot_subclass PASSED    [ 22%]
+lib/matplotlib/tests/test_figure.py::test_add_subplot_invalid PASSED     [ 24%]
+lib/matplotlib/tests/test_figure.py::test_suptitle[png] PASSED           [ 26%]
+lib/matplotlib/tests/test_figure.py::test_suptitle[pdf] PASSED           [ 28%]
+lib/matplotlib/tests/test_figure.py::test_suptitle_fontproperties PASSED [ 30%]
+lib/matplotlib/tests/test_figure.py::test_alpha[png] PASSED              [ 32%]
+lib/matplotlib/tests/test_figure.py::test_too_many_figures PASSED        [ 34%]
+lib/matplotlib/tests/test_figure.py::test_iterability_axes_argument PASSED [ 36%]
+lib/matplotlib/tests/test_figure.py::test_set_fig_size PASSED            [ 38%]
+lib/matplotlib/tests/test_figure.py::test_axes_remove PASSED             [ 40%]
+lib/matplotlib/tests/test_figure.py::test_figaspect PASSED               [ 42%]
+lib/matplotlib/tests/test_figure.py::test_autofmt_xdate[both] PASSED     [ 44%]
+lib/matplotlib/tests/test_figure.py::test_autofmt_xdate[major] PASSED    [ 46%]
+lib/matplotlib/tests/test_figure.py::test_autofmt_xdate[minor] PASSED    [ 48%]
+lib/matplotlib/tests/test_figure.py::test_change_dpi PASSED              [ 50%]
+lib/matplotlib/tests/test_figure.py::test_invalid_figure_size[1-nan] PASSED [ 52%]
+lib/matplotlib/tests/test_figure.py::test_invalid_figure_size[-1-1] PASSED [ 54%]
+lib/matplotlib/tests/test_figure.py::test_invalid_figure_size[inf-1] PASSED [ 56%]
+lib/matplotlib/tests/test_figure.py::test_invalid_figure_add_axes PASSED [ 58%]
+lib/matplotlib/tests/test_figure.py::test_subplots_shareax_loglabels PASSED [ 60%]
+lib/matplotlib/tests/test_figure.py::test_savefig PASSED                 [ 62%]
+lib/matplotlib/tests/test_figure.py::test_savefig_warns PASSED           [ 64%]
+lib/matplotlib/tests/test_figure.py::test_savefig_backend PASSED         [ 66%]
+lib/matplotlib/tests/test_figure.py::test_savefig_pixel_ratio[Agg] PASSED [ 68%]
+lib/matplotlib/tests/test_figure.py::test_savefig_pixel_ratio[Cairo] PASSED [ 70%]
+lib/matplotlib/tests/test_figure.py::test_figure_repr PASSED             [ 72%]
+lib/matplotlib/tests/test_figure.py::test_valid_layouts PASSED           [ 74%]
+lib/matplotlib/tests/test_figure.py::test_invalid_layouts PASSED         [ 76%]
+lib/matplotlib/tests/test_figure.py::test_add_artist[png] <- lib/matplotlib/testing/decorators.py PASSED [ 78%]
+lib/matplotlib/tests/test_figure.py::test_add_artist[pdf] <- lib/matplotlib/testing/decorators.py PASSED [ 80%]
+lib/matplotlib/tests/test_figure.py::test_fspath[png] PASSED             [ 82%]
+lib/matplotlib/tests/test_figure.py::test_fspath[pdf] PASSED             [ 84%]
+lib/matplotlib/tests/test_figure.py::test_fspath[ps] PASSED              [ 86%]
+lib/matplotlib/tests/test_figure.py::test_fspath[eps] PASSED             [ 88%]
+lib/matplotlib/tests/test_figure.py::test_fspath[svg] PASSED             [ 90%]
+lib/matplotlib/tests/test_figure.py::test_tightbbox PASSED               [ 92%]
+lib/matplotlib/tests/test_figure.py::test_axes_removal PASSED            [ 94%]
+lib/matplotlib/tests/test_figure.py::test_removed_axis PASSED            [ 96%]
+lib/matplotlib/tests/test_figure.py::test_figure_clear[clear] PASSED     [ 98%]
+lib/matplotlib/tests/test_figure.py::test_figure_clear[clf] PASSED       [100%]
+
+============================== 50 passed in 6.21s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 46 items
+
+============================ no tests ran in 2.43s =============================
+
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x0-(?m)we]
+(no match in any of [<Class TestSubplotMosaic>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x1-There]
+(no match in any of [<Class TestSubplotMosaic>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[AAA\nc\nBBB-All]
+(no match in any of [<Class TestSubplotMosaic>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x3-All]
+(no match in any of [<Class TestSubplotMosaic>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_figure.py::test_clf_not_redefined lib/matplotlib/tests/test_figure.py::test_picking_does_not_stale lib/matplotlib/tests/test_figure.py::test_add_subplot_twotuple lib/matplotlib/tests/test_figure.py::test_animated_with_canvas_change[pdf] lib/matplotlib/tests/test_figure.py::test_animated_with_canvas_change[eps] lib/matplotlib/tests/test_figure.py::test_animated_with_canvas_change[png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_basic[x0-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_basic[x1-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_all_nested[png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_nested[png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_nested_tuple[png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x0-None-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x1-SKIP-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x2-0-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x3-None-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x4-SKIP-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x5-0-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail_list_of_str lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_subplot_kw[subplot_kw0-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_subplot_kw[subplot_kw1-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_subplot_kw[None-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_string_parser lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_single_str_input[AAA\nBBB-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_single_str_input[\nAAA\nBBB\n-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_single_str_input[ABC\nDEF-png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x0-(?m)we] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x1-There] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[AAA\nc\nBBB-All] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x3-All] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_hashable_keys[png] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[abc] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[cab] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[bca] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[cba] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[acb] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[bac] lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_nested_user_order lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_share_all lib/matplotlib/tests/test_figure.py::test_reused_gridspec lib/matplotlib/tests/test_figure.py::test_subfigure[png] lib/matplotlib/tests/test_figure.py::test_subfigure_tightbbox lib/matplotlib/tests/test_figure.py::test_subfigure_dpi lib/matplotlib/tests/test_figure.py::test_subfigure_ss[png] lib/matplotlib/tests/test_figure.py::test_subfigure_double[png] lib/matplotlib/tests/test_figure.py::test_subfigure_spanning lib/matplotlib/tests/test_figure.py::test_subfigure_ticks lib/matplotlib/tests/test_figure.py::test_subfigure_scatter_size[png] lib/matplotlib/tests/test_figure.py::test_subfigure_pdf lib/matplotlib/tests/test_figure.py::test_add_subplot_kwargs lib/matplotlib/tests/test_figure.py::test_add_axes_kwargs` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 4 items
+
+lib/matplotlib/tests/test_figure.py::test_ginput PASSED                  [ 25%]
+lib/matplotlib/tests/test_figure.py::test_waitforbuttonpress PASSED      [ 50%]
+lib/matplotlib/tests/test_figure.py::test_kwargs_pass PASSED             [ 75%]
+lib/matplotlib/tests/test_figure.py::test_deepcopy PASSED                [100%]
+
+============================== 4 passed in 3.77s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['lib/matplotlib/tests/test_figure.py::test_unpickle_with_device_pixel_ratio']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['lib/matplotlib/tests/test_figure.py::test_clf_not_redefined', 'lib/matplotlib/tests/test_figure.py::test_picking_does_not_stale', 'lib/matplotlib/tests/test_figure.py::test_add_subplot_twotuple', 'lib/matplotlib/tests/test_figure.py::test_animated_with_canvas_change[pdf]', 'lib/matplotlib/tests/test_figure.py::test_animated_with_canvas_change[eps]', 'lib/matplotlib/tests/test_figure.py::test_animated_with_canvas_change[png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_basic[x0-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_basic[x1-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_all_nested[png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_nested[png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_nested_tuple[png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x0-None-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x1-SKIP-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x2-0-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x3-None-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x4-SKIP-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_empty[x5-0-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail_list_of_str', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_subplot_kw[subplot_kw0-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_subplot_kw[subplot_kw1-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_subplot_kw[None-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_string_parser', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_single_str_input[AAA\\nBBB-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_single_str_input[\\nAAA\\nBBB\\n-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_single_str_input[ABC\\nDEF-png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x0-(?m)we]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x1-There]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[AAA\\nc\\nBBB-All]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_fail[x3-All]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_hashable_keys[png]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[abc]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[cab]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[bca]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[cba]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[acb]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_user_order[bac]', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_nested_user_order', 'lib/matplotlib/tests/test_figure.py::TestSubplotMosaic::test_share_all', 'lib/matplotlib/tests/test_figure.py::test_reused_gridspec', 'lib/matplotlib/tests/test_figure.py::test_subfigure[png]', 'lib/matplotlib/tests/test_figure.py::test_subfigure_tightbbox', 'lib/matplotlib/tests/test_figure.py::test_subfigure_dpi', 'lib/matplotlib/tests/test_figure.py::test_subfigure_ss[png]', 'lib/matplotlib/tests/test_figure.py::test_subfigure_double[png]', 'lib/matplotlib/tests/test_figure.py::test_subfigure_spanning', 'lib/matplotlib/tests/test_figure.py::test_subfigure_ticks', 'lib/matplotlib/tests/test_figure.py::test_subfigure_scatter_size[png]', 'lib/matplotlib/tests/test_figure.py::test_subfigure_pdf', 'lib/matplotlib/tests/test_figure.py::test_add_subplot_kwargs', 'lib/matplotlib/tests/test_figure.py::test_add_axes_kwargs']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

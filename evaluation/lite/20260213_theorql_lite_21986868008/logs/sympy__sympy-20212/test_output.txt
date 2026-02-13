@@ -1,0 +1,116 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        91554554
+hash randomization: on (PYTHONHASHSEED=3238479002)
+
+sympy/assumptions/tests/test_query.py[2] ..                                 [OK]
+sympy/assumptions/tests/test_satask.py[3] ...                               [OK]
+sympy/core/tests/test_assumptions.py[1] .                                   [OK]
+sympy/core/tests/test_power.py[1] .                                         [OK]
+sympy/functions/elementary/tests/test_complexes.py[1] .                     [OK]
+sympy/matrices/expressions/tests/test_matadd.py[1] .                        [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[1] .                       [OK]
+sympy/matrices/expressions/tests/test_matpow.py[1] .                        [OK]
+sympy/matrices/expressions/tests/test_special.py[1] .                       [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_matrices.py[3] ...                                [OK]
+sympy/physics/quantum/tests/test_qapply.py[1] .                             [OK]
+sympy/strategies/branch/tests/test_tools.py[1] .                            [OK]
+sympy/tensor/array/tests/test_immutable_ndim_array.py[1] .                  [OK]
+
+================== tests finished: 19 passed, in 1.22 seconds ==================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20212:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-20212
+7478e0ac0f23: Pulling fs layer
+204caf2c425d: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+ed3dada71338: Pulling fs layer
+3ba7ac2a18ff: Pulling fs layer
+e5a28c0c137e: Download complete
+ed3dada71338: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+2f341c31f3b7: Download complete
+5c809fd8a9af: Download complete
+3ba7ac2a18ff: Download complete
+204caf2c425d: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+ed3dada71338: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+3ba7ac2a18ff: Pull complete
+0b326ada86d1: Pull complete
+204caf2c425d: Pull complete
+Digest: sha256:91989bd773a380753cf94b312f9696a752d791c1c3c051b3855e6ac31d20bd9e
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20212:latest
+
+
+===== PHASE: PASS_TO_PASS (32 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        22101262
+hash randomization: on (PYTHONHASHSEED=3946789209)
+
+sympy/assumptions/tests/test_query.py[1] .                                  [OK]
+sympy/assumptions/tests/test_satask.py[1] .                                 [OK]
+sympy/concrete/tests/test_guess.py[1] .                                     [OK]
+sympy/concrete/tests/test_products.py[1] .                                  [OK]
+sympy/concrete/tests/test_sums_products.py[2] ..                            [OK]
+sympy/core/tests/test_complex.py[3] ...                                     [OK]
+sympy/core/tests/test_expand.py[10] ..........                              [OK]
+sympy/core/tests/test_function.py[1] .                                      [OK]
+sympy/core/tests/test_noncommutative.py[1] .                                [OK]
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/core/tests/test_power.py[32] ................................         [OK]
+sympy/functions/special/tests/test_bessel.py[1] .                           [OK]
+sympy/functions/special/tests/test_hyper.py[1] .                            [OK]
+sympy/integrals/tests/test_integrals.py[2] ..                               [OK]
+sympy/logic/tests/test_boolalg.py[1] .                                      [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+sympy/parsing/tests/test_sympy_parser.py[1] .                               [OK]
+sympy/polys/tests/test_polyfuncs.py[1] .                                    [OK]
+sympy/series/tests/test_formal.py[2] ..                                     [OK]
+sympy/series/tests/test_limits.py[1] .                                      [OK]
+sympy/tensor/tests/test_tensor_operators.py[4] ....                         [OK]
+sympy/vector/tests/test_implicitregion.py[1] .                              [OK]
+
+================== tests finished: 71 passed, in 9.00 seconds ==================
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

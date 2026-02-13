@@ -1,0 +1,88 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (3 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application asgi
+Importing application staticfiles_tests
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-12915:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-12915
+699484708a74: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+47c859b1bbda: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+a9d08ec832c7: Pulling fs layer
+2bc10b62f799: Pulling fs layer
+c9065689ecd1: Pulling fs layer
+500327121db6: Pulling fs layer
+ac5b61163589: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+16b385147454: Pulling fs layer
+d22165034a34: Pulling fs layer
+836b79e2a6e5: Download complete
+16b385147454: Download complete
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+a9d08ec832c7: Download complete
+2bc10b62f799: Download complete
+d22165034a34: Download complete
+699484708a74: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+c9065689ecd1: Download complete
+47c859b1bbda: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+a9d08ec832c7: Pull complete
+2bc10b62f799: Pull complete
+47c859b1bbda: Pull complete
+16b385147454: Pull complete
+d22165034a34: Pull complete
+c9065689ecd1: Pull complete
+699484708a74: Pull complete
+Digest: sha256:dc6c3e6cb22cdb2cc1dd6aa3448728225a0894a6a35299984b1bd7e734c8b4ed
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-12915:latest
+test_static_file_response (asgi.tests.ASGITest) ... ok
+test_get_async_response (staticfiles_tests.test_handlers.TestASGIStaticFilesHandler) ... ok
+test_get_async_response_not_found (staticfiles_tests.test_handlers.TestASGIStaticFilesHandler) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.111s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (8 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application asgi
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_disconnect (asgi.tests.ASGITest) ... ok
+test_file_response (asgi.tests.ASGITest) ... ok
+test_get_asgi_application (asgi.tests.ASGITest) ... ok
+test_get_query_string (asgi.tests.ASGITest) ... ok
+test_headers (asgi.tests.ASGITest) ... ok
+test_non_unicode_query_string (asgi.tests.ASGITest) ... ok
+test_request_lifecycle_signals_dispatched_with_thread_sensitive (asgi.tests.ASGITest) ... ok
+test_wrong_connection_type (asgi.tests.ASGITest) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.043s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

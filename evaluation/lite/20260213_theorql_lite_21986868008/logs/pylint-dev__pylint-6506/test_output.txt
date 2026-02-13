@@ -1,0 +1,312 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+benchmark: 3.4.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-3.0.0, forked-1.6.0, xdist-2.5.0, timeout-2.3.1, benchmark-3.4.1, profiling-1.7.0
+collecting ... collected 2 items
+
+tests/config/test_config.py::test_unknown_option_name FAILED             [ 50%]
+
+=================================== FAILURES ===================================
+___________________________ test_unknown_option_name ___________________________
+
+self = <pylint.testutils._run._Run object at 0x7f874805bbe0>
+args = ['/testbed/tests/config/../regrtest_data/empty.py', '--unknown-option=yes']
+reporter = None, exit = False, do_exit = <object object at 0x7f8748318bd0>
+
+    def __init__(
+        self,
+        args: Sequence[str],
+        reporter: BaseReporter | None = None,
+        exit: bool = True,  # pylint: disable=redefined-builtin
+        do_exit: Any = UNUSED_PARAM_SENTINEL,
+    ) -> None:
+        # Immediately exit if user asks for version
+        if "--version" in args:
+            print(full_version)
+            sys.exit(0)
+    
+        self._rcfile: str | None = None
+        self._output: str | None = None
+        self._plugins: list[str] = []
+        self.verbose: bool = False
+    
+        # Pre-process certain options and remove them from args list
+        try:
+            args = _preprocess_options(self, args)
+        except ArgumentPreprocessingError as ex:
+            print(ex, file=sys.stderr)
+            sys.exit(32)
+    
+        # Determine configuration file
+        if self._rcfile is None:
+            default_file = next(config.find_default_config_files(), None)
+            if default_file:
+                self._rcfile = str(default_file)
+    
+        self.linter = linter = self.LinterClass(
+            _make_run_options(self),
+            option_groups=self.option_groups,
+            pylintrc=self._rcfile,
+        )
+        # register standard checkers
+        linter.load_default_plugins()
+        # load command line plugins
+        linter.load_plugin_modules(self._plugins)
+    
+        linter.disable("I")
+        linter.enable("c-extension-no-member")
+    
+        try:
+>           args = _config_initialization(
+                linter, args, reporter, config_file=self._rcfile, verbose_mode=self.verbose
+            )
+
+pylint/lint/run.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+linter = Checker 'master' (responsible for 'F0001', 'F0002', 'F0010', 'F0011', 'I0001', 'I0010', 'I0011', 'I0013', 'I0020', 'I0021', 'I0022', 'E0001', 'E0011', 'E0012', 'E0013', 'E0014', 'E0015')
+args_list = ['/testbed/tests/config/../regrtest_data/empty.py', '--unknown-option=yes']
+reporter = None
+config_file = PosixPath('/testbed/pylint/testutils/testing_pylintrc')
+verbose_mode = False
+
+    def _config_initialization(
+        linter: PyLinter,
+        args_list: list[str],
+        reporter: reporters.BaseReporter | reporters.MultiReporter | None = None,
+        config_file: None | str | Path = None,
+        verbose_mode: bool = False,
+    ) -> list[str]:
+        """Parse all available options, read config files and command line arguments and
+        set options accordingly.
+        """
+        config_file = Path(config_file) if config_file else None
+    
+        # Set the current module to the configuration file
+        # to allow raising messages on the configuration file.
+        linter.set_current_module(str(config_file) if config_file else None)
+    
+        # Read the configuration file
+        config_file_parser = _ConfigurationFileParser(verbose_mode, linter)
+        try:
+            config_data, config_args = config_file_parser.parse_config_file(
+                file_path=config_file
+            )
+        except OSError as ex:
+            print(ex, file=sys.stderr)
+            sys.exit(32)
+    
+        # Run init hook, if present, before loading plugins
+        if "init-hook" in config_data:
+            exec(utils._unquote(config_data["init-hook"]))  # pylint: disable=exec-used
+    
+        # Load plugins if specified in the config file
+        if "load-plugins" in config_data:
+            linter.load_plugin_modules(utils._splitstrip(config_data["load-plugins"]))
+    
+        # First we parse any options from a configuration file
+        try:
+            linter._parse_configuration_file(config_args)
+        except _UnrecognizedOptionError as exc:
+            msg = ", ".join(exc.options)
+            linter.add_message("unrecognized-option", line=0, args=msg)
+    
+        # Then, if a custom reporter is provided as argument, it may be overridden
+        # by file parameters, so we re-set it here. We do this before command line
+        # parsing, so it's still overridable by command line options
+        if reporter:
+            linter.set_reporter(reporter)
+    
+        # Set the current module to the command line
+        # to allow raising messages on it
+        linter.set_current_module("Command line")
+    
+        # Now we parse any options from the command line, so they can override
+        # the configuration file
+        parsed_args_list = linter._parse_command_line_configuration(args_list)
+    
+        # Check if there are any options that we do not recognize
+        unrecognized_options: list[str] = []
+        for opt in parsed_args_list:
+            if opt.startswith("--"):
+                unrecognized_options.append(opt[2:])
+            elif opt.startswith("-"):
+                unrecognized_options.append(opt[1:])
+        if unrecognized_options:
+            msg = ", ".join(unrecognized_options)
+            linter.add_message("unrecognized-option", line=0, args=msg)
+>           raise _UnrecognizedOptionError(options=unrecognized_options)
+E           pylint.config.exceptions._UnrecognizedOptionError
+
+pylint/config/config_initialization.py:85: _UnrecognizedOptionError
+
+During handling of the above exception, another exception occurred:
+
+capsys = <_pytest.capture.CaptureFixture object at 0x7f8747d8a880>
+
+    def test_unknown_option_name(capsys: CaptureFixture) -> None:
+        """Check that we correctly raise a message on an unknown option."""
+        with pytest.raises(SystemExit):
+>           Run([str(EMPTY_MODULE), "--unknown-option=yes"], exit=False)
+
+tests/config/test_config.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pylint/testutils/_run.py:45: in __init__
+    super().__init__(args, reporter, exit, do_exit)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pylint.testutils._run._Run object at 0x7f874805bbe0>
+args = ['/testbed/tests/config/../regrtest_data/empty.py', '--unknown-option=yes']
+reporter = None, exit = False, do_exit = <object object at 0x7f8748318bd0>
+
+    def __init__(
+        self,
+        args: Sequence[str],
+        reporter: BaseReporter | None = None,
+        exit: bool = True,  # pylint: disable=redefined-builtin
+        do_exit: Any = UNUSED_PARAM_SENTINEL,
+    ) -> None:
+        # Immediately exit if user asks for version
+        if "--version" in args:
+            print(full_version)
+            sys.exit(0)
+    
+        self._rcfile: str | None = None
+        self._output: str | None = None
+        self._plugins: list[str] = []
+        self.verbose: bool = False
+    
+        # Pre-process certain options and remove them from args list
+        try:
+            args = _preprocess_options(self, args)
+        except ArgumentPreprocessingError as ex:
+            print(ex, file=sys.stderr)
+            sys.exit(32)
+    
+        # Determine configuration file
+        if self._rcfile is None:
+            default_file = next(config.find_default_config_files(), None)
+            if default_file:
+                self._rcfile = str(default_file)
+    
+        self.linter = linter = self.LinterClass(
+            _make_run_options(self),
+            option_groups=self.option_groups,
+            pylintrc=self._rcfile,
+        )
+        # register standard checkers
+        linter.load_default_plugins()
+        # load command line plugins
+        linter.load_plugin_modules(self._plugins)
+    
+        linter.disable("I")
+        linter.enable("c-extension-no-member")
+    
+        try:
+            args = _config_initialization(
+                linter, args, reporter, config_file=self._rcfile, verbose_mode=self.verbose
+            )
+        except _UnrecognizedOptionError:
+>           linter.print_usage()
+E           AttributeError: 'PyLinter' object has no attribute 'print_usage'
+
+pylint/lint/run.py:140: AttributeError
+----------------------------- Captured stdout call -----------------------------
+************* Module Command line
+Command line:1:0: E0015: Unrecognized option found: unknown-option=yes (unrecognized-option)
+=============================== warnings summary ===============================
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:6
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:6: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/config/test_config.py::test_unknown_option_name - AttributeError...
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+========================= 1 failed, 1 warning in 0.11s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-6506:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-6506
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+9b0d420b747c: Pulling fs layer
+500327121db6: Pulling fs layer
+ac5b61163589: Pulling fs layer
+aa492d3067d7: Pulling fs layer
+2974dbaa3461: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+f704e3d2e2a6: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+c6fc214f5cfc: Pulling fs layer
+c7d857fa84a8: Pulling fs layer
+0c80d7b4d24b: Pulling fs layer
+0c80d7b4d24b: Download complete
+2974dbaa3461: Download complete
+aa492d3067d7: Download complete
+e5a28c0c137e: Download complete
+9b0d420b747c: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+c6fc214f5cfc: Download complete
+7478e0ac0f23: Download complete
+c7d857fa84a8: Download complete
+7478e0ac0f23: Pull complete
+f704e3d2e2a6: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+2974dbaa3461: Pull complete
+aa492d3067d7: Pull complete
+c7d857fa84a8: Pull complete
+c6fc214f5cfc: Pull complete
+f704e3d2e2a6: Pull complete
+0c80d7b4d24b: Pull complete
+9b0d420b747c: Pull complete
+Digest: sha256:80a21073c478d232edefe83f44e3ac38391760277cef698c7488a6ee26b13280
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-6506:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/config/test_config.py::test_unknown_option_name tests/config/test_config.py::test_unknown_short_option_name` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (6 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+benchmark: 3.4.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-3.0.0, forked-1.6.0, xdist-2.5.0, timeout-2.3.1, benchmark-3.4.1, profiling-1.7.0
+collecting ... collected 6 items
+
+tests/config/test_config.py::test_can_read_toml_env_variable PASSED      [ 16%]
+tests/config/test_config.py::test_unknown_message_id PASSED              [ 33%]
+tests/config/test_config.py::test_unknown_confidence PASSED              [ 50%]
+tests/config/test_config.py::test_unknown_yes_no PASSED                  [ 66%]
+tests/config/test_config.py::test_unknown_py_version PASSED              [ 83%]
+tests/config/test_config.py::test_short_verbose PASSED                   [100%]
+
+=============================== warnings summary ===============================
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:6
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:6: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 6 passed, 1 warning in 0.15s =========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['tests/config/test_config.py::test_unknown_option_name', 'tests/config/test_config.py::test_unknown_short_option_name']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

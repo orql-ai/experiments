@@ -1,0 +1,141 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+random seed:        52746948
+hash randomization: on (PYTHONHASHSEED=2813055874)
+
+sympy/core/tests/test_evalf.py[1] F                                       [FAIL]
+
+________________________________________________________________________________
+________________ sympy/core/tests/test_evalf.py:test_evalf_bugs ________________
+  File "/testbed/sympy/core/tests/test_evalf.py", line 231, in test_evalf_bugs
+    assert NS(2*x**2.5, 5) == '2.0000*x**2.5000'
+AssertionError
+
+============= tests finished: 0 passed, 1 failed, in 0.11 seconds ==============
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13146:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-13146
+500327121db6: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+df76c5e90dfe: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ed3dada71338: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+32a7b668fa2a: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+b08895a5c216: Pulling fs layer
+5c809fd8a9af: Download complete
+e5a28c0c137e: Download complete
+ed3dada71338: Download complete
+ac5b61163589: Download complete
+2f341c31f3b7: Download complete
+32a7b668fa2a: Download complete
+836b79e2a6e5: Download complete
+7478e0ac0f23: Download complete
+df76c5e90dfe: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+ed3dada71338: Pull complete
+5c809fd8a9af: Pull complete
+32a7b668fa2a: Pull complete
+0b326ada86d1: Pull complete
+df76c5e90dfe: Pull complete
+Digest: sha256:c176986e75adea63ed0dfddf7ab0d96d81ddc95d44784508816429d10e72ba6b
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13146:latest
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+===== PHASE: PASS_TO_PASS (34 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+random seed:        53676196
+hash randomization: on (PYTHONHASHSEED=2178151851)
+
+sympy/combinatorics/tests/test_subsets.py[1] .                              [OK]
+sympy/core/tests/test_basic.py[1] .                                         [OK]
+sympy/core/tests/test_evalf.py[36] ......f.f...........................     [OK]
+sympy/core/tests/test_noncommutative.py[1] .                                [OK]
+sympy/core/tests/test_subs.py[13] .............                             [OK]
+sympy/core/tests/test_sympify.py[2] E.                                    [FAIL]
+sympy/diffgeom/tests/test_class_structure.py[1] .                           [OK]
+sympy/geometry/tests/test_entity.py[1] .                                    [OK]
+sympy/integrals/tests/test_integrals.py[8] w.......                         [OK]
+sympy/logic/tests/test_boolalg.py[1] .                                      [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[1] .                       [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_immutable.py[1] .                                 [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+sympy/physics/tests/test_secondquant.py[5] .....                            [OK]
+sympy/simplify/tests/test_sqrtdenest.py[1] .                                [OK]
+sympy/solvers/tests/test_solveset.py[1] .                                   [OK]
+sympy/strategies/tests/test_rl.py[1] .                                      [OK]
+sympy/strategies/tests/test_tools.py[2] ..                                  [OK]
+sympy/tensor/tests/test_tensor.py[1] .                                      [OK]
+sympy/utilities/tests/test_iterables.py[1] .                                [OK]
+
+________________________________________________________________________________
+_____________ sympy/core/tests/test_sympify.py:test_evaluate_false _____________
+  File "/testbed/sympy/core/tests/test_sympify.py", line 407, in test_evaluate_false
+    assert sympify(case, evaluate=False) == result
+  File "/testbed/sympy/core/sympify.py", line 354, in sympify
+    expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)
+  File "/testbed/sympy/parsing/sympy_parser.py", line 892, in parse_expr
+    code = compile(evaluateFalse(code), '<string>', 'eval')
+ValueError: Name node can't be used with 'False' constant
+
+ tests finished: 77 passed, 1 skipped, 2 expected to fail, 1 exceptions, 
+in 2.50 seconds 
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_evalf_bugs']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_evalf_helpers', 'test_evalf_basic', 'test_cancellation', 'test_evalf_powers', 'test_evalf_rump', 'test_evalf_complex', 'test_evalf_complex_powers', 'test_evalf_exponentiation', 'test_evalf_complex_cancellation', 'test_evalf_trig_zero_detection', 'test_evalf_sum', 'test_evalf_divergent_series', 'test_evalf_product', 'test_evalf_py_methods', 'test_evalf_power_subs_bugs', 'test_evalf_arguments', 'test_implemented_function_evalf', 'test_evaluate_false', 'test_evalf_relational', 'test_issue_5486', 'test_issue_5486_bug', 'test_bugs', 'test_subs', 'test_old_docstring', 'test_scaled_zero', 'test_chop_value', 'test_infinities', 'test_to_mpmath', 'test_issue_4945', 'test_evalf_integral', 'test_issue_8821_highprec_from_str', 'test_issue_8853', 'test_issue_9326', 'test_issue_10323']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

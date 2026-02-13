@@ -1,0 +1,498 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-3.3.0+/2c2335bbb, docutils-0.21.2
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 1 item
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_none_for_overload FAILED [100%]
+
+=================================== FAILURES ===================================
+___________________ test_autodoc_typehints_none_for_overload ___________________
+
+app = <SphinxTestApp buildername='html'>
+
+    @pytest.mark.sphinx('html', testroot='ext-autodoc',
+                        confoverrides={'autodoc_typehints': 'none'})
+    def test_autodoc_typehints_none_for_overload(app):
+        options = {"members": None}
+        actual = do_autodoc(app, 'module', 'target.overload', options)
+>       assert list(actual) == [
+            '',
+            '.. py:module:: target.overload',
+            '',
+            '',
+            '.. py:class:: Bar(x, y)',
+            '   :module: target.overload',
+            '',
+            '   docstring',
+            '',
+            '',
+            '.. py:class:: Baz(x, y)',
+            '   :module: target.overload',
+            '',
+            '   docstring',
+            '',
+            '',
+            '.. py:class:: Foo(x, y)',
+            '   :module: target.overload',
+            '',
+            '   docstring',
+            '',
+            '',
+            '.. py:class:: Math()',
+            '   :module: target.overload',
+            '',
+            '   docstring',
+            '',
+            '',
+            '   .. py:method:: Math.sum(x, y)',
+            '      :module: target.overload',
+            '',
+            '      docstring',
+            '',
+            '',
+            '.. py:function:: sum(x, y)',
+            '   :module: target.overload',
+            '',
+            '   docstring',
+            '',
+        ]
+E       AssertionError: assert ['', '.. py:module:: target.overload', '', '', '.. py:class:: Bar(x: int, y: int)', '              Bar(x: str, y: str)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Baz(x: int, y: int)', '              Baz(x: str, y: str)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Foo(x: int, y: int)', '              Foo(x: str, y: str)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Math()', '   :module: target.overload', '', '   docstring', '', '', '   .. py:method:: Math.sum(x: int, y: int) -> int', '                  Math.sum(x: float, y: float) -> float', '                  Math.sum(x: str, y: str) -> str', '      :module: target.overload', '', '      docstring', '', '', '.. py:function:: sum(x, y)', '   :module: target.overload', '', '   docstring', ''] == ['', '.. py:module:: target.overload', '', '', '.. py:class:: Bar(x, y)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Baz(x, y)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Foo(x, y)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Math()', '   :module: target.overload', '', '   docstring', '', '', '   .. py:method:: Math.sum(x, y)', '      :module: target.overload', '', '      docstring', '', '', '.. py:function:: sum(x, y)', '   :module: target.overload', '', '   docstring', '']
+E         
+E         At index 4 diff: '.. py:class:: Bar(x: int, y: int)' != '.. py:class:: Bar(x, y)'
+E         Left contains 5 more items, first extra item: '.. py:function:: sum(x, y)'
+E         
+E         Full diff:
+E           [
+E               '',
+E               '.. py:module:: target.overload',
+E               '',
+E               '',
+E         -     '.. py:class:: Bar(x, y)',
+E         +     '.. py:class:: Bar(x: int, y: int)',
+E         ?                         +++++   +++++
+E         +     '              Bar(x: str, y: str)',
+E               '   :module: target.overload',
+E               '',
+E               '   docstring',
+E               '',
+E               '',
+E         -     '.. py:class:: Baz(x, y)',
+E         +     '.. py:class:: Baz(x: int, y: int)',
+E         ?                         +++++   +++++
+E         +     '              Baz(x: str, y: str)',
+E               '   :module: target.overload',
+E               '',
+E               '   docstring',
+E               '',
+E               '',
+E         -     '.. py:class:: Foo(x, y)',
+E         +     '.. py:class:: Foo(x: int, y: int)',
+E         ?                         +++++   +++++
+E         +     '              Foo(x: str, y: str)',
+E               '   :module: target.overload',
+E               '',
+E               '   docstring',
+E               '',
+E               '',
+E               '.. py:class:: Math()',
+E               '   :module: target.overload',
+E               '',
+E               '   docstring',
+E               '',
+E               '',
+E         -     '   .. py:method:: Math.sum(x, y)',
+E         +     '   .. py:method:: Math.sum(x: int, y: int) -> int',
+E         ?                                  +++++   +++++ +++++++
+E         +     '                  Math.sum(x: float, y: float) -> float',
+E         +     '                  Math.sum(x: str, y: str) -> str',
+E               '      :module: target.overload',
+E               '',
+E               '      docstring',
+E               '',
+E               '',
+E               '.. py:function:: sum(x, y)',
+E               '   :module: target.overload',
+E               '',
+E               '   docstring',
+E               '',
+E           ]
+
+tests/test_ext_autodoc_configs.py:618: AssertionError
+--------------------------- Captured stdout teardown ---------------------------
+# testroot: root
+# builder: html
+# srcdir: /tmp/pytest-of-root/pytest-0/ext-autodoc
+# outdir: /tmp/pytest-of-root/pytest-0/ext-autodoc/_build/html
+# status: 
+[01mRunning Sphinx v3.3.0+/2c2335bbb[39;49;00m
+
+# warning: 
+[91mWARNING: while setting up extension sphinx.addnodes: node class 'meta' is already registered, its visitors will be overridden[39;49;00m
+
+=============================== warnings summary ===============================
+sphinx/util/docutils.py:45
+  /testbed/sphinx/util/docutils.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/registry.py:22
+  /testbed/sphinx/registry.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+sphinx/directives/patches.py:15
+  /testbed/sphinx/directives/patches.py:15: DeprecationWarning: The `docutils.parsers.rst.directive.html` module will be removed in Docutils 2.0. Since Docutils 0.18, the "Meta" node is defined in `docutils.parsers.rst.directives.misc`.
+    from docutils.parsers.rst.directives import images, html, tables
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ext_autodoc_configs.py::test_autodoc_typehints_none_for_overload - AssertionError: assert ['', '.. py:module:: target.overload', '', '', '.. py:class:: Bar(x: int, y: int)', '              Bar(x: str, y: str)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Baz(x: int, y: int)', '              Baz(x: str, y: str)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Foo(x: int, y: int)', '              Foo(x: str, y: str)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Math()', '   :module: target.overload', '', '   docstring', '', '', '   .. py:method:: Math.sum(x: int, y: int) -> int', '                  Math.sum(x: float, y: float) -> float', '                  Math.sum(x: str, y: str) -> str', '      :module: target.overload', '', '      docstring', '', '', '.. py:function:: sum(x, y)', '   :module: target.overload', '', '   docstring', ''] == ['', '.. py:module:: target.overload', '', '', '.. py:class:: Bar(x, y)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Baz(x, y)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Foo(x, y)', '   :module: target.overload', '', '   docstring', '', '', '.. py:class:: Math()', '   :module: target.overload', '', '   docstring', '', '', '   .. py:method:: Math.sum(x, y)', '      :module: target.overload', '', '      docstring', '', '', '.. py:function:: sum(x, y)', '   :module: target.overload', '', '   docstring', '']
+  
+  At index 4 diff: '.. py:class:: Bar(x: int, y: int)' != '.. py:class:: Bar(x, y)'
+  Left contains 5 more items, first extra item: '.. py:function:: sum(x, y)'
+  
+  Full diff:
+    [
+        '',
+        '.. py:module:: target.overload',
+        '',
+        '',
+  -     '.. py:class:: Bar(x, y)',
+  +     '.. py:class:: Bar(x: int, y: int)',
+  ?                         +++++   +++++
+  +     '              Bar(x: str, y: str)',
+        '   :module: target.overload',
+        '',
+        '   docstring',
+        '',
+        '',
+  -     '.. py:class:: Baz(x, y)',
+  +     '.. py:class:: Baz(x: int, y: int)',
+  ?                         +++++   +++++
+  +     '              Baz(x: str, y: str)',
+        '   :module: target.overload',
+        '',
+        '   docstring',
+        '',
+        '',
+  -     '.. py:class:: Foo(x, y)',
+  +     '.. py:class:: Foo(x: int, y: int)',
+  ?                         +++++   +++++
+  +     '              Foo(x: str, y: str)',
+        '   :module: target.overload',
+        '',
+        '   docstring',
+        '',
+        '',
+        '.. py:class:: Math()',
+        '   :module: target.overload',
+        '',
+        '   docstring',
+        '',
+        '',
+  -     '   .. py:method:: Math.sum(x, y)',
+  +     '   .. py:method:: Math.sum(x: int, y: int) -> int',
+  ?                                  +++++   +++++ +++++++
+  +     '                  Math.sum(x: float, y: float) -> float',
+  +     '                  Math.sum(x: str, y: str) -> str',
+        '      :module: target.overload',
+        '',
+        '      docstring',
+        '',
+        '',
+        '.. py:function:: sum(x, y)',
+        '   :module: target.overload',
+        '',
+        '   docstring',
+        '',
+    ]
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================== 1 failed, 7 warnings in 0.59s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8282:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8282
+03fdfd37544d: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+500327121db6: Pulling fs layer
+9f49fa2b6533: Pulling fs layer
+92a723a3a820: Pulling fs layer
+a4355678e260: Pulling fs layer
+e81c68559cd9: Pulling fs layer
+9867cfa36c25: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+dfca0cd99b2d: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+92a723a3a820: Download complete
+a4355678e260: Download complete
+e81c68559cd9: Download complete
+9867cfa36c25: Download complete
+7478e0ac0f23: Download complete
+03fdfd37544d: Download complete
+9f49fa2b6533: Download complete
+dfca0cd99b2d: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+a4355678e260: Pull complete
+e81c68559cd9: Pull complete
+dfca0cd99b2d: Pull complete
+92a723a3a820: Pull complete
+9867cfa36c25: Pull complete
+9f49fa2b6533: Pull complete
+03fdfd37544d: Pull complete
+Digest: sha256:377a0838723b0555f20ace8c786e9e3fb37112fe6cf97b0d3ee1943dceaaeb71
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8282:latest
+/mnt/agent_patch.diff:21: trailing whitespace.
+                # When autodoc_typehints is 'none' or 'description', 
+warning: 1 line adds whitespace errors.
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/test_ext_autodoc_configs.py::test_autodoc_typehints_none_for_overload` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (16 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-3.3.0+/2c2335bbb, docutils-0.21.2
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 16 items
+
+tests/test_ext_autodoc_configs.py::test_autoclass_content_class PASSED   [  6%]
+tests/test_ext_autodoc_configs.py::test_autoclass_content_init PASSED    [ 12%]
+tests/test_ext_autodoc_configs.py::test_autoclass_content_both PASSED    [ 18%]
+tests/test_ext_autodoc_configs.py::test_autodoc_inherit_docstrings PASSED [ 25%]
+tests/test_ext_autodoc_configs.py::test_autodoc_docstring_signature PASSED [ 31%]
+tests/test_ext_autodoc_configs.py::test_autoclass_content_and_docstring_signature_class PASSED [ 37%]
+tests/test_ext_autodoc_configs.py::test_autoclass_content_and_docstring_signature_init PASSED [ 43%]
+tests/test_ext_autodoc_configs.py::test_autoclass_content_and_docstring_signature_both PASSED [ 50%]
+tests/test_ext_autodoc_configs.py::test_mocked_module_imports PASSED     [ 56%]
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_signature PASSED [ 62%]
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_none PASSED    [ 68%]
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description PASSED [ 75%]
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node PASSED [ 81%]
+tests/test_ext_autodoc_configs.py::test_autodoc_type_aliases PASSED      [ 87%]
+tests/test_ext_autodoc_configs.py::test_autodoc_default_options PASSED   [ 93%]
+tests/test_ext_autodoc_configs.py::test_autodoc_default_options_with_values PASSED [100%]
+
+=============================== warnings summary ===============================
+sphinx/util/docutils.py:45
+  /testbed/sphinx/util/docutils.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/registry.py:22
+  /testbed/sphinx/registry.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+sphinx/directives/patches.py:15
+  /testbed/sphinx/directives/patches.py:15: DeprecationWarning: The `docutils.parsers.rst.directive.html` module will be removed in Docutils 2.0. Since Docutils 0.18, the "Meta" node is defined in `docutils.parsers.rst.directives.misc`.
+    from docutils.parsers.rst.directives import images, html, tables
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:211: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse():  # type: Node
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/i18n.py:95: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(addnodes.translatable):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:111: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for ref in self.document.traverse(nodes.substitution_reference):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:132: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.target):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:151: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.block_quote):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:176: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.Element):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:223: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(addnodes.index):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/references.py:30: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.substitution_definition):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:190: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.section):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:280: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.doctest_block):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/domains/citation.py:117: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.citation):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/domains/citation.py:136: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.citation_reference):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/builders/latex/transforms.py:37: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(matcher):  # type: nodes.Element
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:292: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(matcher):  # type: Element
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/util/compat.py:44: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(addnodes.index):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/domains/index.py:52: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in document.traverse(addnodes.index):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/domains/math.py:85: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    self.data['has_equations'][docname] = any(document.traverse(math_node))
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/environment/collectors/asset.py:47: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in doctree.traverse(nodes.image):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/environment/collectors/asset.py:128: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in doctree.traverse(addnodes.download_reference):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/environment/collectors/title.py:46: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in doctree.traverse(nodes.section):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:302: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.system_message):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/__init__.py:391: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(addnodes.manpage):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description_for_invalid_node
+  /testbed/sphinx/transforms/i18n.py:488: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for inline in self.document.traverse(matcher):  # type: nodes.inline
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/domains/c.py:3488: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(AliasNode):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/domains/cpp.py:7053: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(AliasNode):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/transforms/post_transforms/__init__.py:71: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(addnodes.pending_xref):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/util/nodes.py:598: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in document.traverse(addnodes.only):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/transforms/post_transforms/images.py:35: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.image):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/transforms/post_transforms/__init__.py:215: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(addnodes.desc_sig_element):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/builders/latex/transforms.py:595: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(nodes.title):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/transforms/post_transforms/code.py:44: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for node in self.document.traverse(addnodes.highlightlang):
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/transforms/post_transforms/code.py:96: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for lbnode in self.document.traverse(nodes.literal_block):  # type: nodes.literal_block
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/transforms/post_transforms/code.py:100: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for dbnode in self.document.traverse(nodes.doctest_block):  # type: nodes.doctest_block
+
+tests/test_ext_autodoc_configs.py::test_autodoc_typehints_description
+  /testbed/sphinx/environment/__init__.py:542: PendingDeprecationWarning: nodes.Node.traverse() is obsoleted by Node.findall().
+    for toctreenode in doctree.traverse(addnodes.toctree):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 16 passed, 65 warnings in 1.34s ========================
+
+
+/mnt/agent_patch.diff:21: trailing whitespace.
+                # When autodoc_typehints is 'none' or 'description', 
+warning: 1 line adds whitespace errors.
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['tests/test_ext_autodoc_configs.py::test_autodoc_typehints_none_for_overload']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

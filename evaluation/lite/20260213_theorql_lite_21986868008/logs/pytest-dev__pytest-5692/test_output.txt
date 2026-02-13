@@ -1,0 +1,156 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.0.2.dev185+g29e336bd9, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 2 items
+
+testing/test_junitxml.py::TestPython::test_hostname_in_xml PASSED        [ 50%]
+testing/test_junitxml.py::TestPython::test_timestamp_in_xml PASSED       [100%]
+
+=========================== 2 passed in 0.14 seconds ===========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5692:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5692
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+427b94dddbbf: Pulling fs layer
+12bc62dac3bd: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+95c7d8a224cd: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+1f70b93f338b: Pulling fs layer
+76226a6e6c69: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+160815d1dcf9: Pulling fs layer
+1f70b93f338b: Download complete
+76226a6e6c69: Download complete
+95c7d8a224cd: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+427b94dddbbf: Download complete
+e5a28c0c137e: Download complete
+160815d1dcf9: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+12bc62dac3bd: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+76226a6e6c69: Pull complete
+427b94dddbbf: Pull complete
+9243c6d3b562: Pull complete
+1f70b93f338b: Pull complete
+95c7d8a224cd: Pull complete
+12bc62dac3bd: Pull complete
+160815d1dcf9: Pull complete
+Digest: sha256:205b8dd2aa9fc3abde5892a978c9fb5ecf931207e37d01327849c71d54729a84
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5692:latest
+
+
+===== PHASE: PASS_TO_PASS (68 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.0.2.dev185+g29e336bd9, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 50 items
+
+testing/test_junitxml.py::test_mangle_test_address PASSED                [  2%]
+testing/test_junitxml.py::test_dont_configure_on_slaves PASSED           [  4%]
+testing/test_junitxml.py::test_invalid_xml_escape PASSED                 [  6%]
+testing/test_junitxml.py::test_logxml_path_expansion PASSED              [  8%]
+testing/test_junitxml.py::TestPython::test_summing_simple PASSED         [ 10%]
+testing/test_junitxml.py::TestPython::test_summing_simple_with_errors PASSED [ 12%]
+testing/test_junitxml.py::TestPython::test_timing_function PASSED        [ 14%]
+testing/test_junitxml.py::TestPython::test_junit_duration_report[call] PASSED [ 16%]
+testing/test_junitxml.py::TestPython::test_junit_duration_report[total] PASSED [ 18%]
+testing/test_junitxml.py::TestPython::test_setup_error PASSED            [ 20%]
+testing/test_junitxml.py::TestPython::test_teardown_error PASSED         [ 22%]
+testing/test_junitxml.py::TestPython::test_call_failure_teardown_error PASSED [ 24%]
+testing/test_junitxml.py::TestPython::test_skip_contains_name_reason PASSED [ 26%]
+testing/test_junitxml.py::TestPython::test_mark_skip_contains_name_reason PASSED [ 28%]
+testing/test_junitxml.py::TestPython::test_mark_skipif_contains_name_reason PASSED [ 30%]
+testing/test_junitxml.py::TestPython::test_mark_skip_doesnt_capture_output PASSED [ 32%]
+testing/test_junitxml.py::TestPython::test_classname_instance PASSED     [ 34%]
+testing/test_junitxml.py::TestPython::test_classname_nested_dir PASSED   [ 36%]
+testing/test_junitxml.py::TestPython::test_internal_error PASSED         [ 38%]
+testing/test_junitxml.py::TestPython::test_failure_function[no] PASSED   [ 40%]
+testing/test_junitxml.py::TestPython::test_failure_function[system-out] PASSED [ 42%]
+testing/test_junitxml.py::TestPython::test_failure_function[system-err] PASSED [ 44%]
+testing/test_junitxml.py::TestPython::test_failure_verbose_message PASSED [ 46%]
+testing/test_junitxml.py::TestPython::test_failure_escape PASSED         [ 48%]
+testing/test_junitxml.py::TestPython::test_junit_prefixing PASSED        [ 50%]
+testing/test_junitxml.py::TestPython::test_xfailure_function PASSED      [ 52%]
+testing/test_junitxml.py::TestPython::test_xfailure_marker PASSED        [ 54%]
+testing/test_junitxml.py::TestPython::test_xfail_captures_output_once PASSED [ 56%]
+testing/test_junitxml.py::TestPython::test_xfailure_xpass PASSED         [ 58%]
+testing/test_junitxml.py::TestPython::test_xfailure_xpass_strict PASSED  [ 60%]
+testing/test_junitxml.py::TestPython::test_collect_error PASSED          [ 62%]
+testing/test_junitxml.py::TestPython::test_unicode PASSED                [ 64%]
+testing/test_junitxml.py::TestPython::test_assertion_binchars PASSED     [ 66%]
+testing/test_junitxml.py::TestPython::test_pass_captures_stdout PASSED   [ 68%]
+testing/test_junitxml.py::TestPython::test_pass_captures_stderr PASSED   [ 70%]
+testing/test_junitxml.py::TestPython::test_setup_error_captures_stdout PASSED [ 72%]
+testing/test_junitxml.py::TestPython::test_setup_error_captures_stderr PASSED [ 74%]
+testing/test_junitxml.py::TestPython::test_avoid_double_stdout PASSED    [ 76%]
+testing/test_junitxml.py::TestNonPython::test_summing_simple PASSED      [ 78%]
+testing/test_junitxml.py::test_nullbyte PASSED                           [ 80%]
+testing/test_junitxml.py::test_nullbyte_replace PASSED                   [ 82%]
+testing/test_junitxml.py::test_logxml_changingdir PASSED                 [ 84%]
+testing/test_junitxml.py::test_logxml_makedir PASSED                     [ 86%]
+testing/test_junitxml.py::test_logxml_check_isdir PASSED                 [ 88%]
+testing/test_junitxml.py::test_escaped_parametrized_names_xml PASSED     [ 90%]
+testing/test_junitxml.py::test_double_colon_split_function_issue469 PASSED [ 92%]
+testing/test_junitxml.py::test_double_colon_split_method_issue469 PASSED [ 94%]
+testing/test_junitxml.py::test_unicode_issue368 PASSED                   [ 96%]
+testing/test_junitxml.py::test_record_property PASSED                    [ 98%]
+testing/test_junitxml.py::test_record_property_same_name PASSED          [100%]
+
+========================== 50 passed in 1.39 seconds ===========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.0.2.dev185+g29e336bd9, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 18 items
+
+testing/test_junitxml.py::test_record_fixtures_without_junitxml[record_property] PASSED [  5%]
+testing/test_junitxml.py::test_record_fixtures_without_junitxml[record_xml_attribute] PASSED [ 11%]
+testing/test_junitxml.py::test_record_attribute PASSED                   [ 16%]
+testing/test_junitxml.py::test_record_fixtures_xunit2[record_xml_attribute] PASSED [ 22%]
+testing/test_junitxml.py::test_record_fixtures_xunit2[record_property] PASSED [ 27%]
+testing/test_junitxml.py::test_root_testsuites_tag PASSED                [ 33%]
+testing/test_junitxml.py::test_runs_twice PASSED                         [ 38%]
+testing/test_junitxml.py::test_fancy_items_regression PASSED             [ 44%]
+testing/test_junitxml.py::test_global_properties PASSED                  [ 50%]
+testing/test_junitxml.py::test_url_property PASSED                       [ 55%]
+testing/test_junitxml.py::test_record_testsuite_property PASSED          [ 61%]
+testing/test_junitxml.py::test_record_testsuite_property_junit_disabled PASSED [ 66%]
+testing/test_junitxml.py::test_record_testsuite_property_type_checking[True] PASSED [ 72%]
+testing/test_junitxml.py::test_record_testsuite_property_type_checking[False] PASSED [ 77%]
+testing/test_junitxml.py::test_set_suite_name[my_suite] PASSED           [ 83%]
+testing/test_junitxml.py::test_set_suite_name[] PASSED                   [ 88%]
+testing/test_junitxml.py::test_escaped_skipreason_issue3533 PASSED       [ 94%]
+testing/test_junitxml.py::test_logging_passing_tests_disabled_does_not_log_test_output PASSED [100%]
+
+========================== 18 passed in 0.49 seconds ===========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

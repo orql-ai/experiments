@@ -1,0 +1,147 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        92761703
+hash randomization: on (PYTHONHASHSEED=839283309)
+
+sympy/functions/elementary/tests/test_hyperbolic.py[3] ...                  [OK]
+
+================== tests finished: 3 passed, in 0.17 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13480:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-13480
+500327121db6: Pulling fs layer
+ee4bb1f2f94a: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+ed3dada71338: Pulling fs layer
+b08895a5c216: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+12ab027808d7: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+2f341c31f3b7: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ed3dada71338: Download complete
+12ab027808d7: Download complete
+5c809fd8a9af: Download complete
+ee4bb1f2f94a: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+0b326ada86d1: Pull complete
+12ab027808d7: Pull complete
+5c809fd8a9af: Pull complete
+ee4bb1f2f94a: Pull complete
+Digest: sha256:daef4703c189255c00fd9c13f80d28495c505266ee89296604b75f71067057f1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13480:latest
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+===== PHASE: PASS_TO_PASS (43 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        74547317
+hash randomization: on (PYTHONHASHSEED=2115922395)
+
+sympy/assumptions/tests/test_query.py[1] E                                [FAIL]
+sympy/core/tests/test_assumptions.py[1] .                                   [OK]
+sympy/core/tests/test_complex.py[1] .                                       [OK]
+sympy/core/tests/test_match.py[1] .                                         [OK]
+sympy/core/tests/test_relational.py[3] ...                                  [OK]
+sympy/functions/elementary/tests/test_hyperbolic.py[44] ........................
+....................                                                        [OK]
+sympy/functions/elementary/tests/test_trigonometric.py[2] ..                [OK]
+sympy/physics/quantum/tests/test_hilbert.py[1] .                            [OK]
+sympy/physics/tests/test_secondquant.py[1] .                                [OK]
+sympy/polys/tests/test_ring_series.py[4] ....                               [OK]
+sympy/series/tests/test_order.py[1] .                                       [OK]
+sympy/tensor/tests/test_indexed.py[1] E                                   [FAIL]
+
+________________________________________________________________________________
+______________ sympy/assumptions/tests/test_query.py:test_complex ______________
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 1082, in test_complex
+    assert ask(Q.complex(x)) is None
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+___________ sympy/tensor/tests/test_indexed.py:test_complex_indices ____________
+  File "/testbed/sympy/tensor/tests/test_indexed.py", line 261, in test_complex_indices
+    A = Indexed('A', i, i + j)
+  File "/testbed/sympy/tensor/indexed.py", line 155, in __new__
+    if isinstance(base, (NDimArray, collections.Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+
+=========== tests finished: 59 passed, 2 exceptions, in 1.61 seconds ===========
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_sinh', 'test_sinh_series', 'test_cosh', 'test_cosh_series', 'test_tanh', 'test_tanh_series', 'test_coth_series', 'test_csch', 'test_csch_series', 'test_sech', 'test_sech_series', 'test_asinh', 'test_asinh_rewrite', 'test_asinh_series', 'test_acosh', 'test_acosh_rewrite', 'test_acosh_series', 'test_asech', 'test_asech_series', 'test_asech_rewrite', 'test_acsch', 'test_acsch_infinities', 'test_acsch_rewrite', 'test_atanh', 'test_atanh_rewrite', 'test_atanh_series', 'test_acoth', 'test_acoth_rewrite', 'test_acoth_series', 'test_inverses', 'test_leading_term', 'test_complex', 'test_complex_2899', 'test_simplifications', 'test_issue_4136', 'test_sinh_rewrite', 'test_cosh_rewrite', 'test_tanh_rewrite', 'test_coth_rewrite', 'test_csch_rewrite', 'test_sech_rewrite', 'test_derivs', 'test_sinh_expansion']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

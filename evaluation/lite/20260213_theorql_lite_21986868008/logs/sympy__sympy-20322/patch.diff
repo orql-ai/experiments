@@ -1,0 +1,12 @@
+diff --git a/sympy/simplify/simplify.py b/sympy/simplify/simplify.py
+index 5f5eab3b9d..64fc4b9db3 100644
+--- a/sympy/simplify/simplify.py
++++ b/sympy/simplify/simplify.py
+@@ -721,6 +721,7 @@ def done(e):
+         len(x.args) == 2 and
+         x.args[0].is_Number and
+         x.args[1].is_Add and
++        x.args[1].func is Add and
+         x.is_commutative)
+     expr = short.xreplace(hollow_mul)
+ 

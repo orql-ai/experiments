@@ -1,0 +1,96 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application utils_tests
+Found 1 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15789:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15789
+836b79e2a6e5: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ce2020fd5769: Pulling fs layer
+4e865410366e: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+440f2bf70467: Pulling fs layer
+f230ebc66e95: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+f230ebc66e95: Download complete
+b780fac9da70: Download complete
+396d2ca0167c: Download complete
+440f2bf70467: Download complete
+ce2020fd5769: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+4e865410366e: Download complete
+500327121db6: Download complete
+187d94c4a868: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+b780fac9da70: Pull complete
+396d2ca0167c: Pull complete
+4e865410366e: Pull complete
+f230ebc66e95: Pull complete
+440f2bf70467: Pull complete
+187d94c4a868: Pull complete
+ce2020fd5769: Pull complete
+Digest: sha256:8edd4525c8cf0c185d339e0e5f7ecb301334860d6bfd1dfb2fdf3d5448d6a43d
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15789:latest
+test_json_script_custom_encoder (utils_tests.test_html.TestUtilsHtml) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (17 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application utils_tests
+Found 17 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_conditional_escape (utils_tests.test_html.TestUtilsHtml) ... ok
+test_escape (utils_tests.test_html.TestUtilsHtml) ... ok
+test_escapejs (utils_tests.test_html.TestUtilsHtml) ... ok
+test_format_html (utils_tests.test_html.TestUtilsHtml) ... ok
+test_html_safe (utils_tests.test_html.TestUtilsHtml) ... ok
+test_html_safe_defines_html_error (utils_tests.test_html.TestUtilsHtml) ... ok
+test_html_safe_doesnt_define_str (utils_tests.test_html.TestUtilsHtml) ... ok
+test_html_safe_subclass (utils_tests.test_html.TestUtilsHtml) ... ok
+test_json_script (utils_tests.test_html.TestUtilsHtml) ... ok
+test_json_script_without_id (utils_tests.test_html.TestUtilsHtml) ... ok
+test_linebreaks (utils_tests.test_html.TestUtilsHtml) ... ok
+test_smart_urlquote (utils_tests.test_html.TestUtilsHtml) ... ok
+test_strip_spaces_between_tags (utils_tests.test_html.TestUtilsHtml) ... ok
+test_strip_tags (utils_tests.test_html.TestUtilsHtml) ... ok
+test_strip_tags_files (utils_tests.test_html.TestUtilsHtml) ... ok
+test_urlize (utils_tests.test_html.TestUtilsHtml) ... ok
+test_urlize_unchanged_inputs (utils_tests.test_html.TestUtilsHtml) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.169s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

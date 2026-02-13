@@ -1,0 +1,293 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Found 1 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_customemailfield
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Creating table auth_tests_organization
+    Creating table auth_tests_customuserwithm2m
+    Creating table auth_tests_customuserwithm2mthrough
+    Creating table auth_tests_membership
+    Creating table auth_tests_customuserwithuniqueconstraint
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16139:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16139
+500327121db6: Pulling fs layer
+ac5b61163589: Pulling fs layer
+a14038b09aaa: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+4e865410366e: Pulling fs layer
+187d94c4a868: Pulling fs layer
+440f2bf70467: Pulling fs layer
+b780fac9da70: Pulling fs layer
+0d4e3f99f9fc: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+396d2ca0167c: Download complete
+b780fac9da70: Download complete
+440f2bf70467: Download complete
+0d4e3f99f9fc: Download complete
+836b79e2a6e5: Download complete
+a14038b09aaa: Download complete
+7478e0ac0f23: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+187d94c4a868: Download complete
+a2f6138ded93: Download complete
+4e865410366e: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+396d2ca0167c: Pull complete
+b780fac9da70: Pull complete
+4e865410366e: Pull complete
+440f2bf70467: Pull complete
+0d4e3f99f9fc: Pull complete
+187d94c4a868: Pull complete
+a14038b09aaa: Pull complete
+Digest: sha256:3206feb54d62c07587e602b4d96b1bc71382f48eb1c888dddd4b9e890aa1df77
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16139:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_link_to_password_reset_in_helptext_via_to_field (auth_tests.test_forms.UserChangeFormTest) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.016s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (76 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_customemailfield
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Creating table auth_tests_organization
+    Creating table auth_tests_customuserwithm2m
+    Creating table auth_tests_customuserwithm2mthrough
+    Creating table auth_tests_membership
+    Creating table auth_tests_customuserwithuniqueconstraint
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_field_order (auth_tests.test_forms.PasswordChangeFormTest) ... ok
+test_html_autocomplete_attributes (auth_tests.test_forms.PasswordChangeFormTest) ... ok
+test_incorrect_password (auth_tests.test_forms.PasswordChangeFormTest) ... ok
+test_password_verification (auth_tests.test_forms.PasswordChangeFormTest) ... ok
+test_password_whitespace_not_stripped (auth_tests.test_forms.PasswordChangeFormTest) ... ok
+test_success (auth_tests.test_forms.PasswordChangeFormTest) ... ok
+test_html_autocomplete_attributes (auth_tests.test_forms.AdminPasswordChangeFormTest) ... ok
+test_missing_passwords (auth_tests.test_forms.AdminPasswordChangeFormTest) ... ok
+test_non_matching_passwords (auth_tests.test_forms.AdminPasswordChangeFormTest) ... ok
+test_one_password (auth_tests.test_forms.AdminPasswordChangeFormTest) ... ok
+test_password_whitespace_not_stripped (auth_tests.test_forms.AdminPasswordChangeFormTest) ... ok
+test_success (auth_tests.test_forms.AdminPasswordChangeFormTest) ... ok
+test_both_passwords (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_custom_form (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_custom_form_hidden_username_field (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_custom_form_with_different_username_field (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_html_autocomplete_attributes (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_invalid_data (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_normalize_username (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_password_help_text (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_password_verification (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_password_whitespace_not_stripped (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_success (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_unicode_username (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_user_already_exists (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_username_field_autocapitalize_none (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_validates_password (auth_tests.test_forms.UserCreationFormTest) ... ok
+test_help_text_translation (auth_tests.test_forms.SetPasswordFormTest) ... ok
+test_html_autocomplete_attributes (auth_tests.test_forms.SetPasswordFormTest) ... ok
+test_no_password (auth_tests.test_forms.SetPasswordFormTest) ... ok
+test_password_verification (auth_tests.test_forms.SetPasswordFormTest) ... ok
+test_password_whitespace_not_stripped (auth_tests.test_forms.SetPasswordFormTest) ... ok
+test_success (auth_tests.test_forms.SetPasswordFormTest) ... ok
+test_validates_password (auth_tests.test_forms.SetPasswordFormTest) ... ok
+test_bug_19349_render_with_none_value (auth_tests.test_forms.ReadOnlyPasswordHashTest) ... ok
+test_readonly_field_has_changed (auth_tests.test_forms.ReadOnlyPasswordHashTest) ... ok
+test_render (auth_tests.test_forms.ReadOnlyPasswordHashTest) ... ok
+test_custom_login_allowed_policy (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_get_invalid_login_error (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_html_autocomplete_attributes (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_inactive_user (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_inactive_user_i18n (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_integer_username (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_invalid_username (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_login_failed (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_no_password (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_password_whitespace_not_stripped (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_success (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_unicode_username (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_username_field_autocapitalize_none (auth_tests.test_forms.AuthenticationFormTest) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.116s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Found 26 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_customemailfield
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Creating table auth_tests_organization
+    Creating table auth_tests_customuserwithm2m
+    Creating table auth_tests_customuserwithm2mthrough
+    Creating table auth_tests_membership
+    Creating table auth_tests_customuserwithuniqueconstraint
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_username_field_label (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_username_field_label_empty_string (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_username_field_label_not_set (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_username_field_max_length_defaults_to_254 (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_username_field_max_length_matches_user_model (auth_tests.test_forms.AuthenticationFormTest) ... ok
+test_cleaned_data (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_custom_email_constructor (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_custom_email_field (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_custom_email_subject (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_html_autocomplete_attributes (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_invalid_email (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_unusable_password (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_user_email_domain_unicode_collision (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_user_email_domain_unicode_collision_nonexistent (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_user_email_unicode_collision (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_user_email_unicode_collision_nonexistent (auth_tests.test_forms.PasswordResetFormTest) ... ok
+test_bug_14242 (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_bug_17944_empty_password (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_bug_17944_unknown_password_algorithm (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_bug_17944_unmanageable_password (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_bug_19349_bound_password_field (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_custom_form (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_password_excluded (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_unusable_password (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_username_field_autocapitalize_none (auth_tests.test_forms.UserChangeFormTest) ... ok
+test_username_validity (auth_tests.test_forms.UserChangeFormTest) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.171s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,47 @@
+diff --git a/sympy/polys/sqfreetools.py b/sympy/polys/sqfreetools.py
+index 1783a7744a..75d4199459 100644
+--- a/sympy/polys/sqfreetools.py
++++ b/sympy/polys/sqfreetools.py
+@@ -5,7 +5,7 @@
+ from sympy.polys.densearith import (
+     dup_neg, dmp_neg,
+     dup_sub, dmp_sub,
+-    dup_mul,
++    dup_mul, dmp_mul,
+     dup_quo, dmp_quo,
+     dup_mul_ground, dmp_mul_ground)
+ from sympy.polys.densebasic import (
+@@ -332,6 +332,16 @@ def dup_sqf_list(f, K, all=False):
+ 
+         i += 1
+ 
++    # Combine factors with the same multiplicity
++    if result:
++        combined = {}
++        for factor, mult in result:
++            if mult in combined:
++                combined[mult] = dup_mul(combined[mult], factor, K)
++            else:
++                combined[mult] = factor
++        result = [(combined[mult], mult) for mult in sorted(combined.keys())]
++
+     return coeff, result
+ 
+ 
+@@ -420,6 +430,16 @@ def dmp_sqf_list(f, u, K, all=False):
+ 
+         i += 1
+ 
++    # Combine factors with the same multiplicity
++    if result:
++        combined = {}
++        for factor, mult in result:
++            if mult in combined:
++                combined[mult] = dmp_mul(combined[mult], factor, u, K)
++            else:
++                combined[mult] = factor
++        result = [(combined[mult], mult) for mult in sorted(combined.keys())]
++
+     return coeff, result
+ 
+ 

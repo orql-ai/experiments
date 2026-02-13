@@ -1,0 +1,73 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: PASS_TO_PASS (9 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application decorators
+Found 9 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14787:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-14787
+0c1c83b04cd1: Pulling fs layer
+51c2875bef29: Pulling fs layer
+933100d0d38c: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+729c11c31db2: Pulling fs layer
+f3e594b530c2: Pulling fs layer
+4efa29366152: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+90e9f6d47d6f: Pulling fs layer
+ac5b61163589: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+4efa29366152: Download complete
+e5a28c0c137e: Download complete
+933100d0d38c: Download complete
+90e9f6d47d6f: Download complete
+729c11c31db2: Download complete
+0c1c83b04cd1: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+f3e594b530c2: Download complete
+500327121db6: Download complete
+51c2875bef29: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+933100d0d38c: Pull complete
+729c11c31db2: Pull complete
+51c2875bef29: Pull complete
+4efa29366152: Pull complete
+90e9f6d47d6f: Pull complete
+f3e594b530c2: Pull complete
+0c1c83b04cd1: Pull complete
+Digest: sha256:764be0bec25c0b0b3e62b507c388400c2fad66f4872c933e515dff525c3e0596
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14787:latest
+test_cache_control_decorator_http_request (decorators.tests.CacheControlDecoratorTest) ... ok
+test_never_cache_decorator (decorators.tests.NeverCacheDecoratorTest) ... ok
+test_never_cache_decorator_http_request (decorators.tests.NeverCacheDecoratorTest) ... ok
+test_cache_page (decorators.tests.DecoratorsTest) ... ok
+test_argumented (decorators.tests.MethodDecoratorTests) ... ok
+test_bad_iterable (decorators.tests.MethodDecoratorTests) ... ok
+test_descriptors (decorators.tests.MethodDecoratorTests) ... ok
+test_preserve_attributes (decorators.tests.MethodDecoratorTests) ... ok
+test_preserve_signature (decorators.tests.MethodDecoratorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.025s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'skipped': True}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

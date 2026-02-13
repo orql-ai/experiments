@@ -1,0 +1,162 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        8806071
+hash randomization: on (PYTHONHASHSEED=3895814420)
+
+sympy/utilities/tests/test_lambdify.py[1] .                                 [OK]
+
+================== tests finished: 1 passed, in 0.09 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-15011:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-15011
+836b79e2a6e5: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+40e9ec679292: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+500327121db6: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+b08895a5c216: Pulling fs layer
+ed3dada71338: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+53988f6086bb: Pulling fs layer
+ac5b61163589: Download complete
+2f341c31f3b7: Download complete
+53988f6086bb: Download complete
+5c809fd8a9af: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ed3dada71338: Download complete
+40e9ec679292: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+ed3dada71338: Pull complete
+53988f6086bb: Pull complete
+5c809fd8a9af: Pull complete
+0b326ada86d1: Pull complete
+40e9ec679292: Pull complete
+Digest: sha256:b5e1f2caaf097bd1b99a2dd834732fb51892eaddd7679affa01f30b88db89d77
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-15011:latest
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+
+
+===== PHASE: PASS_TO_PASS (53 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        31281134
+hash randomization: on (PYTHONHASHSEED=4086256747)
+
+sympy/assumptions/tests/test_matrices.py[4] ....                            [OK]
+sympy/assumptions/tests/test_query.py[2] ..                                 [OK]
+sympy/calculus/tests/test_singularities.py[2] .f                            [OK]
+sympy/concrete/tests/test_sums_products.py[2] ..                            [OK]
+sympy/core/tests/test_basic.py[1] .                                         [OK]
+sympy/core/tests/test_expr.py[1] .                                          [OK]
+sympy/core/tests/test_noncommutative.py[1] .                                [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/functions/elementary/tests/test_hyperbolic.py[4] ....                 [OK]
+sympy/functions/elementary/tests/test_trigonometric.py[12] .........fw.     [OK]
+sympy/functions/special/tests/test_mathieu.py[4] ....                       [OK]
+sympy/integrals/tests/test_integrals.py[3] ...                              [OK]
+sympy/integrals/tests/test_singularityfunctions.py[1] .                     [OK]
+sympy/integrals/tests/test_transforms.py[1] .                               [OK]
+sympy/integrals/tests/test_trigonometry.py[4] ....                          [OK]
+sympy/logic/tests/test_boolalg.py[2] ..                                     [OK]
+sympy/matrices/expressions/tests/test_derivatives.py[4] ....                [OK]
+sympy/matrices/expressions/tests/test_indexing.py[2] ..                     [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[2] ..                      [OK]
+sympy/matrices/tests/test_commonmatrix.py[2] ..                             [OK]
+sympy/matrices/tests/test_interactions.py[2] ..                             [OK]
+sympy/matrices/tests/test_matrices.py[3] ...                                [OK]
+sympy/multipledispatch/tests/test_core.py[1] f                              [OK]
+sympy/multipledispatch/tests/test_dispatcher.py[1] .                        [OK]
+sympy/parsing/tests/test_mathematica.py[1] .                                [OK]
+sympy/physics/quantum/tests/test_dagger.py[1] .                             [OK]
+sympy/physics/quantum/tests/test_matrixutils.py[5] .s.ss                    [OK]
+sympy/physics/quantum/tests/test_qubit.py[2] ..                             [OK]
+sympy/physics/tests/test_secondquant.py[1] .                                [OK]
+sympy/polys/tests/test_ring_series.py[2] ..                                 [OK]
+sympy/printing/tests/test_lambdarepr.py[1] .                                [OK]
+sympy/printing/tests/test_latex.py[1] .                                     [OK]
+sympy/printing/tests/test_mathml.py[1] .                                    [OK]
+sympy/printing/tests/test_numpy.py[1] s                                     [OK]
+sympy/printing/tests/test_octave.py[1] .                                    [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[2] ..                                      [OK]
+sympy/series/tests/test_lseries.py[1] .                                     [OK]
+sympy/series/tests/test_nseries.py[3] ...                                   [OK]
+sympy/series/tests/test_series.py[2] ..                                     [OK]
+sympy/sets/tests/test_ordinals.py[1] .                                      [OK]
+sympy/simplify/tests/test_fu.py[1] .                                        [OK]
+sympy/simplify/tests/test_rewrite.py[1] .                                   [OK]
+sympy/simplify/tests/test_sqrtdenest.py[7] .......                          [OK]
+sympy/simplify/tests/test_trigsimp.py[11] ...........                       [OK]
+sympy/solvers/tests/test_inequalities.py[1] .                               [OK]
+sympy/solvers/tests/test_solveset.py[2] .f                                  [OK]
+sympy/stats/tests/test_continuous_rv.py[1] .                                [OK]
+sympy/unify/tests/test_rewrite.py[1] .                                      [OK]
+sympy/unify/tests/test_sympy.py[1] .                                        [OK]
+sympy/utilities/tests/test_lambdify.py[50] .....................................
+.............                                                               [OK]
+sympy/utilities/tests/test_pickling.py[1] .                                 [OK]
+sympy/vector/tests/test_functions.py[1] .                                   [OK]
+
+= tests finished: 158 passed, 5 skipped, 4 expected to fail, in 23.65 seconds ==
+
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+/testbed/sympy/vector/coordsysrect.py:170: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:172: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        37453293
+hash randomization: on (PYTHONHASHSEED=2799889564)
+
+sympy/utilities/tests/test_lambdify.py[3] ...                               [OK]
+
+================== tests finished: 3 passed, in 0.10 seconds ===================
+
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

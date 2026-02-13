@@ -1,0 +1,22 @@
+diff --git a/sympy/printing/pretty/pretty.py b/sympy/printing/pretty/pretty.py
+index 66461181d0..f57c87887f 100644
+--- a/sympy/printing/pretty/pretty.py
++++ b/sympy/printing/pretty/pretty.py
+@@ -1156,10 +1156,16 @@ def _print_BasisDependent(self, expr):
+                     tempstr = tempstr.replace('\N{RIGHT PARENTHESIS LOWER HOOK}',
+                                         '\N{RIGHT PARENTHESIS LOWER HOOK}'
+                                         + ' ' + vectstrs[i])
+-                else:
++                elif '\N{RIGHT PARENTHESIS UPPER HOOK}' in tempstr:
+                     tempstr = tempstr.replace('\N{RIGHT PARENTHESIS UPPER HOOK}',
+                                         '\N{RIGHT PARENTHESIS UPPER HOOK}'
+                                         + ' ' + vectstrs[i])
++                else:
++                    # For other multi-line expressions (like Integral),
++                    # append the vector to the last line
++                    lines = tempstr.split('\n')
++                    lines[-1] = lines[-1] + ' ' + vectstrs[i]
++                    tempstr = '\n'.join(lines)
+                 o1[i] = tempstr
+ 
+         o1 = [x.split('\n') for x in o1]

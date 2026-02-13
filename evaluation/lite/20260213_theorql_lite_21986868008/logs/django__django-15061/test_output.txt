@@ -1,0 +1,92 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (3 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application forms_tests
+Found 3 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15061:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15061
+ac5b61163589: Pulling fs layer
+51c2875bef29: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+933100d0d38c: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+f3e594b530c2: Pulling fs layer
+500327121db6: Pulling fs layer
+4efa29366152: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+5957fe754034: Pulling fs layer
+82899d8533bc: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+729c11c31db2: Pulling fs layer
+729c11c31db2: Download complete
+e5a28c0c137e: Download complete
+933100d0d38c: Download complete
+4efa29366152: Download complete
+ac5b61163589: Download complete
+5957fe754034: Download complete
+836b79e2a6e5: Download complete
+82899d8533bc: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+f3e594b530c2: Download complete
+a2f6138ded93: Download complete
+51c2875bef29: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+729c11c31db2: Pull complete
+933100d0d38c: Pull complete
+51c2875bef29: Pull complete
+4efa29366152: Pull complete
+5957fe754034: Pull complete
+f3e594b530c2: Pull complete
+82899d8533bc: Pull complete
+Digest: sha256:9a07c7752d31d01e03fd0cb2d5c57182ec1b548364c848ae80d5a2d7033e6448
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15061:latest
+test_form_as_table (forms_tests.field_tests.test_splitdatetimefield.SplitDateTimeFieldTest) ... ok
+test_form_as_table (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_form_as_table_data (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.049s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (11 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application forms_tests
+Found 11 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_splitdatetimefield_1 (forms_tests.field_tests.test_splitdatetimefield.SplitDateTimeFieldTest) ... ok
+test_splitdatetimefield_2 (forms_tests.field_tests.test_splitdatetimefield.SplitDateTimeFieldTest) ... ok
+test_splitdatetimefield_changed (forms_tests.field_tests.test_splitdatetimefield.SplitDateTimeFieldTest) ... ok
+test_bad_choice (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_clean (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_clean_disabled_multivalue (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_disabled_has_changed (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_form_cleaned_data (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_has_changed_no_initial (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_has_changed_same (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+test_render_required_attributes (forms_tests.field_tests.test_multivaluefield.MultiValueFieldTest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.048s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

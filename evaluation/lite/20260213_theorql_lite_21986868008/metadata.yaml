@@ -1,0 +1,18 @@
+assets:
+  logs: local
+  trajs: local
+info:
+  logo: "https://theorql.com/images/logo/icon/theORQL_swebench.png"
+  name: "theORQL"
+  site: "https://theorql.com/"
+  report: "https://theorql.com/swe-bench"
+  authors: "Shane Smitas"
+tags:
+  checked: true
+  model:
+    - "moonshotai/kimi-k2.5"
+  org: ["theORQL"]
+  os_model: false
+  os_system: false
+  system:
+    attempts: "1"

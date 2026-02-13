@@ -1,0 +1,38 @@
+diff --git a/django/forms/formsets.py b/django/forms/formsets.py
+index 3adbc6979a..64e2a5924c 100644
+--- a/django/forms/formsets.py
++++ b/django/forms/formsets.py
+@@ -32,6 +32,11 @@ class ManagementForm(Form):
+     as well.
+     """
+ 
++    # This class attribute prevents the default.html deprecation warning
++    # from being emitted for management forms, as the template choice is
++    # insignificant (only hidden inputs are rendered).
++    _suppress_default_template_warning = True
++
+     TOTAL_FORMS = IntegerField(widget=HiddenInput)
+     INITIAL_FORMS = IntegerField(widget=HiddenInput)
+     # MIN_NUM_FORM_COUNT and MAX_NUM_FORM_COUNT are output with the rest of the
+diff --git a/django/forms/utils.py b/django/forms/utils.py
+index 905babce4d..787a306e7c 100644
+--- a/django/forms/utils.py
++++ b/django/forms/utils.py
+@@ -69,9 +69,14 @@ class RenderableMixin:
+             template == "django/forms/default.html"
+             or template == "django/forms/formsets/default.html"
+         ):
+-            warnings.warn(
+-                DEFAULT_TEMPLATE_DEPRECATION_MSG, RemovedInDjango50Warning, stacklevel=2
+-            )
++            # Skip warning for ManagementForm since the template choice is
++            # insignificant (only hidden inputs are produced).
++            if not getattr(self, "_suppress_default_template_warning", False):
++                warnings.warn(
++                    DEFAULT_TEMPLATE_DEPRECATION_MSG,
++                    RemovedInDjango50Warning,
++                    stacklevel=2,
++                )
+         return mark_safe(renderer.render(template, context))
+ 
+     __str__ = render

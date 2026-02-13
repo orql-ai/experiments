@@ -1,0 +1,208 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 2 items
+
+lib/matplotlib/tests/test_legend.py::test_legend_draggable[True] PASSED  [ 50%]
+lib/matplotlib/tests/test_legend.py::test_legend_draggable[False] PASSED [100%]
+
+============================== 2 passed in 10.25s ==============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23913:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23913
+ce0958e146ef: Pulling fs layer
+7e731192beca: Pulling fs layer
+11de44a65246: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+500327121db6: Pulling fs layer
+22d3b1d58e22: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+161f3b5664f5: Pulling fs layer
+40187f30e4d2: Pulling fs layer
+c7a1b3006e11: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+40187f30e4d2: Download complete
+836b79e2a6e5: Download complete
+11de44a65246: Download complete
+c7a1b3006e11: Download complete
+22d3b1d58e22: Download complete
+7478e0ac0f23: Download complete
+ce0958e146ef: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+7e731192beca: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+161f3b5664f5: Download complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+11de44a65246: Pull complete
+22d3b1d58e22: Pull complete
+7e731192beca: Pull complete
+40187f30e4d2: Pull complete
+c7a1b3006e11: Pull complete
+161f3b5664f5: Pull complete
+ce0958e146ef: Pull complete
+Digest: sha256:67998d793e280784162194829cc310275cb5071a193fae61f671ee4e2f406938
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23913:latest
+
+
+===== PHASE: PASS_TO_PASS (101 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_legend.py::test_legend_ordereddict PASSED      [  2%]
+lib/matplotlib/tests/test_legend.py::test_legend_auto1[png] PASSED       [  4%]
+lib/matplotlib/tests/test_legend.py::test_legend_auto1[pdf] PASSED       [  6%]
+lib/matplotlib/tests/test_legend.py::test_legend_auto2[png] PASSED       [  8%]
+lib/matplotlib/tests/test_legend.py::test_legend_auto2[pdf] PASSED       [ 10%]
+lib/matplotlib/tests/test_legend.py::test_legend_auto3[png] PASSED       [ 12%]
+lib/matplotlib/tests/test_legend.py::test_legend_auto3[pdf] PASSED       [ 14%]
+lib/matplotlib/tests/test_legend.py::test_various_labels[png] PASSED     [ 16%]
+lib/matplotlib/tests/test_legend.py::test_various_labels[pdf] PASSED     [ 18%]
+lib/matplotlib/tests/test_legend.py::test_legend_label_with_leading_underscore PASSED [ 20%]
+lib/matplotlib/tests/test_legend.py::test_labels_first[png] PASSED       [ 22%]
+lib/matplotlib/tests/test_legend.py::test_multiple_keys[png] PASSED      [ 24%]
+lib/matplotlib/tests/test_legend.py::test_alpha_rgba[png] PASSED         [ 26%]
+lib/matplotlib/tests/test_legend.py::test_alpha_rcparam[png] PASSED      [ 28%]
+lib/matplotlib/tests/test_legend.py::test_fancy[png] PASSED              [ 30%]
+lib/matplotlib/tests/test_legend.py::test_fancy[pdf] PASSED              [ 32%]
+lib/matplotlib/tests/test_legend.py::test_framealpha[png] PASSED         [ 34%]
+lib/matplotlib/tests/test_legend.py::test_framealpha[pdf] PASSED         [ 36%]
+lib/matplotlib/tests/test_legend.py::test_rc[png] PASSED                 [ 38%]
+lib/matplotlib/tests/test_legend.py::test_rc[pdf] PASSED                 [ 40%]
+lib/matplotlib/tests/test_legend.py::test_legend_expand[png] PASSED      [ 42%]
+lib/matplotlib/tests/test_legend.py::test_legend_expand[pdf] PASSED      [ 44%]
+lib/matplotlib/tests/test_legend.py::test_hatching[png] PASSED           [ 46%]
+lib/matplotlib/tests/test_legend.py::test_hatching[pdf] PASSED           [ 48%]
+lib/matplotlib/tests/test_legend.py::test_legend_remove PASSED           [ 50%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_no_args PASSED [ 52%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_positional_handles_labels PASSED [ 54%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_positional_handles_only PASSED [ 56%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_positional_labels_only PASSED [ 58%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_three_args PASSED [ 60%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_handler_map PASSED [ 62%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_kwargs_handles_only PASSED [ 64%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_kwargs_labels_only PASSED [ 66%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_legend_kwargs_handles_labels PASSED [ 68%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_warn_mixed_args_and_kwargs PASSED [ 70%]
+lib/matplotlib/tests/test_legend.py::TestLegendFunction::test_parasite PASSED [ 72%]
+lib/matplotlib/tests/test_legend.py::TestLegendFigureFunction::test_legend_handle_label PASSED [ 74%]
+lib/matplotlib/tests/test_legend.py::TestLegendFigureFunction::test_legend_no_args PASSED [ 76%]
+lib/matplotlib/tests/test_legend.py::TestLegendFigureFunction::test_legend_label_arg PASSED [ 78%]
+lib/matplotlib/tests/test_legend.py::TestLegendFigureFunction::test_legend_label_three_args PASSED [ 80%]
+lib/matplotlib/tests/test_legend.py::TestLegendFigureFunction::test_legend_label_three_args_pluskw PASSED [ 82%]
+lib/matplotlib/tests/test_legend.py::TestLegendFigureFunction::test_legend_kw_args PASSED [ 84%]
+lib/matplotlib/tests/test_legend.py::TestLegendFigureFunction::test_warn_args_kwargs PASSED [ 86%]
+lib/matplotlib/tests/test_legend.py::test_legend_stackplot[png] PASSED   [ 88%]
+lib/matplotlib/tests/test_legend.py::test_cross_figure_patch_legend PASSED [ 90%]
+lib/matplotlib/tests/test_legend.py::test_nanscatter PASSED              [ 92%]
+lib/matplotlib/tests/test_legend.py::test_legend_repeatcheckok PASSED    [ 94%]
+lib/matplotlib/tests/test_legend.py::test_not_covering_scatter[png] PASSED [ 96%]
+lib/matplotlib/tests/test_legend.py::test_not_covering_scatter_transform[png] PASSED [ 98%]
+lib/matplotlib/tests/test_legend.py::test_linecollection_scaled_dashes PASSED [100%]
+
+============================= 50 passed in 14.46s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_legend.py::test_handler_numpoints PASSED       [  2%]
+lib/matplotlib/tests/test_legend.py::test_text_nohandler_warning PASSED  [  4%]
+lib/matplotlib/tests/test_legend.py::test_empty_bar_chart_with_legend PASSED [  6%]
+lib/matplotlib/tests/test_legend.py::test_shadow_framealpha PASSED       [  8%]
+lib/matplotlib/tests/test_legend.py::test_legend_title_empty PASSED      [ 10%]
+lib/matplotlib/tests/test_legend.py::test_legend_proper_window_extent PASSED [ 12%]
+lib/matplotlib/tests/test_legend.py::test_window_extent_cached_renderer PASSED [ 14%]
+lib/matplotlib/tests/test_legend.py::test_legend_title_fontprop_fontsize PASSED [ 16%]
+lib/matplotlib/tests/test_legend.py::test_legend_alignment[center] PASSED [ 18%]
+lib/matplotlib/tests/test_legend.py::test_legend_alignment[left] PASSED  [ 20%]
+lib/matplotlib/tests/test_legend.py::test_legend_alignment[right] PASSED [ 22%]
+lib/matplotlib/tests/test_legend.py::test_legend_set_alignment[center] PASSED [ 24%]
+lib/matplotlib/tests/test_legend.py::test_legend_set_alignment[left] PASSED [ 26%]
+lib/matplotlib/tests/test_legend.py::test_legend_set_alignment[right] PASSED [ 28%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_single[red] PASSED [ 30%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_single[none] PASSED [ 32%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_single[color2] PASSED [ 34%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_list PASSED  [ 36%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_linecolor PASSED [ 38%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_markeredgecolor PASSED [ 40%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_markerfacecolor PASSED [ 42%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_single[red] PASSED [ 44%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_single[none] PASSED [ 46%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_single[color2] PASSED [ 48%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_linecolor PASSED [ 50%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_markeredgecolor PASSED [ 52%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_markeredgecolor_short PASSED [ 54%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_markerfacecolor PASSED [ 56%]
+lib/matplotlib/tests/test_legend.py::test_legend_labelcolor_rcparam_markerfacecolor_short PASSED [ 58%]
+lib/matplotlib/tests/test_legend.py::test_get_set_draggable PASSED       [ 60%]
+lib/matplotlib/tests/test_legend.py::test_alpha_handles PASSED           [ 62%]
+lib/matplotlib/tests/test_legend.py::test_warn_big_data_best_loc PASSED  [ 64%]
+lib/matplotlib/tests/test_legend.py::test_no_warn_big_data_when_loc_specified PASSED [ 66%]
+lib/matplotlib/tests/test_legend.py::test_plot_multiple_input_multiple_label[label_array0] PASSED [ 68%]
+lib/matplotlib/tests/test_legend.py::test_plot_multiple_input_multiple_label[label_array1] PASSED [ 70%]
+lib/matplotlib/tests/test_legend.py::test_plot_multiple_input_multiple_label[label_array2] PASSED [ 72%]
+lib/matplotlib/tests/test_legend.py::test_plot_multiple_input_single_label[one] PASSED [ 74%]
+lib/matplotlib/tests/test_legend.py::test_plot_multiple_input_single_label[1] PASSED [ 76%]
+lib/matplotlib/tests/test_legend.py::test_plot_multiple_input_single_label[int] PASSED [ 78%]
+lib/matplotlib/tests/test_legend.py::test_plot_single_input_multiple_label[label_array0] PASSED [ 80%]
+lib/matplotlib/tests/test_legend.py::test_plot_single_input_multiple_label[label_array1] PASSED [ 82%]
+lib/matplotlib/tests/test_legend.py::test_plot_single_input_multiple_label[label_array2] PASSED [ 84%]
+lib/matplotlib/tests/test_legend.py::test_plot_multiple_label_incorrect_length_exception PASSED [ 86%]
+lib/matplotlib/tests/test_legend.py::test_legend_face_edgecolor PASSED   [ 88%]
+lib/matplotlib/tests/test_legend.py::test_legend_text_axes PASSED        [ 90%]
+lib/matplotlib/tests/test_legend.py::test_handlerline2d PASSED           [ 92%]
+lib/matplotlib/tests/test_legend.py::test_subfigure_legend PASSED        [ 94%]
+lib/matplotlib/tests/test_legend.py::test_setting_alpha_keeps_polycollection_color PASSED [ 96%]
+lib/matplotlib/tests/test_legend.py::test_legend_markers_from_line2d PASSED [ 98%]
+lib/matplotlib/tests/test_legend.py::test_ncol_ncols[png] <- lib/matplotlib/testing/decorators.py PASSED [100%]
+
+============================= 50 passed in 19.25s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_legend.py::test_ncol_ncols[pdf] <- lib/matplotlib/testing/decorators.py PASSED [100%]
+
+============================== 1 passed in 10.84s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

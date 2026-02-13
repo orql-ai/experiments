@@ -1,0 +1,87 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application dbshell
+Found 1 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15851:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15851
+a2f6138ded93: Pulling fs layer
+260da11c17bc: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+4e865410366e: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+440f2bf70467: Pulling fs layer
+9075daa7b703: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+440f2bf70467: Download complete
+9075daa7b703: Download complete
+e5a28c0c137e: Download complete
+396d2ca0167c: Download complete
+b780fac9da70: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+260da11c17bc: Download complete
+7478e0ac0f23: Download complete
+187d94c4a868: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+4e865410366e: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+396d2ca0167c: Pull complete
+b780fac9da70: Pull complete
+4e865410366e: Pull complete
+440f2bf70467: Pull complete
+9075daa7b703: Pull complete
+187d94c4a868: Pull complete
+260da11c17bc: Pull complete
+Digest: sha256:ebb7bbe4902e4a64c062a64eb078640c586f44df778055bd7798d4f47a322260
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15851:latest
+test_parameters (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (8 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application dbshell
+Found 8 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_accent (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+test_basic (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+test_column (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+test_crash_password_does_not_leak (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+test_nopass (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+test_passfile (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+test_service (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+test_ssl_certificate (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.030s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

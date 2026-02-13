@@ -1,0 +1,36 @@
+diff --git a/src/_pytest/monkeypatch.py b/src/_pytest/monkeypatch.py
+index 2e5cca526..5e353bb23 100644
+--- a/src/_pytest/monkeypatch.py
++++ b/src/_pytest/monkeypatch.py
+@@ -297,7 +297,11 @@ class MonkeyPatch:
+ 
+     def syspath_prepend(self, path) -> None:
+         """ Prepend ``path`` to ``sys.path`` list of import locations. """
+-        from pkg_resources import fixup_namespace_packages
++        import warnings
++
++        with warnings.catch_warnings():
++            warnings.simplefilter("ignore", DeprecationWarning)
++            from pkg_resources import fixup_namespace_packages
+ 
+         if self._savesyspath is None:
+             self._savesyspath = sys.path[:]
+diff --git a/src/_pytest/skipping.py b/src/_pytest/skipping.py
+index 335e10996..3e39e6425 100644
+--- a/src/_pytest/skipping.py
++++ b/src/_pytest/skipping.py
+@@ -262,6 +262,14 @@ def pytest_runtest_makereport(item: Item, call: CallInfo[None]):
+     outcome = yield
+     rep = outcome.get_result()
+     xfailed = item._store.get(xfailed_key, None)
++    # Re-evaluate xfail marks if None to handle dynamically added markers.
++    # Catches pytest.fail.Exception from evaluate_condition to avoid
++    # INTERNALERROR when xfail conditions have errors.
++    if xfailed is None:
++        try:
++            xfailed = evaluate_xfail_marks(item)
++        except fail.Exception:
++            pass
+     # unittest special case, see setting of unexpectedsuccess_key
+     if unexpectedsuccess_key in item._store and rep.when == "call":
+         reason = item._store[unexpectedsuccess_key]

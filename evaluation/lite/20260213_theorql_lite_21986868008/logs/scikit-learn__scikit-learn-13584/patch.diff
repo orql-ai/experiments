@@ -1,0 +1,27 @@
+diff --git a/sklearn/utils/_pprint.py b/sklearn/utils/_pprint.py
+index b8686dba5b..fce6f74a8e 100644
+--- a/sklearn/utils/_pprint.py
++++ b/sklearn/utils/_pprint.py
+@@ -95,12 +95,21 @@ def _changed_params(estimator):
+     init_params = signature(init_func).parameters
+     init_params = {name: param.default for name, param in init_params.items()}
+     for k, v in params.items():
+-        if (v != init_params[k] and
++        if (_is_different(v, init_params[k]) and
+                 not (is_scalar_nan(init_params[k]) and is_scalar_nan(v))):
+             filtered_params[k] = v
+     return filtered_params
+ 
+ 
++def _is_different(v1, v2):
++    """Return True if v1 and v2 are different, handling numpy arrays."""
++    if hasattr(v1, 'dtype') or hasattr(v2, 'dtype'):
++        # At least one is a numpy array or array-like
++        import numpy as np
++        return not np.array_equal(v1, v2)
++    return v1 != v2
++
++
+ class _EstimatorPrettyPrinter(pprint.PrettyPrinter):
+     """Pretty Printer class for estimator objects.
+ 

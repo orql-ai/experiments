@@ -1,0 +1,91 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-7.1.0+/71db08c05, docutils-0.20.1
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: pyproject.toml
+collecting ... collected 2 items
+
+tests/test_util_rst.py::test_prepend_prolog_with_roles_in_sections_with_newline PASSED [ 50%]
+tests/test_util_rst.py::test_prepend_prolog_with_roles_in_sections_without_newline PASSED [100%]
+
+============================== 2 passed in 0.42s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-11445:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-11445
+836b79e2a6e5: Pulling fs layer
+a4355678e260: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e81c68559cd9: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+9f49fa2b6533: Pulling fs layer
+7086351a7073: Pulling fs layer
+dfca0cd99b2d: Pulling fs layer
+92a723a3a820: Pulling fs layer
+8cb062f3b77e: Pulling fs layer
+e81c68559cd9: Download complete
+ac5b61163589: Download complete
+92a723a3a820: Download complete
+8cb062f3b77e: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+a4355678e260: Download complete
+7478e0ac0f23: Download complete
+7086351a7073: Download complete
+dfca0cd99b2d: Download complete
+9f49fa2b6533: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+e81c68559cd9: Pull complete
+a4355678e260: Pull complete
+dfca0cd99b2d: Pull complete
+92a723a3a820: Pull complete
+8cb062f3b77e: Pull complete
+9f49fa2b6533: Pull complete
+7086351a7073: Pull complete
+Digest: sha256:d167b528f69597a61821b619972f251c4a6e4b2821b2c28a4df23c969f8b717e
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-11445:latest
+
+
+===== PHASE: PASS_TO_PASS (8 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-7.1.0+/71db08c05, docutils-0.20.1
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: pyproject.toml
+collecting ... collected 8 items
+
+tests/test_util_rst.py::test_escape PASSED                               [ 12%]
+tests/test_util_rst.py::test_append_epilog PASSED                        [ 25%]
+tests/test_util_rst.py::test_prepend_prolog PASSED                       [ 37%]
+tests/test_util_rst.py::test_prepend_prolog_with_CR PASSED               [ 50%]
+tests/test_util_rst.py::test_prepend_prolog_without_CR PASSED            [ 62%]
+tests/test_util_rst.py::test_prepend_prolog_with_roles_in_sections PASSED [ 75%]
+tests/test_util_rst.py::test_textwidth PASSED                            [ 87%]
+tests/test_util_rst.py::test_heading PASSED                              [100%]
+
+============================== 8 passed in 0.50s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

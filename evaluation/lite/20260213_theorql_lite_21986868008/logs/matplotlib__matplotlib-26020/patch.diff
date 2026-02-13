@@ -1,0 +1,22 @@
+diff --git a/lib/mpl_toolkits/axes_grid1/axes_grid.py b/lib/mpl_toolkits/axes_grid1/axes_grid.py
+index 2b1b1d3200..ab8b73c13d 100644
+--- a/lib/mpl_toolkits/axes_grid1/axes_grid.py
++++ b/lib/mpl_toolkits/axes_grid1/axes_grid.py
+@@ -13,8 +13,15 @@ from .mpl_axes import Axes
+ def _tick_only(ax, bottom_on, left_on):
+     bottom_off = not bottom_on
+     left_off = not left_on
+-    ax.axis["bottom"].toggle(ticklabels=bottom_off, label=bottom_off)
+-    ax.axis["left"].toggle(ticklabels=left_off, label=left_off)
++    # Check if ax.axis is subscriptable (e.g., mpl_toolkits.axes_grid1.mpl_axes.Axes)
++    # or a method (e.g., regular matplotlib.axes.Axes)
++    if callable(ax.axis) and not hasattr(ax.axis, '__getitem__'):
++        # For regular Axes, use tick_params
++        ax.tick_params(bottom=bottom_on, labelbottom=bottom_on)
++        ax.tick_params(left=left_on, labelleft=left_on)
++    else:
++        ax.axis["bottom"].toggle(ticklabels=bottom_off, label=bottom_off)
++        ax.axis["left"].toggle(ticklabels=left_off, label=left_off)
+ 
+ 
+ class CbarAxesBase:

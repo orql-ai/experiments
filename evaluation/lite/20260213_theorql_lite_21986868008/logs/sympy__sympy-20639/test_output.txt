@@ -1,0 +1,191 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        66853158
+hash randomization: on (PYTHONHASHSEED=3439430102)
+
+sympy/printing/pretty/tests/test_pretty.py[2] FF                          [FAIL]
+
+________________________________________________________________________________
+__________ sympy/printing/pretty/tests/test_pretty.py:test_issue_6285 __________
+Traceback (most recent call last):
+  File "/testbed/sympy/printing/pretty/tests/test_pretty.py", line 5945, in test_issue_6285
+    assert pretty(Pow(x, (1/pi))) == \
+AssertionError
+________________________________________________________________________________
+_________ sympy/printing/pretty/tests/test_pretty.py:test_issue_17616 __________
+Traceback (most recent call last):
+  File "/testbed/sympy/printing/pretty/tests/test_pretty.py", line 7213, in test_issue_17616
+    assert pretty(pi**(1/exp(1))) == \
+AssertionError
+
+============= tests finished: 0 passed, 2 failed, in 0.45 seconds ==============
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20639:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-20639
+c3522796ba1f: Pulling fs layer
+b08895a5c216: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ac5b61163589: Pulling fs layer
+ed3dada71338: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+d9cda18a9234: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+ed3dada71338: Download complete
+2f341c31f3b7: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+5c809fd8a9af: Download complete
+d9cda18a9234: Download complete
+ac5b61163589: Download complete
+c3522796ba1f: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+ed3dada71338: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+d9cda18a9234: Pull complete
+0b326ada86d1: Pull complete
+c3522796ba1f: Pull complete
+Digest: sha256:d45b0e61c7b98228e2d0dbf9882dc1672c385b751ea91c5948c0dc34339a45bc
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20639:latest
+
+
+===== PHASE: PASS_TO_PASS (139 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        76539513
+hash randomization: on (PYTHONHASHSEED=2286680674)
+
+sympy/assumptions/tests/test_matrices.py[1] .                               [OK]
+sympy/assumptions/tests/test_query.py[1] .                                  [OK]
+sympy/codegen/tests/test_ast.py[2] ..                                       [OK]
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/printing/pretty/tests/test_pretty.py[51] .................................
+..................                                                          [OK]
+sympy/printing/tests/test_latex.py[1] .                                     [OK]
+sympy/printing/tests/test_str.py[4] ....                                    [OK]
+
+================== tests finished: 61 passed, in 1.43 seconds ==================
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        8557459
+hash randomization: on (PYTHONHASHSEED=992502123)
+
+sympy/assumptions/tests/test_query.py[1] .                                  [OK]
+sympy/concrete/tests/test_delta.py[14] ..............                       [OK]
+sympy/concrete/tests/test_sums_products.py[2] ..                            [OK]
+sympy/core/tests/test_expr.py[1] .                                          [OK]
+sympy/core/tests/test_function.py[1] .                                      [OK]
+sympy/core/tests/test_noncommutative.py[1] .                                [OK]
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/core/tests/test_rules.py[1] .                                         [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/functions/special/tests/test_beta_functions.py[1] .                   [OK]
+sympy/functions/special/tests/test_error_functions.py[1] .                  [OK]
+sympy/functions/special/tests/test_hyper.py[7] .....ww                      [OK]
+sympy/holonomic/tests/test_holonomic.py[1] .                                [OK]
+sympy/integrals/tests/test_integrals.py[1] .                                [OK]
+sympy/integrals/tests/test_meijerint.py[1] w                                [OK]
+sympy/integrals/tests/test_transforms.py[1] w                               [OK]
+sympy/matrices/expressions/tests/test_trace.py[6] ......                    [OK]
+sympy/physics/control/tests/test_lti.py[7] .......                          [OK]
+sympy/physics/optics/tests/test_utils.py[1] .                               [OK]
+sympy/physics/units/tests/test_quantities.py[1] .                           [OK]
+sympy/polys/domains/tests/test_polynomialring.py[1] .                       [OK]
+sympy/polys/domains/tests/test_quotientring.py[2] ..                        [OK]
+sympy/polys/tests/test_partfrac.py[2] f.                                    [OK]
+sympy/polys/tests/test_polytools.py[2] ..                                   [OK]
+sympy/printing/pretty/tests/test_pretty.py[50] .................................
+.................                                                           [OK]
+sympy/printing/tests/test_fortran.py[1] .                                   [OK]
+sympy/printing/tests/test_gtk.py[1] .                                       [OK]
+sympy/printing/tests/test_lambdarepr.py[1] .                                [OK]
+sympy/printing/tests/test_latex.py[10] ..........                           [OK]
+sympy/printing/tests/test_pycode.py[1] .                                    [OK]
+sympy/printing/tests/test_python.py[1] .                                    [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[9] .........                               [OK]
+sympy/series/tests/test_formal.py[1] .                                      [OK]
+sympy/series/tests/test_nseries.py[1] .                                     [OK]
+sympy/simplify/tests/test_fu.py[1] .                                        [OK]
+sympy/simplify/tests/test_gammasimp.py[1] .                                 [OK]
+sympy/simplify/tests/test_hyperexpand.py[12] ....w.fw.w..                   [OK]
+sympy/simplify/tests/test_simplify.py[1] .                                  [OK]
+sympy/simplify/tests/test_trigsimp.py[1] .                                  [OK]
+sympy/solvers/tests/test_solvers.py[1] .                                    [OK]
+sympy/solvers/tests/test_solveset.py[1] .                                   [OK]
+sympy/stats/tests/test_continuous_rv.py[3] ...                              [OK]
+sympy/stats/tests/test_finite_rv.py[3] ...                                  [OK]
+sympy/utilities/tests/test_lambdify.py[2] s.                                [OK]
+
+= tests finished: 151 passed, 8 skipped, 2 expected to fail, in 20.71 seconds ==
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        56286242
+hash randomization: on (PYTHONHASHSEED=3842697678)
+
+sympy/codegen/tests/test_ast.py[1] .                                        [OK]
+sympy/core/tests/test_symbol.py[1] .                                        [OK]
+sympy/matrices/expressions/tests/test_hadamard.py[2] ..                     [OK]
+sympy/polys/tests/test_polyoptions.py[2] ..                                 [OK]
+sympy/printing/pretty/tests/test_pretty.py[39] .................................
+......                                                                      [OK]
+sympy/printing/tests/test_c.py[1] .                                         [OK]
+sympy/printing/tests/test_fortran.py[1] .                                   [OK]
+sympy/printing/tests/test_jscode.py[1] .                                    [OK]
+sympy/printing/tests/test_julia.py[1] .                                     [OK]
+sympy/printing/tests/test_latex.py[6] ......                                [OK]
+sympy/printing/tests/test_maple.py[1] .                                     [OK]
+sympy/printing/tests/test_mathml.py[2] ..                                   [OK]
+sympy/printing/tests/test_octave.py[1] .                                    [OK]
+sympy/printing/tests/test_rcode.py[1] .                                     [OK]
+sympy/printing/tests/test_str.py[4] ....                                    [OK]
+sympy/printing/tests/test_tensorflow.py[1] .                                [OK]
+
+================== tests finished: 65 passed, in 1.23 seconds ==================
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_issue_6285', 'test_issue_17616']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

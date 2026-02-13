@@ -1,0 +1,104 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+benchmark: 3.4.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-3.0.0, forked-1.6.0, xdist-2.5.0, timeout-2.3.1, benchmark-3.4.1, profiling-1.7.0
+collecting ... collected 1 item
+
+tests/checkers/unittest_misc.py::TestFixme::test_non_alphanumeric_codetag PASSED [100%]
+
+=============================== warnings summary ===============================
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:7
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:7: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 1 passed, 1 warning in 0.02s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-5859:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-5859
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e88ca878e3ea: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+a8ecddaedfaf: Pulling fs layer
+c7d857fa84a8: Pulling fs layer
+578ba75f3a5e: Pulling fs layer
+89ceba75d6d5: Pulling fs layer
+0e77edd69fb9: Pulling fs layer
+e34f86ef04b7: Pulling fs layer
+e88ca878e3ea: Download complete
+836b79e2a6e5: Download complete
+578ba75f3a5e: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+89ceba75d6d5: Download complete
+0e77edd69fb9: Download complete
+e34f86ef04b7: Download complete
+7478e0ac0f23: Download complete
+c7d857fa84a8: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a8ecddaedfaf: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+c7d857fa84a8: Pull complete
+578ba75f3a5e: Pull complete
+0e77edd69fb9: Pull complete
+89ceba75d6d5: Pull complete
+e34f86ef04b7: Pull complete
+a8ecddaedfaf: Pull complete
+e88ca878e3ea: Pull complete
+Digest: sha256:02e6505ec7c7e0aa090a88ef5f9cb9abc78640c6bb0221fc5cc864cdec495c04
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pylint-dev__pylint-5859:latest
+
+
+===== PHASE: PASS_TO_PASS (10 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.4, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+benchmark: 3.4.1 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-3.0.0, forked-1.6.0, xdist-2.5.0, timeout-2.3.1, benchmark-3.4.1, profiling-1.7.0
+collecting ... collected 10 items
+
+tests/checkers/unittest_misc.py::TestFixme::test_fixme_with_message PASSED [ 10%]
+tests/checkers/unittest_misc.py::TestFixme::test_todo_without_message PASSED [ 20%]
+tests/checkers/unittest_misc.py::TestFixme::test_xxx_without_space PASSED [ 30%]
+tests/checkers/unittest_misc.py::TestFixme::test_xxx_middle PASSED       [ 40%]
+tests/checkers/unittest_misc.py::TestFixme::test_without_space_fixme PASSED [ 50%]
+tests/checkers/unittest_misc.py::TestFixme::test_absent_codetag PASSED   [ 60%]
+tests/checkers/unittest_misc.py::TestFixme::test_other_present_codetag PASSED [ 70%]
+tests/checkers/unittest_misc.py::TestFixme::test_issue_2321_should_not_trigger PASSED [ 80%]
+tests/checkers/unittest_misc.py::TestFixme::test_issue_2321_should_trigger PASSED [ 90%]
+tests/checkers/unittest_misc.py::TestFixme::test_dont_trigger_on_todoist PASSED [100%]
+
+=============================== warnings summary ===============================
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:7
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/astroid/interpreter/_import/util.py:7: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 10 passed, 1 warning in 0.03s =========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

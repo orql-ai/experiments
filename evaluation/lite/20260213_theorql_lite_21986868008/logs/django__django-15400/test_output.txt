@@ -1,0 +1,154 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application utils_tests
+Found 2 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15400:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15400
+c9271ec236b3: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+51c2875bef29: Pulling fs layer
+ac5b61163589: Pulling fs layer
+933100d0d38c: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e8c2f0905305: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+f3e594b530c2: Pulling fs layer
+729c11c31db2: Pulling fs layer
+4efa29366152: Pulling fs layer
+ac5b61163589: Download complete
+e8c2f0905305: Download complete
+933100d0d38c: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+4efa29366152: Download complete
+729c11c31db2: Download complete
+c9271ec236b3: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+f3e594b530c2: Download complete
+500327121db6: Download complete
+51c2875bef29: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+933100d0d38c: Pull complete
+729c11c31db2: Pull complete
+51c2875bef29: Pull complete
+e8c2f0905305: Pull complete
+4efa29366152: Pull complete
+f3e594b530c2: Pull complete
+c9271ec236b3: Pull complete
+Digest: sha256:44089ac677eb8340e724a0247f6c6c3ad4dc4c0c723eb276bf4f6cf761630050
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15400:latest
+test_add (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_radd (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (61 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application utils_tests
+Found 50 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_bool (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_bytes (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_class (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_cmp (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_contains (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_copy_class (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_copy_class_no_evaluation (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_copy_list (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_copy_list_no_evaluation (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_deepcopy_class (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_deepcopy_class_no_evaluation (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_deepcopy_list (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_deepcopy_list_no_evaluation (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_delattr (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_delitem (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_dict (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_dir (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_getattr (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_getitem (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_gt (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_hash (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_iter (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_bool (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_bytes (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_class (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_cmp (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_contains (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_copy_class (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_copy_class_no_evaluation (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_copy_list (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_copy_list_no_evaluation (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_deepcopy_class (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_deepcopy_class_no_evaluation (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_deepcopy_list (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_deepcopy_list_no_evaluation (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_delattr (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_delitem (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_dir (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_getattr (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_getitem (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_gt (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_hash (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_iter (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_len (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_lt (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_pickle (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_setattr (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_setattr2 (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_setitem (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+test_text (utils_tests.test_lazyobject.LazyObjectTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.024s
+
+OK
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application utils_tests
+Found 11 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_len (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_list_set (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_lt (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_none (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_pickle (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_repr (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_setattr (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_setattr2 (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_setitem (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_text (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+test_trace (utils_tests.test_lazyobject.SimpleLazyObjectTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,81 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (4 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application test_exceptions
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13220:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-13220
+47c859b1bbda: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+a9d08ec832c7: Pulling fs layer
+ac5b61163589: Pulling fs layer
+2bc10b62f799: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+c9065689ecd1: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+16b385147454: Pulling fs layer
+192417283da7: Pulling fs layer
+022bb4cf9703: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+a9d08ec832c7: Download complete
+2bc10b62f799: Download complete
+16b385147454: Download complete
+192417283da7: Download complete
+836b79e2a6e5: Download complete
+022bb4cf9703: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+c9065689ecd1: Download complete
+500327121db6: Download complete
+47c859b1bbda: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+a9d08ec832c7: Pull complete
+2bc10b62f799: Pull complete
+47c859b1bbda: Pull complete
+16b385147454: Pull complete
+192417283da7: Pull complete
+c9065689ecd1: Pull complete
+022bb4cf9703: Pull complete
+Digest: sha256:b633a255a5bcc447bbcae634f09aea37f1614c49ee107301a0d868ef57d6724b
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13220:latest
+test_eq (test_exceptions.test_validation_error.TestValidationError) ... ok
+test_eq_nested (test_exceptions.test_validation_error.TestValidationError) ... ok
+test_hash (test_exceptions.test_validation_error.TestValidationError) ... ok
+test_hash_nested (test_exceptions.test_validation_error.TestValidationError) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application test_exceptions
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_messages_concatenates_error_dict_values (test_exceptions.test_validation_error.TestValidationError) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,173 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a7.d20241031.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6] astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9].
+
+Date: 2026-02-13T12:49:10
+
+Platform: Linux-6.14.0-1017-azure-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: mock-3.11.1, remotedata-0.4.0, doctestplus-1.0.0, astropy-0.10.0, openfiles-0.5.0, hypothesis-6.82.6, xdist-3.3.1, cov-4.1.0, arraydiff-0.5.0, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 2 items
+
+astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6] PASSED [ 50%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9] PASSED [100%]
+
+============================== 2 passed in 0.31s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-12907:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.astropy__astropy-12907
+836b79e2a6e5: Pulling fs layer
+e7ac3e9f849e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+1eb9ae6b160b: Pulling fs layer
+c63e392c6664: Pulling fs layer
+b1a62943f5ca: Pulling fs layer
+d253b6395e30: Pulling fs layer
+d3b025b442e5: Pulling fs layer
+9a9254afa842: Pulling fs layer
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+c63e392c6664: Download complete
+b1a62943f5ca: Download complete
+9a9254afa842: Download complete
+ac5b61163589: Download complete
+d3b025b442e5: Download complete
+e7ac3e9f849e: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+d253b6395e30: Download complete
+1eb9ae6b160b: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+1eb9ae6b160b: Pull complete
+c63e392c6664: Pull complete
+b1a62943f5ca: Pull complete
+9a9254afa842: Pull complete
+d3b025b442e5: Pull complete
+d253b6395e30: Pull complete
+e7ac3e9f849e: Pull complete
+Digest: sha256:87fda8f3ae644b986737fad17ca1f05cc4ffdf4d9f11acd4ca70bae12674495c
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-12907:latest
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+
+
+
+===== PHASE: PASS_TO_PASS (13 selectors) =====
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a7.d20241031.
+Running tests in astropy/modeling/tests/test_separable.py::test_coord_matrix astropy/modeling/tests/test_separable.py::test_cdot astropy/modeling/tests/test_separable.py::test_cstack astropy/modeling/tests/test_separable.py::test_arith_oper astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0] astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1] astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2] astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3] astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4] astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5] astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7] astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8] astropy/modeling/tests/test_separable.py::test_custom_model_separable.
+
+Date: 2026-02-13T12:49:15
+
+Platform: Linux-6.14.0-1017-azure-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: mock-3.11.1, remotedata-0.4.0, doctestplus-1.0.0, astropy-0.10.0, openfiles-0.5.0, hypothesis-6.82.6, xdist-3.3.1, cov-4.1.0, arraydiff-0.5.0, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 13 items
+
+astropy/modeling/tests/test_separable.py::test_coord_matrix PASSED       [  7%]
+astropy/modeling/tests/test_separable.py::test_cdot PASSED               [ 15%]
+astropy/modeling/tests/test_separable.py::test_cstack PASSED             [ 23%]
+astropy/modeling/tests/test_separable.py::test_arith_oper PASSED         [ 30%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0] PASSED [ 38%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1] PASSED [ 46%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2] PASSED [ 53%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3] PASSED [ 61%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4] PASSED [ 69%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5] PASSED [ 76%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7] PASSED [ 84%]
+astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8] PASSED [ 92%]
+astropy/modeling/tests/test_separable.py::test_custom_model_separable PASSED [100%]
+
+============================== 13 passed in 0.33s ==============================
+
+
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

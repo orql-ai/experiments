@@ -1,0 +1,131 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        43887004
+hash randomization: on (PYTHONHASHSEED=3039411728)
+
+sympy/solvers/tests/test_solveset.py[2] Ff                                [FAIL]
+
+________________________________________________________________________________
+___________ sympy/solvers/tests/test_solveset.py:test_solve_modular ____________
+Traceback (most recent call last):
+  File "/testbed/sympy/solvers/tests/test_solveset.py", line 2246, in test_solve_modular
+    assert solveset(Mod(x**3, 8) - 1, x, S.Integers) == \
+AssertionError
+
+=== tests finished: 0 passed, 1 failed, 1 expected to fail, in 0.63 seconds ====
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18199:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-18199
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ddf2aa332a22: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+2d0c1fb17faa: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ed3dada71338: Download complete
+5c809fd8a9af: Download complete
+2d0c1fb17faa: Download complete
+2f341c31f3b7: Download complete
+ac5b61163589: Download complete
+ddf2aa332a22: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+ed3dada71338: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+2d0c1fb17faa: Pull complete
+0b326ada86d1: Pull complete
+ddf2aa332a22: Pull complete
+Digest: sha256:1564b39de0842073e2ec631b42473c10940dd94c6cd68de52e2f79489343b09c
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18199:latest
+
+
+===== PHASE: PASS_TO_PASS (113 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        77540351
+hash randomization: on (PYTHONHASHSEED=2937156340)
+
+sympy/assumptions/tests/test_refine.py[1] .                                 [OK]
+sympy/functions/elementary/tests/test_trigonometric.py[2] ..                [OK]
+sympy/physics/units/tests/test_quantities.py[1] .                           [OK]
+sympy/polys/domains/tests/test_polynomialring.py[1] .                       [OK]
+sympy/printing/pretty/tests/test_pretty.py[1] .                             [OK]
+sympy/solvers/tests/test_solvers.py[10] ..........                          [OK]
+sympy/solvers/tests/test_solveset.py[52] .......................................
+......f......                                                               [OK]
+
+======= tests finished: 67 passed, 1 expected to fail, in 10.48 seconds ========
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        55252380
+hash randomization: on (PYTHONHASHSEED=1483109776)
+
+sympy/functions/elementary/tests/test_hyperbolic.py[1] .                    [OK]
+sympy/logic/tests/test_boolalg.py[1] .                                      [OK]
+sympy/sets/tests/test_conditionset.py[1] .                                  [OK]
+sympy/sets/tests/test_sets.py[1] .                                          [OK]
+sympy/solvers/tests/test_inequalities.py[1] .                               [OK]
+sympy/solvers/tests/test_solvers.py[4] ..w.                                 [OK]
+sympy/solvers/tests/test_solveset.py[51] .........f.............................
+............                                                                [OK]
+
+== tests finished: 58 passed, 1 skipped, 1 expected to fail, in 8.31 seconds ===
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        72636872
+hash randomization: on (PYTHONHASHSEED=4118024931)
+
+sympy/solvers/tests/test_solveset.py[13] .............                      [OK]
+
+================== tests finished: 13 passed, in 1.36 seconds ==================
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_solve_modular']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

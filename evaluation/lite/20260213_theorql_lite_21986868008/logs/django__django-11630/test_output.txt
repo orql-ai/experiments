@@ -1,0 +1,118 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application check_framework
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11630:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-11630
+43580fd6a33a: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+d401492bf2de: Pulling fs layer
+500327121db6: Pulling fs layer
+e4e125026d30: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+fe2fa83af7d6: Pulling fs layer
+ac5b61163589: Pulling fs layer
+11e56cae157a: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e578186687ce: Pulling fs layer
+904e26c350f5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+904e26c350f5: Download complete
+7478e0ac0f23: Download complete
+ac5b61163589: Download complete
+e578186687ce: Download complete
+e4e125026d30: Download complete
+11e56cae157a: Download complete
+43580fd6a33a: Download complete
+7478e0ac0f23: Pull complete
+fe2fa83af7d6: Download complete
+500327121db6: Download complete
+d401492bf2de: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+e578186687ce: Pull complete
+e4e125026d30: Pull complete
+d401492bf2de: Pull complete
+904e26c350f5: Pull complete
+11e56cae157a: Pull complete
+fe2fa83af7d6: Pull complete
+43580fd6a33a: Pull complete
+Digest: sha256:92f169e13ecfa6f382ca206babc1c557a104d78767ee571ebc36d91ebddce81d
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11630:latest
+test_collision_across_apps_database_routers_installed (check_framework.test_model_checks.DuplicateDBTableTests) ... ok
+test_collision_in_same_app_database_routers_installed (check_framework.test_model_checks.DuplicateDBTableTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.010s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (16 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application check_framework
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, check_framework, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table check_framework_simplemodel
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_collision_abstract_model (check_framework.test_model_checks.IndexNameTests) ... ok
+test_collision_across_apps (check_framework.test_model_checks.IndexNameTests) ... ok
+test_collision_in_different_models (check_framework.test_model_checks.IndexNameTests) ... ok
+test_collision_in_same_model (check_framework.test_model_checks.IndexNameTests) ... ok
+test_no_collision_abstract_model_interpolation (check_framework.test_model_checks.IndexNameTests) ... ok
+test_no_collision_across_apps_interpolation (check_framework.test_model_checks.IndexNameTests) ... ok
+test_collision_abstract_model (check_framework.test_model_checks.ConstraintNameTests) ... ok
+test_collision_across_apps (check_framework.test_model_checks.ConstraintNameTests) ... ok
+test_collision_in_different_models (check_framework.test_model_checks.ConstraintNameTests) ... ok
+test_collision_in_same_model (check_framework.test_model_checks.ConstraintNameTests) ... ok
+test_no_collision_abstract_model_interpolation (check_framework.test_model_checks.ConstraintNameTests) ... ok
+test_no_collision_across_apps_interpolation (check_framework.test_model_checks.ConstraintNameTests) ... ok
+test_collision_across_apps (check_framework.test_model_checks.DuplicateDBTableTests) ... ok
+test_collision_in_same_app (check_framework.test_model_checks.DuplicateDBTableTests) ... ok
+test_no_collision_for_proxy_models (check_framework.test_model_checks.DuplicateDBTableTests) ... ok
+test_no_collision_for_unmanaged_models (check_framework.test_model_checks.DuplicateDBTableTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.111s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

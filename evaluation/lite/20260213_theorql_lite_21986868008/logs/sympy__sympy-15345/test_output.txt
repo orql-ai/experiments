@@ -1,0 +1,122 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        5844885
+hash randomization: on (PYTHONHASHSEED=525989373)
+
+sympy/codegen/tests/test_ast.py[2] ..                                       [OK]
+sympy/core/tests/test_function.py[1] .                                      [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/printing/tests/test_julia.py[1] .                                     [OK]
+sympy/printing/tests/test_mathematica.py[1] .                               [OK]
+sympy/printing/tests/test_octave.py[2] ..                                   [OK]
+sympy/printing/tests/test_precedence.py[1] .                                [OK]
+sympy/printing/tests/test_repr.py[1] .                                      [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[1] .                                       [OK]
+
+================== tests finished: 12 passed, in 0.62 seconds ==================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-15345:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-15345
+e5a28c0c137e: Pulling fs layer
+b08895a5c216: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+ac5b61163589: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+c8c69f9fd4e3: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+2ff2e5ae1794: Pulling fs layer
+ed3dada71338: Pulling fs layer
+2f341c31f3b7: Download complete
+ed3dada71338: Download complete
+2ff2e5ae1794: Download complete
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+5c809fd8a9af: Download complete
+836b79e2a6e5: Download complete
+c8c69f9fd4e3: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+ed3dada71338: Pull complete
+2ff2e5ae1794: Pull complete
+5c809fd8a9af: Pull complete
+0b326ada86d1: Pull complete
+c8c69f9fd4e3: Pull complete
+Digest: sha256:828a1af959325218afde2751d2868ed18e30e95035c8a408e7b95fd8faa54728
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-15345:latest
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+
+
+===== PHASE: PASS_TO_PASS (8 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        9979306
+hash randomization: on (PYTHONHASHSEED=3978783187)
+
+sympy/assumptions/tests/test_query.py[1] .                                  [OK]
+sympy/core/tests/test_arit.py[24] ........................                  [OK]
+sympy/core/tests/test_assumptions.py[5] .....                               [OK]
+sympy/core/tests/test_function.py[1] .                                      [OK]
+sympy/core/tests/test_match.py[1] .                                         [OK]
+sympy/core/tests/test_numbers.py[11] ...........                            [OK]
+sympy/core/tests/test_power.py[1] .                                         [OK]
+sympy/physics/quantum/tests/test_printing.py[1] .                           [OK]
+sympy/printing/tests/test_julia.py[6] ......                                [OK]
+sympy/printing/tests/test_latex.py[2] ..                                    [OK]
+sympy/printing/tests/test_mathematica.py[8] ........                        [OK]
+sympy/printing/tests/test_octave.py[6] ......                               [OK]
+sympy/printing/tests/test_precedence.py[4] ....                             [OK]
+sympy/printing/tests/test_repr.py[3] ...                                    [OK]
+sympy/printing/tests/test_rust.py[5] .....                                  [OK]
+sympy/printing/tests/test_str.py[6] ......                                  [OK]
+sympy/sets/tests/test_fancysets.py[1] .                                     [OK]
+sympy/sets/tests/test_setexpr.py[1] .                                       [OK]
+sympy/solvers/tests/test_ode.py[1] .                                        [OK]
+sympy/stats/tests/test_joint_rv.py[1] .                                     [OK]
+
+================== tests finished: 89 passed, in 3.33 seconds ==================
+
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/vector/coordsysrect.py:170: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:172: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,64 @@
+diff --git a/sympy/parsing/sympy_parser.py b/sympy/parsing/sympy_parser.py
+index a2c400b758..833477da44 100644
+--- a/sympy/parsing/sympy_parser.py
++++ b/sympy/parsing/sympy_parser.py
+@@ -1051,10 +1051,8 @@ def visit_BinOp(self, node):
+             if isinstance(node.op, ast.Sub):
+                 right = ast.Call(
+                     func=ast.Name(id='Mul', ctx=ast.Load()),
+-                    args=[ast.UnaryOp(op=ast.USub(), operand=ast.Num(1)), right],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                    starargs=None,
+-                    kwargs=None
++                    args=[ast.UnaryOp(op=ast.USub(), operand=ast.Constant(1)), right],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))],
+                 )
+             if isinstance(node.op, ast.Div):
+                 if isinstance(node.left, ast.UnaryOp):
+@@ -1062,26 +1060,20 @@ def visit_BinOp(self, node):
+                         left, right = right, left
+                     left = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+-                    args=[left, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                    starargs=None,
+-                    kwargs=None
++                    args=[left, ast.UnaryOp(op=ast.USub(), operand=ast.Constant(1))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))],
+                 )
+                 else:
+                     right = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+-                    args=[right, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                    starargs=None,
+-                    kwargs=None
++                    args=[right, ast.UnaryOp(op=ast.USub(), operand=ast.Constant(1))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))],
+                 )
+ 
+             new_node = ast.Call(
+                 func=ast.Name(id=sympy_class, ctx=ast.Load()),
+                 args=[left, right],
+-                keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                starargs=None,
+-                kwargs=None
++                keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))],
+             )
+ 
+             if sympy_class in ('Add', 'Mul'):
+diff --git a/sympy/printing/pycode.py b/sympy/printing/pycode.py
+index 6ec7bd891c..2562f39439 100644
+--- a/sympy/printing/pycode.py
++++ b/sympy/printing/pycode.py
+@@ -670,6 +670,10 @@ def _print_CodegenArrayPermuteDims(self, expr):
+     def _print_CodegenArrayElementwiseAdd(self, expr):
+         return self._expand_fold_binary_op('numpy.add', expr.args)
+ 
++    def _print_Identity(self, expr):
++        return '{0}({1})'.format(self._module_format('numpy.eye'),
++            self._print(expr.args[0]))
++
+ 
+ for k in NumPyPrinter._kf:
+     setattr(NumPyPrinter, '_print_%s' % k, _print_known_func)

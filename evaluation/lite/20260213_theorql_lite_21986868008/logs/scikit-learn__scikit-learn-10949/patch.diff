@@ -1,0 +1,15 @@
+diff --git a/sklearn/utils/validation.py b/sklearn/utils/validation.py
+index fe1f7236ec..f44bc3fc11 100644
+--- a/sklearn/utils/validation.py
++++ b/sklearn/utils/validation.py
+@@ -466,6 +466,10 @@ def check_array(array, accept_sparse=False, accept_large_sparse=True,
+         # not a data type (e.g. a column named dtype in a pandas DataFrame)
+         dtype_orig = None
+ 
++    if dtype_orig is None and hasattr(array, 'dtypes') and hasattr(array, '__array__'):
++        # pandas DataFrame - get dtype from underlying array
++        dtype_orig = np.asarray(array).dtype
++
+     if dtype_numeric:
+         if dtype_orig is not None and dtype_orig.kind == "O":
+             # if input is object, convert to float.

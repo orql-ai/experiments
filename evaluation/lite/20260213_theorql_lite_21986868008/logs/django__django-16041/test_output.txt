@@ -1,0 +1,157 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application forms_tests
+Found 2 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16041:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16041
+84e8277f7ee4: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+4e865410366e: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+440f2bf70467: Pulling fs layer
+ef10c6fc510f: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+b780fac9da70: Download complete
+ef10c6fc510f: Download complete
+396d2ca0167c: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+440f2bf70467: Download complete
+836b79e2a6e5: Download complete
+84e8277f7ee4: Download complete
+7478e0ac0f23: Download complete
+187d94c4a868: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+4e865410366e: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+4e865410366e: Pull complete
+b780fac9da70: Pull complete
+396d2ca0167c: Pull complete
+ef10c6fc510f: Pull complete
+440f2bf70467: Pull complete
+187d94c4a868: Pull complete
+84e8277f7ee4: Pull complete
+Digest: sha256:2addc29b5c387867a4ac037d50364dbc48f0e540dc5014af1ed07d97616b88b5
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16041:latest
+test_empty_permitted_ignored_empty_form (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_empty_permitted_ignored_empty_form (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.023s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (64 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application forms_tests
+Found 50 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_warning (forms_tests.tests.test_formsets.DeprecationTests) ... ok
+test_valid (forms_tests.tests.test_formsets.AllValidTests) ... ok
+test_as_div (forms_tests.tests.test_formsets.FormsetAsTagTests) ... ok
+test_as_p (forms_tests.tests.test_formsets.FormsetAsTagTests) ... ok
+test_as_table (forms_tests.tests.test_formsets.FormsetAsTagTests) ... ok
+test_as_ul (forms_tests.tests.test_formsets.FormsetAsTagTests) ... ok
+test_customize_management_form_error (forms_tests.tests.test_formsets.TestIsBoundBehavior) ... ok
+test_empty_forms_are_unbound (forms_tests.tests.test_formsets.TestIsBoundBehavior) ... ok
+test_form_errors_are_caught_by_formset (forms_tests.tests.test_formsets.TestIsBoundBehavior) ... ok
+test_management_form_invalid_data (forms_tests.tests.test_formsets.TestIsBoundBehavior) ... ok
+test_no_data_error (forms_tests.tests.test_formsets.TestIsBoundBehavior) ... ok
+test_with_management_data_attrs_work_fine (forms_tests.tests.test_formsets.TestIsBoundBehavior) ... ok
+test_as_div (forms_tests.tests.test_formsets.Jinja2FormsetAsTagTests) ... ok
+test_as_p (forms_tests.tests.test_formsets.Jinja2FormsetAsTagTests) ... ok
+test_as_table (forms_tests.tests.test_formsets.Jinja2FormsetAsTagTests) ... ok
+test_as_ul (forms_tests.tests.test_formsets.Jinja2FormsetAsTagTests) ... ok
+test_absolute_max (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_absolute_max_invalid (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_absolute_max_with_max_num (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_can_delete_extra_formset_forms (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_default_absolute_max (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_disable_delete_extra_formset_forms (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_form_kwargs_empty_form (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_formset_total_error_count_with_non_form_errors (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_formset_validate_max_flag_custom_error (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_formset_validate_min_excludes_empty_forms (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_absolute_max (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_absolute_max_invalid (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_absolute_max_with_max_num (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_can_delete_extra_formset_forms (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_default_absolute_max (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_disable_delete_extra_formset_forms (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_form_kwargs_empty_form (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_formset_total_error_count_with_non_form_errors (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_formset_validate_max_flag_custom_error (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_formset_validate_min_excludes_empty_forms (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_formset_validate_min_flag_custom_formatted_error (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_formset_validation (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_formset_with_deletion_custom_widget (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_formsets_with_ordering_custom_widget (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_html_safe (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_limited_max_forms_two (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_max_num_with_initial_data (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_max_num_zero_with_initial (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_non_form_errors (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_repr (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_repr_do_not_trigger_validation (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_template_name_can_be_overridden (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_template_name_uses_renderer_value (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+test_validate_max_ignores_forms_marked_for_deletion (forms_tests.tests.test_formsets.FormsFormsetTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.501s
+
+OK
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application forms_tests
+Found 14 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_formset_validate_min_flag_custom_formatted_error (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_formset_validation (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_formset_with_deletion_custom_widget (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_formsets_with_ordering_custom_widget (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_html_safe (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_limited_max_forms_two (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_max_num_with_initial_data (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_max_num_zero_with_initial (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_non_form_errors (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_repr (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_repr_do_not_trigger_validation (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_template_name_can_be_overridden (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_template_name_uses_renderer_value (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+test_validate_max_ignores_forms_marked_for_deletion (forms_tests.tests.test_formsets.Jinja2FormsFormsetTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.046s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,2181 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 1 item
+
+xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_to_unstacked_dataset FAILED [100%]
+
+=================================== FAILURES ===================================
+____________ TestDataset.test_to_stacked_array_to_unstacked_dataset ____________
+
+self = <xarray.tests.test_dataset.TestDataset object at 0x7f5bc75e2170>
+
+    def test_to_stacked_array_to_unstacked_dataset(self):
+    
+        # single dimension: regression test for GH4049
+        arr = xr.DataArray(np.arange(3), coords=[("x", [0, 1, 2])])
+        data = xr.Dataset({"a": arr, "b": arr})
+        stacked = data.to_stacked_array("y", sample_dims=["x"])
+>       unstacked = stacked.to_unstacked_dataset("y")
+
+xarray/tests/test_dataset.py:3039: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+xarray/core/dataarray.py:1967: in to_unstacked_dataset
+    return Dataset(data_dict)
+xarray/core/dataset.py:543: in __init__
+    variables, coord_names, dims, indexes, _ = merge_data_and_coords(
+xarray/core/merge.py:466: in merge_data_and_coords
+    return merge_core(
+xarray/core/merge.py:597: in merge_core
+    variables, out_indexes = merge_collected(collected, prioritized, compat=compat)
+xarray/core/merge.py:228: in merge_collected
+    merged_vars[name] = unique_variable(name, variables, compat)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'y'
+variables = [<xarray.Variable ()>
+array(('a',), dtype=object), <xarray.Variable ()>
+array(('b',), dtype=object)]
+compat = 'broadcast_equals', equals = False
+
+    def unique_variable(
+        name: Hashable,
+        variables: List[Variable],
+        compat: str = "broadcast_equals",
+        equals: bool = None,
+    ) -> Variable:
+        """Return the unique variable from a list of variables or raise MergeError.
+    
+        Parameters
+        ----------
+        name : hashable
+            Name for this variable.
+        variables : list of xarray.Variable
+            List of Variable objects, all of which go by the same name in different
+            inputs.
+        compat : {'identical', 'equals', 'broadcast_equals', 'no_conflicts', 'override'}, optional
+            Type of equality check to use.
+        equals: None or bool,
+            corresponding to result of compat test
+    
+        Returns
+        -------
+        Variable to use in the result.
+    
+        Raises
+        ------
+        MergeError: if any of the variables are not equal.
+        """
+        out = variables[0]
+    
+        if len(variables) == 1 or compat == "override":
+            return out
+    
+        combine_method = None
+    
+        if compat == "minimal":
+            compat = "broadcast_equals"
+    
+        if compat == "broadcast_equals":
+            dim_lengths = broadcast_dimension_size(variables)
+            out = out.set_dims(dim_lengths)
+    
+        if compat == "no_conflicts":
+            combine_method = "fillna"
+    
+        if equals is None:
+            # first check without comparing values i.e. no computes
+            for var in variables[1:]:
+                equals = getattr(out, compat)(var, equiv=lazy_array_equiv)
+                if equals is not True:
+                    break
+    
+            if equals is None:
+                # now compare values with minimum number of computes
+                out = out.compute()
+                for var in variables[1:]:
+                    equals = getattr(out, compat)(var)
+                    if not equals:
+                        break
+    
+        if not equals:
+>           raise MergeError(
+                f"conflicting values for variable {name!r} on objects to be combined. "
+                "You can skip this check by specifying compat='override'."
+            )
+E           xarray.core.merge.MergeError: conflicting values for variable 'y' on objects to be combined. You can skip this check by specifying compat='override'.
+
+xarray/core/merge.py:142: MergeError
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_to_unstacked_dataset
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================== 1 failed, 11 warnings in 3.96s ========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pydata__xarray-4094:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pydata__xarray-4094
+836b79e2a6e5: Pulling fs layer
+ad8164044f92: Pulling fs layer
+027b7eec2d65: Pulling fs layer
+363b1493afdc: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+bb5c21b398dc: Pulling fs layer
+500327121db6: Pulling fs layer
+90ab7b45c663: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+9e815d95687c: Pulling fs layer
+5d8672667496: Pulling fs layer
+ad8164044f92: Download complete
+5d8672667496: Download complete
+ac5b61163589: Download complete
+bb5c21b398dc: Download complete
+90ab7b45c663: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+027b7eec2d65: Download complete
+7478e0ac0f23: Download complete
+9e815d95687c: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+363b1493afdc: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+9e815d95687c: Pull complete
+5d8672667496: Pull complete
+ad8164044f92: Pull complete
+bb5c21b398dc: Pull complete
+90ab7b45c663: Pull complete
+363b1493afdc: Pull complete
+027b7eec2d65: Pull complete
+Digest: sha256:0ba7321964b6cd26db49f307b7f24b808b46599e0bd19a5cfafe196a109e9f87
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pydata__xarray-4094:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_to_unstacked_dataset` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (862 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::TestDataset::test_repr PASSED              [  2%]
+xarray/tests/test_dataset.py::TestDataset::test_repr_multiindex PASSED   [  4%]
+xarray/tests/test_dataset.py::TestDataset::test_repr_period_index PASSED [  6%]
+xarray/tests/test_dataset.py::TestDataset::test_unicode_data PASSED      [  8%]
+xarray/tests/test_dataset.py::TestDataset::test_repr_nep18 PASSED        [ 10%]
+xarray/tests/test_dataset.py::TestDataset::test_info PASSED              [ 12%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor PASSED       [ 14%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_invalid_dims PASSED [ 16%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_1d PASSED    [ 18%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_0d PASSED    [ 20%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_deprecated PASSED [ 22%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_auto_align PASSED [ 24%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_pandas_sequence PASSED [ 26%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_pandas_single PASSED [ 28%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_compat PASSED [ 30%]
+xarray/tests/test_dataset.py::TestDataset::test_constructor_with_coords PASSED [ 32%]
+xarray/tests/test_dataset.py::TestDataset::test_properties PASSED        [ 34%]
+xarray/tests/test_dataset.py::TestDataset::test_asarray PASSED           [ 36%]
+xarray/tests/test_dataset.py::TestDataset::test_get_index PASSED         [ 38%]
+xarray/tests/test_dataset.py::TestDataset::test_attr_access PASSED       [ 40%]
+xarray/tests/test_dataset.py::TestDataset::test_variable PASSED          [ 42%]
+xarray/tests/test_dataset.py::TestDataset::test_modify_inplace PASSED    [ 44%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_properties PASSED [ 46%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_modify PASSED     [ 48%]
+xarray/tests/test_dataset.py::TestDataset::test_update_index PASSED      [ 50%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_setitem_with_new_dimension PASSED [ 52%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_setitem_multiindex PASSED [ 54%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_set PASSED        [ 56%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_to_dataset PASSED [ 58%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_merge PASSED      [ 60%]
+xarray/tests/test_dataset.py::TestDataset::test_coords_merge_mismatched_shape PASSED [ 62%]
+xarray/tests/test_dataset.py::TestDataset::test_data_vars_properties PASSED [ 64%]
+xarray/tests/test_dataset.py::TestDataset::test_equals_and_identical PASSED [ 66%]
+xarray/tests/test_dataset.py::TestDataset::test_equals_failures PASSED   [ 68%]
+xarray/tests/test_dataset.py::TestDataset::test_broadcast_equals PASSED  [ 70%]
+xarray/tests/test_dataset.py::TestDataset::test_attrs PASSED             [ 72%]
+xarray/tests/test_dataset.py::TestDataset::test_chunk PASSED             [ 74%]
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy PASSED      [ 76%]
+xarray/tests/test_dataset.py::TestDataset::test_isel PASSED              [ 78%]
+xarray/tests/test_dataset.py::TestDataset::test_isel_fancy PASSED        [ 80%]
+xarray/tests/test_dataset.py::TestDataset::test_isel_dataarray PASSED    [ 82%]
+xarray/tests/test_dataset.py::TestDataset::test_sel PASSED               [ 84%]
+xarray/tests/test_dataset.py::TestDataset::test_sel_dataarray PASSED     [ 86%]
+xarray/tests/test_dataset.py::TestDataset::test_sel_dataarray_mindex PASSED [ 88%]
+xarray/tests/test_dataset.py::TestDataset::test_categorical_index PASSED [ 90%]
+xarray/tests/test_dataset.py::TestDataset::test_categorical_reindex PASSED [ 92%]
+xarray/tests/test_dataset.py::TestDataset::test_sel_drop PASSED          [ 94%]
+xarray/tests/test_dataset.py::TestDataset::test_isel_drop PASSED         [ 96%]
+xarray/tests/test_dataset.py::TestDataset::test_head PASSED              [ 98%]
+xarray/tests/test_dataset.py::TestDataset::test_tail PASSED              [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py::TestDataset::test_constructor_auto_align
+xarray/tests/test_dataset.py::TestDataset::test_constructor_auto_align
+xarray/tests/test_dataset.py::TestDataset::test_constructor_auto_align
+xarray/tests/test_dataset.py::TestDataset::test_constructor_auto_align
+xarray/tests/test_dataset.py::TestDataset::test_constructor_pandas_sequence
+xarray/tests/test_dataset.py::TestDataset::test_constructor_pandas_sequence
+  /testbed/xarray/core/alignment.py:304: FutureWarning: Index.__or__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__or__.  Use index.union(other) instead.
+    index = joiner(matching_indexes)
+
+xarray/tests/test_dataset.py::TestDataset::test_constructor_pandas_single
+  /testbed/xarray/core/merge.py:393: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+    obj = dict(obj.iteritems())
+
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+xarray/tests/test_dataset.py::TestDataset::test_dask_is_lazy
+  /testbed/xarray/core/variable.py:985: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask.__version__) < "2.0.0":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 26 warnings in 3.55s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::TestDataset::test_thin PASSED              [  2%]
+xarray/tests/test_dataset.py::TestDataset::test_sel_fancy PASSED         [  4%]
+xarray/tests/test_dataset.py::TestDataset::test_sel_method PASSED        [  6%]
+xarray/tests/test_dataset.py::TestDataset::test_loc PASSED               [  8%]
+xarray/tests/test_dataset.py::TestDataset::test_selection_multiindex PASSED [ 10%]
+xarray/tests/test_dataset.py::TestDataset::test_broadcast_like PASSED    [ 12%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_like PASSED      [ 14%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex PASSED           [ 16%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_warning PASSED   [ 18%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_variables_copied PASSED [ 20%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_method PASSED    [ 22%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_fill_value[fill_value0] PASSED [ 24%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_fill_value[2] PASSED [ 26%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_fill_value[2.0] PASSED [ 28%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_like_fill_value[fill_value0] PASSED [ 30%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_like_fill_value[2] PASSED [ 32%]
+xarray/tests/test_dataset.py::TestDataset::test_reindex_like_fill_value[2.0] PASSED [ 34%]
+xarray/tests/test_dataset.py::TestDataset::test_align_fill_value[fill_value0] PASSED [ 36%]
+xarray/tests/test_dataset.py::TestDataset::test_align_fill_value[2] PASSED [ 38%]
+xarray/tests/test_dataset.py::TestDataset::test_align_fill_value[2.0] PASSED [ 40%]
+xarray/tests/test_dataset.py::TestDataset::test_align PASSED             [ 42%]
+xarray/tests/test_dataset.py::TestDataset::test_align_exact PASSED       [ 44%]
+xarray/tests/test_dataset.py::TestDataset::test_align_override PASSED    [ 46%]
+xarray/tests/test_dataset.py::TestDataset::test_align_exclude PASSED     [ 48%]
+xarray/tests/test_dataset.py::TestDataset::test_align_nocopy PASSED      [ 50%]
+xarray/tests/test_dataset.py::TestDataset::test_align_indexes PASSED     [ 52%]
+xarray/tests/test_dataset.py::TestDataset::test_align_non_unique PASSED  [ 54%]
+xarray/tests/test_dataset.py::TestDataset::test_broadcast PASSED         [ 56%]
+xarray/tests/test_dataset.py::TestDataset::test_broadcast_nocopy PASSED  [ 58%]
+xarray/tests/test_dataset.py::TestDataset::test_broadcast_exclude PASSED [ 60%]
+xarray/tests/test_dataset.py::TestDataset::test_broadcast_misaligned PASSED [ 62%]
+xarray/tests/test_dataset.py::TestDataset::test_variable_indexing PASSED [ 64%]
+xarray/tests/test_dataset.py::TestDataset::test_drop_variables PASSED    [ 66%]
+xarray/tests/test_dataset.py::TestDataset::test_drop_index_labels PASSED [ 68%]
+xarray/tests/test_dataset.py::TestDataset::test_drop_labels_by_keyword PASSED [ 70%]
+xarray/tests/test_dataset.py::TestDataset::test_drop_dims PASSED         [ 72%]
+xarray/tests/test_dataset.py::TestDataset::test_copy PASSED              [ 74%]
+xarray/tests/test_dataset.py::TestDataset::test_copy_with_data PASSED    [ 76%]
+xarray/tests/test_dataset.py::TestDataset::test_copy_with_data_errors PASSED [ 78%]
+xarray/tests/test_dataset.py::TestDataset::test_rename PASSED            [ 80%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_old_name PASSED   [ 82%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_same_name PASSED  [ 84%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_inplace PASSED    [ 86%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_dims PASSED       [ 88%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_vars PASSED       [ 90%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_multiindex PASSED [ 92%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_does_not_change_CFTimeIndex_type PASSED [ 94%]
+xarray/tests/test_dataset.py::TestDataset::test_rename_does_not_change_DatetimeIndex_type PASSED [ 96%]
+xarray/tests/test_dataset.py::TestDataset::test_swap_dims PASSED         [ 98%]
+xarray/tests/test_dataset.py::TestDataset::test_expand_dims_error PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py::TestDataset::test_sel_method
+xarray/tests/test_dataset.py::TestDataset::test_sel_method
+xarray/tests/test_dataset.py::TestDataset::test_sel_method
+  /testbed/xarray/core/indexing.py:189: FutureWarning: Passing method to Float64Index.get_loc is deprecated and will raise in a future version. Use index.get_indexer([item], method=...) instead.
+    indexer = index.get_loc(
+
+xarray/tests/test_dataset.py::TestDataset::test_reindex_warning
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/_pytest/python.py:194: PytestRemovedIn8Warning: Passing None has been deprecated.
+  See https://docs.pytest.org/en/latest/how-to/capture-warnings.html#additional-use-cases-of-warnings-in-tests for alternatives in common use cases.
+    result = testfunction(**testargs)
+
+xarray/tests/test_dataset.py::TestDataset::test_align_fill_value[fill_value0]
+xarray/tests/test_dataset.py::TestDataset::test_align_fill_value[2]
+xarray/tests/test_dataset.py::TestDataset::test_align_fill_value[2.0]
+xarray/tests/test_dataset.py::TestDataset::test_align
+xarray/tests/test_dataset.py::TestDataset::test_align_exclude
+xarray/tests/test_dataset.py::TestDataset::test_align_nocopy
+xarray/tests/test_dataset.py::TestDataset::test_align_nocopy
+xarray/tests/test_dataset.py::TestDataset::test_broadcast_misaligned
+  /testbed/xarray/core/alignment.py:304: FutureWarning: Index.__or__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__or__.  Use index.union(other) instead.
+    index = joiner(matching_indexes)
+
+xarray/tests/test_dataset.py::TestDataset::test_align
+xarray/tests/test_dataset.py::TestDataset::test_align_non_unique
+  /testbed/xarray/core/alignment.py:304: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
+    index = joiner(matching_indexes)
+
+xarray/tests/test_dataset.py::TestDataset::test_rename_does_not_change_CFTimeIndex_type
+xarray/tests/test_dataset.py::TestDataset::test_rename_does_not_change_CFTimeIndex_type
+  /testbed/xarray/coding/cftimeindex.py:113: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(cftime.__version__) < LooseVersion("1.0.4"):
+
+xarray/tests/test_dataset.py: 14 warnings
+  /testbed/xarray/coding/cftime_offsets.py:243: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(cftime.__version__) < LooseVersion("1.0.4"):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 41 warnings in 3.54s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::TestDataset::test_expand_dims_int PASSED   [  2%]
+xarray/tests/test_dataset.py::TestDataset::test_expand_dims_coords PASSED [  4%]
+xarray/tests/test_dataset.py::TestDataset::test_expand_dims_existing_scalar_coord PASSED [  6%]
+xarray/tests/test_dataset.py::TestDataset::test_isel_expand_dims_roundtrip PASSED [  8%]
+xarray/tests/test_dataset.py::TestDataset::test_expand_dims_mixed_int_and_coords PASSED [ 10%]
+xarray/tests/test_dataset.py::TestDataset::test_expand_dims_kwargs_python36plus PASSED [ 12%]
+xarray/tests/test_dataset.py::TestDataset::test_set_index PASSED         [ 14%]
+xarray/tests/test_dataset.py::TestDataset::test_reset_index PASSED       [ 16%]
+xarray/tests/test_dataset.py::TestDataset::test_reset_index_keep_attrs PASSED [ 18%]
+xarray/tests/test_dataset.py::TestDataset::test_reorder_levels PASSED    [ 20%]
+xarray/tests/test_dataset.py::TestDataset::test_stack PASSED             [ 22%]
+xarray/tests/test_dataset.py::TestDataset::test_unstack PASSED           [ 24%]
+xarray/tests/test_dataset.py::TestDataset::test_unstack_errors PASSED    [ 26%]
+xarray/tests/test_dataset.py::TestDataset::test_unstack_fill_value PASSED [ 28%]
+xarray/tests/test_dataset.py::TestDataset::test_unstack_sparse PASSED    [ 30%]
+xarray/tests/test_dataset.py::TestDataset::test_stack_unstack_fast PASSED [ 32%]
+xarray/tests/test_dataset.py::TestDataset::test_stack_unstack_slow PASSED [ 34%]
+xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_invalid_sample_dims PASSED [ 36%]
+xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_name PASSED [ 38%]
+xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_dtype_dims PASSED [ 40%]
+xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_to_unstacked_dataset_different_dimension PASSED [ 42%]
+xarray/tests/test_dataset.py::TestDataset::test_update PASSED            [ 44%]
+xarray/tests/test_dataset.py::TestDataset::test_update_overwrite_coords PASSED [ 46%]
+xarray/tests/test_dataset.py::TestDataset::test_update_auto_align PASSED [ 48%]
+xarray/tests/test_dataset.py::TestDataset::test_getitem PASSED           [ 50%]
+xarray/tests/test_dataset.py::TestDataset::test_getitem_hashable PASSED  [ 52%]
+xarray/tests/test_dataset.py::TestDataset::test_virtual_variables_default_coords PASSED [ 54%]
+xarray/tests/test_dataset.py::TestDataset::test_virtual_variables_time PASSED [ 56%]
+xarray/tests/test_dataset.py::TestDataset::test_virtual_variable_same_name PASSED [ 58%]
+xarray/tests/test_dataset.py::TestDataset::test_virtual_variable_multiindex PASSED [ 60%]
+xarray/tests/test_dataset.py::TestDataset::test_time_season PASSED       [ 62%]
+xarray/tests/test_dataset.py::TestDataset::test_slice_virtual_variable PASSED [ 64%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem PASSED           [ 66%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_pandas PASSED    [ 68%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_auto_align PASSED [ 70%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_dimension_override PASSED [ 72%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_with_coords PASSED [ 74%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_align_new_indexes PASSED [ 76%]
+xarray/tests/test_dataset.py::TestDataset::test_assign PASSED            [ 78%]
+xarray/tests/test_dataset.py::TestDataset::test_assign_coords PASSED     [ 80%]
+xarray/tests/test_dataset.py::TestDataset::test_assign_attrs PASSED      [ 82%]
+xarray/tests/test_dataset.py::TestDataset::test_assign_multiindex_level PASSED [ 84%]
+xarray/tests/test_dataset.py::TestDataset::test_merge_multiindex_level PASSED [ 86%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_original_non_unique_index PASSED [ 88%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_both_non_unique_index PASSED [ 90%]
+xarray/tests/test_dataset.py::TestDataset::test_setitem_multiindex_level PASSED [ 92%]
+xarray/tests/test_dataset.py::TestDataset::test_delitem PASSED           [ 94%]
+xarray/tests/test_dataset.py::TestDataset::test_squeeze PASSED           [ 96%]
+xarray/tests/test_dataset.py::TestDataset::test_squeeze_drop PASSED      [ 98%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby PASSED           [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py::TestDataset::test_groupby
+xarray/tests/test_dataset.py::TestDataset::test_groupby
+xarray/tests/test_dataset.py::TestDataset::test_groupby
+  /testbed/xarray/core/groupby.py:208: FutureWarning: is_monotonic is deprecated and will be removed in a future version. Use is_monotonic_increasing instead.
+    return index.is_unique and index.is_monotonic
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 14 warnings in 6.52s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::TestDataset::test_groupby_returns_new_type PASSED [  2%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby_iter PASSED      [  4%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby_errors PASSED    [  6%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce PASSED    [  8%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby_math PASSED      [ 10%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby_math_virtual PASSED [ 12%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby_nan PASSED       [ 14%]
+xarray/tests/test_dataset.py::TestDataset::test_groupby_order PASSED     [ 16%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_and_first PASSED [ 18%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_min_count PASSED [ 20%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_by_mean_with_keep_attrs PASSED [ 22%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_loffset PASSED  [ 24%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_by_mean_discarding_attrs PASSED [ 26%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_by_last_discarding_attrs PASSED [ 28%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_drop_nondim_coords PASSED [ 30%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_old_api PASSED  [ 32%]
+xarray/tests/test_dataset.py::TestDataset::test_resample_ds_da_are_the_same PASSED [ 34%]
+xarray/tests/test_dataset.py::TestDataset::test_ds_resample_apply_func_args PASSED [ 36%]
+xarray/tests/test_dataset.py::TestDataset::test_to_array PASSED          [ 38%]
+xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dataframe PASSED [ 40%]
+xarray/tests/test_dataset.py::TestDataset::test_from_dataframe_sparse PASSED [ 42%]
+xarray/tests/test_dataset.py::TestDataset::test_to_and_from_empty_dataframe PASSED [ 44%]
+xarray/tests/test_dataset.py::TestDataset::test_from_dataframe_non_unique_columns PASSED [ 46%]
+xarray/tests/test_dataset.py::TestDataset::test_convert_dataframe_with_many_types_and_multiindex PASSED [ 48%]
+xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dict PASSED  [ 50%]
+xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dict_with_time_dim PASSED [ 52%]
+xarray/tests/test_dataset.py::TestDataset::test_to_and_from_dict_with_nan_nat PASSED [ 54%]
+xarray/tests/test_dataset.py::TestDataset::test_to_dict_with_numpy_attrs PASSED [ 56%]
+xarray/tests/test_dataset.py::TestDataset::test_pickle PASSED            [ 58%]
+xarray/tests/test_dataset.py::TestDataset::test_lazy_load PASSED         [ 60%]
+xarray/tests/test_dataset.py::TestDataset::test_dropna PASSED            [ 62%]
+xarray/tests/test_dataset.py::TestDataset::test_fillna PASSED            [ 64%]
+xarray/tests/test_dataset.py::TestDataset::test_where PASSED             [ 66%]
+xarray/tests/test_dataset.py::TestDataset::test_where_other PASSED       [ 68%]
+xarray/tests/test_dataset.py::TestDataset::test_where_drop PASSED        [ 70%]
+xarray/tests/test_dataset.py::TestDataset::test_where_drop_empty PASSED  [ 72%]
+xarray/tests/test_dataset.py::TestDataset::test_where_drop_no_indexes PASSED [ 74%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce PASSED            [ 76%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_coords PASSED     [ 78%]
+xarray/tests/test_dataset.py::TestDataset::test_mean_uint_dtype PASSED   [ 80%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_bad_dim PASSED    [ 82%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_cumsum PASSED     [ 84%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_cumsum_test_dims PASSED [ 86%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_non_numeric PASSED [ 88%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_strings PASSED    [ 90%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_dtypes PASSED     [ 92%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_keep_attrs PASSED [ 94%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_argmin PASSED     [ 96%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_scalars PASSED    [ 98%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_only_one_axis PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 9 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+xarray/tests/test_dataset.py::TestDataset::test_groupby_reduce
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+xarray/tests/test_dataset.py::TestDataset::test_groupby_math
+xarray/tests/test_dataset.py::TestDataset::test_groupby_math
+  /testbed/xarray/core/groupby.py:208: FutureWarning: is_monotonic is deprecated and will be removed in a future version. Use is_monotonic_increasing instead.
+    return index.is_unique and index.is_monotonic
+
+xarray/tests/test_dataset.py: 11 warnings
+  /testbed/xarray/core/common.py:1123: FutureWarning: 'base' in .resample() and in Grouper() is deprecated.
+  The new arguments that you should use are 'offset' or 'origin'.
+  
+  >>> df.resample(freq="3s", base=2)
+  
+  becomes:
+  
+  >>> df.resample(freq="3s", offset="2s")
+  
+    grouper = pd.Grouper(
+
+xarray/tests/test_dataset.py: 11 warnings
+  /testbed/xarray/core/groupby.py:349: FutureWarning: is_monotonic is deprecated and will be removed in a future version. Use is_monotonic_increasing instead.
+    if not index.is_monotonic:
+
+xarray/tests/test_dataset.py::TestDataset::test_resample_loffset
+  /testbed/xarray/core/common.py:1123: FutureWarning: 'loffset' in .resample() and in Grouper() is deprecated.
+  
+  >>> df.resample(freq="3s", loffset="8H")
+  
+  becomes:
+  
+  >>> from pandas.tseries.frequencies import to_offset
+  >>> df = df.resample(freq="3s").mean()
+  >>> df.index = df.index.to_timestamp() + to_offset("8H")
+  
+    grouper = pd.Grouper(
+
+xarray/tests/test_dataset.py::TestDataset::test_resample_loffset
+  /testbed/xarray/tests/test_dataset.py:3786: FutureWarning: 'loffset' in .resample() and in Grouper() is deprecated.
+  
+  >>> df.resample(freq="3s", loffset="8H")
+  
+  becomes:
+  
+  >>> from pandas.tseries.frequencies import to_offset
+  >>> df = df.resample(freq="3s").mean()
+  >>> df.index = df.index.to_timestamp() + to_offset("8H")
+  
+    ds.bar.to_series().resample("24H", loffset="-12H").mean()
+
+xarray/tests/test_dataset.py::TestDataset::test_resample_drop_nondim_coords
+  /testbed/xarray/core/missing.py:563: FutureWarning: Passing method to DatetimeIndex.get_loc is deprecated and will raise in a future version. Use index.get_indexer([item], method=...) instead.
+    imin = index.get_loc(np.min(new_x.values), method="nearest")
+
+xarray/tests/test_dataset.py::TestDataset::test_resample_drop_nondim_coords
+  /testbed/xarray/core/missing.py:564: FutureWarning: Passing method to DatetimeIndex.get_loc is deprecated and will raise in a future version. Use index.get_indexer([item], method=...) instead.
+    imax = index.get_loc(np.max(new_x.values), method="nearest")
+
+xarray/tests/test_dataset.py::TestDataset::test_from_dataframe_sparse
+  /testbed/xarray/core/dataset.py:4553: FutureWarning: MultiIndex.is_lexsorted is deprecated as a public function, users should use MultiIndex.is_monotonic_increasing instead.
+    is_sorted = idx.is_lexsorted()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 58 warnings in 3.73s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::TestDataset::test_reduce_no_axis PASSED    [  2%]
+xarray/tests/test_dataset.py::TestDataset::test_reduce_keepdims PASSED   [  4%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile[0.25-True] PASSED [  6%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile[0.25-False] PASSED [  8%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile[q1-True] PASSED [ 10%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile[q1-False] PASSED [ 12%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile[q2-True] PASSED [ 14%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile[q2-False] PASSED [ 16%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile_skipna[True] PASSED [ 18%]
+xarray/tests/test_dataset.py::TestDataset::test_quantile_skipna[False] PASSED [ 20%]
+xarray/tests/test_dataset.py::TestDataset::test_rank PASSED              [ 22%]
+xarray/tests/test_dataset.py::TestDataset::test_count PASSED             [ 24%]
+xarray/tests/test_dataset.py::TestDataset::test_map PASSED               [ 26%]
+xarray/tests/test_dataset.py::TestDataset::test_apply_pending_deprecated_map PASSED [ 28%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_number_math PASSED [ 30%]
+xarray/tests/test_dataset.py::TestDataset::test_unary_ops PASSED         [ 32%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_array_math PASSED [ 34%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_dataset_math PASSED [ 36%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_math_auto_align PASSED [ 38%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_math_errors PASSED [ 40%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_transpose PASSED [ 42%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_ellipsis_transpose_different_ordered_vars PASSED [ 44%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_retains_period_index_on_transpose PASSED [ 46%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n1_simple PASSED [ 48%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n1_label PASSED [ 50%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n1 PASSED   [ 52%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_n2 PASSED   [ 54%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_exception_n_neg PASSED [ 56%]
+xarray/tests/test_dataset.py::TestDataset::test_dataset_diff_exception_label_str PASSED [ 58%]
+xarray/tests/test_dataset.py::TestDataset::test_shift[fill_value0] PASSED [ 60%]
+xarray/tests/test_dataset.py::TestDataset::test_shift[2] PASSED          [ 62%]
+xarray/tests/test_dataset.py::TestDataset::test_shift[2.0] PASSED        [ 64%]
+xarray/tests/test_dataset.py::TestDataset::test_roll_coords PASSED       [ 66%]
+xarray/tests/test_dataset.py::TestDataset::test_roll_no_coords PASSED    [ 68%]
+xarray/tests/test_dataset.py::TestDataset::test_roll_coords_none PASSED  [ 70%]
+xarray/tests/test_dataset.py::TestDataset::test_roll_multidim PASSED     [ 72%]
+xarray/tests/test_dataset.py::TestDataset::test_real_and_imag PASSED     [ 74%]
+xarray/tests/test_dataset.py::TestDataset::test_setattr_raises PASSED    [ 76%]
+xarray/tests/test_dataset.py::TestDataset::test_filter_by_attrs PASSED   [ 78%]
+xarray/tests/test_dataset.py::TestDataset::test_binary_op_propagate_indexes PASSED [ 80%]
+xarray/tests/test_dataset.py::TestDataset::test_binary_op_join_setting PASSED [ 82%]
+xarray/tests/test_dataset.py::TestDataset::test_full_like PASSED         [ 84%]
+xarray/tests/test_dataset.py::TestDataset::test_combine_first PASSED     [ 86%]
+xarray/tests/test_dataset.py::TestDataset::test_sortby PASSED            [ 88%]
+xarray/tests/test_dataset.py::TestDataset::test_attribute_access PASSED  [ 90%]
+xarray/tests/test_dataset.py::TestDataset::test_ipython_key_completion PASSED [ 92%]
+xarray/tests/test_dataset.py::TestDataset::test_polyfit_output PASSED    [ 94%]
+xarray/tests/test_dataset.py::TestDataset::test_pad PASSED               [ 96%]
+xarray/tests/test_dataset.py::test_isin[test_elements0] PASSED           [ 98%]
+xarray/tests/test_dataset.py::test_isin[test_elements1] PASSED           [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 64 warnings
+  /testbed/xarray/core/variable.py:1793: DeprecationWarning: the `interpolation=` argument to nanquantile was renamed to `method=`, which has additional options.
+  Users of the modes 'nearest', 'lower', 'higher', or 'midpoint' are encouraged to review the method they used. (Deprecated NumPy 1.22)
+    return np.moveaxis(_quantile_func(npa, **kwargs), 0, -1)
+
+xarray/tests/test_dataset.py: 64 warnings
+  /testbed/xarray/core/variable.py:1793: DeprecationWarning: the `interpolation=` argument to quantile was renamed to `method=`, which has additional options.
+  Users of the modes 'nearest', 'lower', 'higher', or 'midpoint' are encouraged to review the method they used. (Deprecated NumPy 1.22)
+    return np.moveaxis(_quantile_func(npa, **kwargs), 0, -1)
+
+xarray/tests/test_dataset.py::TestDataset::test_dataset_dataset_math
+xarray/tests/test_dataset.py::TestDataset::test_dataset_dataset_math
+xarray/tests/test_dataset.py::TestDataset::test_dataset_math_auto_align
+xarray/tests/test_dataset.py::TestDataset::test_dataset_math_auto_align
+  /testbed/xarray/core/alignment.py:304: FutureWarning: Index.__and__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__and__.  Use index.intersection(other) instead.
+    index = joiner(matching_indexes)
+
+xarray/tests/test_dataset.py::TestDataset::test_binary_op_join_setting
+xarray/tests/test_dataset.py::TestDataset::test_combine_first
+xarray/tests/test_dataset.py::TestDataset::test_combine_first
+xarray/tests/test_dataset.py::TestDataset::test_combine_first
+xarray/tests/test_dataset.py::TestDataset::test_combine_first
+  /testbed/xarray/core/alignment.py:304: FutureWarning: Index.__or__ operating as a set operation is deprecated, in the future this will be a logical operation matching Series.__or__.  Use index.union(other) instead.
+    index = joiner(matching_indexes)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 148 warnings in 3.64s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_isin[test_elements2] PASSED           [  2%]
+xarray/tests/test_dataset.py::test_isin_dask[test_elements0] PASSED      [  4%]
+xarray/tests/test_dataset.py::test_isin_dask[test_elements1] PASSED      [  6%]
+xarray/tests/test_dataset.py::test_isin_dask[test_elements2] PASSED      [  8%]
+xarray/tests/test_dataset.py::test_isin_dataset PASSED                   [ 10%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords0] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords3] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords4] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords5] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords6] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords7] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords8] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords0-unaligned_coords9] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords0] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords3] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords4] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords5] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords6] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords7] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords8] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_dataset_constructor_aligns_to_explicit_coords[coords1-unaligned_coords9] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_error_message_on_set_supplied PASSED  [ 52%]
+xarray/tests/test_dataset.py::test_constructor_raises_with_invalid_coords[unaligned_coords0] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_dir_expected_attrs[None] PASSED       [ 56%]
+xarray/tests/test_dataset.py::test_dir_non_string[None] PASSED           [ 58%]
+xarray/tests/test_dataset.py::test_dir_unicode[None] PASSED              [ 60%]
+xarray/tests/test_dataset.py::test_coarsen_absent_dims_error[1] PASSED   [ 62%]
+xarray/tests/test_dataset.py::test_coarsen[1-trim-left-True] PASSED      [ 64%]
+xarray/tests/test_dataset.py::test_coarsen[1-trim-left-False] PASSED     [ 66%]
+xarray/tests/test_dataset.py::test_coarsen[1-pad-right-True] PASSED      [ 68%]
+xarray/tests/test_dataset.py::test_coarsen[1-pad-right-False] PASSED     [ 70%]
+xarray/tests/test_dataset.py::test_coarsen_coords[1-True] PASSED         [ 72%]
+xarray/tests/test_dataset.py::test_coarsen_coords[1-False] PASSED        [ 74%]
+xarray/tests/test_dataset.py::test_coarsen_coords_cftime PASSED          [ 76%]
+xarray/tests/test_dataset.py::test_coarsen_keep_attrs PASSED             [ 78%]
+xarray/tests/test_dataset.py::test_rolling_keep_attrs PASSED             [ 80%]
+xarray/tests/test_dataset.py::test_rolling_properties[1] PASSED          [ 82%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-True-sum] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-True-mean] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-True-std] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-True-var] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-True-min] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-True-max] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-True-median] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-False-sum] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-False-mean] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py::test_coarsen_coords[1-True]
+xarray/tests/test_dataset.py::test_coarsen_coords[1-False]
+  /testbed/xarray/tests/test_dataset.py:5763: UserWarning: Parsing dates in DD/MM/YYYY format when dayfirst=False (the default) was specified. This may lead to inconsistently parsed dates! Specify a format to ensure consistent parsing.
+    coords={"time": pd.date_range("15/12/1999", periods=364)},
+
+xarray/tests/test_dataset.py::test_coarsen_coords_cftime
+xarray/tests/test_dataset.py::test_coarsen_coords_cftime
+xarray/tests/test_dataset.py::test_coarsen_coords_cftime
+xarray/tests/test_dataset.py::test_coarsen_coords_cftime
+  /testbed/xarray/coding/cftimeindex.py:113: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(cftime.__version__) < LooseVersion("1.0.4"):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 17 warnings in 3.96s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-False-std] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-False-var] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-False-min] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-False-max] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-False-median] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-None-sum] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-None-mean] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-None-std] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-None-var] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-None-min] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-None-max] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-1-None-median] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-True-sum] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-True-mean] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-True-std] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-True-var] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-True-min] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-True-max] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-True-median] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-False-sum] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-False-mean] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-False-std] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-False-var] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-False-min] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-False-max] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-False-median] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-None-sum] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-None-mean] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-None-std] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-None-var] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-None-min] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-None-max] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z1-None-None-median] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-True-sum] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-True-mean] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-True-std] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-True-var] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-True-min] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-True-max] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-True-median] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-False-sum] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-False-mean] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-False-std] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-False-var] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-False-min] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-False-max] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-False-median] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-None-sum] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-None-mean] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-None-std] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 11 warnings in 3.48s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-None-var] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-None-min] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-None-max] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-1-None-median] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-True-sum] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-True-mean] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-True-std] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-True-var] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-True-min] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-True-max] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-True-median] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-False-sum] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-False-mean] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-False-std] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-False-var] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-False-min] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-False-max] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-False-median] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-None-sum] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-None-mean] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-None-std] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-None-var] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-None-min] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-None-max] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_wrapped_bottleneck[1-z2-None-None-median] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_exp[1] PASSED                 [ 52%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-None-True] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-None-False] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-1-True] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-1-False] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-2-True] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-2-False] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-3-True] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[1-3-False] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-None-True] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-None-False] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-1-True] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-1-False] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-2-True] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-2-False] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-3-True] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[2-3-False] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-None-True] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-None-False] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-1-True] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-1-False] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-2-True] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-2-False] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-3-True] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[3-3-False] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 11 warnings in 3.92s ========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-None-True] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-None-False] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-1-True] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-1-False] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-2-True] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-2-False] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-3-True] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_pandas_compat[4-3-False] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_construct[1-True] PASSED      [ 18%]
+xarray/tests/test_dataset.py::test_rolling_construct[1-False] PASSED     [ 20%]
+xarray/tests/test_dataset.py::test_rolling_construct[2-True] PASSED      [ 22%]
+xarray/tests/test_dataset.py::test_rolling_construct[2-False] PASSED     [ 24%]
+xarray/tests/test_dataset.py::test_rolling_construct[3-True] PASSED      [ 26%]
+xarray/tests/test_dataset.py::test_rolling_construct[3-False] PASSED     [ 28%]
+xarray/tests/test_dataset.py::test_rolling_construct[4-True] PASSED      [ 30%]
+xarray/tests/test_dataset.py::test_rolling_construct[4-False] PASSED     [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-None-True-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-None-True-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-None-False-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-None-False-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-1-True-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-1-True-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-1-False-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-1-False-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-2-True-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-2-True-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-2-False-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-2-False-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-3-True-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-3-True-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-3-False-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-1-3-False-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-None-True-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-None-True-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-None-False-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-None-False-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-1-True-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-1-True-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-1-False-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-1-False-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-2-True-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-2-True-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-2-False-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-2-False-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-3-True-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-3-True-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-3-False-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-2-3-False-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-None-True-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-None-True-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 102 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 102 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 215 warnings in 3.56s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-None-False-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-None-False-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-1-True-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-1-True-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-1-False-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-1-False-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-2-True-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-2-True-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-2-False-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-2-False-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-3-True-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-3-True-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-3-False-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-3-3-False-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-None-True-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-None-True-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-None-False-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-None-False-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-1-True-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-1-True-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-1-False-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-1-False-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-2-True-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-2-True-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-2-False-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-2-False-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-3-True-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-3-True-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-3-False-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[sum-4-3-False-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-None-True-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-None-True-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-None-False-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-None-False-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-1-True-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-1-True-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-1-False-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-1-False-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-2-True-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-2-True-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-2-False-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-2-False-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-3-True-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-3-True-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-3-False-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-1-3-False-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-None-True-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-None-True-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-None-False-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-None-False-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 150 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 150 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 311 warnings in 3.57s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-1-True-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-1-True-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-1-False-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-1-False-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-2-True-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-2-True-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-2-False-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-2-False-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-3-True-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-3-True-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-3-False-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-2-3-False-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-None-True-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-None-True-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-None-False-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-None-False-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-1-True-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-1-True-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-1-False-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-1-False-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-2-True-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-2-True-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-2-False-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-2-False-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-3-True-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-3-True-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-3-False-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-3-3-False-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-None-True-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-None-True-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-None-False-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-None-False-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-1-True-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-1-True-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-1-False-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-1-False-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-2-True-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-2-True-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-2-False-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-2-False-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-3-True-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-3-True-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-3-False-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[mean-4-3-False-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-None-True-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-None-True-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-None-False-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-None-False-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-1-True-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-1-True-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 150 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 150 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 311 warnings in 3.65s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-1-False-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-1-False-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-2-True-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-2-True-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-2-False-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-2-False-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-3-True-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-3-True-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-3-False-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-2-3-False-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-None-True-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-None-True-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-None-False-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-None-False-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-1-True-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-1-True-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-1-False-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-1-False-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-2-True-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-2-True-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-2-False-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-2-False-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-3-True-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-3-True-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-3-False-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-3-3-False-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-None-True-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-None-True-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-None-False-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-None-False-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-1-True-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-1-True-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-1-False-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-1-False-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-2-True-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-2-True-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-2-False-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-2-False-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-3-True-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-3-True-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-3-False-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[std-4-3-False-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-None-True-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-None-True-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-None-False-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-None-False-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-1-True-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-1-True-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-1-False-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-1-False-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 150 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 150 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 311 warnings in 3.65s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-2-True-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-2-True-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-2-False-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-2-False-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-3-True-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-3-True-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-3-False-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-1-3-False-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-None-True-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-None-True-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-None-False-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-None-False-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-1-True-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-1-True-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-1-False-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-1-False-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-2-True-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-2-True-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-2-False-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-2-False-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-3-True-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-3-True-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-3-False-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-2-3-False-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-None-True-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-None-True-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-None-False-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-None-False-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-1-True-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-1-True-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-1-False-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-1-False-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-2-True-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-2-True-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-2-False-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-2-False-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-3-True-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-3-True-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-3-False-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-3-3-False-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-None-True-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-None-True-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-None-False-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-None-False-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-1-True-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-1-True-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-1-False-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-1-False-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-2-True-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-2-True-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 150 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 150 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 311 warnings in 3.69s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-2-False-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-2-False-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-3-True-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-3-True-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-3-False-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[var-4-3-False-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-None-True-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-None-True-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-None-False-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-None-False-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-1-True-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-1-True-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-1-False-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-1-False-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-2-True-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-2-True-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-2-False-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-2-False-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-3-True-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-3-True-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-3-False-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-1-3-False-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-None-True-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-None-True-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-None-False-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-None-False-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-1-True-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-1-True-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-1-False-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-1-False-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-2-True-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-2-True-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-2-False-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-2-False-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-3-True-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-3-True-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-3-False-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-2-3-False-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-None-True-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-None-True-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-None-False-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-None-False-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-1-True-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-1-True-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-1-False-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-1-False-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-2-True-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-2-True-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-2-False-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-2-False-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 150 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 150 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 311 warnings in 3.72s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-3-True-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-3-True-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-3-False-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-3-3-False-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-None-True-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-None-True-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-None-False-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-None-False-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-1-True-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-1-True-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-1-False-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-1-False-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-2-True-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-2-True-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-2-False-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-2-False-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-3-True-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-3-True-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-3-False-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[min-4-3-False-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-None-True-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-None-True-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-None-False-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-None-False-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-1-True-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-1-True-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-1-False-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-1-False-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-2-True-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-2-True-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-2-False-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-2-False-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-3-True-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-3-True-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-3-False-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-1-3-False-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-None-True-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-None-True-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-None-False-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-None-False-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-1-True-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-1-True-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-1-False-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-1-False-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-2-True-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-2-True-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-2-False-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-2-False-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-3-True-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-3-True-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 150 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 150 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 311 warnings in 3.62s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-3-False-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-2-3-False-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-None-True-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-None-True-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-None-False-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-None-False-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-1-True-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-1-True-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-1-False-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-1-False-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-2-True-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-2-True-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-2-False-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-2-False-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-3-True-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-3-True-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-3-False-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-3-3-False-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-None-True-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-None-True-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-None-False-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-None-False-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-1-True-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-1-True-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-1-False-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-1-False-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-2-True-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-2-True-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-2-False-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-2-False-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-3-True-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-3-True-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-3-False-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[max-4-3-False-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-None-True-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-None-True-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-None-False-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-None-False-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-1-True-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-1-True-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-1-False-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-1-False-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-2-True-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-2-True-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-2-False-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-2-False-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-3-True-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-3-True-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-3-False-1] PASSED [ 98%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-1-3-False-2] PASSED [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 150 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 150 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 311 warnings in 3.66s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 50 items
+
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-None-True-1] PASSED [  2%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-None-True-2] PASSED [  4%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-None-False-1] PASSED [  6%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-None-False-2] PASSED [  8%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-1-True-1] PASSED [ 10%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-1-True-2] PASSED [ 12%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-1-False-1] PASSED [ 14%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-1-False-2] PASSED [ 16%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-2-True-1] PASSED [ 18%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-2-True-2] PASSED [ 20%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-2-False-1] PASSED [ 22%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-2-False-2] PASSED [ 24%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-3-True-1] PASSED [ 26%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-3-True-2] PASSED [ 28%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-3-False-1] PASSED [ 30%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-2-3-False-2] PASSED [ 32%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-None-True-1] PASSED [ 34%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-None-True-2] PASSED [ 36%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-None-False-1] PASSED [ 38%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-None-False-2] PASSED [ 40%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-1-True-1] PASSED [ 42%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-1-True-2] PASSED [ 44%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-1-False-1] PASSED [ 46%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-1-False-2] PASSED [ 48%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-2-True-1] PASSED [ 50%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-2-True-2] PASSED [ 52%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-2-False-1] PASSED [ 54%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-2-False-2] PASSED [ 56%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-3-True-1] PASSED [ 58%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-3-True-2] PASSED [ 60%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-3-False-1] PASSED [ 62%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-3-3-False-2] PASSED [ 64%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-None-True-1] PASSED [ 66%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-None-True-2] PASSED [ 68%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-None-False-1] PASSED [ 70%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-None-False-2] PASSED [ 72%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-1-True-1] PASSED [ 74%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-1-True-2] PASSED [ 76%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-1-False-1] PASSED [ 78%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-1-False-2] PASSED [ 80%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-2-True-1] PASSED [ 82%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-2-True-2] PASSED [ 84%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-2-False-1] PASSED [ 86%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-2-False-2] PASSED [ 88%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-3-True-1] PASSED [ 90%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-3-True-2] PASSED [ 92%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-3-False-1] PASSED [ 94%]
+xarray/tests/test_dataset.py::test_rolling_reduce[median-4-3-False-2] PASSED [ 96%]
+xarray/tests/test_dataset.py::test_raise_no_warning_for_nan_in_binary_ops PASSED [ 98%]
+xarray/tests/test_dataset.py::test_differentiate[1-False] PASSED         [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 144 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py: 144 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+xarray/tests/test_dataset.py::test_raise_no_warning_for_nan_in_binary_ops
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/_pytest/python.py:194: PytestRemovedIn8Warning: Passing None has been deprecated.
+  See https://docs.pytest.org/en/latest/how-to/capture-warnings.html#additional-use-cases-of-warnings-in-tests for alternatives in common use cases.
+    result = testfunction(**testargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 300 warnings in 3.57s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.15, pytest-7.4.0, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/testbed/.hypothesis/examples'))
+rootdir: /testbed
+configfile: setup.cfg
+plugins: xdist-3.6.1, cov-6.0.0, hypothesis-6.115.6, env-1.1.5
+collecting ... collected 12 items
+
+xarray/tests/test_dataset.py::test_differentiate[2-False] PASSED         [  8%]
+xarray/tests/test_dataset.py::test_differentiate_datetime[False] PASSED  [ 16%]
+xarray/tests/test_dataset.py::test_differentiate_cftime[False] PASSED    [ 25%]
+xarray/tests/test_dataset.py::test_integrate[True] PASSED                [ 33%]
+xarray/tests/test_dataset.py::test_integrate[False] PASSED               [ 41%]
+xarray/tests/test_dataset.py::test_trapz_datetime[np-True] PASSED        [ 50%]
+xarray/tests/test_dataset.py::test_trapz_datetime[np-False] PASSED       [ 58%]
+xarray/tests/test_dataset.py::test_trapz_datetime[cftime-True] PASSED    [ 66%]
+xarray/tests/test_dataset.py::test_trapz_datetime[cftime-False] PASSED   [ 75%]
+xarray/tests/test_dataset.py::test_no_dict PASSED                        [ 83%]
+xarray/tests/test_dataset.py::test_subclass_slots PASSED                 [ 91%]
+xarray/tests/test_dataset.py::test_weakref PASSED                        [100%]
+
+=============================== warnings summary ===============================
+xarray/__init__.py:1
+  /testbed/xarray/__init__.py:1: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+xarray/core/dask_array_compat.py:16
+xarray/core/dask_array_compat.py:16
+  /testbed/xarray/core/dask_array_compat.py:16: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.0.0"):
+
+xarray/core/dask_array_compat.py:149
+xarray/core/dask_array_compat.py:149
+  /testbed/xarray/core/dask_array_compat.py:149: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) >= LooseVersion("2.8.1"):
+
+xarray/core/dask_array_compat.py:186
+xarray/core/dask_array_compat.py:186
+  /testbed/xarray/core/dask_array_compat.py:186: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(dask_version) > LooseVersion("2.9.0"):
+
+xarray/core/pdcompat.py:45
+  /testbed/xarray/core/pdcompat.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(pd.__version__) < "0.25.0":
+
+../opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: 1 warning
+xarray/tests/test_dataset.py: 15 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/setuptools/_distutils/version.py:345: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+xarray/tests/__init__.py:54
+xarray/tests/__init__.py:54
+  /testbed/xarray/tests/__init__.py:54: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return version.LooseVersion(vstring)
+
+xarray/tests/test_dataset.py::test_differentiate_cftime[False]
+xarray/tests/test_dataset.py::test_differentiate_cftime[False]
+xarray/tests/test_dataset.py::test_trapz_datetime[cftime-True]
+xarray/tests/test_dataset.py::test_trapz_datetime[cftime-True]
+xarray/tests/test_dataset.py::test_trapz_datetime[cftime-False]
+xarray/tests/test_dataset.py::test_trapz_datetime[cftime-False]
+  /testbed/xarray/coding/cftimeindex.py:113: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(cftime.__version__) < LooseVersion("1.0.4"):
+
+xarray/tests/test_dataset.py: 20 warnings
+  /testbed/xarray/coding/cftime_offsets.py:243: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(cftime.__version__) < LooseVersion("1.0.4"):
+
+xarray/tests/test_dataset.py: 15 warnings
+  /testbed/xarray/core/duck_array_ops.py:216: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    dask_version is not None and LooseVersion(dask_version) >= "2.9.1"
+
+xarray/tests/test_dataset.py::test_trapz_datetime[np-True]
+xarray/tests/test_dataset.py::test_trapz_datetime[cftime-True]
+  /opt/miniconda3/envs/testbed/lib/python3.10/site-packages/dask/array/core.py:1706: FutureWarning: The `numpy.trapz` function is not implemented by Dask array. You may want to use the da.map_blocks function or something similar to silence this warning. Your code may stop working in a future release.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 12 passed, 69 warnings in 3.43s ========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['xarray/tests/test_dataset.py::TestDataset::test_to_stacked_array_to_unstacked_dataset']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

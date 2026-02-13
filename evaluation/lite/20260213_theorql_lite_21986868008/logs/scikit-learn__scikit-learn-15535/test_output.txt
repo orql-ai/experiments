@@ -1,0 +1,146 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (8 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 8 items
+
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[adjusted_mutual_info_score] PASSED [ 12%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[adjusted_rand_score] PASSED [ 25%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[completeness_score] PASSED [ 37%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[homogeneity_score] PASSED [ 50%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[mutual_info_score] PASSED [ 62%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[normalized_mutual_info_score] PASSED [ 75%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[v_measure_score] PASSED [ 87%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[fowlkes_mallows_score] PASSED [100%]
+
+============================== 8 passed in 0.12s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-15535:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-15535
+c528239a37ca: Pulling fs layer
+f93009d70e27: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+466f0cbb5709: Pulling fs layer
+09b61b6fd610: Pulling fs layer
+ddd45cdfc8c4: Pulling fs layer
+ac5b61163589: Pulling fs layer
+4c9966e27f35: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+b1b86685def8: Pulling fs layer
+836b79e2a6e5: Download complete
+466f0cbb5709: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+b1b86685def8: Download complete
+4c9966e27f35: Download complete
+09b61b6fd610: Download complete
+7478e0ac0f23: Download complete
+c528239a37ca: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+f93009d70e27: Download complete
+a2f6138ded93: Download complete
+ddd45cdfc8c4: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+466f0cbb5709: Pull complete
+09b61b6fd610: Pull complete
+f93009d70e27: Pull complete
+b1b86685def8: Pull complete
+4c9966e27f35: Pull complete
+ddd45cdfc8c4: Pull complete
+c528239a37ca: Pull complete
+Digest: sha256:f17594914ae4db24ea94706823fb1520dc3aa3fb32dd1f23c67d11608cd6e110
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-15535:latest
+
+
+===== PHASE: PASS_TO_PASS (52 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 50 items
+
+sklearn/metrics/cluster/tests/test_common.py::test_symmetric_non_symmetric_union PASSED [  2%]
+sklearn/metrics/cluster/tests/test_common.py::test_symmetry[adjusted_rand_score-y10-y20] PASSED [  4%]
+sklearn/metrics/cluster/tests/test_common.py::test_symmetry[v_measure_score-y11-y21] PASSED [  6%]
+sklearn/metrics/cluster/tests/test_common.py::test_symmetry[mutual_info_score-y12-y22] PASSED [  8%]
+sklearn/metrics/cluster/tests/test_common.py::test_symmetry[adjusted_mutual_info_score-y13-y23] PASSED [ 10%]
+sklearn/metrics/cluster/tests/test_common.py::test_symmetry[normalized_mutual_info_score-y14-y24] PASSED [ 12%]
+sklearn/metrics/cluster/tests/test_common.py::test_symmetry[fowlkes_mallows_score-y15-y25] PASSED [ 14%]
+sklearn/metrics/cluster/tests/test_common.py::test_non_symmetry[homogeneity_score-y10-y20] PASSED [ 16%]
+sklearn/metrics/cluster/tests/test_common.py::test_non_symmetry[completeness_score-y11-y21] PASSED [ 18%]
+sklearn/metrics/cluster/tests/test_common.py::test_normalized_output[adjusted_rand_score] PASSED [ 20%]
+sklearn/metrics/cluster/tests/test_common.py::test_normalized_output[homogeneity_score] PASSED [ 22%]
+sklearn/metrics/cluster/tests/test_common.py::test_normalized_output[completeness_score] PASSED [ 24%]
+sklearn/metrics/cluster/tests/test_common.py::test_normalized_output[v_measure_score] PASSED [ 26%]
+sklearn/metrics/cluster/tests/test_common.py::test_normalized_output[adjusted_mutual_info_score] PASSED [ 28%]
+sklearn/metrics/cluster/tests/test_common.py::test_normalized_output[fowlkes_mallows_score] PASSED [ 30%]
+sklearn/metrics/cluster/tests/test_common.py::test_normalized_output[normalized_mutual_info_score] PASSED [ 32%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[adjusted_mutual_info_score] PASSED [ 34%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[adjusted_rand_score] PASSED [ 36%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[completeness_score] PASSED [ 38%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[homogeneity_score] PASSED [ 40%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[mutual_info_score] PASSED [ 42%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[normalized_mutual_info_score] PASSED [ 44%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[v_measure_score] PASSED [ 46%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[fowlkes_mallows_score] PASSED [ 48%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[silhouette_score] PASSED [ 50%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[silhouette_manhattan] PASSED [ 52%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[calinski_harabasz_score] PASSED [ 54%]
+sklearn/metrics/cluster/tests/test_common.py::test_permute_labels[davies_bouldin_score] PASSED [ 56%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[silhouette_score] PASSED [ 58%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[silhouette_manhattan] PASSED [ 60%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[calinski_harabasz_score] PASSED [ 62%]
+sklearn/metrics/cluster/tests/test_common.py::test_format_invariance[davies_bouldin_score] PASSED [ 64%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[adjusted_mutual_info_score] PASSED [ 66%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[adjusted_rand_score] PASSED [ 68%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[completeness_score] PASSED [ 70%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[homogeneity_score] PASSED [ 72%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[mutual_info_score] PASSED [ 74%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[normalized_mutual_info_score] PASSED [ 76%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[v_measure_score] PASSED [ 78%]
+sklearn/metrics/cluster/tests/test_common.py::test_single_sample[fowlkes_mallows_score] PASSED [ 80%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[adjusted_mutual_info_score-adjusted_mutual_info_score] PASSED [ 82%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[adjusted_rand_score-adjusted_rand_score] PASSED [ 84%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[completeness_score-completeness_score] PASSED [ 86%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[homogeneity_score-homogeneity_score] PASSED [ 88%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[mutual_info_score-mutual_info_score] PASSED [ 90%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[normalized_mutual_info_score-normalized_mutual_info_score] PASSED [ 92%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[v_measure_score-v_measure_score] PASSED [ 94%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[fowlkes_mallows_score-fowlkes_mallows_score] PASSED [ 96%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[silhouette_score-silhouette_score] PASSED [ 98%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[silhouette_manhattan-metric_func9] PASSED [100%]
+
+============================== 50 passed in 0.25s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 2 items
+
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[calinski_harabasz_score-calinski_harabasz_score] PASSED [ 50%]
+sklearn/metrics/cluster/tests/test_common.py::test_inf_nan_input[davies_bouldin_score-davies_bouldin_score] PASSED [100%]
+
+============================== 2 passed in 0.07s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

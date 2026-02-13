@@ -1,0 +1,673 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        12422850
+hash randomization: on (PYTHONHASHSEED=3956434090)
+
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+
+================== tests finished: 1 passed, in 0.12 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13471:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-13471
+f8b01de4059d: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+ed3dada71338: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+b08895a5c216: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+fead64d2d247: Pulling fs layer
+fead64d2d247: Download complete
+2f341c31f3b7: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ed3dada71338: Download complete
+5c809fd8a9af: Download complete
+f8b01de4059d: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+b08895a5c216: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+fead64d2d247: Pull complete
+5c809fd8a9af: Pull complete
+0b326ada86d1: Pull complete
+f8b01de4059d: Pull complete
+Digest: sha256:ead5d3e7dab38e0f615e670f10d8a2c285134cc59bd204ed6a92515dc7da1ae8
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13471:latest
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+===== PHASE: PASS_TO_PASS (82 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        84013285
+hash randomization: on (PYTHONHASHSEED=2918974494)
+
+sympy/assumptions/tests/test_query.py[4] EEEE                             [FAIL]
+Esympy/codegen/tests/test_ast.py[1] .                                       [OK]
+sympy/combinatorics/tests/test_partitions.py[1] .                           [OK]
+sympy/core/tests/test_arit.py[1] .                                          [OK]
+sympy/core/tests/test_complex.py[1] .                                       [OK]
+sympy/core/tests/test_eval_power.py[1] .                                    [OK]
+sympy/core/tests/test_expr.py[1] .                                          [OK]
+sympy/core/tests/test_match.py[1] .                                         [OK]
+sympy/core/tests/test_numbers.py[56] ...........................................
+.............                                                               [OK]
+sympy/core/tests/test_priority.py[1] .                                      [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/core/tests/test_symbol.py[1] .                                        [OK]
+sympy/core/tests/test_sympify.py[1] .                                       [OK]
+sympy/diffgeom/tests/test_diffgeom.py[1] .                                  [OK]
+sympy/external/tests/test_codegen.py[1] .                                   [OK]
+sympy/geometry/tests/test_line.py[2] ..                                     [OK]
+sympy/geometry/tests/test_polygon.py[1] .                                   [OK]
+sympy/geometry/tests/test_util.py[1] .                                      [OK]
+sympy/holonomic/tests/test_holonomic.py[1] E                              [FAIL]
+sympy/integrals/tests/test_integrals.py[18] ...........f.....f              [OK]
+sympy/integrals/tests/test_risch.py[7] .......                              [OK]
+sympy/interactive/tests/test_interactive.py[1] .                            [OK]
+sympy/logic/tests/test_boolalg.py[1] .                                      [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_immutable.py[1] .                                 [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+sympy/ntheory/tests/test_modular.py[1] .                                    [OK]
+sympy/physics/tests/test_secondquant.py[4] ....                             [OK]
+sympy/plotting/intervalmath/tests/test_intervalmath.py[6] ......            [OK]
+sympy/polys/agca/tests/test_ideals.py[1] .                                  [OK]
+sympy/polys/agca/tests/test_modules.py[2] ..                                [OK]
+sympy/polys/tests/test_modulargcd.py[5] ..EEE                             [FAIL]
+sympy/polys/tests/test_polyfuncs.py[1] .                                    [OK]
+sympy/polys/tests/test_polytools.py[1] .                                    [OK]
+sympy/polys/tests/test_specialpolys.py[1] .                                 [OK]
+sympy/polys/tests/test_subresultants_qq_zz.py[3] ...                        [OK]
+sympy/printing/tests/test_latex.py[3] ...                                   [OK]
+sympy/printing/tests/test_numpy.py[1] s                                     [OK]
+sympy/printing/tests/test_repr.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[3] ...                                     [OK]
+sympy/series/tests/test_gruntz.py[1] .                                      [OK]
+sympy/sets/tests/test_fancysets.py[2] ..                                    [OK]
+sympy/sets/tests/test_sets.py[9] .........                                  [OK]
+sympy/simplify/tests/test_cse.py[1] f                                       [OK]
+sympy/unify/tests/test_rewrite.py[1] .                                      [OK]
+sympy/utilities/tests/test_codegen.py[2] ..                                 [OK]
+sympy/utilities/tests/test_lambdify.py[1] .                                 [OK]
+sympy/utilities/tests/test_module_imports.py[1] f                           [OK]
+sympy/utilities/tests/test_pickling.py[1] .                                 [OK]
+
+________________________________________________________________________________
+_______________ sympy/assumptions/tests/test_query.py:test_int_1 _______________
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 26, in test_int_1
+    assert ask(Q.commutative(z)) is True
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+______________ sympy/assumptions/tests/test_query.py:test_int_11 _______________
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 46, in test_int_11
+    assert ask(Q.commutative(z)) is True
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+______________ sympy/assumptions/tests/test_query.py:test_int_12 _______________
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 66, in test_int_12
+    assert ask(Q.commutative(z)) is True
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+______________ sympy/assumptions/tests/test_query.py:test_integer ______________
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 1494, in test_integer
+    assert ask(Q.integer(x)) is None
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+______________ sympy/assumptions/tests/test_query.py:test_integer ______________
+  File "/testbed/sympy/assumptions/tests/test_satask.py", line 1, in <module>
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+____________ sympy/holonomic/tests/test_holonomic.py:test_integrate ____________
+  File "/testbed/sympy/holonomic/tests/test_holonomic.py", line 624, in test_integrate
+    p = expr_to_holonomic(sin(x)).integrate((x, 0, x)).to_expr()
+  File "/testbed/sympy/holonomic/holonomic.py", line 2076, in to_expr
+    return hyperexpand(self.to_hyper()).simplify()
+  File "/testbed/sympy/simplify/hyperexpand.py", line 2473, in hyperexpand
+    return f.replace(hyper, do_replace).replace(meijerg, do_meijer)
+  File "/testbed/sympy/core/basic.py", line 1410, in replace
+    rv = bottom_up(self, rec_replace, atoms=True)
+  File "/testbed/sympy/simplify/simplify.py", line 1013, in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+  File "/testbed/sympy/simplify/simplify.py", line 1013, in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+  File "/testbed/sympy/simplify/simplify.py", line 1017, in bottom_up
+    rv = F(rv)
+  File "/testbed/sympy/core/basic.py", line 1395, in rec_replace
+    new = _value(expr, result)
+  File "/testbed/sympy/core/basic.py", line 1338, in <lambda>
+    _value = lambda expr, result: value(*expr.args)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 2462, in do_replace
+    r = _hyperexpand(Hyper_Function(ap, bq), z, rewrite=rewrite)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 1983, in _hyperexpand
+    _collection = FormulaCollection()
+  File "/testbed/sympy/simplify/hyperexpand.py", line 806, in __init__
+    add_formulae(self.formulae)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 210, in add_formulae
+    Matrix([ sqrt(pi)*(I*sinh(2*sqrt(z))*fresnels(2*root(z, 4)*exp(I*pi/4)/sqrt(pi))
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 439, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 250, in __new__
+    evaluated = cls.eval(*args)
+  File "/testbed/sympy/functions/elementary/exponential.py", line 251, in eval
+    if ask(Q.integer(2*coeff)):
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+____ sympy/polys/tests/test_modulargcd.py:test_modgcd_multivariate_integers ____
+  File "/testbed/sympy/polys/tests/test_modulargcd.py", line 162, in test_modgcd_multivariate_integers
+    assert modgcd_multivariate(f, g) == (x + 1, 2*x + 2, 1)
+  File "/testbed/sympy/polys/modulargcd.py", line 1179, in modgcd_multivariate
+    hp = _modgcd_multivariate_p(fp, gp, p, degbound, contbound)
+  File "/testbed/sympy/polys/modulargcd.py", line 1018, in _modgcd_multivariate_p
+    a = random.sample(points, 1)[0]
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/random.py", line 428, in sample
+    _warn('Sampling from a set deprecated\n'
+DeprecationWarning: Sampling from a set deprecated
+since Python 3.9 and will be removed in a subsequent version.
+________________________________________________________________________________
+_______ sympy/polys/tests/test_modulargcd.py:test_modgcd_algebraic_field _______
+  File "/testbed/sympy/polys/tests/test_modulargcd.py", line 291, in test_modgcd_algebraic_field
+    assert func_field_modgcd(f, g) == (one, f, g)
+  File "/testbed/sympy/polys/modulargcd.py", line 2271, in func_field_modgcd
+    h = _func_field_modgcd_m(f_, g_, minpoly)
+  File "/testbed/sympy/polys/modulargcd.py", line 1942, in _func_field_modgcd_m
+    hp = _func_field_modgcd_p(fp, gp, minpolyp, p)
+  File "/testbed/sympy/polys/modulargcd.py", line 1615, in _func_field_modgcd_p
+    a = random.sample(points, 1)[0]
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/random.py", line 428, in sample
+    _warn('Sampling from a set deprecated\n'
+DeprecationWarning: Sampling from a set deprecated
+since Python 3.9 and will be removed in a subsequent version.
+________________________________________________________________________________
+_________ sympy/polys/tests/test_modulargcd.py:test_modgcd_func_field __________
+  File "/testbed/sympy/polys/tests/test_modulargcd.py", line 325, in test_modgcd_func_field
+    assert _func_field_modgcd_m(f, g, minpoly) == R.one
+  File "/testbed/sympy/polys/modulargcd.py", line 1942, in _func_field_modgcd_m
+    hp = _func_field_modgcd_p(fp, gp, minpolyp, p)
+  File "/testbed/sympy/polys/modulargcd.py", line 1615, in _func_field_modgcd_p
+    a = random.sample(points, 1)[0]
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/random.py", line 428, in sample
+    _warn('Sampling from a set deprecated\n'
+DeprecationWarning: Sampling from a set deprecated
+since Python 3.9 and will be removed in a subsequent version.
+
+ tests finished: 147 passed, 1 skipped, 4 expected to fail, 9 exceptions, 
+in 11.24 seconds 
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+  File "<string>", line 1, in <module>
+  File "/testbed/sympy/utilities/runtests.py", line 574, in _test
+    return int(not t.test(sort=sort, timeout=timeout, slow=slow,
+  File "/testbed/sympy/utilities/runtests.py", line 1087, in test
+    self.test_file(f, sort, timeout, slow,
+  File "/testbed/sympy/utilities/runtests.py", line 1224, in test_file
+    f()
+  File "/testbed/sympy/holonomic/tests/test_holonomic.py", line 620, in test_integrate
+    R, Dx = DifferentialOperators(ZZ.old_poly_ring(x), 'Dx')
+  File "/testbed/sympy/polys/domains/domain.py", line 391, in old_poly_ring
+    from sympy.polys.domains.old_polynomialring import PolynomialRing
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/testbed/sympy/polys/domains/old_polynomialring.py", line 17, in <module>
+    from sympy.polys.agca.modules import FreeModulePolyRing
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/testbed/sympy/polys/agca/__init__.py", line 3, in <module>
+    from .homomorphisms import homomorphism
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/testbed/sympy/polys/agca/homomorphisms.py", line 11, in <module>
+    from sympy.polys.agca.modules import (Module, FreeModule, QuotientModule,
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/warnings.py", line 109, in _showwarnmsg
+    sw(msg.message, msg.category, msg.filename, msg.lineno,
+  File "/testbed/sympy/geometry/tests/test_line.py", line 30, in warn_with_traceback
+    traceback.print_stack()
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+  File "<string>", line 1, in <module>
+  File "/testbed/sympy/utilities/runtests.py", line 574, in _test
+    return int(not t.test(sort=sort, timeout=timeout, slow=slow,
+  File "/testbed/sympy/utilities/runtests.py", line 1087, in test
+    self.test_file(f, sort, timeout, slow,
+  File "/testbed/sympy/utilities/runtests.py", line 1155, in test_file
+    exec_(code, gl)
+  File "/testbed/sympy/printing/tests/test_latex.py", line 39, in <module>
+    from sympy.vector import CoordSys3D, Cross, Curl, Dot, Divergence, Gradient
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/testbed/sympy/vector/__init__.py", line 1, in <module>
+    from sympy.vector.vector import (Vector, VectorAdd, VectorMul,
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/testbed/sympy/vector/vector.py", line 6, in <module>
+    from sympy.vector.coordsysrect import CoordSys3D
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/warnings.py", line 109, in _showwarnmsg
+    sw(msg.message, msg.category, msg.filename, msg.lineno,
+  File "/testbed/sympy/geometry/tests/test_line.py", line 30, in warn_with_traceback
+    traceback.print_stack()
+/testbed/sympy/vector/coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+  File "<string>", line 1, in <module>
+  File "/testbed/sympy/utilities/runtests.py", line 574, in _test
+    return int(not t.test(sort=sort, timeout=timeout, slow=slow,
+  File "/testbed/sympy/utilities/runtests.py", line 1087, in test
+    self.test_file(f, sort, timeout, slow,
+  File "/testbed/sympy/utilities/runtests.py", line 1155, in test_file
+    exec_(code, gl)
+  File "/testbed/sympy/printing/tests/test_latex.py", line 39, in <module>
+    from sympy.vector import CoordSys3D, Cross, Curl, Dot, Divergence, Gradient
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/testbed/sympy/vector/__init__.py", line 1, in <module>
+    from sympy.vector.vector import (Vector, VectorAdd, VectorMul,
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/testbed/sympy/vector/vector.py", line 6, in <module>
+    from sympy.vector.coordsysrect import CoordSys3D
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/warnings.py", line 109, in _showwarnmsg
+    sw(msg.message, msg.category, msg.filename, msg.lineno,
+  File "/testbed/sympy/geometry/tests/test_line.py", line 30, in warn_with_traceback
+    traceback.print_stack()
+/testbed/sympy/vector/coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        41599553
+hash randomization: on (PYTHONHASHSEED=1237591607)
+
+sympy/assumptions/tests/test_query.py[5] EEEE.                            [FAIL]
+sympy/calculus/tests/test_util.py[1] .                                      [OK]
+sympy/concrete/tests/test_sums_products.py[1] .                             [OK]
+sympy/core/tests/test_assumptions.py[3] ...                                 [OK]
+sympy/core/tests/test_complex.py[1] .                                       [OK]
+sympy/core/tests/test_expr.py[3] ...                                        [OK]
+sympy/core/tests/test_match.py[1] .                                         [OK]
+sympy/core/tests/test_numbers.py[32] ................................       [OK]
+sympy/core/tests/test_relational.py[5] .....                                [OK]
+sympy/external/tests/test_codegen.py[1] .                                   [OK]
+sympy/functions/elementary/tests/test_hyperbolic.py[2] ..                   [OK]
+sympy/integrals/tests/test_heurisch.py[1] .                                 [OK]
+sympy/ntheory/tests/test_generate.py[2] ..                                  [OK]
+Esympy/physics/quantum/tests/test_hilbert.py[1] .                           [OK]
+sympy/physics/tests/test_secondquant.py[1] .                                [OK]
+sympy/physics/vector/tests/test_printing.py[1] .                            [OK]
+sympy/polys/tests/test_constructor.py[1] .                                  [OK]
+sympy/polys/tests/test_polytools.py[1] .                                    [OK]
+sympy/polys/tests/test_ring_series.py[1] .                                  [OK]
+sympy/printing/pretty/tests/test_pretty.py[1] .                             [OK]
+sympy/printing/tests/test_latex.py[71] ........f....EE..........................
+...........EE.................                                            [FAIL]
+sympy/printing/tests/test_numpy.py[1] s                                     [OK]
+sympy/series/tests/test_gruntz.py[3] ...                                    [OK]
+sympy/sets/tests/test_sets.py[1] .                                          [OK]
+sympy/simplify/tests/test_simplify.py[1] .                                  [OK]
+sympy/solvers/tests/test_decompogen.py[1] .                                 [OK]
+sympy/tensor/tests/test_indexed.py[1] E                                   [FAIL]
+sympy/utilities/tests/test_codegen.py[2] ..                                 [OK]
+sympy/utilities/tests/test_codegen_julia.py[1] .                            [OK]
+sympy/utilities/tests/test_codegen_octave.py[1] .                           [OK]
+sympy/utilities/tests/test_codegen_rust.py[1] .                             [OK]
+sympy/vector/tests/test_printing.py[1] .                                    [OK]
+
+________________________________________________________________________________
+______________ sympy/assumptions/tests/test_query.py:test_complex ______________
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 1082, in test_complex
+    assert ask(Q.complex(x)) is None
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+___________ sympy/assumptions/tests/test_query.py:test_composite_ask ___________
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 1951, in test_composite_ask
+    assert ask(Q.negative(x) & Q.integer(x),
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+_______ sympy/assumptions/tests/test_query.py:test_composite_proposition _______
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 1956, in test_composite_proposition
+    assert ask(True) is True
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+_______ sympy/assumptions/tests/test_query.py:test_composite_assumptions _______
+  File "/testbed/sympy/assumptions/tests/test_query.py", line 1978, in test_composite_assumptions
+    assert ask(Q.real(x), Q.real(x) & Q.real(y)) is True
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+____________ sympy/ntheory/tests/test_generate.py:test_compositepi _____________
+  File "/testbed/sympy/physics/quantum/tests/test_gate.py", line 5, in <module>
+    from sympy.physics.quantum.gate import (XGate, YGate, ZGate, random_circuit,
+  File "/testbed/sympy/physics/quantum/gate.py", line 33, in <module>
+    from sympy.physics.quantum.matrixcache import matrix_cache
+  File "/testbed/sympy/physics/quantum/matrixcache.py", line 96, in <module>
+    matrix_cache.cache_matrix('T', Matrix([[1, 0], [0, exp(I*pi/4)]]))
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 439, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 250, in __new__
+    evaluated = cls.eval(*args)
+  File "/testbed/sympy/functions/elementary/exponential.py", line 251, in eval
+    if ask(Q.integer(2*coeff)):
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+____________ sympy/printing/tests/test_latex.py:test_latex_indexed _____________
+  File "/testbed/sympy/printing/tests/test_latex.py", line 497, in test_latex_indexed
+    indexed_latex = latex(Psi_indexed[0] * conjugate(Psi_indexed[0]))
+  File "/testbed/sympy/tensor/indexed.py", line 414, in __getitem__
+    return Indexed(self, indices, **kw_args)
+  File "/testbed/sympy/tensor/indexed.py", line 155, in __new__
+    if isinstance(base, (NDimArray, collections.Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+__________ sympy/printing/tests/test_latex.py:test_latex_derivatives ___________
+  File "/testbed/sympy/printing/tests/test_latex.py", line 510, in test_latex_derivatives
+    assert latex(diff(x**3, x, evaluate=False)) == \
+  File "/testbed/sympy/printing/latex.py", line 2202, in latex
+    return LatexPrinter(settings).doprint(expr)
+  File "/testbed/sympy/printing/latex.py", line 175, in doprint
+    tex = Printer.doprint(self, expr)
+  File "/testbed/sympy/printing/printer.py", line 233, in doprint
+    return self._str(self._print(expr))
+  File "/testbed/sympy/printing/printer.py", line 257, in _print
+    return getattr(self, printmethod)(expr, *args, **kwargs)
+  File "/testbed/sympy/printing/latex.py", line 600, in _print_Derivative
+    if requires_partial(expr):
+  File "/testbed/sympy/printing/conventions.py", line 80, in requires_partial
+    if not isinstance(expr.free_symbols, collections.Iterable):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+_____ sympy/printing/tests/test_latex.py:test_latex_matrix_with_functions ______
+  File "/testbed/sympy/printing/tests/test_latex.py", line 938, in test_latex_matrix_with_functions
+    assert latex(M) == expected
+  File "/testbed/sympy/printing/latex.py", line 2202, in latex
+    return LatexPrinter(settings).doprint(expr)
+  File "/testbed/sympy/printing/latex.py", line 175, in doprint
+    tex = Printer.doprint(self, expr)
+  File "/testbed/sympy/printing/printer.py", line 233, in doprint
+    return self._str(self._print(expr))
+  File "/testbed/sympy/printing/printer.py", line 257, in _print
+    return getattr(self, printmethod)(expr, *args, **kwargs)
+  File "/testbed/sympy/printing/latex.py", line 1368, in _print_MatrixBase
+    lines.append(" & ".join([ self._print(i) for i in expr[line, :] ]))
+  File "/testbed/sympy/printing/latex.py", line 1368, in <listcomp>
+    lines.append(" & ".join([ self._print(i) for i in expr[line, :] ]))
+  File "/testbed/sympy/printing/printer.py", line 257, in _print
+    return getattr(self, printmethod)(expr, *args, **kwargs)
+  File "/testbed/sympy/printing/latex.py", line 725, in _print_Function
+    args = [ str(self._print(arg)) for arg in expr.args ]
+  File "/testbed/sympy/printing/latex.py", line 725, in <listcomp>
+    args = [ str(self._print(arg)) for arg in expr.args ]
+  File "/testbed/sympy/printing/printer.py", line 257, in _print
+    return getattr(self, printmethod)(expr, *args, **kwargs)
+  File "/testbed/sympy/printing/latex.py", line 600, in _print_Derivative
+    if requires_partial(expr):
+  File "/testbed/sympy/printing/conventions.py", line 80, in requires_partial
+    if not isinstance(expr.free_symbols, collections.Iterable):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+___________ sympy/printing/tests/test_latex.py:test_latex_NDimArray ____________
+  File "/testbed/sympy/printing/tests/test_latex.py", line 945, in test_latex_NDimArray
+    M = ArrayType([[1 / x, y], [z, w]])
+  File "/testbed/sympy/tensor/array/dense_ndim_array.py", line 138, in __new__
+    return cls._new(iterable, shape, **kwargs)
+  File "/testbed/sympy/tensor/array/dense_ndim_array.py", line 144, in _new
+    shape, flat_list = cls._handle_ndarray_creation_inputs(iterable, shape, **kwargs)
+  File "/testbed/sympy/tensor/array/ndim_array.py", line 134, in _handle_ndarray_creation_inputs
+    elif shape is None and isinstance(iterable, collections.Iterable):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+___________ sympy/tensor/tests/test_indexed.py:test_complex_indices ____________
+  File "/testbed/sympy/tensor/tests/test_indexed.py", line 261, in test_complex_indices
+    A = Indexed('A', i, i + j)
+  File "/testbed/sympy/tensor/indexed.py", line 155, in __new__
+    if isinstance(base, (NDimArray, collections.Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+
+ tests finished: 139 passed, 1 skipped, 1 expected to fail, 10 exceptions, 
+in 6.66 seconds 
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/physics/vector/printing.py:150: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if len(base_split) is not 1:
+/testbed/sympy/vector/coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if transformation.name is 'spherical':
+/testbed/sympy/vector/coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif transformation.name is 'cylindrical':
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_integers_cache', 'test_seterr', 'test_mod', 'test_divmod', 'test_igcd', 'test_igcd_lehmer', 'test_igcd2', 'test_ilcm', 'test_igcdex', 'test_Integer_new', 'test_Rational_new', 'test_Number_new', 'test_Rational_cmp', 'test_Float', 'test_float_mpf', 'test_Float_RealElement', 'test_Float_default_to_highprec_from_str', 'test_Float_eval', 'test_Float_issue_2107', 'test_Infinity', 'test_Infinity_2', 'test_Mul_Infinity_Zero', 'test_Div_By_Zero', 'test_Infinity_inequations', 'test_NaN', 'test_special_numbers', 'test_powers', 'test_integer_nthroot_overflow', 'test_isqrt', 'test_powers_Integer', 'test_powers_Rational', 'test_powers_Float', 'test_abs1', 'test_accept_int', 'test_dont_accept_str', 'test_int', 'test_long', 'test_real_bug', 'test_bug_sqrt', 'test_pi_Pi', 'test_no_len', 'test_issue_3321', 'test_issue_3692', 'test_issue_3423', 'test_issue_3449', 'test_Integer_factors', 'test_Rational_factors', 'test_issue_4107', 'test_IntegerInteger', 'test_Rational_gcd_lcm_cofactors']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

@@ -1,0 +1,141 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        11245265
+hash randomization: on (PYTHONHASHSEED=2778958033)
+
+sympy/assumptions/tests/test_matrices.py[1] .                               [OK]
+sympy/assumptions/tests/test_query.py[1] .                                  [OK]
+sympy/assumptions/tests/test_refine.py[1] .                                 [OK]
+sympy/calculus/tests/test_util.py[1] .                                      [OK]
+sympy/concrete/tests/test_sums_products.py[1] .                             [OK]
+sympy/core/tests/test_eval.py[1] .                                          [OK]
+sympy/core/tests/test_exprtools.py[1] F                                   [FAIL]
+sympy/core/tests/test_function.py[9] .........                              [OK]
+sympy/core/tests/test_logic.py[6] ......                                    [OK]
+sympy/core/tests/test_match.py[2] .f                                        [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/diffgeom/tests/test_function_diffgeom_book.py[4] ....                 [OK]
+sympy/functions/elementary/tests/test_interface.py[3] ...                   [OK]
+sympy/matrices/expressions/tests/test_funcmatrix.py[2] ..                   [OK]
+sympy/matrices/tests/test_immutable.py[1] .                                 [OK]
+sympy/parsing/tests/test_implicit_multiplication_application.py[1] .        [OK]
+sympy/parsing/tests/test_sympy_parser.py[1] .                               [OK]
+sympy/physics/tests/test_secondquant.py[1] .                                [OK]
+sympy/polys/tests/test_ring_series.py[1] .                                  [OK]
+sympy/printing/pretty/tests/test_pretty.py[1] .                             [OK]
+sympy/printing/tests/test_latex.py[1] .                                     [OK]
+sympy/printing/tests/test_str.py[1] .                                       [OK]
+sympy/series/tests/test_residues.py[1] .                                    [OK]
+sympy/sets/tests/test_fancysets.py[1] .                                     [OK]
+sympy/simplify/tests/test_fu.py[1] F                                      [FAIL]
+sympy/tensor/tests/test_tensor.py[1] .                                      [OK]
+sympy/utilities/tests/test_pickling.py[1] .                                 [OK]
+sympy/vector/tests/test_coordsysrect.py[1] .                                [OK]
+
+________________________________________________________________________________
+_______________ sympy/core/tests/test_exprtools.py:test_Factors ________________
+Traceback (most recent call last):
+  File "/testbed/sympy/core/tests/test_exprtools.py", line 31, in test_Factors
+    assert Factors((x**2)**S.Half).as_expr() == (x**2)**S.Half
+AssertionError
+________________________________________________________________________________
+___________________ sympy/simplify/tests/test_fu.py:test_fu ____________________
+Traceback (most recent call last):
+  File "/testbed/sympy/simplify/tests/test_fu.py", line 280, in test_fu
+    assert fu(cos(x) + sqrt(sin(x)**2)) == cos(x) + sqrt(sin(x)**2)
+AssertionError
+
+=== tests finished: 45 passed, 2 failed, 1 expected to fail, in 8.06 seconds ===
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18087:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-18087
+273fca6b45e2: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+500327121db6: Pulling fs layer
+0299c2833ae5: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+ed3dada71338: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+5c809fd8a9af: Download complete
+0299c2833ae5: Download complete
+2f341c31f3b7: Download complete
+273fca6b45e2: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+b08895a5c216: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+ed3dada71338: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+0299c2833ae5: Pull complete
+0b326ada86d1: Pull complete
+273fca6b45e2: Pull complete
+Digest: sha256:bf72b7a1e617553f173ac9dc168ac3974b9bcfc98b102cce1a543b5c94c25e4b
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18087:latest
+
+
+===== PHASE: PASS_TO_PASS (35 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        20057139
+hash randomization: on (PYTHONHASHSEED=3469812885)
+
+sympy/core/tests/test_basic.py[1] .                                         [OK]
+sympy/core/tests/test_exprtools.py[10] ..........                           [OK]
+sympy/core/tests/test_function.py[4] ....                                   [OK]
+sympy/functions/special/tests/test_error_functions.py[1] .                  [OK]
+sympy/matrices/expressions/tests/test_factorizations.py[1] .                [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_densesolve.py[1] .                                [OK]
+sympy/matrices/tests/test_matrices.py[7] .......                            [OK]
+sympy/physics/mechanics/tests/test_functions.py[1] .                        [OK]
+sympy/physics/quantum/tests/test_hilbert.py[1] .                            [OK]
+sympy/physics/quantum/tests/test_sho1d.py[1] .                              [OK]
+sympy/polys/tests/test_polytools.py[1] .                                    [OK]
+sympy/printing/tests/test_str.py[2] ..                                      [OK]
+sympy/series/tests/test_demidovich.py[8] ........                           [OK]
+sympy/series/tests/test_limits.py[2] ..                                     [OK]
+sympy/simplify/tests/test_fu.py[25] .........................               [OK]
+sympy/solvers/tests/test_ode.py[1] .                                        [OK]
+sympy/stats/tests/test_discrete_rv.py[1] .                                  [OK]
+sympy/utilities/tests/test_wester.py[9] ....f.fff                           [OK]
+sympy/vector/tests/test_operators.py[1] .                                   [OK]
+
+======= tests finished: 75 passed, 4 expected to fail, in 12.75 seconds ========
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_Factors', 'test_fu']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

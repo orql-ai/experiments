@@ -1,0 +1,146 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-3.5.0+/332d80ba8, docutils-0.21.2
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 2 items
+
+tests/test_util_typing.py::test_restify PASSED                           [ 50%]
+tests/test_util_typing.py::test_stringify PASSED                         [100%]
+
+=============================== warnings summary ===============================
+sphinx/util/docutils.py:45
+  /testbed/sphinx/util/docutils.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/registry.py:22
+  /testbed/sphinx/registry.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+sphinx/directives/patches.py:14
+  /testbed/sphinx/directives/patches.py:14: DeprecationWarning: The `docutils.parsers.rst.directive.html` module will be removed in Docutils 2.0. Since Docutils 0.18, the "Meta" node is defined in `docutils.parsers.rst.directives.misc`.
+    from docutils.parsers.rst.directives import html, images, tables
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 2 passed, 7 warnings in 0.06s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8627:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8627
+7478e0ac0f23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+dfca0cd99b2d: Pulling fs layer
+79edda42f34c: Pulling fs layer
+a4355678e260: Pulling fs layer
+500327121db6: Pulling fs layer
+e81c68559cd9: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+9f49fa2b6533: Pulling fs layer
+ac5b61163589: Pulling fs layer
+92a723a3a820: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+b3fbaadf4572: Pulling fs layer
+b3fbaadf4572: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+e81c68559cd9: Download complete
+92a723a3a820: Download complete
+a4355678e260: Download complete
+7478e0ac0f23: Download complete
+79edda42f34c: Download complete
+dfca0cd99b2d: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+9f49fa2b6533: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+dfca0cd99b2d: Pull complete
+a4355678e260: Pull complete
+e81c68559cd9: Pull complete
+9f49fa2b6533: Pull complete
+b3fbaadf4572: Pull complete
+92a723a3a820: Pull complete
+79edda42f34c: Pull complete
+Digest: sha256:1b8d327ec2641dd5fc6980ab67c0abf01283e8b0d86f986462dfd33841b603d1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8627:latest
+
+
+===== PHASE: PASS_TO_PASS (17 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-3.5.0+/332d80ba8, docutils-0.21.2
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 17 items
+
+tests/test_util_typing.py::test_restify_type_hints_containers PASSED     [  5%]
+tests/test_util_typing.py::test_restify_type_hints_Callable PASSED       [ 11%]
+tests/test_util_typing.py::test_restify_type_hints_Union PASSED          [ 17%]
+tests/test_util_typing.py::test_restify_type_hints_typevars PASSED       [ 23%]
+tests/test_util_typing.py::test_restify_type_hints_custom_class PASSED   [ 29%]
+tests/test_util_typing.py::test_restify_type_hints_alias PASSED          [ 35%]
+tests/test_util_typing.py::test_restify_type_ForwardRef PASSED           [ 41%]
+tests/test_util_typing.py::test_restify_broken_type_hints PASSED         [ 47%]
+tests/test_util_typing.py::test_stringify_type_hints_containers PASSED   [ 52%]
+tests/test_util_typing.py::test_stringify_Annotated PASSED               [ 58%]
+tests/test_util_typing.py::test_stringify_type_hints_string PASSED       [ 64%]
+tests/test_util_typing.py::test_stringify_type_hints_Callable PASSED     [ 70%]
+tests/test_util_typing.py::test_stringify_type_hints_Union PASSED        [ 76%]
+tests/test_util_typing.py::test_stringify_type_hints_typevars PASSED     [ 82%]
+tests/test_util_typing.py::test_stringify_type_hints_custom_class PASSED [ 88%]
+tests/test_util_typing.py::test_stringify_type_hints_alias PASSED        [ 94%]
+tests/test_util_typing.py::test_stringify_broken_type_hints PASSED       [100%]
+
+=============================== warnings summary ===============================
+sphinx/util/docutils.py:45
+  /testbed/sphinx/util/docutils.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/registry.py:22
+  /testbed/sphinx/registry.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+sphinx/directives/patches.py:14
+  /testbed/sphinx/directives/patches.py:14: DeprecationWarning: The `docutils.parsers.rst.directive.html` module will be removed in Docutils 2.0. Since Docutils 0.18, the "Meta" node is defined in `docutils.parsers.rst.directives.misc`.
+    from docutils.parsers.rst.directives import html, images, tables
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 17 passed, 7 warnings in 0.07s ========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,232 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.0.0.dev46+g2f7415cfb, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+collecting ... collected 2 items
+
+testing/test_pathlib.py::TestImportPath::test_remembers_previous_imports PASSED [ 50%]
+testing/acceptance_test.py::test_doctest_and_normal_imports_with_importlib PASSED [100%]
+
+============================== 2 passed in 0.29s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-11148:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-11148
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+f932d3107b2a: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+379f9bd8a437: Pulling fs layer
+89940c942df2: Pulling fs layer
+c782fef43390: Pulling fs layer
+b5c70184b222: Pulling fs layer
+9927ee4049a0: Pulling fs layer
+500327121db6: Pulling fs layer
+57fcd32f5fe4: Pulling fs layer
+836b79e2a6e5: Download complete
+57fcd32f5fe4: Download complete
+ac5b61163589: Download complete
+9927ee4049a0: Download complete
+b5c70184b222: Download complete
+e5a28c0c137e: Download complete
+89940c942df2: Download complete
+379f9bd8a437: Download complete
+7478e0ac0f23: Download complete
+f932d3107b2a: Download complete
+c782fef43390: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+57fcd32f5fe4: Pull complete
+89940c942df2: Pull complete
+f932d3107b2a: Pull complete
+9927ee4049a0: Pull complete
+b5c70184b222: Pull complete
+c782fef43390: Pull complete
+379f9bd8a437: Pull complete
+Digest: sha256:27b702dc280602acc958e96fa51e983dc3312f972fbb82d6348e5ed1edc7c957
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-11148:latest
+
+
+===== PHASE: PASS_TO_PASS (129 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.0.0.dev46+g2f7415cfb, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+testing/acceptance_test.py::TestGeneralUsage::test_docstring_on_hookspec PASSED [  2%]
+testing/acceptance_test.py::TestInvocationVariants::test_invoke_with_invalid_type PASSED [  4%]
+testing/acceptance_test.py::TestInvocationVariants::test_invoke_plugin_api PASSED [  6%]
+testing/acceptance_test.py::TestInvocationVariants::test_core_backward_compatibility PASSED [  8%]
+testing/acceptance_test.py::TestInvocationVariants::test_has_plugin PASSED [ 10%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[*.py-foo.py] PASSED [ 12%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[*.py-bar/foo.py] PASSED [ 14%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[test_*.py-foo/test_foo.py] PASSED [ 16%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[tests/*.py-tests/foo.py] PASSED [ 18%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[/c/*.py-/c/foo.py] PASSED [ 20%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[/c/foo/*.py-/c/foo/foo.py] PASSED [ 22%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[tests/**/test*.py-tests/foo/test_foo.py] PASSED [ 24%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[tests/**/doc/test*.py-tests/foo/bar/doc/test_foo.py] PASSED [ 26%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching[tests/**/doc/**/test*.py-tests/foo/doc/bar/test_foo.py] PASSED [ 28%]
+testing/test_pathlib.py::TestFNMatcherPort::test_matching_abspath PASSED [ 30%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[*.py-foo.pyc] PASSED [ 32%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[*.py-foo/foo.pyc] PASSED [ 34%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[tests/*.py-foo/foo.py] PASSED [ 36%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[/c/*.py-/d/foo.py] PASSED [ 38%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[/c/foo/*.py-/d/foo/foo.py] PASSED [ 40%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[tests/**/test*.py-tests/foo.py] PASSED [ 42%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[tests/**/test*.py-foo/test_foo.py] PASSED [ 44%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[tests/**/doc/test*.py-tests/foo/bar/doc/foo.py] PASSED [ 46%]
+testing/test_pathlib.py::TestFNMatcherPort::test_not_matching[tests/**/doc/test*.py-tests/foo/bar/test_foo.py] PASSED [ 48%]
+testing/test_pathlib.py::TestImportPath::test_smoke_test PASSED          [ 50%]
+testing/test_pathlib.py::TestImportPath::test_import_path_missing_file PASSED [ 52%]
+testing/test_pathlib.py::TestImportPath::test_renamed_dir_creates_mismatch PASSED [ 54%]
+testing/test_pathlib.py::TestImportPath::test_messy_name PASSED          [ 56%]
+testing/test_pathlib.py::TestImportPath::test_dir PASSED                 [ 58%]
+testing/test_pathlib.py::TestImportPath::test_a PASSED                   [ 60%]
+testing/test_pathlib.py::TestImportPath::test_b PASSED                   [ 62%]
+testing/test_pathlib.py::TestImportPath::test_c PASSED                   [ 64%]
+testing/test_pathlib.py::TestImportPath::test_d PASSED                   [ 66%]
+testing/test_pathlib.py::TestImportPath::test_import_after PASSED        [ 68%]
+testing/test_pathlib.py::TestImportPath::test_check_filepath_consistency PASSED [ 70%]
+testing/test_pathlib.py::TestImportPath::test_issue131_on__init__ PASSED [ 72%]
+testing/test_pathlib.py::TestImportPath::test_ensuresyspath_append PASSED [ 74%]
+testing/test_pathlib.py::TestImportPath::test_invalid_path PASSED        [ 76%]
+testing/test_pathlib.py::TestImportPath::test_importmode_importlib PASSED [ 78%]
+testing/test_pathlib.py::TestImportPath::test_no_meta_path_found PASSED  [ 80%]
+testing/test_pathlib.py::test_resolve_package_path PASSED                [ 82%]
+testing/test_pathlib.py::test_package_unimportable PASSED                [ 84%]
+testing/test_pathlib.py::test_access_denied_during_cleanup PASSED        [ 86%]
+testing/test_pathlib.py::test_long_path_during_cleanup PASSED            [ 88%]
+testing/test_pathlib.py::test_get_extended_length_path_str PASSED        [ 90%]
+testing/test_pathlib.py::test_suppress_error_removing_lock PASSED        [ 92%]
+testing/test_pathlib.py::test_bestrelpath PASSED                         [ 94%]
+testing/test_pathlib.py::test_commonpath PASSED                          [ 96%]
+testing/test_pathlib.py::test_visit_ignores_errors PASSED                [ 98%]
+testing/test_pathlib.py::TestImportLibMode::test_importmode_importlib_with_dataclass PASSED [100%]
+
+============================== 50 passed in 0.25s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.0.0.dev46+g2f7415cfb, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+testing/test_pathlib.py::TestImportLibMode::test_importmode_importlib_with_pickle PASSED [  2%]
+testing/test_pathlib.py::TestImportLibMode::test_importmode_importlib_with_pickle_separate_modules PASSED [  4%]
+testing/test_pathlib.py::TestImportLibMode::test_module_name_from_path PASSED [  6%]
+testing/test_pathlib.py::TestImportLibMode::test_insert_missing_modules PASSED [  8%]
+testing/test_pathlib.py::TestImportLibMode::test_parent_contains_child_module_attribute PASSED [ 10%]
+testing/acceptance_test.py::TestGeneralUsage::test_config_error PASSED   [ 12%]
+testing/acceptance_test.py::TestGeneralUsage::test_root_conftest_syntax_error PASSED [ 14%]
+testing/acceptance_test.py::TestGeneralUsage::test_early_hook_error_issue38_1 PASSED [ 16%]
+testing/acceptance_test.py::TestGeneralUsage::test_early_hook_configure_error_issue38 PASSED [ 18%]
+testing/acceptance_test.py::TestGeneralUsage::test_file_not_found PASSED [ 20%]
+testing/acceptance_test.py::TestGeneralUsage::test_file_not_found_unconfigure_issue143 PASSED [ 22%]
+testing/acceptance_test.py::TestGeneralUsage::test_config_preparse_plugin_option PASSED [ 24%]
+testing/acceptance_test.py::TestGeneralUsage::test_early_load_setuptools_name[True] PASSED [ 26%]
+testing/acceptance_test.py::TestGeneralUsage::test_early_load_setuptools_name[False] PASSED [ 28%]
+testing/acceptance_test.py::TestGeneralUsage::test_assertion_rewrite[prepend] PASSED [ 30%]
+testing/acceptance_test.py::TestGeneralUsage::test_assertion_rewrite[append] PASSED [ 32%]
+testing/acceptance_test.py::TestGeneralUsage::test_assertion_rewrite[importlib] PASSED [ 34%]
+testing/acceptance_test.py::TestGeneralUsage::test_nested_import_error PASSED [ 36%]
+testing/acceptance_test.py::TestGeneralUsage::test_not_collectable_arguments PASSED [ 38%]
+testing/acceptance_test.py::TestGeneralUsage::test_better_reporting_on_conftest_load_failure PASSED [ 40%]
+testing/acceptance_test.py::TestGeneralUsage::test_early_skip PASSED     [ 42%]
+testing/acceptance_test.py::TestGeneralUsage::test_issue88_initial_file_multinodes PASSED [ 44%]
+testing/acceptance_test.py::TestGeneralUsage::test_issue93_initialnode_importing_capturing PASSED [ 46%]
+testing/acceptance_test.py::TestGeneralUsage::test_conftest_printing_shows_if_error PASSED [ 48%]
+testing/acceptance_test.py::TestGeneralUsage::test_issue109_sibling_conftests_not_loaded PASSED [ 50%]
+testing/acceptance_test.py::TestGeneralUsage::test_directory_skipped PASSED [ 52%]
+testing/acceptance_test.py::TestGeneralUsage::test_multiple_items_per_collector_byid PASSED [ 54%]
+testing/acceptance_test.py::TestGeneralUsage::test_skip_on_generated_funcarg_id PASSED [ 56%]
+testing/acceptance_test.py::TestGeneralUsage::test_direct_addressing_selects PASSED [ 58%]
+testing/acceptance_test.py::TestGeneralUsage::test_direct_addressing_notfound PASSED [ 60%]
+testing/acceptance_test.py::TestGeneralUsage::test_initialization_error_issue49 PASSED [ 62%]
+testing/acceptance_test.py::TestGeneralUsage::test_issue134_report_error_when_collecting_member[test_fun.py::test_a] PASSED [ 64%]
+testing/acceptance_test.py::TestGeneralUsage::test_report_all_failed_collections_initargs PASSED [ 66%]
+testing/acceptance_test.py::TestGeneralUsage::test_namespace_import_doesnt_confuse_import_hook PASSED [ 68%]
+testing/acceptance_test.py::TestGeneralUsage::test_unknown_option PASSED [ 70%]
+testing/acceptance_test.py::TestGeneralUsage::test_getsourcelines_error_issue553 PASSED [ 72%]
+testing/acceptance_test.py::TestGeneralUsage::test_plugins_given_as_strings PASSED [ 74%]
+testing/acceptance_test.py::TestGeneralUsage::test_parametrized_with_bytes_regex PASSED [ 76%]
+testing/acceptance_test.py::TestGeneralUsage::test_parametrized_with_null_bytes PASSED [ 78%]
+testing/acceptance_test.py::TestInvocationVariants::test_earlyinit PASSED [ 80%]
+testing/acceptance_test.py::TestInvocationVariants::test_pydoc PASSED    [ 82%]
+testing/acceptance_test.py::TestInvocationVariants::test_import_star_pytest PASSED [ 84%]
+testing/acceptance_test.py::TestInvocationVariants::test_double_pytestcmdline PASSED [ 86%]
+testing/acceptance_test.py::TestInvocationVariants::test_python_minus_m_invocation_ok PASSED [ 88%]
+testing/acceptance_test.py::TestInvocationVariants::test_python_minus_m_invocation_fail PASSED [ 90%]
+testing/acceptance_test.py::TestInvocationVariants::test_python_pytest_package PASSED [ 92%]
+testing/acceptance_test.py::TestInvocationVariants::test_invoke_with_path PASSED [ 94%]
+testing/acceptance_test.py::TestInvocationVariants::test_pyargs_importerror PASSED [ 96%]
+testing/acceptance_test.py::TestInvocationVariants::test_pyargs_only_imported_once PASSED [ 98%]
+testing/acceptance_test.py::TestInvocationVariants::test_pyargs_filename_looks_like_module PASSED [100%]
+
+============================== 50 passed in 2.83s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.0.0.dev46+g2f7415cfb, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+collecting ... collected 29 items
+
+testing/acceptance_test.py::TestInvocationVariants::test_cmdline_python_package PASSED [  3%]
+testing/acceptance_test.py::TestInvocationVariants::test_cmdline_python_namespace_package PASSED [  6%]
+testing/acceptance_test.py::TestInvocationVariants::test_invoke_test_and_doctestmodules PASSED [ 10%]
+testing/acceptance_test.py::TestInvocationVariants::test_cmdline_python_package_symlink PASSED [ 13%]
+testing/acceptance_test.py::TestInvocationVariants::test_cmdline_python_package_not_exists PASSED [ 17%]
+testing/acceptance_test.py::TestInvocationVariants::test_doctest_id PASSED [ 20%]
+testing/acceptance_test.py::TestDurations::test_calls PASSED             [ 24%]
+testing/acceptance_test.py::TestDurations::test_calls_show_2 PASSED      [ 27%]
+testing/acceptance_test.py::TestDurations::test_calls_showall PASSED     [ 31%]
+testing/acceptance_test.py::TestDurations::test_calls_showall_verbose PASSED [ 34%]
+testing/acceptance_test.py::TestDurations::test_with_deselected PASSED   [ 37%]
+testing/acceptance_test.py::TestDurations::test_with_failing_collection PASSED [ 41%]
+testing/acceptance_test.py::TestDurations::test_with_not PASSED          [ 44%]
+testing/acceptance_test.py::TestDurationsWithFixture::test_setup_function PASSED [ 48%]
+testing/acceptance_test.py::test_zipimport_hook PASSED                   [ 51%]
+testing/acceptance_test.py::test_import_plugin_unicode_name PASSED       [ 55%]
+testing/acceptance_test.py::test_pytest_plugins_as_module PASSED         [ 58%]
+testing/acceptance_test.py::test_deferred_hook_checking PASSED           [ 62%]
+testing/acceptance_test.py::test_fixture_order_respects_scope PASSED     [ 65%]
+testing/acceptance_test.py::test_fixture_mock_integration PASSED         [ 68%]
+testing/acceptance_test.py::test_usage_error_code PASSED                 [ 72%]
+testing/acceptance_test.py::test_warn_on_async_function PASSED           [ 75%]
+testing/acceptance_test.py::test_warn_on_async_gen_function PASSED       [ 79%]
+testing/acceptance_test.py::test_no_brokenpipeerror_message PASSED       [ 82%]
+testing/acceptance_test.py::test_function_return_non_none_warning PASSED [ 86%]
+testing/acceptance_test.py::test_fixture_values_leak PASSED              [ 89%]
+testing/acceptance_test.py::test_frame_leak_on_failing_test PASSED       [ 93%]
+testing/acceptance_test.py::test_pdb_can_be_rewritten PASSED             [ 96%]
+testing/acceptance_test.py::test_tee_stdio_captures_and_live_prints PASSED [100%]
+
+============================== 29 passed in 2.37s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed
