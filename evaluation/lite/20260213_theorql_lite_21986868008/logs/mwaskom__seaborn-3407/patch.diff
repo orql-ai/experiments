@@ -1,0 +1,34 @@
+diff --git a/seaborn/axisgrid.py b/seaborn/axisgrid.py
+index 75349099..bafb6ee0 100644
+--- a/seaborn/axisgrid.py
++++ b/seaborn/axisgrid.py
+@@ -1472,7 +1472,7 @@ class PairGrid(Grid):
+                 for ax in diag_axes[1:]:
+                     share_axis(diag_axes[0], ax, "y")
+ 
+-            self.diag_vars = np.array(diag_vars, np.object_)
++            self.diag_vars = diag_vars
+             self.diag_axes = np.array(diag_axes, np.object_)
+ 
+         if "hue" not in signature(func).parameters:
+@@ -1487,9 +1487,9 @@ class PairGrid(Grid):
+             else:
+                 plt.sca(ax)
+ 
+-            vector = self.data[var]
++            vector = self.data[[var]].iloc[:, 0]
+             if self._hue_var is not None:
+-                hue = self.data[self._hue_var]
++                hue = self.data[[self._hue_var]].iloc[:, 0]
+             else:
+                 hue = None
+ 
+@@ -1516,7 +1516,7 @@ class PairGrid(Grid):
+         fixed_color = kwargs.pop("color", None)
+ 
+         for var, ax in zip(self.diag_vars, self.diag_axes):
+-            hue_grouped = self.data[var].groupby(self.hue_vals)
++            hue_grouped = self.data[[var]].iloc[:, 0].groupby(self.hue_vals)
+ 
+             plot_kwargs = kwargs.copy()
+             if str(func.__module__).startswith("seaborn"):

@@ -1,0 +1,303 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_customemailfield
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Creating table auth_tests_organization
+    Creating table auth_tests_customuserwithm2m
+    Creating table auth_tests_customuserwithm2mthrough
+    Creating table auth_tests_membership
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13551:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-13551
+836b79e2a6e5: Pulling fs layer
+a9d08ec832c7: Pulling fs layer
+2bc10b62f799: Pulling fs layer
+c9065689ecd1: Pulling fs layer
+500327121db6: Pulling fs layer
+a258f19079e8: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ebb64ccce10a: Pulling fs layer
+47c859b1bbda: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+16b385147454: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+a9d08ec832c7: Download complete
+ac5b61163589: Download complete
+2bc10b62f799: Download complete
+16b385147454: Download complete
+ebb64ccce10a: Download complete
+a258f19079e8: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+c9065689ecd1: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+47c859b1bbda: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+a9d08ec832c7: Pull complete
+2bc10b62f799: Pull complete
+47c859b1bbda: Pull complete
+16b385147454: Pull complete
+ebb64ccce10a: Pull complete
+c9065689ecd1: Pull complete
+a258f19079e8: Pull complete
+Digest: sha256:9829f29170e158f041ad1e5e51c6fef4f19f1b804b8384038648e58351f2bdfd
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13551:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_token_with_different_secret (auth_tests.test_tokens.TokenGeneratorTest) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (55 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_customemailfield
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Creating table auth_tests_organization
+    Creating table auth_tests_customuserwithm2m
+    Creating table auth_tests_customuserwithm2mthrough
+    Creating table auth_tests_membership
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_customemailfield
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Creating table auth_tests_organization
+    Creating table auth_tests_customuserwithm2m
+    Creating table auth_tests_customuserwithm2mthrough
+    Creating table auth_tests_membership
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Creating test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Cloning test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Cloning test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+test_create_superuser (auth_tests.test_models.TestCreateSuperUserSignals) ... ok
+test_create_user (auth_tests.test_models.TestCreateSuperUserSignals) ... ok
+test_group_natural_key (auth_tests.test_models.NaturalKeysTestCase) ... ok
+test_user_natural_key (auth_tests.test_models.NaturalKeysTestCase) ... ok
+test_str (auth_tests.test_models.PermissionTests) ... ok
+test_load_data_with_user_permissions (auth_tests.test_models.LoadDataWithNaturalKeysAndMultipleDatabasesTestCase) ... ok
+test_10265 (auth_tests.test_tokens.TokenGeneratorTest) ... ok
+test_check_token_with_nonexistent_token_and_user (auth_tests.test_tokens.TokenGeneratorTest) ... ok
+test_legacy_token_validation (auth_tests.test_tokens.TokenGeneratorTest) ... ok
+test_make_token (auth_tests.test_tokens.TokenGeneratorTest) ... ok
+test_token_default_hashing_algorithm (auth_tests.test_tokens.TokenGeneratorTest) ... ok
+test_user_is_created_and_added_to_group (auth_tests.test_models.LoadDataWithNaturalKeysTestCase) ... ok
+test_user_is_created_and_added_to_group (auth_tests.test_models.LoadDataWithoutNaturalKeysTestCase) ... ok
+test_builtin_user_isactive (auth_tests.test_models.IsActiveTestCase) ... ok
+test_is_active_field_default (auth_tests.test_models.IsActiveTestCase) ... ok
+test_backend_without_with_perm (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_basic (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_custom_backend (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_custom_backend_pass_obj (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_invalid_backend_type (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_invalid_permission_name (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_invalid_permission_type (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_multiple_backends (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_nonexistent_backend (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_nonexistent_permission (auth_tests.test_models.UserWithPermTestCase) ... ok
+test_str (auth_tests.test_models.GroupTests) ... ok
+test_check_password (auth_tests.test_models.AnonymousUserTests) ... ok
+test_delete (auth_tests.test_models.AnonymousUserTests) ... ok
+test_eq (auth_tests.test_models.AnonymousUserTests) ... ok
+test_hash (auth_tests.test_models.AnonymousUserTests) ... ok
+test_int (auth_tests.test_models.AnonymousUserTests) ... ok
+test_properties (auth_tests.test_models.AnonymousUserTests) ... ok
+test_save (auth_tests.test_models.AnonymousUserTests) ... ok
+test_set_password (auth_tests.test_models.AnonymousUserTests) ... ok
+test_str (auth_tests.test_models.AnonymousUserTests) ... ok
+test_clean_normalize_username (auth_tests.test_models.AbstractBaseUserTests) ... ok
+test_custom_email (auth_tests.test_models.AbstractBaseUserTests) ... ok
+test_default_email (auth_tests.test_models.AbstractBaseUserTests) ... ok
+test_has_usable_password (auth_tests.test_models.AbstractBaseUserTests) ... ok
+test_normalize_username (auth_tests.test_models.AbstractBaseUserTests) ... ok
+test_create_super_user_raises_error_on_false_is_superuser (auth_tests.test_models.UserManagerTestCase) ... ok
+test_create_superuser_raises_error_on_false_is_staff (auth_tests.test_models.UserManagerTestCase) ... ok
+test_create_user (auth_tests.test_models.UserManagerTestCase) ... ok
+test_create_user_email_domain_normalize (auth_tests.test_models.UserManagerTestCase) ... ok
+test_create_user_email_domain_normalize_rfc3696 (auth_tests.test_models.UserManagerTestCase) ... ok
+test_check_password_upgrade (auth_tests.test_models.AbstractUserTestCase) ... ok
+test_email_user (auth_tests.test_models.AbstractUserTestCase) ... ok
+test_last_login_default (auth_tests.test_models.AbstractUserTestCase) ... ok
+test_user_clean_normalize_email (auth_tests.test_models.AbstractUserTestCase) ... ok
+test_user_double_save (auth_tests.test_models.AbstractUserTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.514s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Destroying test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Destroying test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_customemailfield
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Creating table auth_tests_organization
+    Creating table auth_tests_customuserwithm2m
+    Creating table auth_tests_customuserwithm2mthrough
+    Creating table auth_tests_membership
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_create_user_email_domain_normalize_with_whitespace (auth_tests.test_models.UserManagerTestCase) ... ok
+test_create_user_is_staff (auth_tests.test_models.UserManagerTestCase) ... ok
+test_empty_username (auth_tests.test_models.UserManagerTestCase) ... ok
+test_make_random_password (auth_tests.test_models.UserManagerTestCase) ... ok
+test_runpython_manager_methods (auth_tests.test_models.UserManagerTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.166s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

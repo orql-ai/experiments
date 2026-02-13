@@ -1,0 +1,96 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        71330531
+hash randomization: on (PYTHONHASHSEED=2993955751)
+
+sympy/parsing/tests/test_mathematica.py[2] EE                             [FAIL]
+
+________________________________________________________________________________
+___________ sympy/parsing/tests/test_mathematica.py:test_mathematica ___________
+Traceback (most recent call last):
+  File "/testbed/sympy/parsing/tests/test_mathematica.py", line 74, in test_mathematica
+    assert parse_mathematica(e) == sympify(d[e])
+  File "/testbed/sympy/parsing/mathematica.py", line 82, in parse_mathematica
+    return parser.parse(s)
+  File "/testbed/sympy/parsing/mathematica.py", line 535, in parse
+    s3 = self._from_tokens_to_fullformlist(s2)
+  File "/testbed/sympy/parsing/mathematica.py", line 726, in _from_tokens_to_fullformlist
+    last_stack = self._parse_after_braces(stack[-1], True)
+  File "/testbed/sympy/parsing/mathematica.py", line 908, in _parse_after_braces
+    return self._parse_after_braces(tokens, inside_enclosure)
+  File "/testbed/sympy/parsing/mathematica.py", line 909, in _parse_after_braces
+    raise SyntaxError("unable to create a single AST for the expression")
+SyntaxError: unable to create a single AST for the expression
+________________________________________________________________________________
+__ sympy/parsing/tests/test_mathematica.py:test_parser_mathematica_tokenizer ___
+Traceback (most recent call last):
+  File "/testbed/sympy/parsing/tests/test_mathematica.py", line 98, in test_parser_mathematica_tokenizer
+    assert chain("α") == "α"
+  File "/testbed/sympy/parsing/tests/test_mathematica.py", line 89, in <lambda>
+    chain = lambda expr: parser._from_tokens_to_fullformlist(parser._from_mathematica_to_tokens(expr))
+  File "/testbed/sympy/parsing/mathematica.py", line 740, in _from_tokens_to_fullformlist
+    return self._parse_after_braces(stack[0])
+  File "/testbed/sympy/parsing/mathematica.py", line 909, in _parse_after_braces
+    raise SyntaxError("unable to create a single AST for the expression")
+SyntaxError: unable to create a single AST for the expression
+
+=========== tests finished: 0 passed, 2 exceptions, in 0.19 seconds ============
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-24102:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-24102
+836b79e2a6e5: Pulling fs layer
+c4f058638bee: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+500327121db6: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+789787494a8b: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ac5b61163589: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Download complete
+2f341c31f3b7: Download complete
+ed3dada71338: Download complete
+836b79e2a6e5: Download complete
+5c809fd8a9af: Download complete
+789787494a8b: Download complete
+ac5b61163589: Download complete
+c4f058638bee: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+b08895a5c216: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+5c809fd8a9af: Pull complete
+789787494a8b: Pull complete
+0b326ada86d1: Pull complete
+c4f058638bee: Pull complete
+Digest: sha256:ab5370985463fd58564d0dc9666a53820ae87508cb852a2e9d668f1dfde3328c
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-24102:latest
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_mathematica', 'test_parser_mathematica_tokenizer']}
+PASS_TO_PASS: {'ok': True, 'skipped': True}
+>>>>> End Test Output
+>>>>> Some Tests Failed

@@ -1,0 +1,95 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 2 items
+
+sklearn/ensemble/tests/test_voting.py::test_none_estimator_with_weights[X0-y0-voter0] PASSED [ 50%]
+sklearn/ensemble/tests/test_voting.py::test_none_estimator_with_weights[X1-y1-voter1] PASSED [100%]
+
+========================= 2 passed, 1 warning in 0.43s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13779:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13779
+9b51db4617db: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+f93009d70e27: Pulling fs layer
+466f0cbb5709: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+09b61b6fd610: Pulling fs layer
+ddd45cdfc8c4: Pulling fs layer
+b1b86685def8: Pulling fs layer
+ac5b61163589: Pulling fs layer
+0b39feb2fdff: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Download complete
+0b39feb2fdff: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+b1b86685def8: Download complete
+466f0cbb5709: Download complete
+09b61b6fd610: Download complete
+7478e0ac0f23: Download complete
+9b51db4617db: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+f93009d70e27: Download complete
+500327121db6: Pull complete
+ddd45cdfc8c4: Download complete
+a2f6138ded93: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+466f0cbb5709: Pull complete
+09b61b6fd610: Pull complete
+f93009d70e27: Pull complete
+ddd45cdfc8c4: Pull complete
+0b39feb2fdff: Pull complete
+b1b86685def8: Pull complete
+9b51db4617db: Pull complete
+Digest: sha256:39ab7215f49aa4e464234ca25669d6607d8d2154589df11788877563e907ef55
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13779:latest
+
+
+===== PHASE: PASS_TO_PASS (18 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 18 items
+
+sklearn/ensemble/tests/test_voting.py::test_estimator_init PASSED        [  5%]
+sklearn/ensemble/tests/test_voting.py::test_predictproba_hardvoting PASSED [ 11%]
+sklearn/ensemble/tests/test_voting.py::test_notfitted PASSED             [ 16%]
+sklearn/ensemble/tests/test_voting.py::test_majority_label_iris PASSED   [ 22%]
+sklearn/ensemble/tests/test_voting.py::test_tie_situation PASSED         [ 27%]
+sklearn/ensemble/tests/test_voting.py::test_weights_iris PASSED          [ 33%]
+sklearn/ensemble/tests/test_voting.py::test_weights_regressor PASSED     [ 38%]
+sklearn/ensemble/tests/test_voting.py::test_predict_on_toy_problem PASSED [ 44%]
+sklearn/ensemble/tests/test_voting.py::test_predict_proba_on_toy_problem PASSED [ 50%]
+sklearn/ensemble/tests/test_voting.py::test_multilabel PASSED            [ 55%]
+sklearn/ensemble/tests/test_voting.py::test_gridsearch PASSED            [ 61%]
+sklearn/ensemble/tests/test_voting.py::test_parallel_fit PASSED          [ 66%]
+sklearn/ensemble/tests/test_voting.py::test_sample_weight PASSED         [ 72%]
+sklearn/ensemble/tests/test_voting.py::test_sample_weight_kwargs PASSED  [ 77%]
+sklearn/ensemble/tests/test_voting.py::test_set_params PASSED            [ 83%]
+sklearn/ensemble/tests/test_voting.py::test_set_estimator_none PASSED    [ 88%]
+sklearn/ensemble/tests/test_voting.py::test_estimator_weights_format PASSED [ 94%]
+sklearn/ensemble/tests/test_voting.py::test_transform PASSED             [100%]
+
+======================== 18 passed, 1 warning in 2.35s =========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

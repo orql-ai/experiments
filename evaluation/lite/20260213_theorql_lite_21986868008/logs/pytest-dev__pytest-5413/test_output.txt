@@ -1,0 +1,159 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.6.1.dev72+g450d26462, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 1 item
+
+testing/code/test_excinfo.py::test_excinfo_repr_str FAILED               [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_excinfo_repr_str _____________________________
+
+    def test_excinfo_repr_str():
+        excinfo = pytest.raises(ValueError, h)
+        assert repr(excinfo) == "<ExceptionInfo ValueError tblen=4>"
+>       assert str(excinfo) == "<ExceptionInfo ValueError tblen=4>"
+E       AssertionError: assert '' == '<ExceptionInfo ValueError tblen=4>'
+E         + <ExceptionInfo ValueError tblen=4>
+
+testing/code/test_excinfo.py:339: AssertionError
+=========================== short test summary info ============================
+FAILED testing/code/test_excinfo.py::test_excinfo_repr_str - AssertionError: ...
+=========================== 1 failed in 0.15 seconds ===========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5413:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5413
+d990a507e919: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+1894d1c23a4f: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+31ec1b65dfe1: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+00033656ac2c: Pulling fs layer
+e322ba2d98d6: Pulling fs layer
+8c62c3efce2c: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+1894d1c23a4f: Download complete
+d990a507e919: Download complete
+836b79e2a6e5: Download complete
+31ec1b65dfe1: Download complete
+e322ba2d98d6: Download complete
+8c62c3efce2c: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+7478e0ac0f23: Pull complete
+00033656ac2c: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+1894d1c23a4f: Pull complete
+31ec1b65dfe1: Pull complete
+9243c6d3b562: Pull complete
+e322ba2d98d6: Pull complete
+00033656ac2c: Pull complete
+8c62c3efce2c: Pull complete
+d990a507e919: Pull complete
+Digest: sha256:8a97420ed474c427571c6f9ebffc7b6ca8b66b96d59b36c850b64cb50e8fa686
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5413:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/code/test_excinfo.py::test_excinfo_repr_str` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (92 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.6.1.dev72+g450d26462, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 50 items
+
+testing/code/test_excinfo.py::test_excinfo_simple PASSED                 [  2%]
+testing/code/test_excinfo.py::test_excinfo_getstatement PASSED           [  4%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_entries PASSED [  6%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_entry_getsource PASSED [  8%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_entry_getsource_in_construct PASSED [ 10%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_cut PASSED [ 12%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_filter PASSED [ 14%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_filter_selective[<lambda>-True] PASSED [ 16%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_filter_selective[<lambda>-False] PASSED [ 18%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_filter_selective[tracebackhide2-True] PASSED [ 20%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_filter_selective[tracebackhide3-False] PASSED [ 22%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_recursion_index PASSED [ 24%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_only_specific_recursion_errors PASSED [ 26%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_no_recursion_index PASSED [ 28%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_getcrashentry PASSED [ 30%]
+testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_getcrashentry_empty PASSED [ 32%]
+testing/code/test_excinfo.py::test_excinfo_exconly PASSED                [ 34%]
+testing/code/test_excinfo.py::test_excinfo_for_later PASSED              [ 36%]
+testing/code/test_excinfo.py::test_excinfo_errisinstance PASSED          [ 38%]
+testing/code/test_excinfo.py::test_excinfo_no_sourcecode PASSED          [ 40%]
+testing/code/test_excinfo.py::test_entrysource_Queue_example PASSED      [ 42%]
+testing/code/test_excinfo.py::test_codepath_Queue_example PASSED         [ 44%]
+testing/code/test_excinfo.py::test_match_succeeds PASSED                 [ 46%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_source PASSED [ 48%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_source_excinfo PASSED [ 50%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_source_not_existing PASSED [ 52%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_many_line_source_not_existing PASSED [ 54%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_source_failing_fullsource PASSED [ 56%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_local PASSED [ 58%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_local_with_error PASSED [ 60%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_local_with_exception_in_class_property PASSED [ 62%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_local_truncated PASSED [ 64%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_tracebackentry_lines PASSED [ 66%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_tracebackentry_lines2 PASSED [ 68%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_tracebackentry_lines_var_kw_args PASSED [ 70%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_tracebackentry_short PASSED [ 72%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_tracebackentry_no PASSED [ 74%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_traceback_tbfilter PASSED [ 76%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_traceback_short_no_source PASSED [ 78%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_traceback_and_excinfo PASSED [ 80%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_traceback_with_invalid_cwd PASSED [ 82%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_excinfo_addouterr PASSED [ 84%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_excinfo_reprcrash PASSED [ 86%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_repr_traceback_recursion PASSED [ 88%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_reprexcinfo_getrepr PASSED [ 90%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_reprexcinfo_unicode PASSED [ 92%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_toterminal_long PASSED [ 94%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_toterminal_long_missing_source PASSED [ 96%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_toterminal_long_incomplete_source PASSED [ 98%]
+testing/code/test_excinfo.py::TestFormattedExcinfo::test_toterminal_long_filenames PASSED [100%]
+
+========================== 50 passed in 0.49 seconds ===========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.6.1.dev72+g450d26462, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 40 items
+
+========================= no tests ran in 0.15 seconds =========================
+
+
+ERROR: not found: /testbed/testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[cause-The]
+(no name '/testbed/testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[cause-The]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[context-During]
+(no name '/testbed/testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[context-During]' in any of [<Instance ()>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions0] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions1] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions2] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions3] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions4] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions5] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions6] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions7] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions8] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions9] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions10] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions11] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions12] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions13] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions14] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions15] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions16] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions17] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions18] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions19] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions20] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions21] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions22] testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions23] testing/code/test_excinfo.py::TestFormattedExcinfo::test_traceback_repr_style testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_repr_chain_suppression[from_none] testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_repr_chain_suppression[explicit_suppress] testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[cause-The] testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[context-During] testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_cycle testing/code/test_excinfo.py::test_repr_traceback_with_unicode[None-short] testing/code/test_excinfo.py::test_repr_traceback_with_unicode[None-long] testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf8-short] testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf8-long] testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf16-short] testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf16-long] testing/code/test_excinfo.py::test_exception_repr_extraction_error_on_recursion testing/code/test_excinfo.py::test_no_recursion_index_on_recursion_error testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_cut_excludepath testing/code/test_excinfo.py::test_match_raises_error testing/code/test_excinfo.py::test_cwd_deleted` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['testing/code/test_excinfo.py::test_excinfo_repr_str']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions0]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions1]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions2]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions3]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions4]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions5]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions6]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions7]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions8]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions9]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions10]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions11]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions12]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions13]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions14]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions15]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions16]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions17]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions18]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions19]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions20]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions21]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions22]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_format_excinfo[reproptions23]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_traceback_repr_style', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_repr_chain_suppression[from_none]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_repr_chain_suppression[explicit_suppress]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[cause-The]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_without_traceback[context-During]', 'testing/code/test_excinfo.py::TestFormattedExcinfo::test_exc_chain_repr_cycle', 'testing/code/test_excinfo.py::test_repr_traceback_with_unicode[None-short]', 'testing/code/test_excinfo.py::test_repr_traceback_with_unicode[None-long]', 'testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf8-short]', 'testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf8-long]', 'testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf16-short]', 'testing/code/test_excinfo.py::test_repr_traceback_with_unicode[utf16-long]', 'testing/code/test_excinfo.py::test_exception_repr_extraction_error_on_recursion', 'testing/code/test_excinfo.py::test_no_recursion_index_on_recursion_error', 'testing/code/test_excinfo.py::TestTraceback_f_g_h::test_traceback_cut_excludepath', 'testing/code/test_excinfo.py::test_match_raises_error', 'testing/code/test_excinfo.py::test_cwd_deleted']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

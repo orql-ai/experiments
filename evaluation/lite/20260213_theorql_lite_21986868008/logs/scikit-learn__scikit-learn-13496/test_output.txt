@@ -1,0 +1,95 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 1 item
+
+sklearn/ensemble/tests/test_iforest.py::test_iforest_warm_start PASSED   [100%]
+
+============================== 1 passed in 0.68s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13496:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13496
+ba90474525d4: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+466f0cbb5709: Pulling fs layer
+09b61b6fd610: Pulling fs layer
+ddd45cdfc8c4: Pulling fs layer
+b1b86685def8: Pulling fs layer
+037941958f24: Pulling fs layer
+ac5b61163589: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+f93009d70e27: Pulling fs layer
+09b61b6fd610: Download complete
+b1b86685def8: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+037941958f24: Download complete
+466f0cbb5709: Download complete
+ac5b61163589: Download complete
+7478e0ac0f23: Download complete
+ba90474525d4: Download complete
+7478e0ac0f23: Pull complete
+f93009d70e27: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+ddd45cdfc8c4: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+09b61b6fd610: Pull complete
+466f0cbb5709: Pull complete
+f93009d70e27: Pull complete
+b1b86685def8: Pull complete
+037941958f24: Pull complete
+ddd45cdfc8c4: Pull complete
+ba90474525d4: Pull complete
+Digest: sha256:aa31b0b4d86e32bfc01c014312c408bc9cd57347fac7d1b65feb9240b49f97a9
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13496:latest
+
+
+===== PHASE: PASS_TO_PASS (19 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 19 items
+
+sklearn/ensemble/tests/test_iforest.py::test_iforest PASSED              [  5%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_sparse PASSED       [ 10%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_error PASSED        [ 15%]
+sklearn/ensemble/tests/test_iforest.py::test_recalculate_max_depth PASSED [ 21%]
+sklearn/ensemble/tests/test_iforest.py::test_max_samples_attribute PASSED [ 26%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_parallel_regression PASSED [ 31%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_performance PASSED  [ 36%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_works[0.25] PASSED  [ 42%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_works[auto] PASSED  [ 47%]
+sklearn/ensemble/tests/test_iforest.py::test_max_samples_consistency PASSED [ 52%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_subsampled_features PASSED [ 57%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_average_path_length PASSED [ 63%]
+sklearn/ensemble/tests/test_iforest.py::test_score_samples PASSED        [ 68%]
+sklearn/ensemble/tests/test_iforest.py::test_deprecation PASSED          [ 73%]
+sklearn/ensemble/tests/test_iforest.py::test_behaviour_param PASSED      [ 78%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works1[0.25-3] PASSED [ 84%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works1[auto-2] PASSED [ 89%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works2[0.25-3] PASSED [ 94%]
+sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works2[auto-2] PASSED [100%]
+
+============================== 19 passed in 4.45s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

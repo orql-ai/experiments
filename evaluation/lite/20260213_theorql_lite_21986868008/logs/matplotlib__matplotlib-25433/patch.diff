@@ -1,0 +1,18 @@
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index d2568fddbf..1e8a7bb226 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -976,6 +976,13 @@ default: %(va)s
+ 
+         self.stale = True
+ 
++        # Release the mouse grabber if it was held by one of the Axes we
++        # removed.  This prevents widgets from becoming unresponsive when
++        # the figure is cleared during a callback (e.g., in a slider's
++        # on_changed callback).
++        if self.canvas is not None:
++            self.canvas.mouse_grabber = None
++
+     # synonym for `clear`.
+     def clf(self, keep_observers=False):
+         """

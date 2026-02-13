@@ -1,0 +1,131 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-4.0.0+/3ed7590ed, docutils-0.21.2
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 1 item
+
+tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_parameters_with_class_reference PASSED [100%]
+
+=============================== warnings summary ===============================
+sphinx/util/docutils.py:44
+  /testbed/sphinx/util/docutils.py:44: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/registry.py:22
+  /testbed/sphinx/registry.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 1 passed, 6 warnings in 0.07s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8713:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8713
+836b79e2a6e5: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+dfca0cd99b2d: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+a4355678e260: Pulling fs layer
+1cf0b582a22d: Pulling fs layer
+e81c68559cd9: Pulling fs layer
+9f49fa2b6533: Pulling fs layer
+92a723a3a820: Pulling fs layer
+126ed1be5ff5: Pulling fs layer
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+a4355678e260: Download complete
+e81c68559cd9: Download complete
+92a723a3a820: Download complete
+126ed1be5ff5: Download complete
+7478e0ac0f23: Download complete
+1cf0b582a22d: Download complete
+dfca0cd99b2d: Download complete
+500327121db6: Download complete
+9f49fa2b6533: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a4355678e260: Pull complete
+e81c68559cd9: Pull complete
+dfca0cd99b2d: Pull complete
+92a723a3a820: Pull complete
+9f49fa2b6533: Pull complete
+126ed1be5ff5: Pull complete
+1cf0b582a22d: Pull complete
+Digest: sha256:e27e640aa77a37a4b139f909b090c8f6234312dac979d6e2f78a42823876bea1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8713:latest
+
+
+===== PHASE: PASS_TO_PASS (45 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-4.0.0+/3ed7590ed, docutils-0.21.2
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 42 items
+
+=============================== warnings summary ===============================
+sphinx/util/docutils.py:44
+  /testbed/sphinx/util/docutils.py:44: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/registry.py:22
+  /testbed/sphinx/registry.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= 6 warnings in 0.07s ==============================
+
+
+ERROR: not found: /testbed/tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[x,]
+(no match in any of [<Class TestNumpyDocstring>])
+
+ERROR: not found: /testbed/tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[*args,]
+(no match in any of [<Class TestNumpyDocstring>])
+
+ERROR: not found: /testbed/tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[*x,]
+(no match in any of [<Class TestNumpyDocstring>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/test_ext_napoleon_docstring.py::NamedtupleSubclassTest::test_attributes_docstring tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member_inline tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member_inline_no_type tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member_inline_ref_in_type tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_attributes_with_class_reference tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_code_block_in_returns_section tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_colon_in_return_type tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_custom_generic_sections tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_docstrings tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_keywords_with_types tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_kwargs_in_arguments tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_list_in_parameter_description tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_noindex tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_parameters_with_class_reference tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_pep526_annotations tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_raises_types tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_section_header_formatting tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_sphinx_admonitions tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_xrefs_in_return_type tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_colon_in_return_type tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_convert_numpy_type_spec tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_docstrings tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_list_in_parameter_description tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_multiple_parameters tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_parameter_types tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_parameters_without_class_reference tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_raises_types tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_recombine_set_tokens tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_recombine_set_tokens_invalid tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_return_types tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_section_header_underline_length tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_see_also_refs tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_sphinx_admonitions tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_token_type tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_tokenize_type_spec tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_type_preprocessor tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_underscore_in_attribute tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_underscore_in_attribute_strip_signature_backslash tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_xrefs_in_return_type tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_yield_types tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[x,] tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[*args,] tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[*x,] tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_pep526_annotations` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['tests/test_ext_napoleon_docstring.py::NamedtupleSubclassTest::test_attributes_docstring', 'tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member', 'tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member_inline', 'tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member_inline_no_type', 'tests/test_ext_napoleon_docstring.py::InlineAttributeTest::test_class_data_member_inline_ref_in_type', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_attributes_with_class_reference', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_code_block_in_returns_section', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_colon_in_return_type', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_custom_generic_sections', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_docstrings', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_keywords_with_types', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_kwargs_in_arguments', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_list_in_parameter_description', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_noindex', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_parameters_with_class_reference', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_pep526_annotations', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_raises_types', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_section_header_formatting', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_sphinx_admonitions', 'tests/test_ext_napoleon_docstring.py::GoogleDocstringTest::test_xrefs_in_return_type', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_colon_in_return_type', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_convert_numpy_type_spec', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_docstrings', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_list_in_parameter_description', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_multiple_parameters', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_parameter_types', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_parameters_without_class_reference', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_raises_types', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_recombine_set_tokens', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_recombine_set_tokens_invalid', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_return_types', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_section_header_underline_length', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_see_also_refs', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_sphinx_admonitions', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_token_type', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_tokenize_type_spec', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_type_preprocessor', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_underscore_in_attribute', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_underscore_in_attribute_strip_signature_backslash', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_xrefs_in_return_type', 'tests/test_ext_napoleon_docstring.py::NumpyDocstringTest::test_yield_types', 'tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[x,]', 'tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[*args,]', 'tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_escape_args_and_kwargs[*x,]', 'tests/test_ext_napoleon_docstring.py::TestNumpyDocstring::test_pep526_annotations']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

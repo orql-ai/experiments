@@ -1,0 +1,127 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 2 items
+
+tests/test_blueprints.py::test_dotted_name_not_allowed PASSED            [ 50%]
+tests/test_blueprints.py::test_route_decorator_custom_endpoint_with_dots PASSED [100%]
+
+============================== 2 passed in 0.06s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pallets__flask-4045:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pallets__flask-4045
+a2f6138ded93: Pulling fs layer
+097bcd56db8c: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+4c437fb1a40a: Pulling fs layer
+bbbb598094ed: Pulling fs layer
+ea6375d6088e: Pulling fs layer
+d7a077a62201: Pulling fs layer
+b300b7e19267: Pulling fs layer
+bfdebda809cd: Pulling fs layer
+4c437fb1a40a: Download complete
+d7a077a62201: Download complete
+bfdebda809cd: Download complete
+b300b7e19267: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+097bcd56db8c: Download complete
+ea6375d6088e: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+bbbb598094ed: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+4c437fb1a40a: Pull complete
+bfdebda809cd: Pull complete
+ea6375d6088e: Pull complete
+bbbb598094ed: Pull complete
+d7a077a62201: Pull complete
+b300b7e19267: Pull complete
+097bcd56db8c: Pull complete
+Digest: sha256:d8fdd9897a50781955bc860b331715ec36f6790ec829d76ed0fea2402ac27312
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pallets__flask-4045:latest
+
+
+===== PHASE: PASS_TO_PASS (50 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 50 items
+
+tests/test_basic.py::test_method_route_no_methods PASSED                 [  2%]
+tests/test_basic.py::test_disallow_string_for_allowed_methods PASSED     [  4%]
+tests/test_basic.py::test_error_handler_unknown_code PASSED              [  6%]
+tests/test_basic.py::test_request_locals PASSED                          [  8%]
+tests/test_basic.py::test_exception_propagation PASSED                   [ 10%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-True-True] PASSED [ 12%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-True-False] PASSED [ 14%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-False-True] PASSED [ 16%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-False-False] PASSED [ 18%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-True-True] PASSED [ 20%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-True-False] PASSED [ 22%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-False-True] PASSED [ 24%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-False-False] PASSED [ 26%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-True-True] PASSED [ 28%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-True-False] PASSED [ 30%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-False-True] PASSED [ 32%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-False-False] PASSED [ 34%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-True-True] PASSED [ 36%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-True-False] PASSED [ 38%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-False-True] PASSED [ 40%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-False-False] PASSED [ 42%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-True-True] PASSED [ 44%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-True-False] PASSED [ 46%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-False-True] PASSED [ 48%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-False-False] PASSED [ 50%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-True-True] PASSED [ 52%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-True-False] PASSED [ 54%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-False-True] PASSED [ 56%]
+tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-False-False] PASSED [ 58%]
+tests/test_basic.py::test_get_method_on_g PASSED                         [ 60%]
+tests/test_basic.py::test_g_iteration_protocol PASSED                    [ 62%]
+tests/test_basic.py::test_run_defaults PASSED                            [ 64%]
+tests/test_basic.py::test_run_server_port PASSED                         [ 66%]
+tests/test_basic.py::test_run_from_config[None-None-pocoo.org:8080-pocoo.org-8080] PASSED [ 68%]
+tests/test_basic.py::test_run_from_config[localhost-None-pocoo.org:8080-localhost-8080] PASSED [ 70%]
+tests/test_basic.py::test_run_from_config[None-80-pocoo.org:8080-pocoo.org-80] PASSED [ 72%]
+tests/test_basic.py::test_run_from_config[localhost-80-pocoo.org:8080-localhost-80] PASSED [ 74%]
+tests/test_basic.py::test_run_from_config[localhost-0-localhost:8080-localhost-0] PASSED [ 76%]
+tests/test_basic.py::test_run_from_config[None-None-localhost:8080-localhost-8080] PASSED [ 78%]
+tests/test_basic.py::test_run_from_config[None-None-localhost:0-localhost-0] PASSED [ 80%]
+tests/test_basic.py::test_app_freed_on_zero_refcount PASSED              [ 82%]
+tests/test_blueprints.py::test_template_filter PASSED                    [ 84%]
+tests/test_blueprints.py::test_add_template_filter PASSED                [ 86%]
+tests/test_blueprints.py::test_template_filter_with_name PASSED          [ 88%]
+tests/test_blueprints.py::test_add_template_filter_with_name PASSED      [ 90%]
+tests/test_blueprints.py::test_template_test PASSED                      [ 92%]
+tests/test_blueprints.py::test_add_template_test PASSED                  [ 94%]
+tests/test_blueprints.py::test_template_test_with_name PASSED            [ 96%]
+tests/test_blueprints.py::test_add_template_test_with_name PASSED        [ 98%]
+tests/test_blueprints.py::test_template_global PASSED                    [100%]
+
+============================== 50 passed in 0.29s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

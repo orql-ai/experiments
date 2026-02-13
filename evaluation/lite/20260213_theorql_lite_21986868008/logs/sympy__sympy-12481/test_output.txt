@@ -1,0 +1,223 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+random seed:        36020054
+hash randomization: on (PYTHONHASHSEED=365099860)
+
+sympy/combinatorics/tests/test_permutations.py[1] .                         [OK]
+sympy/core/tests/test_expr.py[2] ..                                         [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+
+================== tests finished: 4 passed, in 0.70 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-12481:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-12481
+a64d059bb6d4: Pulling fs layer
+8d40851ed2ea: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ed3dada71338: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+2f341c31f3b7: Download complete
+5c809fd8a9af: Download complete
+8d40851ed2ea: Download complete
+ed3dada71338: Download complete
+a64d059bb6d4: Download complete
+836b79e2a6e5: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+b08895a5c216: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+5c809fd8a9af: Pull complete
+8d40851ed2ea: Pull complete
+0b326ada86d1: Pull complete
+a64d059bb6d4: Pull complete
+Digest: sha256:46963c9c7a9cd5119565b9c77a853b1c0ca38775491a9281ebc3e92021f6e963
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-12481:latest
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+===== PHASE: PASS_TO_PASS (7 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+random seed:        50509135
+hash randomization: on (PYTHONHASHSEED=4091573542)
+
+sympy/combinatorics/tests/test_perm_groups.py[1] .                          [OK]
+sympy/combinatorics/tests/test_permutations.py[7] .......                   [OK]
+sympy/concrete/tests/test_products.py[1] .                                  [OK]
+sympy/core/tests/test_arit.py[3] .E.                                      [FAIL]
+sympy/core/tests/test_eval.py[1] .                                          [OK]
+sympy/core/tests/test_match.py[2] ..                                        [OK]
+sympy/core/tests/test_priority.py[1] .                                      [OK]
+sympy/core/tests/test_relational.py[1] f                                    [OK]
+sympy/core/tests/test_subs.py[2] .f                                         [OK]
+sympy/holonomic/tests/test_holonomic.py[1] E                              [FAIL]
+sympy/integrals/tests/test_integrals.py[1] .                                [OK]
+sympy/logic/tests/test_boolalg.py[1] f                                      [OK]
+sympy/matrices/expressions/tests/test_indexing.py[1] .                      [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[1] .                       [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_densearith.py[2] ..                               [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+sympy/ntheory/tests/test_factor_.py[1] .                                    [OK]
+sympy/ntheory/tests/test_multinomial.py[1] .                                [OK]
+sympy/physics/mechanics/tests/test_models.py[2] ..                          [OK]
+sympy/physics/tests/test_secondquant.py[1] .                                [OK]
+sympy/physics/units/tests/test_dimensions.py[1] .                           [OK]
+sympy/physics/units/tests/test_quantities.py[1] .                           [OK]
+sympy/polys/tests/test_ring_series.py[1] .                                  [OK]
+sympy/printing/tests/test_lambdarepr.py[1] .                                [OK]
+sympy/printing/tests/test_numpy.py[1] s                                     [OK]
+sympy/printing/tests/test_str.py[1] .                                       [OK]
+sympy/series/tests/test_nseries.py[2] ..                                    [OK]
+sympy/series/tests/test_order.py[6] ......                                  [OK]
+sympy/series/tests/test_sequences.py[1] .                                   [OK]
+sympy/simplify/tests/test_cse.py[1] .                                       [OK]
+sympy/stats/tests/test_continuous_rv.py[1] w                                [OK]
+sympy/strategies/branch/tests/test_core.py[1] .                             [OK]
+sympy/tensor/tests/test_tensor.py[1] .                                      [OK]
+sympy/utilities/tests/test_codegen.py[2] ..                                 [OK]
+sympy/utilities/tests/test_codegen_julia.py[1] .                            [OK]
+sympy/utilities/tests/test_codegen_octave.py[1] .                           [OK]
+sympy/utilities/tests/test_enumerative.py[2] ..                             [OK]
+sympy/utilities/tests/test_iterables.py[3] ...                              [OK]
+
+________________________________________________________________________________
+_________________ sympy/core/tests/test_arit.py:test_mul_coeff _________________
+  File "/testbed/sympy/core/tests/test_arit.py", line 1788, in test_mul_coeff
+    p = exp(I*pi/3)
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 427, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 250, in __new__
+    evaluated = cls.eval(*args)
+  File "/testbed/sympy/functions/elementary/exponential.py", line 251, in eval
+    if ask(Q.integer(2*coeff)):
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+________________________________________________________________________________
+ sympy/holonomic/tests/test_holonomic.py:test_multiplication_initial_condition _
+  File "/testbed/sympy/holonomic/tests/test_holonomic.py", line 150, in test_multiplication_initial_condition
+    assert p * q == r
+  File "/testbed/sympy/holonomic/holonomic.py", line 1075, in __mul__
+    return self.change_ics(other.x0) * other
+  File "/testbed/sympy/holonomic/holonomic.py", line 2085, in change_ics
+    sol = expr_to_holonomic(self.to_expr(), x=self.x, x0=b, lenics=lenics, domain=dom)
+  File "/testbed/sympy/holonomic/holonomic.py", line 2058, in to_expr
+    return hyperexpand(self.to_hyper()).simplify()
+  File "/testbed/sympy/simplify/hyperexpand.py", line 2471, in hyperexpand
+    return f.replace(hyper, do_replace).replace(meijerg, do_meijer)
+  File "/testbed/sympy/core/basic.py", line 1407, in replace
+    rv = bottom_up(self, rec_replace, atoms=True)
+  File "/testbed/sympy/simplify/simplify.py", line 994, in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+  File "/testbed/sympy/simplify/simplify.py", line 994, in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+  File "/testbed/sympy/simplify/simplify.py", line 998, in bottom_up
+    rv = F(rv)
+  File "/testbed/sympy/core/basic.py", line 1392, in rec_replace
+    new = _value(expr, result)
+  File "/testbed/sympy/core/basic.py", line 1335, in <lambda>
+    _value = lambda expr, result: value(*expr.args)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 2460, in do_replace
+    r = _hyperexpand(Hyper_Function(ap, bq), z, rewrite=rewrite)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 1981, in _hyperexpand
+    _collection = FormulaCollection()
+  File "/testbed/sympy/simplify/hyperexpand.py", line 804, in __init__
+    add_formulae(self.formulae)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 210, in add_formulae
+    Matrix([ sqrt(pi)*(I*sinh(2*sqrt(z))*fresnels(2*root(z, 4)*exp(I*pi/4)/sqrt(pi))
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 427, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 250, in __new__
+    evaluated = cls.eval(*args)
+  File "/testbed/sympy/functions/elementary/exponential.py", line 251, in eval
+    if ask(Q.integer(2*coeff)):
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+
+ tests finished: 54 passed, 2 skipped, 3 expected to fail, 2 exceptions, 
+in 2.29 seconds 
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+/testbed/sympy/physics/vector/printing.py:150: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if len(base_split) is not 1:
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_Permutation', 'test_josephus', 'test_ranking', 'test_mul', 'test_Cycle', 'test_from_sequence', 'test_printing_cyclic']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

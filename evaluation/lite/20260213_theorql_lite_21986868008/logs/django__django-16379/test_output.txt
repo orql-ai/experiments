@@ -1,0 +1,683 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 2 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16379:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16379
+7478e0ac0f23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+db840b672900: Pulling fs layer
+4e865410366e: Pulling fs layer
+500327121db6: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+b780fac9da70: Pulling fs layer
+ac5b61163589: Pulling fs layer
+187d94c4a868: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+440f2bf70467: Pulling fs layer
+6b35158d8e33: Pulling fs layer
+396d2ca0167c: Download complete
+6b35158d8e33: Download complete
+440f2bf70467: Download complete
+e5a28c0c137e: Download complete
+b780fac9da70: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+db840b672900: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+187d94c4a868: Download complete
+500327121db6: Download complete
+4e865410366e: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+396d2ca0167c: Pull complete
+b780fac9da70: Pull complete
+4e865410366e: Pull complete
+6b35158d8e33: Pull complete
+440f2bf70467: Pull complete
+187d94c4a868: Pull complete
+db840b672900: Pull complete
+Digest: sha256:248cd0477b8a06a5e40864c3b07a81b3e02bdc6cc2d4b989c841021122e30d72
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16379:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_has_key_race_handling (cache.tests.FileBasedCachePathLibTests) ... ok
+test_has_key_race_handling (cache.tests.FileBasedCacheTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.028s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (318 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 50 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Creating test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Cloning test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Cloning test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+test_head_caches_correctly (cache.tests.CacheHEADTest) ... ok
+test_head_with_cached_get (cache.tests.CacheHEADTest) ... ok
+test_createcachetable_observes_database_router (cache.tests.CreateCacheTableForDBCacheTests) ... ok
+test_long_vary_on (cache.tests.TestMakeTemplateFragmentKey) ... ok
+test_proper_escaping (cache.tests.TestMakeTemplateFragmentKey) ... ok
+test_with_ints_vary_on (cache.tests.TestMakeTemplateFragmentKey) ... ok
+test_with_many_vary_on (cache.tests.TestMakeTemplateFragmentKey) ... ok
+test_with_one_vary_on (cache.tests.TestMakeTemplateFragmentKey) ... ok
+test_with_unicode_vary_on (cache.tests.TestMakeTemplateFragmentKey) ... ok
+test_without_vary_on (cache.tests.TestMakeTemplateFragmentKey) ... ok
+test_get_cache_key (cache.tests.PrefixedCacheUtils) ... ok
+test_get_cache_key_with_query (cache.tests.PrefixedCacheUtils) ... ok
+test_learn_cache_key (cache.tests.PrefixedCacheUtils) ... ok
+test_patch_cache_control (cache.tests.PrefixedCacheUtils) ... ok
+test_patch_vary_headers (cache.tests.PrefixedCacheUtils) ... ok
+test_get_cache_key (cache.tests.TestWithTemplateResponse) ... ok
+test_get_cache_key_with_query (cache.tests.TestWithTemplateResponse) ... ok
+test_patch_vary_headers (cache.tests.TestWithTemplateResponse) ... ok
+test_get_cache_key (cache.tests.CacheUtils) ... ok
+test_get_cache_key_with_query (cache.tests.CacheUtils) ... ok
+test_learn_cache_key (cache.tests.CacheUtils) ... ok
+test_patch_cache_control (cache.tests.CacheUtils) ... ok
+test_patch_vary_headers (cache.tests.CacheUtils) ... ok
+test_close (cache.tests.CacheClosingTests) ... ok
+test_close_only_initialized (cache.tests.CacheClosingTests) ... ok
+test_custom_key_validation (cache.tests.CustomCacheKeyValidationTests) ... ok
+test_cache_key_i18n_timezone (cache.tests.PrefixedCacheI18nTest) ... ok
+test_cache_key_i18n_translation (cache.tests.PrefixedCacheI18nTest) ... ok
+test_cache_key_i18n_translation_accept_language (cache.tests.PrefixedCacheI18nTest) ... ok
+test_cache_key_no_i18n (cache.tests.PrefixedCacheI18nTest) ... ok
+test_middleware (cache.tests.PrefixedCacheI18nTest) ... ok
+test_middleware_doesnt_cache_streaming_response (cache.tests.PrefixedCacheI18nTest) ... ok
+test_cache_key_i18n_timezone (cache.tests.CacheI18nTest) ... ok
+test_cache_key_i18n_translation (cache.tests.CacheI18nTest) ... ok
+test_cache_key_i18n_translation_accept_language (cache.tests.CacheI18nTest) ... ok
+test_cache_key_no_i18n (cache.tests.CacheI18nTest) ... ok
+test_middleware (cache.tests.CacheI18nTest) ... ok
+test_middleware_doesnt_cache_streaming_response (cache.tests.CacheI18nTest) ... ok
+test_all (cache.tests.CacheHandlerTest) ... ok
+test_nonexistent_alias (cache.tests.CacheHandlerTest) ... ok
+test_nonexistent_backend (cache.tests.CacheHandlerTest) ... ok
+test_delete_many_invalid_key (cache.tests.DummyCacheTests) ... ok
+test_get_many_invalid_key (cache.tests.DummyCacheTests) ... ok
+test_get_or_set (cache.tests.DummyCacheTests) ... ok
+test_get_or_set_callable (cache.tests.DummyCacheTests) ... ok
+test_set_many_invalid_key (cache.tests.DummyCacheTests) ... ok
+test_304_response_has_http_caching_headers_but_not_cached (cache.tests.CacheMiddlewareTest) ... ok
+test_cache_page_timeout (cache.tests.CacheMiddlewareTest) ... ok
+test_fetch_cache_middleware_constructor (cache.tests.CacheMiddlewareTest) ... ok
+test_middleware (cache.tests.CacheMiddlewareTest) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 2.085s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Destroying test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+Destroying test database for alias 'other' ('file:memorydb_other?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_update_cache_middleware_constructor (cache.tests.CacheMiddlewareTest) ... ok
+test_view_decorator (cache.tests.CacheMiddlewareTest) ... ok
+test_add (cache.tests.LocMemCacheTests) ... ok
+test_add_fail_on_pickleerror (cache.tests.LocMemCacheTests) ... ok
+test_binary_string (cache.tests.LocMemCacheTests) ... ok
+test_cache_read_for_model_instance (cache.tests.LocMemCacheTests) ... ok
+test_cache_read_for_model_instance_with_deferred (cache.tests.LocMemCacheTests) ... ok
+test_cache_versioning_add (cache.tests.LocMemCacheTests) ... ok
+test_cache_versioning_delete (cache.tests.LocMemCacheTests) ... ok
+test_cache_versioning_get_set (cache.tests.LocMemCacheTests) ... ok
+test_cache_versioning_get_set_many (cache.tests.LocMemCacheTests) ... ok
+test_cache_versioning_has_key (cache.tests.LocMemCacheTests) ... ok
+test_cache_versioning_incr_decr (cache.tests.LocMemCacheTests) ... ok
+test_cache_write_for_model_instance_with_deferred (cache.tests.LocMemCacheTests) ... ok
+test_cache_write_unpicklable_object (cache.tests.LocMemCacheTests) ... ok
+test_clear (cache.tests.LocMemCacheTests) ... ok
+test_close (cache.tests.LocMemCacheTests) ... ok
+test_cull (cache.tests.LocMemCacheTests) ... ok
+test_cull_delete_when_store_empty (cache.tests.LocMemCacheTests) ... ok
+test_custom_key_func (cache.tests.LocMemCacheTests) ... ok
+test_data_types (cache.tests.LocMemCacheTests) ... ok
+test_decr (cache.tests.LocMemCacheTests) ... ok
+test_decr_version (cache.tests.LocMemCacheTests) ... ok
+test_delete (cache.tests.LocMemCacheTests) ... ok
+test_delete_many (cache.tests.LocMemCacheTests) ... ok
+test_delete_many_no_keys (cache.tests.LocMemCacheTests) ... ok
+test_delete_nonexistent (cache.tests.LocMemCacheTests) ... ok
+test_expiration (cache.tests.LocMemCacheTests) ... ok
+test_float_timeout (cache.tests.LocMemCacheTests) ... ok
+test_get_many (cache.tests.LocMemCacheTests) ... ok
+test_get_or_set (cache.tests.LocMemCacheTests) ... ok
+test_get_or_set_callable (cache.tests.LocMemCacheTests) ... ok
+test_get_or_set_racing (cache.tests.LocMemCacheTests) ... ok
+test_get_or_set_version (cache.tests.LocMemCacheTests) ... ok
+test_has_key (cache.tests.LocMemCacheTests) ... ok
+test_in (cache.tests.LocMemCacheTests) ... ok
+test_incr (cache.tests.LocMemCacheTests) ... ok
+test_incr_version (cache.tests.LocMemCacheTests) ... ok
+test_invalid_key_characters (cache.tests.LocMemCacheTests) ... ok
+test_invalid_key_length (cache.tests.LocMemCacheTests) ... ok
+test_invalid_with_version_key_length (cache.tests.LocMemCacheTests) ... ok
+test_prefix (cache.tests.LocMemCacheTests) ... ok
+test_set_fail_on_pickleerror (cache.tests.LocMemCacheTests) ... ok
+test_set_many (cache.tests.LocMemCacheTests) ... ok
+test_set_many_empty_data (cache.tests.LocMemCacheTests) ... ok
+test_set_many_expiration (cache.tests.LocMemCacheTests) ... ok
+test_simple (cache.tests.LocMemCacheTests) ... ok
+test_touch (cache.tests.LocMemCacheTests) ... ok
+test_unicode (cache.tests.LocMemCacheTests) ... ok
+test_zero_cull (cache.tests.LocMemCacheTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 11.081s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_add (cache.tests.FileBasedCachePathLibTests) ... ok
+test_add_fail_on_pickleerror (cache.tests.FileBasedCachePathLibTests) ... ok
+test_binary_string (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_dir_permissions (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_read_for_model_instance (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_read_for_model_instance_with_deferred (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_versioning_add (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_versioning_delete (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_versioning_get_set (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_versioning_get_set_many (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_versioning_has_key (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_versioning_incr_decr (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_write_for_model_instance_with_deferred (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cache_write_unpicklable_object (cache.tests.FileBasedCachePathLibTests) ... ok
+test_clear (cache.tests.FileBasedCachePathLibTests) ... ok
+test_clear_does_not_remove_cache_dir (cache.tests.FileBasedCachePathLibTests) ... ok
+test_close (cache.tests.FileBasedCachePathLibTests) ... ok
+test_creates_cache_dir_if_nonexistent (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cull (cache.tests.FileBasedCachePathLibTests) ... ok
+test_cull_delete_when_store_empty (cache.tests.FileBasedCachePathLibTests) ... ok
+test_custom_key_func (cache.tests.FileBasedCachePathLibTests) ... ok
+test_data_types (cache.tests.FileBasedCachePathLibTests) ... ok
+test_decr (cache.tests.FileBasedCachePathLibTests) ... ok
+test_decr_version (cache.tests.FileBasedCachePathLibTests) ... ok
+test_delete (cache.tests.FileBasedCachePathLibTests) ... ok
+test_delete_many (cache.tests.FileBasedCachePathLibTests) ... ok
+test_delete_many_no_keys (cache.tests.FileBasedCachePathLibTests) ... ok
+test_delete_nonexistent (cache.tests.FileBasedCachePathLibTests) ... ok
+test_empty_cache_file_considered_expired (cache.tests.FileBasedCachePathLibTests) ... ok
+test_expiration (cache.tests.FileBasedCachePathLibTests) ... ok
+test_float_timeout (cache.tests.FileBasedCachePathLibTests) ... ok
+test_get_does_not_ignore_non_filenotfound_exceptions (cache.tests.FileBasedCachePathLibTests) ... ok
+test_get_ignores_enoent (cache.tests.FileBasedCachePathLibTests) ... ok
+test_get_many (cache.tests.FileBasedCachePathLibTests) ... ok
+test_get_or_set (cache.tests.FileBasedCachePathLibTests) ... ok
+test_get_or_set_callable (cache.tests.FileBasedCachePathLibTests) ... ok
+test_get_or_set_racing (cache.tests.FileBasedCachePathLibTests) ... ok
+test_get_or_set_version (cache.tests.FileBasedCachePathLibTests) ... ok
+test_has_key (cache.tests.FileBasedCachePathLibTests) ... ok
+test_ignores_non_cache_files (cache.tests.FileBasedCachePathLibTests) ... ok
+test_in (cache.tests.FileBasedCachePathLibTests) ... ok
+test_incr (cache.tests.FileBasedCachePathLibTests) ... ok
+test_incr_version (cache.tests.FileBasedCachePathLibTests) ... ok
+test_invalid_key_characters (cache.tests.FileBasedCachePathLibTests) ... ok
+test_invalid_key_length (cache.tests.FileBasedCachePathLibTests) ... ok
+test_invalid_with_version_key_length (cache.tests.FileBasedCachePathLibTests) ... ok
+test_prefix (cache.tests.FileBasedCachePathLibTests) ... ok
+test_set_fail_on_pickleerror (cache.tests.FileBasedCachePathLibTests) ... ok
+test_set_many (cache.tests.FileBasedCachePathLibTests) ... ok
+test_set_many_empty_data (cache.tests.FileBasedCachePathLibTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 2.100s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_add (cache.tests.FileBasedCacheTests) ... ok
+test_add_fail_on_pickleerror (cache.tests.FileBasedCacheTests) ... ok
+test_binary_string (cache.tests.FileBasedCacheTests) ... ok
+test_cache_dir_permissions (cache.tests.FileBasedCacheTests) ... ok
+test_cache_read_for_model_instance (cache.tests.FileBasedCacheTests) ... ok
+test_cache_read_for_model_instance_with_deferred (cache.tests.FileBasedCacheTests) ... ok
+test_cache_versioning_add (cache.tests.FileBasedCacheTests) ... ok
+test_cache_versioning_delete (cache.tests.FileBasedCacheTests) ... ok
+test_cache_versioning_get_set (cache.tests.FileBasedCacheTests) ... ok
+test_cache_versioning_get_set_many (cache.tests.FileBasedCacheTests) ... ok
+test_cache_versioning_has_key (cache.tests.FileBasedCacheTests) ... ok
+test_cache_versioning_incr_decr (cache.tests.FileBasedCacheTests) ... ok
+test_cache_write_for_model_instance_with_deferred (cache.tests.FileBasedCacheTests) ... ok
+test_cache_write_unpicklable_object (cache.tests.FileBasedCacheTests) ... ok
+test_clear (cache.tests.FileBasedCacheTests) ... ok
+test_clear_does_not_remove_cache_dir (cache.tests.FileBasedCacheTests) ... ok
+test_close (cache.tests.FileBasedCacheTests) ... ok
+test_creates_cache_dir_if_nonexistent (cache.tests.FileBasedCacheTests) ... ok
+test_cull (cache.tests.FileBasedCacheTests) ... ok
+test_cull_delete_when_store_empty (cache.tests.FileBasedCacheTests) ... ok
+test_custom_key_func (cache.tests.FileBasedCacheTests) ... ok
+test_data_types (cache.tests.FileBasedCacheTests) ... ok
+test_decr (cache.tests.FileBasedCacheTests) ... ok
+test_decr_version (cache.tests.FileBasedCacheTests) ... ok
+test_delete (cache.tests.FileBasedCacheTests) ... ok
+test_delete_many (cache.tests.FileBasedCacheTests) ... ok
+test_delete_many_no_keys (cache.tests.FileBasedCacheTests) ... ok
+test_delete_nonexistent (cache.tests.FileBasedCacheTests) ... ok
+test_empty_cache_file_considered_expired (cache.tests.FileBasedCacheTests) ... ok
+test_expiration (cache.tests.FileBasedCacheTests) ... ok
+test_float_timeout (cache.tests.FileBasedCacheTests) ... ok
+test_get_does_not_ignore_non_filenotfound_exceptions (cache.tests.FileBasedCacheTests) ... ok
+test_get_ignores_enoent (cache.tests.FileBasedCacheTests) ... ok
+test_get_many (cache.tests.FileBasedCacheTests) ... ok
+test_get_or_set (cache.tests.FileBasedCacheTests) ... ok
+test_get_or_set_callable (cache.tests.FileBasedCacheTests) ... ok
+test_get_or_set_racing (cache.tests.FileBasedCacheTests) ... ok
+test_get_or_set_version (cache.tests.FileBasedCacheTests) ... ok
+test_has_key (cache.tests.FileBasedCacheTests) ... ok
+test_ignores_non_cache_files (cache.tests.FileBasedCacheTests) ... ok
+test_in (cache.tests.FileBasedCacheTests) ... ok
+test_incr (cache.tests.FileBasedCacheTests) ... ok
+test_incr_version (cache.tests.FileBasedCacheTests) ... ok
+test_invalid_key_characters (cache.tests.FileBasedCacheTests) ... ok
+test_invalid_key_length (cache.tests.FileBasedCacheTests) ... ok
+test_set_many_expiration (cache.tests.FileBasedCachePathLibTests) ... ok
+test_simple (cache.tests.FileBasedCachePathLibTests) ... ok
+test_touch (cache.tests.FileBasedCachePathLibTests) ... ok
+test_unicode (cache.tests.FileBasedCachePathLibTests) ... ok
+test_zero_cull (cache.tests.FileBasedCachePathLibTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 9.052s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_add (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_add_fail_on_pickleerror (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_binary_string (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_read_for_model_instance (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_read_for_model_instance_with_deferred (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_versioning_add (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_versioning_delete (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_versioning_get_set (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_versioning_get_set_many (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_versioning_has_key (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_versioning_incr_decr (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_write_for_model_instance_with_deferred (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cache_write_unpicklable_object (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_clear (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_close (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_createcachetable_dry_run_mode (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cull (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cull_delete_when_store_empty (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_cull_queries (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_custom_key_func (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_data_types (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_decr (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_decr_version (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_delete (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_delete_many (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_delete_many_no_keys (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_delete_many_num_queries (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_delete_nonexistent (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_expiration (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_float_timeout (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_get_many (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_get_many_num_queries (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_get_or_set (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_get_or_set_callable (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_get_or_set_racing (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_get_or_set_version (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_has_key (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_has_key_query_columns_quoted (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_in (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_incr (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_invalid_with_version_key_length (cache.tests.FileBasedCacheTests) ... ok
+test_prefix (cache.tests.FileBasedCacheTests) ... ok
+test_set_fail_on_pickleerror (cache.tests.FileBasedCacheTests) ... ok
+test_set_many (cache.tests.FileBasedCacheTests) ... ok
+test_set_many_empty_data (cache.tests.FileBasedCacheTests) ... ok
+test_set_many_expiration (cache.tests.FileBasedCacheTests) ... ok
+test_simple (cache.tests.FileBasedCacheTests) ... ok
+test_touch (cache.tests.FileBasedCacheTests) ... ok
+test_unicode (cache.tests.FileBasedCacheTests) ... ok
+test_zero_cull (cache.tests.FileBasedCacheTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 9.079s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_add (cache.tests.DBCacheTests) ... ok
+test_add_fail_on_pickleerror (cache.tests.DBCacheTests) ... ok
+test_binary_string (cache.tests.DBCacheTests) ... ok
+test_cache_read_for_model_instance (cache.tests.DBCacheTests) ... ok
+test_cache_read_for_model_instance_with_deferred (cache.tests.DBCacheTests) ... ok
+test_cache_versioning_add (cache.tests.DBCacheTests) ... ok
+test_cache_versioning_delete (cache.tests.DBCacheTests) ... ok
+test_cache_versioning_get_set (cache.tests.DBCacheTests) ... ok
+test_cache_versioning_get_set_many (cache.tests.DBCacheTests) ... ok
+test_cache_versioning_has_key (cache.tests.DBCacheTests) ... ok
+test_cache_versioning_incr_decr (cache.tests.DBCacheTests) ... ok
+test_cache_write_for_model_instance_with_deferred (cache.tests.DBCacheTests) ... ok
+test_cache_write_unpicklable_object (cache.tests.DBCacheTests) ... ok
+test_clear (cache.tests.DBCacheTests) ... ok
+test_close (cache.tests.DBCacheTests) ... ok
+test_createcachetable_dry_run_mode (cache.tests.DBCacheTests) ... ok
+test_cull (cache.tests.DBCacheTests) ... ok
+test_cull_delete_when_store_empty (cache.tests.DBCacheTests) ... ok
+test_cull_queries (cache.tests.DBCacheTests) ... ok
+test_custom_key_func (cache.tests.DBCacheTests) ... ok
+test_data_types (cache.tests.DBCacheTests) ... ok
+test_decr (cache.tests.DBCacheTests) ... ok
+test_decr_version (cache.tests.DBCacheTests) ... ok
+test_delete (cache.tests.DBCacheTests) ... ok
+test_delete_many (cache.tests.DBCacheTests) ... ok
+test_delete_many_no_keys (cache.tests.DBCacheTests) ... ok
+test_delete_many_num_queries (cache.tests.DBCacheTests) ... ok
+test_delete_nonexistent (cache.tests.DBCacheTests) ... ok
+test_expiration (cache.tests.DBCacheTests) ... ok
+test_float_timeout (cache.tests.DBCacheTests) ... ok
+test_get_many (cache.tests.DBCacheTests) ... ok
+test_get_many_num_queries (cache.tests.DBCacheTests) ... ok
+test_get_or_set (cache.tests.DBCacheTests) ... ok
+test_get_or_set_callable (cache.tests.DBCacheTests) ... ok
+test_get_or_set_racing (cache.tests.DBCacheTests) ... ok
+test_get_or_set_version (cache.tests.DBCacheTests) ... ok
+test_incr_version (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_invalid_key_characters (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_invalid_key_length (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_invalid_with_version_key_length (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_prefix (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_second_call_doesnt_crash (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_set_fail_on_pickleerror (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_set_many (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_set_many_empty_data (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_set_many_expiration (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_simple (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_touch (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_unicode (cache.tests.DBCacheWithTimeZoneTests) ... ok
+test_zero_cull (cache.tests.DBCacheWithTimeZoneTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 9.148s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application cache
+Found 18 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, cache, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table cache_poll
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_has_key (cache.tests.DBCacheTests) ... ok
+test_has_key_query_columns_quoted (cache.tests.DBCacheTests) ... ok
+test_in (cache.tests.DBCacheTests) ... ok
+test_incr (cache.tests.DBCacheTests) ... ok
+test_incr_version (cache.tests.DBCacheTests) ... ok
+test_invalid_key_characters (cache.tests.DBCacheTests) ... ok
+test_invalid_key_length (cache.tests.DBCacheTests) ... ok
+test_invalid_with_version_key_length (cache.tests.DBCacheTests) ... ok
+test_prefix (cache.tests.DBCacheTests) ... ok
+test_second_call_doesnt_crash (cache.tests.DBCacheTests) ... ok
+test_set_fail_on_pickleerror (cache.tests.DBCacheTests) ... ok
+test_set_many (cache.tests.DBCacheTests) ... ok
+test_set_many_empty_data (cache.tests.DBCacheTests) ... ok
+test_set_many_expiration (cache.tests.DBCacheTests) ... ok
+test_simple (cache.tests.DBCacheTests) ... ok
+test_touch (cache.tests.DBCacheTests) ... ok
+test_unicode (cache.tests.DBCacheTests) ... ok
+test_zero_cull (cache.tests.DBCacheTests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 9.101s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

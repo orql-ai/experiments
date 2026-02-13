@@ -1,0 +1,131 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        61112090
+hash randomization: on (PYTHONHASHSEED=3796445954)
+
+sympy/physics/quantum/tests/test_circuitutils.py[2] ..                      [OK]
+sympy/physics/units/tests/test_quantities.py[1] .                           [OK]
+sympy/physics/units/tests/test_util.py[2] ..                                [OK]
+
+================== tests finished: 5 passed, in 0.47 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20442:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-20442
+e5dc9876296f: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+b08895a5c216: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+df778a66c0b6: Pulling fs layer
+5c809fd8a9af: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+df778a66c0b6: Download complete
+ac5b61163589: Download complete
+2f341c31f3b7: Download complete
+ed3dada71338: Download complete
+e5dc9876296f: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+b08895a5c216: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+5c809fd8a9af: Pull complete
+df778a66c0b6: Pull complete
+0b326ada86d1: Pull complete
+e5dc9876296f: Pull complete
+Digest: sha256:6dc7bba32075d704b8fd2290fdfd509c9be3e45a175ad4733efb54f5ee54ef15
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20442:latest
+
+
+===== PHASE: PASS_TO_PASS (24 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        50604260
+hash randomization: on (PYTHONHASHSEED=3842398645)
+
+sympy/assumptions/tests/test_assumptions_2.py[1] .                          [OK]
+sympy/combinatorics/tests/test_perm_groups.py[2] ..                         [OK]
+sympy/combinatorics/tests/test_permutations.py[2] ..                        [OK]
+sympy/concrete/tests/test_sums_products.py[1] .                             [OK]
+sympy/core/tests/test_basic.py[1] .                                         [OK]
+sympy/core/tests/test_equal.py[1] .                                         [OK]
+sympy/core/tests/test_expr.py[1] .                                          [OK]
+sympy/core/tests/test_relational.py[1] .                                    [OK]
+sympy/core/tests/test_subs.py[2] ..                                         [OK]
+sympy/geometry/tests/test_line.py[2] ..                                     [OK]
+sympy/logic/tests/test_boolalg.py[1] .                                      [OK]
+sympy/matrices/tests/test_densearith.py[1] .                                [OK]
+sympy/matrices/tests/test_interactions.py[1] .                              [OK]
+sympy/matrices/tests/test_matrices.py[2] ..                                 [OK]
+sympy/physics/quantum/tests/test_pauli.py[1] .                              [OK]
+sympy/physics/tests/test_secondquant.py[8] ........                         [OK]
+sympy/physics/units/tests/test_dimensionsystem.py[1] .                      [OK]
+sympy/physics/units/tests/test_quantities.py[25] .................f.......  [OK]
+sympy/physics/units/tests/test_unitsystem.py[2] ..                          [OK]
+sympy/plotting/intervalmath/tests/test_interval_membership.py[1] .          [OK]
+sympy/polys/agca/tests/test_homomorphisms.py[1] .                           [OK]
+sympy/polys/domains/tests/test_polynomialring.py[1] .                       [OK]
+sympy/polys/tests/test_solvers.py[1] .                                      [OK]
+sympy/printing/pretty/tests/test_pretty.py[3] ...                           [OK]
+sympy/printing/tests/test_c.py[1] .                                         [OK]
+sympy/printing/tests/test_codeprinter.py[2] ..                              [OK]
+sympy/printing/tests/test_fortran.py[1] .                                   [OK]
+sympy/printing/tests/test_glsl.py[2] ..                                     [OK]
+sympy/printing/tests/test_jscode.py[1] .                                    [OK]
+sympy/printing/tests/test_lambdarepr.py[1] .                                [OK]
+sympy/printing/tests/test_latex.py[2] ..                                    [OK]
+sympy/printing/tests/test_mathml.py[54] ........................................
+..............                                                              [OK]
+sympy/printing/tests/test_pycode.py[1] .                                    [OK]
+sympy/printing/tests/test_rcode.py[1] .                                     [OK]
+sympy/printing/tests/test_repr.py[1] .                                      [OK]
+sympy/printing/tests/test_rust.py[1] .                                      [OK]
+sympy/printing/tests/test_str.py[1] .                                       [OK]
+sympy/printing/tests/test_tree.py[2] f.                                     [OK]
+sympy/simplify/tests/test_function.py[1] .                                  [OK]
+sympy/solvers/tests/test_solvers.py[1] .                                    [OK]
+sympy/solvers/tests/test_solveset.py[1] .                                   [OK]
+sympy/tensor/array/tests/test_immutable_ndim_array.py[1] .                  [OK]
+sympy/tensor/array/tests/test_mutable_ndim_array.py[1] .                    [OK]
+sympy/utilities/tests/test_pickling.py[4] .ffX                              [OK]
+
+________________________________ xpassed tests _________________________________
+sympy/utilities/tests/test_pickling.py: test_printing3
+
+ tests finished: 138 passed, 4 expected to fail, 1 expected to fail but passed, 
+in 8.15 seconds 
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

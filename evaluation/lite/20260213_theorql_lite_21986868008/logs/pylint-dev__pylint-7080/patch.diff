@@ -1,0 +1,51 @@
+diff --git a/pylint/config/arguments_manager.py b/pylint/config/arguments_manager.py
+index eda1a583d..2099d3cb7 100644
+--- a/pylint/config/arguments_manager.py
++++ b/pylint/config/arguments_manager.py
+@@ -677,8 +677,10 @@ class _ArgumentsManager:
+         stdout.
+         """
+         toml_doc = tomlkit.document()
++        tool_table = tomlkit.table()
+         pylint_tool_table = tomlkit.table(is_super_table=True)
+-        toml_doc.add(tomlkit.key(["tool", "pylint"]), pylint_tool_table)
++        tool_table.add("pylint", pylint_tool_table)
++        toml_doc.add("tool", tool_table)
+ 
+         for group in sorted(
+             self._arg_parser._action_groups,
+diff --git a/pylint/lint/pylinter.py b/pylint/lint/pylinter.py
+index e2bbf061e..b769270f2 100644
+--- a/pylint/lint/pylinter.py
++++ b/pylint/lint/pylinter.py
+@@ -598,7 +598,7 @@ class PyLinter(
+                         continue
+ 
+                     if _is_ignored_file(
+-                        root,
++                        os.path.normpath(root),
+                         self.config.ignore,
+                         self.config.ignore_patterns,
+                         self.config.ignore_paths,
+@@ -608,10 +608,10 @@ class PyLinter(
+ 
+                     if "__init__.py" in files:
+                         skip_subtrees.append(root)
+-                        yield root
++                        yield os.path.normpath(root)
+                     else:
+                         yield from (
+-                            os.path.join(root, file)
++                            os.path.normpath(os.path.join(root, file))
+                             for file in files
+                             if file.endswith(".py")
+                         )
+@@ -775,7 +775,7 @@ class PyLinter(
+             modules,
+             self.config.ignore,
+             self.config.ignore_patterns,
+-            self._ignore_paths,
++            self.config.ignore_paths,
+         )
+         for error in errors:
+             message = modname = error["mod"]

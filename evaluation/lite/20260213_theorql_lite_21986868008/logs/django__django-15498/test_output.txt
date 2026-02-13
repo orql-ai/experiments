@@ -1,0 +1,97 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application view_tests
+Found 1 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15498:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15498
+52dff895b6bc: Pulling fs layer
+4efa29366152: Pulling fs layer
+e1cc82b9da8d: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+f3e594b530c2: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+729c11c31db2: Pulling fs layer
+51c2875bef29: Pulling fs layer
+933100d0d38c: Pulling fs layer
+500327121db6: Pulling fs layer
+ac5b61163589: Download complete
+4efa29366152: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+729c11c31db2: Download complete
+933100d0d38c: Download complete
+e1cc82b9da8d: Download complete
+52dff895b6bc: Download complete
+7478e0ac0f23: Download complete
+f3e594b530c2: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+51c2875bef29: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+729c11c31db2: Pull complete
+933100d0d38c: Pull complete
+51c2875bef29: Pull complete
+4efa29366152: Pull complete
+e1cc82b9da8d: Pull complete
+f3e594b530c2: Pull complete
+52dff895b6bc: Pull complete
+Digest: sha256:19385d60b2d39d643812d8b310d4c87af3afa37fa6758c316d68bed306a959f1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15498:latest
+test_was_modified_since_empty_string (view_tests.tests.test_static.StaticUtilsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (18 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application view_tests
+Found 18 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_404 (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_copes_with_empty_path_component (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_empty_prefix (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_index (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_index_custom_template (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_index_subdir (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_is_modified_since (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_not_modified_since (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_prefix (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_unknown_mime_type (view_tests.tests.test_static.StaticHelperTest) ... ok
+test_404 (view_tests.tests.test_static.StaticTests) ... ok
+test_copes_with_empty_path_component (view_tests.tests.test_static.StaticTests) ... ok
+test_index (view_tests.tests.test_static.StaticTests) ... ok
+test_index_custom_template (view_tests.tests.test_static.StaticTests) ... ok
+test_index_subdir (view_tests.tests.test_static.StaticTests) ... ok
+test_is_modified_since (view_tests.tests.test_static.StaticTests) ... ok
+test_not_modified_since (view_tests.tests.test_static.StaticTests) ... ok
+test_unknown_mime_type (view_tests.tests.test_static.StaticTests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.076s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

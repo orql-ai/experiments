@@ -1,0 +1,96 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        92787287
+hash randomization: on (PYTHONHASHSEED=1251164067)
+
+sympy/ntheory/tests/test_partitions.py[1] .                                 [OK]
+sympy/utilities/tests/test_iterables.py[2] ..                               [OK]
+
+================== tests finished: 3 passed, in 0.24 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20154:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-20154
+7921c9509d43: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+b08895a5c216: Pulling fs layer
+944ed6213e42: Pulling fs layer
+ed3dada71338: Pulling fs layer
+ac5b61163589: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+500327121db6: Pulling fs layer
+2f341c31f3b7: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+5c809fd8a9af: Download complete
+ac5b61163589: Download complete
+ed3dada71338: Download complete
+944ed6213e42: Download complete
+7921c9509d43: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+944ed6213e42: Pull complete
+0b326ada86d1: Pull complete
+7921c9509d43: Pull complete
+Digest: sha256:d78e0c3f4649fb16dd463fc0a96724829db6620391da4e6473b714f0feb05554
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-20154:latest
+
+
+===== PHASE: PASS_TO_PASS (40 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        76808783
+hash randomization: on (PYTHONHASHSEED=321765310)
+
+sympy/combinatorics/tests/test_partitions.py[1] .                           [OK]
+sympy/core/tests/test_compatibility.py[1] .                                 [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_graph.py[1] .                                     [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+sympy/ntheory/tests/test_digits.py[1] .                                     [OK]
+sympy/simplify/tests/test_cse.py[1] .                                       [OK]
+sympy/simplify/tests/test_sqrtdenest.py[1] .                                [OK]
+sympy/strategies/tests/test_rl.py[1] .                                      [OK]
+sympy/tensor/array/tests/test_arrayop.py[1] .                               [OK]
+sympy/tensor/array/tests/test_immutable_ndim_array.py[1] .                  [OK]
+sympy/tensor/array/tests/test_mutable_ndim_array.py[1] .                    [OK]
+sympy/utilities/tests/test_enumerative.py[2] ..                             [OK]
+sympy/utilities/tests/test_iterables.py[40] ....................................
+....                                                                        [OK]
+
+================== tests finished: 54 passed, in 0.88 seconds ==================
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

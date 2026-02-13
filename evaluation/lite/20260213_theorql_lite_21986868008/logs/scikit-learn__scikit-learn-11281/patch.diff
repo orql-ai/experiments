@@ -1,0 +1,66 @@
+diff --git a/sklearn/mixture/base.py b/sklearn/mixture/base.py
+index a9f66740f2..1bff2b0d6b 100644
+--- a/sklearn/mixture/base.py
++++ b/sklearn/mixture/base.py
+@@ -239,9 +239,33 @@ class BaseMixture(six.with_metaclass(ABCMeta, DensityMixin, BaseEstimator)):
+ 
+         self._set_parameters(best_params)
+         self.n_iter_ = best_n_iter
++        self.labels_ = self.predict(X)
+ 
+         return self
+ 
++    def fit_predict(self, X, y=None):
++        """Estimate model parameters using X and predict the labels for X.
++
++        The method fits the model n_init times and sets the parameters with
++        which the model has the largest likelihood or lower bound. Within each
++        trial, the method iterates between E-step and M-step for `max_iter`
++        times until the change of likelihood or lower bound is less than
++        `tol`, otherwise a `ConvergenceWarning` is raised. After fitting, it
++        predicts the most likely label for the input data points.
++
++        Parameters
++        ----------
++        X : array-like, shape (n_samples, n_features)
++            List of n_features-dimensional data points. Each row
++            corresponds to a single data point.
++
++        Returns
++        -------
++        labels : array, shape (n_samples,)
++            Component labels.
++        """
++        return self.fit(X).labels_
++
+     def _e_step(self, X):
+         """E step.
+ 
+diff --git a/sklearn/mixture/bayesian_mixture.py b/sklearn/mixture/bayesian_mixture.py
+index aef6828fa7..905e61241d 100644
+--- a/sklearn/mixture/bayesian_mixture.py
++++ b/sklearn/mixture/bayesian_mixture.py
+@@ -285,6 +285,9 @@ class BayesianGaussianMixture(BaseMixture):
+             (n_features)             if 'diag',
+             float                    if 'spherical'
+ 
++    labels_ : array-like, shape (n_samples,)
++        Labels of each point.
++
+     See Also
+     --------
+     GaussianMixture : Finite Gaussian mixture fit with EM.
+diff --git a/sklearn/mixture/gaussian_mixture.py b/sklearn/mixture/gaussian_mixture.py
+index d58a9e326c..d00fa0cd0d 100644
+--- a/sklearn/mixture/gaussian_mixture.py
++++ b/sklearn/mixture/gaussian_mixture.py
+@@ -574,6 +574,9 @@ class GaussianMixture(BaseMixture):
+     lower_bound_ : float
+         Log-likelihood of the best fit of EM.
+ 
++    labels_ : array-like, shape (n_samples,)
++        Labels of each point.
++
+     See Also
+     --------
+     BayesianGaussianMixture : Gaussian mixture model fit with a variational

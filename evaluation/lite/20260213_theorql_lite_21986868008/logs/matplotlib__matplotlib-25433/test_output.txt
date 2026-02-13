@@ -1,0 +1,148 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_backend_bases.py::test_grab_clear PASSED       [100%]
+
+============================== 1 passed in 4.06s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25433:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25433
+ea0ec430ea7d: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e2309197fa57: Pulling fs layer
+ac5b61163589: Pulling fs layer
+ff21019ca605: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+803a19ff22a0: Pulling fs layer
+500327121db6: Pulling fs layer
+4af3c06a3dd5: Pulling fs layer
+4fd96bd63a28: Pulling fs layer
+2d1e6e5cb34d: Pulling fs layer
+ac5b61163589: Download complete
+4fd96bd63a28: Download complete
+2d1e6e5cb34d: Download complete
+836b79e2a6e5: Download complete
+ff21019ca605: Download complete
+e5a28c0c137e: Download complete
+803a19ff22a0: Download complete
+7478e0ac0f23: Download complete
+ea0ec430ea7d: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+e2309197fa57: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+e2309197fa57: Pull complete
+4af3c06a3dd5: Download complete
+ff21019ca605: Pull complete
+803a19ff22a0: Pull complete
+4fd96bd63a28: Pull complete
+2d1e6e5cb34d: Pull complete
+4af3c06a3dd5: Pull complete
+ea0ec430ea7d: Pull complete
+Digest: sha256:284bc6c446348782e8bb2ec8e6bb2cebe2e8f7170cb1cf25b861a22860a476af
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25433:latest
+
+
+===== PHASE: PASS_TO_PASS (55 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_backend_bases.py::test_uses_per_path PASSED    [  2%]
+lib/matplotlib/tests/test_backend_bases.py::test_canvas_ctor PASSED      [  4%]
+lib/matplotlib/tests/test_backend_bases.py::test_get_default_filename PASSED [  6%]
+lib/matplotlib/tests/test_backend_bases.py::test_canvas_change PASSED    [  8%]
+lib/matplotlib/tests/test_backend_bases.py::test_non_gui_warning PASSED  [ 10%]
+lib/matplotlib/tests/test_backend_bases.py::test_location_event_position[42-24] PASSED [ 12%]
+lib/matplotlib/tests/test_backend_bases.py::test_location_event_position[None-42] PASSED [ 14%]
+lib/matplotlib/tests/test_backend_bases.py::test_location_event_position[None-None] PASSED [ 16%]
+lib/matplotlib/tests/test_backend_bases.py::test_location_event_position[200-100.01] PASSED [ 18%]
+lib/matplotlib/tests/test_backend_bases.py::test_location_event_position[205.75-2.0] PASSED [ 20%]
+lib/matplotlib/tests/test_backend_bases.py::test_pick PASSED             [ 22%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_zoom PASSED [ 24%]
+lib/matplotlib/tests/test_backend_bases.py::test_widgetlock_zoompan PASSED [ 26%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-1-expected0-vertical-imshow] PASSED [ 28%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-1-expected0-vertical-contourf] PASSED [ 30%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-1-expected0-horizontal-imshow] PASSED [ 32%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-1-expected0-horizontal-contourf] PASSED [ 34%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-3-expected1-vertical-imshow] PASSED [ 36%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-3-expected1-vertical-contourf] PASSED [ 38%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-3-expected1-horizontal-imshow] PASSED [ 40%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[zoom-3-expected1-horizontal-contourf] PASSED [ 42%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-1-expected2-vertical-imshow] PASSED [ 44%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-1-expected2-vertical-contourf] PASSED [ 46%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-1-expected2-horizontal-imshow] PASSED [ 48%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-1-expected2-horizontal-contourf] PASSED [ 50%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-3-expected3-vertical-imshow] PASSED [ 52%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-3-expected3-vertical-contourf] PASSED [ 54%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-3-expected3-horizontal-imshow] PASSED [ 56%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_colorbar[pan-3-expected3-horizontal-contourf] PASSED [ 58%]
+lib/matplotlib/tests/test_backend_bases.py::test_toolbar_zoompan PASSED  [ 60%]
+lib/matplotlib/tests/test_backend_bases.py::test_draw[svg] PASSED        [ 62%]
+lib/matplotlib/tests/test_backend_bases.py::test_draw[ps] PASSED         [ 64%]
+lib/matplotlib/tests/test_backend_bases.py::test_draw[pdf] PASSED        [ 66%]
+lib/matplotlib/tests/test_backend_bases.py::test_draw[pgf] PASSED        [ 68%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend0-expectedxlim0-expectedylim0] PASSED [ 70%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend1-expectedxlim1-expectedylim1] PASSED [ 72%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend2-expectedxlim2-expectedylim2] PASSED [ 74%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend3-expectedxlim3-expectedylim3] PASSED [ 76%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend4-expectedxlim4-expectedylim4] PASSED [ 78%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend5-expectedxlim5-expectedylim5] PASSED [ 80%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend6-expectedxlim6-expectedylim6] PASSED [ 82%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[None-mouseend7-expectedxlim7-expectedylim7] PASSED [ 84%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[shift-mouseend8-expectedxlim8-expectedylim8] PASSED [ 86%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[shift-mouseend9-expectedxlim9-expectedylim9] PASSED [ 88%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[shift-mouseend10-expectedxlim10-expectedylim10] PASSED [ 90%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[shift-mouseend11-expectedxlim11-expectedylim11] PASSED [ 92%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[shift-mouseend12-expectedxlim12-expectedylim12] PASSED [ 94%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[shift-mouseend13-expectedxlim13-expectedylim13] PASSED [ 96%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[x-mouseend14-expectedxlim14-expectedylim14] PASSED [ 98%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[y-mouseend15-expectedxlim15-expectedylim15] PASSED [100%]
+
+============================== 50 passed in 9.45s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 5 items
+
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[control-mouseend16-expectedxlim16-expectedylim16] PASSED [ 20%]
+lib/matplotlib/tests/test_backend_bases.py::test_interactive_pan[control-mouseend17-expectedxlim17-expectedylim17] PASSED [ 40%]
+lib/matplotlib/tests/test_backend_bases.py::test_toolmanager_remove PASSED [ 60%]
+lib/matplotlib/tests/test_backend_bases.py::test_toolmanager_get_tool PASSED [ 80%]
+lib/matplotlib/tests/test_backend_bases.py::test_toolmanager_update_keymap PASSED [100%]
+
+============================== 5 passed in 3.91s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

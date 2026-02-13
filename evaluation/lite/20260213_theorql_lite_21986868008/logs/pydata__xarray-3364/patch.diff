@@ -1,0 +1,105 @@
+diff --git a/xarray/core/concat.py b/xarray/core/concat.py
+index ecae2566..3de17e6f 100644
+--- a/xarray/core/concat.py
++++ b/xarray/core/concat.py
+@@ -16,6 +16,7 @@ def concat(
+     positions=None,
+     fill_value=dtypes.NA,
+     join="outer",
++    ignore_missing_vars=True,
+ ):
+     """Concatenate xarray objects along a new or existing dimension.
+ 
+@@ -91,6 +92,10 @@ def concat(
+           those of the first object with that dimension. Indexes for the same
+           dimension must have the same size in all objects.
+ 
++    ignore_missing_vars : bool, optional
++        If True, variables present in some datasets but not others will be
++        assigned the fill_value rather than raising an error. Default is False.
++
+     indexers, mode, concat_over : deprecated
+ 
+     Returns
+@@ -128,7 +133,7 @@ def concat(
+             "can only concatenate xarray Dataset and DataArray "
+             "objects, got %s" % type(first_obj)
+         )
+-    return f(objs, dim, data_vars, coords, compat, positions, fill_value, join)
++    return f(objs, dim, data_vars, coords, compat, positions, fill_value, join, ignore_missing_vars)
+ 
+ 
+ def _calc_concat_dim_coord(dim):
+@@ -269,6 +274,7 @@ def _dataset_concat(
+     positions,
+     fill_value=dtypes.NA,
+     join="outer",
++    ignore_missing_vars=False,
+ ):
+     """
+     Concatenate a sequence of datasets along a new or existing dimension
+@@ -307,6 +313,14 @@ def _dataset_concat(
+     # determine which variables to merge, and then merge them according to compat
+     variables_to_merge = (coord_names | data_names) - concat_over - dim_names
+ 
++    # If ignore_missing_vars is True, exclude variables that are missing from some datasets
++    if ignore_missing_vars:
++        for var in list(variables_to_merge):
++            for ds in datasets:
++                if var not in ds.variables:
++                    variables_to_merge = variables_to_merge - {var}
++                    break
++
+     result_vars = {}
+     if variables_to_merge:
+         to_merge = {var: [] for var in variables_to_merge}
+@@ -361,8 +375,32 @@ def _dataset_concat(
+             try:
+                 vars = ensure_common_dims([ds.variables[k] for ds in datasets])
+             except KeyError:
+-                raise ValueError("%r is not present in all datasets." % k)
+-            combined = concat_vars(vars, dim, positions)
++                if ignore_missing_vars:
++                    # Create fill values for missing variables
++                    vars_to_concat = []
++                    for ds in datasets:
++                        if k in ds.variables:
++                            vars_to_concat.append(ds.variables[k])
++                        else:
++                            # Get the dtype from the first dataset that has this variable
++                            for first_ds in datasets:
++                                if k in first_ds.variables:
++                                    template = first_ds.variables[k]
++                                    # Create a variable with the same dimensions but filled with NaN
++                                    new_dims = template.dims
++                                    new_shape = tuple(
++                                        ds.dims.get(d, 1) if d != dim else 1 for d in new_dims
++                                    )
++                                    # Get the fill value for this dtype
++                                    _, fv = dtypes.maybe_promote(template.dtype)
++                                    new_data = np.full(new_shape, fv, dtype=template.dtype)
++                                    missing_var = Variable(new_dims, new_data)
++                                    vars_to_concat.append(missing_var)
++                                    break
++                    vars = ensure_common_dims(vars_to_concat)
++                else:
++                    raise ValueError("%r is not present in all datasets." % k)
++            combined = concat_vars(list(vars), dim, positions)
+             assert isinstance(combined, Variable)
+             result_vars[k] = combined
+ 
+@@ -394,6 +432,7 @@ def _dataarray_concat(
+     positions,
+     fill_value=dtypes.NA,
+     join="outer",
++    ignore_missing_vars=False,
+ ):
+     arrays = list(arrays)
+ 
+@@ -422,5 +461,6 @@ def _dataarray_concat(
+         positions,
+         fill_value=fill_value,
+         join=join,
++        ignore_missing_vars=ignore_missing_vars,
+     )
+     return arrays[0]._from_temp_dataset(ds, name)

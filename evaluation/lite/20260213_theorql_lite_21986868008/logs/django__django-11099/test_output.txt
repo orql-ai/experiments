@@ -1,0 +1,172 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (3 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11099:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-11099
+dc12d0513b6a: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+d401492bf2de: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e4e125026d30: Pulling fs layer
+ac5b61163589: Pulling fs layer
+59d606843b38: Pulling fs layer
+fe2fa83af7d6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+e578186687ce: Pulling fs layer
+11e56cae157a: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+836b79e2a6e5: Download complete
+e4e125026d30: Download complete
+e578186687ce: Download complete
+11e56cae157a: Download complete
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+59d606843b38: Download complete
+dc12d0513b6a: Download complete
+7478e0ac0f23: Download complete
+fe2fa83af7d6: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+d401492bf2de: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+e4e125026d30: Pull complete
+e578186687ce: Pull complete
+d401492bf2de: Pull complete
+11e56cae157a: Pull complete
+59d606843b38: Pull complete
+fe2fa83af7d6: Pull complete
+dc12d0513b6a: Pull complete
+Digest: sha256:f1aace6a4ae7d79a561487c133b0a37c663c568b1e60299ae07125efd28f16ba
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11099:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_ascii_validator (auth_tests.test_validators.UsernameValidatorsTests) ... ok
+test_unicode_validator (auth_tests.test_validators.UsernameValidatorsTests) ... ok
+test_help_text (auth_tests.test_validators.UserAttributeSimilarityValidatorTest) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.112s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (19 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application auth_tests
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, auth_tests, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table auth_tests_customuser
+    Creating table auth_tests_customuserwithoutisactivefield
+    Creating table auth_tests_extensionuser
+    Creating table auth_tests_custompermissionsuser
+    Creating table auth_tests_customusernonuniqueusername
+    Creating table auth_tests_isactivetestuser1
+    Creating table auth_tests_minimaluser
+    Creating table auth_tests_nopassworduser
+    Creating table auth_tests_concrete
+    Creating table auth_tests_uuiduser
+    Creating table auth_tests_email
+    Creating table auth_tests_customuserwithfk
+    Creating table auth_tests_integerusernameuser
+    Creating table auth_tests_userwithdisabledlastloginfield
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_help_text (auth_tests.test_validators.MinimumLengthValidatorTest) ... ok
+test_validate (auth_tests.test_validators.MinimumLengthValidatorTest) ... ok
+test_help_text (auth_tests.test_validators.NumericPasswordValidatorTest) ... ok
+test_validate (auth_tests.test_validators.NumericPasswordValidatorTest) ... ok
+test_validate (auth_tests.test_validators.UserAttributeSimilarityValidatorTest) ... ok
+test_validate_property (auth_tests.test_validators.UserAttributeSimilarityValidatorTest) ... ok
+test_empty_password_validator_help_text_html (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_get_default_password_validators (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_get_password_validators_custom (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_password_changed (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_password_changed_with_custom_validator (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_password_validators_help_text_html (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_password_validators_help_text_html_escaping (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_password_validators_help_texts (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_validate_password (auth_tests.test_validators.PasswordValidationTest) ... ok
+test_help_text (auth_tests.test_validators.CommonPasswordValidatorTest) ... ok
+test_validate (auth_tests.test_validators.CommonPasswordValidatorTest) ... ok
+test_validate_custom_list (auth_tests.test_validators.CommonPasswordValidatorTest) ... ok
+test_validate_django_supplied_file (auth_tests.test_validators.CommonPasswordValidatorTest) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.113s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

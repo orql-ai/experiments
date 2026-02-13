@@ -1,0 +1,38 @@
+diff --git a/seaborn/_oldcore.py b/seaborn/_oldcore.py
+index c9218c1f..a5471ac9 100644
+--- a/seaborn/_oldcore.py
++++ b/seaborn/_oldcore.py
+@@ -154,7 +154,7 @@ class HueMapping(SemanticMapping):
+             try:
+                 normed = self.norm(key)
+             except TypeError as err:
+-                if np.isnan(key):
++                if pd.isna(key):
+                     value = (0, 0, 0, 0)
+                 else:
+                     raise err
+@@ -1093,9 +1093,8 @@ class VectorPlotter:
+                 parts = []
+                 grouped = self.plot_data[var].groupby(self.converters[var], sort=False)
+                 for converter, orig in grouped:
+-                    with pd.option_context('mode.use_inf_as_null', True):
+-                        orig = orig.dropna()
+-                        if var in self.var_levels:
++                    orig = orig.dropna()
++                    if var in self.var_levels:
+                             # TODO this should happen in some centralized location
+                             # it is similar to GH2419, but more complicated because
+                             # supporting `order` in categorical plots is tricky
+diff --git a/seaborn/axisgrid.py b/seaborn/axisgrid.py
+index 8526f44b..0ebecf5d 100644
+--- a/seaborn/axisgrid.py
++++ b/seaborn/axisgrid.py
+@@ -696,7 +696,7 @@ class FacetGrid(Grid):
+             plot_data = data_ijk[list(args)]
+             if self._dropna:
+                 plot_data = plot_data.dropna()
+-            plot_args = [v for k, v in plot_data.iteritems()]
++            plot_args = [v for k, v in plot_data.items()]
+ 
+             # Some matplotlib functions don't handle pandas objects correctly
+             if func_module.startswith("matplotlib"):

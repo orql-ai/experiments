@@ -1,0 +1,66 @@
+diff --git a/sklearn/utils/multiclass.py b/sklearn/utils/multiclass.py
+index 5eaef2fde8..275d591b6c 100644
+--- a/sklearn/utils/multiclass.py
++++ b/sklearn/utils/multiclass.py
+@@ -179,6 +179,16 @@ def is_multilabel(y):
+     else:
+         labels = xp.unique_values(y)
+ 
++        # Handle object dtype with numeric values (e.g., pandas nullable dtypes)
++        # Only consider integer-like values for multilabel detection
++        if y.dtype == object and y.size > 0:
++            def _is_integer_like(x):
++                return isinstance(x, (int, np.integer, bool, np.bool_)) or (
++                    isinstance(x, (float, np.floating)) and float(x).is_integer()
++                )
++
++            return len(labels) < 3 and all(_is_integer_like(x) for x in y.flat)
++
+         return len(labels) < 3 and (
+             y.dtype.kind in "biu" or _is_integral_float(labels)  # bool, int, uint
+         )
+@@ -342,7 +352,13 @@ def type_of_target(y, input_name=""):
+         return "unknown"
+     if not issparse(y) and y.dtype == object and not isinstance(y.flat[0], str):
+         # [obj_1] and not ["label_1"]
+-        return "unknown"
++        # If all elements are numeric (including integers and floats), continue
++        # processing (e.g., pandas nullable dtypes like Int64, Float64, boolean)
++        if not all(
++            isinstance(x, (int, float, np.integer, np.floating, bool, np.bool_))
++            for x in y.flat
++        ):
++            return "unknown"
+ 
+     # Check if multioutput
+     if y.ndim == 2 and y.shape[1] > 1:
+@@ -351,12 +367,25 @@ def type_of_target(y, input_name=""):
+         suffix = ""  # [1, 2, 3] or [[1], [2], [3]]
+ 
+     # Check float and contains non-integer float values
+-    if y.dtype.kind == "f":
++    if y.dtype.kind == "f" or (
++        y.dtype == object
++        and not y.size == 0
++        and all(isinstance(x, (int, float, np.integer, np.floating)) for x in y.flat)
++    ):
+         # [.1, .2, 3] or [[.1, .2, 3]] or [[1., .2]] and not [1., 2., 3.]
+         data = y.data if issparse(y) else y
+-        if xp.any(data != data.astype(int)):
+-            _assert_all_finite(data, input_name=input_name)
+-            return "continuous" + suffix
++        try:
++            # For object dtype, check if any values are non-integer
++            if y.dtype == object:
++                if any(float(x) != int(x) for x in y.flat):
++                    _assert_all_finite(data, input_name=input_name)
++                    return "continuous" + suffix
++            elif xp.any(data != data.astype(int)):
++                _assert_all_finite(data, input_name=input_name)
++                return "continuous" + suffix
++        except (ValueError, TypeError):
++            # If conversion fails, continue with other checks
++            pass
+ 
+     # Check multiclass
+     first_row = y[0] if not issparse(y) else y.getrow(0).data

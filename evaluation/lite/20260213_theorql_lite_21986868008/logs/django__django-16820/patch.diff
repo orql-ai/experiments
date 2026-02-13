@@ -1,0 +1,26 @@
+diff --git a/django/db/migrations/operations/models.py b/django/db/migrations/operations/models.py
+index b89b6b511b..a639173f4f 100644
+--- a/django/db/migrations/operations/models.py
++++ b/django/db/migrations/operations/models.py
+@@ -303,6 +303,21 @@ class CreateModel(ModelOperation):
+                         managers=self.managers,
+                     ),
+                 ]
++        elif (
++            isinstance(operation, AddIndex)
++            and self.name_lower == operation.model_name_lower
++        ):
++            indexes = list(self.options.get("indexes", []))
++            indexes.append(operation.index)
++            return [
++                CreateModel(
++                    self.name,
++                    fields=self.fields,
++                    options={**self.options, "indexes": indexes},
++                    bases=self.bases,
++                    managers=self.managers,
++                ),
++            ]
+         return super().reduce(operation, app_label)
+ 
+ 

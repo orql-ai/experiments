@@ -1,0 +1,194 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        52059305
+hash randomization: on (PYTHONHASHSEED=2897111718)
+
+sympy/assumptions/tests/test_refine.py[1] .                                 [OK]
+sympy/functions/elementary/tests/test_complexes.py[4] ....                  [OK]
+sympy/printing/tests/test_str.py[1] .                                       [OK]
+sympy/solvers/tests/test_solvers.py[1] .                                    [OK]
+
+================== tests finished: 7 passed, in 1.07 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-21627:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-21627
+552bb03d59c2: Pulling fs layer
+b08895a5c216: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+500327121db6: Pulling fs layer
+5efcf6818901: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+5efcf6818901: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+5c809fd8a9af: Download complete
+ac5b61163589: Download complete
+2f341c31f3b7: Download complete
+ed3dada71338: Download complete
+552bb03d59c2: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+5efcf6818901: Pull complete
+5c809fd8a9af: Pull complete
+0b326ada86d1: Pull complete
+552bb03d59c2: Pull complete
+Digest: sha256:6fe59d9e163fc201bbac260b0f1ba084758a97e786da063559d2e32d602d3a45
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-21627:latest
+
+
+===== PHASE: PASS_TO_PASS (26 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        34113949
+hash randomization: on (PYTHONHASHSEED=4008767265)
+
+sympy/assumptions/tests/test_context.py[1] .                                [OK]
+sympy/assumptions/tests/test_query.py[5] .....                              [OK]
+sympy/assumptions/tests/test_refine.py[5] .....                             [OK]
+sympy/assumptions/tests/test_satask.py[3] ...                               [OK]
+sympy/combinatorics/tests/test_permutations.py[2] ..                        [OK]
+sympy/combinatorics/tests/test_rewriting.py[1] .                            [OK]
+sympy/combinatorics/tests/test_util.py[1] .                                 [OK]
+sympy/concrete/tests/test_products.py[4] ....                               [OK]
+sympy/concrete/tests/test_sums_products.py[3] ...                           [OK]
+sympy/core/tests/test_arit.py[2] ..                                         [OK]
+sympy/core/tests/test_basic.py[3] ...                                       [OK]
+sympy/core/tests/test_complex.py[5] .....                                   [OK]
+sympy/core/tests/test_evalf.py[1] .                                         [OK]
+sympy/core/tests/test_expr.py[5] .....                                      [OK]
+sympy/core/tests/test_noncommutative.py[3] ...                              [OK]
+sympy/core/tests/test_numbers.py[3] ...                                     [OK]
+sympy/core/tests/test_relational.py[13] .............                       [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/functions/elementary/tests/test_complexes.py[28] ....f..................f.
+...                                                                         [OK]
+sympy/functions/elementary/tests/test_hyperbolic.py[2] ..                   [OK]
+sympy/functions/elementary/tests/test_miscellaneous.py[4] ....              [OK]
+sympy/functions/elementary/tests/test_piecewise.py[1] .                     [OK]
+sympy/functions/elementary/tests/test_trigonometric.py[3] ...               [OK]
+sympy/functions/special/tests/test_bessel.py[2] ..                          [OK]
+sympy/functions/special/tests/test_bsplines.py[2] ..                        [OK]
+sympy/functions/special/tests/test_delta_functions.py[1] .                  [OK]
+sympy/functions/special/tests/test_singularity_functions.py[1] .            [OK]
+sympy/functions/special/tests/test_zeta_functions.py[1] .                   [OK]
+sympy/geometry/tests/test_ellipse.py[2] ..                                  [OK]
+sympy/geometry/tests/test_entity.py[1] .                                    [OK]
+sympy/geometry/tests/test_line.py[1] .                                      [OK]
+sympy/geometry/tests/test_point.py[1] .                                     [OK]
+sympy/geometry/tests/test_polygon.py[1] .                                   [OK]
+sympy/integrals/tests/test_integrals.py[2] ..                               [OK]
+sympy/integrals/tests/test_meijerint.py[3] ...                              [OK]
+sympy/integrals/tests/test_risch.py[3] ...                                  [OK]
+sympy/logic/tests/test_boolalg.py[8] .....w..                               [OK]
+sympy/matrices/expressions/tests/test_adjoint.py[1] .                       [OK]
+sympy/matrices/expressions/tests/test_blockmatrix.py[1] .                   [OK]
+sympy/matrices/expressions/tests/test_determinant.py[1] .                   [OK]
+sympy/matrices/expressions/tests/test_funcmatrix.py[1] .                    [OK]
+sympy/matrices/expressions/tests/test_indexing.py[1] .                      [OK]
+sympy/matrices/expressions/tests/test_inverse.py[1] .                       [OK]
+sympy/matrices/expressions/tests/test_matmul.py[4] ....                     [OK]
+sympy/matrices/expressions/tests/test_matpow.py[1] .                        [OK]
+sympy/matrices/expressions/tests/test_trace.py[1] .                         [OK]
+sympy/matrices/expressions/tests/test_transpose.py[4] ....                  [OK]
+sympy/matrices/tests/test_commonmatrix.py[8] ........                       [OK]
+sympy/matrices/tests/test_densetools.py[1] .                                [OK]
+sympy/matrices/tests/test_immutable.py[2] ..                                [OK]
+sympy/matrices/tests/test_matrices.py[10] ..........                        [OK]
+sympy/matrices/tests/test_sparse.py[1] .                                    [OK]
+sympy/multipledispatch/tests/test_dispatcher.py[2] ..                       [OK]
+sympy/ntheory/tests/test_factor_.py[1] .                                    [OK]
+sympy/ntheory/tests/test_residue.py[1] .                                    [OK]
+sympy/parsing/tests/test_implicit_multiplication_application.py[2] ..       [OK]
+sympy/parsing/tests/test_sympy_parser.py[3] ...                             [OK]
+sympy/physics/continuum_mechanics/tests/test_beam.py[1] .                   [OK]
+sympy/physics/mechanics/tests/test_kane4.py[1] .                            [OK]
+sympy/physics/optics/tests/test_utils.py[1] .                               [OK]
+sympy/physics/quantum/tests/test_circuitplot.py[1] .                        [OK]
+sympy/physics/quantum/tests/test_circuitutils.py[1] .                       [OK]
+sympy/physics/quantum/tests/test_density.py[1] .                            [OK]
+sympy/physics/quantum/tests/test_gate.py[6] ......                          [OK]
+sympy/physics/quantum/tests/test_pauli.py[1] .                              [OK]
+sympy/physics/quantum/tests/test_spin.py[10] ..........                     [OK]
+sympy/physics/units/tests/test_prefixes.py[1] .                             [OK]
+sympy/physics/vector/tests/test_frame.py[1] .                               [OK]
+sympy/plotting/tests/test_plot_implicit.py[1] s                             [OK]
+sympy/plotting/tests/test_textplot.py[1] .                                  [OK]
+sympy/polys/agca/tests/test_ideals.py[1] .                                  [OK]
+sympy/polys/tests/test_groebnertools.py[1] .                                [OK]
+sympy/polys/tests/test_polytools.py[5] .....                                [OK]
+sympy/polys/tests/test_subresultants_qq_zz.py[4] ....                       [OK]
+sympy/printing/pretty/tests/test_pretty.py[1] .                             [OK]
+sympy/printing/tests/test_conventions.py[2] .f                              [OK]
+sympy/printing/tests/test_fortran.py[1] .                                   [OK]
+sympy/printing/tests/test_julia.py[1] .                                     [OK]
+sympy/printing/tests/test_latex.py[2] ..                                    [OK]
+sympy/printing/tests/test_maple.py[1] .                                     [OK]
+sympy/printing/tests/test_numpy.py[1] s                                     [OK]
+sympy/printing/tests/test_octave.py[1] .                                    [OK]
+sympy/printing/tests/test_rust.py[2] ..                                     [OK]
+sympy/series/tests/test_gruntz.py[5] .....                                  [OK]
+sympy/series/tests/test_limits.py[1] .                                      [OK]
+sympy/series/tests/test_nseries.py[1] .                                     [OK]
+sympy/sets/tests/test_fancysets.py[5] .....                                 [OK]
+sympy/sets/tests/test_sets.py[8] ....f...                                   [OK]
+sympy/simplify/tests/test_hyperexpand.py[1] .                               [OK]
+sympy/simplify/tests/test_simplify.py[1] .                                  [OK]
+sympy/solvers/tests/test_inequalities.py[8] ........                        [OK]
+sympy/solvers/tests/test_solvers.py[4] ..f.                                 [OK]
+sympy/solvers/tests/test_solveset.py[4] ....                                [OK]
+sympy/stats/tests/test_continuous_rv.py[2] ..                               [OK]
+sympy/stats/tests/test_rv.py[1] .                                           [OK]
+sympy/strategies/tests/test_rl.py[1] .                                      [OK]
+sympy/tensor/array/tests/test_arrayop.py[1] .                               [OK]
+sympy/tensor/array/tests/test_immutable_ndim_array.py[2] ..                 [OK]
+sympy/tensor/array/tests/test_mutable_ndim_array.py[1] .                    [OK]
+sympy/tensor/tests/test_tensor.py[1] .                                      [OK]
+sympy/tensor/tests/test_tensor_operators.py[1] .                            [OK]
+sympy/testing/tests/test_code_quality.py[1] .                               [OK]
+sympy/utilities/tests/test_codegen_julia.py[2] ..                           [OK]
+sympy/utilities/tests/test_codegen_octave.py[2] ..                          [OK]
+sympy/utilities/tests/test_codegen_rust.py[3] ...                           [OK]
+sympy/utilities/tests/test_iterables.py[1] .                                [OK]
+sympy/utilities/tests/test_lambdify.py[4] ....                              [OK]
+sympy/utilities/tests/test_matchpy_connector.py[1] s                        [OK]
+sympy/utilities/tests/test_misc.py[1] .                                     [OK]
+sympy/vector/tests/test_implicitregion.py[1] .                              [OK]
+
+= tests finished: 280 passed, 4 skipped, 5 expected to fail, in 58.00 seconds ==
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

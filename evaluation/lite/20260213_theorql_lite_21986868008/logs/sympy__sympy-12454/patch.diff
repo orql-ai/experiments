@@ -1,0 +1,35 @@
+diff --git a/sympy/assumptions/sathandlers.py b/sympy/assumptions/sathandlers.py
+index 61d62d04cf..881a5f9ba8 100644
+--- a/sympy/assumptions/sathandlers.py
++++ b/sympy/assumptions/sathandlers.py
+@@ -1,6 +1,7 @@
+ from __future__ import print_function, division
+ 
+-from collections import MutableMapping, defaultdict
++from collections.abc import MutableMapping
++from collections import defaultdict
+ 
+ from sympy.core import (Add, Mul, Pow, Integer, Number, NumberSymbol,)
+ from sympy.core.numbers import ImaginaryUnit
+diff --git a/sympy/matrices/matrices.py b/sympy/matrices/matrices.py
+index 90ea232faf..7e6d4395b8 100644
+--- a/sympy/matrices/matrices.py
++++ b/sympy/matrices/matrices.py
+@@ -641,7 +641,7 @@ def _eval_is_zero(self):
+     def _eval_is_upper_hessenberg(self):
+         return all(self[i, j].is_zero
+                    for i in range(2, self.rows)
+-                   for j in range(i - 1))
++                   for j in range(min(i - 1, self.cols)))
+ 
+     def _eval_values(self):
+         return [i for i in self if not i.is_zero]
+@@ -1112,7 +1112,7 @@ def is_upper(self):
+         """
+         return all(self[i, j].is_zero
+                    for i in range(1, self.rows)
+-                   for j in range(i))
++                   for j in range(min(i, self.cols)))
+ 
+     @property
+     def is_zero(self):

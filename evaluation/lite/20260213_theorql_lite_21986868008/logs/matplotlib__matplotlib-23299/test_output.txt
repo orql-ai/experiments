@@ -1,0 +1,266 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_rcparams.py::test_no_backend_reset_rccontext FAILED [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_no_backend_reset_rccontext ________________________
+
+    def test_no_backend_reset_rccontext():
+        assert mpl.rcParams['backend'] != 'module://aardvark'
+        with mpl.rc_context():
+            mpl.rcParams['backend'] = 'module://aardvark'
+>       assert mpl.rcParams['backend'] == 'module://aardvark'
+E       AssertionError: assert 'agg' == 'module://aardvark'
+E         
+E         - module://aardvark
+E         + agg
+
+lib/matplotlib/tests/test_rcparams.py:503: AssertionError
+=========================== short test summary info ============================
+FAILED lib/matplotlib/tests/test_rcparams.py::test_no_backend_reset_rccontext - AssertionError: assert 'agg' == 'module://aardvark'
+  
+  - module://aardvark
+  + agg
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================== 1 failed in 2.85s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23299:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23299
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+967545a58ea1: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+892255432763: Pulling fs layer
+ac5b61163589: Pulling fs layer
+1d39182ad176: Pulling fs layer
+e920532ad01e: Pulling fs layer
+532b6f849c59: Pulling fs layer
+203ab5349554: Pulling fs layer
+c45f7368b136: Pulling fs layer
+836b79e2a6e5: Download complete
+892255432763: Download complete
+ac5b61163589: Download complete
+1d39182ad176: Download complete
+c45f7368b136: Download complete
+e5a28c0c137e: Download complete
+203ab5349554: Download complete
+7478e0ac0f23: Download complete
+e920532ad01e: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+967545a58ea1: Download complete
+500327121db6: Pull complete
+532b6f849c59: Download complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+892255432763: Pull complete
+1d39182ad176: Pull complete
+967545a58ea1: Pull complete
+c45f7368b136: Pull complete
+203ab5349554: Pull complete
+532b6f849c59: Pull complete
+e920532ad01e: Pull complete
+Digest: sha256:45db38e32d4227f16296a5de43cff4b76a3d715b12d0723fca309bb7ad8ee8aa
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-23299:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_rcparams.py::test_no_backend_reset_rccontext` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (192 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 40 items
+
+============================ no tests ran in 2.66s =============================
+
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_legend_colors[same]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_legend_colors[inherited]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_legend_colors[different]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-aardvark,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-1,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-1.5,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler("color",]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-(cycler("color",]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler(c='rgb',]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler('c',]
+(no match in any of [<Module test_rcparams.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_rcparams.py::test_rcparams lib/matplotlib/tests/test_rcparams.py::test_RcParams_class lib/matplotlib/tests/test_rcparams.py::test_Bug_2543 lib/matplotlib/tests/test_rcparams.py::test_legend_colors[same] lib/matplotlib/tests/test_rcparams.py::test_legend_colors[inherited] lib/matplotlib/tests/test_rcparams.py::test_legend_colors[different] lib/matplotlib/tests/test_rcparams.py::test_mfc_rcparams lib/matplotlib/tests/test_rcparams.py::test_mec_rcparams lib/matplotlib/tests/test_rcparams.py::test_axes_titlecolor_rcparams lib/matplotlib/tests/test_rcparams.py::test_Issue_1713 lib/matplotlib/tests/test_rcparams.py::test_animation_frame_formats lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-t-True] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-y-True] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-yes-True] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-on-True] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-true-True] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-1-True0] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-1-True1] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-True-True] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-f-False] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-n-False] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-no-False] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-off-False] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-false-False] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-0-False0] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-0-False1] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-False-False] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist--target16] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-a,b-target17] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-aardvark-target18] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-aardvark,] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg21-target21] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg22-target22] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg23-target23] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg24-target24] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-1,] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg26-target26] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg27-target27] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg28-target28] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg29-target29] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-1.5,] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg31-target31] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg32-target32] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg33-target33] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg34-target34] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler("color",] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-arg36-target36] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-(cycler("color",] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler(c='rgb',] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler('c',]` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 46 items
+
+============================ no tests ran in 2.57s =============================
+
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_colorlist-r,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-(0,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hist_bins-1,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-]
+(no match in any of [<Module test_rcparams.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-arg40-target40] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-arg41-target41] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hatch---|---|] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hatch-\\oO-\\oO] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hatch-/+*/.x-/+*/.x] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hatch--] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_colorlist-r,g,b-target46] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_colorlist-arg47-target47] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_colorlist-r,] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_colorlist-arg49-target49] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_colorlist-arg50-target50] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_colorlist-arg51-target51] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-None-none] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-none-none] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-AABBCC-#AABBCC] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-AABBCC00-#AABBCC00] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-tab:blue-tab:blue] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-C12-C12] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-(0,] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-arg59-target59] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_color-arg61-target61] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_color_or_linecolor-linecolor-linecolor] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_color_or_linecolor-markerfacecolor-markerfacecolor] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_color_or_linecolor-mfc-markerfacecolor] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_color_or_linecolor-markeredgecolor-markeredgecolor] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_color_or_linecolor-mec-markeredgecolor] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hist_bins-auto-auto] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hist_bins-fd-fd] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hist_bins-10-10] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hist_bins-1,] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hist_bins-arg71-target71] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_hist_bins-arg72-target72] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-None-None] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-1-1] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-0.1-0.1] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-arg76-target76] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-arg77-target77] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-arg78-target78] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-arg79-target79] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_markevery-arg80-target80] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle----] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-solid-solid] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle------] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-dashed-dashed] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle--.--.] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-dashdot-dashdot] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-:-:] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-dotted-dotted] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle--] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-]` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 38 items
+
+============================ no tests ran in 2.51s =============================
+
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-1,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler("bleh,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-Cycler("linewidth",]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler('c',]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-1]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-os.system("echo]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-import]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-def]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler("waka",]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler(c=[1,]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler(lw=['a',]
+(no match in any of [<Module test_rcparams.py>])
+
+ERROR: not found: /testbed/lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_color-(0,]
+(no match in any of [<Module test_rcparams.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-None-none] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-none-none] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-DoTtEd-dotted] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-1,] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-arg95-target95] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-arg96-target96] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-arg97-target97] lib/matplotlib/tests/test_rcparams.py::test_validator_valid[_validate_linestyle-arg98-target98] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_bool-aardvark-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_bool-2-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_bool--1-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_bool-arg3-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_strlist-arg4-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_strlist-1-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_strlist-arg6-MatplotlibDeprecationWarning] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_strlist-arg7-MatplotlibDeprecationWarning] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_intlist-aardvark-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_intlist-arg9-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_intlist-arg10-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_floatlist-aardvark-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_floatlist-arg12-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_floatlist-arg13-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_floatlist-arg14-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_floatlist-None-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-4-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler("bleh,] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-Cycler("linewidth",] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler('c',] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-1] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-os.system("echo] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-import] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-def] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler("waka",] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler(c=[1,] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-cycler(lw=['a',] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-arg31-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_cycler-arg32-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_hatch---_-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_hatch-8-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_hatch-X-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_colorlist-fish-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_color-tab:veryblue-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_color-(0,] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_color_or_linecolor-line-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_color_or_linecolor-marker-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_hist_bins-aardvark-ValueError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg45-TypeError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg46-TypeError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg47-TypeError] lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg48-TypeError]` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 42 items
+
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg49-TypeError] PASSED [  2%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg50-TypeError] PASSED [  4%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg51-TypeError] PASSED [  7%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg52-TypeError] PASSED [  9%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg53-TypeError] PASSED [ 11%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-abc-TypeError0] PASSED [ 14%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg55-TypeError] PASSED [ 16%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg56-TypeError] PASSED [ 19%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg57-TypeError] PASSED [ 21%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg58-TypeError] PASSED [ 23%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-abc-TypeError1] PASSED [ 26%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-a-TypeError] PASSED [ 28%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[validate_markevery-arg61-TypeError] PASSED [ 30%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-aardvark-ValueError] PASSED [ 33%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-dotted-ValueError] PASSED [ 35%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-\xff\xfed\x00o\x00t\x00t\x00e\x00d\x00-ValueError] PASSED [ 38%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-arg65-ValueError] PASSED [ 40%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-1.23-ValueError] PASSED [ 42%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-arg67-ValueError] PASSED [ 45%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-arg68-ValueError] PASSED [ 47%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-arg69-ValueError] PASSED [ 50%]
+lib/matplotlib/tests/test_rcparams.py::test_validator_invalid[_validate_linestyle-arg70-ValueError] PASSED [ 52%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[bold-bold] PASSED [ 54%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[BOLD-ValueError] PASSED [ 57%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[100-100_0] PASSED [ 59%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[100-100_1] PASSED [ 61%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[weight4-100] PASSED [ 64%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[20.6-20] PASSED [ 66%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[20.6-ValueError] PASSED [ 69%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontweight[weight7-ValueError] PASSED [ 71%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[expanded-expanded] PASSED [ 73%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[EXPANDED-ValueError] PASSED [ 76%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[100-100_0] PASSED [ 78%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[100-100_1] PASSED [ 80%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[stretch4-100] PASSED [ 83%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[20.6-20] PASSED [ 85%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[20.6-ValueError] PASSED [ 88%]
+lib/matplotlib/tests/test_rcparams.py::test_validate_fontstretch[stretch7-ValueError] PASSED [ 90%]
+lib/matplotlib/tests/test_rcparams.py::test_keymaps PASSED               [ 92%]
+lib/matplotlib/tests/test_rcparams.py::test_rcparams_reset_after_fail PASSED [ 95%]
+lib/matplotlib/tests/test_rcparams.py::test_backend_fallback_headless PASSED [ 97%]
+lib/matplotlib/tests/test_rcparams.py::test_deprecation PASSED           [100%]
+
+============================== 42 passed in 4.56s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['lib/matplotlib/tests/test_rcparams.py::test_no_backend_reset_rccontext']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['lib/matplotlib/tests/test_rcparams.py::test_rcparams', 'lib/matplotlib/tests/test_rcparams.py::test_RcParams_class', 'lib/matplotlib/tests/test_rcparams.py::test_Bug_2543', 'lib/matplotlib/tests/test_rcparams.py::test_legend_colors[same]', 'lib/matplotlib/tests/test_rcparams.py::test_legend_colors[inherited]', 'lib/matplotlib/tests/test_rcparams.py::test_legend_colors[different]', 'lib/matplotlib/tests/test_rcparams.py::test_mfc_rcparams', 'lib/matplotlib/tests/test_rcparams.py::test_mec_rcparams', 'lib/matplotlib/tests/test_rcparams.py::test_axes_titlecolor_rcparams', 'lib/matplotlib/tests/test_rcparams.py::test_Issue_1713', 'lib/matplotlib/tests/test_rcparams.py::test_animation_frame_formats', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-t-True]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-y-True]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-yes-True]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-on-True]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-true-True]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-1-True0]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-1-True1]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-True-True]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-f-False]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-n-False]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-no-False]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-off-False]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-false-False]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-0-False0]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-0-False1]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_bool-False-False]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist--target16]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-a,b-target17]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-aardvark-target18]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-aardvark,]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg21-target21]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg22-target22]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg23-target23]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_strlist-arg24-target24]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-1,]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg26-target26]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg27-target27]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg28-target28]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_intlist-arg29-target29]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-1.5,]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg31-target31]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg32-target32]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg33-target33]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_floatlist-arg34-target34]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler("color",]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-arg36-target36]', 'lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-(cycler("color",]', "lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler(c='rgb',]", "lib/matplotlib/tests/test_rcparams.py::test_validator_valid[validate_cycler-cycler('c',]"]}
+>>>>> End Test Output
+>>>>> Some Tests Failed

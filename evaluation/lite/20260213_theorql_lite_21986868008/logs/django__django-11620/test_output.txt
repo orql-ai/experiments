@@ -1,0 +1,363 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application view_tests
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11620:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-11620
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+7d3149cc0439: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e578186687ce: Pulling fs layer
+e4e125026d30: Pulling fs layer
+ac5b61163589: Pulling fs layer
+fe2fa83af7d6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+11e56cae157a: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+ced2188284ca: Pulling fs layer
+d401492bf2de: Pulling fs layer
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+7478e0ac0f23: Download complete
+e4e125026d30: Download complete
+e5a28c0c137e: Download complete
+e578186687ce: Download complete
+11e56cae157a: Download complete
+ced2188284ca: Download complete
+7d3149cc0439: Download complete
+7478e0ac0f23: Pull complete
+d401492bf2de: Download complete
+500327121db6: Download complete
+fe2fa83af7d6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+e4e125026d30: Pull complete
+e578186687ce: Pull complete
+d401492bf2de: Pull complete
+11e56cae157a: Pull complete
+fe2fa83af7d6: Pull complete
+ced2188284ca: Pull complete
+7d3149cc0439: Pull complete
+Digest: sha256:1c041aa374ce34d2917509ca549e3ec6234b27652a112421eee67e95f1a4602a
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11620:latest
+test_technical_404_converter_raise_404 (view_tests.tests.test_debug.DebugViewTests) ... ERROR
+
+======================================================================
+ERROR: test_technical_404_converter_raise_404 (view_tests.tests.test_debug.DebugViewTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/testbed/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/testbed/django/urls/resolvers.py", line 544, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/testbed/django/urls/resolvers.py", line 351, in resolve
+    match = self.pattern.match(path)
+  File "/testbed/django/urls/resolvers.py", line 262, in match
+    kwargs[key] = converter.to_python(value)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 939, in __call__
+    return _mock_self._mock_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 999, in _mock_call
+    raise effect
+django.http.response.Http404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/testbed/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/testbed/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/testbed/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/testbed/django/core/handlers/exception.py", line 44, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/testbed/django/views/debug.py", line 485, in technical_404_response
+    resolver_match = resolve(request.path)
+  File "/testbed/django/urls/base.py", line 25, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/testbed/django/urls/resolvers.py", line 544, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/testbed/django/urls/resolvers.py", line 351, in resolve
+    match = self.pattern.match(path)
+  File "/testbed/django/urls/resolvers.py", line 262, in match
+    kwargs[key] = converter.to_python(value)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 939, in __call__
+    return _mock_self._mock_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 999, in _mock_call
+    raise effect
+django.http.response.Http404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/testbed/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/testbed/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/testbed/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/testbed/django/core/handlers/exception.py", line 44, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/testbed/django/views/debug.py", line 485, in technical_404_response
+    resolver_match = resolve(request.path)
+  File "/testbed/django/urls/base.py", line 25, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/testbed/django/urls/resolvers.py", line 544, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/testbed/django/urls/resolvers.py", line 351, in resolve
+    match = self.pattern.match(path)
+  File "/testbed/django/urls/resolvers.py", line 262, in match
+    kwargs[key] = converter.to_python(value)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 939, in __call__
+    return _mock_self._mock_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 999, in _mock_call
+    raise effect
+django.http.response.Http404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/testbed/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/testbed/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/testbed/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/testbed/django/core/handlers/exception.py", line 44, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/testbed/django/views/debug.py", line 485, in technical_404_response
+    resolver_match = resolve(request.path)
+  File "/testbed/django/urls/base.py", line 25, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/testbed/django/urls/resolvers.py", line 544, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/testbed/django/urls/resolvers.py", line 351, in resolve
+    match = self.pattern.match(path)
+  File "/testbed/django/urls/resolvers.py", line 262, in match
+    kwargs[key] = converter.to_python(value)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 939, in __call__
+    return _mock_self._mock_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 999, in _mock_call
+    raise effect
+django.http.response.Http404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/testbed/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/testbed/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/testbed/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/testbed/django/core/handlers/exception.py", line 44, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/testbed/django/views/debug.py", line 485, in technical_404_response
+    resolver_match = resolve(request.path)
+  File "/testbed/django/urls/base.py", line 25, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/testbed/django/urls/resolvers.py", line 544, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/testbed/django/urls/resolvers.py", line 351, in resolve
+    match = self.pattern.match(path)
+  File "/testbed/django/urls/resolvers.py", line 262, in match
+    kwargs[key] = converter.to_python(value)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 939, in __call__
+    return _mock_self._mock_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 999, in _mock_call
+    raise effect
+django.http.response.Http404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/testbed/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/testbed/django/utils/deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+  File "/testbed/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/testbed/django/core/handlers/exception.py", line 44, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/testbed/django/views/debug.py", line 485, in technical_404_response
+    resolver_match = resolve(request.path)
+  File "/testbed/django/urls/base.py", line 25, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/testbed/django/urls/resolvers.py", line 544, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/testbed/django/urls/resolvers.py", line 351, in resolve
+    match = self.pattern.match(path)
+  File "/testbed/django/urls/resolvers.py", line 262, in match
+    kwargs[key] = converter.to_python(value)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 939, in __call__
+    return _mock_self._mock_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 999, in _mock_call
+    raise effect
+django.http.response.Http404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/testbed/tests/view_tests/tests/test_debug.py", line 244, in test_technical_404_converter_raise_404
+    response = self.client.get('/path-post/1/')
+  File "/testbed/django/test/client.py", line 518, in get
+    response = super().get(path, data=data, secure=secure, **extra)
+  File "/testbed/django/test/client.py", line 346, in get
+    **extra,
+  File "/testbed/django/test/client.py", line 421, in generic
+    return self.request(**r)
+  File "/testbed/django/test/client.py", line 484, in request
+    response = self.handler(environ)
+  File "/testbed/django/test/client.py", line 139, in __call__
+    response = self.get_response(request)
+  File "/testbed/django/core/handlers/base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+  File "/testbed/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/testbed/django/core/handlers/exception.py", line 44, in response_for_exception
+    response = debug.technical_404_response(request, exc)
+  File "/testbed/django/views/debug.py", line 485, in technical_404_response
+    resolver_match = resolve(request.path)
+  File "/testbed/django/urls/base.py", line 25, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/testbed/django/urls/resolvers.py", line 544, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/testbed/django/urls/resolvers.py", line 351, in resolve
+    match = self.pattern.match(path)
+  File "/testbed/django/urls/resolvers.py", line 262, in match
+    kwargs[key] = converter.to_python(value)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 939, in __call__
+    return _mock_self._mock_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/mock.py", line 999, in _mock_call
+    raise effect
+django.http.response.Http404
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+FAILED (errors=1)
+
+
+===== PHASE: PASS_TO_PASS (55 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application view_tests
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, messages, sessions, staticfiles, view_tests
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table view_tests_author
+    Creating table view_tests_article
+    Creating table view_tests_urlarticle
+    Creating table view_tests_datearticle
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_repr (view_tests.tests.test_debug.CallableSettingWrapperTests) ... ok
+test_cleanse_setting_basic (view_tests.tests.test_debug.HelperFunctionTests) ... ok
+test_cleanse_setting_ignore_case (view_tests.tests.test_debug.HelperFunctionTests) ... ok
+test_cleanse_setting_recurses_in_dictionary (view_tests.tests.test_debug.HelperFunctionTests) ... ok
+test_handle_db_exception (view_tests.tests.test_debug.DebugViewQueriesAllowedTests) ... ok
+test_400 (view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests) ... ok
+test_403 (view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests) ... ok
+test_404 (view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests) ... ok
+test_template_not_found_error (view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests) ... ok
+test_message_only (view_tests.tests.test_debug.PlainTextReportTests) ... ok
+test_request_with_items_key (view_tests.tests.test_debug.PlainTextReportTests) ... ok
+test_template_exception (view_tests.tests.test_debug.PlainTextReportTests) ... ok
+test_400 (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_403 (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_403_template (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_404 (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_404_empty_path_not_in_urls (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_404_not_in_urls (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_classbased_technical_404 (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_default_urlconf_template (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_files (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_no_template_source_loaders (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_non_l10ned_numeric_ids (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_regression_21530 (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_technical_404 (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_template_encoding (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_template_exceptions (view_tests.tests.test_debug.DebugViewTests) ... ok
+test_ajax_response_encoding (view_tests.tests.test_debug.AjaxResponseExceptionReporterFilter) ... ok
+test_custom_exception_reporter_filter (view_tests.tests.test_debug.AjaxResponseExceptionReporterFilter) ... ok
+test_non_sensitive_request (view_tests.tests.test_debug.AjaxResponseExceptionReporterFilter) ... ok
+test_paranoid_request (view_tests.tests.test_debug.AjaxResponseExceptionReporterFilter) ... ok
+test_sensitive_request (view_tests.tests.test_debug.AjaxResponseExceptionReporterFilter) ... ok
+test_encoding_error (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_exception_fetching_user (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_ignore_traceback_evaluation_exceptions (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_message_only (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_reporting_frames_for_cyclic_reference (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_reporting_frames_without_source (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_reporting_of_nested_exceptions (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_request_with_items_key (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_template_encoding (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_unfrozen_importlib (view_tests.tests.test_debug.ExceptionReporterTests) ... ok
+test_callable_settings (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_callable_settings_forbidding_to_set_attributes (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_custom_exception_reporter_filter (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_dict_setting_with_non_str_key (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_multivalue_dict_key_error (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_non_sensitive_request (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_paranoid_request (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_sensitive_function_arguments (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 1.614s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application view_tests
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_sensitive_function_keyword_arguments (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_sensitive_method (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_sensitive_request (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_sensitive_settings (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+test_settings_with_sensitive_keys (view_tests.tests.test_debug.ExceptionReporterFilterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.588s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['view_tests.tests.test_debug.DebugViewTests.test_technical_404_converter_raise_404']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

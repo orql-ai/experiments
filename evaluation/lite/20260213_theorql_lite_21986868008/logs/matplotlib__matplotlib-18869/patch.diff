@@ -1,0 +1,67 @@
+diff --git a/lib/matplotlib/__init__.py b/lib/matplotlib/__init__.py
+index b657a35cf7..ff3115efeb 100644
+--- a/lib/matplotlib/__init__.py
++++ b/lib/matplotlib/__init__.py
+@@ -130,6 +130,53 @@ __bibtex__ = r"""@Article{Hunter:2007,
+ }"""
+ 
+ 
++def _parse_to_version_info(version_str):
++    """
++    Parse a version string to a named tuple with version components.
++
++    Parameters
++    ----------
++    version_str : str
++        The version string to parse.
++
++    Returns
++    -------
++    tuple
++        A tuple of (major, minor, micro, releaselevel, serial).
++    """
++    import re
++    from packaging.version import Version
++
++    v = Version(version_str)
++    major = v.major
++    minor = v.minor
++    micro = v.micro
++
++    if v.is_devrelease:
++        releaselevel = 'alpha'
++        serial = v.dev
++    elif v.is_prerelease:
++        if v.pre[0] == 'a':
++            releaselevel = 'alpha'
++        elif v.pre[0] == 'b':
++            releaselevel = 'beta'
++        elif v.pre[0] == 'rc':
++            releaselevel = 'candidate'
++        else:
++            releaselevel = v.pre[0]
++        serial = v.pre[1]
++    elif v.is_postrelease:
++        # Post-releases are treated as the next micro version with alpha
++        micro += 1
++        releaselevel = 'alpha'
++        serial = v.post
++    else:
++        releaselevel = 'final'
++        serial = 0
++
++    return (major, minor, micro, releaselevel, serial)
++
++
+ def __getattr__(name):
+     if name == "__version__":
+         import setuptools_scm
+@@ -148,6 +195,8 @@ def __getattr__(name):
+         else:  # Get the version from the _version.py setuptools_scm file.
+             __version__ = _version.version
+         return __version__
++    elif name == "version_info":
++        return _parse_to_version_info(__version__)
+     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+ 
+ 

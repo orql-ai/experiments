@@ -1,0 +1,99 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application model_enums
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11964:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-11964
+4a78dca09434: Pulling fs layer
+e40dd2783886: Pulling fs layer
+914de5d267f7: Pulling fs layer
+0ae074140456: Pulling fs layer
+edaae312c731: Pulling fs layer
+d063b1feba79: Pulling fs layer
+ee199f98d6ef: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+0ae074140456: Download complete
+e5a28c0c137e: Download complete
+edaae312c731: Download complete
+d063b1feba79: Download complete
+ac5b61163589: Download complete
+e40dd2783886: Download complete
+836b79e2a6e5: Download complete
+4a78dca09434: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+ee199f98d6ef: Download complete
+500327121db6: Download complete
+914de5d267f7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+0ae074140456: Pull complete
+e40dd2783886: Pull complete
+914de5d267f7: Pull complete
+edaae312c731: Pull complete
+d063b1feba79: Pull complete
+ee199f98d6ef: Pull complete
+4a78dca09434: Pull complete
+Digest: sha256:2fb0831bdcae3c54dfa71fc1990ea02867e88584198cddfe7c7663010d771b23
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11964:latest
+/mnt/agent_patch.diff:10: trailing whitespace.
+    
+warning: 1 line adds whitespace errors.
+test_str (model_enums.tests.ChoicesTests) ... ok
+test_textchoices (model_enums.tests.ChoicesTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (15 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application model_enums
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+/mnt/agent_patch.diff:10: trailing whitespace.
+    
+warning: 1 line adds whitespace errors.
+test_bool_unsupported (model_enums.tests.CustomChoicesTests) ... ok
+test_labels_valid (model_enums.tests.CustomChoicesTests) ... ok
+test_timezone_unsupported (model_enums.tests.CustomChoicesTests) ... ok
+test_uuid_unsupported (model_enums.tests.CustomChoicesTests) ... ok
+test_integerchoices (model_enums.tests.ChoicesTests) ... ok
+test_integerchoices_auto_label (model_enums.tests.ChoicesTests) ... ok
+test_integerchoices_containment (model_enums.tests.ChoicesTests) ... ok
+test_integerchoices_empty_label (model_enums.tests.ChoicesTests) ... ok
+test_integerchoices_functional_api (model_enums.tests.ChoicesTests) ... ok
+test_invalid_definition (model_enums.tests.ChoicesTests) ... ok
+test_textchoices_auto_label (model_enums.tests.ChoicesTests) ... ok
+test_textchoices_blank_value (model_enums.tests.ChoicesTests) ... ok
+test_textchoices_containment (model_enums.tests.ChoicesTests) ... ok
+test_textchoices_empty_label (model_enums.tests.ChoicesTests) ... ok
+test_textchoices_functional_api (model_enums.tests.ChoicesTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.109s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

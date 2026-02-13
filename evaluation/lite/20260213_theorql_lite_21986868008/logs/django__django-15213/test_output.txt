@@ -1,0 +1,245 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (3 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application annotations
+Found 3 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: annotations, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table annotations_author
+    Creating table annotations_publisher
+    Creating table annotations_book
+    Creating table annotations_store
+    Creating table annotations_departmentstore
+    Creating table annotations_employee
+    Creating table annotations_company
+    Creating table annotations_ticket
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15213:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15213
+698b5bfd042e: Pulling fs layer
+51c2875bef29: Pulling fs layer
+933100d0d38c: Pulling fs layer
+4efa29366152: Pulling fs layer
+f3e594b530c2: Pulling fs layer
+6498684ba422: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+729c11c31db2: Pulling fs layer
+729c11c31db2: Download complete
+933100d0d38c: Download complete
+6498684ba422: Download complete
+ac5b61163589: Download complete
+4efa29366152: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+698b5bfd042e: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+f3e594b530c2: Download complete
+500327121db6: Download complete
+51c2875bef29: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+729c11c31db2: Pull complete
+933100d0d38c: Pull complete
+51c2875bef29: Pull complete
+4efa29366152: Pull complete
+f3e594b530c2: Pull complete
+6498684ba422: Pull complete
+698b5bfd042e: Pull complete
+Digest: sha256:f2e84f7450a08ea8d83aceec44bd7f2c3b83da0eadaaca02e5f537ef7d4290c6
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15213:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_aggregate_over_full_expression_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_full_expression_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_full_expression_annotation_with_aggregation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (66 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application annotations
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: annotations, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table annotations_author
+    Creating table annotations_publisher
+    Creating table annotations_book
+    Creating table annotations_store
+    Creating table annotations_departmentstore
+    Creating table annotations_employee
+    Creating table annotations_company
+    Creating table annotations_ticket
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_aggregate_alias (annotations.tests.AliasTests) ... ok
+test_alias_after_annotation (annotations.tests.AliasTests) ... ok
+test_alias_annotate_with_aggregation (annotations.tests.AliasTests) ... ok
+test_alias_annotation_expression (annotations.tests.AliasTests) ... ok
+test_alias_default_alias_expression (annotations.tests.AliasTests) ... ok
+test_basic_alias (annotations.tests.AliasTests) ... ok
+test_basic_alias_annotation (annotations.tests.AliasTests) ... ok
+test_basic_alias_f_annotation (annotations.tests.AliasTests) ... ok
+test_basic_alias_f_transform_annotation (annotations.tests.AliasTests) ... ok
+test_dates_alias (annotations.tests.AliasTests) ... ok
+test_datetimes_alias (annotations.tests.AliasTests) ... ok
+test_defer_only_alias (annotations.tests.AliasTests) ... ok
+test_filter_alias_agg_with_double_f (annotations.tests.AliasTests) ... ok
+test_filter_alias_with_double_f (annotations.tests.AliasTests) ... ok
+test_filter_alias_with_f (annotations.tests.AliasTests) ... ok
+test_joined_alias_annotation (annotations.tests.AliasTests) ... ok
+test_order_by_alias (annotations.tests.AliasTests) ... ok
+test_order_by_alias_aggregate (annotations.tests.AliasTests) ... ok
+test_overwrite_alias_with_annotation (annotations.tests.AliasTests) ... ok
+test_overwrite_annotation_with_alias (annotations.tests.AliasTests) ... ok
+test_update_with_alias (annotations.tests.AliasTests) ... ok
+test_values_alias (annotations.tests.AliasTests) ... ok
+test_aggregate_over_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotate_exists (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotate_with_aggregation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_aggregate_with_m2o (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_exists_aggregate_values_chaining (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_filter_with_subquery (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_in_f_grouped_by_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_reverse_m2m (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_subquery_and_aggregate_values_chaining (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_subquery_outerref_transform (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_annotation_with_m2m (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_arguments_must_be_expressions (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_basic_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_basic_f_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_boolean_value_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_chaining_annotation_filter_with_m2m (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_chaining_transforms (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_column_field_ordering_with_deferred (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_combined_annotation_commutative (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_combined_expression_annotation_with_aggregation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_combined_f_expression_annotation_with_aggregation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_custom_functions (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_custom_functions_can_ref_other_functions (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_custom_transform_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_decimal_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_empty_expression_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_empty_queryset_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_filter_agg_with_double_f (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.098s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application annotations
+Found 16 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: annotations, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table annotations_author
+    Creating table annotations_publisher
+    Creating table annotations_book
+    Creating table annotations_store
+    Creating table annotations_departmentstore
+    Creating table annotations_employee
+    Creating table annotations_company
+    Creating table annotations_ticket
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_filter_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_filter_annotation_with_double_f (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_filter_annotation_with_f (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_filter_decimal_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_filter_wrong_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_grouping_by_q_expression_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_joined_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_joined_transformed_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_mixed_type_annotation_date_interval (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_mixed_type_annotation_numbers (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_order_by_aggregate (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_order_by_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_q_expression_annotation_with_aggregation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_raw_sql_with_inherited_field (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_update_with_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+test_values_with_pk_annotation (annotations.tests.NonAggregateAnnotationTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.030s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

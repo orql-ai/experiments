@@ -1,0 +1,90 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-3.5.0+/b19bce971, docutils-0.21.2
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 1 item
+
+tests/test_ext_autodoc_automodule.py::test_empty_all PASSED              [100%]
+
+=============================== warnings summary ===============================
+sphinx/util/docutils.py:45
+  /testbed/sphinx/util/docutils.py:45: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/registry.py:22
+  /testbed/sphinx/registry.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+sphinx/directives/patches.py:14
+  /testbed/sphinx/directives/patches.py:14: DeprecationWarning: The `docutils.parsers.rst.directive.html` module will be removed in Docutils 2.0. Since Docutils 0.18, the "Meta" node is defined in `docutils.parsers.rst.directives.misc`.
+    from docutils.parsers.rst.directives import html, images, tables
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 1 passed, 7 warnings in 0.46s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8595:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8595
+b4ec7de5ca1a: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+dfca0cd99b2d: Pulling fs layer
+a4355678e260: Pulling fs layer
+e81c68559cd9: Pulling fs layer
+500327121db6: Pulling fs layer
+9f49fa2b6533: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e3b109b1f12c: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ac5b61163589: Pulling fs layer
+92a723a3a820: Pulling fs layer
+a4355678e260: Download complete
+e81c68559cd9: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+92a723a3a820: Download complete
+e3b109b1f12c: Download complete
+ac5b61163589: Download complete
+7478e0ac0f23: Download complete
+b4ec7de5ca1a: Download complete
+dfca0cd99b2d: Download complete
+9f49fa2b6533: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+dfca0cd99b2d: Pull complete
+a4355678e260: Pull complete
+e81c68559cd9: Pull complete
+92a723a3a820: Pull complete
+e3b109b1f12c: Pull complete
+9f49fa2b6533: Pull complete
+b4ec7de5ca1a: Pull complete
+Digest: sha256:a9acd43f02011ca3674a89c35de28d083116e52f2d36be27b5c4b992eda7810a
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8595:latest
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'skipped': True}
+>>>>> End Test Output
+>>>>> All Tests Passed

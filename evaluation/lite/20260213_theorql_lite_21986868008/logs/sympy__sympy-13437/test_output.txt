@@ -1,0 +1,183 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        81597067
+hash randomization: on (PYTHONHASHSEED=2000843733)
+
+sympy/functions/combinatorial/tests/test_comb_numbers.py[1] F             [FAIL]
+sympy/utilities/tests/test_iterables.py[1] .                                [OK]
+
+________________________________________________________________________________
+______ sympy/functions/combinatorial/tests/test_comb_numbers.py:test_bell ______
+  File "/testbed/sympy/functions/combinatorial/tests/test_comb_numbers.py", line 91, in test_bell
+    raises(ValueError, lambda: bell(S(1)/2))
+  File "/testbed/sympy/utilities/pytest.py", line 81, in raises
+    raise AssertionError("DID NOT RAISE")
+AssertionError: DID NOT RAISE
+
+============= tests finished: 1 passed, 1 failed, in 0.21 seconds ==============
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13437:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-13437
+836b79e2a6e5: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+cdb3ed33e8a4: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+a94ea9612d4d: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+b08895a5c216: Pulling fs layer
+ac5b61163589: Pulling fs layer
+ed3dada71338: Pulling fs layer
+5c809fd8a9af: Download complete
+a94ea9612d4d: Download complete
+ac5b61163589: Download complete
+2f341c31f3b7: Download complete
+ed3dada71338: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+cdb3ed33e8a4: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+b08895a5c216: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+a94ea9612d4d: Pull complete
+0b326ada86d1: Pull complete
+cdb3ed33e8a4: Pull complete
+Digest: sha256:ba5e3f283d12f3a424e92827a693c41ec083244cb2b8650bb403c3fd17326e97
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13437:latest
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+===== PHASE: PASS_TO_PASS (15 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        1341227
+hash randomization: on (PYTHONHASHSEED=1872553667)
+
+sympy/calculus/tests/test_euler.py[5] .....                                 [OK]
+sympy/concrete/tests/test_sums_products.py[2] E.                          [FAIL]
+sympy/functions/combinatorial/tests/test_comb_numbers.py[18] ......ff..f....... 
+                                                                            [OK]
+sympy/geometry/tests/test_polygon.py[1] .                                   [OK]
+sympy/stats/tests/test_finite_rv.py[1] .                                    [OK]
+
+________________________________________________________________________________
+________ sympy/concrete/tests/test_sums_products.py:test_harmonic_sums _________
+  File "/testbed/sympy/concrete/tests/test_sums_products.py", line 283, in test_harmonic_sums
+    assert summation(1/k, (k, 0, n)) == Sum(1/k, (k, 0, n))
+  File "/testbed/sympy/concrete/summations.py", line 789, in summation
+    return Sum(f, *symbols, **kwargs).doit(deep=False)
+  File "/testbed/sympy/concrete/summations.py", line 188, in doit
+    newf = eval_sum(f, (i, a, b))
+  File "/testbed/sympy/concrete/summations.py", line 894, in eval_sum
+    value = eval_sum_symbolic(f.expand(), (i, a, b))
+  File "/testbed/sympy/concrete/summations.py", line 994, in eval_sum_symbolic
+    return eval_sum_hyper(f_orig, (i, a, b))
+  File "/testbed/sympy/concrete/summations.py", line 1068, in eval_sum_hyper
+    res1 = _eval_sum_hyper(f, i, a)
+  File "/testbed/sympy/concrete/summations.py", line 1048, in _eval_sum_hyper
+    return f.subs(i, 0)*hyperexpand(h), h.convergence_statement
+  File "/testbed/sympy/simplify/hyperexpand.py", line 2473, in hyperexpand
+    return f.replace(hyper, do_replace).replace(meijerg, do_meijer)
+  File "/testbed/sympy/core/basic.py", line 1397, in replace
+    rv = bottom_up(self, rec_replace, atoms=True)
+  File "/testbed/sympy/simplify/simplify.py", line 1017, in bottom_up
+    rv = F(rv)
+  File "/testbed/sympy/core/basic.py", line 1382, in rec_replace
+    new = _value(expr, result)
+  File "/testbed/sympy/core/basic.py", line 1325, in <lambda>
+    _value = lambda expr, result: value(*expr.args)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 2462, in do_replace
+    r = _hyperexpand(Hyper_Function(ap, bq), z, rewrite=rewrite)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 1983, in _hyperexpand
+    _collection = FormulaCollection()
+  File "/testbed/sympy/simplify/hyperexpand.py", line 806, in __init__
+    add_formulae(self.formulae)
+  File "/testbed/sympy/simplify/hyperexpand.py", line 210, in add_formulae
+    Matrix([ sqrt(pi)*(I*sinh(2*sqrt(z))*fresnels(2*root(z, 4)*exp(I*pi/4)/sqrt(pi))
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 439, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/testbed/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/testbed/sympy/core/function.py", line 250, in __new__
+    evaluated = cls.eval(*args)
+  File "/testbed/sympy/functions/elementary/exponential.py", line 251, in eval
+    if ask(Q.integer(2*coeff)):
+  File "/testbed/sympy/assumptions/ask.py", line 1247, in ask
+    from sympy.assumptions.satask import satask
+  File "/testbed/sympy/assumptions/satask.py", line 9, in <module>
+    from sympy.assumptions.sathandlers import fact_registry
+  File "/testbed/sympy/assumptions/sathandlers.py", line 3, in <module>
+    from collections import MutableMapping, defaultdict
+  File "<frozen importlib._bootstrap>", line 1055, in _handle_fromlist
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/collections/__init__.py", line 62, in __getattr__
+    warnings.warn("Using or importing the ABCs from 'collections' instead "
+DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+
+= tests finished: 23 passed, 3 expected to fail, 1 exceptions, in 3.27 seconds =
+DO *NOT* COMMIT!
+
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+/testbed/sympy/polys/agca/modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif elem is 0:
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_bell']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_bernoulli', 'test_fibonacci', 'test_harmonic', 'test_harmonic_rational', 'test_harmonic_evalf', 'test_harmonic_rewrite_polygamma', 'test_harmonic_rewrite_sum', 'test_euler', 'test_euler_odd', 'test_euler_polynomials', 'test_euler_polynomial_rewrite', 'test_catalan', 'test_genocchi', 'test_nC_nP_nT', 'test_issue_8496']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

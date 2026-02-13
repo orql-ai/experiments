@@ -1,0 +1,199 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        10162259
+hash randomization: on (PYTHONHASHSEED=1041974703)
+
+sympy/core/tests/test_exprtools.py[1] .                                     [OK]
+sympy/polys/tests/test_polytools.py[1] F                                  [FAIL]
+
+________________________________________________________________________________
+____________ sympy/polys/tests/test_polytools.py:test_factor_terms _____________
+Traceback (most recent call last):
+  File "/testbed/sympy/polys/tests/test_polytools.py", line 3276, in test_factor_terms
+    assert sqf_list(x*(x + y)) == (1, [(x**2 + x*y, 1)])
+AssertionError
+
+============= tests finished: 1 passed, 1 failed, in 0.40 seconds ==============
+DO *NOT* COMMIT!
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18698:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-18698
+836b79e2a6e5: Pulling fs layer
+500327121db6: Pulling fs layer
+8f8747a1c7f8: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+cbe962092945: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+2f341c31f3b7: Download complete
+ed3dada71338: Download complete
+5c809fd8a9af: Download complete
+cbe962092945: Download complete
+ac5b61163589: Download complete
+8f8747a1c7f8: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+b08895a5c216: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+cbe962092945: Pull complete
+0b326ada86d1: Pull complete
+8f8747a1c7f8: Pull complete
+Digest: sha256:922cd0fcc1dbd6349560f1c42c6319ea59d19ab7d7a44f8d8fbd0dbb143a8c11
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18698:latest
+
+
+===== PHASE: PASS_TO_PASS (147 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        84761120
+hash randomization: on (PYTHONHASHSEED=4139927316)
+
+sympy/polys/tests/test_polytools.py[50] ........................................
+..........                                                                  [OK]
+
+================== tests finished: 50 passed, in 0.57 seconds ==================
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        40099708
+hash randomization: on (PYTHONHASHSEED=2679857334)
+
+sympy/core/tests/test_arit.py[2] ..                                         [OK]
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/core/tests/test_priority.py[1] .                                      [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/integrals/tests/test_risch.py[1] .                                    [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+sympy/ntheory/tests/test_factor_.py[4] ....                                 [OK]
+sympy/physics/vector/tests/test_fieldfunctions.py[1] .                      [OK]
+sympy/polys/tests/test_dispersion.py[1] .                                   [OK]
+sympy/polys/tests/test_polytools.py[51] ........................................
+...........                                                                 [OK]
+sympy/polys/tests/test_subresultants_qq_zz.py[8] ........                   [OK]
+sympy/tensor/tests/test_tensor.py[1] f                                      [OK]
+
+======== tests finished: 73 passed, 1 expected to fail, in 4.08 seconds ========
+
+
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        53290697
+hash randomization: on (PYTHONHASHSEED=1148310669)
+
+sympy/combinatorics/tests/test_perm_groups.py[2] ..                         [OK]
+sympy/combinatorics/tests/test_polyhedron.py[1] .                           [OK]
+sympy/concrete/tests/test_sums_products.py[2] ..                            [OK]
+sympy/core/tests/test_evalf.py[1] .                                         [OK]
+sympy/core/tests/test_expr.py[4] ....                                       [OK]
+sympy/core/tests/test_exprtools.py[3] ...                                   [OK]
+sympy/core/tests/test_function.py[1] .                                      [OK]
+sympy/core/tests/test_noncommutative.py[2] ..                               [OK]
+sympy/core/tests/test_relational.py[1] .                                    [OK]
+sympy/core/tests/test_subs.py[1] .                                          [OK]
+sympy/functions/combinatorial/tests/test_comb_factorials.py[8] .......f     [OK]
+sympy/functions/special/tests/test_gamma_functions.py[3] ...                [OK]
+sympy/functions/special/tests/test_zeta_functions.py[2] ..                  [OK]
+sympy/geometry/tests/test_curve.py[1] .                                     [OK]
+sympy/geometry/tests/test_ellipse.py[1] .                                   [OK]
+sympy/geometry/tests/test_entity.py[1] .                                    [OK]
+sympy/geometry/tests/test_point.py[1] .                                     [OK]
+sympy/geometry/tests/test_polygon.py[2] w.                                  [OK]
+sympy/integrals/tests/test_integrals.py[2] ..                               [OK]
+sympy/integrals/tests/test_intpoly.py[3] w..                                [OK]
+sympy/integrals/tests/test_rde.py[1] .                                      [OK]
+sympy/integrals/tests/test_risch.py[2] ..                                   [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[1] f                       [OK]
+sympy/matrices/expressions/tests/test_matmul.py[1] .                        [OK]
+sympy/matrices/tests/test_matrices.py[2] ..                                 [OK]
+sympy/ntheory/tests/test_factor_.py[3] ...                                  [OK]
+sympy/parsing/tests/test_sympy_parser.py[1] .                               [OK]
+sympy/physics/quantum/tests/test_operatorordering.py[2] ..                  [OK]
+sympy/physics/tests/test_hydrogen.py[1] .                                   [OK]
+sympy/physics/tests/test_pring.py[1] .                                      [OK]
+sympy/physics/tests/test_qho_1d.py[1] .                                     [OK]
+sympy/physics/units/tests/test_quantities.py[2] .f                          [OK]
+sympy/polys/agca/tests/test_modules.py[1] .                                 [OK]
+sympy/polys/tests/test_groebnertools.py[4] ....                             [OK]
+sympy/polys/tests/test_numberfields.py[1] .                                 [OK]
+sympy/polys/tests/test_partfrac.py[2] f.                                    [OK]
+sympy/polys/tests/test_polymatrix.py[1] .                                   [OK]
+sympy/polys/tests/test_polyroots.py[2] w.                                   [OK]
+sympy/polys/tests/test_polytools.py[50] ........................................
+.F........                                                                [FAIL]
+sympy/polys/tests/test_ring_series.py[2] ..                                 [OK]
+sympy/polys/tests/test_subresultants_qq_zz.py[3] ...                        [OK]
+sympy/printing/pretty/tests/test_pretty.py[2] ..                            [OK]
+sympy/printing/tests/test_latex.py[1] .                                     [OK]
+sympy/printing/tests/test_mathml.py[19] ...................                 [OK]
+sympy/printing/tests/test_str.py[3] ...                                     [OK]
+sympy/series/tests/test_limits.py[2] ..                                     [OK]
+sympy/sets/tests/test_fancysets.py[1] .                                     [OK]
+sympy/simplify/tests/test_hyperexpand.py[3] ...                             [OK]
+sympy/simplify/tests/test_simplify.py[2] ..                                 [OK]
+sympy/solvers/diophantine/tests/test_diophantine.py[2] ..                   [OK]
+sympy/solvers/ode/tests/test_ode.py[2] ..                                   [OK]
+sympy/solvers/tests/test_solvers.py[2] ..                                   [OK]
+sympy/solvers/tests/test_solveset.py[1] .                                   [OK]
+sympy/stats/tests/test_continuous_rv.py[1] .                                [OK]
+sympy/stats/tests/test_rv.py[2] ..                                          [OK]
+sympy/vector/tests/test_coordsysrect.py[1] .                                [OK]
+
+________________________________ slowest tests _________________________________
+test_factorable - Took 13.174 seconds
+________________________________________________________________________________
+____________ sympy/polys/tests/test_polytools.py:test_factor_terms _____________
+Traceback (most recent call last):
+  File "/testbed/sympy/polys/tests/test_polytools.py", line 3276, in test_factor_terms
+    assert sqf_list(x*(x + y)) == (1, [(x**2 + x*y, 1)])
+AssertionError
+
+ tests finished: 162 passed, 1 failed, 3 skipped, 4 expected to fail, 
+in 33.48 seconds 
+DO *NOT* COMMIT!
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_factor_terms']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_gcd', 'test_gcd_numbers_vs_polys', 'test_terms_gcd', 'test_trunc', 'test_monic', 'test_content', 'test_primitive', 'test_compose', 'test_shift', 'test_transform', 'test_sturm', 'test_gff', 'test_norm', 'test_sqf_norm', 'test_sqf', 'test_factor', 'test_factor_large', 'test_factor_noeval', 'test_intervals', 'test_refine_root', 'test_count_roots', 'test_Poly_root', 'test_real_roots', 'test_all_roots', 'test_nroots', 'test_ground_roots', 'test_nth_power_roots_poly', 'test_torational_factor_list', 'test_cancel', 'test_reduced', 'test_groebner', 'test_fglm', 'test_is_zero_dimensional', 'test_GroebnerBasis', 'test_poly', 'test_keep_coeff', 'test_poly_matching_consistency', 'test_noncommutative', 'test_to_rational_coeffs', 'test_as_list', 'test_issue_11198', 'test_Poly_precision', 'test_issue_12400', 'test_issue_14364', 'test_issue_15669', 'test_issue_17988', 'test_issue_18205']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

@@ -1,0 +1,255 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application aggregation
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: aggregation, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table aggregation_author
+    Creating table aggregation_publisher
+    Creating table aggregation_book
+    Creating table aggregation_store
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-12589:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-12589
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+914de5d267f7: Pulling fs layer
+0ae074140456: Pulling fs layer
+e40dd2783886: Pulling fs layer
+edaae312c731: Pulling fs layer
+e81b746fbe25: Pulling fs layer
+976de5fe6e18: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ee199f98d6ef: Pulling fs layer
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+7478e0ac0f23: Download complete
+e40dd2783886: Download complete
+0ae074140456: Download complete
+edaae312c731: Download complete
+976de5fe6e18: Download complete
+e81b746fbe25: Download complete
+7478e0ac0f23: Pull complete
+ee199f98d6ef: Download complete
+500327121db6: Download complete
+914de5d267f7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e40dd2783886: Pull complete
+0ae074140456: Pull complete
+914de5d267f7: Pull complete
+edaae312c731: Pull complete
+976de5fe6e18: Pull complete
+ee199f98d6ef: Pull complete
+e81b746fbe25: Pull complete
+Digest: sha256:a46eb9c4e24bdaef2c3dd2c61bcd2430012f3a3bf43a674d14176a50b6008b4d
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-12589:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_aggregation_subquery_annotation_values_collision (aggregation.tests.AggregateTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (65 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application aggregation
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: aggregation, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table aggregation_author
+    Creating table aggregation_publisher
+    Creating table aggregation_book
+    Creating table aggregation_store
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_add_implementation (aggregation.tests.AggregateTestCase) ... ok
+test_aggregate_alias (aggregation.tests.AggregateTestCase) ... ok
+test_aggregate_annotation (aggregation.tests.AggregateTestCase) ... ok
+test_aggregate_in_order_by (aggregation.tests.AggregateTestCase) ... ok
+test_aggregate_multi_join (aggregation.tests.AggregateTestCase) ... ok
+test_aggregate_over_complex_annotation (aggregation.tests.AggregateTestCase) ... ok
+test_aggregation_exists_annotation (aggregation.tests.AggregateTestCase) ... ok
+test_aggregation_expressions (aggregation.tests.AggregateTestCase) ... ok
+test_aggregation_order_by_not_selected_annotation_values (aggregation.tests.AggregateTestCase) ... ok
+test_aggregation_subquery_annotation_exists (aggregation.tests.AggregateTestCase) ... ok
+test_aggregation_subquery_annotation_multivalued (aggregation.tests.AggregateTestCase) ... ok
+test_aggregation_subquery_annotation_related_field (aggregation.tests.AggregateTestCase) ... ok
+test_aggregation_subquery_annotation_values (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_basic (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_defer (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_defer_select_related (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_m2m (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_ordering (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_over_annotate (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_values (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_values_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_annotate_values_list (aggregation.tests.AggregateTestCase) ... ok
+test_annotated_aggregate_over_annotated_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_annotation (aggregation.tests.AggregateTestCase) ... ok
+test_annotation_expressions (aggregation.tests.AggregateTestCase) ... ok
+test_arguments_must_be_expressions (aggregation.tests.AggregateTestCase) ... ok
+test_avg_decimal_field (aggregation.tests.AggregateTestCase) ... ok
+test_avg_duration_field (aggregation.tests.AggregateTestCase) ... ok
+test_backwards_m2m_annotate (aggregation.tests.AggregateTestCase) ... ok
+test_combine_different_types (aggregation.tests.AggregateTestCase) ... ok
+test_complex_aggregations_require_kwarg (aggregation.tests.AggregateTestCase) ... ok
+test_complex_values_aggregation (aggregation.tests.AggregateTestCase) ... ok
+test_count (aggregation.tests.AggregateTestCase) ... ok
+test_count_distinct_expression (aggregation.tests.AggregateTestCase) ... ok
+test_count_star (aggregation.tests.AggregateTestCase) ... ok
+test_dates_with_aggregation (aggregation.tests.AggregateTestCase) ... ok
+test_decimal_max_digits_has_no_effect (aggregation.tests.AggregateTestCase) ... ok
+test_distinct_on_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_empty_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_even_more_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_expression_on_aggregation (aggregation.tests.AggregateTestCase) ... ok
+test_filter_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_filtering (aggregation.tests.AggregateTestCase) ... ok
+test_fkey_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_group_by_exists_annotation (aggregation.tests.AggregateTestCase) ... FAIL
+test_group_by_subquery_annotation (aggregation.tests.AggregateTestCase) ... FAIL
+test_grouped_annotation_in_group_by (aggregation.tests.AggregateTestCase) ... ok
+test_missing_output_field_raises_error (aggregation.tests.AggregateTestCase) ... ok
+test_more_aggregation (aggregation.tests.AggregateTestCase) ... ok
+test_multi_arg_aggregate (aggregation.tests.AggregateTestCase) ... ok
+
+======================================================================
+FAIL: test_group_by_exists_annotation (aggregation.tests.AggregateTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/django/test/testcases.py", line 1215, in skip_wrapper
+    return test_func(*args, **kwargs)
+  File "/testbed/tests/aggregation/tests.py", line 1286, in test_group_by_exists_annotation
+    self.assertEqual(dict(has_long_books_breakdown), {True: 2, False: 3})
+AssertionError: {False: 1, True: 1} != {True: 2, False: 3}
+- {False: 1, True: 1}
+?         ^        ^
+
++ {False: 3, True: 2}
+?         ^        ^
+
+
+======================================================================
+FAIL: test_group_by_subquery_annotation (aggregation.tests.AggregateTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/django/test/testcases.py", line 1215, in skip_wrapper
+    return test_func(*args, **kwargs)
+  File "/testbed/tests/aggregation/tests.py", line 1271, in test_group_by_subquery_annotation
+    self.assertEqual(dict(long_books_count_breakdown), {None: 1, 1: 4})
+AssertionError: {1: 1, None: 1} != {None: 1, 1: 4}
+- {None: 1, 1: 1}
+?              ^
+
++ {None: 1, 1: 4}
+?              ^
+
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.125s
+
+FAILED (failures=2)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application aggregation
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: aggregation, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table aggregation_author
+    Creating table aggregation_publisher
+    Creating table aggregation_book
+    Creating table aggregation_store
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_multiple_aggregates (aggregation.tests.AggregateTestCase) ... ok
+test_non_grouped_annotation_not_in_group_by (aggregation.tests.AggregateTestCase) ... ok
+test_nonaggregate_aggregation_throws (aggregation.tests.AggregateTestCase) ... ok
+test_nonfield_annotation (aggregation.tests.AggregateTestCase) ... ok
+test_order_of_precedence (aggregation.tests.AggregateTestCase) ... ok
+test_related_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_reverse_fkey_annotate (aggregation.tests.AggregateTestCase) ... ok
+test_single_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_sum_distinct_aggregate (aggregation.tests.AggregateTestCase) ... ok
+test_sum_duration_field (aggregation.tests.AggregateTestCase) ... ok
+test_ticket11881 (aggregation.tests.AggregateTestCase) ... ok
+test_ticket12886 (aggregation.tests.AggregateTestCase) ... ok
+test_ticket17424 (aggregation.tests.AggregateTestCase) ... ok
+test_values_aggregation (aggregation.tests.AggregateTestCase) ... ok
+test_values_annotation_with_expression (aggregation.tests.AggregateTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.040s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['aggregation.tests.AggregateTestCase.test_add_implementation', 'aggregation.tests.AggregateTestCase.test_aggregate_alias', 'aggregation.tests.AggregateTestCase.test_aggregate_annotation', 'aggregation.tests.AggregateTestCase.test_aggregate_in_order_by', 'aggregation.tests.AggregateTestCase.test_aggregate_multi_join', 'aggregation.tests.AggregateTestCase.test_aggregate_over_complex_annotation', 'aggregation.tests.AggregateTestCase.test_aggregation_exists_annotation', 'aggregation.tests.AggregateTestCase.test_aggregation_expressions', 'aggregation.tests.AggregateTestCase.test_aggregation_order_by_not_selected_annotation_values', 'aggregation.tests.AggregateTestCase.test_aggregation_subquery_annotation_exists', 'aggregation.tests.AggregateTestCase.test_aggregation_subquery_annotation_multivalued', 'aggregation.tests.AggregateTestCase.test_aggregation_subquery_annotation_related_field', 'aggregation.tests.AggregateTestCase.test_aggregation_subquery_annotation_values', 'aggregation.tests.AggregateTestCase.test_annotate_basic', 'aggregation.tests.AggregateTestCase.test_annotate_defer', 'aggregation.tests.AggregateTestCase.test_annotate_defer_select_related', 'aggregation.tests.AggregateTestCase.test_annotate_m2m', 'aggregation.tests.AggregateTestCase.test_annotate_ordering', 'aggregation.tests.AggregateTestCase.test_annotate_over_annotate', 'aggregation.tests.AggregateTestCase.test_annotate_values', 'aggregation.tests.AggregateTestCase.test_annotate_values_aggregate', 'aggregation.tests.AggregateTestCase.test_annotate_values_list', 'aggregation.tests.AggregateTestCase.test_annotated_aggregate_over_annotated_aggregate', 'aggregation.tests.AggregateTestCase.test_annotation', 'aggregation.tests.AggregateTestCase.test_annotation_expressions', 'aggregation.tests.AggregateTestCase.test_arguments_must_be_expressions', 'aggregation.tests.AggregateTestCase.test_avg_decimal_field', 'aggregation.tests.AggregateTestCase.test_avg_duration_field', 'aggregation.tests.AggregateTestCase.test_backwards_m2m_annotate', 'aggregation.tests.AggregateTestCase.test_combine_different_types', 'aggregation.tests.AggregateTestCase.test_complex_aggregations_require_kwarg', 'aggregation.tests.AggregateTestCase.test_complex_values_aggregation', 'aggregation.tests.AggregateTestCase.test_count', 'aggregation.tests.AggregateTestCase.test_count_distinct_expression', 'aggregation.tests.AggregateTestCase.test_count_star', 'aggregation.tests.AggregateTestCase.test_dates_with_aggregation', 'aggregation.tests.AggregateTestCase.test_decimal_max_digits_has_no_effect', 'aggregation.tests.AggregateTestCase.test_distinct_on_aggregate', 'aggregation.tests.AggregateTestCase.test_empty_aggregate', 'aggregation.tests.AggregateTestCase.test_even_more_aggregate', 'aggregation.tests.AggregateTestCase.test_expression_on_aggregation', 'aggregation.tests.AggregateTestCase.test_filter_aggregate', 'aggregation.tests.AggregateTestCase.test_filtering', 'aggregation.tests.AggregateTestCase.test_fkey_aggregate', 'aggregation.tests.AggregateTestCase.test_group_by_exists_annotation', 'aggregation.tests.AggregateTestCase.test_group_by_subquery_annotation', 'aggregation.tests.AggregateTestCase.test_grouped_annotation_in_group_by', 'aggregation.tests.AggregateTestCase.test_missing_output_field_raises_error', 'aggregation.tests.AggregateTestCase.test_more_aggregation', 'aggregation.tests.AggregateTestCase.test_multi_arg_aggregate']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

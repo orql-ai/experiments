@@ -1,0 +1,18 @@
+diff --git a/django/contrib/contenttypes/models.py b/django/contrib/contenttypes/models.py
+index 759a53ce67..f028c8c9a7 100644
+--- a/django/contrib/contenttypes/models.py
++++ b/django/contrib/contenttypes/models.py
+@@ -49,11 +49,11 @@ class ContentTypeManager(models.Manager):
+         try:
+             # Start with get() and not get_or_create() in order to use
+             # the db_for_read (see #20401).
+-            ct = self.get(app_label=opts.app_label, model=opts.model_name)
++            ct = self.using(self.db).get(app_label=opts.app_label, model=opts.model_name)
+         except self.model.DoesNotExist:
+             # Not found in the database; we proceed to create it. This time
+             # use get_or_create to take care of any race conditions.
+-            ct, created = self.get_or_create(
++            ct, created = self.using(self.db).get_or_create(
+                 app_label=opts.app_label,
+                 model=opts.model_name,
+             )

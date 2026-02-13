@@ -1,0 +1,98 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: PASS_TO_PASS (34 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application user_commands
+Found 34 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15781:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15781
+6f47521ebeb0: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+440f2bf70467: Pulling fs layer
+a715acead1df: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+4e865410366e: Pulling fs layer
+836b79e2a6e5: Download complete
+a715acead1df: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+b780fac9da70: Download complete
+440f2bf70467: Download complete
+396d2ca0167c: Download complete
+6f47521ebeb0: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+187d94c4a868: Download complete
+4e865410366e: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+4e865410366e: Pull complete
+b780fac9da70: Pull complete
+396d2ca0167c: Pull complete
+a715acead1df: Pull complete
+440f2bf70467: Pull complete
+187d94c4a868: Pull complete
+6f47521ebeb0: Pull complete
+Digest: sha256:d8e772485ba064de9c51392e7fe1bafb115604087c2ce226e51d4f47a2a03215
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15781:latest
+test_get_random_secret_key (user_commands.tests.UtilsTests) ... ok
+test_is_ignored_path_false (user_commands.tests.UtilsTests) ... ok
+test_is_ignored_path_true (user_commands.tests.UtilsTests) ... ok
+test_no_existent_external_program (user_commands.tests.UtilsTests) ... ok
+test_normalize_path_patterns_truncates_wildcard_base (user_commands.tests.UtilsTests) ... ok
+test_call_command_unrecognized_option (user_commands.tests.CommandTests) ... ok
+test_call_command_with_required_parameters_in_mixed_options (user_commands.tests.CommandTests) ... ok
+test_call_command_with_required_parameters_in_options (user_commands.tests.CommandTests) ... ok
+test_calling_a_command_with_no_app_labels_and_parameters_raise_command_error (user_commands.tests.CommandTests) ... ok
+test_calling_a_command_with_only_empty_parameter_should_ends_gracefully (user_commands.tests.CommandTests) ... ok
+test_calling_command_with_app_labels_and_parameters_should_be_ok (user_commands.tests.CommandTests) ... ok
+test_calling_command_with_parameters_and_app_labels_at_the_end_should_be_ok (user_commands.tests.CommandTests) ... ok
+test_check_migrations (user_commands.tests.CommandTests) ... ok
+test_command (user_commands.tests.CommandTests) ... ok
+test_command_add_arguments_after_common_arguments (user_commands.tests.CommandTests) ... ok
+test_command_style (user_commands.tests.CommandTests) ... ok
+test_language_preserved (user_commands.tests.CommandTests) ... ok
+test_mutually_exclusive_group_required_const_options (user_commands.tests.CommandTests) ... ok
+test_mutually_exclusive_group_required_options (user_commands.tests.CommandTests) ... ok
+test_mutually_exclusive_group_required_with_same_dest_args (user_commands.tests.CommandTests) ... ok
+test_mutually_exclusive_group_required_with_same_dest_options (user_commands.tests.CommandTests) ... ok
+test_output_transaction (user_commands.tests.CommandTests) ... ok
+test_outputwrapper_flush (user_commands.tests.CommandTests) ... ok
+test_required_const_options (user_commands.tests.CommandTests) ... ok
+test_required_list_option (user_commands.tests.CommandTests) ... ok
+test_requires_system_checks_empty (user_commands.tests.CommandTests) ... ok
+test_requires_system_checks_invalid (user_commands.tests.CommandTests) ... ok
+test_requires_system_checks_specific (user_commands.tests.CommandTests) ... ok
+test_subparser (user_commands.tests.CommandTests) ... ok
+test_subparser_dest_args (user_commands.tests.CommandTests) ... ok
+test_subparser_dest_required_args (user_commands.tests.CommandTests) ... ok
+test_subparser_invalid_option (user_commands.tests.CommandTests) ... ok
+test_script_prefix_set_in_commands (user_commands.tests.CommandRunTests) ... ok
+test_skip_checks (user_commands.tests.CommandRunTests) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.454s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'skipped': True}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

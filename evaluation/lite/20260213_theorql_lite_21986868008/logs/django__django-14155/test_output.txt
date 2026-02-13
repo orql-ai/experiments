@@ -1,0 +1,204 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (3 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application urlpatterns_reverse
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14155:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-14155
+3bf75e876030: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+9a976e8c0b17: Pulling fs layer
+9f5a969c9678: Pulling fs layer
+724625094df2: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+925361aa7a6f: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+f895aca1e83b: Pulling fs layer
+0015a28029a7: Pulling fs layer
+500327121db6: Pulling fs layer
+9f5a969c9678: Download complete
+9a976e8c0b17: Download complete
+836b79e2a6e5: Download complete
+925361aa7a6f: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+f895aca1e83b: Download complete
+3bf75e876030: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+724625094df2: Download complete
+500327121db6: Download complete
+0015a28029a7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+9f5a969c9678: Pull complete
+9a976e8c0b17: Pull complete
+0015a28029a7: Pull complete
+925361aa7a6f: Pull complete
+f895aca1e83b: Pull complete
+724625094df2: Pull complete
+3bf75e876030: Pull complete
+Digest: sha256:b0dad307315a69b148187a2145bee45718b2441ad54d0583f98952d7de88ba24
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14155:latest
+test_repr (urlpatterns_reverse.tests.ResolverMatchTests) ... ok
+test_repr_functools_partial (urlpatterns_reverse.tests.ResolverMatchTests) ... test_resolver_match_on_request (urlpatterns_reverse.tests.ResolverMatchTests) ... ok
+
+======================================================================
+FAIL: test_repr_functools_partial (urlpatterns_reverse.tests.ResolverMatchTests) (name='partial')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/urlpatterns_reverse/tests.py", line 1161, in test_repr_functools_partial
+    self.assertEqual(
+AssertionError: "ResolverMatch(func=urlpatterns_reverse.views.empty_view, arg[79 chars]l/')" != "ResolverMatch(func=functools.partial(<function empty_view at[132 chars]l/')"
+- ResolverMatch(func=urlpatterns_reverse.views.empty_view, args=(), kwargs={}, url_name='partial', app_names=[], namespaces=[], route='partial/')
++ ResolverMatch(func=functools.partial(<function empty_view at 0x7f89403073a0>, template_name='template.html'), args=(), kwargs={}, url_name='partial', app_names=[], namespaces=[], route='partial/')
+
+
+======================================================================
+FAIL: test_repr_functools_partial (urlpatterns_reverse.tests.ResolverMatchTests) (name='partial_nested')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/urlpatterns_reverse/tests.py", line 1161, in test_repr_functools_partial
+    self.assertEqual(
+AssertionError: "ResolverMatch(func=urlpatterns_reverse.views.empty_view, arg[93 chars]d/')" != "ResolverMatch(func=functools.partial(<function empty_view at[152 chars]d/')"
+- ResolverMatch(func=urlpatterns_reverse.views.empty_view, args=(), kwargs={}, url_name='partial_nested', app_names=[], namespaces=[], route='partial_nested/')
++ ResolverMatch(func=functools.partial(<function empty_view at 0x7f89403073a0>, template_name='nested_partial.html'), args=(), kwargs={}, url_name='partial_nested', app_names=[], namespaces=[], route='partial_nested/')
+
+
+======================================================================
+FAIL: test_repr_functools_partial (urlpatterns_reverse.tests.ResolverMatchTests) (name='partial_wrapped')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/urlpatterns_reverse/tests.py", line 1161, in test_repr_functools_partial
+    self.assertEqual(
+AssertionError: "ResolverMatch(func=urlpatterns_reverse.views.empty_view, arg[95 chars]d/')" != "ResolverMatch(func=functools.partial(<function empty_view at[148 chars]d/')"
+- ResolverMatch(func=urlpatterns_reverse.views.empty_view, args=(), kwargs={}, url_name='partial_wrapped', app_names=[], namespaces=[], route='partial_wrapped/')
++ ResolverMatch(func=functools.partial(<function empty_view at 0x7f89403073a0>, template_name='template.html'), args=(), kwargs={}, url_name='partial_wrapped', app_names=[], namespaces=[], route='partial_wrapped/')
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.016s
+
+FAILED (failures=3)
+
+
+===== PHASE: PASS_TO_PASS (58 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application urlpatterns_reverse
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, messages, sessions, staticfiles, urlpatterns_reverse
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_include_2_tuple (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_2_tuple_namespace (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_3_tuple (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_3_tuple_namespace (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_4_tuple (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_app_name (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_app_name_namespace (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_namespace (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_include_urls (urlpatterns_reverse.tests.IncludeTests) ... ok
+test_invalid_regex (urlpatterns_reverse.tests.ErroneousViewTests) ... ok
+test_noncallable_view (urlpatterns_reverse.tests.ErroneousViewTests) ... ok
+test_attributeerror_not_hidden (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_module_does_not_exist (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_non_string_value (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_not_callable (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_parent_module_does_not_exist (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_string_without_dot (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_view_does_not_exist (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_view_loading (urlpatterns_reverse.tests.ViewLoadingTests) ... ok
+test_callable_handlers (urlpatterns_reverse.tests.ErrorHandlerResolutionTests) ... ok
+test_named_handlers (urlpatterns_reverse.tests.ErrorHandlerResolutionTests) ... ok
+test_invalid_resolve (urlpatterns_reverse.tests.LookaheadTests) ... ok
+test_invalid_reverse (urlpatterns_reverse.tests.LookaheadTests) ... ok
+test_valid_resolve (urlpatterns_reverse.tests.LookaheadTests) ... ok
+test_valid_reverse (urlpatterns_reverse.tests.LookaheadTests) ... ok
+test_no_illegal_imports (urlpatterns_reverse.tests.ReverseShortcutTests) ... ok
+test_redirect_to_object (urlpatterns_reverse.tests.ReverseShortcutTests) ... ok
+test_redirect_to_url (urlpatterns_reverse.tests.ReverseShortcutTests) ... ok
+test_redirect_to_view_name (urlpatterns_reverse.tests.ReverseShortcutTests) ... ok
+test_redirect_view_object (urlpatterns_reverse.tests.ReverseShortcutTests) ... ok
+test_reverse_by_path_nested (urlpatterns_reverse.tests.ReverseShortcutTests) ... ok
+test_build_absolute_uri (urlpatterns_reverse.tests.ReverseLazyTest) ... ok
+test_inserting_reverse_lazy_into_string (urlpatterns_reverse.tests.ReverseLazyTest) ... ok
+test_redirect_with_lazy_reverse (urlpatterns_reverse.tests.ReverseLazyTest) ... ok
+test_user_permission_with_lazy_reverse (urlpatterns_reverse.tests.ReverseLazyTest) ... ok
+test_resolver_match_on_request_before_resolution (urlpatterns_reverse.tests.ResolverMatchTests) ... ok
+test_urlpattern_resolve (urlpatterns_reverse.tests.ResolverMatchTests) ... ok
+test_illegal_args_message (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_illegal_kwargs_message (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_mixing_args_and_kwargs (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_no_args_message (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_non_urlsafe_prefix_with_args (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_patterns_reported (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_prefix_braces (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_prefix_format_char (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_prefix_parenthesis (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_reverse_none (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_script_name_escaping (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_urlpattern_reverse (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+test_view_not_found_message (urlpatterns_reverse.tests.URLPatternReverse) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.103s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application urlpatterns_reverse
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_namespaced_view_detail (urlpatterns_reverse.tests.ResolverTests) ... ok
+test_resolver_reverse (urlpatterns_reverse.tests.ResolverTests) ... ok
+test_view_detail_as_method (urlpatterns_reverse.tests.ResolverTests) ... ok
+test_urlconf (urlpatterns_reverse.tests.RequestURLconfTests) ... ok
+test_urlconf_overridden (urlpatterns_reverse.tests.RequestURLconfTests) ... ok
+test_no_handler_exception (urlpatterns_reverse.tests.NoRootUrlConfTests) ... ok
+test_special_chars_namespace (urlpatterns_reverse.tests.NamespaceTests) ... ok
+test_lazy_in_settings (urlpatterns_reverse.tests.ReverseLazySettingsTest) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.419s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['urlpatterns_reverse.tests.ResolverMatchTests.test_repr', 'urlpatterns_reverse.tests.ResolverMatchTests.test_repr_functools_partial', 'urlpatterns_reverse.tests.ResolverMatchTests.test_resolver_match_on_request']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

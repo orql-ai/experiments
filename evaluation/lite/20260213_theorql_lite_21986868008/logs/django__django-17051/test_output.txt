@@ -1,0 +1,330 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (5 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application bulk_create
+Found 5 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-17051:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-17051
+500327121db6: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+4c46870aac35: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+7ac195ab5d45: Pulling fs layer
+aef50d31cf01: Download complete
+48d09a4d2bd0: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+7ac195ab5d45: Download complete
+788ea9f0fbb4: Download complete
+4c46870aac35: Download complete
+e5a28c0c137e: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+56cfd456d2c9: Download complete
+1c04d89b98c3: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+aef50d31cf01: Pull complete
+48d09a4d2bd0: Pull complete
+56cfd456d2c9: Pull complete
+7ac195ab5d45: Pull complete
+788ea9f0fbb4: Pull complete
+1c04d89b98c3: Pull complete
+4c46870aac35: Pull complete
+Digest: sha256:79442a76e490ee14efe28b6bd9e44076b5376e2f0bc6bee76d12b97c5b951090
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-17051:latest
+test_update_conflicts_two_fields_unique_fields_first (unittest.loader._FailedTest.test_update_conflicts_two_fields_unique_fields_first) ... ERROR
+test_update_conflicts_two_fields_unique_fields_second (unittest.loader._FailedTest.test_update_conflicts_two_fields_unique_fields_second) ... ERROR
+test_update_conflicts_unique_fields (unittest.loader._FailedTest.test_update_conflicts_unique_fields) ... ERROR
+test_update_conflicts_unique_fields_update_fields_db_column (unittest.loader._FailedTest.test_update_conflicts_unique_fields_update_fields_db_column) ... ERROR
+test_update_conflicts_unique_two_fields_unique_fields_both (unittest.loader._FailedTest.test_update_conflicts_unique_two_fields_unique_fields_both) ... ERROR
+
+======================================================================
+ERROR: test_update_conflicts_two_fields_unique_fields_first (unittest.loader._FailedTest.test_update_conflicts_two_fields_unique_fields_first)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_two_fields_unique_fields_first'
+
+======================================================================
+ERROR: test_update_conflicts_two_fields_unique_fields_second (unittest.loader._FailedTest.test_update_conflicts_two_fields_unique_fields_second)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_two_fields_unique_fields_second'
+
+======================================================================
+ERROR: test_update_conflicts_unique_fields (unittest.loader._FailedTest.test_update_conflicts_unique_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_unique_fields'
+
+======================================================================
+ERROR: test_update_conflicts_unique_fields_update_fields_db_column (unittest.loader._FailedTest.test_update_conflicts_unique_fields_update_fields_db_column)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_unique_fields_update_fields_db_column'
+
+======================================================================
+ERROR: test_update_conflicts_unique_two_fields_unique_fields_both (unittest.loader._FailedTest.test_update_conflicts_unique_two_fields_unique_fields_both)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_unique_two_fields_unique_fields_both'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (errors=5)
+
+
+===== PHASE: PASS_TO_PASS (37 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application bulk_create
+Found 37 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_batch_same_vals (unittest.loader._FailedTest.test_batch_same_vals) ... ERROR
+test_bulk_insert_expressions (unittest.loader._FailedTest.test_bulk_insert_expressions) ... ERROR
+test_bulk_insert_now (unittest.loader._FailedTest.test_bulk_insert_now) ... ERROR
+test_bulk_insert_nullable_fields (unittest.loader._FailedTest.test_bulk_insert_nullable_fields) ... ERROR
+test_efficiency (unittest.loader._FailedTest.test_efficiency) ... ERROR
+test_empty_model (unittest.loader._FailedTest.test_empty_model) ... ERROR
+test_explicit_batch_size (unittest.loader._FailedTest.test_explicit_batch_size) ... ERROR
+test_explicit_batch_size_efficiency (unittest.loader._FailedTest.test_explicit_batch_size_efficiency) ... ERROR
+test_explicit_batch_size_respects_max_batch_size (unittest.loader._FailedTest.test_explicit_batch_size_respects_max_batch_size) ... ERROR
+test_ignore_conflicts_ignore (unittest.loader._FailedTest.test_ignore_conflicts_ignore) ... ERROR
+test_ignore_update_conflicts_exclusive (unittest.loader._FailedTest.test_ignore_update_conflicts_exclusive) ... ERROR
+test_invalid_batch_size_exception (unittest.loader._FailedTest.test_invalid_batch_size_exception) ... ERROR
+test_large_batch (unittest.loader._FailedTest.test_large_batch) ... ERROR
+test_large_batch_efficiency (unittest.loader._FailedTest.test_large_batch_efficiency) ... ERROR
+test_large_single_field_batch (unittest.loader._FailedTest.test_large_single_field_batch) ... ERROR
+test_long_and_short_text (unittest.loader._FailedTest.test_long_and_short_text) ... ERROR
+test_multi_table_inheritance_unsupported (unittest.loader._FailedTest.test_multi_table_inheritance_unsupported) ... ERROR
+test_non_auto_increment_pk (unittest.loader._FailedTest.test_non_auto_increment_pk) ... ERROR
+test_non_auto_increment_pk_efficiency (unittest.loader._FailedTest.test_non_auto_increment_pk_efficiency) ... ERROR
+test_nullable_fk_after_parent (unittest.loader._FailedTest.test_nullable_fk_after_parent) ... ERROR
+test_nullable_fk_after_parent_bulk_create (unittest.loader._FailedTest.test_nullable_fk_after_parent_bulk_create) ... ERROR
+test_proxy_inheritance_supported (unittest.loader._FailedTest.test_proxy_inheritance_supported) ... ERROR
+test_set_pk_and_insert_single_item (unittest.loader._FailedTest.test_set_pk_and_insert_single_item) ... ERROR
+test_set_pk_and_query_efficiency (unittest.loader._FailedTest.test_set_pk_and_query_efficiency) ... ERROR
+test_set_state (unittest.loader._FailedTest.test_set_state) ... ERROR
+test_set_state_with_pk_specified (unittest.loader._FailedTest.test_set_state_with_pk_specified) ... ERROR
+test_simple (unittest.loader._FailedTest.test_simple) ... ERROR
+test_unsaved_parent (unittest.loader._FailedTest.test_unsaved_parent) ... ERROR
+test_update_conflicts_invalid_unique_fields (unittest.loader._FailedTest.test_update_conflicts_invalid_unique_fields) ... ERROR
+test_update_conflicts_invalid_update_fields (unittest.loader._FailedTest.test_update_conflicts_invalid_update_fields) ... ERROR
+test_update_conflicts_no_update_fields (unittest.loader._FailedTest.test_update_conflicts_no_update_fields) ... ERROR
+test_update_conflicts_nonexistent_update_fields (unittest.loader._FailedTest.test_update_conflicts_nonexistent_update_fields) ... ERROR
+test_update_conflicts_pk_in_update_fields (unittest.loader._FailedTest.test_update_conflicts_pk_in_update_fields) ... ERROR
+test_update_conflicts_two_fields_unique_fields_both (unittest.loader._FailedTest.test_update_conflicts_two_fields_unique_fields_both) ... ERROR
+test_update_conflicts_unique_fields_pk (unittest.loader._FailedTest.test_update_conflicts_unique_fields_pk) ... ERROR
+test_update_conflicts_unique_fields_required (unittest.loader._FailedTest.test_update_conflicts_unique_fields_required) ... ERROR
+test_update_conflicts_unique_two_fields_unique_fields_one (unittest.loader._FailedTest.test_update_conflicts_unique_two_fields_unique_fields_one) ... ERROR
+
+======================================================================
+ERROR: test_batch_same_vals (unittest.loader._FailedTest.test_batch_same_vals)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_batch_same_vals'
+
+======================================================================
+ERROR: test_bulk_insert_expressions (unittest.loader._FailedTest.test_bulk_insert_expressions)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_bulk_insert_expressions'
+
+======================================================================
+ERROR: test_bulk_insert_now (unittest.loader._FailedTest.test_bulk_insert_now)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_bulk_insert_now'
+
+======================================================================
+ERROR: test_bulk_insert_nullable_fields (unittest.loader._FailedTest.test_bulk_insert_nullable_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_bulk_insert_nullable_fields'
+
+======================================================================
+ERROR: test_efficiency (unittest.loader._FailedTest.test_efficiency)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_efficiency'
+
+======================================================================
+ERROR: test_empty_model (unittest.loader._FailedTest.test_empty_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_empty_model'
+
+======================================================================
+ERROR: test_explicit_batch_size (unittest.loader._FailedTest.test_explicit_batch_size)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_explicit_batch_size'
+
+======================================================================
+ERROR: test_explicit_batch_size_efficiency (unittest.loader._FailedTest.test_explicit_batch_size_efficiency)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_explicit_batch_size_efficiency'
+
+======================================================================
+ERROR: test_explicit_batch_size_respects_max_batch_size (unittest.loader._FailedTest.test_explicit_batch_size_respects_max_batch_size)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_explicit_batch_size_respects_max_batch_size'
+
+======================================================================
+ERROR: test_ignore_conflicts_ignore (unittest.loader._FailedTest.test_ignore_conflicts_ignore)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_ignore_conflicts_ignore'
+
+======================================================================
+ERROR: test_ignore_update_conflicts_exclusive (unittest.loader._FailedTest.test_ignore_update_conflicts_exclusive)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_ignore_update_conflicts_exclusive'
+
+======================================================================
+ERROR: test_invalid_batch_size_exception (unittest.loader._FailedTest.test_invalid_batch_size_exception)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_invalid_batch_size_exception'
+
+======================================================================
+ERROR: test_large_batch (unittest.loader._FailedTest.test_large_batch)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_large_batch'
+
+======================================================================
+ERROR: test_large_batch_efficiency (unittest.loader._FailedTest.test_large_batch_efficiency)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_large_batch_efficiency'
+
+======================================================================
+ERROR: test_large_single_field_batch (unittest.loader._FailedTest.test_large_single_field_batch)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_large_single_field_batch'
+
+======================================================================
+ERROR: test_long_and_short_text (unittest.loader._FailedTest.test_long_and_short_text)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_long_and_short_text'
+
+======================================================================
+ERROR: test_multi_table_inheritance_unsupported (unittest.loader._FailedTest.test_multi_table_inheritance_unsupported)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_multi_table_inheritance_unsupported'
+
+======================================================================
+ERROR: test_non_auto_increment_pk (unittest.loader._FailedTest.test_non_auto_increment_pk)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_non_auto_increment_pk'
+
+======================================================================
+ERROR: test_non_auto_increment_pk_efficiency (unittest.loader._FailedTest.test_non_auto_increment_pk_efficiency)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_non_auto_increment_pk_efficiency'
+
+======================================================================
+ERROR: test_nullable_fk_after_parent (unittest.loader._FailedTest.test_nullable_fk_after_parent)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_nullable_fk_after_parent'
+
+======================================================================
+ERROR: test_nullable_fk_after_parent_bulk_create (unittest.loader._FailedTest.test_nullable_fk_after_parent_bulk_create)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_nullable_fk_after_parent_bulk_create'
+
+======================================================================
+ERROR: test_proxy_inheritance_supported (unittest.loader._FailedTest.test_proxy_inheritance_supported)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_proxy_inheritance_supported'
+
+======================================================================
+ERROR: test_set_pk_and_insert_single_item (unittest.loader._FailedTest.test_set_pk_and_insert_single_item)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_set_pk_and_insert_single_item'
+
+======================================================================
+ERROR: test_set_pk_and_query_efficiency (unittest.loader._FailedTest.test_set_pk_and_query_efficiency)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_set_pk_and_query_efficiency'
+
+======================================================================
+ERROR: test_set_state (unittest.loader._FailedTest.test_set_state)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_set_state'
+
+======================================================================
+ERROR: test_set_state_with_pk_specified (unittest.loader._FailedTest.test_set_state_with_pk_specified)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_set_state_with_pk_specified'
+
+======================================================================
+ERROR: test_simple (unittest.loader._FailedTest.test_simple)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_simple'
+
+======================================================================
+ERROR: test_unsaved_parent (unittest.loader._FailedTest.test_unsaved_parent)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_unsaved_parent'
+
+======================================================================
+ERROR: test_update_conflicts_invalid_unique_fields (unittest.loader._FailedTest.test_update_conflicts_invalid_unique_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_invalid_unique_fields'
+
+======================================================================
+ERROR: test_update_conflicts_invalid_update_fields (unittest.loader._FailedTest.test_update_conflicts_invalid_update_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_invalid_update_fields'
+
+======================================================================
+ERROR: test_update_conflicts_no_update_fields (unittest.loader._FailedTest.test_update_conflicts_no_update_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_no_update_fields'
+
+======================================================================
+ERROR: test_update_conflicts_nonexistent_update_fields (unittest.loader._FailedTest.test_update_conflicts_nonexistent_update_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_nonexistent_update_fields'
+
+======================================================================
+ERROR: test_update_conflicts_pk_in_update_fields (unittest.loader._FailedTest.test_update_conflicts_pk_in_update_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_pk_in_update_fields'
+
+======================================================================
+ERROR: test_update_conflicts_two_fields_unique_fields_both (unittest.loader._FailedTest.test_update_conflicts_two_fields_unique_fields_both)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_two_fields_unique_fields_both'
+
+======================================================================
+ERROR: test_update_conflicts_unique_fields_pk (unittest.loader._FailedTest.test_update_conflicts_unique_fields_pk)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_unique_fields_pk'
+
+======================================================================
+ERROR: test_update_conflicts_unique_fields_required (unittest.loader._FailedTest.test_update_conflicts_unique_fields_required)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_unique_fields_required'
+
+======================================================================
+ERROR: test_update_conflicts_unique_two_fields_unique_fields_one (unittest.loader._FailedTest.test_update_conflicts_unique_two_fields_unique_fields_one)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_update_conflicts_unique_two_fields_unique_fields_one'
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.005s
+
+FAILED (errors=37)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['bulk_create.tests.BulkCreateTests.test_update_conflicts_two_fields_unique_fields_first.test_update_conflicts_two_fields_unique_fields_first', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_two_fields_unique_fields_second.test_update_conflicts_two_fields_unique_fields_second', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_fields.test_update_conflicts_unique_fields', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_fields_update_fields_db_column.test_update_conflicts_unique_fields_update_fields_db_column', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_two_fields_unique_fields_both.test_update_conflicts_unique_two_fields_unique_fields_both']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['bulk_create.tests.BulkCreateTests.test_batch_same_vals.test_batch_same_vals', 'bulk_create.tests.BulkCreateTests.test_bulk_insert_expressions.test_bulk_insert_expressions', 'bulk_create.tests.BulkCreateTests.test_bulk_insert_now.test_bulk_insert_now', 'bulk_create.tests.BulkCreateTests.test_bulk_insert_nullable_fields.test_bulk_insert_nullable_fields', 'bulk_create.tests.BulkCreateTests.test_efficiency.test_efficiency', 'bulk_create.tests.BulkCreateTests.test_empty_model.test_empty_model', 'bulk_create.tests.BulkCreateTests.test_explicit_batch_size.test_explicit_batch_size', 'bulk_create.tests.BulkCreateTests.test_explicit_batch_size_efficiency.test_explicit_batch_size_efficiency', 'bulk_create.tests.BulkCreateTests.test_explicit_batch_size_respects_max_batch_size.test_explicit_batch_size_respects_max_batch_size', 'bulk_create.tests.BulkCreateTests.test_ignore_conflicts_ignore.test_ignore_conflicts_ignore', 'bulk_create.tests.BulkCreateTests.test_ignore_update_conflicts_exclusive.test_ignore_update_conflicts_exclusive', 'bulk_create.tests.BulkCreateTests.test_invalid_batch_size_exception.test_invalid_batch_size_exception', 'bulk_create.tests.BulkCreateTests.test_large_batch.test_large_batch', 'bulk_create.tests.BulkCreateTests.test_large_batch_efficiency.test_large_batch_efficiency', 'bulk_create.tests.BulkCreateTests.test_large_single_field_batch.test_large_single_field_batch', 'bulk_create.tests.BulkCreateTests.test_long_and_short_text.test_long_and_short_text', 'bulk_create.tests.BulkCreateTests.test_multi_table_inheritance_unsupported.test_multi_table_inheritance_unsupported', 'bulk_create.tests.BulkCreateTests.test_non_auto_increment_pk.test_non_auto_increment_pk', 'bulk_create.tests.BulkCreateTests.test_non_auto_increment_pk_efficiency.test_non_auto_increment_pk_efficiency', 'bulk_create.tests.BulkCreateTests.test_nullable_fk_after_parent.test_nullable_fk_after_parent', 'bulk_create.tests.BulkCreateTests.test_nullable_fk_after_parent_bulk_create.test_nullable_fk_after_parent_bulk_create', 'bulk_create.tests.BulkCreateTests.test_proxy_inheritance_supported.test_proxy_inheritance_supported', 'bulk_create.tests.BulkCreateTests.test_set_pk_and_insert_single_item.test_set_pk_and_insert_single_item', 'bulk_create.tests.BulkCreateTests.test_set_pk_and_query_efficiency.test_set_pk_and_query_efficiency', 'bulk_create.tests.BulkCreateTests.test_set_state.test_set_state', 'bulk_create.tests.BulkCreateTests.test_set_state_with_pk_specified.test_set_state_with_pk_specified', 'bulk_create.tests.BulkCreateTests.test_simple.test_simple', 'bulk_create.tests.BulkCreateTests.test_unsaved_parent.test_unsaved_parent', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_invalid_unique_fields.test_update_conflicts_invalid_unique_fields', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_invalid_update_fields.test_update_conflicts_invalid_update_fields', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_no_update_fields.test_update_conflicts_no_update_fields', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_nonexistent_update_fields.test_update_conflicts_nonexistent_update_fields', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_pk_in_update_fields.test_update_conflicts_pk_in_update_fields', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_two_fields_unique_fields_both.test_update_conflicts_two_fields_unique_fields_both', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_fields_pk.test_update_conflicts_unique_fields_pk', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_fields_required.test_update_conflicts_unique_fields_required', 'bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_two_fields_unique_fields_one.test_update_conflicts_unique_two_fields_unique_fields_one']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

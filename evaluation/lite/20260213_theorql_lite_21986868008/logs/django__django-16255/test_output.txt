@@ -1,0 +1,133 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application sitemaps_tests
+Found 1 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, messages, sessions, sitemaps_tests, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table sitemaps_tests_testmodel
+    Creating table sitemaps_tests_i18ntestmodel
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16255:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16255
+5b7afedd8285: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+4e865410366e: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+440f2bf70467: Pulling fs layer
+2745008c7a7f: Pulling fs layer
+440f2bf70467: Download complete
+ac5b61163589: Download complete
+2745008c7a7f: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+396d2ca0167c: Download complete
+b780fac9da70: Download complete
+5b7afedd8285: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+187d94c4a868: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+4e865410366e: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+396d2ca0167c: Pull complete
+b780fac9da70: Pull complete
+4e865410366e: Pull complete
+440f2bf70467: Pull complete
+2745008c7a7f: Pull complete
+187d94c4a868: Pull complete
+5b7afedd8285: Pull complete
+Digest: sha256:7ff0d5180c055a6851d4785ba44f8e6397a84071c2dcc3eedd2a5248588401de
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16255:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_callable_sitemod_no_items (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.026s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (8 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application sitemaps_tests
+Found 8 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, messages, sessions, sitemaps_tests, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table sitemaps_tests_testmodel
+    Creating table sitemaps_tests_i18ntestmodel
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_simple_sitemap_custom_index_warning (sitemaps_tests.test_http.DeprecatedTests) ... ok
+test_empty_page (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+test_empty_sitemap (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+test_no_section (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+test_page_not_int (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+test_requestsite_sitemap (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+test_sitemap_without_entries (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+test_x_robots_sitemap (sitemaps_tests.test_http.HTTPSitemapTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.103s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

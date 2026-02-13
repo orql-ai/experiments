@@ -1,0 +1,90 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.4.1.dev380+g56bf819c2, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 1 item
+
+testing/test_nodes.py::test_failure_with_changed_cwd PASSED              [100%]
+
+============================== 1 passed in 0.05s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7220:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7220
+4bc8e689bdd8: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+c54078cf74d7: Pulling fs layer
+193b29010889: Pulling fs layer
+9636a96d35eb: Pulling fs layer
+5a1c9bc11521: Pulling fs layer
+00a274e711b9: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+4bc8e689bdd8: Download complete
+193b29010889: Download complete
+9636a96d35eb: Download complete
+5a1c9bc11521: Download complete
+00a274e711b9: Download complete
+836b79e2a6e5: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+c54078cf74d7: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+9636a96d35eb: Pull complete
+00a274e711b9: Pull complete
+9243c6d3b562: Pull complete
+193b29010889: Pull complete
+5a1c9bc11521: Pull complete
+c54078cf74d7: Pull complete
+4bc8e689bdd8: Pull complete
+Digest: sha256:eaa0b259f3518bb572d3796c41d56f90f510de0d034f549d8dfc9280e88d1537
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7220:latest
+
+
+===== PHASE: PASS_TO_PASS (11 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.4.1.dev380+g56bf819c2, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 7 items
+
+============================ no tests ran in 0.01s =============================
+
+
+ERROR: not found: /testbed/testing/test_nodes.py::test_ischildnode[-foo/bar::TestBaz-True]
+(no name '/testbed/testing/test_nodes.py::test_ischildnode[-foo/bar::TestBaz-True]' in any of [<Module testing/test_nodes.py>])
+
+ERROR: not found: /testbed/testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar-False]
+(no name '/testbed/testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar-False]' in any of [<Module testing/test_nodes.py>])
+
+ERROR: not found: /testbed/testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar::TestBop-False]
+(no name '/testbed/testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar::TestBop-False]' in any of [<Module testing/test_nodes.py>])
+
+ERROR: not found: /testbed/testing/test_nodes.py::test_ischildnode[foo/bar-foo/bar::TestBop-True]
+(no name '/testbed/testing/test_nodes.py::test_ischildnode[foo/bar-foo/bar::TestBop-True]' in any of [<Module testing/test_nodes.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/test_nodes.py::test_ischildnode[--True] testing/test_nodes.py::test_ischildnode[-foo-True] testing/test_nodes.py::test_ischildnode[-foo/bar-True] testing/test_nodes.py::test_ischildnode[-foo/bar::TestBaz-True] testing/test_nodes.py::test_ischildnode[foo-food-False] testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar-False] testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar::TestBop-False] testing/test_nodes.py::test_ischildnode[foo/bar-foo/bar::TestBop-True] testing/test_nodes.py::test_node_from_parent_disallowed_arguments testing/test_nodes.py::test__check_initialpaths_for_relpath testing/test_nodes.py::test_std_warn_not_pytestwarning` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['testing/test_nodes.py::test_ischildnode[--True]', 'testing/test_nodes.py::test_ischildnode[-foo-True]', 'testing/test_nodes.py::test_ischildnode[-foo/bar-True]', 'testing/test_nodes.py::test_ischildnode[-foo/bar::TestBaz-True]', 'testing/test_nodes.py::test_ischildnode[foo-food-False]', 'testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar-False]', 'testing/test_nodes.py::test_ischildnode[foo/bar::TestBaz-foo/bar::TestBop-False]', 'testing/test_nodes.py::test_ischildnode[foo/bar-foo/bar::TestBop-True]', 'testing/test_nodes.py::test_node_from_parent_disallowed_arguments', 'testing/test_nodes.py::test__check_initialpaths_for_relpath', 'testing/test_nodes.py::test_std_warn_not_pytestwarning']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

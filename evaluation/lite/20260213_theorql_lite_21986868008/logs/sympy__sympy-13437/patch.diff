@@ -1,0 +1,34 @@
+diff --git a/sympy/functions/combinatorial/numbers.py b/sympy/functions/combinatorial/numbers.py
+index 896729ac87..0c35d667af 100644
+--- a/sympy/functions/combinatorial/numbers.py
++++ b/sympy/functions/combinatorial/numbers.py
+@@ -434,14 +434,23 @@ def _bell_incomplete_poly(n, k, symbols):
+ 
+     @classmethod
+     def eval(cls, n, k_sym=None, symbols=None):
+-        if n.is_Integer and n.is_nonnegative:
++        if n is S.Infinity:
+             if k_sym is None:
+-                return Integer(cls._bell(int(n)))
+-            elif symbols is None:
+-                return cls._bell_poly(int(n)).subs(_sym, k_sym)
++                return S.Infinity
+             else:
+-                r = cls._bell_incomplete_poly(int(n), int(k_sym), symbols)
+-                return r
++                raise ValueError("Bell polynomials are not defined for infinity")
++
++        if n.is_Integer:
++            if n.is_negative:
++                raise ValueError("Bell numbers are not defined for negative indices.")
++            if n.is_nonnegative:
++                if k_sym is None:
++                    return Integer(cls._bell(int(n)))
++                elif symbols is None:
++                    return cls._bell_poly(int(n)).subs(_sym, k_sym)
++                else:
++                    r = cls._bell_incomplete_poly(int(n), int(k_sym), symbols)
++                    return r
+ 
+     def _eval_rewrite_as_Sum(self, n, k_sym=None, symbols=None):
+         from sympy import Sum

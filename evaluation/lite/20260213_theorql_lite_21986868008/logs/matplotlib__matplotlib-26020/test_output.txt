@@ -1,0 +1,100 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_with_axes_class_not_overriding_axis PASSED [100%]
+
+============================== 1 passed in 0.32s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-26020:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-26020
+bc7650fff313: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+e2309197fa57: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ff21019ca605: Pulling fs layer
+803a19ff22a0: Pulling fs layer
+4af3c06a3dd5: Pulling fs layer
+ed2fcb1f110f: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+4fd96bd63a28: Pulling fs layer
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+803a19ff22a0: Download complete
+ed2fcb1f110f: Download complete
+4fd96bd63a28: Download complete
+ff21019ca605: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+bc7650fff313: Download complete
+a2f6138ded93: Download complete
+e2309197fa57: Download complete
+500327121db6: Pull complete
+4af3c06a3dd5: Download complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+803a19ff22a0: Pull complete
+ff21019ca605: Pull complete
+e2309197fa57: Pull complete
+ed2fcb1f110f: Pull complete
+4fd96bd63a28: Pull complete
+4af3c06a3dd5: Pull complete
+bc7650fff313: Pull complete
+Digest: sha256:74b90b1c49fb64bae932ac759899cbf69f04dd25488776c275d550d4dba6bb61
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-26020:latest
+
+
+===== PHASE: PASS_TO_PASS (48 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 42 items
+
+============================ no tests ran in 0.20s =============================
+
+
+ERROR: not found: /testbed/lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[rect0-None-TypeError-Incorrect]
+(no match in any of [<Module test_axes_grid1.py>])
+
+ERROR: not found: /testbed/lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[111--1-ValueError-ngrids]
+(no match in any of [<Module test_axes_grid1.py>])
+
+ERROR: not found: /testbed/lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[111-7-ValueError-ngrids]
+(no match in any of [<Module test_axes_grid1.py>])
+
+ERROR: not found: /testbed/lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[None-TypeError-anchor]
+(no match in any of [<Module test_axes_grid1.py>])
+
+ERROR: not found: /testbed/lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[CC-ValueError-'CC']
+(no match in any of [<Module test_axes_grid1.py>])
+
+ERROR: not found: /testbed/lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[anchor2-TypeError-anchor]
+(no match in any of [<Module test_axes_grid1.py>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_append_axes lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_twin_axes_empty_and_removed[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_axesgrid_colorbar_log_smoketest lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_colorbar_tight_layout_smoketest lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_locator[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_axes[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_axes_complete lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_fill_facecolor[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_zooming_with_inverted_axes[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_direction_arrows[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_direction_arrows_many_args[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_axes_locatable_position lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid_each_left_label_mode_all[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid_single_bottom[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid_label_mode_deprecation_warning lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_gettightbbox lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[gca-gca-big] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[gca-gca-small] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-host-big] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-host-small] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-parasite-big] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-parasite-small] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-host-big] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-host-small] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-parasite-big] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-parasite-small] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_artists[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_hbox_divider lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_vbox_divider lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_axes_class_tuple lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_axes_lists lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_axes_position[row] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_axes_position[column] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[rect0-None-TypeError-Incorrect] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[111--1-ValueError-ngrids] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[111-7-ValueError-ngrids] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[None-TypeError-anchor] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[CC-ValueError-'CC'] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[anchor2-TypeError-anchor] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_mark_inset_unstales_viewlim[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_auto_adjustable lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_rgb_axes[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_insetposition[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_imagegrid_cbar_mode_edge[png] lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_imagegrid lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_removal lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_locator_base_call[png]` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_append_axes', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_twin_axes_empty_and_removed[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_axesgrid_colorbar_log_smoketest', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_colorbar_tight_layout_smoketest', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_locator[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_axes[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_inset_axes_complete', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_fill_facecolor[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_zooming_with_inverted_axes[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_direction_arrows[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_direction_arrows_many_args[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_axes_locatable_position', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid_each_left_label_mode_all[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid_single_bottom[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid_label_mode_deprecation_warning', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_image_grid[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_gettightbbox', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[gca-gca-big]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[gca-gca-small]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-host-big]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-host-small]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-parasite-big]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[host-parasite-small]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-host-big]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-host-small]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-parasite-big]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_picking_callbacks_overlap[parasite-parasite-small]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_artists[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_hbox_divider', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_vbox_divider', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_axes_class_tuple', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_axes_lists', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_axes_position[row]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_axes_position[column]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[rect0-None-TypeError-Incorrect]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[111--1-ValueError-ngrids]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_grid_errors[111-7-ValueError-ngrids]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[None-TypeError-anchor]', "lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[CC-ValueError-'CC']", 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_divider_errors[anchor2-TypeError-anchor]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_mark_inset_unstales_viewlim[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_auto_adjustable', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_rgb_axes[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_insetposition[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_imagegrid_cbar_mode_edge[png]', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_imagegrid', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_removal', 'lib/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py::test_anchored_locator_base_call[png]']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

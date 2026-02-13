@@ -1,0 +1,32 @@
+diff --git a/sympy/core/mul.py b/sympy/core/mul.py
+index 4f01eeedbd..5a16930692 100644
+--- a/sympy/core/mul.py
++++ b/sympy/core/mul.py
+@@ -1408,7 +1408,13 @@ def ndiv(a, b):
+         n, d = fraction(self)
+         self2 = self
+         if d is not S.One:
+-            self2 = n._subs(old, new)/d._subs(old, new)
++            n_sub = n._subs(old, new)
++            d_sub = d._subs(old, new)
++            # If both numerator and denominator are zoo after substitution,
++            # the result should be nan (not zoo/zoo which would give 1)
++            if n_sub is S.ComplexInfinity and d_sub is S.ComplexInfinity:
++                return S.NaN
++            self2 = n_sub/d_sub
+             if not self2.is_Mul:
+                 return self2._subs(old, new)
+             if self2 != self:
+diff --git a/sympy/matrices/common.py b/sympy/matrices/common.py
+index ea6b83c425..c0f249391d 100644
+--- a/sympy/matrices/common.py
++++ b/sympy/matrices/common.py
+@@ -6,7 +6,7 @@
+ 
+ from __future__ import print_function, division
+ 
+-import collections
++import collections.abc
+ from sympy.core.add import Add
+ from sympy.core.basic import Basic, Atom
+ from sympy.core.expr import Expr

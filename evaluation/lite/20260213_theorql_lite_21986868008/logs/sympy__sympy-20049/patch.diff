@@ -1,0 +1,37 @@
+diff --git a/sympy/physics/vector/point.py b/sympy/physics/vector/point.py
+index d4e3cfcc90..406ba3c2ff 100644
+--- a/sympy/physics/vector/point.py
++++ b/sympy/physics/vector/point.py
+@@ -519,6 +519,32 @@ def vel(self, frame):
+ 
+         _check_frame(frame)
+         if not (frame in self._vel_dict):
++            # Check if velocity can be calculated from position relationship
++            # Search through position graph to find a point with velocity defined
++            # in the requested frame
++            visited = set()
++            queue = [(self, Vector(0))]
++            
++            while queue:
++                current_point, current_vel = queue.pop(0)
++                if current_point in visited:
++                    continue
++                visited.add(current_point)
++                
++                # Check if this point has velocity defined
++                if frame in current_point._vel_dict:
++                    # Found a point with defined velocity
++                    # Calculate total velocity by adding current_vel contribution
++                    return current_point._vel_dict[frame] + current_vel
++                
++                # Add neighbors to queue
++                for neighbor_point in current_point._pos_dict.keys():
++                    if neighbor_point not in visited:
++                        # The velocity contribution from moving to neighbor
++                        dist = current_point.pos_from(neighbor_point)
++                        vel_contrib = dist.dt(frame)
++                        queue.append((neighbor_point, current_vel + vel_contrib))
++            
+             raise ValueError('Velocity of point ' + self.name + ' has not been'
+                              ' defined in ReferenceFrame ' + frame.name)
+         return self._vel_dict[frame]

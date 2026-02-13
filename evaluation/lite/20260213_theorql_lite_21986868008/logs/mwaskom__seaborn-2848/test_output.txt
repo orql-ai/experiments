@@ -1,0 +1,265 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+collecting ... collected 1 item
+
+tests/test_relational.py::TestScatterPlotter::test_hue_order FAILED      [100%]
+
+=================================== FAILURES ===================================
+______________________ TestScatterPlotter.test_hue_order _______________________
+
+self = <seaborn._oldcore.HueMapping object at 0x7fb0d9c0eb80>, key = 'c'
+
+    def _lookup_single(self, key):
+        """Get the color for a single value, using colormap to interpolate."""
+        try:
+            # Use a value that's in the original data vector
+>           value = self.lookup_table[key]
+E           KeyError: 'c'
+
+seaborn/_oldcore.py:150: KeyError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.test_relational.TestScatterPlotter object at 0x7fb0d9b20250>
+long_df =      x         y         z  a  b  ...  s    f a_cat  s_cat  s_str
+0   12  0.449243  6.611886  b  p  ...  2  0.2     b      2      2
+1   15  0.434942  2.582533  b  n  ...  2  0.2     b      2      2
+2    3  1.429015  4.251888  a  o  ...  4  0.2     a      4      4
+3   18 -0.352296  4.036456  a  m  ...  2  0.2     a      2      2
+4   10 -1.253690  0.778815  b  m  ...  4  0.3     b      4      4
+..  ..       ...       ... .. ..  ... ..  ...   ...    ...    ...
+95   2 -1.245018  0.725775  a  o  ...  4  0.3     a      4      4
+96   4 -0.152851  0.390845  a  n  ...  4  0.3     a      4      4
+97  16 -0.912663  1.418344  a  p  ...  2  0.3     a      2      2
+98  14 -1.212684  7.382667  a  n  ...  8  0.3     a      8      8
+99  15  0.073484  1.036343  c  p  ...  8  0.2     c      8      8
+
+[100 rows x 13 columns]
+
+    def test_hue_order(self, long_df):
+    
+        order = categorical_order(long_df["a"])
+        unused = order.pop()
+    
+>       ax = scatterplot(data=long_df, x="x", y="y", hue="a", hue_order=order)
+
+tests/test_relational.py:1632: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+seaborn/relational.py:768: in scatterplot
+    p.plot(ax, kwargs)
+seaborn/relational.py:579: in plot
+    points.set_facecolors(self._hue_map(data["hue"]))
+seaborn/_oldcore.py:65: in __call__
+    return [self._lookup_single(k, *args, **kwargs) for k in key]
+seaborn/_oldcore.py:65: in <listcomp>
+    return [self._lookup_single(k, *args, **kwargs) for k in key]
+seaborn/_oldcore.py:160: in _lookup_single
+    raise err
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <seaborn._oldcore.HueMapping object at 0x7fb0d9c0eb80>, key = 'c'
+
+    def _lookup_single(self, key):
+        """Get the color for a single value, using colormap to interpolate."""
+        try:
+            # Use a value that's in the original data vector
+            value = self.lookup_table[key]
+        except KeyError:
+            # Use the colormap to interpolate between existing datapoints
+            # (e.g. in the context of making a continuous legend)
+            try:
+>               normed = self.norm(key)
+E               TypeError: 'NoneType' object is not callable
+
+seaborn/_oldcore.py:155: TypeError
+=============================== warnings summary ===============================
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+  /testbed/seaborn/cm.py:1582: MatplotlibDeprecationWarning: The register_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps.register(name)`` instead.
+    mpl_cm.register_cmap(_name, _cmap)
+
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+  /testbed/seaborn/cm.py:1583: MatplotlibDeprecationWarning: The register_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps.register(name)`` instead.
+    mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_relational.py::TestScatterPlotter::test_hue_order - TypeError: 'NoneType' object is not callable
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================== 1 failed, 12 warnings in 0.76s ========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.mwaskom__seaborn-2848:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.mwaskom__seaborn-2848
+f43dcd4f2c8a: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7ee65c8c72cc: Pulling fs layer
+ac5b61163589: Pulling fs layer
+478e7f11d377: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+5611d29aabad: Pulling fs layer
+500327121db6: Pulling fs layer
+01677a35cd85: Pulling fs layer
+30b8627118f9: Pulling fs layer
+6ce84a482e76: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+6ce84a482e76: Download complete
+478e7f11d377: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+5611d29aabad: Download complete
+30b8627118f9: Download complete
+ac5b61163589: Download complete
+f43dcd4f2c8a: Download complete
+7478e0ac0f23: Download complete
+7ee65c8c72cc: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+01677a35cd85: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+478e7f11d377: Pull complete
+7ee65c8c72cc: Pull complete
+5611d29aabad: Pull complete
+6ce84a482e76: Pull complete
+30b8627118f9: Pull complete
+01677a35cd85: Pull complete
+f43dcd4f2c8a: Pull complete
+Digest: sha256:37e3f57122860c069d329c6ff409e99332467266466d11747c0bd6e7a0325bca
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.mwaskom__seaborn-2848:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 tests/test_relational.py::TestScatterPlotter::test_hue_order` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (50 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+collecting ... collected 50 items
+
+tests/test_relational.py::TestRelationalPlotter::test_wide_df_variables PASSED [  2%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_df_with_nonnumeric_variables PASSED [  4%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_array_variables PASSED [  6%]
+tests/test_relational.py::TestRelationalPlotter::test_flat_array_variables PASSED [  8%]
+tests/test_relational.py::TestRelationalPlotter::test_flat_list_variables PASSED [ 10%]
+tests/test_relational.py::TestRelationalPlotter::test_flat_series_variables PASSED [ 12%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_list_of_series_variables PASSED [ 14%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_list_of_arrays_variables PASSED [ 16%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_list_of_list_variables PASSED [ 18%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_dict_of_series_variables PASSED [ 20%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_dict_of_arrays_variables PASSED [ 22%]
+tests/test_relational.py::TestRelationalPlotter::test_wide_dict_of_lists_variables PASSED [ 24%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_complex PASSED [ 26%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_vectors[series] PASSED [ 28%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_vectors[numpy] PASSED [ 30%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_vectors[list] PASSED [ 32%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_wide PASSED [ 34%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_hues PASSED [ 36%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_sizes PASSED [ 38%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_styles PASSED [ 40%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_stringy_numerics PASSED [ 42%]
+tests/test_relational.py::TestRelationalPlotter::test_relplot_data PASSED [ 44%]
+tests/test_relational.py::TestRelationalPlotter::test_facet_variable_collision PASSED [ 46%]
+tests/test_relational.py::TestRelationalPlotter::test_ax_kwarg_removal PASSED [ 48%]
+tests/test_relational.py::TestLinePlotter::test_legend_data PASSED       [ 50%]
+tests/test_relational.py::TestLinePlotter::test_plot PASSED              [ 52%]
+tests/test_relational.py::TestLinePlotter::test_axis_labels PASSED       [ 54%]
+tests/test_relational.py::TestScatterPlotter::test_color PASSED          [ 56%]
+tests/test_relational.py::TestScatterPlotter::test_legend_data PASSED    [ 58%]
+tests/test_relational.py::TestScatterPlotter::test_plot PASSED           [ 60%]
+tests/test_relational.py::TestScatterPlotter::test_axis_labels PASSED    [ 62%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_axes PASSED [ 64%]
+tests/test_relational.py::TestScatterPlotter::test_literal_attribute_vectors PASSED [ 66%]
+tests/test_relational.py::TestScatterPlotter::test_supplied_color_array PASSED [ 68%]
+tests/test_relational.py::TestScatterPlotter::test_linewidths PASSED     [ 70%]
+tests/test_relational.py::TestScatterPlotter::test_size_norm_extrapolation PASSED [ 72%]
+tests/test_relational.py::TestScatterPlotter::test_datetime_scale PASSED [ 74%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics0] PASSED [ 76%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics1] PASSED [ 78%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics2] PASSED [ 80%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics3] PASSED [ 82%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics4] PASSED [ 84%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics5] PASSED [ 86%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics6] PASSED [ 88%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics7] PASSED [ 90%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics8] PASSED [ 92%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics9] PASSED [ 94%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics10] PASSED [ 96%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_vs_relplot[long_semantics11] PASSED [ 98%]
+tests/test_relational.py::TestScatterPlotter::test_scatterplot_smoke PASSED [100%]
+
+=============================== warnings summary ===============================
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+seaborn/cm.py:1582
+  /testbed/seaborn/cm.py:1582: MatplotlibDeprecationWarning: The register_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps.register(name)`` instead.
+    mpl_cm.register_cmap(_name, _cmap)
+
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+seaborn/cm.py:1583
+  /testbed/seaborn/cm.py:1583: MatplotlibDeprecationWarning: The register_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps.register(name)`` instead.
+    mpl_cm.register_cmap(_name + "_r", _cmap_r)
+
+tests/test_relational.py: 98 warnings
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pandas/core/dtypes/cast.py:1429: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+  See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+    return np.find_common_type(types, [])
+
+tests/test_relational.py::TestRelationalPlotter::test_wide_df_variables
+tests/test_relational.py::TestRelationalPlotter::test_wide_df_with_nonnumeric_variables
+tests/test_relational.py::TestRelationalPlotter::test_wide_array_variables
+tests/test_relational.py::TestRelationalPlotter::test_flat_array_variables
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/_pytest/python.py:159: DeprecationWarning: `product` is deprecated as of NumPy 1.25.0, and will be removed in NumPy 2.0. Please use `prod` instead.
+    result = testfunction(**testargs)
+
+tests/test_relational.py: 34 warnings
+  /testbed/seaborn/axisgrid.py:86: UserWarning: The figure layout has changed to tight
+    self._figure.tight_layout(*args, **kwargs)
+
+tests/test_relational.py::TestScatterPlotter::test_supplied_color_array
+  /testbed/tests/test_relational.py:1605: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+    cmap = mpl.cm.get_cmap("Blues")
+
+tests/test_relational.py::TestScatterPlotter::test_size_norm_extrapolation
+tests/test_relational.py::TestScatterPlotter::test_size_norm_extrapolation
+  /testbed/tests/test_relational.py:1690: MatplotlibDeprecationWarning: The legendHandles attribute was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use legend_handles instead.
+    for label, handle in zip(legend.get_texts(), legend.legendHandles)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 50 passed, 151 warnings in 18.47s =======================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['tests/test_relational.py::TestScatterPlotter::test_hue_order']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

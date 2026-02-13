@@ -1,0 +1,1024 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_views
+Found 1 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_views, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table admin_views_section
+    Creating table admin_views_article
+    Creating table admin_views_book
+    Creating table admin_views_promo
+    Creating table admin_views_chapter
+    Creating table admin_views_chapterxtra1
+    Creating table admin_views_chapterxtra2
+    Creating table admin_views_rowlevelchangepermissionmodel
+    Creating table admin_views_customarticle
+    Creating table admin_views_modelwithstringprimarykey
+    Creating table admin_views_color
+    Creating table admin_views_thing
+    Creating table admin_views_actor
+    Creating table admin_views_inquisition
+    Creating table admin_views_sketch
+    Creating table admin_views_character
+    Creating table admin_views_stumpjoke
+    Creating table admin_views_fabric
+    Creating table admin_views_person
+    Creating table admin_views_persona
+    Creating table admin_views_account
+    Creating table admin_views_fooaccount
+    Creating table admin_views_baraccount
+    Creating table admin_views_subscriber
+    Creating table admin_views_externalsubscriber
+    Creating table admin_views_oldsubscriber
+    Creating table admin_views_media
+    Creating table admin_views_podcast
+    Creating table admin_views_vodcast
+    Creating table admin_views_parent
+    Creating table admin_views_child
+    Creating table admin_views_pkchild
+    Creating table admin_views_toy
+    Creating table admin_views_emptymodel
+    Creating table admin_views_gallery
+    Creating table admin_views_picture
+    Creating table admin_views_language
+    Creating table admin_views_title
+    Creating table admin_views_titletranslation
+    Creating table admin_views_recommender
+    Creating table admin_views_recommendation
+    Creating table admin_views_collector
+    Creating table admin_views_widget
+    Creating table admin_views_doohickey
+    Creating table admin_views_grommet
+    Creating table admin_views_whatsit
+    Creating table admin_views_doodad
+    Creating table admin_views_fancydoodad
+    Creating table admin_views_category
+    Creating table admin_views_link
+    Creating table admin_views_prepopulatedpost
+    Creating table admin_views_prepopulatedsubpost
+    Creating table admin_views_post
+    Creating table admin_views_gadget
+    Creating table admin_views_villain
+    Creating table admin_views_supervillain
+    Creating table admin_views_funkytag
+    Creating table admin_views_plot
+    Creating table admin_views_plotdetails
+    Creating table admin_views_secrethideout
+    Creating table admin_views_supersecrethideout
+    Creating table admin_views_bookmark
+    Creating table admin_views_cyclicone
+    Creating table admin_views_cyclictwo
+    Creating table admin_views_topping
+    Creating table admin_views_pizza
+    Creating table admin_views_album
+    Creating table admin_views_song
+    Creating table admin_views_employee
+    Creating table admin_views_workhour
+    Creating table admin_views_manager
+    Creating table admin_views_bonus
+    Creating table admin_views_question
+    Creating table admin_views_answer
+    Creating table admin_views_reservation
+    Creating table admin_views_fooddelivery
+    Creating table admin_views_coverletter
+    Creating table admin_views_paper
+    Creating table admin_views_shortmessage
+    Creating table admin_views_telegram
+    Creating table admin_views_story
+    Creating table admin_views_otherstory
+    Creating table admin_views_complexsortedperson
+    Creating table admin_views_pluggablesearchperson
+    Creating table admin_views_prepopulatedpostlargeslug
+    Creating table admin_views_adminorderedfield
+    Creating table admin_views_adminorderedmodelmethod
+    Creating table admin_views_adminorderedadminmethod
+    Creating table admin_views_adminorderedcallable
+    Creating table admin_views_report
+    Creating table admin_views_mainprepopulated
+    Creating table admin_views_relatedprepopulated
+    Creating table admin_views_unorderedobject
+    Creating table admin_views_undeletableobject
+    Creating table admin_views_unchangeableobject
+    Creating table admin_views_usermessenger
+    Creating table admin_views_simple
+    Creating table admin_views_choice
+    Creating table admin_views_parentwithdependentchildren
+    Creating table admin_views_dependentchild
+    Creating table admin_views_filteredmanager
+    Creating table admin_views_emptymodelvisible
+    Creating table admin_views_emptymodelhidden
+    Creating table admin_views_emptymodelmixin
+    Creating table admin_views_state
+    Creating table admin_views_city
+    Creating table admin_views_restaurant
+    Creating table admin_views_worker
+    Creating table admin_views_referencedbyparent
+    Creating table admin_views_parentwithfk
+    Creating table admin_views_childofreferer
+    Creating table admin_views_inlinereferer
+    Creating table admin_views_referencedbyinline
+    Creating table admin_views_inlinereference
+    Creating table admin_views_recipe
+    Creating table admin_views_ingredient
+    Creating table admin_views_recipeingredient
+    Creating table admin_views_notreferenced
+    Creating table admin_views_explicitlyprovidedpk
+    Creating table admin_views_implicitlygeneratedpk
+    Creating table admin_views_referencedbygenrel
+    Creating table admin_views_genrelreference
+    Creating table admin_views_parentwithuuidpk
+    Creating table admin_views_relatedwithuuidpkmodel
+    Creating table admin_views_author
+    Creating table admin_views_authorship
+    Creating table admin_views_readonlyrelatedfield
+    Creating table admin_views_héllo
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (1 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14855:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-14855
+d90ccdc8ba9a: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+0015a28029a7: Pulling fs layer
+9f5a969c9678: Pulling fs layer
+500327121db6: Pulling fs layer
+9a976e8c0b17: Pulling fs layer
+724625094df2: Pulling fs layer
+ac5b61163589: Pulling fs layer
+925361aa7a6f: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+df84d2adcd23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+df84d2adcd23: Download complete
+9a976e8c0b17: Download complete
+925361aa7a6f: Download complete
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+9f5a969c9678: Download complete
+d90ccdc8ba9a: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+724625094df2: Download complete
+0015a28029a7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+9a976e8c0b17: Pull complete
+9f5a969c9678: Pull complete
+0015a28029a7: Pull complete
+df84d2adcd23: Pull complete
+925361aa7a6f: Pull complete
+724625094df2: Pull complete
+d90ccdc8ba9a: Pull complete
+Digest: sha256:e8df9b3dc710d38285fae834790febbfe2f1975a3f5b1d39d12e04d8bd1940a6
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-14855:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_readonly_foreignkey_links_custom_admin_site (admin_views.tests.ReadonlyTest) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.282s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (159 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_views
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_views, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table admin_views_section
+    Creating table admin_views_article
+    Creating table admin_views_book
+    Creating table admin_views_promo
+    Creating table admin_views_chapter
+    Creating table admin_views_chapterxtra1
+    Creating table admin_views_chapterxtra2
+    Creating table admin_views_rowlevelchangepermissionmodel
+    Creating table admin_views_customarticle
+    Creating table admin_views_modelwithstringprimarykey
+    Creating table admin_views_color
+    Creating table admin_views_thing
+    Creating table admin_views_actor
+    Creating table admin_views_inquisition
+    Creating table admin_views_sketch
+    Creating table admin_views_character
+    Creating table admin_views_stumpjoke
+    Creating table admin_views_fabric
+    Creating table admin_views_person
+    Creating table admin_views_persona
+    Creating table admin_views_account
+    Creating table admin_views_fooaccount
+    Creating table admin_views_baraccount
+    Creating table admin_views_subscriber
+    Creating table admin_views_externalsubscriber
+    Creating table admin_views_oldsubscriber
+    Creating table admin_views_media
+    Creating table admin_views_podcast
+    Creating table admin_views_vodcast
+    Creating table admin_views_parent
+    Creating table admin_views_child
+    Creating table admin_views_pkchild
+    Creating table admin_views_toy
+    Creating table admin_views_emptymodel
+    Creating table admin_views_gallery
+    Creating table admin_views_picture
+    Creating table admin_views_language
+    Creating table admin_views_title
+    Creating table admin_views_titletranslation
+    Creating table admin_views_recommender
+    Creating table admin_views_recommendation
+    Creating table admin_views_collector
+    Creating table admin_views_widget
+    Creating table admin_views_doohickey
+    Creating table admin_views_grommet
+    Creating table admin_views_whatsit
+    Creating table admin_views_doodad
+    Creating table admin_views_fancydoodad
+    Creating table admin_views_category
+    Creating table admin_views_link
+    Creating table admin_views_prepopulatedpost
+    Creating table admin_views_prepopulatedsubpost
+    Creating table admin_views_post
+    Creating table admin_views_gadget
+    Creating table admin_views_villain
+    Creating table admin_views_supervillain
+    Creating table admin_views_funkytag
+    Creating table admin_views_plot
+    Creating table admin_views_plotdetails
+    Creating table admin_views_secrethideout
+    Creating table admin_views_supersecrethideout
+    Creating table admin_views_bookmark
+    Creating table admin_views_cyclicone
+    Creating table admin_views_cyclictwo
+    Creating table admin_views_topping
+    Creating table admin_views_pizza
+    Creating table admin_views_album
+    Creating table admin_views_song
+    Creating table admin_views_employee
+    Creating table admin_views_workhour
+    Creating table admin_views_manager
+    Creating table admin_views_bonus
+    Creating table admin_views_question
+    Creating table admin_views_answer
+    Creating table admin_views_reservation
+    Creating table admin_views_fooddelivery
+    Creating table admin_views_coverletter
+    Creating table admin_views_paper
+    Creating table admin_views_shortmessage
+    Creating table admin_views_telegram
+    Creating table admin_views_story
+    Creating table admin_views_otherstory
+    Creating table admin_views_complexsortedperson
+    Creating table admin_views_pluggablesearchperson
+    Creating table admin_views_prepopulatedpostlargeslug
+    Creating table admin_views_adminorderedfield
+    Creating table admin_views_adminorderedmodelmethod
+    Creating table admin_views_adminorderedadminmethod
+    Creating table admin_views_adminorderedcallable
+    Creating table admin_views_report
+    Creating table admin_views_mainprepopulated
+    Creating table admin_views_relatedprepopulated
+    Creating table admin_views_unorderedobject
+    Creating table admin_views_undeletableobject
+    Creating table admin_views_unchangeableobject
+    Creating table admin_views_usermessenger
+    Creating table admin_views_simple
+    Creating table admin_views_choice
+    Creating table admin_views_parentwithdependentchildren
+    Creating table admin_views_dependentchild
+    Creating table admin_views_filteredmanager
+    Creating table admin_views_emptymodelvisible
+    Creating table admin_views_emptymodelhidden
+    Creating table admin_views_emptymodelmixin
+    Creating table admin_views_state
+    Creating table admin_views_city
+    Creating table admin_views_restaurant
+    Creating table admin_views_worker
+    Creating table admin_views_referencedbyparent
+    Creating table admin_views_parentwithfk
+    Creating table admin_views_childofreferer
+    Creating table admin_views_inlinereferer
+    Creating table admin_views_referencedbyinline
+    Creating table admin_views_inlinereference
+    Creating table admin_views_recipe
+    Creating table admin_views_ingredient
+    Creating table admin_views_recipeingredient
+    Creating table admin_views_notreferenced
+    Creating table admin_views_explicitlyprovidedpk
+    Creating table admin_views_implicitlygeneratedpk
+    Creating table admin_views_referencedbygenrel
+    Creating table admin_views_genrelreference
+    Creating table admin_views_parentwithuuidpk
+    Creating table admin_views_relatedwithuuidpkmodel
+    Creating table admin_views_author
+    Creating table admin_views_authorship
+    Creating table admin_views_readonlyrelatedfield
+    Creating table admin_views_héllo
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (1 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_explicitly_provided_pk (admin_views.tests.GetFormsetsWithInlinesArgumentTest) ... ok
+test_implicitly_generated_pk (admin_views.tests.GetFormsetsWithInlinesArgumentTest) ... ok
+test_should_be_able_to_edit_related_objects_on_add_view (admin_views.tests.AdminCustomSaveRelatedTests) ... ok
+test_should_be_able_to_edit_related_objects_on_change_view (admin_views.tests.AdminCustomSaveRelatedTests) ... ok
+test_should_be_able_to_edit_related_objects_on_changelist_view (admin_views.tests.AdminCustomSaveRelatedTests) ... ok
+test_secure_view_shows_login_if_not_logged_in (admin_views.tests.SecureViewTests) ... ok
+test_lang_name_present (admin_views.tests.ValidXHTMLTests) ... ok
+test_client_logout_url_can_be_used_to_login (admin_views.tests.AdminViewLogoutTests) ... ok
+test_logout (admin_views.tests.AdminViewLogoutTests) ... ok
+test_generic_content_object_in_list_display (admin_views.tests.TestGenericRelations) ... ok
+test_form_has_multipart_enctype (admin_views.tests.AdminInlineFileUploadTest) ... ok
+test_all_fields_hidden (admin_views.tests.TestLabelVisibility) ... ok
+test_all_fields_visible (admin_views.tests.TestLabelVisibility) ... ok
+test_mixin (admin_views.tests.TestLabelVisibility) ... ok
+test_prepopulated_off (admin_views.tests.PrePopulatedTest) ... ok
+test_prepopulated_on (admin_views.tests.PrePopulatedTest) ... ok
+test_known_url_missing_slash_redirects_login_if_not_authenticated (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_known_url_missing_slash_redirects_with_slash_if_not_authenticated_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_known_url_redirects_login_if_not_authenticated (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_known_url_redirects_login_if_not_authenticated_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_false (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_false_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_true (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_true_force_script_name (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_true_non_staff_user (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_true_script_name (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_true_unknown_url (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_true_unknown_url_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_missing_slash_append_slash_true_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_non_admin_url_404_if_not_authenticated (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_non_admin_url_shares_url_prefix (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_non_admin_url_shares_url_prefix_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_single_model_no_append_slash (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_unknown_url_404_if_authenticated (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_unknown_url_404_if_authenticated_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_unknown_url_404_if_not_authenticated_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_unknown_url_redirects_login_if_not_authenticated (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_unkown_url_without_trailing_slash_if_not_authenticated (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_unkown_url_without_trailing_slash_if_not_authenticated_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_url_without_trailing_slash_if_not_authenticated (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_url_without_trailing_slash_if_not_authenticated_without_final_catch_all_view (admin_views.tests.AdminSiteFinalCatchAllPatternTests) ... ok
+test_custom_admin_site_app_index_view_and_template (admin_views.tests.CustomModelAdminTest) ... ok
+test_custom_admin_site_index_view_and_template (admin_views.tests.CustomModelAdminTest) ... ok
+test_custom_admin_site_login_form (admin_views.tests.CustomModelAdminTest) ... ok
+test_custom_admin_site_login_template (admin_views.tests.CustomModelAdminTest) ... ok
+test_custom_admin_site_logout_template (admin_views.tests.CustomModelAdminTest) ... ok
+test_add (admin_views.tests.AdminViewProxyModelPermissionsTests) ... ok
+test_change (admin_views.tests.AdminViewProxyModelPermissionsTests) ... ok
+test_delete (admin_views.tests.AdminViewProxyModelPermissionsTests) ... ok
+test_view (admin_views.tests.AdminViewProxyModelPermissionsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 2.738s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_views
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_views, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table admin_views_section
+    Creating table admin_views_article
+    Creating table admin_views_book
+    Creating table admin_views_promo
+    Creating table admin_views_chapter
+    Creating table admin_views_chapterxtra1
+    Creating table admin_views_chapterxtra2
+    Creating table admin_views_rowlevelchangepermissionmodel
+    Creating table admin_views_customarticle
+    Creating table admin_views_modelwithstringprimarykey
+    Creating table admin_views_color
+    Creating table admin_views_thing
+    Creating table admin_views_actor
+    Creating table admin_views_inquisition
+    Creating table admin_views_sketch
+    Creating table admin_views_character
+    Creating table admin_views_stumpjoke
+    Creating table admin_views_fabric
+    Creating table admin_views_person
+    Creating table admin_views_persona
+    Creating table admin_views_account
+    Creating table admin_views_fooaccount
+    Creating table admin_views_baraccount
+    Creating table admin_views_subscriber
+    Creating table admin_views_externalsubscriber
+    Creating table admin_views_oldsubscriber
+    Creating table admin_views_media
+    Creating table admin_views_podcast
+    Creating table admin_views_vodcast
+    Creating table admin_views_parent
+    Creating table admin_views_child
+    Creating table admin_views_pkchild
+    Creating table admin_views_toy
+    Creating table admin_views_emptymodel
+    Creating table admin_views_gallery
+    Creating table admin_views_picture
+    Creating table admin_views_language
+    Creating table admin_views_title
+    Creating table admin_views_titletranslation
+    Creating table admin_views_recommender
+    Creating table admin_views_recommendation
+    Creating table admin_views_collector
+    Creating table admin_views_widget
+    Creating table admin_views_doohickey
+    Creating table admin_views_grommet
+    Creating table admin_views_whatsit
+    Creating table admin_views_doodad
+    Creating table admin_views_fancydoodad
+    Creating table admin_views_category
+    Creating table admin_views_link
+    Creating table admin_views_prepopulatedpost
+    Creating table admin_views_prepopulatedsubpost
+    Creating table admin_views_post
+    Creating table admin_views_gadget
+    Creating table admin_views_villain
+    Creating table admin_views_supervillain
+    Creating table admin_views_funkytag
+    Creating table admin_views_plot
+    Creating table admin_views_plotdetails
+    Creating table admin_views_secrethideout
+    Creating table admin_views_supersecrethideout
+    Creating table admin_views_bookmark
+    Creating table admin_views_cyclicone
+    Creating table admin_views_cyclictwo
+    Creating table admin_views_topping
+    Creating table admin_views_pizza
+    Creating table admin_views_album
+    Creating table admin_views_song
+    Creating table admin_views_employee
+    Creating table admin_views_workhour
+    Creating table admin_views_manager
+    Creating table admin_views_bonus
+    Creating table admin_views_question
+    Creating table admin_views_answer
+    Creating table admin_views_reservation
+    Creating table admin_views_fooddelivery
+    Creating table admin_views_coverletter
+    Creating table admin_views_paper
+    Creating table admin_views_shortmessage
+    Creating table admin_views_telegram
+    Creating table admin_views_story
+    Creating table admin_views_otherstory
+    Creating table admin_views_complexsortedperson
+    Creating table admin_views_pluggablesearchperson
+    Creating table admin_views_prepopulatedpostlargeslug
+    Creating table admin_views_adminorderedfield
+    Creating table admin_views_adminorderedmodelmethod
+    Creating table admin_views_adminorderedadminmethod
+    Creating table admin_views_adminorderedcallable
+    Creating table admin_views_report
+    Creating table admin_views_mainprepopulated
+    Creating table admin_views_relatedprepopulated
+    Creating table admin_views_unorderedobject
+    Creating table admin_views_undeletableobject
+    Creating table admin_views_unchangeableobject
+    Creating table admin_views_usermessenger
+    Creating table admin_views_simple
+    Creating table admin_views_choice
+    Creating table admin_views_parentwithdependentchildren
+    Creating table admin_views_dependentchild
+    Creating table admin_views_filteredmanager
+    Creating table admin_views_emptymodelvisible
+    Creating table admin_views_emptymodelhidden
+    Creating table admin_views_emptymodelmixin
+    Creating table admin_views_state
+    Creating table admin_views_city
+    Creating table admin_views_restaurant
+    Creating table admin_views_worker
+    Creating table admin_views_referencedbyparent
+    Creating table admin_views_parentwithfk
+    Creating table admin_views_childofreferer
+    Creating table admin_views_inlinereferer
+    Creating table admin_views_referencedbyinline
+    Creating table admin_views_inlinereference
+    Creating table admin_views_recipe
+    Creating table admin_views_ingredient
+    Creating table admin_views_recipeingredient
+    Creating table admin_views_notreferenced
+    Creating table admin_views_explicitlyprovidedpk
+    Creating table admin_views_implicitlygeneratedpk
+    Creating table admin_views_referencedbygenrel
+    Creating table admin_views_genrelreference
+    Creating table admin_views_parentwithuuidpk
+    Creating table admin_views_relatedwithuuidpkmodel
+    Creating table admin_views_author
+    Creating table admin_views_authorship
+    Creating table admin_views_readonlyrelatedfield
+    Creating table admin_views_héllo
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (1 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_custom_admin_site_password_change_done_template (admin_views.tests.CustomModelAdminTest) ... ok
+test_custom_admin_site_password_change_template (admin_views.tests.CustomModelAdminTest) ... ok
+test_custom_admin_site_password_change_with_extra_context (admin_views.tests.CustomModelAdminTest) ... ok
+test_custom_admin_site_view (admin_views.tests.CustomModelAdminTest) ... ok
+test_pwd_change_custom_template (admin_views.tests.CustomModelAdminTest) ... ok
+test_group_permission_performance (admin_views.tests.GroupAdminTest) ... ok
+test_save_button (admin_views.tests.GroupAdminTest) ... ok
+test_save_as_new_with_inlines_with_validation_errors (admin_views.tests.SaveAsTests) ... ok
+test_save_as_new_with_validation_errors_with_inlines (admin_views.tests.SaveAsTests) ... ok
+test_message_debug (admin_views.tests.AdminUserMessageTest) ... ok
+test_message_error (admin_views.tests.AdminUserMessageTest) ... ok
+test_message_extra_tags (admin_views.tests.AdminUserMessageTest) ... ok
+test_message_info (admin_views.tests.AdminUserMessageTest) ... ok
+test_message_success (admin_views.tests.AdminUserMessageTest) ... ok
+test_message_warning (admin_views.tests.AdminUserMessageTest) ... ok
+test_related_field (admin_views.tests.DateHierarchyTests) ... ok
+test_not_registered (admin_views.tests.AdminViewDeletedObjectsTest) ... ok
+test_perms_needed (admin_views.tests.AdminViewDeletedObjectsTest) ... ok
+test_post_delete_restricted (admin_views.tests.AdminViewDeletedObjectsTest) ... ok
+test_protected (admin_views.tests.AdminViewDeletedObjectsTest) ... ok
+test_restricted (admin_views.tests.AdminViewDeletedObjectsTest) ... ok
+test_change_password_template (admin_views.tests.AdminCustomTemplateTests) ... ok
+test_custom_model_admin_templates (admin_views.tests.AdminCustomTemplateTests) ... ok
+test_changelist_input_html (admin_views.tests.AdminViewListEditable) ... ok
+test_custom_pk (admin_views.tests.AdminViewListEditable) ... ok
+test_inheritance (admin_views.tests.AdminViewListEditable) ... ok
+test_inheritance_2 (admin_views.tests.AdminViewListEditable) ... ok
+test_list_editable_action_choices (admin_views.tests.AdminViewListEditable) ... ok
+test_list_editable_action_submit (admin_views.tests.AdminViewListEditable) ... ok
+test_list_editable_ordering (admin_views.tests.AdminViewListEditable) ... ok
+test_non_form_errors (admin_views.tests.AdminViewListEditable) ... ok
+test_non_form_errors_is_errorlist (admin_views.tests.AdminViewListEditable) ... ok
+test_post_messages (admin_views.tests.AdminViewListEditable) ... ok
+test_post_submission (admin_views.tests.AdminViewListEditable) ... ok
+test_beginning_matches (admin_views.tests.AdminSearchTest) ... ok
+test_exact_matches (admin_views.tests.AdminSearchTest) ... ok
+test_pluggable_search (admin_views.tests.AdminSearchTest) ... ok
+test_search_with_spaces (admin_views.tests.AdminSearchTest) ... ok
+test_filters (admin_views.tests.AdminDocsTest) ... ok
+test_tags (admin_views.tests.AdminDocsTest) ... ok
+test_add_view (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_add_view_without_preserved_filters (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_assert_url_equal (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_change_view (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_change_view_without_preserved_filters (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_changelist_view (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_delete_view (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_url_prefix (admin_views.tests.NamespacedAdminKeepChangeListFiltersTests) ... ok
+test_form_url_present_in_context (admin_views.tests.UserAdminTest) ... ok
+test_password_mismatch (admin_views.tests.UserAdminTest) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 5.313s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_views
+Found 50 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_views, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table admin_views_section
+    Creating table admin_views_article
+    Creating table admin_views_book
+    Creating table admin_views_promo
+    Creating table admin_views_chapter
+    Creating table admin_views_chapterxtra1
+    Creating table admin_views_chapterxtra2
+    Creating table admin_views_rowlevelchangepermissionmodel
+    Creating table admin_views_customarticle
+    Creating table admin_views_modelwithstringprimarykey
+    Creating table admin_views_color
+    Creating table admin_views_thing
+    Creating table admin_views_actor
+    Creating table admin_views_inquisition
+    Creating table admin_views_sketch
+    Creating table admin_views_character
+    Creating table admin_views_stumpjoke
+    Creating table admin_views_fabric
+    Creating table admin_views_person
+    Creating table admin_views_persona
+    Creating table admin_views_account
+    Creating table admin_views_fooaccount
+    Creating table admin_views_baraccount
+    Creating table admin_views_subscriber
+    Creating table admin_views_externalsubscriber
+    Creating table admin_views_oldsubscriber
+    Creating table admin_views_media
+    Creating table admin_views_podcast
+    Creating table admin_views_vodcast
+    Creating table admin_views_parent
+    Creating table admin_views_child
+    Creating table admin_views_pkchild
+    Creating table admin_views_toy
+    Creating table admin_views_emptymodel
+    Creating table admin_views_gallery
+    Creating table admin_views_picture
+    Creating table admin_views_language
+    Creating table admin_views_title
+    Creating table admin_views_titletranslation
+    Creating table admin_views_recommender
+    Creating table admin_views_recommendation
+    Creating table admin_views_collector
+    Creating table admin_views_widget
+    Creating table admin_views_doohickey
+    Creating table admin_views_grommet
+    Creating table admin_views_whatsit
+    Creating table admin_views_doodad
+    Creating table admin_views_fancydoodad
+    Creating table admin_views_category
+    Creating table admin_views_link
+    Creating table admin_views_prepopulatedpost
+    Creating table admin_views_prepopulatedsubpost
+    Creating table admin_views_post
+    Creating table admin_views_gadget
+    Creating table admin_views_villain
+    Creating table admin_views_supervillain
+    Creating table admin_views_funkytag
+    Creating table admin_views_plot
+    Creating table admin_views_plotdetails
+    Creating table admin_views_secrethideout
+    Creating table admin_views_supersecrethideout
+    Creating table admin_views_bookmark
+    Creating table admin_views_cyclicone
+    Creating table admin_views_cyclictwo
+    Creating table admin_views_topping
+    Creating table admin_views_pizza
+    Creating table admin_views_album
+    Creating table admin_views_song
+    Creating table admin_views_employee
+    Creating table admin_views_workhour
+    Creating table admin_views_manager
+    Creating table admin_views_bonus
+    Creating table admin_views_question
+    Creating table admin_views_answer
+    Creating table admin_views_reservation
+    Creating table admin_views_fooddelivery
+    Creating table admin_views_coverletter
+    Creating table admin_views_paper
+    Creating table admin_views_shortmessage
+    Creating table admin_views_telegram
+    Creating table admin_views_story
+    Creating table admin_views_otherstory
+    Creating table admin_views_complexsortedperson
+    Creating table admin_views_pluggablesearchperson
+    Creating table admin_views_prepopulatedpostlargeslug
+    Creating table admin_views_adminorderedfield
+    Creating table admin_views_adminorderedmodelmethod
+    Creating table admin_views_adminorderedadminmethod
+    Creating table admin_views_adminorderedcallable
+    Creating table admin_views_report
+    Creating table admin_views_mainprepopulated
+    Creating table admin_views_relatedprepopulated
+    Creating table admin_views_unorderedobject
+    Creating table admin_views_undeletableobject
+    Creating table admin_views_unchangeableobject
+    Creating table admin_views_usermessenger
+    Creating table admin_views_simple
+    Creating table admin_views_choice
+    Creating table admin_views_parentwithdependentchildren
+    Creating table admin_views_dependentchild
+    Creating table admin_views_filteredmanager
+    Creating table admin_views_emptymodelvisible
+    Creating table admin_views_emptymodelhidden
+    Creating table admin_views_emptymodelmixin
+    Creating table admin_views_state
+    Creating table admin_views_city
+    Creating table admin_views_restaurant
+    Creating table admin_views_worker
+    Creating table admin_views_referencedbyparent
+    Creating table admin_views_parentwithfk
+    Creating table admin_views_childofreferer
+    Creating table admin_views_inlinereferer
+    Creating table admin_views_referencedbyinline
+    Creating table admin_views_inlinereference
+    Creating table admin_views_recipe
+    Creating table admin_views_ingredient
+    Creating table admin_views_recipeingredient
+    Creating table admin_views_notreferenced
+    Creating table admin_views_explicitlyprovidedpk
+    Creating table admin_views_implicitlygeneratedpk
+    Creating table admin_views_referencedbygenrel
+    Creating table admin_views_genrelreference
+    Creating table admin_views_parentwithuuidpk
+    Creating table admin_views_relatedwithuuidpkmodel
+    Creating table admin_views_author
+    Creating table admin_views_authorship
+    Creating table admin_views_readonlyrelatedfield
+    Creating table admin_views_héllo
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (1 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_save_add_another_button (admin_views.tests.UserAdminTest) ... ok
+test_save_button (admin_views.tests.UserAdminTest) ... ok
+test_save_continue_editing_button (admin_views.tests.UserAdminTest) ... ok
+test_user_permission_performance (admin_views.tests.UserAdminTest) ... ok
+test_add_view (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_add_view_without_preserved_filters (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_assert_url_equal (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_change_view (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_change_view_without_preserved_filters (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_changelist_view (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_delete_view (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_url_prefix (admin_views.tests.AdminKeepChangeListFiltersTests) ... ok
+test_add_model_modeladmin_defer_qs (admin_views.tests.AdminCustomQuerysetTest) ... ok
+test_add_model_modeladmin_only_qs (admin_views.tests.AdminCustomQuerysetTest) ... ok
+test_change_view (admin_views.tests.AdminCustomQuerysetTest) ... ok
+test_changelist_view (admin_views.tests.AdminCustomQuerysetTest) ... ok
+test_changelist_view_count_queries (admin_views.tests.AdminCustomQuerysetTest) ... ok
+test_edit_model_modeladmin_defer_qs (admin_views.tests.AdminCustomQuerysetTest) ... ok
+test_edit_model_modeladmin_only_qs (admin_views.tests.AdminCustomQuerysetTest) ... ok
+test_delete_view_nonexistent_obj (admin_views.tests.AdminViewPermissionsTest) ... ok
+test_disabled_permissions_when_logged_in (admin_views.tests.AdminViewPermissionsTest) ... ok
+test_disabled_staff_permissions_when_logged_in (admin_views.tests.AdminViewPermissionsTest) ... ok
+test_history_view_bad_url (admin_views.tests.AdminViewPermissionsTest) ... ok
+test_login_has_permission (admin_views.tests.AdminViewPermissionsTest) ... ok
+test_login_successfully_redirects_to_original_URL (admin_views.tests.AdminViewPermissionsTest) ... ok
+test_label_suffix_translated (admin_views.tests.ReadonlyTest) ... ok
+test_readonly_foreignkey_links_default_admin_site (admin_views.tests.ReadonlyTest) ... ok
+test_readonly_get (admin_views.tests.ReadonlyTest) ... ok
+test_readonly_manytomany_forwards_ref (admin_views.tests.ReadonlyTest) ... ok
+test_readonly_post (admin_views.tests.ReadonlyTest) ... ok
+test_readonly_text_field (admin_views.tests.ReadonlyTest) ... ok
+test_user_password_change_limited_queryset (admin_views.tests.ReadonlyTest) ... ok
+test_add_with_GET_args (admin_views.tests.AdminViewBasicTest) ... ok
+test_app_index_context (admin_views.tests.AdminViewBasicTest) ... ok
+test_change_list_column_field_classes (admin_views.tests.AdminViewBasicTest) ... ok
+test_change_list_null_boolean_display (admin_views.tests.AdminViewBasicTest) ... ok
+test_change_list_sorting_callable_query_expression_reverse (admin_views.tests.AdminViewBasicTest) ... ok
+test_change_list_sorting_model_meta (admin_views.tests.AdminViewBasicTest) ... ok
+test_change_list_sorting_multiple (admin_views.tests.AdminViewBasicTest) ... ok
+test_change_list_sorting_override_model_admin (admin_views.tests.AdminViewBasicTest) ... ok
+test_change_view_subtitle_per_object (admin_views.tests.AdminViewBasicTest) ... ok
+test_date_hierarchy_empty_queryset (admin_views.tests.AdminViewBasicTest) ... ok
+test_date_hierarchy_local_date_differ_from_utc (admin_views.tests.AdminViewBasicTest) ... ok
+test_date_hierarchy_timezone_dst (admin_views.tests.AdminViewBasicTest) ... ok
+test_disallowed_filtering (admin_views.tests.AdminViewBasicTest) ... ok
+test_disallowed_to_field (admin_views.tests.AdminViewBasicTest) ... ok
+test_display_decorator_with_boolean_and_empty_value (admin_views.tests.AdminViewBasicTest) ... ok
+test_formset_kwargs_can_be_overridden (admin_views.tests.AdminViewBasicTest) ... ok
+test_get_sortable_by_columns_subset (admin_views.tests.AdminViewBasicTest) ... ok
+test_get_sortable_by_no_column (admin_views.tests.AdminViewBasicTest) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 5.031s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_views
+Found 9 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_views, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table admin_views_section
+    Creating table admin_views_article
+    Creating table admin_views_book
+    Creating table admin_views_promo
+    Creating table admin_views_chapter
+    Creating table admin_views_chapterxtra1
+    Creating table admin_views_chapterxtra2
+    Creating table admin_views_rowlevelchangepermissionmodel
+    Creating table admin_views_customarticle
+    Creating table admin_views_modelwithstringprimarykey
+    Creating table admin_views_color
+    Creating table admin_views_thing
+    Creating table admin_views_actor
+    Creating table admin_views_inquisition
+    Creating table admin_views_sketch
+    Creating table admin_views_character
+    Creating table admin_views_stumpjoke
+    Creating table admin_views_fabric
+    Creating table admin_views_person
+    Creating table admin_views_persona
+    Creating table admin_views_account
+    Creating table admin_views_fooaccount
+    Creating table admin_views_baraccount
+    Creating table admin_views_subscriber
+    Creating table admin_views_externalsubscriber
+    Creating table admin_views_oldsubscriber
+    Creating table admin_views_media
+    Creating table admin_views_podcast
+    Creating table admin_views_vodcast
+    Creating table admin_views_parent
+    Creating table admin_views_child
+    Creating table admin_views_pkchild
+    Creating table admin_views_toy
+    Creating table admin_views_emptymodel
+    Creating table admin_views_gallery
+    Creating table admin_views_picture
+    Creating table admin_views_language
+    Creating table admin_views_title
+    Creating table admin_views_titletranslation
+    Creating table admin_views_recommender
+    Creating table admin_views_recommendation
+    Creating table admin_views_collector
+    Creating table admin_views_widget
+    Creating table admin_views_doohickey
+    Creating table admin_views_grommet
+    Creating table admin_views_whatsit
+    Creating table admin_views_doodad
+    Creating table admin_views_fancydoodad
+    Creating table admin_views_category
+    Creating table admin_views_link
+    Creating table admin_views_prepopulatedpost
+    Creating table admin_views_prepopulatedsubpost
+    Creating table admin_views_post
+    Creating table admin_views_gadget
+    Creating table admin_views_villain
+    Creating table admin_views_supervillain
+    Creating table admin_views_funkytag
+    Creating table admin_views_plot
+    Creating table admin_views_plotdetails
+    Creating table admin_views_secrethideout
+    Creating table admin_views_supersecrethideout
+    Creating table admin_views_bookmark
+    Creating table admin_views_cyclicone
+    Creating table admin_views_cyclictwo
+    Creating table admin_views_topping
+    Creating table admin_views_pizza
+    Creating table admin_views_album
+    Creating table admin_views_song
+    Creating table admin_views_employee
+    Creating table admin_views_workhour
+    Creating table admin_views_manager
+    Creating table admin_views_bonus
+    Creating table admin_views_question
+    Creating table admin_views_answer
+    Creating table admin_views_reservation
+    Creating table admin_views_fooddelivery
+    Creating table admin_views_coverletter
+    Creating table admin_views_paper
+    Creating table admin_views_shortmessage
+    Creating table admin_views_telegram
+    Creating table admin_views_story
+    Creating table admin_views_otherstory
+    Creating table admin_views_complexsortedperson
+    Creating table admin_views_pluggablesearchperson
+    Creating table admin_views_prepopulatedpostlargeslug
+    Creating table admin_views_adminorderedfield
+    Creating table admin_views_adminorderedmodelmethod
+    Creating table admin_views_adminorderedadminmethod
+    Creating table admin_views_adminorderedcallable
+    Creating table admin_views_report
+    Creating table admin_views_mainprepopulated
+    Creating table admin_views_relatedprepopulated
+    Creating table admin_views_unorderedobject
+    Creating table admin_views_undeletableobject
+    Creating table admin_views_unchangeableobject
+    Creating table admin_views_usermessenger
+    Creating table admin_views_simple
+    Creating table admin_views_choice
+    Creating table admin_views_parentwithdependentchildren
+    Creating table admin_views_dependentchild
+    Creating table admin_views_filteredmanager
+    Creating table admin_views_emptymodelvisible
+    Creating table admin_views_emptymodelhidden
+    Creating table admin_views_emptymodelmixin
+    Creating table admin_views_state
+    Creating table admin_views_city
+    Creating table admin_views_restaurant
+    Creating table admin_views_worker
+    Creating table admin_views_referencedbyparent
+    Creating table admin_views_parentwithfk
+    Creating table admin_views_childofreferer
+    Creating table admin_views_inlinereferer
+    Creating table admin_views_referencedbyinline
+    Creating table admin_views_inlinereference
+    Creating table admin_views_recipe
+    Creating table admin_views_ingredient
+    Creating table admin_views_recipeingredient
+    Creating table admin_views_notreferenced
+    Creating table admin_views_explicitlyprovidedpk
+    Creating table admin_views_implicitlygeneratedpk
+    Creating table admin_views_referencedbygenrel
+    Creating table admin_views_genrelreference
+    Creating table admin_views_parentwithuuidpk
+    Creating table admin_views_relatedwithuuidpkmodel
+    Creating table admin_views_author
+    Creating table admin_views_authorship
+    Creating table admin_views_readonlyrelatedfield
+    Creating table admin_views_héllo
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (1 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_jsi18n_with_context (admin_views.tests.AdminViewBasicTest) ... ok
+test_logout_and_password_change_URLs (admin_views.tests.AdminViewBasicTest) ... ok
+test_multiple_sort_same_field (admin_views.tests.AdminViewBasicTest) ... ok
+test_relation_spanning_filters (admin_views.tests.AdminViewBasicTest) ... ok
+test_render_views_no_subtitle (admin_views.tests.AdminViewBasicTest) ... ok
+test_resolve_admin_views (admin_views.tests.AdminViewBasicTest) ... ok
+test_sortable_by_columns_subset (admin_views.tests.AdminViewBasicTest) ... ok
+test_sortable_by_no_column (admin_views.tests.AdminViewBasicTest) ... ok
+test_view_subtitle_per_object (admin_views.tests.AdminViewBasicTest) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.764s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

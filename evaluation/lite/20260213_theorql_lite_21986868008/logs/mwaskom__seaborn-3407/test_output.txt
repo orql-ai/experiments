@@ -1,0 +1,266 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: xdist-3.6.1, cov-6.0.0
+collecting ... collected 1 item
+
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_column_multiindex PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_column_multiindex
+  /testbed/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
+    self._figure.tight_layout(*args, **kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 1 passed, 1 warning in 1.39s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.mwaskom__seaborn-3407:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.mwaskom__seaborn-3407
+836b79e2a6e5: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+7ee65c8c72cc: Pulling fs layer
+478e7f11d377: Pulling fs layer
+5611d29aabad: Pulling fs layer
+01677a35cd85: Pulling fs layer
+30b8627118f9: Pulling fs layer
+77cc19561f09: Pulling fs layer
+1e931431f1ca: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Download complete
+30b8627118f9: Download complete
+ac5b61163589: Download complete
+478e7f11d377: Download complete
+e5a28c0c137e: Download complete
+77cc19561f09: Download complete
+5611d29aabad: Download complete
+7478e0ac0f23: Download complete
+1e931431f1ca: Download complete
+7ee65c8c72cc: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+01677a35cd85: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+478e7f11d377: Pull complete
+5611d29aabad: Pull complete
+7ee65c8c72cc: Pull complete
+30b8627118f9: Pull complete
+77cc19561f09: Pull complete
+01677a35cd85: Pull complete
+1e931431f1ca: Pull complete
+Digest: sha256:aab8edb9edc19968e793ca1807235b2a9abd5dafff0fa9cc5fd960c29d4c8ab1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.mwaskom__seaborn-3407:latest
+
+
+===== PHASE: PASS_TO_PASS (120 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: xdist-3.6.1, cov-6.0.0
+collecting ... collected 50 items
+
+tests/test_axisgrid.py::TestFacetGrid::test_self_data PASSED             [  2%]
+tests/test_axisgrid.py::TestFacetGrid::test_self_figure PASSED           [  4%]
+tests/test_axisgrid.py::TestFacetGrid::test_self_axes PASSED             [  6%]
+tests/test_axisgrid.py::TestFacetGrid::test_axes_array_size PASSED       [  8%]
+tests/test_axisgrid.py::TestFacetGrid::test_single_axes PASSED           [ 10%]
+tests/test_axisgrid.py::TestFacetGrid::test_col_wrap PASSED              [ 12%]
+tests/test_axisgrid.py::TestFacetGrid::test_normal_axes PASSED           [ 14%]
+tests/test_axisgrid.py::TestFacetGrid::test_wrapped_axes PASSED          [ 16%]
+tests/test_axisgrid.py::TestFacetGrid::test_axes_dict PASSED             [ 18%]
+tests/test_axisgrid.py::TestFacetGrid::test_figure_size PASSED           [ 20%]
+tests/test_axisgrid.py::TestFacetGrid::test_figure_size_with_legend PASSED [ 22%]
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data PASSED           [ 24%]
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data_missing_level PASSED [ 26%]
+tests/test_axisgrid.py::TestFacetGrid::test_get_boolean_legend_data PASSED [ 28%]
+tests/test_axisgrid.py::TestFacetGrid::test_legend_tuples PASSED         [ 30%]
+tests/test_axisgrid.py::TestFacetGrid::test_legend_options PASSED        [ 32%]
+tests/test_axisgrid.py::TestFacetGrid::test_legendout_with_colwrap PASSED [ 34%]
+tests/test_axisgrid.py::TestFacetGrid::test_legend_tight_layout PASSED   [ 36%]
+tests/test_axisgrid.py::TestFacetGrid::test_subplot_kws PASSED           [ 38%]
+tests/test_axisgrid.py::TestFacetGrid::test_gridspec_kws PASSED          [ 40%]
+tests/test_axisgrid.py::TestFacetGrid::test_gridspec_kws_col_wrap PASSED [ 42%]
+tests/test_axisgrid.py::TestFacetGrid::test_data_generator PASSED        [ 44%]
+tests/test_axisgrid.py::TestFacetGrid::test_map PASSED                   [ 46%]
+tests/test_axisgrid.py::TestFacetGrid::test_map_dataframe PASSED         [ 48%]
+tests/test_axisgrid.py::TestFacetGrid::test_set PASSED                   [ 50%]
+tests/test_axisgrid.py::TestFacetGrid::test_set_titles PASSED            [ 52%]
+tests/test_axisgrid.py::TestFacetGrid::test_set_titles_margin_titles PASSED [ 54%]
+tests/test_axisgrid.py::TestFacetGrid::test_set_ticklabels PASSED        [ 56%]
+tests/test_axisgrid.py::TestFacetGrid::test_set_axis_labels PASSED       [ 58%]
+tests/test_axisgrid.py::TestFacetGrid::test_axis_lims PASSED             [ 60%]
+tests/test_axisgrid.py::TestFacetGrid::test_data_orders PASSED           [ 62%]
+tests/test_axisgrid.py::TestFacetGrid::test_palette PASSED               [ 64%]
+tests/test_axisgrid.py::TestFacetGrid::test_hue_kws PASSED               [ 66%]
+tests/test_axisgrid.py::TestFacetGrid::test_dropna PASSED                [ 68%]
+tests/test_axisgrid.py::TestFacetGrid::test_categorical_column_missing_categories PASSED [ 70%]
+tests/test_axisgrid.py::TestFacetGrid::test_categorical_warning PASSED   [ 72%]
+tests/test_axisgrid.py::TestFacetGrid::test_refline PASSED               [ 74%]
+tests/test_axisgrid.py::TestFacetGrid::test_apply PASSED                 [ 76%]
+tests/test_axisgrid.py::TestFacetGrid::test_pipe PASSED                  [ 78%]
+tests/test_axisgrid.py::TestFacetGrid::test_tick_params PASSED           [ 80%]
+tests/test_axisgrid.py::TestPairGrid::test_self_data PASSED              [ 82%]
+tests/test_axisgrid.py::TestPairGrid::test_ignore_datelike_data PASSED   [ 84%]
+tests/test_axisgrid.py::TestPairGrid::test_self_figure PASSED            [ 86%]
+tests/test_axisgrid.py::TestPairGrid::test_self_axes PASSED              [ 88%]
+tests/test_axisgrid.py::TestPairGrid::test_default_axes PASSED           [ 90%]
+tests/test_axisgrid.py::TestPairGrid::test_specific_square_axes[vars0] PASSED [ 92%]
+tests/test_axisgrid.py::TestPairGrid::test_specific_square_axes[vars1] PASSED [ 94%]
+tests/test_axisgrid.py::TestPairGrid::test_remove_hue_from_default PASSED [ 96%]
+tests/test_axisgrid.py::TestPairGrid::test_specific_nonsquare_axes[x_vars0-y_vars0] PASSED [ 98%]
+tests/test_axisgrid.py::TestPairGrid::test_specific_nonsquare_axes[x_vars1-z] PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data_missing_level
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data_missing_level
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data_missing_level
+tests/test_axisgrid.py::TestFacetGrid::test_legend_data_missing_level
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pandas/core/dtypes/cast.py:1429: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+  See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+    return np.find_common_type(types, [])
+
+tests/test_axisgrid.py: 21 warnings
+  /testbed/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
+    self._figure.tight_layout(*args, **kwargs)
+
+tests/test_axisgrid.py::TestFacetGrid::test_gridspec_kws
+  /testbed/tests/test_axisgrid.py:344: UserWarning: The figure layout has changed to tight
+    g.figure.tight_layout()
+
+tests/test_axisgrid.py::TestFacetGrid::test_set_ticklabels
+tests/test_axisgrid.py::TestFacetGrid::test_categorical_warning
+tests/test_axisgrid.py::TestFacetGrid::test_categorical_warning
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pandas/core/algorithms.py:525: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+  See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+    common = np.find_common_type([values.dtype, comps_array.dtype], [])
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 32 warnings in 28.88s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: xdist-3.6.1, cov-6.0.0
+collecting ... collected 50 items
+
+tests/test_axisgrid.py::TestPairGrid::test_specific_nonsquare_axes[x_vars2-y_vars2] PASSED [  2%]
+tests/test_axisgrid.py::TestPairGrid::test_corner PASSED                 [  4%]
+tests/test_axisgrid.py::TestPairGrid::test_size PASSED                   [  6%]
+tests/test_axisgrid.py::TestPairGrid::test_empty_grid PASSED             [  8%]
+tests/test_axisgrid.py::TestPairGrid::test_map PASSED                    [ 10%]
+tests/test_axisgrid.py::TestPairGrid::test_map_nonsquare PASSED          [ 12%]
+tests/test_axisgrid.py::TestPairGrid::test_map_lower PASSED              [ 14%]
+tests/test_axisgrid.py::TestPairGrid::test_map_upper PASSED              [ 16%]
+tests/test_axisgrid.py::TestPairGrid::test_map_mixed_funcsig PASSED      [ 18%]
+tests/test_axisgrid.py::TestPairGrid::test_map_diag PASSED               [ 20%]
+tests/test_axisgrid.py::TestPairGrid::test_map_diag_rectangular PASSED   [ 22%]
+tests/test_axisgrid.py::TestPairGrid::test_map_diag_color PASSED         [ 24%]
+tests/test_axisgrid.py::TestPairGrid::test_map_diag_palette PASSED       [ 26%]
+tests/test_axisgrid.py::TestPairGrid::test_map_diag_and_offdiag PASSED   [ 28%]
+tests/test_axisgrid.py::TestPairGrid::test_diag_sharey PASSED            [ 30%]
+tests/test_axisgrid.py::TestPairGrid::test_map_diag_matplotlib PASSED    [ 32%]
+tests/test_axisgrid.py::TestPairGrid::test_palette PASSED                [ 34%]
+tests/test_axisgrid.py::TestPairGrid::test_hue_kws PASSED                [ 36%]
+tests/test_axisgrid.py::TestPairGrid::test_hue_order PASSED              [ 38%]
+tests/test_axisgrid.py::TestPairGrid::test_hue_order_missing_level PASSED [ 40%]
+tests/test_axisgrid.py::TestPairGrid::test_hue_in_map PASSED             [ 42%]
+tests/test_axisgrid.py::TestPairGrid::test_nondefault_index PASSED       [ 44%]
+tests/test_axisgrid.py::TestPairGrid::test_dropna[scatterplot] PASSED    [ 46%]
+tests/test_axisgrid.py::TestPairGrid::test_dropna[scatter] PASSED        [ 48%]
+tests/test_axisgrid.py::TestPairGrid::test_histplot_legend PASSED        [ 50%]
+tests/test_axisgrid.py::TestPairGrid::test_pairplot PASSED               [ 52%]
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_reg PASSED           [ 54%]
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_reg_hue PASSED       [ 56%]
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_diag_kde PASSED      [ 58%]
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_kde PASSED           [ 60%]
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_hist PASSED          [ 62%]
+tests/test_axisgrid.py::TestPairGrid::test_pairplot_markers PASSED       [ 64%]
+tests/test_axisgrid.py::TestPairGrid::test_corner_despine PASSED         [ 66%]
+tests/test_axisgrid.py::TestPairGrid::test_corner_set PASSED             [ 68%]
+tests/test_axisgrid.py::TestPairGrid::test_legend PASSED                 [ 70%]
+tests/test_axisgrid.py::TestPairGrid::test_tick_params PASSED            [ 72%]
+tests/test_axisgrid.py::TestJointGrid::test_margin_grid_from_lists PASSED [ 74%]
+tests/test_axisgrid.py::TestJointGrid::test_margin_grid_from_arrays PASSED [ 76%]
+tests/test_axisgrid.py::TestJointGrid::test_margin_grid_from_series PASSED [ 78%]
+tests/test_axisgrid.py::TestJointGrid::test_margin_grid_from_dataframe PASSED [ 80%]
+tests/test_axisgrid.py::TestJointGrid::test_margin_grid_from_dataframe_bad_variable PASSED [ 82%]
+tests/test_axisgrid.py::TestJointGrid::test_margin_grid_axis_labels PASSED [ 84%]
+tests/test_axisgrid.py::TestJointGrid::test_dropna PASSED                [ 86%]
+tests/test_axisgrid.py::TestJointGrid::test_axlims PASSED                [ 88%]
+tests/test_axisgrid.py::TestJointGrid::test_marginal_ticks PASSED        [ 90%]
+tests/test_axisgrid.py::TestJointGrid::test_bivariate_plot PASSED        [ 92%]
+tests/test_axisgrid.py::TestJointGrid::test_univariate_plot PASSED       [ 94%]
+tests/test_axisgrid.py::TestJointGrid::test_univariate_plot_distplot PASSED [ 96%]
+tests/test_axisgrid.py::TestJointGrid::test_univariate_plot_matplotlib PASSED [ 98%]
+tests/test_axisgrid.py::TestJointGrid::test_plot PASSED                  [100%]
+
+=============================== warnings summary ===============================
+tests/test_axisgrid.py: 10 warnings
+  /testbed/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
+    self._figure.tight_layout(*args, **kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 50 passed, 10 warnings in 42.28s =======================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: xdist-3.6.1, cov-6.0.0
+collecting ... collected 20 items
+
+tests/test_axisgrid.py::TestJointGrid::test_space PASSED                 [  5%]
+tests/test_axisgrid.py::TestJointGrid::test_hue[True] PASSED             [ 10%]
+tests/test_axisgrid.py::TestJointGrid::test_hue[False] PASSED            [ 15%]
+tests/test_axisgrid.py::TestJointGrid::test_refline PASSED               [ 20%]
+tests/test_axisgrid.py::TestJointPlot::test_scatter PASSED               [ 25%]
+tests/test_axisgrid.py::TestJointPlot::test_scatter_hue PASSED           [ 30%]
+tests/test_axisgrid.py::TestJointPlot::test_reg PASSED                   [ 35%]
+tests/test_axisgrid.py::TestJointPlot::test_resid PASSED                 [ 40%]
+tests/test_axisgrid.py::TestJointPlot::test_hist PASSED                  [ 45%]
+tests/test_axisgrid.py::TestJointPlot::test_hex PASSED                   [ 50%]
+tests/test_axisgrid.py::TestJointPlot::test_kde PASSED                   [ 55%]
+tests/test_axisgrid.py::TestJointPlot::test_kde_hue PASSED               [ 60%]
+tests/test_axisgrid.py::TestJointPlot::test_color PASSED                 [ 65%]
+tests/test_axisgrid.py::TestJointPlot::test_palette PASSED               [ 70%]
+tests/test_axisgrid.py::TestJointPlot::test_hex_customise PASSED         [ 75%]
+tests/test_axisgrid.py::TestJointPlot::test_bad_kind PASSED              [ 80%]
+tests/test_axisgrid.py::TestJointPlot::test_unsupported_hue_kind PASSED  [ 85%]
+tests/test_axisgrid.py::TestJointPlot::test_leaky_dict PASSED            [ 90%]
+tests/test_axisgrid.py::TestJointPlot::test_distplot_kwarg_warning PASSED [ 95%]
+tests/test_axisgrid.py::TestJointPlot::test_ax_warning PASSED            [100%]
+
+============================== 20 passed in 9.22s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,198 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application known_related_objects
+Found 2 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16408:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16408
+a2f6138ded93: Pulling fs layer
+500327121db6: Pulling fs layer
+a38e82948df4: Pulling fs layer
+30322296f694: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+aef50d31cf01: Download complete
+788ea9f0fbb4: Download complete
+836b79e2a6e5: Download complete
+48d09a4d2bd0: Download complete
+30322296f694: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+a38e82948df4: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+1c04d89b98c3: Download complete
+56cfd456d2c9: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+aef50d31cf01: Pull complete
+48d09a4d2bd0: Pull complete
+56cfd456d2c9: Pull complete
+788ea9f0fbb4: Pull complete
+30322296f694: Pull complete
+1c04d89b98c3: Pull complete
+a38e82948df4: Pull complete
+Digest: sha256:315f195420cdaa44dc3a7b0df0e498471ca9aa150d01544b245336a362d47657
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16408:latest
+test_multilevel_reverse_fk_cyclic_select_related (unittest.loader._FailedTest.test_multilevel_reverse_fk_cyclic_select_related) ... ERROR
+test_multilevel_reverse_fk_select_related (unittest.loader._FailedTest.test_multilevel_reverse_fk_select_related) ... ERROR
+
+======================================================================
+ERROR: test_multilevel_reverse_fk_cyclic_select_related (unittest.loader._FailedTest.test_multilevel_reverse_fk_cyclic_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_multilevel_reverse_fk_cyclic_select_related'
+
+======================================================================
+ERROR: test_multilevel_reverse_fk_select_related (unittest.loader._FailedTest.test_multilevel_reverse_fk_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_multilevel_reverse_fk_select_related'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)
+
+
+===== PHASE: PASS_TO_PASS (18 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application known_related_objects
+Found 18 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_foreign_key (unittest.loader._FailedTest.test_foreign_key) ... ERROR
+test_foreign_key_multiple_prefetch (unittest.loader._FailedTest.test_foreign_key_multiple_prefetch) ... ERROR
+test_foreign_key_prefetch_related (unittest.loader._FailedTest.test_foreign_key_prefetch_related) ... ERROR
+test_one_to_one (unittest.loader._FailedTest.test_one_to_one) ... ERROR
+test_one_to_one_multi_prefetch_related (unittest.loader._FailedTest.test_one_to_one_multi_prefetch_related) ... ERROR
+test_one_to_one_multi_select_related (unittest.loader._FailedTest.test_one_to_one_multi_select_related) ... ERROR
+test_one_to_one_prefetch_related (unittest.loader._FailedTest.test_one_to_one_prefetch_related) ... ERROR
+test_one_to_one_select_related (unittest.loader._FailedTest.test_one_to_one_select_related) ... ERROR
+test_queryset_and (unittest.loader._FailedTest.test_queryset_and) ... ERROR
+test_queryset_or (unittest.loader._FailedTest.test_queryset_or) ... ERROR
+test_queryset_or_different_cached_items (unittest.loader._FailedTest.test_queryset_or_different_cached_items) ... ERROR
+test_queryset_or_only_one_with_precache (unittest.loader._FailedTest.test_queryset_or_only_one_with_precache) ... ERROR
+test_reverse_fk_select_related_multiple (unittest.loader._FailedTest.test_reverse_fk_select_related_multiple) ... ERROR
+test_reverse_one_to_one (unittest.loader._FailedTest.test_reverse_one_to_one) ... ERROR
+test_reverse_one_to_one_multi_prefetch_related (unittest.loader._FailedTest.test_reverse_one_to_one_multi_prefetch_related) ... ERROR
+test_reverse_one_to_one_multi_select_related (unittest.loader._FailedTest.test_reverse_one_to_one_multi_select_related) ... ERROR
+test_reverse_one_to_one_prefetch_related (unittest.loader._FailedTest.test_reverse_one_to_one_prefetch_related) ... ERROR
+test_reverse_one_to_one_select_related (unittest.loader._FailedTest.test_reverse_one_to_one_select_related) ... ERROR
+
+======================================================================
+ERROR: test_foreign_key (unittest.loader._FailedTest.test_foreign_key)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_foreign_key'
+
+======================================================================
+ERROR: test_foreign_key_multiple_prefetch (unittest.loader._FailedTest.test_foreign_key_multiple_prefetch)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_foreign_key_multiple_prefetch'
+
+======================================================================
+ERROR: test_foreign_key_prefetch_related (unittest.loader._FailedTest.test_foreign_key_prefetch_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_foreign_key_prefetch_related'
+
+======================================================================
+ERROR: test_one_to_one (unittest.loader._FailedTest.test_one_to_one)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_one_to_one'
+
+======================================================================
+ERROR: test_one_to_one_multi_prefetch_related (unittest.loader._FailedTest.test_one_to_one_multi_prefetch_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_one_to_one_multi_prefetch_related'
+
+======================================================================
+ERROR: test_one_to_one_multi_select_related (unittest.loader._FailedTest.test_one_to_one_multi_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_one_to_one_multi_select_related'
+
+======================================================================
+ERROR: test_one_to_one_prefetch_related (unittest.loader._FailedTest.test_one_to_one_prefetch_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_one_to_one_prefetch_related'
+
+======================================================================
+ERROR: test_one_to_one_select_related (unittest.loader._FailedTest.test_one_to_one_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_one_to_one_select_related'
+
+======================================================================
+ERROR: test_queryset_and (unittest.loader._FailedTest.test_queryset_and)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_queryset_and'
+
+======================================================================
+ERROR: test_queryset_or (unittest.loader._FailedTest.test_queryset_or)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_queryset_or'
+
+======================================================================
+ERROR: test_queryset_or_different_cached_items (unittest.loader._FailedTest.test_queryset_or_different_cached_items)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_queryset_or_different_cached_items'
+
+======================================================================
+ERROR: test_queryset_or_only_one_with_precache (unittest.loader._FailedTest.test_queryset_or_only_one_with_precache)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_queryset_or_only_one_with_precache'
+
+======================================================================
+ERROR: test_reverse_fk_select_related_multiple (unittest.loader._FailedTest.test_reverse_fk_select_related_multiple)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_fk_select_related_multiple'
+
+======================================================================
+ERROR: test_reverse_one_to_one (unittest.loader._FailedTest.test_reverse_one_to_one)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_one_to_one'
+
+======================================================================
+ERROR: test_reverse_one_to_one_multi_prefetch_related (unittest.loader._FailedTest.test_reverse_one_to_one_multi_prefetch_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_one_to_one_multi_prefetch_related'
+
+======================================================================
+ERROR: test_reverse_one_to_one_multi_select_related (unittest.loader._FailedTest.test_reverse_one_to_one_multi_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_one_to_one_multi_select_related'
+
+======================================================================
+ERROR: test_reverse_one_to_one_prefetch_related (unittest.loader._FailedTest.test_reverse_one_to_one_prefetch_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_one_to_one_prefetch_related'
+
+======================================================================
+ERROR: test_reverse_one_to_one_select_related (unittest.loader._FailedTest.test_reverse_one_to_one_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_one_to_one_select_related'
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.002s
+
+FAILED (errors=18)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['known_related_objects.tests.ExistingRelatedInstancesTests.test_multilevel_reverse_fk_cyclic_select_related.test_multilevel_reverse_fk_cyclic_select_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_multilevel_reverse_fk_select_related.test_multilevel_reverse_fk_select_related']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['known_related_objects.tests.ExistingRelatedInstancesTests.test_foreign_key.test_foreign_key', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_foreign_key_multiple_prefetch.test_foreign_key_multiple_prefetch', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_foreign_key_prefetch_related.test_foreign_key_prefetch_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one.test_one_to_one', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_multi_prefetch_related.test_one_to_one_multi_prefetch_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_multi_select_related.test_one_to_one_multi_select_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_prefetch_related.test_one_to_one_prefetch_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_select_related.test_one_to_one_select_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_queryset_and.test_queryset_and', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_queryset_or.test_queryset_or', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_queryset_or_different_cached_items.test_queryset_or_different_cached_items', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_queryset_or_only_one_with_precache.test_queryset_or_only_one_with_precache', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_reverse_fk_select_related_multiple.test_reverse_fk_select_related_multiple', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_reverse_one_to_one.test_reverse_one_to_one', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_reverse_one_to_one_multi_prefetch_related.test_reverse_one_to_one_multi_prefetch_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_reverse_one_to_one_multi_select_related.test_reverse_one_to_one_multi_select_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_reverse_one_to_one_prefetch_related.test_reverse_one_to_one_prefetch_related', 'known_related_objects.tests.ExistingRelatedInstancesTests.test_reverse_one_to_one_select_related.test_reverse_one_to_one_select_related']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

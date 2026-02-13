@@ -1,0 +1,37 @@
+diff --git a/xarray/core/dataset.py b/xarray/core/dataset.py
+index 8376b487..1c45d528 100644
+--- a/xarray/core/dataset.py
++++ b/xarray/core/dataset.py
+@@ -929,8 +929,12 @@ class Dataset(Mapping, ImplementsDatasetReduce, DataWithCoords):
+             if is_dask:
+                 func, args2 = v
+                 if is_persist:
+-                    name = args2[1][0]
+-                    dsk2 = {k: v for k, v in dsk.items() if k[0] == name}
++                    # Check if args2 has enough elements to avoid IndexError
++                    if len(args2) > 1 and len(args2[1]) > 0:
++                        name = args2[1][0]
++                        dsk2 = {k: v for k, v in dsk.items() if k[0] == name}
++                    else:
++                        dsk2 = dsk
+                 else:
+                     dsk2 = dsk
+                 result = func(dsk2, *args2)
+diff --git a/xarray/core/variable.py b/xarray/core/variable.py
+index 64c1895d..5c4a1d9e 100644
+--- a/xarray/core/variable.py
++++ b/xarray/core/variable.py
+@@ -218,7 +218,12 @@ def as_compatible_data(data, fastpath=False):
+         data = np.timedelta64(getattr(data, "value", data), "ns")
+ 
+     # we don't want nested self-described arrays
+-    data = getattr(data, "values", data)
++    # Use variable._data instead of values for DataArray to avoid triggering computation for dask arrays
++    from .dataarray import DataArray
++    if isinstance(data, DataArray):
++        data = data.variable._data
++    else:
++        data = getattr(data, "values", data)
+ 
+     if isinstance(data, np.ma.MaskedArray):
+         mask = np.ma.getmaskarray(data)

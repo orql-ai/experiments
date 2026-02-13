@@ -1,0 +1,82 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (3 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev176+g2051e30b9, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 3 items
+
+testing/logging/test_reporting.py::test_log_cli_enabled_disabled[True] PASSED [ 33%]
+testing/logging/test_reporting.py::test_log_cli_default_level PASSED     [ 66%]
+testing/logging/test_reporting.py::test_sections_single_new_line_after_test_outcome PASSED [100%]
+
+=========================== 3 passed in 0.11 seconds ===========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5227:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5227
+8598fd3ffb08: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+500327121db6: Pulling fs layer
+1df05e07844e: Pulling fs layer
+217b6fee0246: Pulling fs layer
+340da20e6e80: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+8dcc998a67e7: Pulling fs layer
+67121c1d29cd: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+ac5b61163589: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+1df05e07844e: Download complete
+8dcc998a67e7: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+8598fd3ffb08: Download complete
+836b79e2a6e5: Download complete
+217b6fee0246: Download complete
+67121c1d29cd: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+340da20e6e80: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+1df05e07844e: Pull complete
+217b6fee0246: Pull complete
+9243c6d3b562: Pull complete
+8dcc998a67e7: Pull complete
+67121c1d29cd: Pull complete
+340da20e6e80: Pull complete
+8598fd3ffb08: Pull complete
+Digest: sha256:50368ff0f6c8b591e4f78cae3f244a14e6de59e1798d09028ccad446d379ffa4
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5227:latest
+
+
+===== PHASE: PASS_TO_PASS (34 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev176+g2051e30b9, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 0 items
+
+========================= no tests ran in 0.00 seconds =========================
+
+
+ERROR: file not found: [100%]
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 [100%] [] [100%]------------------------------ testing/logging/test_reporting.py::test_live_logging_suspends_capture[True] testing/logging/test_reporting.py::test_live_logging_suspends_capture[False] testing/logging/test_reporting.py::test_nothing_logged testing/logging/test_reporting.py::test_messages_logged testing/logging/test_reporting.py::test_root_logger_affected testing/logging/test_reporting.py::test_log_cli_level_log_level_interaction testing/logging/test_reporting.py::test_setup_logging testing/logging/test_reporting.py::test_teardown_logging testing/logging/test_reporting.py::test_disable_log_capturing testing/logging/test_reporting.py::test_disable_log_capturing_ini testing/logging/test_reporting.py::test_log_cli_enabled_disabled[False] testing/logging/test_reporting.py::test_log_cli_default_level_multiple_tests testing/logging/test_reporting.py::test_log_cli_default_level_sections testing/logging/test_reporting.py::test_live_logs_unknown_sections testing/logging/test_reporting.py::test_log_cli_level testing/logging/test_reporting.py::test_log_cli_ini_level testing/logging/test_reporting.py::test_log_cli_auto_enable[] testing/logging/test_reporting.py::test_log_cli_auto_enable[--log-level=WARNING] testing/logging/test_reporting.py::test_log_cli_auto_enable[--log-file-level=WARNING] testing/logging/test_reporting.py::test_log_cli_auto_enable[--log-cli-level=WARNING] testing/logging/test_reporting.py::test_log_file_cli testing/logging/test_reporting.py::test_log_file_cli_level testing/logging/test_reporting.py::test_log_level_not_changed_by_default testing/logging/test_reporting.py::test_log_file_ini testing/logging/test_reporting.py::test_log_file_ini_level testing/logging/test_reporting.py::test_log_file_unicode testing/logging/test_reporting.py::test_collection_live_logging testing/logging/test_reporting.py::test_collection_logging_to_file testing/logging/test_reporting.py::test_log_in_hooks testing/logging/test_reporting.py::test_log_in_runtest_logreport testing/logging/test_reporting.py::test_log_set_path` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['[100%]', '[]', '[100%]------------------------------', 'testing/logging/test_reporting.py::test_live_logging_suspends_capture[True]', 'testing/logging/test_reporting.py::test_live_logging_suspends_capture[False]', 'testing/logging/test_reporting.py::test_nothing_logged', 'testing/logging/test_reporting.py::test_messages_logged', 'testing/logging/test_reporting.py::test_root_logger_affected', 'testing/logging/test_reporting.py::test_log_cli_level_log_level_interaction', 'testing/logging/test_reporting.py::test_setup_logging', 'testing/logging/test_reporting.py::test_teardown_logging', 'testing/logging/test_reporting.py::test_disable_log_capturing', 'testing/logging/test_reporting.py::test_disable_log_capturing_ini', 'testing/logging/test_reporting.py::test_log_cli_enabled_disabled[False]', 'testing/logging/test_reporting.py::test_log_cli_default_level_multiple_tests', 'testing/logging/test_reporting.py::test_log_cli_default_level_sections', 'testing/logging/test_reporting.py::test_live_logs_unknown_sections', 'testing/logging/test_reporting.py::test_log_cli_level', 'testing/logging/test_reporting.py::test_log_cli_ini_level', 'testing/logging/test_reporting.py::test_log_cli_auto_enable[]', 'testing/logging/test_reporting.py::test_log_cli_auto_enable[--log-level=WARNING]', 'testing/logging/test_reporting.py::test_log_cli_auto_enable[--log-file-level=WARNING]', 'testing/logging/test_reporting.py::test_log_cli_auto_enable[--log-cli-level=WARNING]', 'testing/logging/test_reporting.py::test_log_file_cli', 'testing/logging/test_reporting.py::test_log_file_cli_level', 'testing/logging/test_reporting.py::test_log_level_not_changed_by_default', 'testing/logging/test_reporting.py::test_log_file_ini', 'testing/logging/test_reporting.py::test_log_file_ini_level', 'testing/logging/test_reporting.py::test_log_file_unicode', 'testing/logging/test_reporting.py::test_collection_live_logging', 'testing/logging/test_reporting.py::test_collection_logging_to_file', 'testing/logging/test_reporting.py::test_log_in_hooks', 'testing/logging/test_reporting.py::test_log_in_runtest_logreport', 'testing/logging/test_reporting.py::test_log_set_path']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

@@ -1,0 +1,81 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        4482819
+hash randomization: on (PYTHONHASHSEED=2066131920)
+
+sympy/solvers/tests/test_polysys.py[1] .                                    [OK]
+
+================== tests finished: 1 passed, in 0.48 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-22005:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-22005
+fd657f9792a9: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+b08895a5c216: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+337d5eda4f05: Pulling fs layer
+5c809fd8a9af: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+337d5eda4f05: Download complete
+836b79e2a6e5: Download complete
+2f341c31f3b7: Download complete
+ed3dada71338: Download complete
+fd657f9792a9: Download complete
+7478e0ac0f23: Download complete
+0b326ada86d1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+b08895a5c216: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+b08895a5c216: Pull complete
+2f341c31f3b7: Pull complete
+ed3dada71338: Pull complete
+5c809fd8a9af: Pull complete
+337d5eda4f05: Pull complete
+0b326ada86d1: Pull complete
+fd657f9792a9: Pull complete
+Digest: sha256:96e13197a4643fccd010655ada45e4ede0827458a40fa28b39c1960fa5179d34
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-22005:latest
+
+
+===== PHASE: PASS_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        10642233
+hash randomization: on (PYTHONHASHSEED=1061877707)
+
+sympy/solvers/tests/test_polysys.py[2] ..                                   [OK]
+
+================== tests finished: 2 passed, in 0.90 seconds ===================
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,480 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev174+g4a2fdce62, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 2 items
+
+testing/python/fixtures.py::TestShowFixtures::test_show_fixtures FAILED  [ 50%]
+
+=================================== FAILURES ===================================
+_____________________ TestShowFixtures.test_show_fixtures ______________________
+
+self = <fixtures.TestShowFixtures object at 0x7fae77aa9a00>
+testdir = <Testdir local('/tmp/pytest-of-root/pytest-0/test_show_fixtures0')>
+
+    def test_show_fixtures(self, testdir):
+        result = testdir.runpytest("--fixtures")
+>       result.stdout.fnmatch_lines(
+            [
+                "tmpdir_factory [[]session scope[]]",
+                "*for the test session*",
+                "tmpdir",
+                "*temporary directory*",
+            ]
+        )
+E       Failed: nomatch: 'tmpdir_factory [[]session scope[]]'
+E           and: '============================= test session starts =============================='
+E           and: 'platform linux -- Python 3.9.20, pytest-4.4.2.dev174+g4a2fdce62, py-1.11.0, pluggy-0.13.1'
+E           and: 'rootdir: /tmp/pytest-of-root/pytest-0/test_show_fixtures0'
+E           and: 'collected 0 items'
+E           and: 'cache [function scope]'
+E           and: '    Return a cache object that can persist state between testing sessions.'
+E           and: '    '
+E           and: '    cache.get(key, default)'
+E           and: '    cache.set(key, value)'
+E           and: '    '
+E           and: '    Keys must be a ``/`` separated value, where the first part is usually the'
+E           and: '    name of your plugin or application to avoid clashes with other cache users.'
+E           and: '    '
+E           and: '    Values can be any object handled by the json stdlib module.'
+E           and: 'capsys [function scope]'
+E           and: '    Enable text capturing of writes to ``sys.stdout`` and ``sys.stderr``.'
+E           and: '    '
+E           and: '    The captured output is made available via ``capsys.readouterr()`` method'
+E           and: '    calls, which return a ``(out, err)`` namedtuple.'
+E           and: '    ``out`` and ``err`` will be ``text`` objects.'
+E           and: 'capsysbinary [function scope]'
+E           and: '    Enable bytes capturing of writes to ``sys.stdout`` and ``sys.stderr``.'
+E           and: '    '
+E           and: '    The captured output is made available via ``capsysbinary.readouterr()``'
+E           and: '    method calls, which return a ``(out, err)`` namedtuple.'
+E           and: '    ``out`` and ``err`` will be ``bytes`` objects.'
+E           and: 'capfd [function scope]'
+E           and: '    Enable text capturing of writes to file descriptors ``1`` and ``2``.'
+E           and: '    '
+E           and: '    The captured output is made available via ``capfd.readouterr()`` method'
+E           and: '    calls, which return a ``(out, err)`` namedtuple.'
+E           and: '    ``out`` and ``err`` will be ``text`` objects.'
+E           and: 'capfdbinary [function scope]'
+E           and: '    Enable bytes capturing of writes to file descriptors ``1`` and ``2``.'
+E           and: '    '
+E           and: '    The captured output is made available via ``capfd.readouterr()`` method'
+E           and: '    calls, which return a ``(out, err)`` namedtuple.'
+E           and: '    ``out`` and ``err`` will be ``byte`` objects.'
+E           and: 'doctest_namespace [session scope]'
+E           and: '    Fixture that returns a :py:class:`dict` that will be injected into the namespace of doctests.'
+E           and: 'pytestconfig [session scope]'
+E           and: '    Session-scoped fixture that returns the :class:`_pytest.config.Config` object.'
+E           and: '    '
+E           and: '    Example::'
+E           and: '    '
+E           and: '        def test_foo(pytestconfig):'
+E           and: '            if pytestconfig.getoption("verbose") > 0:'
+E           and: '                ...'
+E           and: 'record_property [function scope]'
+E           and: '    Add an extra properties the calling test.'
+E           and: '    User properties become part of the test report and are available to the'
+E           and: '    configured reporters, like JUnit XML.'
+E           and: '    The fixture is callable with ``(name, value)``, with value being automatically'
+E           and: '    xml-encoded.'
+E           and: '    '
+E           and: '    Example::'
+E           and: '    '
+E           and: '        def test_function(record_property):'
+E           and: '            record_property("example_key", 1)'
+E           and: 'record_xml_attribute [function scope]'
+E           and: '    Add extra xml attributes to the tag for the calling test.'
+E           and: '    The fixture is callable with ``(name, value)``, with value being'
+E           and: '    automatically xml-encoded'
+E           and: 'caplog [function scope]'
+E           and: '    Access and control log capturing.'
+E           and: '    '
+E           and: '    Captured logs are available through the following properties/methods::'
+E           and: '    '
+E           and: '    * caplog.text            -> string containing formatted log output'
+E           and: '    * caplog.records         -> list of logging.LogRecord instances'
+E           and: '    * caplog.record_tuples   -> list of (logger_name, level, message) tuples'
+E           and: '    * caplog.clear()         -> clear captured records and formatted log output string'
+E           and: 'monkeypatch [function scope]'
+E           and: '    The returned ``monkeypatch`` fixture provides these'
+E           and: '    helper methods to modify objects, dictionaries or os.environ::'
+E           and: '    '
+E           and: '        monkeypatch.setattr(obj, name, value, raising=True)'
+E           and: '        monkeypatch.delattr(obj, name, raising=True)'
+E           and: '        monkeypatch.setitem(mapping, name, value)'
+E           and: '        monkeypatch.delitem(obj, name, raising=True)'
+E           and: '        monkeypatch.setenv(name, value, prepend=False)'
+E           and: '        monkeypatch.delenv(name, raising=True)'
+E           and: '        monkeypatch.syspath_prepend(path)'
+E           and: '        monkeypatch.chdir(path)'
+E           and: '    '
+E           and: '    All modifications will be undone after the requesting'
+E           and: '    test function or fixture has finished. The ``raising``'
+E           and: '    parameter determines if a KeyError or AttributeError'
+E           and: '    will be raised if the set/deletion operation has no target.'
+E           and: 'recwarn [function scope]'
+E           and: '    Return a :class:`WarningsRecorder` instance that records all warnings emitted by test functions.'
+E           and: '    '
+E           and: '    See http://docs.python.org/library/warnings.html for information'
+E           and: '    on warning categories.'
+E       fnmatch: 'tmpdir_factory [[]session scope[]]'
+E          with: 'tmpdir_factory [session scope]'
+E       fnmatch: '*for the test session*'
+E          with: '    Return a :class:`_pytest.tmpdir.TempdirFactory` instance for the test session.'
+E       nomatch: 'tmpdir'
+E           and: 'tmp_path_factory [session scope]'
+E           and: '    Return a :class:`_pytest.tmpdir.TempPathFactory` instance for the test session.'
+E           and: 'tmpdir [function scope]'
+E           and: '    Return a temporary directory path object'
+E           and: '    which is unique to each test function invocation,'
+E           and: '    created as a sub directory of the base temporary'
+E           and: '    directory.  The returned object is a `py.path.local`_'
+E           and: '    path object.'
+E           and: '    '
+E           and: '    .. _`py.path.local`: https://py.readthedocs.io/en/latest/path.html'
+E           and: 'tmp_path [function scope]'
+E           and: '    Return a temporary directory path object'
+E           and: '    which is unique to each test function invocation,'
+E           and: '    created as a sub directory of the base temporary'
+E           and: '    directory.  The returned object is a :class:`pathlib.Path`'
+E           and: '    object.'
+E           and: '    '
+E           and: '    .. note::'
+E           and: '    '
+E           and: '        in python < 3.6 this is a pathlib2.Path'
+E           and: ''
+E           and: '========================= no tests ran in 0.00 seconds ========================='
+E           and: ''
+E       remains unmatched: 'tmpdir'
+
+/testbed/testing/python/fixtures.py:3040: Failed
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev174+g4a2fdce62, py-1.11.0, pluggy-0.13.1
+rootdir: /tmp/pytest-of-root/pytest-0/test_show_fixtures0
+collected 0 items
+cache [function scope]
+    Return a cache object that can persist state between testing sessions.
+    
+    cache.get(key, default)
+    cache.set(key, value)
+    
+    Keys must be a ``/`` separated value, where the first part is usually the
+    name of your plugin or application to avoid clashes with other cache users.
+    
+    Values can be any object handled by the json stdlib module.
+capsys [function scope]
+    Enable text capturing of writes to ``sys.stdout`` and ``sys.stderr``.
+    
+    The captured output is made available via ``capsys.readouterr()`` method
+    calls, which return a ``(out, err)`` namedtuple.
+    ``out`` and ``err`` will be ``text`` objects.
+capsysbinary [function scope]
+    Enable bytes capturing of writes to ``sys.stdout`` and ``sys.stderr``.
+    
+    The captured output is made available via ``capsysbinary.readouterr()``
+    method calls, which return a ``(out, err)`` namedtuple.
+    ``out`` and ``err`` will be ``bytes`` objects.
+capfd [function scope]
+    Enable text capturing of writes to file descriptors ``1`` and ``2``.
+    
+    The captured output is made available via ``capfd.readouterr()`` method
+    calls, which return a ``(out, err)`` namedtuple.
+    ``out`` and ``err`` will be ``text`` objects.
+capfdbinary [function scope]
+    Enable bytes capturing of writes to file descriptors ``1`` and ``2``.
+    
+    The captured output is made available via ``capfd.readouterr()`` method
+    calls, which return a ``(out, err)`` namedtuple.
+    ``out`` and ``err`` will be ``byte`` objects.
+doctest_namespace [session scope]
+    Fixture that returns a :py:class:`dict` that will be injected into the namespace of doctests.
+pytestconfig [session scope]
+    Session-scoped fixture that returns the :class:`_pytest.config.Config` object.
+    
+    Example::
+    
+        def test_foo(pytestconfig):
+            if pytestconfig.getoption("verbose") > 0:
+                ...
+record_property [function scope]
+    Add an extra properties the calling test.
+    User properties become part of the test report and are available to the
+    configured reporters, like JUnit XML.
+    The fixture is callable with ``(name, value)``, with value being automatically
+    xml-encoded.
+    
+    Example::
+    
+        def test_function(record_property):
+            record_property("example_key", 1)
+record_xml_attribute [function scope]
+    Add extra xml attributes to the tag for the calling test.
+    The fixture is callable with ``(name, value)``, with value being
+    automatically xml-encoded
+caplog [function scope]
+    Access and control log capturing.
+    
+    Captured logs are available through the following properties/methods::
+    
+    * caplog.text            -> string containing formatted log output
+    * caplog.records         -> list of logging.LogRecord instances
+    * caplog.record_tuples   -> list of (logger_name, level, message) tuples
+    * caplog.clear()         -> clear captured records and formatted log output string
+monkeypatch [function scope]
+    The returned ``monkeypatch`` fixture provides these
+    helper methods to modify objects, dictionaries or os.environ::
+    
+        monkeypatch.setattr(obj, name, value, raising=True)
+        monkeypatch.delattr(obj, name, raising=True)
+        monkeypatch.setitem(mapping, name, value)
+        monkeypatch.delitem(obj, name, raising=True)
+        monkeypatch.setenv(name, value, prepend=False)
+        monkeypatch.delenv(name, raising=True)
+        monkeypatch.syspath_prepend(path)
+        monkeypatch.chdir(path)
+    
+    All modifications will be undone after the requesting
+    test function or fixture has finished. The ``raising``
+    parameter determines if a KeyError or AttributeError
+    will be raised if the set/deletion operation has no target.
+recwarn [function scope]
+    Return a :class:`WarningsRecorder` instance that records all warnings emitted by test functions.
+    
+    See http://docs.python.org/library/warnings.html for information
+    on warning categories.
+tmpdir_factory [session scope]
+    Return a :class:`_pytest.tmpdir.TempdirFactory` instance for the test session.
+tmp_path_factory [session scope]
+    Return a :class:`_pytest.tmpdir.TempPathFactory` instance for the test session.
+tmpdir [function scope]
+    Return a temporary directory path object
+    which is unique to each test function invocation,
+    created as a sub directory of the base temporary
+    directory.  The returned object is a `py.path.local`_
+    path object.
+    
+    .. _`py.path.local`: https://py.readthedocs.io/en/latest/path.html
+tmp_path [function scope]
+    Return a temporary directory path object
+    which is unique to each test function invocation,
+    created as a sub directory of the base temporary
+    directory.  The returned object is a :class:`pathlib.Path`
+    object.
+    
+    .. note::
+    
+        in python < 3.6 this is a pathlib2.Path
+
+========================= no tests ran in 0.00 seconds =========================
+=========================== short test summary info ============================
+FAILED testing/python/fixtures.py::TestShowFixtures::test_show_fixtures
+=========================== 1 failed in 0.34 seconds ===========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5221:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5221
+836b79e2a6e5: Pulling fs layer
+1df05e07844e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+217b6fee0246: Pulling fs layer
+500327121db6: Pulling fs layer
+340da20e6e80: Pulling fs layer
+8dcc998a67e7: Pulling fs layer
+ac5b61163589: Pulling fs layer
+94d02e36de71: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+8b6a3fd6b0ce: Pulling fs layer
+217b6fee0246: Download complete
+1df05e07844e: Download complete
+ac5b61163589: Download complete
+8b6a3fd6b0ce: Download complete
+836b79e2a6e5: Download complete
+94d02e36de71: Download complete
+e5a28c0c137e: Download complete
+8dcc998a67e7: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+340da20e6e80: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+217b6fee0246: Pull complete
+1df05e07844e: Pull complete
+9243c6d3b562: Pull complete
+94d02e36de71: Pull complete
+8dcc998a67e7: Pull complete
+340da20e6e80: Pull complete
+8b6a3fd6b0ce: Pull complete
+Digest: sha256:798111aafcff014e884ce2dbef8661b850ec0f69abeda32bdf6f5d8e74d6ef10
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-5221:latest
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/python/fixtures.py::TestShowFixtures::test_show_fixtures testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_verbose` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (170 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev174+g4a2fdce62, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 50 items
+
+testing/python/fixtures.py::test_getfuncargnames PASSED                  [  2%]
+testing/python/fixtures.py::TestFillFixtures::test_fillfuncargs_exposed PASSED [  4%]
+testing/python/fixtures.py::TestShowFixtures::test_fixture_disallow_twice PASSED [  6%]
+testing/python/fixtures.py::test_call_fixture_function_error PASSED      [  8%]
+testing/python/fixtures.py::TestFillFixtures::test_funcarg_lookupfails PASSED [ 10%]
+testing/python/fixtures.py::TestFillFixtures::test_detect_recursive_dependency_error PASSED [ 12%]
+testing/python/fixtures.py::TestFillFixtures::test_funcarg_basic PASSED  [ 14%]
+testing/python/fixtures.py::TestFillFixtures::test_funcarg_lookup_modulelevel PASSED [ 16%]
+testing/python/fixtures.py::TestFillFixtures::test_funcarg_lookup_classlevel PASSED [ 18%]
+testing/python/fixtures.py::TestFillFixtures::test_conftest_funcargs_only_available_in_subdir PASSED [ 20%]
+testing/python/fixtures.py::TestFillFixtures::test_extend_fixture_module_class PASSED [ 22%]
+testing/python/fixtures.py::TestFillFixtures::test_extend_fixture_conftest_module PASSED [ 24%]
+testing/python/fixtures.py::TestFillFixtures::test_extend_fixture_conftest_conftest PASSED [ 26%]
+testing/python/fixtures.py::TestFillFixtures::test_extend_fixture_conftest_plugin PASSED [ 28%]
+testing/python/fixtures.py::TestFillFixtures::test_extend_fixture_plugin_plugin PASSED [ 30%]
+testing/python/fixtures.py::TestFillFixtures::test_override_parametrized_fixture_conftest_module PASSED [ 32%]
+testing/python/fixtures.py::TestFillFixtures::test_override_parametrized_fixture_conftest_conftest PASSED [ 34%]
+testing/python/fixtures.py::TestFillFixtures::test_override_non_parametrized_fixture_conftest_module PASSED [ 36%]
+testing/python/fixtures.py::TestFillFixtures::test_override_non_parametrized_fixture_conftest_conftest PASSED [ 38%]
+testing/python/fixtures.py::TestFillFixtures::test_override_autouse_fixture_with_parametrized_fixture_conftest_conftest PASSED [ 40%]
+testing/python/fixtures.py::TestFillFixtures::test_autouse_fixture_plugin PASSED [ 42%]
+testing/python/fixtures.py::TestFillFixtures::test_funcarg_lookup_error PASSED [ 44%]
+testing/python/fixtures.py::TestFillFixtures::test_fixture_excinfo_leak PASSED [ 46%]
+testing/python/fixtures.py::TestRequestBasic::test_request_attributes PASSED [ 48%]
+testing/python/fixtures.py::TestRequestBasic::test_request_attributes_method PASSED [ 50%]
+testing/python/fixtures.py::TestRequestBasic::test_request_contains_funcarg_arg2fixturedefs PASSED [ 52%]
+testing/python/fixtures.py::TestRequestBasic::test_request_garbage PASSED [ 54%]
+testing/python/fixtures.py::TestRequestBasic::test_getfixturevalue_recursive PASSED [ 56%]
+testing/python/fixtures.py::TestRequestBasic::test_getfixturevalue_teardown PASSED [ 58%]
+testing/python/fixtures.py::TestRequestBasic::test_getfixturevalue[getfixturevalue] PASSED [ 60%]
+testing/python/fixtures.py::TestRequestBasic::test_getfixturevalue[getfuncargvalue] PASSED [ 62%]
+testing/python/fixtures.py::TestRequestBasic::test_request_addfinalizer PASSED [ 64%]
+testing/python/fixtures.py::TestRequestBasic::test_request_addfinalizer_failing_setup PASSED [ 66%]
+testing/python/fixtures.py::TestRequestBasic::test_request_addfinalizer_failing_setup_module PASSED [ 68%]
+testing/python/fixtures.py::TestRequestBasic::test_request_addfinalizer_partial_setup_failure PASSED [ 70%]
+testing/python/fixtures.py::TestRequestBasic::test_request_subrequest_addfinalizer_exceptions PASSED [ 72%]
+testing/python/fixtures.py::TestRequestBasic::test_request_getmodulepath PASSED [ 74%]
+testing/python/fixtures.py::TestRequestBasic::test_request_fixturenames PASSED [ 76%]
+testing/python/fixtures.py::TestRequestBasic::test_request_fixturenames_dynamic_fixture PASSED [ 78%]
+testing/python/fixtures.py::TestRequestBasic::test_funcargnames_compatattr PASSED [ 80%]
+testing/python/fixtures.py::TestRequestBasic::test_setupdecorator_and_xunit PASSED [ 82%]
+testing/python/fixtures.py::TestRequestBasic::test_fixtures_sub_subdir_normalize_sep PASSED [ 84%]
+testing/python/fixtures.py::TestRequestBasic::test_show_fixtures_color_yes PASSED [ 86%]
+testing/python/fixtures.py::TestRequestBasic::test_newstyle_with_request PASSED [ 88%]
+testing/python/fixtures.py::TestRequestBasic::test_setupcontext_no_param PASSED [ 90%]
+testing/python/fixtures.py::TestRequestMarking::test_applymarker PASSED  [ 92%]
+testing/python/fixtures.py::TestRequestMarking::test_accesskeywords PASSED [ 94%]
+testing/python/fixtures.py::TestRequestMarking::test_accessmarker_dynamic PASSED [ 96%]
+testing/python/fixtures.py::TestFixtureUsages::test_noargfixturedec PASSED [ 98%]
+testing/python/fixtures.py::TestFixtureUsages::test_receives_funcargs PASSED [100%]
+
+========================== 50 passed in 1.97 seconds ===========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev174+g4a2fdce62, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 47 items
+
+========================= no tests ran in 0.26 seconds =========================
+
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979['fixt,]
+(no name "/testbed/testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979['fixt,]" in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[['fixt',]
+(no name "/testbed/testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[['fixt',]" in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[('fixt',]
+(no name "/testbed/testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[('fixt',]" in any of [<Instance ()>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/python/fixtures.py::TestFixtureUsages::test_receives_funcargs_scope_mismatch testing/python/fixtures.py::TestFixtureUsages::test_receives_funcargs_scope_mismatch_issue660 testing/python/fixtures.py::TestFixtureUsages::test_invalid_scope testing/python/fixtures.py::TestFixtureUsages::test_funcarg_parametrized_and_used_twice testing/python/fixtures.py::TestFixtureUsages::test_factory_uses_unknown_funcarg_as_dependency_error testing/python/fixtures.py::TestFixtureUsages::test_factory_setup_as_classes_fails testing/python/fixtures.py::TestFixtureUsages::test_request_can_be_overridden testing/python/fixtures.py::TestFixtureUsages::test_usefixtures_marker testing/python/fixtures.py::TestFixtureUsages::test_usefixtures_ini testing/python/fixtures.py::TestFixtureUsages::test_usefixtures_seen_in_showmarkers testing/python/fixtures.py::TestFixtureUsages::test_request_instance_issue203 testing/python/fixtures.py::TestFixtureUsages::test_fixture_parametrized_with_iterator testing/python/fixtures.py::TestFixtureUsages::test_setup_functions_as_fixtures testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_evil_objects_issue214 testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_conftest testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_conftest_and_module_and_class testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_relative_node_ids testing/python/fixtures.py::TestFixtureManagerParseFactories::test_package_xunit_fixture testing/python/fixtures.py::TestFixtureManagerParseFactories::test_package_fixture_complex testing/python/fixtures.py::TestFixtureManagerParseFactories::test_collect_custom_items testing/python/fixtures.py::TestAutouseDiscovery::test_parsefactories_conftest testing/python/fixtures.py::TestAutouseDiscovery::test_two_classes_separated_autouse testing/python/fixtures.py::TestAutouseDiscovery::test_setup_at_classlevel testing/python/fixtures.py::TestAutouseDiscovery::test_callables_nocode testing/python/fixtures.py::TestAutouseDiscovery::test_autouse_in_conftests testing/python/fixtures.py::TestAutouseDiscovery::test_autouse_in_module_and_two_classes testing/python/fixtures.py::TestAutouseManagement::test_autouse_conftest_mid_directory testing/python/fixtures.py::TestAutouseManagement::test_funcarg_and_setup testing/python/fixtures.py::TestAutouseManagement::test_uses_parametrized_resource testing/python/fixtures.py::TestAutouseManagement::test_session_parametrized_function testing/python/fixtures.py::TestAutouseManagement::test_class_function_parametrization_finalization testing/python/fixtures.py::TestAutouseManagement::test_scope_ordering testing/python/fixtures.py::TestAutouseManagement::test_parametrization_setup_teardown_ordering testing/python/fixtures.py::TestAutouseManagement::test_ordering_autouse_before_explicit testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p10-p00] testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p10-p01] testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p11-p00] testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p11-p01] testing/python/fixtures.py::TestFixtureMarker::test_parametrize testing/python/fixtures.py::TestFixtureMarker::test_multiple_parametrization_issue_736 testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979['fixt,] testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979['fixt,val'] testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[['fixt',] testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[('fixt',] testing/python/fixtures.py::TestFixtureMarker::test_scope_session testing/python/fixtures.py::TestFixtureMarker::test_scope_session_exc testing/python/fixtures.py::TestFixtureMarker::test_scope_session_exc_two_fix testing/python/fixtures.py::TestFixtureMarker::test_scope_exc testing/python/fixtures.py::TestFixtureMarker::test_scope_module_uses_session testing/python/fixtures.py::TestFixtureMarker::test_scope_module_and_finalizer` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev174+g4a2fdce62, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 42 items
+
+========================= no tests ran in 0.27 seconds =========================
+
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[session--fspath]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[session--fspath]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[module-module]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[module-module]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[class-module]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[class-module]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[function-module]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_setup[function-module]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[session--fspath]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[session--fspath]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[module-module]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[module-module]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[class-module]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[class-module]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[function-module]
+(no name '/testbed/testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[function-module]' in any of [<Instance ()>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/python/fixtures.py::TestFixtureMarker::test_scope_mismatch_various testing/python/fixtures.py::TestFixtureMarker::test_register_only_with_mark testing/python/fixtures.py::TestFixtureMarker::test_parametrize_and_scope testing/python/fixtures.py::TestFixtureMarker::test_scope_mismatch testing/python/fixtures.py::TestFixtureMarker::test_parametrize_separated_order testing/python/fixtures.py::TestFixtureMarker::test_module_parametrized_ordering testing/python/fixtures.py::TestFixtureMarker::test_dynamic_parametrized_ordering testing/python/fixtures.py::TestFixtureMarker::test_class_ordering testing/python/fixtures.py::TestFixtureMarker::test_parametrize_separated_order_higher_scope_first testing/python/fixtures.py::TestFixtureMarker::test_parametrized_fixture_teardown_order testing/python/fixtures.py::TestFixtureMarker::test_fixture_finalizer testing/python/fixtures.py::TestFixtureMarker::test_class_scope_with_normal_tests testing/python/fixtures.py::TestFixtureMarker::test_request_is_clean testing/python/fixtures.py::TestFixtureMarker::test_parametrize_separated_lifecycle testing/python/fixtures.py::TestFixtureMarker::test_parametrize_function_scoped_finalizers_called testing/python/fixtures.py::TestFixtureMarker::test_finalizer_order_on_parametrization[session] testing/python/fixtures.py::TestFixtureMarker::test_finalizer_order_on_parametrization[function] testing/python/fixtures.py::TestFixtureMarker::test_finalizer_order_on_parametrization[module] testing/python/fixtures.py::TestFixtureMarker::test_class_scope_parametrization_ordering testing/python/fixtures.py::TestFixtureMarker::test_parametrize_setup_function testing/python/fixtures.py::TestFixtureMarker::test_fixture_marked_function_not_collected_as_test testing/python/fixtures.py::TestFixtureMarker::test_params_and_ids testing/python/fixtures.py::TestFixtureMarker::test_params_and_ids_yieldfixture testing/python/fixtures.py::TestFixtureMarker::test_deterministic_fixture_collection testing/python/fixtures.py::TestRequestScopeAccess::test_setup[session--fspath] testing/python/fixtures.py::TestRequestScopeAccess::test_setup[module-module] testing/python/fixtures.py::TestRequestScopeAccess::test_setup[class-module] testing/python/fixtures.py::TestRequestScopeAccess::test_setup[function-module] testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[session--fspath] testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[module-module] testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[class-module] testing/python/fixtures.py::TestRequestScopeAccess::test_funcarg[function-module] testing/python/fixtures.py::TestErrors::test_subfactory_missing_funcarg testing/python/fixtures.py::TestErrors::test_issue498_fixture_finalizer_failing testing/python/fixtures.py::TestErrors::test_setupfunc_missing_funcarg testing/python/fixtures.py::TestShowFixtures::test_funcarg_compat testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_testmodule testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_conftest[True] testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_conftest[False] testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_trimmed_doc testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_doc testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_doc_first_line_unindented testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_indented_in_class testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_different_files testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_with_same_name testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_simple[fixture] testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_simple[yield_fixture] testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_scoped[fixture] testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_scoped[yield_fixture] testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_setup_exception[fixture]` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-4.4.2.dev174+g4a2fdce62, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 20 items
+
+testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_setup_exception[yield_fixture] PASSED [  5%]
+testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_teardown_exception[fixture] PASSED [ 10%]
+testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_teardown_exception[yield_fixture] PASSED [ 15%]
+testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_yields_more_than_one[fixture] PASSED [ 20%]
+testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_yields_more_than_one[yield_fixture] PASSED [ 25%]
+testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_custom_name[fixture] PASSED [ 30%]
+testing/python/fixtures.py::TestContextManagerFixtureFuncs::test_custom_name[yield_fixture] PASSED [ 35%]
+testing/python/fixtures.py::TestParameterizedSubRequest::test_call_from_fixture PASSED [ 40%]
+testing/python/fixtures.py::TestParameterizedSubRequest::test_call_from_test PASSED [ 45%]
+testing/python/fixtures.py::TestParameterizedSubRequest::test_external_fixture PASSED [ 50%]
+testing/python/fixtures.py::TestParameterizedSubRequest::test_non_relative_path PASSED [ 55%]
+testing/python/fixtures.py::test_pytest_fixture_setup_and_post_finalizer_hook PASSED [ 60%]
+testing/python/fixtures.py::TestScopeOrdering::test_func_closure_module_auto[mark] PASSED [ 65%]
+testing/python/fixtures.py::TestScopeOrdering::test_func_closure_module_auto[autouse] PASSED [ 70%]
+testing/python/fixtures.py::TestScopeOrdering::test_func_closure_with_native_fixtures PASSED [ 75%]
+testing/python/fixtures.py::TestScopeOrdering::test_func_closure_module PASSED [ 80%]
+testing/python/fixtures.py::TestScopeOrdering::test_func_closure_scopes_reordered PASSED [ 85%]
+testing/python/fixtures.py::TestScopeOrdering::test_func_closure_same_scope_closer_root_first PASSED [ 90%]
+testing/python/fixtures.py::TestScopeOrdering::test_func_closure_all_scopes_complex PASSED [ 95%]
+testing/python/fixtures.py::TestScopeOrdering::test_multiple_packages PASSED [100%]
+
+========================== 20 passed in 0.84 seconds ===========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['testing/python/fixtures.py::TestShowFixtures::test_show_fixtures', 'testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_verbose']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['testing/python/fixtures.py::TestFixtureUsages::test_receives_funcargs_scope_mismatch', 'testing/python/fixtures.py::TestFixtureUsages::test_receives_funcargs_scope_mismatch_issue660', 'testing/python/fixtures.py::TestFixtureUsages::test_invalid_scope', 'testing/python/fixtures.py::TestFixtureUsages::test_funcarg_parametrized_and_used_twice', 'testing/python/fixtures.py::TestFixtureUsages::test_factory_uses_unknown_funcarg_as_dependency_error', 'testing/python/fixtures.py::TestFixtureUsages::test_factory_setup_as_classes_fails', 'testing/python/fixtures.py::TestFixtureUsages::test_request_can_be_overridden', 'testing/python/fixtures.py::TestFixtureUsages::test_usefixtures_marker', 'testing/python/fixtures.py::TestFixtureUsages::test_usefixtures_ini', 'testing/python/fixtures.py::TestFixtureUsages::test_usefixtures_seen_in_showmarkers', 'testing/python/fixtures.py::TestFixtureUsages::test_request_instance_issue203', 'testing/python/fixtures.py::TestFixtureUsages::test_fixture_parametrized_with_iterator', 'testing/python/fixtures.py::TestFixtureUsages::test_setup_functions_as_fixtures', 'testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_evil_objects_issue214', 'testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_conftest', 'testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_conftest_and_module_and_class', 'testing/python/fixtures.py::TestFixtureManagerParseFactories::test_parsefactories_relative_node_ids', 'testing/python/fixtures.py::TestFixtureManagerParseFactories::test_package_xunit_fixture', 'testing/python/fixtures.py::TestFixtureManagerParseFactories::test_package_fixture_complex', 'testing/python/fixtures.py::TestFixtureManagerParseFactories::test_collect_custom_items', 'testing/python/fixtures.py::TestAutouseDiscovery::test_parsefactories_conftest', 'testing/python/fixtures.py::TestAutouseDiscovery::test_two_classes_separated_autouse', 'testing/python/fixtures.py::TestAutouseDiscovery::test_setup_at_classlevel', 'testing/python/fixtures.py::TestAutouseDiscovery::test_callables_nocode', 'testing/python/fixtures.py::TestAutouseDiscovery::test_autouse_in_conftests', 'testing/python/fixtures.py::TestAutouseDiscovery::test_autouse_in_module_and_two_classes', 'testing/python/fixtures.py::TestAutouseManagement::test_autouse_conftest_mid_directory', 'testing/python/fixtures.py::TestAutouseManagement::test_funcarg_and_setup', 'testing/python/fixtures.py::TestAutouseManagement::test_uses_parametrized_resource', 'testing/python/fixtures.py::TestAutouseManagement::test_session_parametrized_function', 'testing/python/fixtures.py::TestAutouseManagement::test_class_function_parametrization_finalization', 'testing/python/fixtures.py::TestAutouseManagement::test_scope_ordering', 'testing/python/fixtures.py::TestAutouseManagement::test_parametrization_setup_teardown_ordering', 'testing/python/fixtures.py::TestAutouseManagement::test_ordering_autouse_before_explicit', 'testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p10-p00]', 'testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p10-p01]', 'testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p11-p00]', 'testing/python/fixtures.py::TestAutouseManagement::test_ordering_dependencies_torndown_first[p11-p01]', 'testing/python/fixtures.py::TestFixtureMarker::test_parametrize', 'testing/python/fixtures.py::TestFixtureMarker::test_multiple_parametrization_issue_736', "testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979['fixt,]", "testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979['fixt,val']", "testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[['fixt',]", "testing/python/fixtures.py::TestFixtureMarker::test_override_parametrized_fixture_issue_979[('fixt',]", 'testing/python/fixtures.py::TestFixtureMarker::test_scope_session', 'testing/python/fixtures.py::TestFixtureMarker::test_scope_session_exc', 'testing/python/fixtures.py::TestFixtureMarker::test_scope_session_exc_two_fix', 'testing/python/fixtures.py::TestFixtureMarker::test_scope_exc', 'testing/python/fixtures.py::TestFixtureMarker::test_scope_module_uses_session', 'testing/python/fixtures.py::TestFixtureMarker::test_scope_module_and_finalizer']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

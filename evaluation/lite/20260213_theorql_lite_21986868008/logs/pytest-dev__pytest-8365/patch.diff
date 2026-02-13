@@ -1,0 +1,35 @@
+diff --git a/src/_pytest/tmpdir.py b/src/_pytest/tmpdir.py
+index 29c7e19d7..0b169cd8c 100644
+--- a/src/_pytest/tmpdir.py
++++ b/src/_pytest/tmpdir.py
+@@ -111,7 +111,7 @@ class TempPathFactory:
+         else:
+             from_env = os.environ.get("PYTEST_DEBUG_TEMPROOT")
+             temproot = Path(from_env or tempfile.gettempdir()).resolve()
+-            user = get_user() or "unknown"
++            user = _get_user_id()
+             # use a sub-directory in the temproot to speed-up
+             # make_numbered_dir() call
+             rootdir = temproot.joinpath(f"pytest-of-{user}")
+@@ -159,6 +159,21 @@ def get_user() -> Optional[str]:
+         return None
+ 
+ 
++def _get_user_id() -> str:
++    """Return the current user name, or "unknown" if getuser() does not work
++    or returns a name with characters not allowed in directory names.
++    """
++    user = get_user()
++    if user is None:
++        return "unknown"
++    # Check for characters that might be problematic for directory names.
++    # On Windows, the following are illegal: < > : " / \ | ? *
++    # If any are found, return "unknown" instead.
++    if re.search(r"[<>:\"/\\\\|?*]", user):
++        return "unknown"
++    return user
++
++
+ def pytest_configure(config: Config) -> None:
+     """Create a TempdirFactory and attach it to the config object.
+ 

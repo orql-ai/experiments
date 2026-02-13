@@ -1,0 +1,300 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_pickle.py::test_complete[png] <- lib/matplotlib/testing/decorators.py PASSED [100%]
+
+============================== 1 passed in 11.13s ==============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25332:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25332
+7478e0ac0f23: Pulling fs layer
+e2309197fa57: Pulling fs layer
+f9fbd035a50c: Pulling fs layer
+ff21019ca605: Pulling fs layer
+500327121db6: Pulling fs layer
+803a19ff22a0: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+4af3c06a3dd5: Pulling fs layer
+ac5b61163589: Pulling fs layer
+4755226da024: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+4fd96bd63a28: Pulling fs layer
+4755226da024: Download complete
+803a19ff22a0: Download complete
+4fd96bd63a28: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+ff21019ca605: Download complete
+ac5b61163589: Download complete
+7478e0ac0f23: Download complete
+f9fbd035a50c: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+e2309197fa57: Download complete
+500327121db6: Pull complete
+4af3c06a3dd5: Download complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+ff21019ca605: Pull complete
+e2309197fa57: Pull complete
+803a19ff22a0: Pull complete
+4755226da024: Pull complete
+4fd96bd63a28: Pull complete
+4af3c06a3dd5: Pull complete
+f9fbd035a50c: Pull complete
+Digest: sha256:d7e0986d72709bb9de2a330021b2e9faf5865d9d0cbf133e0c8aaf507630fbda
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-25332:latest
+
+
+===== PHASE: PASS_TO_PASS (181 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_pickle.py::test_simple PASSED                  [  2%]
+lib/matplotlib/tests/test_pickle.py::test_gcf PASSED                     [  4%]
+lib/matplotlib/tests/test_pickle.py::test_no_pyplot PASSED               [  6%]
+lib/matplotlib/tests/test_pickle.py::test_renderer PASSED                [  8%]
+lib/matplotlib/tests/test_pickle.py::test_image PASSED                   [ 10%]
+lib/matplotlib/tests/test_pickle.py::test_polar PASSED                   [ 12%]
+lib/matplotlib/tests/test_pickle.py::test_transform PASSED               [ 14%]
+lib/matplotlib/tests/test_pickle.py::test_rrulewrapper PASSED            [ 16%]
+lib/matplotlib/tests/test_pickle.py::test_shared PASSED                  [ 18%]
+lib/matplotlib/tests/test_pickle.py::test_inset_and_secondary PASSED     [ 20%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap0] PASSED             [ 22%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap1] PASSED             [ 24%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap2] PASSED             [ 26%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap3] PASSED             [ 28%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap4] PASSED             [ 30%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap5] PASSED             [ 32%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap6] PASSED             [ 34%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap7] PASSED             [ 36%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap8] PASSED             [ 38%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap9] PASSED             [ 40%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap10] PASSED            [ 42%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap11] PASSED            [ 44%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap12] PASSED            [ 46%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap13] PASSED            [ 48%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap14] PASSED            [ 50%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap15] PASSED            [ 52%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap16] PASSED            [ 54%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap17] PASSED            [ 56%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap18] PASSED            [ 58%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap19] PASSED            [ 60%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap20] PASSED            [ 62%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap21] PASSED            [ 64%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap22] PASSED            [ 66%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap23] PASSED            [ 68%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap24] PASSED            [ 70%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap25] PASSED            [ 72%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap26] PASSED            [ 74%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap27] PASSED            [ 76%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap28] PASSED            [ 78%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap29] PASSED            [ 80%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap30] PASSED            [ 82%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap31] PASSED            [ 84%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap32] PASSED            [ 86%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap33] PASSED            [ 88%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap34] PASSED            [ 90%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap35] PASSED            [ 92%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap36] PASSED            [ 94%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap37] PASSED            [ 96%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap38] PASSED            [ 98%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap39] PASSED            [100%]
+
+============================== 50 passed in 9.79s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap40] PASSED            [  2%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap41] PASSED            [  4%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap42] PASSED            [  6%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap43] PASSED            [  8%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap44] PASSED            [ 10%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap45] PASSED            [ 12%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap46] PASSED            [ 14%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap47] PASSED            [ 16%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap48] PASSED            [ 18%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap49] PASSED            [ 20%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap50] PASSED            [ 22%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap51] PASSED            [ 24%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap52] PASSED            [ 26%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap53] PASSED            [ 28%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap54] PASSED            [ 30%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap55] PASSED            [ 32%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap56] PASSED            [ 34%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap57] PASSED            [ 36%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap58] PASSED            [ 38%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap59] PASSED            [ 40%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap60] PASSED            [ 42%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap61] PASSED            [ 44%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap62] PASSED            [ 46%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap63] PASSED            [ 48%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap64] PASSED            [ 50%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap65] PASSED            [ 52%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap66] PASSED            [ 54%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap67] PASSED            [ 56%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap68] PASSED            [ 58%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap69] PASSED            [ 60%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap70] PASSED            [ 62%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap71] PASSED            [ 64%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap72] PASSED            [ 66%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap73] PASSED            [ 68%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap74] PASSED            [ 70%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap75] PASSED            [ 72%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap76] PASSED            [ 74%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap77] PASSED            [ 76%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap78] PASSED            [ 78%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap79] PASSED            [ 80%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap80] PASSED            [ 82%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap81] PASSED            [ 84%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap82] PASSED            [ 86%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap83] PASSED            [ 88%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap84] PASSED            [ 90%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap85] PASSED            [ 92%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap86] PASSED            [ 94%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap87] PASSED            [ 96%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap88] PASSED            [ 98%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap89] PASSED            [100%]
+
+============================== 50 passed in 8.90s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap90] PASSED            [  2%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap91] PASSED            [  4%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap92] PASSED            [  6%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap93] PASSED            [  8%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap94] PASSED            [ 10%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap95] PASSED            [ 12%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap96] PASSED            [ 14%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap97] PASSED            [ 16%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap98] PASSED            [ 18%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap99] PASSED            [ 20%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap100] PASSED           [ 22%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap101] PASSED           [ 24%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap102] PASSED           [ 26%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap103] PASSED           [ 28%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap104] PASSED           [ 30%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap105] PASSED           [ 32%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap106] PASSED           [ 34%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap107] PASSED           [ 36%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap108] PASSED           [ 38%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap109] PASSED           [ 40%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap110] PASSED           [ 42%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap111] PASSED           [ 44%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap112] PASSED           [ 46%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap113] PASSED           [ 48%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap114] PASSED           [ 50%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap115] PASSED           [ 52%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap116] PASSED           [ 54%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap117] PASSED           [ 56%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap118] PASSED           [ 58%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap119] PASSED           [ 60%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap120] PASSED           [ 62%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap121] PASSED           [ 64%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap122] PASSED           [ 66%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap123] PASSED           [ 68%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap124] PASSED           [ 70%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap125] PASSED           [ 72%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap126] PASSED           [ 74%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap127] PASSED           [ 76%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap128] PASSED           [ 78%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap129] PASSED           [ 80%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap130] PASSED           [ 82%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap131] PASSED           [ 84%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap132] PASSED           [ 86%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap133] PASSED           [ 88%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap134] PASSED           [ 90%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap135] PASSED           [ 92%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap136] PASSED           [ 94%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap137] PASSED           [ 96%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap138] PASSED           [ 98%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap139] PASSED           [100%]
+
+============================== 50 passed in 8.77s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 31 items
+
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap140] PASSED           [  3%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap141] PASSED           [  6%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap142] PASSED           [  9%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap143] PASSED           [ 12%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap144] PASSED           [ 16%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap145] PASSED           [ 19%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap146] PASSED           [ 22%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap147] PASSED           [ 25%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap148] PASSED           [ 29%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap149] PASSED           [ 32%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap150] PASSED           [ 35%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap151] PASSED           [ 38%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap152] PASSED           [ 41%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap153] PASSED           [ 45%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap154] PASSED           [ 48%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap155] PASSED           [ 51%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap156] PASSED           [ 54%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap157] PASSED           [ 58%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap158] PASSED           [ 61%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap159] PASSED           [ 64%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap160] PASSED           [ 67%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap161] PASSED           [ 70%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap162] PASSED           [ 74%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap163] PASSED           [ 77%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap164] PASSED           [ 80%]
+lib/matplotlib/tests/test_pickle.py::test_cmap[cmap165] PASSED           [ 83%]
+lib/matplotlib/tests/test_pickle.py::test_unpickle_canvas PASSED         [ 87%]
+lib/matplotlib/tests/test_pickle.py::test_mpl_toolkits PASSED            [ 90%]
+lib/matplotlib/tests/test_pickle.py::test_standard_norm PASSED           [ 93%]
+lib/matplotlib/tests/test_pickle.py::test_dynamic_norm PASSED            [ 96%]
+lib/matplotlib/tests/test_pickle.py::test_vertexselector PASSED          [100%]
+
+============================== 31 passed in 9.32s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

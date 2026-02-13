@@ -1,0 +1,21 @@
+diff --git a/sympy/polys/polyutils.py b/sympy/polys/polyutils.py
+index f51f80098d..702dc3e8e4 100644
+--- a/sympy/polys/polyutils.py
++++ b/sympy/polys/polyutils.py
+@@ -266,8 +266,14 @@ def _is_coeff(factor):
+                     else:
+                         base, exp = decompose_power_rat(factor)
+ 
+-                    elements[base] = elements.setdefault(base, 0) + exp
+-                    gens.add(base)
++                    # Only add base as a generator if it's a valid symbol-like expression
++                    # Piecewise and other non-symbol expressions should not be generators
++                    if base.is_Symbol or (hasattr(base, 'is_Piecewise') and base.is_Piecewise is False):
++                        elements[base] = elements.setdefault(base, 0) + exp
++                        gens.add(base)
++                    else:
++                        # For non-symbol bases (like Piecewise), treat them as coefficients
++                        coeff.append(factor)
+ 
+             terms.append((coeff, elements))
+ 

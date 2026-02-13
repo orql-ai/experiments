@@ -1,0 +1,61 @@
+diff --git a/lib/matplotlib/style/core.py b/lib/matplotlib/style/core.py
+index fb0a5426e6..22ad7935bf 100644
+--- a/lib/matplotlib/style/core.py
++++ b/lib/matplotlib/style/core.py
+@@ -244,6 +244,42 @@ def update_nested_dict(main_dict, new_dict):
+     return main_dict
+ 
+ 
++class _StyleLibrary(dict):
++    """
++    A dictionary subclass that stores matplotlib style settings.
++    
++    Provides backward compatibility for deprecated seaborn style names.
++    """
++    _DEPRECATED_SEABORN_STYLES = [
++        "seaborn",
++        "seaborn-bright",
++        "seaborn-colorblind",
++        "seaborn-dark",
++        "seaborn-darkgrid",
++        "seaborn-dark-palette",
++        "seaborn-deep",
++        "seaborn-muted",
++        "seaborn-notebook",
++        "seaborn-paper",
++        "seaborn-pastel",
++        "seaborn-poster",
++        "seaborn-talk",
++        "seaborn-ticks",
++        "seaborn-white",
++        "seaborn-whitegrid",
++    ]
++    
++    def __getitem__(self, key):
++        if key in self._DEPRECATED_SEABORN_STYLES:
++            _api.warn_deprecated(
++                "3.6", message="The seaborn styles shipped by Matplotlib "
++                "are deprecated since %(since)s, as they no longer "
++                "correspond to the styles shipped by seaborn. However, "
++                "they will remain available as 'seaborn-v0_8-<style>'. "
++                "Alternatively, directly use the seaborn API instead.")
++        return super().__getitem__(key)
++
++
+ # Load style library
+ # ==================
+ _base_library = read_style_directory(BASE_LIBRARY_PATH)
+@@ -254,7 +290,12 @@ available = []
+ def reload_library():
+     """Reload the style library."""
+     global library
+-    library = update_user_library(_base_library)
++    library = _StyleLibrary(update_user_library(_base_library))
++    # Add deprecated seaborn style aliases for backward compatibility
++    for style in _StyleLibrary._DEPRECATED_SEABORN_STYLES:
++        new_style = style.replace("seaborn", "seaborn-v0_8")
++        if new_style in library and style not in library:
++            library[style] = library[new_style]
+     available[:] = sorted(library.keys())
+ 
+ 

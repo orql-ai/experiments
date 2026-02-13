@@ -1,0 +1,197 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application delete
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, delete, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table delete_r
+    Creating table delete_s
+    Creating table delete_t
+    Creating table delete_u
+    Creating table delete_rchild
+    Creating table delete_a
+    Creating table delete_m
+    Creating table delete_mr
+    Creating table delete_mrnull
+    Creating table delete_avatar
+    Creating table delete_user
+    Creating table delete_hiddenuser
+    Creating table delete_hiddenuserprofile
+    Creating table delete_m2mto
+    Creating table delete_m2mfrom
+    Creating table delete_parent
+    Creating table delete_child
+    Creating table delete_base
+    Creating table delete_reltobase
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11179:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-11179
+c5cbf2dc5a61: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+d401492bf2de: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+e578186687ce: Pulling fs layer
+e4e125026d30: Pulling fs layer
+11e56cae157a: Pulling fs layer
+fe2fa83af7d6: Pulling fs layer
+b08d3a6e3cbc: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e5a28c0c137e: Download complete
+e4e125026d30: Download complete
+11e56cae157a: Download complete
+b08d3a6e3cbc: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+e578186687ce: Download complete
+c5cbf2dc5a61: Download complete
+7478e0ac0f23: Download complete
+fe2fa83af7d6: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+d401492bf2de: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+e4e125026d30: Pull complete
+e578186687ce: Pull complete
+d401492bf2de: Pull complete
+11e56cae157a: Pull complete
+b08d3a6e3cbc: Pull complete
+fe2fa83af7d6: Pull complete
+c5cbf2dc5a61: Pull complete
+Digest: sha256:210408af9fec5ef1027a73e1ef73b0dbacdd40e8dd4e53a9e0b69751d296a3e3
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11179:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_fast_delete_instance_set_pk_none (delete.tests.FastDeleteTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (40 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application delete
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, delete, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table delete_r
+    Creating table delete_s
+    Creating table delete_t
+    Creating table delete_u
+    Creating table delete_rchild
+    Creating table delete_a
+    Creating table delete_m
+    Creating table delete_mr
+    Creating table delete_mrnull
+    Creating table delete_avatar
+    Creating table delete_user
+    Creating table delete_hiddenuser
+    Creating table delete_hiddenuserprofile
+    Creating table delete_m2mto
+    Creating table delete_m2mfrom
+    Creating table delete_parent
+    Creating table delete_child
+    Creating table delete_base
+    Creating table delete_reltobase
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_fast_delete_empty_no_update_can_self_select (delete.tests.FastDeleteTests) ... ok
+test_fast_delete_fk (delete.tests.FastDeleteTests) ... ok
+test_fast_delete_inheritance (delete.tests.FastDeleteTests) ... ok
+test_fast_delete_joined_qs (delete.tests.FastDeleteTests) ... ok
+test_fast_delete_large_batch (delete.tests.FastDeleteTests) ... ok
+test_fast_delete_m2m (delete.tests.FastDeleteTests) ... ok
+test_fast_delete_qs (delete.tests.FastDeleteTests) ... ok
+test_fast_delete_revm2m (delete.tests.FastDeleteTests) ... ok
+test_auto (delete.tests.OnDeleteTests) ... ok
+test_auto_nullable (delete.tests.OnDeleteTests) ... ok
+test_cascade (delete.tests.OnDeleteTests) ... ok
+test_cascade_from_child (delete.tests.OnDeleteTests) ... ok
+test_cascade_from_parent (delete.tests.OnDeleteTests) ... ok
+test_cascade_nullable (delete.tests.OnDeleteTests) ... ok
+test_do_nothing (delete.tests.OnDeleteTests) ... ok
+test_do_nothing_qscount (delete.tests.OnDeleteTests) ... ok
+test_inheritance_cascade_down (delete.tests.OnDeleteTests) ... ok
+test_inheritance_cascade_up (delete.tests.OnDeleteTests) ... ok
+test_o2o_setnull (delete.tests.OnDeleteTests) ... ok
+test_protect (delete.tests.OnDeleteTests) ... ok
+test_setdefault (delete.tests.OnDeleteTests) ... ok
+test_setdefault_none (delete.tests.OnDeleteTests) ... ok
+test_setnull (delete.tests.OnDeleteTests) ... ok
+test_setnull_from_child (delete.tests.OnDeleteTests) ... ok
+test_setnull_from_parent (delete.tests.OnDeleteTests) ... ok
+test_setvalue (delete.tests.OnDeleteTests) ... ok
+test_bulk (delete.tests.DeletionTests) ... ok
+test_can_defer_constraint_checks (delete.tests.DeletionTests) ... ok
+test_delete_with_keeping_parents (delete.tests.DeletionTests) ... ok
+test_delete_with_keeping_parents_relationships (delete.tests.DeletionTests) ... ok
+test_deletion_order (delete.tests.DeletionTests) ... ok
+test_hidden_related (delete.tests.DeletionTests) ... ok
+test_instance_update (delete.tests.DeletionTests) ... ok
+test_large_delete (delete.tests.DeletionTests) ... ok
+test_large_delete_related (delete.tests.DeletionTests) ... ok
+test_m2m (delete.tests.DeletionTests) ... ok
+test_model_delete_returns_num_rows (delete.tests.DeletionTests) ... ok
+test_proxied_model_duplicate_queries (delete.tests.DeletionTests) ... ok
+test_queryset_delete_returns_num_rows (delete.tests.DeletionTests) ... ok
+test_relational_post_delete_signals_happen_before_parent_object (delete.tests.DeletionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.716s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

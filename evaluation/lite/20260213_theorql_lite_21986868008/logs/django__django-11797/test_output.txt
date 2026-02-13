@@ -1,0 +1,177 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application lookup
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, lookup, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table lookup_alarm
+    Creating table lookup_author
+    Creating table lookup_article
+    Creating table lookup_tag
+    Creating table lookup_season
+    Creating table lookup_game
+    Creating table lookup_player
+    Creating table lookup_product
+    Creating table lookup_stock
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11797:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-11797
+836b79e2a6e5: Pulling fs layer
+914de5d267f7: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+e40dd2783886: Pulling fs layer
+ee199f98d6ef: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+edaae312c731: Pulling fs layer
+ac5b61163589: Pulling fs layer
+7fd55c929fa0: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+500327121db6: Pulling fs layer
+0ae074140456: Pulling fs layer
+468516a435eb: Pulling fs layer
+836b79e2a6e5: Download complete
+0ae074140456: Download complete
+e40dd2783886: Download complete
+edaae312c731: Download complete
+ac5b61163589: Download complete
+7fd55c929fa0: Download complete
+e5a28c0c137e: Download complete
+468516a435eb: Download complete
+7478e0ac0f23: Download complete
+500327121db6: Download complete
+ee199f98d6ef: Download complete
+7478e0ac0f23: Pull complete
+914de5d267f7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+0ae074140456: Pull complete
+e40dd2783886: Pull complete
+914de5d267f7: Pull complete
+edaae312c731: Pull complete
+7fd55c929fa0: Pull complete
+ee199f98d6ef: Pull complete
+468516a435eb: Pull complete
+Digest: sha256:54cf6932d6b69ea8e66614b5acf102da138f74932dc11b84bfb643751a2c39cc
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11797:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_exact_query_rhs_with_selected_columns (lookup.tests.LookupTests) ... FAIL
+
+======================================================================
+FAIL: test_exact_query_rhs_with_selected_columns (lookup.tests.LookupTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/lookup/tests.py", line 971, in test_exact_query_rhs_with_selected_columns
+    self.assertEqual(authors.get(), newest_author)
+AssertionError: <Author: Author object (2)> != <Author: Author object (3)>
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (36 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application lookup
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, lookup, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table lookup_alarm
+    Creating table lookup_author
+    Creating table lookup_article
+    Creating table lookup_tag
+    Creating table lookup_season
+    Creating table lookup_game
+    Creating table lookup_player
+    Creating table lookup_product
+    Creating table lookup_stock
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_chain_date_time_lookups (lookup.tests.LookupTests) ... ok
+test_count (lookup.tests.LookupTests) ... ok
+test_custom_field_none_rhs (lookup.tests.LookupTests) ... ok
+test_error_messages (lookup.tests.LookupTests) ... ok
+test_escaping (lookup.tests.LookupTests) ... ok
+test_exact_exists (lookup.tests.LookupTests) ... ok
+test_exact_sliced_queryset_limit_one (lookup.tests.LookupTests) ... ok
+test_exact_sliced_queryset_limit_one_offset (lookup.tests.LookupTests) ... ok
+test_exact_sliced_queryset_not_limited_to_one (lookup.tests.LookupTests) ... ok
+test_exclude (lookup.tests.LookupTests) ... ok
+test_exists (lookup.tests.LookupTests) ... ok
+test_get_next_previous_by (lookup.tests.LookupTests) ... ok
+test_in (lookup.tests.LookupTests) ... ok
+test_in_bulk (lookup.tests.LookupTests) ... ok
+test_in_bulk_lots_of_ids (lookup.tests.LookupTests) ... ok
+test_in_bulk_non_unique_field (lookup.tests.LookupTests) ... ok
+test_in_bulk_with_field (lookup.tests.LookupTests) ... ok
+test_in_different_database (lookup.tests.LookupTests) ... ok
+test_in_keeps_value_ordering (lookup.tests.LookupTests) ... ok
+test_iterator (lookup.tests.LookupTests) ... ok
+test_lookup_collision (lookup.tests.LookupTests) ... ok
+test_lookup_date_as_str (lookup.tests.LookupTests) ... ok
+test_lookup_int_as_str (lookup.tests.LookupTests) ... ok
+test_nested_outerref_lhs (lookup.tests.LookupTests) ... ok
+test_none (lookup.tests.LookupTests) ... ok
+test_nonfield_lookups (lookup.tests.LookupTests) ... ok
+test_pattern_lookups_with_substr (lookup.tests.LookupTests) ... ok
+test_regex (lookup.tests.LookupTests) ... ok
+test_regex_backreferencing (lookup.tests.LookupTests) ... ok
+test_regex_non_ascii (lookup.tests.LookupTests) ... ok
+test_regex_non_string (lookup.tests.LookupTests) ... ok
+test_regex_null (lookup.tests.LookupTests) ... ok
+test_relation_nested_lookup_error (lookup.tests.LookupTests) ... ok
+test_unsupported_lookups (lookup.tests.LookupTests) ... ok
+test_values (lookup.tests.LookupTests) ... ok
+test_values_list (lookup.tests.LookupTests) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.174s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['lookup.tests.LookupTests.test_exact_query_rhs_with_selected_columns']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

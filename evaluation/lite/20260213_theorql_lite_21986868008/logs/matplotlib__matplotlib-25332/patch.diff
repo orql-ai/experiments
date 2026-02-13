@@ -1,0 +1,27 @@
+diff --git a/lib/matplotlib/cbook.py b/lib/matplotlib/cbook.py
+index c9699b2e21..4df3d893bc 100644
+--- a/lib/matplotlib/cbook.py
++++ b/lib/matplotlib/cbook.py
+@@ -788,6 +788,22 @@ class Grouper:
+     def __init__(self, init=()):
+         self._mapping = {weakref.ref(x): [weakref.ref(x)] for x in init}
+ 
++    def __getstate__(self):
++        # Convert weak references back to regular objects for pickling.
++        return {
++            key(): [item() for item in group]
++            for key, group in self._mapping.items()
++            if key() is not None  # Skip dead references
++        }
++
++    def __setstate__(self, state):
++        # Restore weak references from the loaded state.
++        self._mapping = {
++            weakref.ref(key): [weakref.ref(item) for item in group]
++            for key, group in state.items()
++            if key is not None  # Skip dead references
++        }
++
+     def __contains__(self, item):
+         return weakref.ref(item) in self._mapping
+ 

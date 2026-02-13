@@ -1,0 +1,667 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (5 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 5 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16820:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16820
+5fb9008064cb: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+500327121db6: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+9dbd44e1d6f7: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+aef50d31cf01: Download complete
+48d09a4d2bd0: Download complete
+ac5b61163589: Download complete
+9dbd44e1d6f7: Download complete
+788ea9f0fbb4: Download complete
+5fb9008064cb: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+1c04d89b98c3: Download complete
+56cfd456d2c9: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+aef50d31cf01: Pull complete
+48d09a4d2bd0: Pull complete
+56cfd456d2c9: Pull complete
+9dbd44e1d6f7: Pull complete
+788ea9f0fbb4: Pull complete
+1c04d89b98c3: Pull complete
+5fb9008064cb: Pull complete
+Digest: sha256:7006d1cb6f9e1baca4329ebfbdec72992cda9222edde42503beebe9519a7a072
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16820:latest
+test_create_model_add_index (unittest.loader._FailedTest.test_create_model_add_index) ... ERROR
+test_create_model_index_together_rename_index (unittest.loader._FailedTest.test_create_model_index_together_rename_index) ... ERROR
+test_create_model_remove_index (unittest.loader._FailedTest.test_create_model_remove_index) ... ERROR
+test_create_model_remove_index_together_rename_index (unittest.loader._FailedTest.test_create_model_remove_index_together_rename_index) ... ERROR
+test_add_model_order_with_respect_to_index (unittest.loader._FailedTest.test_add_model_order_with_respect_to_index) ... ERROR
+
+======================================================================
+ERROR: test_create_model_add_index (unittest.loader._FailedTest.test_create_model_add_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_add_index'
+
+======================================================================
+ERROR: test_create_model_index_together_rename_index (unittest.loader._FailedTest.test_create_model_index_together_rename_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_index_together_rename_index'
+
+======================================================================
+ERROR: test_create_model_remove_index (unittest.loader._FailedTest.test_create_model_remove_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_remove_index'
+
+======================================================================
+ERROR: test_create_model_remove_index_together_rename_index (unittest.loader._FailedTest.test_create_model_remove_index_together_rename_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_remove_index_together_rename_index'
+
+======================================================================
+ERROR: test_add_model_order_with_respect_to_index (unittest.loader._FailedTest.test_add_model_order_with_respect_to_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_model_order_with_respect_to_index'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+FAILED (errors=5)
+
+
+===== PHASE: PASS_TO_PASS (91 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 50 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_auto (unittest.loader._FailedTest.test_auto) ... ERROR
+test_many_operations_suffix (unittest.loader._FailedTest.test_many_operations_suffix) ... ERROR
+test_no_operations (unittest.loader._FailedTest.test_no_operations) ... ERROR
+test_no_operations_initial (unittest.loader._FailedTest.test_no_operations_initial) ... ERROR
+test_none_name (unittest.loader._FailedTest.test_none_name) ... ERROR
+test_none_name_with_initial_true (unittest.loader._FailedTest.test_none_name_with_initial_true) ... ERROR
+test_operation_with_invalid_chars_in_suggested_name (unittest.loader._FailedTest.test_operation_with_invalid_chars_in_suggested_name) ... ERROR
+test_operation_with_no_suggested_name (unittest.loader._FailedTest.test_operation_with_no_suggested_name) ... ERROR
+test_single_operation (unittest.loader._FailedTest.test_single_operation) ... ERROR
+test_single_operation_long_name (unittest.loader._FailedTest.test_single_operation_long_name) ... ERROR
+test_two_create_models (unittest.loader._FailedTest.test_two_create_models) ... ERROR
+test_two_create_models_with_initial_true (unittest.loader._FailedTest.test_two_create_models_with_initial_true) ... ERROR
+test_two_operations (unittest.loader._FailedTest.test_two_operations) ... ERROR
+test_add_index_together (unittest.loader._FailedTest.test_add_index_together) ... ERROR
+test_add_model_order_with_respect_to_index_together (unittest.loader._FailedTest.test_add_model_order_with_respect_to_index_together) ... ERROR
+test_create_model_and_index_together (unittest.loader._FailedTest.test_create_model_and_index_together) ... ERROR
+test_index_together_remove_fk (unittest.loader._FailedTest.test_index_together_remove_fk) ... ERROR
+test_partly_alter_index_together_decrease (unittest.loader._FailedTest.test_partly_alter_index_together_decrease) ... ERROR
+test_partly_alter_index_together_increase (unittest.loader._FailedTest.test_partly_alter_index_together_increase) ... ERROR
+test_remove_index_together (unittest.loader._FailedTest.test_remove_index_together) ... ERROR
+test_rename_index_together_to_index (unittest.loader._FailedTest.test_rename_index_together_to_index) ... ERROR
+test_rename_index_together_to_index_extra_options (unittest.loader._FailedTest.test_rename_index_together_to_index_extra_options) ... ERROR
+test_rename_index_together_to_index_order_fields (unittest.loader._FailedTest.test_rename_index_together_to_index_order_fields) ... ERROR
+test_set_alter_order_with_respect_to_index_together (unittest.loader._FailedTest.test_set_alter_order_with_respect_to_index_together) ... ERROR
+test_add_remove_index (unittest.loader._FailedTest.test_add_remove_index) ... ERROR
+test_alter_alter_field (unittest.loader._FailedTest.test_alter_alter_field) ... ERROR
+test_alter_alter_index_model (unittest.loader._FailedTest.test_alter_alter_index_model) ... ERROR
+test_alter_alter_owrt_model (unittest.loader._FailedTest.test_alter_alter_owrt_model) ... ERROR
+test_alter_alter_table_model (unittest.loader._FailedTest.test_alter_alter_table_model) ... ERROR
+test_alter_alter_unique_model (unittest.loader._FailedTest.test_alter_alter_unique_model) ... ERROR
+test_create_alter_index_delete_model (unittest.loader._FailedTest.test_create_alter_index_delete_model) ... ERROR
+test_create_alter_index_field (unittest.loader._FailedTest.test_create_alter_index_field) ... ERROR
+test_create_alter_model_managers (unittest.loader._FailedTest.test_create_alter_model_managers) ... ERROR
+test_create_alter_model_options (unittest.loader._FailedTest.test_create_alter_model_options) ... ERROR
+test_create_alter_owrt_delete_model (unittest.loader._FailedTest.test_create_alter_owrt_delete_model) ... ERROR
+test_create_alter_owrt_field (unittest.loader._FailedTest.test_create_alter_owrt_field) ... ERROR
+test_create_alter_unique_delete_model (unittest.loader._FailedTest.test_create_alter_unique_delete_model) ... ERROR
+test_create_alter_unique_field (unittest.loader._FailedTest.test_create_alter_unique_field) ... ERROR
+test_create_model_and_remove_model_options (unittest.loader._FailedTest.test_create_model_and_remove_model_options) ... ERROR
+test_create_model_rename_index_no_old_fields (unittest.loader._FailedTest.test_create_model_rename_index_no_old_fields) ... ERROR
+test_none_app_label (unittest.loader._FailedTest.test_none_app_label) ... ERROR
+test_optimize_elidable_operation (unittest.loader._FailedTest.test_optimize_elidable_operation) ... ERROR
+test_rename_index (unittest.loader._FailedTest.test_rename_index) ... ERROR
+test_swapping_fields_names (unittest.loader._FailedTest.test_swapping_fields_names) ... ERROR
+test_add_constraints_with_new_model (unittest.loader._FailedTest.test_add_constraints_with_new_model) ... ERROR
+test_add_custom_fk_with_hardcoded_to (unittest.loader._FailedTest.test_add_custom_fk_with_hardcoded_to) ... ERROR
+test_add_date_fields_with_auto_now_add_asking_for_default (unittest.loader._FailedTest.test_add_date_fields_with_auto_now_add_asking_for_default) ... ERROR
+test_add_date_fields_with_auto_now_add_not_asking_for_null_addition (unittest.loader._FailedTest.test_add_date_fields_with_auto_now_add_not_asking_for_null_addition) ... ERROR
+test_add_date_fields_with_auto_now_not_asking_for_default (unittest.loader._FailedTest.test_add_date_fields_with_auto_now_not_asking_for_default) ... ERROR
+test_add_index_with_new_model (unittest.loader._FailedTest.test_add_index_with_new_model) ... ERROR
+
+======================================================================
+ERROR: test_auto (unittest.loader._FailedTest.test_auto)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_auto'
+
+======================================================================
+ERROR: test_many_operations_suffix (unittest.loader._FailedTest.test_many_operations_suffix)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_many_operations_suffix'
+
+======================================================================
+ERROR: test_no_operations (unittest.loader._FailedTest.test_no_operations)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_no_operations'
+
+======================================================================
+ERROR: test_no_operations_initial (unittest.loader._FailedTest.test_no_operations_initial)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_no_operations_initial'
+
+======================================================================
+ERROR: test_none_name (unittest.loader._FailedTest.test_none_name)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_none_name'
+
+======================================================================
+ERROR: test_none_name_with_initial_true (unittest.loader._FailedTest.test_none_name_with_initial_true)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_none_name_with_initial_true'
+
+======================================================================
+ERROR: test_operation_with_invalid_chars_in_suggested_name (unittest.loader._FailedTest.test_operation_with_invalid_chars_in_suggested_name)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_operation_with_invalid_chars_in_suggested_name'
+
+======================================================================
+ERROR: test_operation_with_no_suggested_name (unittest.loader._FailedTest.test_operation_with_no_suggested_name)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_operation_with_no_suggested_name'
+
+======================================================================
+ERROR: test_single_operation (unittest.loader._FailedTest.test_single_operation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_single_operation'
+
+======================================================================
+ERROR: test_single_operation_long_name (unittest.loader._FailedTest.test_single_operation_long_name)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_single_operation_long_name'
+
+======================================================================
+ERROR: test_two_create_models (unittest.loader._FailedTest.test_two_create_models)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_two_create_models'
+
+======================================================================
+ERROR: test_two_create_models_with_initial_true (unittest.loader._FailedTest.test_two_create_models_with_initial_true)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_two_create_models_with_initial_true'
+
+======================================================================
+ERROR: test_two_operations (unittest.loader._FailedTest.test_two_operations)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_two_operations'
+
+======================================================================
+ERROR: test_add_index_together (unittest.loader._FailedTest.test_add_index_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_index_together'
+
+======================================================================
+ERROR: test_add_model_order_with_respect_to_index_together (unittest.loader._FailedTest.test_add_model_order_with_respect_to_index_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_model_order_with_respect_to_index_together'
+
+======================================================================
+ERROR: test_create_model_and_index_together (unittest.loader._FailedTest.test_create_model_and_index_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_and_index_together'
+
+======================================================================
+ERROR: test_index_together_remove_fk (unittest.loader._FailedTest.test_index_together_remove_fk)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_index_together_remove_fk'
+
+======================================================================
+ERROR: test_partly_alter_index_together_decrease (unittest.loader._FailedTest.test_partly_alter_index_together_decrease)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_partly_alter_index_together_decrease'
+
+======================================================================
+ERROR: test_partly_alter_index_together_increase (unittest.loader._FailedTest.test_partly_alter_index_together_increase)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_partly_alter_index_together_increase'
+
+======================================================================
+ERROR: test_remove_index_together (unittest.loader._FailedTest.test_remove_index_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_remove_index_together'
+
+======================================================================
+ERROR: test_rename_index_together_to_index (unittest.loader._FailedTest.test_rename_index_together_to_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_index_together_to_index'
+
+======================================================================
+ERROR: test_rename_index_together_to_index_extra_options (unittest.loader._FailedTest.test_rename_index_together_to_index_extra_options)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_index_together_to_index_extra_options'
+
+======================================================================
+ERROR: test_rename_index_together_to_index_order_fields (unittest.loader._FailedTest.test_rename_index_together_to_index_order_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_index_together_to_index_order_fields'
+
+======================================================================
+ERROR: test_set_alter_order_with_respect_to_index_together (unittest.loader._FailedTest.test_set_alter_order_with_respect_to_index_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_set_alter_order_with_respect_to_index_together'
+
+======================================================================
+ERROR: test_add_remove_index (unittest.loader._FailedTest.test_add_remove_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_remove_index'
+
+======================================================================
+ERROR: test_alter_alter_field (unittest.loader._FailedTest.test_alter_alter_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_field'
+
+======================================================================
+ERROR: test_alter_alter_index_model (unittest.loader._FailedTest.test_alter_alter_index_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_index_model'
+
+======================================================================
+ERROR: test_alter_alter_owrt_model (unittest.loader._FailedTest.test_alter_alter_owrt_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_owrt_model'
+
+======================================================================
+ERROR: test_alter_alter_table_model (unittest.loader._FailedTest.test_alter_alter_table_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_table_model'
+
+======================================================================
+ERROR: test_alter_alter_unique_model (unittest.loader._FailedTest.test_alter_alter_unique_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_alter_unique_model'
+
+======================================================================
+ERROR: test_create_alter_index_delete_model (unittest.loader._FailedTest.test_create_alter_index_delete_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_index_delete_model'
+
+======================================================================
+ERROR: test_create_alter_index_field (unittest.loader._FailedTest.test_create_alter_index_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_index_field'
+
+======================================================================
+ERROR: test_create_alter_model_managers (unittest.loader._FailedTest.test_create_alter_model_managers)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_model_managers'
+
+======================================================================
+ERROR: test_create_alter_model_options (unittest.loader._FailedTest.test_create_alter_model_options)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_model_options'
+
+======================================================================
+ERROR: test_create_alter_owrt_delete_model (unittest.loader._FailedTest.test_create_alter_owrt_delete_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_owrt_delete_model'
+
+======================================================================
+ERROR: test_create_alter_owrt_field (unittest.loader._FailedTest.test_create_alter_owrt_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_owrt_field'
+
+======================================================================
+ERROR: test_create_alter_unique_delete_model (unittest.loader._FailedTest.test_create_alter_unique_delete_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_unique_delete_model'
+
+======================================================================
+ERROR: test_create_alter_unique_field (unittest.loader._FailedTest.test_create_alter_unique_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_alter_unique_field'
+
+======================================================================
+ERROR: test_create_model_and_remove_model_options (unittest.loader._FailedTest.test_create_model_and_remove_model_options)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_and_remove_model_options'
+
+======================================================================
+ERROR: test_create_model_rename_index_no_old_fields (unittest.loader._FailedTest.test_create_model_rename_index_no_old_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_rename_index_no_old_fields'
+
+======================================================================
+ERROR: test_none_app_label (unittest.loader._FailedTest.test_none_app_label)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_none_app_label'
+
+======================================================================
+ERROR: test_optimize_elidable_operation (unittest.loader._FailedTest.test_optimize_elidable_operation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_optimize_elidable_operation'
+
+======================================================================
+ERROR: test_rename_index (unittest.loader._FailedTest.test_rename_index)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_index'
+
+======================================================================
+ERROR: test_swapping_fields_names (unittest.loader._FailedTest.test_swapping_fields_names)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_swapping_fields_names'
+
+======================================================================
+ERROR: test_add_constraints_with_new_model (unittest.loader._FailedTest.test_add_constraints_with_new_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_constraints_with_new_model'
+
+======================================================================
+ERROR: test_add_custom_fk_with_hardcoded_to (unittest.loader._FailedTest.test_add_custom_fk_with_hardcoded_to)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_custom_fk_with_hardcoded_to'
+
+======================================================================
+ERROR: test_add_date_fields_with_auto_now_add_asking_for_default (unittest.loader._FailedTest.test_add_date_fields_with_auto_now_add_asking_for_default)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_date_fields_with_auto_now_add_asking_for_default'
+
+======================================================================
+ERROR: test_add_date_fields_with_auto_now_add_not_asking_for_null_addition (unittest.loader._FailedTest.test_add_date_fields_with_auto_now_add_not_asking_for_null_addition)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_date_fields_with_auto_now_add_not_asking_for_null_addition'
+
+======================================================================
+ERROR: test_add_date_fields_with_auto_now_not_asking_for_default (unittest.loader._FailedTest.test_add_date_fields_with_auto_now_not_asking_for_default)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_date_fields_with_auto_now_not_asking_for_default'
+
+======================================================================
+ERROR: test_add_index_with_new_model (unittest.loader._FailedTest.test_add_index_with_new_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_index_with_new_model'
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.005s
+
+FAILED (errors=50)
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application migrations
+Found 41 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_add_model_order_with_respect_to_constraint (unittest.loader._FailedTest.test_add_model_order_with_respect_to_constraint) ... ERROR
+test_add_model_order_with_respect_to_unique_together (unittest.loader._FailedTest.test_add_model_order_with_respect_to_unique_together) ... ERROR
+test_alter_db_table_comment_add (unittest.loader._FailedTest.test_alter_db_table_comment_add) ... ERROR
+test_alter_db_table_comment_change (unittest.loader._FailedTest.test_alter_db_table_comment_change) ... ERROR
+test_alter_db_table_comment_no_changes (unittest.loader._FailedTest.test_alter_db_table_comment_no_changes) ... ERROR
+test_alter_db_table_comment_remove (unittest.loader._FailedTest.test_alter_db_table_comment_remove) ... ERROR
+test_alter_field_to_fk_dependency_other_app (unittest.loader._FailedTest.test_alter_field_to_fk_dependency_other_app) ... ERROR
+test_alter_many_to_many (unittest.loader._FailedTest.test_alter_many_to_many) ... ERROR
+test_alter_regex_string_to_compiled_regex (unittest.loader._FailedTest.test_alter_regex_string_to_compiled_regex) ... ERROR
+test_alter_unique_together_fk_to_m2m (unittest.loader._FailedTest.test_alter_unique_together_fk_to_m2m) ... ERROR
+test_arrange_for_graph_with_multiple_initial (unittest.loader._FailedTest.test_arrange_for_graph_with_multiple_initial) ... ERROR
+test_bases_first_mixed_case_app_label (unittest.loader._FailedTest.test_bases_first_mixed_case_app_label) ... ERROR
+test_create_model_and_unique_together (unittest.loader._FailedTest.test_create_model_and_unique_together) ... ERROR
+test_create_with_through_model_separate_apps (unittest.loader._FailedTest.test_create_with_through_model_separate_apps) ... ERROR
+test_default_related_name_option (unittest.loader._FailedTest.test_default_related_name_option) ... ERROR
+test_different_regex_does_alter (unittest.loader._FailedTest.test_different_regex_does_alter) ... ERROR
+test_identical_regex_doesnt_alter (unittest.loader._FailedTest.test_identical_regex_doesnt_alter) ... ERROR
+test_managed_to_unmanaged (unittest.loader._FailedTest.test_managed_to_unmanaged) ... ERROR
+test_mti_inheritance_model_removal (unittest.loader._FailedTest.test_mti_inheritance_model_removal) ... ERROR
+test_parse_number (unittest.loader._FailedTest.test_parse_number) ... ERROR
+test_partly_alter_unique_together_decrease (unittest.loader._FailedTest.test_partly_alter_unique_together_decrease) ... ERROR
+test_partly_alter_unique_together_increase (unittest.loader._FailedTest.test_partly_alter_unique_together_increase) ... ERROR
+test_proxy_non_model_parent (unittest.loader._FailedTest.test_proxy_non_model_parent) ... ERROR
+test_proxy_to_mti_with_fk_to_proxy (unittest.loader._FailedTest.test_proxy_to_mti_with_fk_to_proxy) ... ERROR
+test_proxy_to_mti_with_fk_to_proxy_proxy (unittest.loader._FailedTest.test_proxy_to_mti_with_fk_to_proxy_proxy) ... ERROR
+test_rename_field_foreign_key_to_field (unittest.loader._FailedTest.test_rename_field_foreign_key_to_field) ... ERROR
+test_rename_field_with_renamed_model (unittest.loader._FailedTest.test_rename_field_with_renamed_model) ... ERROR
+test_rename_foreign_object_fields (unittest.loader._FailedTest.test_rename_foreign_object_fields) ... ERROR
+test_rename_indexes (unittest.loader._FailedTest.test_rename_indexes) ... ERROR
+test_rename_referenced_primary_key (unittest.loader._FailedTest.test_rename_referenced_primary_key) ... ERROR
+test_rename_related_field_preserved_db_column (unittest.loader._FailedTest.test_rename_related_field_preserved_db_column) ... ERROR
+test_renamed_referenced_m2m_model_case (unittest.loader._FailedTest.test_renamed_referenced_m2m_model_case) ... ERROR
+test_set_alter_order_with_respect_to_index_constraint_unique_together (unittest.loader._FailedTest.test_set_alter_order_with_respect_to_index_constraint_unique_together) ... ERROR
+test_supports_functools_partial (unittest.loader._FailedTest.test_supports_functools_partial) ... ERROR
+test_swappable (unittest.loader._FailedTest.test_swappable) ... ERROR
+test_swappable_changed (unittest.loader._FailedTest.test_swappable_changed) ... ERROR
+test_swappable_circular_multi_mti (unittest.loader._FailedTest.test_swappable_circular_multi_mti) ... ERROR
+test_swappable_lowercase (unittest.loader._FailedTest.test_swappable_lowercase) ... ERROR
+test_swappable_many_to_many_model_case (unittest.loader._FailedTest.test_swappable_many_to_many_model_case) ... ERROR
+test_unmanaged_delete (unittest.loader._FailedTest.test_unmanaged_delete) ... ERROR
+test_unmanaged_to_managed (unittest.loader._FailedTest.test_unmanaged_to_managed) ... ERROR
+
+======================================================================
+ERROR: test_add_model_order_with_respect_to_constraint (unittest.loader._FailedTest.test_add_model_order_with_respect_to_constraint)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_model_order_with_respect_to_constraint'
+
+======================================================================
+ERROR: test_add_model_order_with_respect_to_unique_together (unittest.loader._FailedTest.test_add_model_order_with_respect_to_unique_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_add_model_order_with_respect_to_unique_together'
+
+======================================================================
+ERROR: test_alter_db_table_comment_add (unittest.loader._FailedTest.test_alter_db_table_comment_add)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_db_table_comment_add'
+
+======================================================================
+ERROR: test_alter_db_table_comment_change (unittest.loader._FailedTest.test_alter_db_table_comment_change)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_db_table_comment_change'
+
+======================================================================
+ERROR: test_alter_db_table_comment_no_changes (unittest.loader._FailedTest.test_alter_db_table_comment_no_changes)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_db_table_comment_no_changes'
+
+======================================================================
+ERROR: test_alter_db_table_comment_remove (unittest.loader._FailedTest.test_alter_db_table_comment_remove)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_db_table_comment_remove'
+
+======================================================================
+ERROR: test_alter_field_to_fk_dependency_other_app (unittest.loader._FailedTest.test_alter_field_to_fk_dependency_other_app)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_field_to_fk_dependency_other_app'
+
+======================================================================
+ERROR: test_alter_many_to_many (unittest.loader._FailedTest.test_alter_many_to_many)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_many_to_many'
+
+======================================================================
+ERROR: test_alter_regex_string_to_compiled_regex (unittest.loader._FailedTest.test_alter_regex_string_to_compiled_regex)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_regex_string_to_compiled_regex'
+
+======================================================================
+ERROR: test_alter_unique_together_fk_to_m2m (unittest.loader._FailedTest.test_alter_unique_together_fk_to_m2m)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_alter_unique_together_fk_to_m2m'
+
+======================================================================
+ERROR: test_arrange_for_graph_with_multiple_initial (unittest.loader._FailedTest.test_arrange_for_graph_with_multiple_initial)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_arrange_for_graph_with_multiple_initial'
+
+======================================================================
+ERROR: test_bases_first_mixed_case_app_label (unittest.loader._FailedTest.test_bases_first_mixed_case_app_label)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_bases_first_mixed_case_app_label'
+
+======================================================================
+ERROR: test_create_model_and_unique_together (unittest.loader._FailedTest.test_create_model_and_unique_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_model_and_unique_together'
+
+======================================================================
+ERROR: test_create_with_through_model_separate_apps (unittest.loader._FailedTest.test_create_with_through_model_separate_apps)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_create_with_through_model_separate_apps'
+
+======================================================================
+ERROR: test_default_related_name_option (unittest.loader._FailedTest.test_default_related_name_option)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_default_related_name_option'
+
+======================================================================
+ERROR: test_different_regex_does_alter (unittest.loader._FailedTest.test_different_regex_does_alter)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_different_regex_does_alter'
+
+======================================================================
+ERROR: test_identical_regex_doesnt_alter (unittest.loader._FailedTest.test_identical_regex_doesnt_alter)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_identical_regex_doesnt_alter'
+
+======================================================================
+ERROR: test_managed_to_unmanaged (unittest.loader._FailedTest.test_managed_to_unmanaged)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_managed_to_unmanaged'
+
+======================================================================
+ERROR: test_mti_inheritance_model_removal (unittest.loader._FailedTest.test_mti_inheritance_model_removal)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_mti_inheritance_model_removal'
+
+======================================================================
+ERROR: test_parse_number (unittest.loader._FailedTest.test_parse_number)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_parse_number'
+
+======================================================================
+ERROR: test_partly_alter_unique_together_decrease (unittest.loader._FailedTest.test_partly_alter_unique_together_decrease)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_partly_alter_unique_together_decrease'
+
+======================================================================
+ERROR: test_partly_alter_unique_together_increase (unittest.loader._FailedTest.test_partly_alter_unique_together_increase)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_partly_alter_unique_together_increase'
+
+======================================================================
+ERROR: test_proxy_non_model_parent (unittest.loader._FailedTest.test_proxy_non_model_parent)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_proxy_non_model_parent'
+
+======================================================================
+ERROR: test_proxy_to_mti_with_fk_to_proxy (unittest.loader._FailedTest.test_proxy_to_mti_with_fk_to_proxy)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_proxy_to_mti_with_fk_to_proxy'
+
+======================================================================
+ERROR: test_proxy_to_mti_with_fk_to_proxy_proxy (unittest.loader._FailedTest.test_proxy_to_mti_with_fk_to_proxy_proxy)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_proxy_to_mti_with_fk_to_proxy_proxy'
+
+======================================================================
+ERROR: test_rename_field_foreign_key_to_field (unittest.loader._FailedTest.test_rename_field_foreign_key_to_field)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_field_foreign_key_to_field'
+
+======================================================================
+ERROR: test_rename_field_with_renamed_model (unittest.loader._FailedTest.test_rename_field_with_renamed_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_field_with_renamed_model'
+
+======================================================================
+ERROR: test_rename_foreign_object_fields (unittest.loader._FailedTest.test_rename_foreign_object_fields)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_foreign_object_fields'
+
+======================================================================
+ERROR: test_rename_indexes (unittest.loader._FailedTest.test_rename_indexes)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_indexes'
+
+======================================================================
+ERROR: test_rename_referenced_primary_key (unittest.loader._FailedTest.test_rename_referenced_primary_key)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_referenced_primary_key'
+
+======================================================================
+ERROR: test_rename_related_field_preserved_db_column (unittest.loader._FailedTest.test_rename_related_field_preserved_db_column)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_rename_related_field_preserved_db_column'
+
+======================================================================
+ERROR: test_renamed_referenced_m2m_model_case (unittest.loader._FailedTest.test_renamed_referenced_m2m_model_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_renamed_referenced_m2m_model_case'
+
+======================================================================
+ERROR: test_set_alter_order_with_respect_to_index_constraint_unique_together (unittest.loader._FailedTest.test_set_alter_order_with_respect_to_index_constraint_unique_together)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_set_alter_order_with_respect_to_index_constraint_unique_together'
+
+======================================================================
+ERROR: test_supports_functools_partial (unittest.loader._FailedTest.test_supports_functools_partial)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_supports_functools_partial'
+
+======================================================================
+ERROR: test_swappable (unittest.loader._FailedTest.test_swappable)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_swappable'
+
+======================================================================
+ERROR: test_swappable_changed (unittest.loader._FailedTest.test_swappable_changed)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_swappable_changed'
+
+======================================================================
+ERROR: test_swappable_circular_multi_mti (unittest.loader._FailedTest.test_swappable_circular_multi_mti)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_swappable_circular_multi_mti'
+
+======================================================================
+ERROR: test_swappable_lowercase (unittest.loader._FailedTest.test_swappable_lowercase)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_swappable_lowercase'
+
+======================================================================
+ERROR: test_swappable_many_to_many_model_case (unittest.loader._FailedTest.test_swappable_many_to_many_model_case)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_swappable_many_to_many_model_case'
+
+======================================================================
+ERROR: test_unmanaged_delete (unittest.loader._FailedTest.test_unmanaged_delete)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_unmanaged_delete'
+
+======================================================================
+ERROR: test_unmanaged_to_managed (unittest.loader._FailedTest.test_unmanaged_to_managed)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_unmanaged_to_managed'
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.004s
+
+FAILED (errors=41)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['migrations.test_optimizer.OptimizerTests.test_create_model_add_index.test_create_model_add_index', 'migrations.test_optimizer.OptimizerTests.test_create_model_index_together_rename_index.test_create_model_index_together_rename_index', 'migrations.test_optimizer.OptimizerTests.test_create_model_remove_index.test_create_model_remove_index', 'migrations.test_optimizer.OptimizerTests.test_create_model_remove_index_together_rename_index.test_create_model_remove_index_together_rename_index', 'migrations.test_autodetector.AutodetectorTests.test_add_model_order_with_respect_to_index.test_add_model_order_with_respect_to_index']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['migrations.test_autodetector.MigrationSuggestNameTests.test_auto.test_auto', 'migrations.test_autodetector.MigrationSuggestNameTests.test_many_operations_suffix.test_many_operations_suffix', 'migrations.test_autodetector.MigrationSuggestNameTests.test_no_operations.test_no_operations', 'migrations.test_autodetector.MigrationSuggestNameTests.test_no_operations_initial.test_no_operations_initial', 'migrations.test_autodetector.MigrationSuggestNameTests.test_none_name.test_none_name', 'migrations.test_autodetector.MigrationSuggestNameTests.test_none_name_with_initial_true.test_none_name_with_initial_true', 'migrations.test_autodetector.MigrationSuggestNameTests.test_operation_with_invalid_chars_in_suggested_name.test_operation_with_invalid_chars_in_suggested_name', 'migrations.test_autodetector.MigrationSuggestNameTests.test_operation_with_no_suggested_name.test_operation_with_no_suggested_name', 'migrations.test_autodetector.MigrationSuggestNameTests.test_single_operation.test_single_operation', 'migrations.test_autodetector.MigrationSuggestNameTests.test_single_operation_long_name.test_single_operation_long_name', 'migrations.test_autodetector.MigrationSuggestNameTests.test_two_create_models.test_two_create_models', 'migrations.test_autodetector.MigrationSuggestNameTests.test_two_create_models_with_initial_true.test_two_create_models_with_initial_true', 'migrations.test_autodetector.MigrationSuggestNameTests.test_two_operations.test_two_operations', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_add_index_together.test_add_index_together', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_add_model_order_with_respect_to_index_together.test_add_model_order_with_respect_to_index_together', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_create_model_and_index_together.test_create_model_and_index_together', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_index_together_remove_fk.test_index_together_remove_fk', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_partly_alter_index_together_decrease.test_partly_alter_index_together_decrease', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_partly_alter_index_together_increase.test_partly_alter_index_together_increase', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_remove_index_together.test_remove_index_together', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_rename_index_together_to_index.test_rename_index_together_to_index', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_rename_index_together_to_index_extra_options.test_rename_index_together_to_index_extra_options', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_rename_index_together_to_index_order_fields.test_rename_index_together_to_index_order_fields', 'migrations.test_autodetector.AutodetectorIndexTogetherTests.test_set_alter_order_with_respect_to_index_together.test_set_alter_order_with_respect_to_index_together', 'migrations.test_optimizer.OptimizerTests.test_add_remove_index.test_add_remove_index', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_field.test_alter_alter_field', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_index_model.test_alter_alter_index_model', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_owrt_model.test_alter_alter_owrt_model', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_table_model.test_alter_alter_table_model', 'migrations.test_optimizer.OptimizerTests.test_alter_alter_unique_model.test_alter_alter_unique_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_index_delete_model.test_create_alter_index_delete_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_index_field.test_create_alter_index_field', 'migrations.test_optimizer.OptimizerTests.test_create_alter_model_managers.test_create_alter_model_managers', 'migrations.test_optimizer.OptimizerTests.test_create_alter_model_options.test_create_alter_model_options', 'migrations.test_optimizer.OptimizerTests.test_create_alter_owrt_delete_model.test_create_alter_owrt_delete_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_owrt_field.test_create_alter_owrt_field', 'migrations.test_optimizer.OptimizerTests.test_create_alter_unique_delete_model.test_create_alter_unique_delete_model', 'migrations.test_optimizer.OptimizerTests.test_create_alter_unique_field.test_create_alter_unique_field', 'migrations.test_optimizer.OptimizerTests.test_create_model_and_remove_model_options.test_create_model_and_remove_model_options', 'migrations.test_optimizer.OptimizerTests.test_create_model_rename_index_no_old_fields.test_create_model_rename_index_no_old_fields', 'migrations.test_optimizer.OptimizerTests.test_none_app_label.test_none_app_label', 'migrations.test_optimizer.OptimizerTests.test_optimize_elidable_operation.test_optimize_elidable_operation', 'migrations.test_optimizer.OptimizerTests.test_rename_index.test_rename_index', 'migrations.test_optimizer.OptimizerTests.test_swapping_fields_names.test_swapping_fields_names', 'migrations.test_autodetector.AutodetectorTests.test_add_constraints_with_new_model.test_add_constraints_with_new_model', 'migrations.test_autodetector.AutodetectorTests.test_add_custom_fk_with_hardcoded_to.test_add_custom_fk_with_hardcoded_to', 'migrations.test_autodetector.AutodetectorTests.test_add_date_fields_with_auto_now_add_asking_for_default.test_add_date_fields_with_auto_now_add_asking_for_default', 'migrations.test_autodetector.AutodetectorTests.test_add_date_fields_with_auto_now_add_not_asking_for_null_addition.test_add_date_fields_with_auto_now_add_not_asking_for_null_addition', 'migrations.test_autodetector.AutodetectorTests.test_add_date_fields_with_auto_now_not_asking_for_default.test_add_date_fields_with_auto_now_not_asking_for_default', 'migrations.test_autodetector.AutodetectorTests.test_add_index_with_new_model.test_add_index_with_new_model']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

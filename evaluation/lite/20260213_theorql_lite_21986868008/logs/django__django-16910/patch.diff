@@ -1,0 +1,38 @@
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 781dfd5499..59f0199f1e 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -779,14 +779,31 @@ class Query(BaseExpression):
+         # Only include fields mentioned in the mask.
+         for field_name, field_mask in mask.items():
+             field = opts.get_field(field_name)
+-            field_select_mask = select_mask.setdefault(field, {})
+             if field_mask:
+                 if not field.is_relation:
+                     raise FieldError(next(iter(field_mask)))
+-                related_model = field.remote_field.model._meta.concrete_model
++                # Handle reverse relations by using the field's field.model
++                # instead of remote_field.model
++                if hasattr(field, "field"):
++                    # Reverse relation - field.field is the actual field
++                    related_model = field.field.model._meta.concrete_model
++                    # Use the actual field (not the reverse relation) as the key
++                    field_select_mask = select_mask.setdefault(field.field, {})
++                else:
++                    # Forward relation
++                    related_model = field.remote_field.model._meta.concrete_model
++                    field_select_mask = select_mask.setdefault(field, {})
+                 self._get_only_select_mask(
+                     related_model._meta, field_mask, field_select_mask
+                 )
++            else:
++                # No nested mask, just add the field to the select_mask
++                if hasattr(field, "field"):
++                    # Reverse relation - use the actual field as the key
++                    select_mask.setdefault(field.field, {})
++                else:
++                    # Forward relation
++                    select_mask.setdefault(field, {})
+         return select_mask
+ 
+     def get_select_mask(self):

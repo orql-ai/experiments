@@ -1,0 +1,142 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 2 items
+
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_fit_predict_n_init PASSED [ 50%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit_predict_n_init PASSED [100%]
+
+========================= 2 passed, 1 warning in 2.10s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13142:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13142
+7478e0ac0f23: Pulling fs layer
+c4cc6b0a5a46: Pulling fs layer
+b1b86685def8: Pulling fs layer
+4de32294fb24: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+f93009d70e27: Pulling fs layer
+466f0cbb5709: Pulling fs layer
+09b61b6fd610: Pulling fs layer
+ddd45cdfc8c4: Pulling fs layer
+ac5b61163589: Download complete
+c4cc6b0a5a46: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+466f0cbb5709: Download complete
+09b61b6fd610: Download complete
+b1b86685def8: Download complete
+7478e0ac0f23: Download complete
+4de32294fb24: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+f93009d70e27: Download complete
+a2f6138ded93: Download complete
+ddd45cdfc8c4: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+466f0cbb5709: Pull complete
+09b61b6fd610: Pull complete
+f93009d70e27: Pull complete
+c4cc6b0a5a46: Pull complete
+b1b86685def8: Pull complete
+ddd45cdfc8c4: Pull complete
+4de32294fb24: Pull complete
+Digest: sha256:9ccabe4c983167f236311a7f5c49aa21cdb1dff8faee5765970f90bf81718f6d
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13142:latest
+
+
+===== PHASE: PASS_TO_PASS (54 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 50 items
+
+sklearn/mixture/tests/test_bayesian_mixture.py::test_log_dirichlet_norm PASSED [  2%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_log_wishart_norm PASSED [  4%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_covariance_type PASSED [  6%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_weight_concentration_prior_type PASSED [  8%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_weights_prior_initialisation PASSED [ 10%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_mean_prior_initialisation PASSED [ 12%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_precisions_prior_initialisation PASSED [ 14%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_check_is_fitted PASSED [ 16%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_weights PASSED [ 18%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_monotonic_likelihood PASSED [ 20%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_compare_covar_type PASSED [ 22%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_check_covariance_precision PASSED [ 24%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_invariant_translation PASSED [ 26%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_fit_predict[0-2-1e-07] PASSED [ 28%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_fit_predict[1-2-0.1] PASSED [ 30%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_fit_predict[3-300-1e-07] PASSED [ 32%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_fit_predict[4-300-0.1] PASSED [ 34%]
+sklearn/mixture/tests/test_bayesian_mixture.py::test_bayesian_mixture_predict_predict_proba PASSED [ 36%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_attributes PASSED [ 38%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_check_X PASSED      [ 40%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_check_weights PASSED [ 42%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_check_means PASSED  [ 44%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_check_precisions PASSED [ 46%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_suffstat_sk_full PASSED [ 48%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_suffstat_sk_tied PASSED [ 50%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_suffstat_sk_diag PASSED [ 52%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_suffstat_sk_spherical PASSED [ 54%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_compute_log_det_cholesky PASSED [ 56%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_log_probabilities PASSED [ 58%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_estimate_log_prob_resp PASSED [ 60%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_predict_predict_proba PASSED [ 62%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit_predict[0-2-1e-07] PASSED [ 64%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit_predict[1-2-0.1] PASSED [ 66%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit_predict[3-300-1e-07] PASSED [ 68%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit_predict[4-300-0.1] PASSED [ 70%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit PASSED [ 72%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit_best_params PASSED [ 74%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_fit_convergence_warning PASSED [ 76%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_multiple_init PASSED [ 78%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_n_parameters PASSED [ 80%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_bic_1d_1component PASSED [ 82%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_aic_bic PASSED [ 84%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_gaussian_mixture_verbose PASSED [ 86%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_warm_start[0] PASSED [ 88%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_warm_start[1] PASSED [ 90%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_warm_start[2] PASSED [ 92%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_convergence_detected_with_warm_start PASSED [ 94%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_score PASSED        [ 96%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_score_samples PASSED [ 98%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_monotonic_likelihood PASSED [100%]
+
+============================== 50 passed in 5.57s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 4 items
+
+sklearn/mixture/tests/test_gaussian_mixture.py::test_regularisation PASSED [ 25%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_property PASSED     [ 50%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_sample PASSED       [ 75%]
+sklearn/mixture/tests/test_gaussian_mixture.py::test_init PASSED         [100%]
+
+======================== 4 passed, 8 warnings in 1.77s =========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

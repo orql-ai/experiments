@@ -1,0 +1,37 @@
+diff --git a/src/_pytest/_code/source.py b/src/_pytest/_code/source.py
+index 6f54057c0..ed618f7f4 100644
+--- a/src/_pytest/_code/source.py
++++ b/src/_pytest/_code/source.py
+@@ -162,6 +162,32 @@ def get_statement_startend2(lineno: int, node: ast.AST) -> Tuple[int, Optional[i
+         end = None
+     else:
+         end = values[insert_index]
++
++    # In Python 3.8+, AST nodes have end_lineno attribute. When the calculated
++    # 'end' points to a decorator line (which is part of the following function),
++    # use the actual end_lineno of the statement containing 'lineno' instead.
++    if end is not None and hasattr(node, 'end_lineno'):
++        # Check if 'end' is a decorator line for a function/class definition
++        is_decorator_line = False
++        for x in ast.walk(node):
++            if isinstance(x, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
++                for dec in x.decorator_list:
++                    if hasattr(dec, 'lineno') and dec.lineno - 1 == end:
++                        # Check if the decorator is on a separate line from the function
++                        if x.lineno - 1 != end:
++                            is_decorator_line = True
++                            break
++                if is_decorator_line:
++                    break
++        
++        if is_decorator_line:
++            # Find the statement at 'start' and use its actual end_lineno
++            for x in ast.walk(node):
++                if isinstance(x, (ast.stmt, ast.ExceptHandler)) and x.lineno - 1 == start:
++                    if hasattr(x, 'end_lineno'):
++                        end = x.end_lineno
++                    break
++
+     return start, end
+ 
+ 

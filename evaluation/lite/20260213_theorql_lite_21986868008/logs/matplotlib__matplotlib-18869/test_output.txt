@@ -1,0 +1,86 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (4 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.8.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, cov-5.0.0, rerunfailures-14.0, timeout-2.3.1, xvfb-3.0.0
+collecting ... collected 4 items
+
+lib/matplotlib/tests/test_matplotlib.py::test_parse_to_version_info[3.5.0-version_tuple0] PASSED [ 25%]
+lib/matplotlib/tests/test_matplotlib.py::test_parse_to_version_info[3.5.0rc2-version_tuple1] PASSED [ 50%]
+lib/matplotlib/tests/test_matplotlib.py::test_parse_to_version_info[3.5.0.dev820+g6768ef8c4c-version_tuple2] PASSED [ 75%]
+lib/matplotlib/tests/test_matplotlib.py::test_parse_to_version_info[3.5.0.post820+g6768ef8c4c-version_tuple3] PASSED [100%]
+
+============================== 4 passed in 2.86s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-18869:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-18869
+305ac120104e: Pulling fs layer
+ffbd50f733c0: Pulling fs layer
+01b0b93088bc: Pulling fs layer
+5500444b88c8: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+28edcc0cb56c: Pulling fs layer
+9491b6481c6e: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+98b10befbcac: Pulling fs layer
+98b10befbcac: Download complete
+e5a28c0c137e: Download complete
+01b0b93088bc: Download complete
+9491b6481c6e: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+5500444b88c8: Download complete
+7478e0ac0f23: Download complete
+305ac120104e: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+28edcc0cb56c: Download complete
+ffbd50f733c0: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+01b0b93088bc: Pull complete
+28edcc0cb56c: Pull complete
+98b10befbcac: Pull complete
+ffbd50f733c0: Pull complete
+9491b6481c6e: Pull complete
+5500444b88c8: Pull complete
+305ac120104e: Pull complete
+Digest: sha256:883b156997261663c0fbfa0b0307de6c1f3b918ba75ad20ef427e2d188aa0409
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-18869:latest
+
+
+===== PHASE: PASS_TO_PASS (3 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.8.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, cov-5.0.0, rerunfailures-14.0, timeout-2.3.1, xvfb-3.0.0
+collecting ... collected 3 items
+
+lib/matplotlib/tests/test_matplotlib.py::test_importable_with_no_home PASSED [ 33%]
+lib/matplotlib/tests/test_matplotlib.py::test_use_doc_standard_backends PASSED [ 66%]
+lib/matplotlib/tests/test_matplotlib.py::test_importable_with__OO PASSED [100%]
+
+============================== 3 passed in 6.44s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

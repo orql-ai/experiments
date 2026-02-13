@@ -1,0 +1,210 @@
+diff --git a/sympy/core/function.py b/sympy/core/function.py
+index 28d675fc77..714d5a1ef5 100644
+--- a/sympy/core/function.py
++++ b/sympy/core/function.py
+@@ -59,6 +59,7 @@
+ 
+ import inspect
+ import collections
++from collections.abc import Iterable
+ 
+ def _coeff_isneg(a):
+     """Return True if the leading Number is negative.
+@@ -1238,7 +1239,7 @@ def __new__(cls, expr, *variables, **kwargs):
+             if unhandled_non_symbol:
+                 obj = None
+             else:
+-                if isinstance(v, (collections.Iterable, Tuple, MatrixCommon, NDimArray)):
++                if isinstance(v, (Iterable, Tuple, MatrixCommon, NDimArray)):
+                     # Treat derivatives by arrays/matrices as much as symbols.
+                     is_symbol = True
+                 if not is_symbol:
+@@ -1303,7 +1304,7 @@ def _helper_apply_n_times(expr, s, n, func):
+         # Case 1. is handled by `_eval_derivative` of `NDimArray`.
+         # Case 4., i.e. pair (x=scalar, y=scalar) should be passed to
+         # x._eval_derivative(y).
+-        if isinstance(s, (collections.Iterable, Tuple, MatrixCommon, NDimArray)):
++        if isinstance(s, (Iterable, Tuple, MatrixCommon, NDimArray)):
+             from sympy import derive_by_array
+             func = derive_by_array
+ 
+diff --git a/sympy/parsing/sympy_parser.py b/sympy/parsing/sympy_parser.py
+index 25a3b54146..d8bd952c64 100644
+--- a/sympy/parsing/sympy_parser.py
++++ b/sympy/parsing/sympy_parser.py
+@@ -943,7 +943,7 @@ def visit_BinOp(self, node):
+                     left = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+                     args=[left, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(value=False))],
+                     starargs=None,
+                     kwargs=None
+                 )
+@@ -951,7 +951,7 @@ def visit_BinOp(self, node):
+                     right = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+                     args=[right, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(value=False))],
+                     starargs=None,
+                     kwargs=None
+                 )
+@@ -959,7 +959,7 @@ def visit_BinOp(self, node):
+             new_node = ast.Call(
+                 func=ast.Name(id=sympy_class, ctx=ast.Load()),
+                 args=[left, right],
+-                keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
++                keywords=[ast.keyword(arg='evaluate', value=ast.Constant(value=False))],
+                 starargs=None,
+                 kwargs=None
+             )
+diff --git a/sympy/printing/conventions.py b/sympy/printing/conventions.py
+index f74468290c..7091a652cf 100644
+--- a/sympy/printing/conventions.py
++++ b/sympy/printing/conventions.py
+@@ -6,6 +6,7 @@
+ 
+ import re
+ import collections
++from collections.abc import Iterable
+ 
+ 
+ _name_with_digits_p = re.compile(r'^([a-zA-Z]+)([0-9]+)$')
+@@ -77,7 +78,7 @@ def requires_partial(expr):
+     get the context of the expression.
+     """
+ 
+-    if not isinstance(expr.free_symbols, collections.Iterable):
++    if not isinstance(expr.free_symbols, Iterable):
+         return len(set(expr.variables)) > 1
+ 
+     return sum(not s.is_integer for s in expr.free_symbols) > 1
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index 364b24a1e5..9edbaadc30 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -1655,9 +1655,9 @@ def _print_SeqFormula(self, s):
+         else:
+             printset = tuple(s)
+ 
+-        return (r"\left\["
++        return (r"\left["
+               + r", ".join(self._print(el) for el in printset)
+-              + r"\right\]")
++              + r"\right]")
+ 
+     _print_SeqPer = _print_SeqFormula
+     _print_SeqAdd = _print_SeqFormula
+diff --git a/sympy/tensor/array/ndim_array.py b/sympy/tensor/array/ndim_array.py
+index b2c4135a76..59583f28e6 100644
+--- a/sympy/tensor/array/ndim_array.py
++++ b/sympy/tensor/array/ndim_array.py
+@@ -1,5 +1,6 @@
+ from __future__ import print_function, division
+ import collections
++from collections.abc import Iterable
+ 
+ from sympy import Basic
+ from sympy.core.compatibility import SYMPY_INTS
+@@ -104,13 +105,13 @@ def _check_symbolic_index(self, index):
+ 
+     def _setter_iterable_check(self, value):
+         from sympy.matrices.matrices import MatrixBase
+-        if isinstance(value, (collections.Iterable, MatrixBase, NDimArray)):
++        if isinstance(value, (Iterable, MatrixBase, NDimArray)):
+             raise NotImplementedError
+ 
+     @classmethod
+     def _scan_iterable_shape(cls, iterable):
+         def f(pointer):
+-            if not isinstance(pointer, collections.Iterable):
++            if not isinstance(pointer, Iterable):
+                 return [pointer], ()
+ 
+             result = []
+@@ -135,7 +136,7 @@ def _handle_ndarray_creation_inputs(cls, iterable=None, shape=None, **kwargs):
+             shape = iterable.shape
+             iterable = list(iterable)
+         # Construct N-dim array from an iterable (numpy arrays included):
+-        elif shape is None and isinstance(iterable, collections.Iterable):
++        elif shape is None and isinstance(iterable, Iterable):
+             iterable, shape = cls._scan_iterable_shape(iterable)
+ 
+         # Construct N-dim array from a Matrix:
+@@ -230,7 +231,7 @@ def _eval_derivative(self, arg):
+         from sympy import derive_by_array
+         from sympy import Derivative, Tuple
+         from sympy.matrices.common import MatrixCommon
+-        if isinstance(arg, (collections.Iterable, Tuple, MatrixCommon, NDimArray)):
++        if isinstance(arg, (Iterable, Tuple, MatrixCommon, NDimArray)):
+             return derive_by_array(self, arg)
+         else:
+             return self.applyfunc(lambda x: x.diff(arg))
+@@ -327,7 +328,7 @@ def __sub__(self, other):
+     def __mul__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected, use tensorproduct(...) for tensorial product")
+         other = sympify(other)
+         result_list = [i*other for i in self]
+@@ -336,7 +337,7 @@ def __mul__(self, other):
+     def __rmul__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected, use tensorproduct(...) for tensorial product")
+         other = sympify(other)
+         result_list = [other*i for i in self]
+@@ -345,7 +346,7 @@ def __rmul__(self, other):
+     def __div__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected")
+         other = sympify(other)
+         result_list = [i/other for i in self]
+diff --git a/sympy/tensor/functions.py b/sympy/tensor/functions.py
+index 4b97543cfa..fc066aa0d5 100644
+--- a/sympy/tensor/functions.py
++++ b/sympy/tensor/functions.py
+@@ -1,4 +1,5 @@
+ import collections
++from collections.abc import Iterable
+ from sympy.core.evaluate import global_evaluate
+ from sympy import Expr, S, Mul, sympify
+ 
+@@ -25,7 +26,7 @@ def __new__(cls, *args, **kwargs):
+         other = []
+         scalar = S.One
+         for arg in args:
+-            if isinstance(arg, (collections.Iterable, MatrixBase, NDimArray)):
++            if isinstance(arg, (Iterable, MatrixBase, NDimArray)):
+                 arrays.append(Array(arg))
+             elif isinstance(arg, (MatrixExpr,)):
+                 other.append(arg)
+diff --git a/sympy/tensor/indexed.py b/sympy/tensor/indexed.py
+index 3752d24423..dcd0bfd4fd 100644
+--- a/sympy/tensor/indexed.py
++++ b/sympy/tensor/indexed.py
+@@ -108,6 +108,7 @@
+ from __future__ import print_function, division
+ 
+ import collections
++from collections.abc import Iterable
+ 
+ from sympy.core.sympify import _sympify
+ from sympy.functions.special.tensor_functions import KroneckerDelta
+@@ -152,7 +153,7 @@ def __new__(cls, base, *args, **kw_args):
+             raise TypeError(filldedent("""
+                 Indexed expects string, Symbol, or IndexedBase as base."""))
+         args = list(map(sympify, args))
+-        if isinstance(base, (NDimArray, collections.Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
++        if isinstance(base, (NDimArray, Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
+             if len(args) == 1:
+                 return base[args[0]]
+             else:

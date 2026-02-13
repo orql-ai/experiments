@@ -1,0 +1,273 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_inlines
+Found 1 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_inlines, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table admin_inlines_parent
+    Creating table admin_inlines_teacher
+    Creating table admin_inlines_child
+    Creating table admin_inlines_book
+    Creating table admin_inlines_author
+    Creating table admin_inlines_nonautopkbook
+    Creating table admin_inlines_nonautopkbookchild
+    Creating table admin_inlines_editablepkbook
+    Creating table admin_inlines_holder
+    Creating table admin_inlines_inner
+    Creating table admin_inlines_holder2
+    Creating table admin_inlines_inner2
+    Creating table admin_inlines_holder3
+    Creating table admin_inlines_inner3
+    Creating table admin_inlines_holder4
+    Creating table admin_inlines_inner4stacked
+    Creating table admin_inlines_inner4tabular
+    Creating table admin_inlines_holder5
+    Creating table admin_inlines_inner5stacked
+    Creating table admin_inlines_inner5tabular
+    Creating table admin_inlines_person
+    Creating table admin_inlines_outfititem
+    Creating table admin_inlines_fashionista
+    Creating table admin_inlines_shoppingweakness
+    Creating table admin_inlines_titlecollection
+    Creating table admin_inlines_title
+    Creating table admin_inlines_poll
+    Creating table admin_inlines_question
+    Creating table admin_inlines_novel
+    Creating table admin_inlines_chapter
+    Creating table admin_inlines_footnote
+    Creating table admin_inlines_capofamiglia
+    Creating table admin_inlines_consigliere
+    Creating table admin_inlines_sottocapo
+    Creating table admin_inlines_readonlyinline
+    Creating table admin_inlines_parentmodelwithcustompk
+    Creating table admin_inlines_childmodel1
+    Creating table admin_inlines_childmodel2
+    Creating table admin_inlines_binarytree
+    Creating table admin_inlines_lifeform
+    Creating table admin_inlines_extraterrestrial
+    Creating table admin_inlines_sighting
+    Creating table admin_inlines_someparentmodel
+    Creating table admin_inlines_somechildmodel
+    Creating table admin_inlines_course
+    Creating table admin_inlines_class
+    Creating table admin_inlines_profilecollection
+    Creating table admin_inlines_profile
+    Creating table admin_inlines_verbosenameprofile
+    Creating table admin_inlines_verbosenamepluralprofile
+    Creating table admin_inlines_bothverbosenameprofile
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13710:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-13710
+836b79e2a6e5: Pulling fs layer
+9f5a969c9678: Pulling fs layer
+9a976e8c0b17: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+0015a28029a7: Pulling fs layer
+5c2be839837f: Pulling fs layer
+724625094df2: Pulling fs layer
+62b0a2c85ef9: Pulling fs layer
+925361aa7a6f: Pulling fs layer
+62b0a2c85ef9: Download complete
+925361aa7a6f: Download complete
+836b79e2a6e5: Download complete
+9f5a969c9678: Download complete
+e5a28c0c137e: Download complete
+9a976e8c0b17: Download complete
+ac5b61163589: Download complete
+5c2be839837f: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+724625094df2: Download complete
+500327121db6: Download complete
+0015a28029a7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+9f5a969c9678: Pull complete
+9a976e8c0b17: Pull complete
+0015a28029a7: Pull complete
+62b0a2c85ef9: Pull complete
+925361aa7a6f: Pull complete
+724625094df2: Pull complete
+5c2be839837f: Pull complete
+Digest: sha256:ebf07b88f7b92fa9c29fc2de038bd98f8f893e8c3a1e44b290b8e33b45cd83d1
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13710:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_verbose_name_inline (admin_inlines.tests.TestVerboseNameInlineForms) ... FAIL
+
+======================================================================
+FAIL: test_verbose_name_inline (admin_inlines.tests.TestVerboseNameInlineForms)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/admin_inlines/tests.py", line 1001, in test_verbose_name_inline
+    self.assertContains(response, '<h2>Non-verbose childss</h2>')
+  File "/testbed/django/test/testcases.py", line 465, in assertContains
+    self.assertTrue(real_count != 0, msg_prefix + "Couldn't find %s in response" % text_repr)
+AssertionError: False is not true : Couldn't find '<h2>Non-verbose childss</h2>' in response
+
+----------------------------------------------------------------------
+Ran 1 test in 0.120s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (40 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application admin_inlines
+Found 40 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: admin_inlines, auth, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table admin_inlines_parent
+    Creating table admin_inlines_teacher
+    Creating table admin_inlines_child
+    Creating table admin_inlines_book
+    Creating table admin_inlines_author
+    Creating table admin_inlines_nonautopkbook
+    Creating table admin_inlines_nonautopkbookchild
+    Creating table admin_inlines_editablepkbook
+    Creating table admin_inlines_holder
+    Creating table admin_inlines_inner
+    Creating table admin_inlines_holder2
+    Creating table admin_inlines_inner2
+    Creating table admin_inlines_holder3
+    Creating table admin_inlines_inner3
+    Creating table admin_inlines_holder4
+    Creating table admin_inlines_inner4stacked
+    Creating table admin_inlines_inner4tabular
+    Creating table admin_inlines_holder5
+    Creating table admin_inlines_inner5stacked
+    Creating table admin_inlines_inner5tabular
+    Creating table admin_inlines_person
+    Creating table admin_inlines_outfititem
+    Creating table admin_inlines_fashionista
+    Creating table admin_inlines_shoppingweakness
+    Creating table admin_inlines_titlecollection
+    Creating table admin_inlines_title
+    Creating table admin_inlines_poll
+    Creating table admin_inlines_question
+    Creating table admin_inlines_novel
+    Creating table admin_inlines_chapter
+    Creating table admin_inlines_footnote
+    Creating table admin_inlines_capofamiglia
+    Creating table admin_inlines_consigliere
+    Creating table admin_inlines_sottocapo
+    Creating table admin_inlines_readonlyinline
+    Creating table admin_inlines_parentmodelwithcustompk
+    Creating table admin_inlines_childmodel1
+    Creating table admin_inlines_childmodel2
+    Creating table admin_inlines_binarytree
+    Creating table admin_inlines_lifeform
+    Creating table admin_inlines_extraterrestrial
+    Creating table admin_inlines_sighting
+    Creating table admin_inlines_someparentmodel
+    Creating table admin_inlines_somechildmodel
+    Creating table admin_inlines_course
+    Creating table admin_inlines_class
+    Creating table admin_inlines_profilecollection
+    Creating table admin_inlines_profile
+    Creating table admin_inlines_verbosenameprofile
+    Creating table admin_inlines_verbosenamepluralprofile
+    Creating table admin_inlines_bothverbosenameprofile
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_deleting_inline_with_protected_delete_does_not_validate (admin_inlines.tests.TestInlineProtectedOnDelete) ... ok
+test_all_inline_media (admin_inlines.tests.TestInlineMedia) ... ok
+test_inline_media_only_base (admin_inlines.tests.TestInlineMedia) ... ok
+test_inline_media_only_inline (admin_inlines.tests.TestInlineMedia) ... ok
+test_both_verbose_names_inline (admin_inlines.tests.TestVerboseNameInlineForms) ... ok
+test_verbose_name_plural_inline (admin_inlines.tests.TestVerboseNameInlineForms) ... ok
+test_add_url_not_allowed (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_extra_inlines_are_not_shown (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_get_to_change_url_is_allowed (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_inline_delete_buttons_are_not_shown (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_inlines_are_rendered_as_read_only (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_main_model_is_rendered_as_read_only (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_post_to_change_url_not_allowed (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_submit_line_shows_only_close_button (admin_inlines.tests.TestReadOnlyChangeViewInlinePermissions) ... ok
+test_inline_add_fk_add_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_add_fk_noperm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_add_m2m_add_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_add_m2m_noperm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_add_m2m_view_only_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_fk_add_change_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_fk_add_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_fk_all_perms (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_fk_change_del_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_fk_change_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_fk_noperm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_m2m_add_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_m2m_change_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_m2m_noperm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_inline_change_m2m_view_only_perm (admin_inlines.tests.TestInlinePermissions) ... ok
+test_custom_form_tabular_inline_extra_field_label (admin_inlines.tests.TestInline) ... ok
+test_custom_get_extra_form (admin_inlines.tests.TestInline) ... ok
+test_custom_min_num (admin_inlines.tests.TestInline) ... ok
+test_inline_editable_pk (admin_inlines.tests.TestInline) ... ok
+test_inline_nonauto_noneditable_inherited_pk (admin_inlines.tests.TestInline) ... ok
+test_inline_nonauto_noneditable_pk (admin_inlines.tests.TestInline) ... ok
+test_inline_primary (admin_inlines.tests.TestInline) ... ok
+test_inlines_plural_heading_foreign_key (admin_inlines.tests.TestInline) ... ok
+test_inlines_singular_heading_one_to_one (admin_inlines.tests.TestInline) ... ok
+test_non_editable_custom_form_tabular_inline_extra_field_label (admin_inlines.tests.TestInline) ... ok
+test_stacked_inline_edit_form_contains_has_original_class (admin_inlines.tests.TestInline) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 1.398s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['admin_inlines.tests.TestVerboseNameInlineForms.test_verbose_name_inline']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

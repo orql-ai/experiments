@@ -1,0 +1,133 @@
+diff --git a/sympy/printing/mathml.py b/sympy/printing/mathml.py
+index 1aa0ee01a2..9e5953bb6f 100644
+--- a/sympy/printing/mathml.py
++++ b/sympy/printing/mathml.py
+@@ -391,6 +391,22 @@ def translate(s):
+     _print_MatrixSymbol = _print_Symbol
+     _print_RandomSymbol = _print_Symbol
+ 
++    def _print_IndexedBase(self, e):
++        return self._print(e.label)
++
++    def _print_Indexed(self, e):
++        x = self.dom.createElement('msub')
++        x.appendChild(self._print(e.base))
++        if len(e.indices) == 1:
++            x.appendChild(self._print(e.indices[0]))
++        else:
++            # Multiple indices - wrap in mfenced
++            mfenced = self.dom.createElement('mfenced')
++            for idx in e.indices:
++                mfenced.appendChild(self._print(idx))
++            x.appendChild(mfenced)
++        return x
++
+     def _print_Pow(self, e):
+         # Here we use root instead of power if the exponent is the reciprocal of an integer
+         if self._settings['root_notation'] and e.exp.is_Rational and e.exp.p == 1:
+@@ -629,8 +645,8 @@ def _print_MatrixBase(self, m):
+             return table
+         brac = self.dom.createElement('mfenced')
+         if self._settings["mat_delim"] == "[":
+-            brac.setAttribute('open', '[')
+             brac.setAttribute('close', ']')
++            brac.setAttribute('open', '[')
+         brac.appendChild(table)
+         return brac
+ 
+@@ -848,6 +864,22 @@ def _print_MatrixSymbol(self, sym):
+ 
+     _print_RandomSymbol = _print_Symbol
+ 
++    def _print_IndexedBase(self, e):
++        return self._print(e.label)
++
++    def _print_Indexed(self, e):
++        x = self.dom.createElement('msub')
++        x.appendChild(self._print(e.base))
++        if len(e.indices) == 1:
++            x.appendChild(self._print(e.indices[0]))
++        else:
++            # Multiple indices - wrap in mfenced
++            mfenced = self.dom.createElement('mfenced')
++            for idx in e.indices:
++                mfenced.appendChild(self._print(idx))
++            x.appendChild(mfenced)
++        return x
++
+     def _print_conjugate(self, expr):
+         enc = self.dom.createElement('menclose')
+         enc.setAttribute('notation', 'top')
+@@ -1028,23 +1060,22 @@ def _print_Tuple(self, e):
+     def _print_Interval(self, i):
+         mrow = self.dom.createElement('mrow')
+         brac = self.dom.createElement('mfenced')
+-        if i.start == i.end:
++        if i.left == i.right:
+             # Most often, this type of Interval is converted to a FiniteSet
+-            brac.setAttribute('open', '{')
+             brac.setAttribute('close', '}')
+-            brac.appendChild(self._print(i.start))
++            brac.setAttribute('open', '{')
++            brac.appendChild(self._print(i.left))
+         else:
+-            if i.left_open:
+-                brac.setAttribute('open', '(')
+-            else:
+-                brac.setAttribute('open', '[')
+-
+             if i.right_open:
+                 brac.setAttribute('close', ')')
+             else:
+                 brac.setAttribute('close', ']')
+-            brac.appendChild( self._print(i.start))
+-            brac.appendChild( self._print(i.end))
++            if i.left_open:
++                brac.setAttribute('open', '(')
++            else:
++                brac.setAttribute('open', '[')
++            brac.appendChild(self._print(i.left))
++            brac.appendChild(self._print(i.right))
+ 
+         mrow.appendChild(brac)
+         return mrow
+@@ -1052,8 +1083,8 @@ def _print_Interval(self, i):
+     def _print_Abs(self, expr, exp=None):
+         mrow = self.dom.createElement('mrow')
+         x = self.dom.createElement('mfenced')
+-        x.setAttribute('open', '|')
+         x.setAttribute('close', '|')
++        x.setAttribute('open', '|')
+         x.appendChild(self._print(expr.args[0]))
+         mrow.appendChild(x)
+         return mrow
+@@ -1115,8 +1146,8 @@ def _print_FiniteSet(self, s):
+     def _print_set(self, s):
+         items = sorted(s, key=default_sort_key)
+         brac = self.dom.createElement('mfenced')
+-        brac.setAttribute('open', '{')
+         brac.setAttribute('close', '}')
++        brac.setAttribute('open', '{')
+         for item in items:
+             brac.appendChild(self._print(item))
+         return brac
+@@ -1237,8 +1268,8 @@ def _print_EmptySet(self, e):
+     def _print_floor(self, e):
+         mrow =  self.dom.createElement('mrow')
+         x = self.dom.createElement('mfenced')
+-        x.setAttribute('open', u'\u230A')
+         x.setAttribute('close', u'\u230B')
++        x.setAttribute('open', u'\u230A')
+         x.appendChild(self._print(e.args[0]))
+         mrow.appendChild(x)
+         return mrow
+@@ -1247,8 +1278,8 @@ def _print_floor(self, e):
+     def _print_ceiling(self, e):
+         mrow =  self.dom.createElement('mrow')
+         x = self.dom.createElement('mfenced')
+-        x.setAttribute('open', u'\u2308')
+         x.setAttribute('close', u'\u2309')
++        x.setAttribute('open', u'\u2308')
+         x.appendChild(self._print(e.args[0]))
+         mrow.appendChild(x)
+         return mrow

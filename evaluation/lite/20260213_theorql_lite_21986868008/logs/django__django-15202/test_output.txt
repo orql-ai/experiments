@@ -1,0 +1,146 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15202:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15202
+792733d4b27b: Pulling fs layer
+500327121db6: Pulling fs layer
+51c2875bef29: Pulling fs layer
+ac5b61163589: Pulling fs layer
+933100d0d38c: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+50d3924e65fd: Pulling fs layer
+f3e594b530c2: Pulling fs layer
+4efa29366152: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+729c11c31db2: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+933100d0d38c: Download complete
+e5a28c0c137e: Download complete
+4efa29366152: Download complete
+729c11c31db2: Download complete
+50d3924e65fd: Download complete
+792733d4b27b: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+51c2875bef29: Download complete
+f3e594b530c2: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+933100d0d38c: Pull complete
+729c11c31db2: Pull complete
+51c2875bef29: Pull complete
+4efa29366152: Pull complete
+50d3924e65fd: Pull complete
+f3e594b530c2: Pull complete
+792733d4b27b: Pull complete
+Digest: sha256:abe930b1c181a42c1342448fd49073898af40bacd08e925eb7d9765963dde0de
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15202:latest
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/tests/runtests.py", line 25, in <module>
+    from django.test import TestCase, TransactionTestCase
+  File "/testbed/django/test/__init__.py", line 3, in <module>
+    from django.test.client import (
+  File "/testbed/django/test/client.py", line 15, in <module>
+    from django.core.handlers.asgi import ASGIRequest
+  File "/testbed/django/core/handlers/asgi.py", line 11, in <module>
+    from django.core.handlers import base
+  File "/testbed/django/core/handlers/base.py", line 11, in <module>
+    from django.urls import get_resolver, set_urlconf
+  File "/testbed/django/urls/__init__.py", line 1, in <module>
+    from .base import (
+  File "/testbed/django/urls/base.py", line 8, in <module>
+    from .exceptions import NoReverseMatch, Resolver404
+  File "/testbed/django/urls/exceptions.py", line 1, in <module>
+    from django.http import Http404
+  File "/testbed/django/http/__init__.py", line 5, in <module>
+    from django.http.response import (
+  File "/testbed/django/http/response.py", line 16, in <module>
+    from django.core.serializers.json import DjangoJSONEncoder
+  File "/testbed/django/core/serializers/__init__.py", line 23, in <module>
+    from django.core.serializers.base import SerializerDoesNotExist
+  File "/testbed/django/core/serializers/base.py", line 8, in <module>
+    from django.db import models
+  File "/testbed/django/db/models/__init__.py", line 3, in <module>
+    from django.db.models.aggregates import *  # NOQA
+  File "/testbed/django/db/models/aggregates.py", line 5, in <module>
+    from django.db.models.expressions import Case, Func, Star, When
+  File "/testbed/django/db/models/expressions.py", line 10, in <module>
+    from django.db.models import fields
+  File "/testbed/django/db/models/fields/__init__.py", line 12, in <module>
+    from django import forms
+  File "/testbed/django/forms/__init__.py", line 7, in <module>
+    from django.forms.fields import *  # NOQA
+  File "/testbed/django/forms/fields.py", line 17, in <module>
+    from django.core import validators
+  File "/testbed/django/core/validators.py", line 134
+    host_match = re.search(r'^\[(.+)\](?::\d{1,5})?
+                                                   ^
+SyntaxError: EOL while scanning string literal
+
+
+===== PHASE: PASS_TO_PASS (6 selectors) =====
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/testbed/tests/runtests.py", line 25, in <module>
+    from django.test import TestCase, TransactionTestCase
+  File "/testbed/django/test/__init__.py", line 3, in <module>
+    from django.test.client import (
+  File "/testbed/django/test/client.py", line 15, in <module>
+    from django.core.handlers.asgi import ASGIRequest
+  File "/testbed/django/core/handlers/asgi.py", line 11, in <module>
+    from django.core.handlers import base
+  File "/testbed/django/core/handlers/base.py", line 11, in <module>
+    from django.urls import get_resolver, set_urlconf
+  File "/testbed/django/urls/__init__.py", line 1, in <module>
+    from .base import (
+  File "/testbed/django/urls/base.py", line 8, in <module>
+    from .exceptions import NoReverseMatch, Resolver404
+  File "/testbed/django/urls/exceptions.py", line 1, in <module>
+    from django.http import Http404
+  File "/testbed/django/http/__init__.py", line 5, in <module>
+    from django.http.response import (
+  File "/testbed/django/http/response.py", line 16, in <module>
+    from django.core.serializers.json import DjangoJSONEncoder
+  File "/testbed/django/core/serializers/__init__.py", line 23, in <module>
+    from django.core.serializers.base import SerializerDoesNotExist
+  File "/testbed/django/core/serializers/base.py", line 8, in <module>
+    from django.db import models
+  File "/testbed/django/db/models/__init__.py", line 3, in <module>
+    from django.db.models.aggregates import *  # NOQA
+  File "/testbed/django/db/models/aggregates.py", line 5, in <module>
+    from django.db.models.expressions import Case, Func, Star, When
+  File "/testbed/django/db/models/expressions.py", line 10, in <module>
+    from django.db.models import fields
+  File "/testbed/django/db/models/fields/__init__.py", line 12, in <module>
+    from django import forms
+  File "/testbed/django/forms/__init__.py", line 7, in <module>
+    from django.forms.fields import *  # NOQA
+  File "/testbed/django/forms/fields.py", line 17, in <module>
+    from django.core import validators
+  File "/testbed/django/core/validators.py", line 134
+    host_match = re.search(r'^\[(.+)\](?::\d{1,5})?
+                                                   ^
+SyntaxError: EOL while scanning string literal
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_clean_invalid', 'forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_clean_not_required']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_clean', 'forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_clean_required', 'forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_strip_on_none_value', 'forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_unable_to_set_strip_kwarg', 'forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_widget', 'forms_tests.field_tests.test_urlfield.URLFieldTest.test_urlfield_widget_max_min_length']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

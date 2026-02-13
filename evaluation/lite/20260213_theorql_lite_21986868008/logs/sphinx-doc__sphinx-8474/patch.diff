@@ -1,0 +1,15 @@
+diff --git a/sphinx/domains/std.py b/sphinx/domains/std.py
+index 4bde57930..a6e0ad98b 100644
+--- a/sphinx/domains/std.py
++++ b/sphinx/domains/std.py
+@@ -852,6 +852,10 @@ class StandardDomain(Domain):
+             if fignumber is None:
+                 return contnode
+         except ValueError:
++            # If the node doesn't have a caption/title, don't warn about missing number
++            # for figures, tables, and code-blocks (but still warn for sections)
++            if figtype != 'section' and self.get_numfig_title(target_node) is None:
++                return contnode
+             logger.warning(__("no number is assigned for %s: %s"), figtype, labelid,
+                            location=node)
+             return contnode

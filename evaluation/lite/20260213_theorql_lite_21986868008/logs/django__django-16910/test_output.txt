@@ -1,0 +1,296 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application defer_regress
+Importing application select_related_onetoone
+Found 2 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16910:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16910
+aa7e53ab2782: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+56cfd456d2c9: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+48d09a4d2bd0: Pulling fs layer
+500327121db6: Pulling fs layer
+aef50d31cf01: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+1c04d89b98c3: Pulling fs layer
+ac5b61163589: Pulling fs layer
+788ea9f0fbb4: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+896fe8035137: Pulling fs layer
+896fe8035137: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+788ea9f0fbb4: Download complete
+e5a28c0c137e: Download complete
+48d09a4d2bd0: Download complete
+aef50d31cf01: Download complete
+aa7e53ab2782: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+1c04d89b98c3: Download complete
+500327121db6: Download complete
+56cfd456d2c9: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+48d09a4d2bd0: Pull complete
+56cfd456d2c9: Pull complete
+aef50d31cf01: Pull complete
+896fe8035137: Pull complete
+788ea9f0fbb4: Pull complete
+1c04d89b98c3: Pull complete
+aa7e53ab2782: Pull complete
+Digest: sha256:e620a5516967a4f88647768c357acbe41f18754259e525e449eb613eaf97392e
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16910:latest
+test_inheritance_deferred2 (unittest.loader._FailedTest.test_inheritance_deferred2) ... ERROR
+test_reverse_one_to_one_relations (unittest.loader._FailedTest.test_reverse_one_to_one_relations) ... ERROR
+
+======================================================================
+ERROR: test_inheritance_deferred2 (unittest.loader._FailedTest.test_inheritance_deferred2)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_inheritance_deferred2'
+
+======================================================================
+ERROR: test_reverse_one_to_one_relations (unittest.loader._FailedTest.test_reverse_one_to_one_relations)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_one_to_one_relations'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)
+
+
+===== PHASE: PASS_TO_PASS (35 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application defer_regress
+Importing application select_related_onetoone
+Found 34 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_reverse_related_validation (unittest.loader._FailedTest.test_reverse_related_validation) ... ERROR
+test_reverse_related_validation_with_filtered_relation (unittest.loader._FailedTest.test_reverse_related_validation_with_filtered_relation) ... ERROR
+test_delete_defered_model (unittest.loader._FailedTest.test_delete_defered_model) ... ERROR
+test_delete_defered_proxy_model (unittest.loader._FailedTest.test_delete_defered_proxy_model) ... ERROR
+test_back_and_forward (unittest.loader._FailedTest.test_back_and_forward) ... ERROR
+test_basic (unittest.loader._FailedTest.test_basic) ... ERROR
+test_follow_from_child_class (unittest.loader._FailedTest.test_follow_from_child_class) ... ERROR
+test_follow_inheritance (unittest.loader._FailedTest.test_follow_inheritance) ... ERROR
+test_follow_next_level (unittest.loader._FailedTest.test_follow_next_level) ... ERROR
+test_follow_two (unittest.loader._FailedTest.test_follow_two) ... ERROR
+test_follow_two_next_level (unittest.loader._FailedTest.test_follow_two_next_level) ... ERROR
+test_forward_and_back (unittest.loader._FailedTest.test_forward_and_back) ... ERROR
+test_inheritance_deferred (unittest.loader._FailedTest.test_inheritance_deferred) ... ERROR
+test_multiinheritance_two_subclasses (unittest.loader._FailedTest.test_multiinheritance_two_subclasses) ... ERROR
+test_multiple_subclass (unittest.loader._FailedTest.test_multiple_subclass) ... ERROR
+test_not_followed_by_default (unittest.loader._FailedTest.test_not_followed_by_default) ... ERROR
+test_nullable_relation (unittest.loader._FailedTest.test_nullable_relation) ... ERROR
+test_onetoone_with_subclass (unittest.loader._FailedTest.test_onetoone_with_subclass) ... ERROR
+test_onetoone_with_two_subclasses (unittest.loader._FailedTest.test_onetoone_with_two_subclasses) ... ERROR
+test_parent_only (unittest.loader._FailedTest.test_parent_only) ... ERROR
+test_self_relation (unittest.loader._FailedTest.test_self_relation) ... ERROR
+test_common_model_different_mask (unittest.loader._FailedTest.test_common_model_different_mask) ... ERROR
+test_defer_annotate_select_related (unittest.loader._FailedTest.test_defer_annotate_select_related) ... ERROR
+test_defer_many_to_many_ignored (unittest.loader._FailedTest.test_defer_many_to_many_ignored) ... ERROR
+test_defer_reverse_many_to_many_ignored (unittest.loader._FailedTest.test_defer_reverse_many_to_many_ignored) ... ERROR
+test_defer_with_select_related (unittest.loader._FailedTest.test_defer_with_select_related) ... ERROR
+test_only_and_defer_usage_on_proxy_models (unittest.loader._FailedTest.test_only_and_defer_usage_on_proxy_models) ... ERROR
+test_only_many_to_many_ignored (unittest.loader._FailedTest.test_only_many_to_many_ignored) ... ERROR
+test_only_reverse_many_to_many_ignored (unittest.loader._FailedTest.test_only_reverse_many_to_many_ignored) ... ERROR
+test_only_with_select_related (unittest.loader._FailedTest.test_only_with_select_related) ... ERROR
+test_proxy_model_defer_with_select_related (unittest.loader._FailedTest.test_proxy_model_defer_with_select_related) ... ERROR
+test_resolve_columns (unittest.loader._FailedTest.test_resolve_columns) ... ERROR
+test_ticket_16409 (unittest.loader._FailedTest.test_ticket_16409) ... ERROR
+test_ticket_23270 (unittest.loader._FailedTest.test_ticket_23270) ... ERROR
+
+======================================================================
+ERROR: test_reverse_related_validation (unittest.loader._FailedTest.test_reverse_related_validation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_related_validation'
+
+======================================================================
+ERROR: test_reverse_related_validation_with_filtered_relation (unittest.loader._FailedTest.test_reverse_related_validation_with_filtered_relation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_reverse_related_validation_with_filtered_relation'
+
+======================================================================
+ERROR: test_delete_defered_model (unittest.loader._FailedTest.test_delete_defered_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_delete_defered_model'
+
+======================================================================
+ERROR: test_delete_defered_proxy_model (unittest.loader._FailedTest.test_delete_defered_proxy_model)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_delete_defered_proxy_model'
+
+======================================================================
+ERROR: test_back_and_forward (unittest.loader._FailedTest.test_back_and_forward)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_back_and_forward'
+
+======================================================================
+ERROR: test_basic (unittest.loader._FailedTest.test_basic)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_basic'
+
+======================================================================
+ERROR: test_follow_from_child_class (unittest.loader._FailedTest.test_follow_from_child_class)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_follow_from_child_class'
+
+======================================================================
+ERROR: test_follow_inheritance (unittest.loader._FailedTest.test_follow_inheritance)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_follow_inheritance'
+
+======================================================================
+ERROR: test_follow_next_level (unittest.loader._FailedTest.test_follow_next_level)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_follow_next_level'
+
+======================================================================
+ERROR: test_follow_two (unittest.loader._FailedTest.test_follow_two)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_follow_two'
+
+======================================================================
+ERROR: test_follow_two_next_level (unittest.loader._FailedTest.test_follow_two_next_level)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_follow_two_next_level'
+
+======================================================================
+ERROR: test_forward_and_back (unittest.loader._FailedTest.test_forward_and_back)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_forward_and_back'
+
+======================================================================
+ERROR: test_inheritance_deferred (unittest.loader._FailedTest.test_inheritance_deferred)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_inheritance_deferred'
+
+======================================================================
+ERROR: test_multiinheritance_two_subclasses (unittest.loader._FailedTest.test_multiinheritance_two_subclasses)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_multiinheritance_two_subclasses'
+
+======================================================================
+ERROR: test_multiple_subclass (unittest.loader._FailedTest.test_multiple_subclass)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_multiple_subclass'
+
+======================================================================
+ERROR: test_not_followed_by_default (unittest.loader._FailedTest.test_not_followed_by_default)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_not_followed_by_default'
+
+======================================================================
+ERROR: test_nullable_relation (unittest.loader._FailedTest.test_nullable_relation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_nullable_relation'
+
+======================================================================
+ERROR: test_onetoone_with_subclass (unittest.loader._FailedTest.test_onetoone_with_subclass)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_onetoone_with_subclass'
+
+======================================================================
+ERROR: test_onetoone_with_two_subclasses (unittest.loader._FailedTest.test_onetoone_with_two_subclasses)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_onetoone_with_two_subclasses'
+
+======================================================================
+ERROR: test_parent_only (unittest.loader._FailedTest.test_parent_only)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_parent_only'
+
+======================================================================
+ERROR: test_self_relation (unittest.loader._FailedTest.test_self_relation)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_self_relation'
+
+======================================================================
+ERROR: test_common_model_different_mask (unittest.loader._FailedTest.test_common_model_different_mask)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_common_model_different_mask'
+
+======================================================================
+ERROR: test_defer_annotate_select_related (unittest.loader._FailedTest.test_defer_annotate_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_defer_annotate_select_related'
+
+======================================================================
+ERROR: test_defer_many_to_many_ignored (unittest.loader._FailedTest.test_defer_many_to_many_ignored)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_defer_many_to_many_ignored'
+
+======================================================================
+ERROR: test_defer_reverse_many_to_many_ignored (unittest.loader._FailedTest.test_defer_reverse_many_to_many_ignored)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_defer_reverse_many_to_many_ignored'
+
+======================================================================
+ERROR: test_defer_with_select_related (unittest.loader._FailedTest.test_defer_with_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_defer_with_select_related'
+
+======================================================================
+ERROR: test_only_and_defer_usage_on_proxy_models (unittest.loader._FailedTest.test_only_and_defer_usage_on_proxy_models)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_only_and_defer_usage_on_proxy_models'
+
+======================================================================
+ERROR: test_only_many_to_many_ignored (unittest.loader._FailedTest.test_only_many_to_many_ignored)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_only_many_to_many_ignored'
+
+======================================================================
+ERROR: test_only_reverse_many_to_many_ignored (unittest.loader._FailedTest.test_only_reverse_many_to_many_ignored)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_only_reverse_many_to_many_ignored'
+
+======================================================================
+ERROR: test_only_with_select_related (unittest.loader._FailedTest.test_only_with_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_only_with_select_related'
+
+======================================================================
+ERROR: test_proxy_model_defer_with_select_related (unittest.loader._FailedTest.test_proxy_model_defer_with_select_related)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_proxy_model_defer_with_select_related'
+
+======================================================================
+ERROR: test_resolve_columns (unittest.loader._FailedTest.test_resolve_columns)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_resolve_columns'
+
+======================================================================
+ERROR: test_ticket_16409 (unittest.loader._FailedTest.test_ticket_16409)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_ticket_16409'
+
+======================================================================
+ERROR: test_ticket_23270 (unittest.loader._FailedTest.test_ticket_23270)
+----------------------------------------------------------------------
+AttributeError: 'function' object has no attribute 'test_ticket_23270'
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.005s
+
+FAILED (errors=34)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_inheritance_deferred2.test_inheritance_deferred2', 'defer_regress.tests.DeferRegressionTest.test_reverse_one_to_one_relations.test_reverse_one_to_one_relations']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['select_related_onetoone.tests.ReverseSelectRelatedValidationTests.test_reverse_related_validation.test_reverse_related_validation', 'select_related_onetoone.tests.ReverseSelectRelatedValidationTests.test_reverse_related_validation_with_filtered_relation.test_reverse_related_validation_with_filtered_relation', 'defer_regress.tests.DeferDeletionSignalsTests.test_delete_defered_model.test_delete_defered_model', 'defer_regress.tests.DeferDeletionSignalsTests.test_delete_defered_proxy_model.test_delete_defered_proxy_model', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_back_and_forward.test_back_and_forward', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_basic.test_basic', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_follow_from_child_class.test_follow_from_child_class', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_follow_inheritance.test_follow_inheritance', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_follow_next_level.test_follow_next_level', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_follow_two.test_follow_two', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_follow_two_next_level.test_follow_two_next_level', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_forward_and_back.test_forward_and_back', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_inheritance_deferred.test_inheritance_deferred', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_multiinheritance_two_subclasses.test_multiinheritance_two_subclasses', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_multiple_subclass.test_multiple_subclass', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_not_followed_by_default.test_not_followed_by_default', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_nullable_relation.test_nullable_relation', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_onetoone_with_subclass.test_onetoone_with_subclass', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_onetoone_with_two_subclasses.test_onetoone_with_two_subclasses', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_parent_only.test_parent_only', 'select_related_onetoone.tests.ReverseSelectRelatedTestCase.test_self_relation.test_self_relation', 'defer_regress.tests.DeferRegressionTest.test_basic.test_basic', 'defer_regress.tests.DeferRegressionTest.test_common_model_different_mask.test_common_model_different_mask', 'defer_regress.tests.DeferRegressionTest.test_defer_annotate_select_related.test_defer_annotate_select_related', 'defer_regress.tests.DeferRegressionTest.test_defer_many_to_many_ignored.test_defer_many_to_many_ignored', 'defer_regress.tests.DeferRegressionTest.test_defer_reverse_many_to_many_ignored.test_defer_reverse_many_to_many_ignored', 'defer_regress.tests.DeferRegressionTest.test_defer_with_select_related.test_defer_with_select_related', 'defer_regress.tests.DeferRegressionTest.test_only_and_defer_usage_on_proxy_models.test_only_and_defer_usage_on_proxy_models', 'defer_regress.tests.DeferRegressionTest.test_only_many_to_many_ignored.test_only_many_to_many_ignored', 'defer_regress.tests.DeferRegressionTest.test_only_reverse_many_to_many_ignored.test_only_reverse_many_to_many_ignored', 'defer_regress.tests.DeferRegressionTest.test_only_with_select_related.test_only_with_select_related', 'defer_regress.tests.DeferRegressionTest.test_proxy_model_defer_with_select_related.test_proxy_model_defer_with_select_related', 'defer_regress.tests.DeferRegressionTest.test_resolve_columns.test_resolve_columns', 'defer_regress.tests.DeferRegressionTest.test_ticket_16409.test_ticket_16409', 'defer_regress.tests.DeferRegressionTest.test_ticket_23270.test_ticket_23270']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

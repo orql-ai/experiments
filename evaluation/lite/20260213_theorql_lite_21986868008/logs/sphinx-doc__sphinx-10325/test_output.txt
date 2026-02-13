@@ -1,0 +1,89 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-5.0.0+/7bdc11e87, docutils-0.17.1
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 1 item
+
+tests/test_ext_autodoc_automodule.py::test_automodule_inherited_members PASSED [100%]
+
+============================== 1 passed in 0.49s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-10325:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-10325
+ebe490588457: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+e81c68559cd9: Pulling fs layer
+dfca0cd99b2d: Pulling fs layer
+a4355678e260: Pulling fs layer
+92a723a3a820: Pulling fs layer
+9f49fa2b6533: Pulling fs layer
+9342c9fb8696: Pulling fs layer
+ac5b61163589: Download complete
+e81c68559cd9: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+92a723a3a820: Download complete
+9342c9fb8696: Download complete
+a4355678e260: Download complete
+ebe490588457: Download complete
+7478e0ac0f23: Download complete
+dfca0cd99b2d: Download complete
+7478e0ac0f23: Pull complete
+9f49fa2b6533: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+e81c68559cd9: Pull complete
+a4355678e260: Pull complete
+dfca0cd99b2d: Pull complete
+92a723a3a820: Pull complete
+9342c9fb8696: Pull complete
+9f49fa2b6533: Pull complete
+ebe490588457: Pull complete
+Digest: sha256:9c6f78cf48c6ead4c202a09f07aa73ef7ffd113ca5d3513186a0b765e587a922
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-10325:latest
+
+
+===== PHASE: PASS_TO_PASS (5 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+libraries: Sphinx-5.0.0+/7bdc11e87, docutils-0.17.1
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 5 items
+
+tests/test_ext_autodoc_automodule.py::test_empty_all PASSED              [ 20%]
+tests/test_ext_autodoc_automodule.py::test_automodule PASSED             [ 40%]
+tests/test_ext_autodoc_automodule.py::test_automodule_undoc_members PASSED [ 60%]
+tests/test_ext_autodoc_automodule.py::test_automodule_special_members PASSED [ 80%]
+tests/test_ext_autodoc_automodule.py::test_subclass_of_mocked_object PASSED [100%]
+
+============================== 5 passed in 0.56s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

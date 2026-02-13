@@ -1,0 +1,156 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application inspectdb
+Found 1 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, inspectdb, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table inspectdb_people
+    Creating table inspectdb_message
+    Creating table inspectdb_peopledata
+    Creating table inspectdb_peoplemoredata
+    Creating table inspectdb_foreignkeytofield
+    Creating table inspectdb_digitsincolumnname
+    Creating table inspectdb_special.table name
+    Creating table inspectdb_columntypes
+    Creating table inspectdb_jsonfieldcolumntype
+    Creating table inspectdb_charfielddbcollation
+    Creating table inspectdb_textfielddbcollation
+    Creating table inspectdb_uniquetogether
+    Creating table inspectdb_funcuniqueconstraint
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (2 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15819:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-15819
+836b79e2a6e5: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+440f2bf70467: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+ac5b61163589: Pulling fs layer
+500327121db6: Pulling fs layer
+c2bddbf6b619: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+75b29ba22065: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+4e865410366e: Pulling fs layer
+b780fac9da70: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+396d2ca0167c: Download complete
+440f2bf70467: Download complete
+c2bddbf6b619: Download complete
+e5a28c0c137e: Download complete
+75b29ba22065: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+187d94c4a868: Download complete
+4e865410366e: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+b780fac9da70: Pull complete
+396d2ca0167c: Pull complete
+4e865410366e: Pull complete
+440f2bf70467: Pull complete
+c2bddbf6b619: Pull complete
+187d94c4a868: Pull complete
+75b29ba22065: Pull complete
+Digest: sha256:7f906c5b513091d97dd1239d058cfb0d105e84d7d973e71f0a3cd55d88667998
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-15819:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_same_relations (inspectdb.tests.InspectDBTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (9 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application inspectdb
+Found 9 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, inspectdb, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table inspectdb_people
+    Creating table inspectdb_message
+    Creating table inspectdb_peopledata
+    Creating table inspectdb_peoplemoredata
+    Creating table inspectdb_foreignkeytofield
+    Creating table inspectdb_digitsincolumnname
+    Creating table inspectdb_special.table name
+    Creating table inspectdb_columntypes
+    Creating table inspectdb_jsonfieldcolumntype
+    Creating table inspectdb_charfielddbcollation
+    Creating table inspectdb_textfielddbcollation
+    Creating table inspectdb_uniquetogether
+    Creating table inspectdb_funcuniqueconstraint
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (2 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_composite_primary_key (inspectdb.tests.InspectDBTransactionalTests) ... ok
+test_attribute_name_not_python_keyword (inspectdb.tests.InspectDBTestCase) ... ok
+test_char_field_db_collation (inspectdb.tests.InspectDBTestCase) ... ok
+test_foreign_key_to_field (inspectdb.tests.InspectDBTestCase) ... ok
+test_json_field (inspectdb.tests.InspectDBTestCase) ... ok
+test_stealth_table_name_filter_option (inspectdb.tests.InspectDBTestCase) ... ok
+test_table_with_func_unique_constraint (inspectdb.tests.InspectDBTestCase) ... ok
+test_text_field_db_collation (inspectdb.tests.InspectDBTestCase) ... ok
+test_unique_together_meta (inspectdb.tests.InspectDBTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.281s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,398 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 1 item
+
+lib/matplotlib/tests/test_colors.py::test_index_dtype[uint8] PASSED      [100%]
+
+============================== 1 passed in 2.50s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-24970:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-24970
+0f21a381b6ec: Pulling fs layer
+11de44a65246: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+2565aecb62b6: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+40187f30e4d2: Pulling fs layer
+161f3b5664f5: Pulling fs layer
+7e731192beca: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+22d3b1d58e22: Pulling fs layer
+ac5b61163589: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+22d3b1d58e22: Download complete
+836b79e2a6e5: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+11de44a65246: Download complete
+40187f30e4d2: Download complete
+2565aecb62b6: Download complete
+7478e0ac0f23: Download complete
+0f21a381b6ec: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+7e731192beca: Download complete
+500327121db6: Pull complete
+161f3b5664f5: Download complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+22d3b1d58e22: Pull complete
+11de44a65246: Pull complete
+7e731192beca: Pull complete
+40187f30e4d2: Pull complete
+2565aecb62b6: Pull complete
+161f3b5664f5: Pull complete
+0f21a381b6ec: Pull complete
+Digest: sha256:2030e6f6b30253794f932a95d302df2853dd22c5aa3f1ef4c643aab7d3929f72
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.matplotlib__matplotlib-24970:latest
+
+
+===== PHASE: PASS_TO_PASS (253 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_colors.py::test_create_lookup_table[5-result0] PASSED [  2%]
+lib/matplotlib/tests/test_colors.py::test_create_lookup_table[2-result1] PASSED [  4%]
+lib/matplotlib/tests/test_colors.py::test_create_lookup_table[1-result2] PASSED [  6%]
+lib/matplotlib/tests/test_colors.py::test_index_dtype[int] PASSED        [  8%]
+lib/matplotlib/tests/test_colors.py::test_index_dtype[float16] PASSED    [ 10%]
+lib/matplotlib/tests/test_colors.py::test_index_dtype[float] PASSED      [ 12%]
+lib/matplotlib/tests/test_colors.py::test_resampled PASSED               [ 14%]
+lib/matplotlib/tests/test_colors.py::test_register_cmap PASSED           [ 16%]
+lib/matplotlib/tests/test_colors.py::test_colormaps_get_cmap PASSED      [ 18%]
+lib/matplotlib/tests/test_colors.py::test_unregister_builtin_cmap PASSED [ 20%]
+lib/matplotlib/tests/test_colors.py::test_colormap_copy PASSED           [ 22%]
+lib/matplotlib/tests/test_colors.py::test_colormap_equals PASSED         [ 24%]
+lib/matplotlib/tests/test_colors.py::test_colormap_endian PASSED         [ 26%]
+lib/matplotlib/tests/test_colors.py::test_colormap_invalid PASSED        [ 28%]
+lib/matplotlib/tests/test_colors.py::test_colormap_return_types PASSED   [ 30%]
+lib/matplotlib/tests/test_colors.py::test_BoundaryNorm PASSED            [ 32%]
+lib/matplotlib/tests/test_colors.py::test_CenteredNorm PASSED            [ 34%]
+lib/matplotlib/tests/test_colors.py::test_lognorm_invalid[-1-2] PASSED   [ 36%]
+lib/matplotlib/tests/test_colors.py::test_lognorm_invalid[3-1] PASSED    [ 38%]
+lib/matplotlib/tests/test_colors.py::test_LogNorm PASSED                 [ 40%]
+lib/matplotlib/tests/test_colors.py::test_LogNorm_inverse PASSED         [ 42%]
+lib/matplotlib/tests/test_colors.py::test_PowerNorm PASSED               [ 44%]
+lib/matplotlib/tests/test_colors.py::test_PowerNorm_translation_invariance PASSED [ 46%]
+lib/matplotlib/tests/test_colors.py::test_Normalize PASSED               [ 48%]
+lib/matplotlib/tests/test_colors.py::test_FuncNorm PASSED                [ 50%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_autoscale PASSED  [ 52%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_autoscale_None_vmin PASSED [ 54%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_autoscale_None_vmax PASSED [ 56%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_scale PASSED      [ 58%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_scaleout_center PASSED [ 60%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_scaleout_center_max PASSED [ 62%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_Even PASSED       [ 64%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_Odd PASSED        [ 66%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_VminEqualsVcenter PASSED [ 68%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_VmaxEqualsVcenter PASSED [ 70%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_VminGTVcenter PASSED [ 72%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_TwoSlopeNorm_VminGTVmax PASSED [ 74%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_VcenterGTVmax PASSED [ 76%]
+lib/matplotlib/tests/test_colors.py::test_TwoSlopeNorm_premature_scaling PASSED [ 78%]
+lib/matplotlib/tests/test_colors.py::test_SymLogNorm PASSED              [ 80%]
+lib/matplotlib/tests/test_colors.py::test_SymLogNorm_colorbar PASSED     [ 82%]
+lib/matplotlib/tests/test_colors.py::test_SymLogNorm_single_zero PASSED  [ 84%]
+lib/matplotlib/tests/test_colors.py::TestAsinhNorm::test_init PASSED     [ 86%]
+lib/matplotlib/tests/test_colors.py::TestAsinhNorm::test_norm PASSED     [ 88%]
+lib/matplotlib/tests/test_colors.py::test_cmap_and_norm_from_levels_and_colors[png] PASSED [ 90%]
+lib/matplotlib/tests/test_colors.py::test_boundarynorm_and_colorbarbase[png] PASSED [ 92%]
+lib/matplotlib/tests/test_colors.py::test_cmap_and_norm_from_levels_and_colors2 PASSED [ 94%]
+lib/matplotlib/tests/test_colors.py::test_rgb_hsv_round_trip PASSED      [ 96%]
+lib/matplotlib/tests/test_colors.py::test_autoscale_masked PASSED        [ 98%]
+lib/matplotlib/tests/test_colors.py::test_light_source_topo_surface[png] PASSED [100%]
+
+============================== 50 passed in 4.11s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_colors.py::test_light_source_shading_default PASSED [  2%]
+lib/matplotlib/tests/test_colors.py::test_light_source_shading_empty_mask PASSED [  4%]
+lib/matplotlib/tests/test_colors.py::test_light_source_masked_shading PASSED [  6%]
+lib/matplotlib/tests/test_colors.py::test_light_source_hillshading PASSED [  8%]
+lib/matplotlib/tests/test_colors.py::test_light_source_planar_hillshading PASSED [ 10%]
+lib/matplotlib/tests/test_colors.py::test_color_names PASSED             [ 12%]
+lib/matplotlib/tests/test_colors.py::test_pandas_iterable PASSED         [ 14%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Accent] PASSED [ 16%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Accent_r] PASSED [ 18%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Blues] PASSED [ 20%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Blues_r] PASSED [ 22%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[BrBG] PASSED [ 24%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[BrBG_r] PASSED [ 26%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[BuGn] PASSED [ 28%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[BuGn_r] PASSED [ 30%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[BuPu] PASSED [ 32%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[BuPu_r] PASSED [ 34%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[CMRmap] PASSED [ 36%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[CMRmap_r] PASSED [ 38%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Dark2] PASSED [ 40%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Dark2_r] PASSED [ 42%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[GnBu] PASSED [ 44%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[GnBu_r] PASSED [ 46%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Greens] PASSED [ 48%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Greens_r] PASSED [ 50%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Greys] PASSED [ 52%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Greys_r] PASSED [ 54%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[OrRd] PASSED [ 56%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[OrRd_r] PASSED [ 58%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Oranges] PASSED [ 60%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Oranges_r] PASSED [ 62%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PRGn] PASSED [ 64%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PRGn_r] PASSED [ 66%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Paired] PASSED [ 68%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Paired_r] PASSED [ 70%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Pastel1] PASSED [ 72%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Pastel1_r] PASSED [ 74%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Pastel2] PASSED [ 76%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Pastel2_r] PASSED [ 78%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PiYG] PASSED [ 80%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PiYG_r] PASSED [ 82%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuBu] PASSED [ 84%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuBuGn] PASSED [ 86%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuBuGn_r] PASSED [ 88%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuBu_r] PASSED [ 90%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuOr] PASSED [ 92%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuOr_r] PASSED [ 94%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuRd] PASSED [ 96%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[PuRd_r] PASSED [ 98%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Purples] PASSED [100%]
+
+============================== 50 passed in 3.00s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Purples_r] PASSED [  2%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdBu] PASSED [  4%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdBu_r] PASSED [  6%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdGy] PASSED [  8%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdGy_r] PASSED [ 10%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdPu] PASSED [ 12%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdPu_r] PASSED [ 14%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdYlBu] PASSED [ 16%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdYlBu_r] PASSED [ 18%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdYlGn] PASSED [ 20%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[RdYlGn_r] PASSED [ 22%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Reds] PASSED [ 24%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Reds_r] PASSED [ 26%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Set1] PASSED [ 28%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Set1_r] PASSED [ 30%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Set2] PASSED [ 32%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Set2_r] PASSED [ 34%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Set3] PASSED [ 36%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Set3_r] PASSED [ 38%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Spectral] PASSED [ 40%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Spectral_r] PASSED [ 42%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Wistia] PASSED [ 44%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[Wistia_r] PASSED [ 46%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlGn] PASSED [ 48%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlGnBu] PASSED [ 50%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlGnBu_r] PASSED [ 52%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlGn_r] PASSED [ 54%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlOrBr] PASSED [ 56%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlOrBr_r] PASSED [ 58%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlOrRd] PASSED [ 60%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[YlOrRd_r] PASSED [ 62%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[afmhot] PASSED [ 64%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[afmhot_r] PASSED [ 66%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[autumn] PASSED [ 68%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[autumn_r] PASSED [ 70%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[binary] PASSED [ 72%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[binary_r] PASSED [ 74%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[bone] PASSED [ 76%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[bone_r] PASSED [ 78%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[brg] PASSED [ 80%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[brg_r] PASSED [ 82%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[bwr] PASSED [ 84%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[bwr_r] PASSED [ 86%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[cividis] PASSED [ 88%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[cividis_r] PASSED [ 90%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[cool] PASSED [ 92%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[cool_r] PASSED [ 94%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[coolwarm] PASSED [ 96%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[coolwarm_r] PASSED [ 98%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[copper] PASSED [100%]
+
+============================== 50 passed in 2.51s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[copper_r] PASSED [  2%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[cubehelix] PASSED [  4%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[cubehelix_r] PASSED [  6%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[flag] PASSED [  8%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[flag_r] PASSED [ 10%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_earth] PASSED [ 12%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_earth_r] PASSED [ 14%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_gray] PASSED [ 16%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_gray_r] PASSED [ 18%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_heat] PASSED [ 20%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_heat_r] PASSED [ 22%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_ncar] PASSED [ 24%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_ncar_r] PASSED [ 26%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_rainbow] PASSED [ 28%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_rainbow_r] PASSED [ 30%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_stern] PASSED [ 32%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_stern_r] PASSED [ 34%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_yarg] PASSED [ 36%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gist_yarg_r] PASSED [ 38%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gnuplot] PASSED [ 40%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gnuplot2] PASSED [ 42%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gnuplot2_r] PASSED [ 44%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gnuplot_r] PASSED [ 46%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gray] PASSED [ 48%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[gray_r] PASSED [ 50%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[hot] PASSED [ 52%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[hot_r] PASSED [ 54%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[hsv] PASSED [ 56%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[hsv_r] PASSED [ 58%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[inferno] PASSED [ 60%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[inferno_r] PASSED [ 62%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[jet] PASSED [ 64%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[jet_r] PASSED [ 66%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[magma] PASSED [ 68%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[magma_r] PASSED [ 70%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[nipy_spectral] PASSED [ 72%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[nipy_spectral_r] PASSED [ 74%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[ocean] PASSED [ 76%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[ocean_r] PASSED [ 78%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[pink] PASSED [ 80%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[pink_r] PASSED [ 82%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[plasma] PASSED [ 84%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[plasma_r] PASSED [ 86%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[prism] PASSED [ 88%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[prism_r] PASSED [ 90%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[rainbow] PASSED [ 92%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[rainbow_r] PASSED [ 94%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[seismic] PASSED [ 96%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[seismic_r] PASSED [ 98%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[spring] PASSED [100%]
+
+============================== 50 passed in 2.54s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 50 items
+
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[spring_r] PASSED [  2%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[summer] PASSED [  4%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[summer_r] PASSED [  6%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab10] PASSED [  8%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab10_r] PASSED [ 10%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab20] PASSED [ 12%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab20_r] PASSED [ 14%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab20b] PASSED [ 16%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab20b_r] PASSED [ 18%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab20c] PASSED [ 20%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[tab20c_r] PASSED [ 22%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[terrain] PASSED [ 24%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[terrain_r] PASSED [ 26%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[turbo] PASSED [ 28%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[turbo_r] PASSED [ 30%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[twilight] PASSED [ 32%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[twilight_r] PASSED [ 34%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[twilight_shifted] PASSED [ 36%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[twilight_shifted_r] PASSED [ 38%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[viridis] PASSED [ 40%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[viridis_r] PASSED [ 42%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[winter] PASSED [ 44%]
+lib/matplotlib/tests/test_colors.py::test_colormap_reversing[winter_r] PASSED [ 46%]
+lib/matplotlib/tests/test_colors.py::test_has_alpha_channel PASSED       [ 48%]
+lib/matplotlib/tests/test_colors.py::test_cn PASSED                      [ 50%]
+lib/matplotlib/tests/test_colors.py::test_conversions PASSED             [ 52%]
+lib/matplotlib/tests/test_colors.py::test_conversions_masked PASSED      [ 54%]
+lib/matplotlib/tests/test_colors.py::test_to_rgba_array_single_str PASSED [ 56%]
+lib/matplotlib/tests/test_colors.py::test_to_rgba_array_alpha_array PASSED [ 58%]
+lib/matplotlib/tests/test_colors.py::test_failed_conversions PASSED      [ 60%]
+lib/matplotlib/tests/test_colors.py::test_grey_gray PASSED               [ 62%]
+lib/matplotlib/tests/test_colors.py::test_tableau_order PASSED           [ 64%]
+lib/matplotlib/tests/test_colors.py::test_ndarray_subclass_norm PASSED   [ 66%]
+lib/matplotlib/tests/test_colors.py::test_same_color PASSED              [ 68%]
+lib/matplotlib/tests/test_colors.py::test_hex_shorthand_notation PASSED  [ 70%]
+lib/matplotlib/tests/test_colors.py::test_repr_png PASSED                [ 72%]
+lib/matplotlib/tests/test_colors.py::test_repr_html PASSED               [ 74%]
+lib/matplotlib/tests/test_colors.py::test_get_under_over_bad PASSED      [ 76%]
+lib/matplotlib/tests/test_colors.py::test_non_mutable_get_values[over] PASSED [ 78%]
+lib/matplotlib/tests/test_colors.py::test_non_mutable_get_values[under] PASSED [ 80%]
+lib/matplotlib/tests/test_colors.py::test_non_mutable_get_values[bad] PASSED [ 82%]
+lib/matplotlib/tests/test_colors.py::test_colormap_alpha_array PASSED    [ 84%]
+lib/matplotlib/tests/test_colors.py::test_colormap_bad_data_with_alpha PASSED [ 86%]
+lib/matplotlib/tests/test_colors.py::test_2d_to_rgba PASSED              [ 88%]
+lib/matplotlib/tests/test_colors.py::test_set_dict_to_rgba PASSED        [ 90%]
+lib/matplotlib/tests/test_colors.py::test_norm_deepcopy PASSED           [ 92%]
+lib/matplotlib/tests/test_colors.py::test_norm_callback PASSED           [ 94%]
+lib/matplotlib/tests/test_colors.py::test_scalarmappable_norm_update PASSED [ 96%]
+lib/matplotlib/tests/test_colors.py::test_norm_update_figs[png] <- lib/matplotlib/testing/decorators.py PASSED [ 98%]
+lib/matplotlib/tests/test_colors.py::test_norm_update_figs[pdf] <- lib/matplotlib/testing/decorators.py PASSED [100%]
+
+============================== 50 passed in 3.89s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pytest.ini
+plugins: xdist-3.6.1, rerunfailures-14.0, cov-6.0.0, timeout-2.3.1
+collecting ... collected 3 items
+
+lib/matplotlib/tests/test_colors.py::test_make_norm_from_scale_name PASSED [ 33%]
+lib/matplotlib/tests/test_colors.py::test_color_sequences PASSED         [ 66%]
+lib/matplotlib/tests/test_colors.py::test_cm_set_cmap_error PASSED       [100%]
+
+============================== 3 passed in 2.36s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

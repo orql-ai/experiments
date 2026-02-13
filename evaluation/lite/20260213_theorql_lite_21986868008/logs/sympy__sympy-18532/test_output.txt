@@ -1,0 +1,194 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        83421165
+hash randomization: on (PYTHONHASHSEED=1871863363)
+
+sympy/codegen/tests/test_cnodes.py[1] .                                     [OK]
+sympy/core/tests/test_basic.py[1] .                                         [OK]
+sympy/core/tests/test_expr.py[1] .                                          [OK]
+sympy/matrices/tests/test_commonmatrix.py[1] .                              [OK]
+sympy/matrices/tests/test_matrices.py[1] .                                  [OK]
+sympy/utilities/tests/test_lambdify.py[1] .                                 [OK]
+
+================== tests finished: 6 passed, in 0.76 seconds ===================
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18532:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-18532
+07be16efd7d3: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+b08895a5c216: Pulling fs layer
+500327121db6: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+5b95e764f7d3: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+ed3dada71338: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Download complete
+5c809fd8a9af: Download complete
+ac5b61163589: Download complete
+836b79e2a6e5: Download complete
+e5a28c0c137e: Download complete
+2f341c31f3b7: Download complete
+07be16efd7d3: Download complete
+7478e0ac0f23: Download complete
+5b95e764f7d3: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+0b326ada86d1: Download complete
+a2f6138ded93: Download complete
+b08895a5c216: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+ed3dada71338: Pull complete
+2f341c31f3b7: Pull complete
+b08895a5c216: Pull complete
+5c809fd8a9af: Pull complete
+5b95e764f7d3: Pull complete
+0b326ada86d1: Pull complete
+07be16efd7d3: Pull complete
+Digest: sha256:c6b3778c97950c80492167b3956efe24eeefd1f36530e575115f773a8da00705
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-18532:latest
+
+
+===== PHASE: PASS_TO_PASS (28 selectors) =====
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python  (3.9.20-final-0) [CPython]
+architecture:       64-bit
+cache:              yes
+ground types:       python 
+numpy:              None
+random seed:        21269951
+hash randomization: on (PYTHONHASHSEED=3921938651)
+
+sympy/codegen/tests/test_approximations.py[3] ...                           [OK]
+sympy/codegen/tests/test_ast.py[2] ..                                       [OK]
+sympy/codegen/tests/test_cfunctions.py[1] .                                 [OK]
+sympy/codegen/tests/test_cnodes.py[8] ........                              [OK]
+sympy/codegen/tests/test_fnodes.py[1] E                                   [FAIL]
+sympy/combinatorics/tests/test_named_groups.py[1] .                         [OK]
+sympy/combinatorics/tests/test_perm_groups.py[2] ..                         [OK]
+sympy/combinatorics/tests/test_subsets.py[1] .                              [OK]
+sympy/concrete/tests/test_products.py[1] .                                  [OK]
+sympy/concrete/tests/test_sums_products.py[7] .......                       [OK]
+sympy/core/tests/test_arit.py[1] .                                          [OK]
+sympy/core/tests/test_assumptions.py[3] ...                                 [OK]
+sympy/core/tests/test_basic.py[20] ....................                     [OK]
+sympy/core/tests/test_evalf.py[1] .                                         [OK]
+sympy/core/tests/test_expr.py[14] ....f.........                            [OK]
+sympy/core/tests/test_exprtools.py[1] .                                     [OK]
+sympy/core/tests/test_function.py[6] ..f...                                 [OK]
+sympy/core/tests/test_noncommutative.py[1] .                                [OK]
+sympy/core/tests/test_numbers.py[1] .                                       [OK]
+sympy/core/tests/test_relational.py[1] .                                    [OK]
+sympy/core/tests/test_singleton.py[1] .                                     [OK]
+sympy/core/tests/test_subs.py[17] .................                         [OK]
+sympy/core/tests/test_symbol.py[1] .                                        [OK]
+sympy/core/tests/test_sympify.py[1] .                                       [OK]
+sympy/diffgeom/tests/test_class_structure.py[1] .                           [OK]
+sympy/functions/elementary/tests/test_miscellaneous.py[3] ...               [OK]
+sympy/functions/elementary/tests/test_piecewise.py[2] ..                    [OK]
+sympy/functions/special/tests/test_bessel.py[1] .                           [OK]
+sympy/functions/special/tests/test_delta_functions.py[1] .                  [OK]
+sympy/functions/special/tests/test_singularity_functions.py[1] .            [OK]
+sympy/geometry/tests/test_entity.py[1] .                                    [OK]
+sympy/integrals/tests/test_integrals.py[8] ........                         [OK]
+sympy/integrals/tests/test_meijerint.py[2] ..                               [OK]
+sympy/liealgebras/tests/test_cartan_type.py[1] .                            [OK]
+sympy/logic/tests/test_boolalg.py[5] .....                                  [OK]
+sympy/matrices/expressions/tests/test_matadd.py[1] .                        [OK]
+sympy/matrices/expressions/tests/test_matexpr.py[1] .                       [OK]
+sympy/matrices/expressions/tests/test_matmul.py[3] ...                      [OK]
+sympy/matrices/expressions/tests/test_matpow.py[6] ......                   [OK]
+sympy/matrices/expressions/tests/test_trace.py[1] .                         [OK]
+sympy/matrices/tests/test_commonmatrix.py[4] ....                           [OK]
+sympy/matrices/tests/test_immutable.py[1] .                                 [OK]
+sympy/matrices/tests/test_interactions.py[1] .                              [OK]
+sympy/matrices/tests/test_matrices.py[6] ......                             [OK]
+sympy/physics/quantum/tests/test_cg.py[1] .                                 [OK]
+sympy/physics/quantum/tests/test_density.py[1] .                            [OK]
+sympy/physics/quantum/tests/test_innerproduct.py[1] .                       [OK]
+sympy/physics/quantum/tests/test_sho1d.py[1] .                              [OK]
+sympy/physics/quantum/tests/test_spin.py[5] .....                           [OK]
+sympy/physics/tests/test_secondquant.py[5] .....                            [OK]
+sympy/physics/units/tests/test_dimensionsystem.py[1] .                      [OK]
+sympy/plotting/intervalmath/tests/test_intervalmath.py[1] .                 [OK]
+sympy/polys/agca/tests/test_modules.py[4] ....                              [OK]
+sympy/polys/tests/test_polyoptions.py[10] ..........                        [OK]
+sympy/polys/tests/test_ring_series.py[1] .                                  [OK]
+sympy/printing/pretty/tests/test_pretty.py[1] .                             [OK]
+sympy/printing/tests/test_maple.py[1] .                                     [OK]
+sympy/printing/tests/test_mathematica.py[1] .                               [OK]
+sympy/printing/tests/test_numpy.py[1] s                                     [OK]
+sympy/printing/tests/test_precedence.py[2] ..                               [OK]
+sympy/printing/tests/test_pycode.py[1] .                                    [OK]
+sympy/printing/tests/test_repr.py[4] ....                                   [OK]
+sympy/printing/tests/test_str.py[5] .....                                   [OK]
+sympy/series/tests/test_gruntz.py[3] ...                                    [OK]
+sympy/series/tests/test_limits.py[2] .f                                     [OK]
+sympy/series/tests/test_sequences.py[6] ......                              [OK]
+sympy/sets/tests/test_conditionset.py[2] ..                                 [OK]
+sympy/sets/tests/test_setexpr.py[4] ....                                    [OK]
+sympy/sets/tests/test_sets.py[2] ..                                         [OK]
+sympy/simplify/tests/test_function.py[2] ..                                 [OK]
+sympy/simplify/tests/test_rewrite.py[1] .                                   [OK]
+sympy/simplify/tests/test_sqrtdenest.py[1] .                                [OK]
+sympy/solvers/tests/test_solvers.py[2] .f                                   [OK]
+sympy/solvers/tests/test_solveset.py[1] .                                   [OK]
+sympy/stats/tests/test_rv.py[1] .                                           [OK]
+sympy/strategies/tests/test_rl.py[1] .                                      [OK]
+sympy/strategies/tests/test_tools.py[2] ..                                  [OK]
+sympy/tensor/array/tests/test_immutable_ndim_array.py[1] .                  [OK]
+sympy/tensor/array/tests/test_mutable_ndim_array.py[1] .                    [OK]
+sympy/tensor/tests/test_indexed.py[1] .                                     [OK]
+sympy/tensor/tests/test_tensor.py[3] ...                                    [OK]
+sympy/utilities/tests/test_iterables.py[2] ..                               [OK]
+sympy/utilities/tests/test_pickling.py[1] .                                 [OK]
+sympy/utilities/tests/test_wester.py[10] .....fffff                         [OK]
+
+________________________________________________________________________________
+______________ sympy/codegen/tests/test_fnodes.py:test_Subroutine ______________
+Traceback (most recent call last):
+  File "/testbed/sympy/codegen/tests/test_fnodes.py", line 144, in test_Subroutine
+    if not has_fortran():
+  File "/testbed/sympy/utilities/_compilation/availability.py", line 9, in has_fortran
+    (stdout, stderr), info = compile_run_strings(
+  File "/testbed/sympy/utilities/_compilation/compilation.py", line 618, in compile_run_strings
+    objs = compile_sources(list(map(get_abspath, source_files)), destdir=build_dir,
+  File "/testbed/sympy/utilities/_compilation/compilation.py", line 94, in compile_sources
+    dstpaths.append(src2obj(f, Runner, cwd=cwd, **file_kwargs))
+  File "/testbed/sympy/utilities/_compilation/compilation.py", line 379, in src2obj
+    runner = Runner([srcpath], objpath, include_dirs=include_dirs,
+  File "/testbed/sympy/utilities/_compilation/runners.py", line 84, in __init__
+    self.compiler_name, self.compiler_binary, self.compiler_vendor = self.find_compiler(preferred_vendor)
+  File "/testbed/sympy/utilities/_compilation/runners.py", line 138, in find_compiler
+    name, path = find_binary_of_command([cls.compiler_dict[x] for x in candidates])
+  File "/testbed/sympy/utilities/_compilation/util.py", line 289, in find_binary_of_command
+    binary_path = find_executable(c)
+  File "/opt/miniconda3/envs/testbed/lib/python3.9/site-packages/setuptools/_distutils/spawn.py", line 87, in find_executable
+    warnings.warn(
+DeprecationWarning: Use shutil.which instead of find_executable
+
+ tests finished: 231 passed, 1 skipped, 9 expected to fail, 1 exceptions, 
+in 11.57 seconds 
+DO *NOT* COMMIT!
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['test_alignof', 'test_CommaOperator', 'test_goto_Label', 'test_PreDecrement', 'test_PostDecrement', 'test_PreIncrement', 'test_PostIncrement', 'test_struct', 'test__aresame', 'test_structure', 'test_equality', 'test_matches_basic', 'test_has', 'test_subs', 'test_subs_with_unicode_symbols', 'test_free_symbols_empty', 'test_doit', 'test_S', 'test_xreplace', 'test_preorder_traversal', 'test_sorted_args', 'test_call', 'test_rewrite', 'test_literal_evalf_is_number_is_zero_is_comparable', 'test_as_Basic', 'test_atomic', 'test_as_dummy', 'test_canonical_variables']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

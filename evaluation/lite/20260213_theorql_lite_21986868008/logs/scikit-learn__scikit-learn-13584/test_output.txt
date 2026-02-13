@@ -1,0 +1,84 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (6 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 6 items
+
+sklearn/utils/tests/test_pprint.py::test_changed_only PASSED             [ 16%]
+sklearn/utils/tests/test_pprint.py::test_pipeline PASSED                 [ 33%]
+sklearn/utils/tests/test_pprint.py::test_deeply_nested PASSED            [ 50%]
+sklearn/utils/tests/test_pprint.py::test_gridsearch PASSED               [ 66%]
+sklearn/utils/tests/test_pprint.py::test_gridsearch_pipeline PASSED      [ 83%]
+sklearn/utils/tests/test_pprint.py::test_n_max_elements_to_show PASSED   [100%]
+
+============================== 6 passed in 0.65s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13584:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13584
+a2f6138ded93: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+f93009d70e27: Pulling fs layer
+500327121db6: Pulling fs layer
+9055ecd9b471: Pulling fs layer
+09b61b6fd610: Pulling fs layer
+ddd45cdfc8c4: Pulling fs layer
+ac5b61163589: Pulling fs layer
+b1b86685def8: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+466f0cbb5709: Pulling fs layer
+7b618b8fdbeb: Pulling fs layer
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+b1b86685def8: Download complete
+ac5b61163589: Download complete
+466f0cbb5709: Download complete
+09b61b6fd610: Download complete
+7b618b8fdbeb: Download complete
+7478e0ac0f23: Download complete
+9055ecd9b471: Download complete
+7478e0ac0f23: Pull complete
+f93009d70e27: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+ddd45cdfc8c4: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+836b79e2a6e5: Pull complete
+466f0cbb5709: Pull complete
+09b61b6fd610: Pull complete
+f93009d70e27: Pull complete
+b1b86685def8: Pull complete
+7b618b8fdbeb: Pull complete
+ddd45cdfc8c4: Pull complete
+9055ecd9b471: Pull complete
+Digest: sha256:ca0c9c1b4b430a8347eea9e37cdabf8afa93af92d68cc7c47af9d55b47c461fd
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-13584:latest
+
+
+===== PHASE: PASS_TO_PASS (3 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 3 items
+
+sklearn/utils/tests/test_pprint.py::test_basic PASSED                    [ 33%]
+sklearn/utils/tests/test_pprint.py::test_length_constraint PASSED        [ 66%]
+sklearn/utils/tests/test_pprint.py::test_builtin_prettyprinter PASSED    [100%]
+
+============================== 3 passed in 0.58s ===============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

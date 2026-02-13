@@ -1,0 +1,140 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 1 item
+
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_handle_unknown_strings PASSED [100%]
+
+========================= 1 passed, 1 warning in 0.23s =========================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-12471:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-12471
+ac5b61163589: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+22fb1dd7576f: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+f93009d70e27: Pulling fs layer
+466f0cbb5709: Pulling fs layer
+09b61b6fd610: Pulling fs layer
+ddd45cdfc8c4: Pulling fs layer
+b1b86685def8: Pulling fs layer
+88df3fa37936: Pulling fs layer
+ac5b61163589: Download complete
+09b61b6fd610: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+b1b86685def8: Download complete
+88df3fa37936: Download complete
+466f0cbb5709: Download complete
+7478e0ac0f23: Download complete
+22fb1dd7576f: Download complete
+f93009d70e27: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+ddd45cdfc8c4: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+09b61b6fd610: Pull complete
+466f0cbb5709: Pull complete
+f93009d70e27: Pull complete
+b1b86685def8: Pull complete
+88df3fa37936: Pull complete
+ddd45cdfc8c4: Pull complete
+22fb1dd7576f: Pull complete
+Digest: sha256:93da65b6af87911e7a0afb9327bc32aa9db860d7d931c091ee1ed0858e3dac5e
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-12471:latest
+
+
+===== PHASE: PASS_TO_PASS (53 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 50 items
+
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_sparse PASSED [  2%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dense PASSED [  4%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_deprecationwarnings PASSED [  6%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_force_new_behaviour PASSED [  8%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_categorical_features PASSED [ 10%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_handle_unknown PASSED [ 12%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_not_fitted PASSED [ 14%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_no_categorical_features PASSED [ 16%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[int32-int32] PASSED [ 18%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[int32-float32] PASSED [ 20%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[int32-float64] PASSED [ 22%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[float32-int32] PASSED [ 24%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[float32-float32] PASSED [ 26%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[float32-float64] PASSED [ 28%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[float64-int32] PASSED [ 30%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[float64-float32] PASSED [ 32%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype[float64-float64] PASSED [ 34%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype_pandas[int32] PASSED [ 36%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype_pandas[float32] PASSED [ 38%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_dtype_pandas[float64] PASSED [ 40%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_set_params PASSED [ 42%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder[mixed] PASSED [ 44%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder[numeric] PASSED [ 46%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder[object] PASSED [ 48%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_inverse PASSED [ 50%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_categories[mixed] PASSED [ 52%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_categories[numeric] PASSED [ 54%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_categories[object] PASSED [ 56%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_categories[string] PASSED [ 58%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_specified_categories[object] PASSED [ 60%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_specified_categories[numeric] PASSED [ 62%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_specified_categories[object-string-cat] PASSED [ 64%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_unsorted_categories PASSED [ 66%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_specified_categories_mixed_columns PASSED [ 68%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_pandas PASSED [ 70%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_feature_names PASSED [ 72%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_feature_names_unicode PASSED [ 74%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_raise_missing[error-numeric] PASSED [ 76%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_raise_missing[error-object] PASSED [ 78%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_raise_missing[ignore-numeric] PASSED [ 80%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_raise_missing[ignore-object] PASSED [ 82%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder[mixed] PASSED [ 84%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder[numeric] PASSED [ 86%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder[object] PASSED [ 88%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder_specified_categories[object] PASSED [ 90%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder_specified_categories[numeric] PASSED [ 92%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder_specified_categories[object-string-cat] PASSED [ 94%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder_inverse PASSED [ 96%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder_raise_missing[numeric] PASSED [ 98%]
+sklearn/preprocessing/tests/test_encoders.py::test_ordinal_encoder_raise_missing[object] PASSED [100%]
+
+======================== 50 passed, 1 warning in 0.55s =========================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: setup.cfg
+collecting ... collected 3 items
+
+sklearn/preprocessing/tests/test_encoders.py::test_encoder_dtypes PASSED [ 33%]
+sklearn/preprocessing/tests/test_encoders.py::test_encoder_dtypes_pandas PASSED [ 66%]
+sklearn/preprocessing/tests/test_encoders.py::test_one_hot_encoder_warning PASSED [100%]
+
+========================= 3 passed, 1 warning in 0.41s =========================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,74 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (11 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.4.1.dev195+g4787fd64a, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 11 items
+
+testing/io/test_saferepr.py::test_simple_repr PASSED                     [  9%]
+testing/io/test_saferepr.py::test_maxsize PASSED                         [ 18%]
+testing/io/test_saferepr.py::test_maxsize_error_on_instance PASSED       [ 27%]
+testing/io/test_saferepr.py::test_exceptions PASSED                      [ 36%]
+testing/io/test_saferepr.py::test_baseexception PASSED                   [ 45%]
+testing/io/test_saferepr.py::test_buggy_builtin_repr PASSED              [ 54%]
+testing/io/test_saferepr.py::test_big_repr PASSED                        [ 63%]
+testing/io/test_saferepr.py::test_repr_on_newstyle PASSED                [ 72%]
+testing/io/test_saferepr.py::test_unicode PASSED                         [ 81%]
+testing/io/test_saferepr.py::test_pformat_dispatch PASSED                [ 90%]
+testing/io/test_saferepr.py::test_broken_getattribute PASSED             [100%]
+
+============================== 11 passed in 0.03s ==============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7168:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7168
+b61331085bfd: Pulling fs layer
+00a274e711b9: Pulling fs layer
+c54078cf74d7: Pulling fs layer
+193b29010889: Pulling fs layer
+9636a96d35eb: Pulling fs layer
+246473fa0395: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Download complete
+9636a96d35eb: Download complete
+246473fa0395: Download complete
+836b79e2a6e5: Download complete
+193b29010889: Download complete
+b61331085bfd: Download complete
+ac5b61163589: Download complete
+00a274e711b9: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+c54078cf74d7: Download complete
+500327121db6: Download complete
+7478e0ac0f23: Pull complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+9636a96d35eb: Pull complete
+00a274e711b9: Pull complete
+9243c6d3b562: Pull complete
+246473fa0395: Pull complete
+193b29010889: Pull complete
+c54078cf74d7: Pull complete
+b61331085bfd: Pull complete
+Digest: sha256:5ffc8edc6b8f44db44c9a9f88c23745795f878edb13d641f2f9cef8c50228f15
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7168:latest
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'skipped': True}
+>>>>> End Test Output
+>>>>> All Tests Passed

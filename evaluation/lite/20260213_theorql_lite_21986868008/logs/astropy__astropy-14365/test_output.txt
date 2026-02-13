@@ -1,0 +1,169 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Internet access disabled
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.3.dev882+g7269fa3e33.d20241031.
+Running tests in astropy/io/ascii/tests/test_qdp.py::test_roundtrip[True].
+
+Date: 2026-02-13T12:42:26
+
+Platform: Linux-6.14.0-1017-azure-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+CI: undefined
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: mock-3.11.1, remotedata-0.4.0, doctestplus-1.0.0, astropy-0.10.0, openfiles-0.5.0, hypothesis-6.82.6, xdist-3.3.1, cov-4.1.0, arraydiff-0.5.0, astropy-header-0.2.2, filter-subpackage-0.1.2
+[1mcollecting ... [0mcollected 1 item
+
+astropy/io/ascii/tests/test_qdp.py::test_roundtrip[True] [32mPASSED[0m[32m          [100%][0m
+
+[32m============================== [32m[1m1 passed[0m[32m in 0.04s[0m[32m ===============================[0m
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-14365:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.astropy__astropy-14365
+ac5b61163589: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+066da0ed1fe7: Pulling fs layer
+0ed977bb04e0: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+1eb9ae6b160b: Pulling fs layer
+c63e392c6664: Pulling fs layer
+b1a62943f5ca: Pulling fs layer
+d253b6395e30: Pulling fs layer
+d3b025b442e5: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+c63e392c6664: Download complete
+b1a62943f5ca: Download complete
+d3b025b442e5: Download complete
+0ed977bb04e0: Download complete
+066da0ed1fe7: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+1eb9ae6b160b: Download complete
+500327121db6: Download complete
+d253b6395e30: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+c63e392c6664: Pull complete
+1eb9ae6b160b: Pull complete
+b1a62943f5ca: Pull complete
+d3b025b442e5: Pull complete
+0ed977bb04e0: Pull complete
+d253b6395e30: Pull complete
+066da0ed1fe7: Pull complete
+Digest: sha256:d488a8645cf5d6cecff7ede830121544a75819ba64861698c00ef0897fa3712a
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-14365:latest
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+
+
+
+===== PHASE: PASS_TO_PASS (8 selectors) =====
+Internet access disabled
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.3.dev882+g7269fa3e33.d20241031.
+Running tests in astropy/io/ascii/tests/test_qdp.py::test_get_tables_from_qdp_file astropy/io/ascii/tests/test_qdp.py::test_roundtrip[False] astropy/io/ascii/tests/test_qdp.py::test_read_example astropy/io/ascii/tests/test_qdp.py::test_roundtrip_example astropy/io/ascii/tests/test_qdp.py::test_roundtrip_example_comma astropy/io/ascii/tests/test_qdp.py::test_read_write_simple astropy/io/ascii/tests/test_qdp.py::test_read_write_simple_specify_name astropy/io/ascii/tests/test_qdp.py::test_get_lines_from_qdp.
+
+Date: 2026-02-13T12:42:31
+
+Platform: Linux-6.14.0-1017-azure-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+CI: undefined
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: mock-3.11.1, remotedata-0.4.0, doctestplus-1.0.0, astropy-0.10.0, openfiles-0.5.0, hypothesis-6.82.6, xdist-3.3.1, cov-4.1.0, arraydiff-0.5.0, astropy-header-0.2.2, filter-subpackage-0.1.2
+[1mcollecting ... [0mcollected 8 items
+
+astropy/io/ascii/tests/test_qdp.py::test_get_tables_from_qdp_file [32mPASSED[0m[32m [ 12%][0m
+astropy/io/ascii/tests/test_qdp.py::test_roundtrip[False] [32mPASSED[0m[32m         [ 25%][0m
+astropy/io/ascii/tests/test_qdp.py::test_read_example [32mPASSED[0m[32m             [ 37%][0m
+astropy/io/ascii/tests/test_qdp.py::test_roundtrip_example [32mPASSED[0m[32m        [ 50%][0m
+astropy/io/ascii/tests/test_qdp.py::test_roundtrip_example_comma [32mPASSED[0m[32m  [ 62%][0m
+astropy/io/ascii/tests/test_qdp.py::test_read_write_simple [32mPASSED[0m[32m        [ 75%][0m
+astropy/io/ascii/tests/test_qdp.py::test_read_write_simple_specify_name [32mPASSED[0m[32m [ 87%][0m
+astropy/io/ascii/tests/test_qdp.py::test_get_lines_from_qdp [32mPASSED[0m[32m       [100%][0m
+
+[32m============================== [32m[1m8 passed[0m[32m in 0.09s[0m[32m ===============================[0m
+
+
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

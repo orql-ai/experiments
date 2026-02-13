@@ -1,0 +1,157 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.2.3.dev198+ge670ff76c, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 2 items
+
+testing/test_collection.py::TestCustomConftests::test_pytest_fs_collect_hooks_are_seen PASSED [ 50%]
+testing/test_collection.py::TestCustomConftests::test_pytest_collect_file_from_sister_dir PASSED [100%]
+
+============================== 2 passed in 0.17s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-6116:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-6116
+7478e0ac0f23: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+8ec011652080: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+500327121db6: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+427b94dddbbf: Pulling fs layer
+12bc62dac3bd: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+76226a6e6c69: Pulling fs layer
+d8b19f863874: Pulling fs layer
+95c7d8a224cd: Pulling fs layer
+ac5b61163589: Download complete
+427b94dddbbf: Download complete
+76226a6e6c69: Download complete
+e5a28c0c137e: Download complete
+95c7d8a224cd: Download complete
+d8b19f863874: Download complete
+8ec011652080: Download complete
+836b79e2a6e5: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+7478e0ac0f23: Pull complete
+12bc62dac3bd: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+9243c6d3b562: Pull complete
+427b94dddbbf: Pull complete
+76226a6e6c69: Pull complete
+95c7d8a224cd: Pull complete
+d8b19f863874: Pull complete
+8ec011652080: Pull complete
+12bc62dac3bd: Pull complete
+Digest: sha256:766cd9639371faca87ab0b5bdb32db55fd0b9b10e74c93bc3d967b6ce2198e63
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-6116:latest
+
+
+===== PHASE: PASS_TO_PASS (69 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.2.3.dev198+ge670ff76c, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 50 items
+
+testing/test_collection.py::TestCollector::test_collect_versus_item PASSED [  2%]
+testing/test_collection.py::TestCollector::test_check_equality PASSED    [  4%]
+testing/test_collection.py::TestCollector::test_getparent PASSED         [  6%]
+testing/test_collection.py::TestCollector::test_getcustomfile_roundtrip PASSED [  8%]
+testing/test_collection.py::TestCollector::test_can_skip_class_with_test_attr PASSED [ 10%]
+testing/test_collection.py::TestCollectFS::test_ignored_certain_directories PASSED [ 12%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs[activate] PASSED [ 14%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs[activate.csh] PASSED [ 16%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs[activate.fish] PASSED [ 18%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs[Activate] PASSED [ 20%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs[Activate.bat] PASSED [ 22%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs[Activate.ps1] PASSED [ 24%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs_norecursedirs_precedence[activate] PASSED [ 26%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs_norecursedirs_precedence[activate.csh] PASSED [ 28%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs_norecursedirs_precedence[activate.fish] PASSED [ 30%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs_norecursedirs_precedence[Activate] PASSED [ 32%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs_norecursedirs_precedence[Activate.bat] PASSED [ 34%]
+testing/test_collection.py::TestCollectFS::test_ignored_virtualenvs_norecursedirs_precedence[Activate.ps1] PASSED [ 36%]
+testing/test_collection.py::TestCollectFS::test__in_venv[activate] PASSED [ 38%]
+testing/test_collection.py::TestCollectFS::test__in_venv[activate.csh] PASSED [ 40%]
+testing/test_collection.py::TestCollectFS::test__in_venv[activate.fish] PASSED [ 42%]
+testing/test_collection.py::TestCollectFS::test__in_venv[Activate] PASSED [ 44%]
+testing/test_collection.py::TestCollectFS::test__in_venv[Activate.bat] PASSED [ 46%]
+testing/test_collection.py::TestCollectFS::test__in_venv[Activate.ps1] PASSED [ 48%]
+testing/test_collection.py::TestCollectFS::test_custom_norecursedirs PASSED [ 50%]
+testing/test_collection.py::TestCollectFS::test_testpaths_ini PASSED     [ 52%]
+testing/test_collection.py::TestCollectPluginHookRelay::test_pytest_collect_file PASSED [ 54%]
+testing/test_collection.py::TestCollectPluginHookRelay::test_pytest_collect_directory PASSED [ 56%]
+testing/test_collection.py::TestPrunetraceback::test_custom_repr_failure PASSED [ 58%]
+testing/test_collection.py::TestCustomConftests::test_ignore_collect_path PASSED [ 60%]
+testing/test_collection.py::TestCustomConftests::test_ignore_collect_not_called_on_argument PASSED [ 62%]
+testing/test_collection.py::TestCustomConftests::test_collectignore_exclude_on_option PASSED [ 64%]
+testing/test_collection.py::TestCustomConftests::test_collectignoreglob_exclude_on_option PASSED [ 66%]
+testing/test_collection.py::TestSession::test_parsearg PASSED            [ 68%]
+testing/test_collection.py::TestSession::test_collect_topdir PASSED      [ 70%]
+testing/test_collection.py::TestSession::test_collect_protocol_single_function PASSED [ 72%]
+testing/test_collection.py::TestSession::test_collect_protocol_method PASSED [ 74%]
+testing/test_collection.py::TestSession::test_collect_custom_nodes_multi_id PASSED [ 76%]
+testing/test_collection.py::TestSession::test_collect_subdir_event_ordering PASSED [ 78%]
+testing/test_collection.py::TestSession::test_collect_two_commandline_args PASSED [ 80%]
+testing/test_collection.py::TestSession::test_serialization_byid PASSED  [ 82%]
+testing/test_collection.py::TestSession::test_find_byid_without_instance_parents PASSED [ 84%]
+testing/test_collection.py::Test_getinitialnodes::test_global_file PASSED [ 86%]
+testing/test_collection.py::Test_getinitialnodes::test_pkgfile PASSED    [ 88%]
+testing/test_collection.py::Test_genitems::test_check_collect_hashes PASSED [ 90%]
+testing/test_collection.py::Test_genitems::test_example_items1 PASSED    [ 92%]
+testing/test_collection.py::Test_genitems::test_class_and_functions_discovery_using_glob PASSED [ 94%]
+testing/test_collection.py::test_matchnodes_two_collections_same_file PASSED [ 96%]
+testing/test_collection.py::TestNodekeywords::test_no_under PASSED       [ 98%]
+testing/test_collection.py::TestNodekeywords::test_issue345 PASSED       [100%]
+
+============================== 50 passed in 1.59s ==============================
+
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-5.2.3.dev198+ge670ff76c, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, inifile: tox.ini
+collecting ... collected 19 items
+
+testing/test_collection.py::test_exit_on_collection_error PASSED         [  5%]
+testing/test_collection.py::test_exit_on_collection_with_maxfail_smaller_than_n_errors PASSED [ 10%]
+testing/test_collection.py::test_exit_on_collection_with_maxfail_bigger_than_n_errors PASSED [ 15%]
+testing/test_collection.py::test_continue_on_collection_errors PASSED    [ 21%]
+testing/test_collection.py::test_continue_on_collection_errors_maxfail PASSED [ 26%]
+testing/test_collection.py::test_fixture_scope_sibling_conftests PASSED  [ 31%]
+testing/test_collection.py::test_collect_init_tests PASSED               [ 36%]
+testing/test_collection.py::test_collect_invalid_signature_message PASSED [ 42%]
+testing/test_collection.py::test_collect_handles_raising_on_dunder_class PASSED [ 47%]
+testing/test_collection.py::test_collect_with_chdir_during_import PASSED [ 52%]
+testing/test_collection.py::test_collect_symlink_file_arg PASSED         [ 57%]
+testing/test_collection.py::test_collect_symlink_out_of_tree PASSED      [ 63%]
+testing/test_collection.py::test_collectignore_via_conftest PASSED       [ 68%]
+testing/test_collection.py::test_collect_pkg_init_and_file_in_args PASSED [ 73%]
+testing/test_collection.py::test_collect_pkg_init_only PASSED            [ 78%]
+testing/test_collection.py::test_collect_sub_with_symlinks[True] PASSED  [ 84%]
+testing/test_collection.py::test_collect_sub_with_symlinks[False] PASSED [ 89%]
+testing/test_collection.py::test_collector_respects_tbstyle PASSED       [ 94%]
+testing/test_collection.py::test_collect_pyargs_with_testpaths PASSED    [100%]
+
+============================== 19 passed in 0.92s ==============================
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,107 @@
+diff --git a/sympy/printing/conventions.py b/sympy/printing/conventions.py
+index f74468290c..69db0a3d1e 100644
+--- a/sympy/printing/conventions.py
++++ b/sympy/printing/conventions.py
+@@ -5,7 +5,7 @@
+ from __future__ import print_function, division
+ 
+ import re
+-import collections
++from collections.abc import Iterable
+ 
+ 
+ _name_with_digits_p = re.compile(r'^([a-zA-Z]+)([0-9]+)$')
+@@ -77,7 +77,7 @@ def requires_partial(expr):
+     get the context of the expression.
+     """
+ 
+-    if not isinstance(expr.free_symbols, collections.Iterable):
++    if not isinstance(expr.free_symbols, Iterable):
+         return len(set(expr.variables)) > 1
+ 
+     return sum(not s.is_integer for s in expr.free_symbols) > 1
+diff --git a/sympy/tensor/array/ndim_array.py b/sympy/tensor/array/ndim_array.py
+index d6691b5115..ca57409350 100644
+--- a/sympy/tensor/array/ndim_array.py
++++ b/sympy/tensor/array/ndim_array.py
+@@ -1,5 +1,5 @@
+ from __future__ import print_function, division
+-import collections
++from collections.abc import Iterable
+ 
+ from sympy import Basic
+ 
+@@ -100,13 +100,13 @@ def _check_symbolic_index(self, index):
+ 
+     def _setter_iterable_check(self, value):
+         from sympy.matrices.matrices import MatrixBase
+-        if isinstance(value, (collections.Iterable, MatrixBase, NDimArray)):
++        if isinstance(value, (Iterable, MatrixBase, NDimArray)):
+             raise NotImplementedError
+ 
+     @classmethod
+     def _scan_iterable_shape(cls, iterable):
+         def f(pointer):
+-            if not isinstance(pointer, collections.Iterable):
++            if not isinstance(pointer, Iterable):
+                 return [pointer], ()
+ 
+             result = []
+@@ -131,7 +131,7 @@ def _handle_ndarray_creation_inputs(cls, iterable=None, shape=None, **kwargs):
+             shape = iterable.shape
+             iterable = list(iterable)
+         # Construct N-dim array from an iterable (numpy arrays included):
+-        elif shape is None and isinstance(iterable, collections.Iterable):
++        elif shape is None and isinstance(iterable, Iterable):
+             iterable, shape = cls._scan_iterable_shape(iterable)
+ 
+         # Construct N-dim array from a Matrix:
+@@ -323,7 +323,7 @@ def __sub__(self, other):
+     def __mul__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected, use tensorproduct(...) for tensorial product")
+         other = sympify(other)
+         result_list = [i*other for i in self]
+@@ -332,7 +332,7 @@ def __mul__(self, other):
+     def __rmul__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected, use tensorproduct(...) for tensorial product")
+         other = sympify(other)
+         result_list = [other*i for i in self]
+@@ -341,7 +341,7 @@ def __rmul__(self, other):
+     def __div__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected")
+         other = sympify(other)
+         result_list = [i/other for i in self]
+diff --git a/sympy/tensor/indexed.py b/sympy/tensor/indexed.py
+index 5641267db2..41dc00e54b 100644
+--- a/sympy/tensor/indexed.py
++++ b/sympy/tensor/indexed.py
+@@ -107,7 +107,7 @@
+ 
+ from __future__ import print_function, division
+ 
+-import collections
++from collections.abc import Iterable
+ 
+ from sympy.functions.special.tensor_functions import KroneckerDelta
+ from sympy.core import Expr, Tuple, Symbol, sympify, S
+@@ -152,7 +152,7 @@ def __new__(cls, base, *args, **kw_args):
+             raise TypeError(filldedent("""
+                 Indexed expects string, Symbol, or IndexedBase as base."""))
+         args = list(map(sympify, args))
+-        if isinstance(base, (NDimArray, collections.Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
++        if isinstance(base, (NDimArray, Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
+             return base[args]
+         return Expr.__new__(cls, base, *args, **kw_args)
+ 

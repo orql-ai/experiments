@@ -1,0 +1,131 @@
+diff --git a/sympy/assumptions/sathandlers.py b/sympy/assumptions/sathandlers.py
+index 61d62d04cf..881a5f9ba8 100644
+--- a/sympy/assumptions/sathandlers.py
++++ b/sympy/assumptions/sathandlers.py
+@@ -1,6 +1,7 @@
+ from __future__ import print_function, division
+ 
+-from collections import MutableMapping, defaultdict
++from collections.abc import MutableMapping
++from collections import defaultdict
+ 
+ from sympy.core import (Add, Mul, Pow, Integer, Number, NumberSymbol,)
+ from sympy.core.numbers import ImaginaryUnit
+diff --git a/sympy/core/function.py b/sympy/core/function.py
+index e7644f85d0..15b141318d 100644
+--- a/sympy/core/function.py
++++ b/sympy/core/function.py
+@@ -59,6 +59,7 @@
+ 
+ import inspect
+ import collections
++from collections.abc import Iterable
+ 
+ def _coeff_isneg(a):
+     """Return True if the leading Number is negative.
+@@ -1224,7 +1225,7 @@ def __new__(cls, expr, *variables, **assumptions):
+             if unhandled_non_symbol:
+                 obj = None
+             else:
+-                if isinstance(v, (collections.Iterable, Tuple, MatrixCommon, NDimArray)):
++                if isinstance(v, (Iterable, Tuple, MatrixCommon, NDimArray)):
+                     expr = derive_by_array(expr, v)
+                     nderivs += 1
+                     continue
+diff --git a/sympy/matrices/common.py b/sympy/matrices/common.py
+index 056d9bc497..4aa75e4d77 100644
+--- a/sympy/matrices/common.py
++++ b/sympy/matrices/common.py
+@@ -86,7 +86,7 @@ def entry(i, j):
+                 return self[i, j]
+             elif pos <= j < pos + other.cols:
+                 return other[i, j - pos]
+-            return self[i, j - pos - other.cols]
++            return self[i, j - other.cols]
+ 
+         return self._new(self.rows, self.cols + other.cols,
+                          lambda i, j: entry(i, j))
+diff --git a/sympy/tensor/array/arrayop.py b/sympy/tensor/array/arrayop.py
+index 87021f5f6c..3b091921b9 100644
+--- a/sympy/tensor/array/arrayop.py
++++ b/sympy/tensor/array/arrayop.py
+@@ -1,6 +1,7 @@
+ import itertools
+ 
+ import collections
++from collections.abc import Iterable
+ 
+ from sympy import S, Tuple, diff
+ 
+@@ -190,7 +191,7 @@ def derive_by_array(expr, dx):
+ 
+     """
+     from sympy.matrices import MatrixBase
+-    array_types = (collections.Iterable, MatrixBase, NDimArray)
++    array_types = (Iterable, MatrixBase, NDimArray)
+ 
+     if isinstance(dx, array_types):
+         dx = ImmutableDenseNDimArray(dx)
+diff --git a/sympy/tensor/array/ndim_array.py b/sympy/tensor/array/ndim_array.py
+index 188cabf39c..08ce74eb84 100644
+--- a/sympy/tensor/array/ndim_array.py
++++ b/sympy/tensor/array/ndim_array.py
+@@ -1,5 +1,6 @@
+ from __future__ import print_function, division
+ import collections
++from collections.abc import Iterable
+ 
+ from sympy import Basic
+ from sympy.core.compatibility import SYMPY_INTS
+@@ -104,13 +105,13 @@ def _check_symbolic_index(self, index):
+ 
+     def _setter_iterable_check(self, value):
+         from sympy.matrices.matrices import MatrixBase
+-        if isinstance(value, (collections.Iterable, MatrixBase, NDimArray)):
++        if isinstance(value, (Iterable, MatrixBase, NDimArray)):
+             raise NotImplementedError
+ 
+     @classmethod
+     def _scan_iterable_shape(cls, iterable):
+         def f(pointer):
+-            if not isinstance(pointer, collections.Iterable):
++            if not isinstance(pointer, Iterable):
+                 return [pointer], ()
+ 
+             result = []
+@@ -135,7 +136,7 @@ def _handle_ndarray_creation_inputs(cls, iterable=None, shape=None, **kwargs):
+             shape = iterable.shape
+             iterable = list(iterable)
+         # Construct N-dim array from an iterable (numpy arrays included):
+-        elif shape is None and isinstance(iterable, collections.Iterable):
++        elif shape is None and isinstance(iterable, Iterable):
+             iterable, shape = cls._scan_iterable_shape(iterable)
+ 
+         # Construct N-dim array from a Matrix:
+@@ -321,7 +322,7 @@ def __sub__(self, other):
+     def __mul__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected, use tensorproduct(...) for tensorial product")
+         other = sympify(other)
+         result_list = [i*other for i in self]
+@@ -330,7 +331,7 @@ def __mul__(self, other):
+     def __rmul__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected, use tensorproduct(...) for tensorial product")
+         other = sympify(other)
+         result_list = [other*i for i in self]
+@@ -339,7 +340,7 @@ def __rmul__(self, other):
+     def __div__(self, other):
+         from sympy.matrices.matrices import MatrixBase
+ 
+-        if isinstance(other, (collections.Iterable,NDimArray, MatrixBase)):
++        if isinstance(other, (Iterable,NDimArray, MatrixBase)):
+             raise ValueError("scalar expected")
+         other = sympify(other)
+         result_list = [i/other for i in self]

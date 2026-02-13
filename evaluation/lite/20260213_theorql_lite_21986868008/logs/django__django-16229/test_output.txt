@@ -1,0 +1,153 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application forms_tests
+Found 1 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, forms_tests, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table forms_tests_boundarymodel
+    Creating table forms_tests_defaults
+    Creating table forms_tests_choicemodel
+    Creating table forms_tests_choiceoptionmodel
+    Creating table forms_tests_choicefieldmodel
+    Creating table forms_tests_optionalmultichoicemodel
+    Creating table forms_tests_filemodel
+    Creating table forms_tests_article
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16229:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-16229
+500327121db6: Pulling fs layer
+396d2ca0167c: Pulling fs layer
+b780fac9da70: Pulling fs layer
+187d94c4a868: Pulling fs layer
+25a2691e9ce4: Pulling fs layer
+440f2bf70467: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+58b8dea87cb4: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+4e865410366e: Pulling fs layer
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+396d2ca0167c: Download complete
+440f2bf70467: Download complete
+58b8dea87cb4: Download complete
+836b79e2a6e5: Download complete
+b780fac9da70: Download complete
+25a2691e9ce4: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+187d94c4a868: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+4e865410366e: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+396d2ca0167c: Pull complete
+b780fac9da70: Pull complete
+4e865410366e: Pull complete
+440f2bf70467: Pull complete
+58b8dea87cb4: Pull complete
+187d94c4a868: Pull complete
+25a2691e9ce4: Pull complete
+Digest: sha256:5a91e7682f650abfa09023e86df7a27482f1cb502d21f94180867c804e75b0dd
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-16229:latest
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_callable_default_hidden_widget_value_not_overridden (forms_tests.tests.tests.ModelFormCallableModelDefault) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE: PASS_TO_PASS (16 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application forms_tests
+Found 16 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, forms_tests, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table forms_tests_boundarymodel
+    Creating table forms_tests_defaults
+    Creating table forms_tests_choicemodel
+    Creating table forms_tests_choiceoptionmodel
+    Creating table forms_tests_choicefieldmodel
+    Creating table forms_tests_optionalmultichoicemodel
+    Creating table forms_tests_filemodel
+    Creating table forms_tests_article
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_m2m_field_exclusion (forms_tests.tests.tests.ManyToManyExclusionTestCase) ... ok
+test_boundary_conditions (forms_tests.tests.tests.FormsModelTestCase) ... ok
+test_formfield_initial (forms_tests.tests.tests.FormsModelTestCase) ... ok
+test_unicode_filename (forms_tests.tests.tests.FormsModelTestCase) ... ok
+test_empty_field_char (forms_tests.tests.tests.Jinja2EmptyLabelTestCase) ... ok
+test_empty_field_char_none (forms_tests.tests.tests.Jinja2EmptyLabelTestCase) ... ok
+test_empty_field_integer (forms_tests.tests.tests.Jinja2EmptyLabelTestCase) ... ok
+test_get_display_value_on_none (forms_tests.tests.tests.Jinja2EmptyLabelTestCase) ... ok
+test_html_rendering_of_prepopulated_models (forms_tests.tests.tests.Jinja2EmptyLabelTestCase) ... ok
+test_save_empty_label_forms (forms_tests.tests.tests.Jinja2EmptyLabelTestCase) ... ok
+test_empty_field_char (forms_tests.tests.tests.EmptyLabelTestCase) ... ok
+test_empty_field_char_none (forms_tests.tests.tests.EmptyLabelTestCase) ... ok
+test_empty_field_integer (forms_tests.tests.tests.EmptyLabelTestCase) ... ok
+test_get_display_value_on_none (forms_tests.tests.tests.EmptyLabelTestCase) ... ok
+test_html_rendering_of_prepopulated_models (forms_tests.tests.tests.EmptyLabelTestCase) ... ok
+test_save_empty_label_forms (forms_tests.tests.tests.EmptyLabelTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.080s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

@@ -1,0 +1,66 @@
+diff --git a/sympy/core/expr.py b/sympy/core/expr.py
+index 24d89897f7..7daae17df4 100644
+--- a/sympy/core/expr.py
++++ b/sympy/core/expr.py
+@@ -121,10 +121,10 @@ def _hashable_content(self):
+ 
+     def __eq__(self, other):
+         try:
+-            other = sympify(other)
++            other = _sympify(other)
+             if not isinstance(other, Expr):
+                 return False
+-        except (SympifyError, SyntaxError):
++        except SympifyError:
+             return False
+         # check for pure number expr
+         if  not (self.is_Number and other.is_Number) and (
+diff --git a/sympy/parsing/sympy_parser.py b/sympy/parsing/sympy_parser.py
+index 2ab43d9b31..23deb78b66 100644
+--- a/sympy/parsing/sympy_parser.py
++++ b/sympy/parsing/sympy_parser.py
+@@ -1057,10 +1057,8 @@ def visit_BinOp(self, node):
+             if isinstance(node.op, ast.Sub):
+                 right = ast.Call(
+                     func=ast.Name(id='Mul', ctx=ast.Load()),
+-                    args=[ast.UnaryOp(op=ast.USub(), operand=ast.Num(1)), right],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                    starargs=None,
+-                    kwargs=None
++                    args=[ast.UnaryOp(op=ast.USub(), operand=ast.Constant(1)), right],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))]
+                 )
+             if isinstance(node.op, ast.Div):
+                 if isinstance(node.left, ast.UnaryOp):
+@@ -1068,26 +1066,20 @@ def visit_BinOp(self, node):
+                         left, right = right, left
+                     left = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+-                    args=[left, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                    starargs=None,
+-                    kwargs=None
++                    args=[left, ast.UnaryOp(op=ast.USub(), operand=ast.Constant(1))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))]
+                 )
+                 else:
+                     right = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+-                    args=[right, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                    starargs=None,
+-                    kwargs=None
++                    args=[right, ast.UnaryOp(op=ast.USub(), operand=ast.Constant(1))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))]
+                 )
+ 
+             new_node = ast.Call(
+                 func=ast.Name(id=sympy_class, ctx=ast.Load()),
+                 args=[left, right],
+-                keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
+-                starargs=None,
+-                kwargs=None
++                keywords=[ast.keyword(arg='evaluate', value=ast.Constant(False))]
+             )
+ 
+             if sympy_class in ('Add', 'Mul'):

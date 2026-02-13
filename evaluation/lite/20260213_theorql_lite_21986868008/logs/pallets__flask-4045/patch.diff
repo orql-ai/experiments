@@ -1,0 +1,60 @@
+diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py
+index 5fb84d86..bdce6471 100644
+--- a/src/flask/blueprints.py
++++ b/src/flask/blueprints.py
+@@ -188,6 +188,8 @@ class Blueprint(Scaffold):
+             template_folder=template_folder,
+             root_path=root_path,
+         )
++        if "." in name:
++            raise ValueError("Blueprint names may not contain dots.")
+         self.name = name
+         self.url_prefix = url_prefix
+         self.subdomain = subdomain
+@@ -360,12 +362,10 @@ class Blueprint(Scaffold):
+         """Like :meth:`Flask.add_url_rule` but for a blueprint.  The endpoint for
+         the :func:`url_for` function is prefixed with the name of the blueprint.
+         """
+-        if endpoint:
+-            assert "." not in endpoint, "Blueprint endpoints should not contain dots"
+-        if view_func and hasattr(view_func, "__name__"):
+-            assert (
+-                "." not in view_func.__name__
+-            ), "Blueprint view function name should not contain dots"
++        if endpoint and "." in endpoint:
++            raise ValueError("Blueprint endpoints should not contain dots")
++        if view_func and hasattr(view_func, "__name__") and "." in view_func.__name__:
++            raise ValueError("Blueprint view function name should not contain dots")
+         self.record(lambda s: s.add_url_rule(rule, endpoint, view_func, **options))
+ 
+     def app_template_filter(self, name: t.Optional[str] = None) -> t.Callable:
+diff --git a/src/flask/testing.py b/src/flask/testing.py
+index fe3b846a..704be925 100644
+--- a/src/flask/testing.py
++++ b/src/flask/testing.py
+@@ -6,7 +6,7 @@ from types import TracebackType
+ import werkzeug.test
+ from click.testing import CliRunner
+ from werkzeug.test import Client
+-from werkzeug.urls import url_parse
++from urllib.parse import urlsplit
+ from werkzeug.wrappers import Request as BaseRequest
+ 
+ from . import _request_ctx_stack
+@@ -67,7 +67,7 @@ class EnvironBuilder(werkzeug.test.EnvironBuilder):
+             if url_scheme is None:
+                 url_scheme = app.config["PREFERRED_URL_SCHEME"]
+ 
+-            url = url_parse(path)
++            url = urlsplit(path)
+             base_url = (
+                 f"{url.scheme or url_scheme}://{url.netloc or http_host}"
+                 f"/{app_root.lstrip('/')}"
+@@ -215,7 +215,6 @@ class FlaskClient(Client):
+ 
+         return super().open(  # type: ignore
+             request,
+-            as_tuple=as_tuple,
+             buffered=buffered,
+             follow_redirects=follow_redirects,
+         )

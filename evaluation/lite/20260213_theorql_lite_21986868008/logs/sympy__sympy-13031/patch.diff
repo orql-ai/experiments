@@ -1,0 +1,26 @@
+diff --git a/sympy/matrices/common.py b/sympy/matrices/common.py
+index 7ef51bc847..81b52733a6 100644
+--- a/sympy/matrices/common.py
++++ b/sympy/matrices/common.py
+@@ -240,8 +240,8 @@ def col_join(self, other):
+         row_join
+         """
+         # A null matrix can always be stacked (see  #10770)
+-        if self.rows == 0 and self.cols != other.cols:
+-            return self._new(0, other.cols, []).col_join(other)
++        if self.rows == 0:
++            return other
+ 
+         if self.cols != other.cols:
+             raise ShapeError(
+@@ -476,8 +476,8 @@ def row_join(self, other):
+         col_join
+         """
+         # A null matrix can always be stacked (see  #10770)
+-        if self.cols == 0 and self.rows != other.rows:
+-            return self._new(other.rows, 0, []).row_join(other)
++        if self.cols == 0:
++            return other
+ 
+         if self.rows != other.rows:
+             raise ShapeError(

@@ -1,0 +1,216 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (1 selectors) =====
+Internet access disabled
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.3.dev133+ga5917978be.d20241031.
+Running tests in astropy/io/ascii/tests/test_rst.py::test_rst_with_header_rows.
+
+Date: 2026-02-13T13:47:08
+
+Platform: Linux-6.14.0-1017-azure-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+CI: undefined
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: mock-3.11.1, remotedata-0.4.0, doctestplus-1.0.0, astropy-0.10.0, openfiles-0.5.0, hypothesis-6.82.6, xdist-3.3.1, cov-4.1.0, arraydiff-0.5.0, astropy-header-0.2.2, filter-subpackage-0.1.2
+[1mcollecting ... [0mcollected 1 item
+
+astropy/io/ascii/tests/test_rst.py::test_rst_with_header_rows [31mFAILED[0m[31m     [100%][0m
+
+=================================== FAILURES ===================================
+[31m[1m__________________________ test_rst_with_header_rows ___________________________[0m
+
+    def test_rst_with_header_rows():
+        """Round-trip a table with header_rows specified"""
+        lines = [
+            "======= ======== ====",
+            "   wave response ints",
+            "     nm       ct     ",
+            "float64  float32 int8",
+            "======= ======== ====",
+            "  350.0      1.0    1",
+            "  950.0      2.0    2",
+            "======= ======== ====",
+        ]
+        tbl = QTable.read(lines, format="ascii.rst", header_rows=["name", "unit", "dtype"])
+        assert tbl["wave"].unit == u.nm
+        assert tbl["response"].unit == u.ct
+        assert tbl["wave"].dtype == np.float64
+        assert tbl["response"].dtype == np.float32
+        assert tbl["ints"].dtype == np.int8
+    
+        out = StringIO()
+        tbl.write(out, format="ascii.rst", header_rows=["name", "unit", "dtype"])
+>       assert out.getvalue().splitlines() == lines
+[1m[31mE       AssertionError: assert ['     nm       ct     ', '   wave response ints', '     nm       ct     ', 'float64  float32 int8', '======= ======== ====', '  350.0      1.0    1', '  950.0      2.0    2', '     nm       ct     '] == ['======= ======== ====', '   wave response ints', '     nm       ct     ', 'float64  float32 int8', '======= ======== ====', '  350.0      1.0    1', '  950.0      2.0    2', '======= ======== ===='][0m
+[1m[31mE         At index 0 diff: '     nm       ct     ' != '======= ======== ===='[0m
+[1m[31mE         Full diff:[0m
+[1m[31mE           [[0m
+[1m[31mE         -  '======= ======== ====',[0m
+[1m[31mE         +  '     nm       ct     ',[0m
+[1m[31mE            '   wave response ints',[0m
+[1m[31mE            '     nm       ct     ',[0m
+[1m[31mE            'float64  float32 int8',[0m
+[1m[31mE            '======= ======== ====',[0m
+[1m[31mE            '  350.0      1.0    1',[0m
+[1m[31mE            '  950.0      2.0    2',[0m
+[1m[31mE         -  '======= ======== ====',[0m
+[1m[31mE         +  '     nm       ct     ',[0m
+[1m[31mE           ][0m
+
+[1m[31mastropy/io/ascii/tests/test_rst.py[0m:215: AssertionError
+[36m[1m=========================== short test summary info ============================[0m
+[31mFAILED[0m astropy/io/ascii/tests/test_rst.py::[1mtest_rst_with_header_rows[0m - AssertionError: assert ['     nm       ct     ', '   wave response ints', '...
+[31m!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!![0m
+[31m============================== [31m[1m1 failed[0m[31m in 0.04s[0m[31m ===============================[0m
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-14182:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.astropy__astropy-14182
+ac5b61163589: Pulling fs layer
+1eb9ae6b160b: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+c63e392c6664: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+30fd200c6842: Pulling fs layer
+b1a62943f5ca: Pulling fs layer
+d253b6395e30: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+d3b025b442e5: Pulling fs layer
+d9d6f93f0143: Pulling fs layer
+ac5b61163589: Download complete
+c63e392c6664: Download complete
+d9d6f93f0143: Download complete
+e5a28c0c137e: Download complete
+b1a62943f5ca: Download complete
+836b79e2a6e5: Download complete
+d3b025b442e5: Download complete
+30fd200c6842: Download complete
+7478e0ac0f23: Download complete
+7478e0ac0f23: Pull complete
+d253b6395e30: Download complete
+1eb9ae6b160b: Download complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+a2f6138ded93: Pull complete
+c63e392c6664: Pull complete
+b1a62943f5ca: Pull complete
+1eb9ae6b160b: Pull complete
+d9d6f93f0143: Pull complete
+d3b025b442e5: Pull complete
+d253b6395e30: Pull complete
+30fd200c6842: Pull complete
+Digest: sha256:afd362e2f44dea53332a078ac9c4814fb3fb13920175237aeef69bb6ffaea865
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-14182:latest
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 astropy/io/ascii/tests/test_rst.py::test_rst_with_header_rows` failed. (See above for error)
+
+
+===== PHASE: PASS_TO_PASS (9 selectors) =====
+Internet access disabled
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.3.dev133+ga5917978be.d20241031.
+Running tests in astropy/io/ascii/tests/test_rst.py::test_read_normal astropy/io/ascii/tests/test_rst.py::test_read_normal_names astropy/io/ascii/tests/test_rst.py::test_read_normal_names_include astropy/io/ascii/tests/test_rst.py::test_read_normal_exclude astropy/io/ascii/tests/test_rst.py::test_read_unbounded_right_column astropy/io/ascii/tests/test_rst.py::test_read_unbounded_right_column_header astropy/io/ascii/tests/test_rst.py::test_read_right_indented_table astropy/io/ascii/tests/test_rst.py::test_trailing_spaces_in_row_definition astropy/io/ascii/tests/test_rst.py::test_write_normal.
+
+Date: 2026-02-13T13:47:13
+
+Platform: Linux-6.14.0-1017-azure-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+CI: undefined
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: mock-3.11.1, remotedata-0.4.0, doctestplus-1.0.0, astropy-0.10.0, openfiles-0.5.0, hypothesis-6.82.6, xdist-3.3.1, cov-4.1.0, arraydiff-0.5.0, astropy-header-0.2.2, filter-subpackage-0.1.2
+[1mcollecting ... [0mcollected 9 items
+
+astropy/io/ascii/tests/test_rst.py::test_read_normal [32mPASSED[0m[32m              [ 11%][0m
+astropy/io/ascii/tests/test_rst.py::test_read_normal_names [32mPASSED[0m[32m        [ 22%][0m
+astropy/io/ascii/tests/test_rst.py::test_read_normal_names_include [32mPASSED[0m[32m [ 33%][0m
+astropy/io/ascii/tests/test_rst.py::test_read_normal_exclude [32mPASSED[0m[32m      [ 44%][0m
+astropy/io/ascii/tests/test_rst.py::test_read_unbounded_right_column [32mPASSED[0m[32m [ 55%][0m
+astropy/io/ascii/tests/test_rst.py::test_read_unbounded_right_column_header [32mPASSED[0m[32m [ 66%][0m
+astropy/io/ascii/tests/test_rst.py::test_read_right_indented_table [32mPASSED[0m[32m [ 77%][0m
+astropy/io/ascii/tests/test_rst.py::test_trailing_spaces_in_row_definition [32mPASSED[0m[32m [ 88%][0m
+astropy/io/ascii/tests/test_rst.py::test_write_normal [32mPASSED[0m[32m             [100%][0m
+
+[32m============================== [32m[1m9 passed[0m[32m in 0.05s[0m[32m ===============================[0m
+
+
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['astropy/io/ascii/tests/test_rst.py::test_rst_with_header_rows']}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> Some Tests Failed

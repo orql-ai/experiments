@@ -1,0 +1,53 @@
+diff --git a/sympy/parsing/sympy_parser.py b/sympy/parsing/sympy_parser.py
+index 3e0cab7d9b..501ec73257 100644
+--- a/sympy/parsing/sympy_parser.py
++++ b/sympy/parsing/sympy_parser.py
+@@ -994,7 +994,7 @@ def visit_BinOp(self, node):
+                 right = ast.Call(
+                     func=ast.Name(id='Mul', ctx=ast.Load()),
+                     args=[ast.UnaryOp(op=ast.USub(), operand=ast.Num(1)), right],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(value=False))],
+                     starargs=None,
+                     kwargs=None
+                 )
+@@ -1005,7 +1005,7 @@ def visit_BinOp(self, node):
+                     left = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+                     args=[left, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(value=False))],
+                     starargs=None,
+                     kwargs=None
+                 )
+@@ -1013,7 +1013,7 @@ def visit_BinOp(self, node):
+                     right = ast.Call(
+                     func=ast.Name(id='Pow', ctx=ast.Load()),
+                     args=[right, ast.UnaryOp(op=ast.USub(), operand=ast.Num(1))],
+-                    keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
++                    keywords=[ast.keyword(arg='evaluate', value=ast.Constant(value=False))],
+                     starargs=None,
+                     kwargs=None
+                 )
+@@ -1021,7 +1021,7 @@ def visit_BinOp(self, node):
+             new_node = ast.Call(
+                 func=ast.Name(id=sympy_class, ctx=ast.Load()),
+                 args=[left, right],
+-                keywords=[ast.keyword(arg='evaluate', value=ast.Name(id='False', ctx=ast.Load()))],
++                keywords=[ast.keyword(arg='evaluate', value=ast.Constant(value=False))],
+                 starargs=None,
+                 kwargs=None
+             )
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index a3ead157c1..f3b7669e96 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -740,7 +740,7 @@ def _print_Function(self, expr, exp=None):
+                 len(args) == 1 and \
+                 not self._needs_function_brackets(expr.args[0])
+ 
+-            inv_trig_table = ["asin", "acos", "atan", "acot"]
++            inv_trig_table = ["asin", "acos", "atan", "acsc", "asec", "acot"]
+ 
+             # If the function is an inverse trig function, handle the style
+             if func in inv_trig_table:

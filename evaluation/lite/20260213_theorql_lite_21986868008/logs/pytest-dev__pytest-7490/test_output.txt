@@ -1,0 +1,107 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-6.0.0rc2.dev33+g7f7a36478, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: pyproject.toml
+collecting ... collected 2 items
+
+testing/test_skipping.py::TestXFail::test_dynamic_xfail_set_during_runtest_failed PASSED [ 50%]
+testing/test_skipping.py::TestXFail::test_dynamic_xfail_set_during_runtest_passed_strict PASSED [100%]
+
+============================== 2 passed in 0.12s ===============================
+
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7490:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7490
+486f0aab53af: Pulling fs layer
+027830053e50: Pulling fs layer
+ae078ffee7af: Pulling fs layer
+02d5e2818a17: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+4e4b411e043d: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+500327121db6: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+012c029f6186: Pulling fs layer
+9243c6d3b562: Pulling fs layer
+836b79e2a6e5: Download complete
+02d5e2818a17: Download complete
+ac5b61163589: Download complete
+e5a28c0c137e: Download complete
+4e4b411e043d: Download complete
+486f0aab53af: Download complete
+027830053e50: Download complete
+012c029f6186: Download complete
+7478e0ac0f23: Download complete
+9243c6d3b562: Download complete
+ae078ffee7af: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+e5a28c0c137e: Pull complete
+a2f6138ded93: Pull complete
+027830053e50: Pull complete
+012c029f6186: Pull complete
+9243c6d3b562: Pull complete
+02d5e2818a17: Pull complete
+4e4b411e043d: Pull complete
+ae078ffee7af: Pull complete
+486f0aab53af: Pull complete
+Digest: sha256:c45a2ab9017bc1659864ed9e82e9aff772fb596c1790d18280f04cb313bbeb49
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.pytest-dev__pytest-7490:latest
+
+
+===== PHASE: PASS_TO_PASS (78 selectors) =====
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-6.0.0rc2.dev33+g7f7a36478, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: pyproject.toml
+collecting ... collected 47 items
+
+============================ no tests ran in 0.08s =============================
+
+
+ERROR: not found: /testbed/testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-TypeError-*1]
+(no name '/testbed/testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-TypeError-*1]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/test_skipping.py::TestXFail::test_xfail_raises[(AttributeError,]
+(no name '/testbed/testing/test_skipping.py::TestXFail::test_xfail_raises[(AttributeError,]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-IndexError-*1]
+(no name '/testbed/testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-IndexError-*1]' in any of [<Instance ()>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/test_skipping.py::test_importorskip testing/test_skipping.py::TestEvaluation::test_no_marker testing/test_skipping.py::TestEvaluation::test_marked_xfail_no_args testing/test_skipping.py::TestEvaluation::test_marked_skipif_no_args testing/test_skipping.py::TestEvaluation::test_marked_one_arg testing/test_skipping.py::TestEvaluation::test_marked_one_arg_with_reason testing/test_skipping.py::TestEvaluation::test_marked_one_arg_twice testing/test_skipping.py::TestEvaluation::test_marked_one_arg_twice2 testing/test_skipping.py::TestEvaluation::test_marked_skipif_with_boolean_without_reason testing/test_skipping.py::TestEvaluation::test_marked_skipif_with_invalid_boolean testing/test_skipping.py::TestEvaluation::test_skipif_class testing/test_skipping.py::TestXFail::test_xfail_simple[True] testing/test_skipping.py::TestXFail::test_xfail_simple[False] testing/test_skipping.py::TestXFail::test_xfail_xpassed testing/test_skipping.py::TestXFail::test_xfail_using_platform testing/test_skipping.py::TestXFail::test_xfail_xpassed_strict testing/test_skipping.py::TestXFail::test_xfail_run_anyway testing/test_skipping.py::TestXFail::test_xfail_run_with_skip_mark[test_input0-expected0] testing/test_skipping.py::TestXFail::test_xfail_run_with_skip_mark[test_input1-expected1] testing/test_skipping.py::TestXFail::test_xfail_evalfalse_but_fails testing/test_skipping.py::TestXFail::test_xfail_not_report_default testing/test_skipping.py::TestXFail::test_xfail_not_run_xfail_reporting testing/test_skipping.py::TestXFail::test_xfail_not_run_no_setup_run testing/test_skipping.py::TestXFail::test_xfail_xpass testing/test_skipping.py::TestXFail::test_xfail_imperative testing/test_skipping.py::TestXFail::test_xfail_imperative_in_setup_function testing/test_skipping.py::TestXFail::test_dynamic_xfail_no_run testing/test_skipping.py::TestXFail::test_dynamic_xfail_set_during_funcarg_setup testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-TypeError-*1] testing/test_skipping.py::TestXFail::test_xfail_raises[(AttributeError,] testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-IndexError-*1] testing/test_skipping.py::TestXFail::test_strict_sanity testing/test_skipping.py::TestXFail::test_strict_xfail[True] testing/test_skipping.py::TestXFail::test_strict_xfail[False] testing/test_skipping.py::TestXFail::test_strict_xfail_condition[True] testing/test_skipping.py::TestXFail::test_strict_xfail_condition[False] testing/test_skipping.py::TestXFail::test_xfail_condition_keyword[True] testing/test_skipping.py::TestXFail::test_xfail_condition_keyword[False] testing/test_skipping.py::TestXFail::test_strict_xfail_default_from_file[true] testing/test_skipping.py::TestXFail::test_strict_xfail_default_from_file[false] testing/test_skipping.py::TestXFailwithSetupTeardown::test_failing_setup_issue9 testing/test_skipping.py::TestXFailwithSetupTeardown::test_failing_teardown_issue9 testing/test_skipping.py::TestSkip::test_skip_class testing/test_skipping.py::TestSkip::test_skips_on_false_string testing/test_skipping.py::TestSkip::test_arg_as_reason testing/test_skipping.py::TestSkip::test_skip_no_reason testing/test_skipping.py::TestSkip::test_skip_with_reason testing/test_skipping.py::TestSkip::test_only_skips_marked_test testing/test_skipping.py::TestSkip::test_strict_and_skip testing/test_skipping.py::TestSkipif::test_skipif_conditional` failed. (See above for error)
+
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-6.0.0rc2.dev33+g7f7a36478, py-1.11.0, pluggy-0.13.1 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed, configfile: pyproject.toml
+collecting ... collected 26 items
+
+============================ no tests ran in 0.07s =============================
+
+
+ERROR: not found: /testbed/testing/test_skipping.py::TestSkipif::test_skipif_reporting["hasattr(sys,]
+(no name '/testbed/testing/test_skipping.py::TestSkipif::test_skipif_reporting["hasattr(sys,]' in any of [<Instance ()>])
+
+ERROR: not found: /testbed/testing/test_skipping.py::TestSkipif::test_skipif_reporting[True,]
+(no name '/testbed/testing/test_skipping.py::TestSkipif::test_skipif_reporting[True,]' in any of [<Instance ()>])
+
+
+ERROR conda.cli.main_run:execute(124): `conda run python -m pytest -vv --maxfail=1 testing/test_skipping.py::TestSkipif::test_skipif_reporting["hasattr(sys,] testing/test_skipping.py::TestSkipif::test_skipif_reporting[True,] testing/test_skipping.py::TestSkipif::test_skipif_using_platform testing/test_skipping.py::TestSkipif::test_skipif_reporting_multiple[skipif-SKIP-skipped] testing/test_skipping.py::TestSkipif::test_skipif_reporting_multiple[xfail-XPASS-xpassed] testing/test_skipping.py::test_skip_not_report_default testing/test_skipping.py::test_skipif_class testing/test_skipping.py::test_skipped_reasons_functional testing/test_skipping.py::test_skipped_folding testing/test_skipping.py::test_reportchars testing/test_skipping.py::test_reportchars_error testing/test_skipping.py::test_reportchars_all testing/test_skipping.py::test_reportchars_all_error testing/test_skipping.py::test_errors_in_xfail_skip_expressions testing/test_skipping.py::test_xfail_skipif_with_globals testing/test_skipping.py::test_default_markers testing/test_skipping.py::test_xfail_test_setup_exception testing/test_skipping.py::test_imperativeskip_on_xfail_test testing/test_skipping.py::TestBooleanCondition::test_skipif testing/test_skipping.py::TestBooleanCondition::test_skipif_noreason testing/test_skipping.py::TestBooleanCondition::test_xfail testing/test_skipping.py::test_xfail_item testing/test_skipping.py::test_module_level_skip_error testing/test_skipping.py::test_module_level_skip_with_allow_module_level testing/test_skipping.py::test_invalid_skip_keyword_parameter testing/test_skipping.py::test_mark_xfail_item testing/test_skipping.py::test_summary_list_after_errors testing/test_skipping.py::test_relpath_rootdir` failed. (See above for error)
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': False, 'exit_code': 4, 'failing_selectors': ['testing/test_skipping.py::test_importorskip', 'testing/test_skipping.py::TestEvaluation::test_no_marker', 'testing/test_skipping.py::TestEvaluation::test_marked_xfail_no_args', 'testing/test_skipping.py::TestEvaluation::test_marked_skipif_no_args', 'testing/test_skipping.py::TestEvaluation::test_marked_one_arg', 'testing/test_skipping.py::TestEvaluation::test_marked_one_arg_with_reason', 'testing/test_skipping.py::TestEvaluation::test_marked_one_arg_twice', 'testing/test_skipping.py::TestEvaluation::test_marked_one_arg_twice2', 'testing/test_skipping.py::TestEvaluation::test_marked_skipif_with_boolean_without_reason', 'testing/test_skipping.py::TestEvaluation::test_marked_skipif_with_invalid_boolean', 'testing/test_skipping.py::TestEvaluation::test_skipif_class', 'testing/test_skipping.py::TestXFail::test_xfail_simple[True]', 'testing/test_skipping.py::TestXFail::test_xfail_simple[False]', 'testing/test_skipping.py::TestXFail::test_xfail_xpassed', 'testing/test_skipping.py::TestXFail::test_xfail_using_platform', 'testing/test_skipping.py::TestXFail::test_xfail_xpassed_strict', 'testing/test_skipping.py::TestXFail::test_xfail_run_anyway', 'testing/test_skipping.py::TestXFail::test_xfail_run_with_skip_mark[test_input0-expected0]', 'testing/test_skipping.py::TestXFail::test_xfail_run_with_skip_mark[test_input1-expected1]', 'testing/test_skipping.py::TestXFail::test_xfail_evalfalse_but_fails', 'testing/test_skipping.py::TestXFail::test_xfail_not_report_default', 'testing/test_skipping.py::TestXFail::test_xfail_not_run_xfail_reporting', 'testing/test_skipping.py::TestXFail::test_xfail_not_run_no_setup_run', 'testing/test_skipping.py::TestXFail::test_xfail_xpass', 'testing/test_skipping.py::TestXFail::test_xfail_imperative', 'testing/test_skipping.py::TestXFail::test_xfail_imperative_in_setup_function', 'testing/test_skipping.py::TestXFail::test_dynamic_xfail_no_run', 'testing/test_skipping.py::TestXFail::test_dynamic_xfail_set_during_funcarg_setup', 'testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-TypeError-*1]', 'testing/test_skipping.py::TestXFail::test_xfail_raises[(AttributeError,]', 'testing/test_skipping.py::TestXFail::test_xfail_raises[TypeError-IndexError-*1]', 'testing/test_skipping.py::TestXFail::test_strict_sanity', 'testing/test_skipping.py::TestXFail::test_strict_xfail[True]', 'testing/test_skipping.py::TestXFail::test_strict_xfail[False]', 'testing/test_skipping.py::TestXFail::test_strict_xfail_condition[True]', 'testing/test_skipping.py::TestXFail::test_strict_xfail_condition[False]', 'testing/test_skipping.py::TestXFail::test_xfail_condition_keyword[True]', 'testing/test_skipping.py::TestXFail::test_xfail_condition_keyword[False]', 'testing/test_skipping.py::TestXFail::test_strict_xfail_default_from_file[true]', 'testing/test_skipping.py::TestXFail::test_strict_xfail_default_from_file[false]', 'testing/test_skipping.py::TestXFailwithSetupTeardown::test_failing_setup_issue9', 'testing/test_skipping.py::TestXFailwithSetupTeardown::test_failing_teardown_issue9', 'testing/test_skipping.py::TestSkip::test_skip_class', 'testing/test_skipping.py::TestSkip::test_skips_on_false_string', 'testing/test_skipping.py::TestSkip::test_arg_as_reason', 'testing/test_skipping.py::TestSkip::test_skip_no_reason', 'testing/test_skipping.py::TestSkip::test_skip_with_reason', 'testing/test_skipping.py::TestSkip::test_only_skips_marked_test', 'testing/test_skipping.py::TestSkip::test_strict_and_skip', 'testing/test_skipping.py::TestSkipif::test_skipif_conditional']}
+>>>>> End Test Output
+>>>>> Some Tests Failed

@@ -1,0 +1,84 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application shell
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13660:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-13660
+836b79e2a6e5: Pulling fs layer
+c9065689ecd1: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+5de5342bd0cd: Pulling fs layer
+500327121db6: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+3933756b639f: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+16b385147454: Pulling fs layer
+ac5b61163589: Pulling fs layer
+47c859b1bbda: Pulling fs layer
+a9d08ec832c7: Pulling fs layer
+2bc10b62f799: Pulling fs layer
+836b79e2a6e5: Download complete
+5de5342bd0cd: Download complete
+16b385147454: Download complete
+e5a28c0c137e: Download complete
+ac5b61163589: Download complete
+a9d08ec832c7: Download complete
+2bc10b62f799: Download complete
+3933756b639f: Download complete
+7478e0ac0f23: Download complete
+c9065689ecd1: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+a2f6138ded93: Download complete
+47c859b1bbda: Download complete
+500327121db6: Pull complete
+836b79e2a6e5: Pull complete
+e5a28c0c137e: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+a9d08ec832c7: Pull complete
+2bc10b62f799: Pull complete
+47c859b1bbda: Pull complete
+5de5342bd0cd: Pull complete
+16b385147454: Pull complete
+c9065689ecd1: Pull complete
+3933756b639f: Pull complete
+Digest: sha256:5e5675a296d2389d51011788e0c18da69849499f3c5d7c2c604b9f5a280b673c
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-13660:latest
+test_command_option_inline_function_call (shell.tests.ShellCommandTestCase) ... ok
+test_stdin_read_inline_function_call (shell.tests.ShellCommandTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK
+
+
+===== PHASE: PASS_TO_PASS (6 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application shell
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_command_option (shell.tests.ShellCommandTestCase) ... ok
+test_command_option_globals (shell.tests.ShellCommandTestCase) ... ok
+test_shell_with_bpython_not_installed (shell.tests.ShellCommandTestCase) ... ok
+test_shell_with_ipython_not_installed (shell.tests.ShellCommandTestCase) ... ok
+test_stdin_read (shell.tests.ShellCommandTestCase) ... ok
+test_stdin_read_globals (shell.tests.ShellCommandTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': True, 'exit_code': 0}
+PASS_TO_PASS: {'ok': True, 'exit_code': 0}
+>>>>> End Test Output
+>>>>> All Tests Passed

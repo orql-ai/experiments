@@ -1,0 +1,98 @@
+diff --git a/sympy/assumptions/sathandlers.py b/sympy/assumptions/sathandlers.py
+index 61d62d04cf..881a5f9ba8 100644
+--- a/sympy/assumptions/sathandlers.py
++++ b/sympy/assumptions/sathandlers.py
+@@ -1,6 +1,7 @@
+ from __future__ import print_function, division
+ 
+-from collections import MutableMapping, defaultdict
++from collections.abc import MutableMapping
++from collections import defaultdict
+ 
+ from sympy.core import (Add, Mul, Pow, Integer, Number, NumberSymbol,)
+ from sympy.core.numbers import ImaginaryUnit
+diff --git a/sympy/core/function.py b/sympy/core/function.py
+index cef70f1589..ea92181c46 100644
+--- a/sympy/core/function.py
++++ b/sympy/core/function.py
+@@ -1238,7 +1238,8 @@ def __new__(cls, expr, *variables, **assumptions):
+             elif not count.is_Integer:
+                 obj = None
+             else:
+-                if isinstance(v, (collections.Iterable, Tuple, MatrixCommon, NDimArray)):
++                from collections.abc import Iterable
++                if isinstance(v, (Iterable, Tuple, MatrixCommon, NDimArray)):
+                     deriv_fun = derive_by_array
+                     is_symbol = True
+                 else:
+diff --git a/sympy/matrices/common.py b/sympy/matrices/common.py
+index 379a2917aa..e72937b6e8 100644
+--- a/sympy/matrices/common.py
++++ b/sympy/matrices/common.py
+@@ -1973,7 +1973,22 @@ def __div__(self, other):
+ 
+     @call_highest_priority('__rmatmul__')
+     def __matmul__(self, other):
+-        return self.__mul__(other)
++        other = _matrixify(other)
++        # matrix-like objects can have shapes.  This is
++        # our first sanity check.
++        if hasattr(other, 'shape') and len(other.shape) == 2:
++            if self.shape[1] != other.shape[0]:
++                raise ShapeError("Matrix size mismatch: %s * %s." % (
++                    self.shape, other.shape))
++
++        # honest sympy matrices defer to their class's routine
++        if getattr(other, 'is_Matrix', False):
++            return self._eval_matrix_mul(other)
++        # Matrix-like objects can be passed to CommonMatrix routines directly.
++        if getattr(other, 'is_MatrixLike', False):
++            return MatrixArithmetic._eval_matrix_mul(self, other)
++
++        return NotImplemented
+ 
+     @call_highest_priority('__rmul__')
+     def __mul__(self, other):
+@@ -2019,7 +2034,8 @@ def __mul__(self, other):
+             return MatrixArithmetic._eval_matrix_mul(self, other)
+ 
+         # if 'other' is not iterable then scalar multiplication.
+-        if not isinstance(other, collections.Iterable):
++        from collections.abc import Iterable
++        if not isinstance(other, Iterable):
+             try:
+                 return self._eval_scalar_mul(other)
+             except TypeError:
+@@ -2068,7 +2084,21 @@ def __radd__(self, other):
+ 
+     @call_highest_priority('__matmul__')
+     def __rmatmul__(self, other):
+-        return self.__rmul__(other)
++        other = _matrixify(other)
++        # matrix-like objects can have shapes.  This is
++        # our first sanity check.
++        if hasattr(other, 'shape') and len(other.shape) == 2:
++            if self.shape[0] != other.shape[1]:
++                raise ShapeError("Matrix size mismatch.")
++
++        # honest sympy matrices defer to their class's routine
++        if getattr(other, 'is_Matrix', False):
++            return other._new(other.as_mutable() * self)
++        # Matrix-like objects can be passed to CommonMatrix routines directly.
++        if getattr(other, 'is_MatrixLike', False):
++            return MatrixArithmetic._eval_matrix_rmul(self, other)
++
++        return NotImplemented
+ 
+     @call_highest_priority('__mul__')
+     def __rmul__(self, other):
+@@ -2087,7 +2117,8 @@ def __rmul__(self, other):
+             return MatrixArithmetic._eval_matrix_rmul(self, other)
+ 
+         # if 'other' is not iterable then scalar multiplication.
+-        if not isinstance(other, collections.Iterable):
++        from collections.abc import Iterable
++        if not isinstance(other, Iterable):
+             try:
+                 return self._eval_scalar_rmul(other)
+             except TypeError:

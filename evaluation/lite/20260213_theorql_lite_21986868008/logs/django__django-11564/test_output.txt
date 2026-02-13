@@ -1,0 +1,479 @@
+>>>>> Applied Patch
+>>>>> Start Test Output
+===== PHASE: FAIL_TO_PASS (2 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application settings_tests
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+Unable to find image 'ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11564:latest' locally
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.django__django-11564
+500327121db6: Pulling fs layer
+836b79e2a6e5: Pulling fs layer
+914de5d267f7: Pulling fs layer
+0ae074140456: Pulling fs layer
+7478e0ac0f23: Pulling fs layer
+61be49f93875: Pulling fs layer
+e40dd2783886: Pulling fs layer
+a2f6138ded93: Pulling fs layer
+ee199f98d6ef: Pulling fs layer
+8d8b26e70b38: Pulling fs layer
+edaae312c731: Pulling fs layer
+ac5b61163589: Pulling fs layer
+e5a28c0c137e: Pulling fs layer
+e5a28c0c137e: Download complete
+836b79e2a6e5: Download complete
+0ae074140456: Download complete
+8d8b26e70b38: Download complete
+ac5b61163589: Download complete
+e40dd2783886: Download complete
+edaae312c731: Download complete
+61be49f93875: Download complete
+7478e0ac0f23: Download complete
+ee199f98d6ef: Download complete
+7478e0ac0f23: Pull complete
+500327121db6: Download complete
+914de5d267f7: Download complete
+a2f6138ded93: Download complete
+500327121db6: Pull complete
+e5a28c0c137e: Pull complete
+836b79e2a6e5: Pull complete
+ac5b61163589: Pull complete
+a2f6138ded93: Pull complete
+914de5d267f7: Pull complete
+0ae074140456: Pull complete
+e40dd2783886: Pull complete
+8d8b26e70b38: Pull complete
+edaae312c731: Pull complete
+ee199f98d6ef: Pull complete
+61be49f93875: Pull complete
+Digest: sha256:baa811b2bf85c5219d48aee1ae88b7fc074481070513be08beb3721c96a11ba6
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.django__django-11564:latest
+test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) ... test_not_prefixed (settings_tests.tests.MediaURLStaticURLPrefixTest) ... ok
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (MEDIA_URL='path/', script_name='/somesubpath')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'path/' != '/somesubpath/path/'
+- path/
++ /somesubpath/path/
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (MEDIA_URL='path/', script_name='/somesubpath/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'path/' != '/somesubpath/path/'
+- path/
++ /somesubpath/path/
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (MEDIA_URL='path/', script_name='/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'path/' != '/path/'
+- path/
++ /path/
+? +
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (MEDIA_URL='htp://myhost.com/path/', script_name='/somesubpath/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'htp://myhost.com/path/' != '/somesubpath/htp://myhost.com/path/'
+- htp://myhost.com/path/
++ /somesubpath/htp://myhost.com/path/
+? +++++++++++++
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (MEDIA_URL='', script_name='/somesubpath/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: '' != '/somesubpath/'
++ /somesubpath/
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (STATIC_URL='path/', script_name='/somesubpath')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'path/' != '/somesubpath/path/'
+- path/
++ /somesubpath/path/
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (STATIC_URL='path/', script_name='/somesubpath/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'path/' != '/somesubpath/path/'
+- path/
++ /somesubpath/path/
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (STATIC_URL='path/', script_name='/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'path/' != '/path/'
+- path/
++ /path/
+? +
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (STATIC_URL='htp://myhost.com/path/', script_name='/somesubpath/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: 'htp://myhost.com/path/' != '/somesubpath/htp://myhost.com/path/'
+- htp://myhost.com/path/
++ /somesubpath/htp://myhost.com/path/
+? +++++++++++++
+
+
+======================================================================
+FAIL: test_add_script_name_prefix (settings_tests.tests.MediaURLStaticURLPrefixTest) (STATIC_URL='', script_name='/somesubpath/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/testbed/tests/settings_tests/tests.py", line 616, in test_add_script_name_prefix
+    self.assertEqual(getattr(settings, setting), expected_path)
+AssertionError: '' != '/somesubpath/'
++ /somesubpath/
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.006s
+
+FAILED (failures=10)
+
+
+===== PHASE: PASS_TO_PASS (166 selectors) =====
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application settings_tests
+Importing application file_storage
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, file_storage, messages, sessions, settings_tests, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table file_storage_storage
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_max_recursion_error (settings_tests.tests.ClassDecoratedTestCaseSuper) ... ok
+test_override_settings_inheritance (settings_tests.tests.ChildDecoratedTestCase) ... ok
+test_method_override (settings_tests.tests.FullyDecoratedTestCase) ... ok
+test_override (settings_tests.tests.FullyDecoratedTestCase) ... ok
+test_max_recursion_error (settings_tests.tests.ClassDecoratedTestCase) ... ok
+test_method_override (settings_tests.tests.ClassDecoratedTestCase) ... ok
+test_override (settings_tests.tests.ClassDecoratedTestCase) ... ok
+test_get_filesystem_storage (file_storage.tests.GetStorageClassTests) ... ok
+test_get_invalid_storage_module (file_storage.tests.GetStorageClassTests) ... ok
+test_get_nonexistent_storage_class (file_storage.tests.GetStorageClassTests) ... ok
+test_get_nonexistent_storage_module (file_storage.tests.GetStorageClassTests) ... ok
+test_first_character_dot (file_storage.tests.FileStoragePathParsing) ... ok
+test_override_settings_reusable_on_enter (settings_tests.tests.OverrideSettingsIsolationOnExceptionTests) ... ok
+test_configure (settings_tests.tests.IsOverriddenTest) ... ok
+test_evaluated_lazysettings_repr (settings_tests.tests.IsOverriddenTest) ... ok
+test_module (settings_tests.tests.IsOverriddenTest) ... ok
+test_override (settings_tests.tests.IsOverriddenTest) ... ok
+test_settings_repr (settings_tests.tests.IsOverriddenTest) ... ok
+test_unevaluated_lazysettings_repr (settings_tests.tests.IsOverriddenTest) ... ok
+test_usersettingsholder_repr (settings_tests.tests.IsOverriddenTest) ... ok
+test_none (settings_tests.tests.SecureProxySslHeaderTest) ... ok
+test_set_with_xheader_right (settings_tests.tests.SecureProxySslHeaderTest) ... ok
+test_set_with_xheader_wrong (settings_tests.tests.SecureProxySslHeaderTest) ... ok
+test_set_without_xheader (settings_tests.tests.SecureProxySslHeaderTest) ... ok
+test_xheader_preferred_to_underlying_request (settings_tests.tests.SecureProxySslHeaderTest) ... ok
+test_content_saving (file_storage.tests.ContentFileStorageTestCase) ... ERROR
+test_tuple_settings (settings_tests.tests.TestListSettings) ... ok
+test_deconstruction (file_storage.tests.FileSystemStorageTests) ... ok
+test_lazy_base_url_init (file_storage.tests.FileSystemStorageTests) ... ok
+test_already_configured (settings_tests.tests.SettingsTests) ... ok
+test_class_decorator (settings_tests.tests.SettingsTests) ... ok
+test_context_manager (settings_tests.tests.SettingsTests) ... ok
+test_decorator (settings_tests.tests.SettingsTests) ... ok
+test_incorrect_timezone (settings_tests.tests.SettingsTests) ... ok
+test_no_secret_key (settings_tests.tests.SettingsTests) ... ok
+test_no_settings_module (settings_tests.tests.SettingsTests) ... ok
+test_nonupper_settings_ignored_in_default_settings (settings_tests.tests.SettingsTests) ... ok
+test_nonupper_settings_prohibited_in_configure (settings_tests.tests.SettingsTests) ... ok
+test_override (settings_tests.tests.SettingsTests) ... ok
+test_override_change (settings_tests.tests.SettingsTests) ... ok
+test_override_doesnt_leak (settings_tests.tests.SettingsTests) ... ok
+test_override_settings_delete (settings_tests.tests.SettingsTests) ... ok
+test_override_settings_nested (settings_tests.tests.SettingsTests) ... ok
+test_settings_delete (settings_tests.tests.SettingsTests) ... ok
+test_settings_delete_wrapped (settings_tests.tests.SettingsTests) ... ok
+test_signal_callback_context_manager (settings_tests.tests.SettingsTests) ... ok
+test_signal_callback_decorator (settings_tests.tests.SettingsTests) ... ok
+test_file_upload_default_permissions (file_storage.tests.FileStoragePermissions) ... ok
+test_file_upload_directory_default_permissions (file_storage.tests.FileStoragePermissions) ... ok
+test_file_upload_directory_permissions (file_storage.tests.FileStoragePermissions) ... ok
+
+======================================================================
+ERROR: test_content_saving (file_storage.tests.ContentFileStorageTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/opt/miniconda3/envs/testbed/lib/python3.6/unittest/case.py", line 605, in run
+    testMethod()
+  File "/testbed/tests/file_storage/tests.py", line 977, in test_content_saving
+    self.storage.save('unicode.txt', ContentFile("espa\xf1ol"))
+  File "/testbed/django/core/files/storage.py", line 52, in save
+    return self._save(name, content)
+  File "/testbed/django/core/files/storage.py", line 275, in _save
+    _file.write(chunk)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xf1' in position 4: ordinal not in range(128)
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.111s
+
+FAILED (errors=1)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application settings_tests
+Importing application file_storage
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, file_storage, messages, sessions, settings_tests, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table file_storage_storage
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_decorated_testcase_module (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_decorated_testcase_name (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_method_list_override (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_method_list_override_nested_order (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_method_list_override_no_ops (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_method_list_override_strings (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_method_override (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_override (settings_tests.tests.FullyDecoratedTranTestCase) ... ok
+test_custom_valid_name_callable_upload_to (file_storage.tests.FileFieldStorageTests) ... ok
+test_duplicate_filename (file_storage.tests.FileFieldStorageTests) ... ok
+test_empty_upload_to (file_storage.tests.FileFieldStorageTests) ... ok
+test_extended_length_storage (file_storage.tests.FileFieldStorageTests) ... ok
+test_file_object (file_storage.tests.FileFieldStorageTests) ... ok
+test_file_truncation (file_storage.tests.FileFieldStorageTests) ... ok
+test_filefield_default (file_storage.tests.FileFieldStorageTests) ... ok
+test_filefield_pickling (file_storage.tests.FileFieldStorageTests) ... ok
+test_filefield_read (file_storage.tests.FileFieldStorageTests) ... ok
+test_filefield_reopen (file_storage.tests.FileFieldStorageTests) ... ok
+test_filefield_write (file_storage.tests.FileFieldStorageTests) ... ok
+test_files (file_storage.tests.FileFieldStorageTests) ... ok
+test_pathlib_upload_to (file_storage.tests.FileFieldStorageTests) ... ok
+test_random_upload_to (file_storage.tests.FileFieldStorageTests) ... ok
+test_stringio (file_storage.tests.FileFieldStorageTests) ... ok
+test_base_url (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_custom_storage_discarding_empty_content (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_delete_deletes_directories (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_delete_no_name (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_upload_permissions (file_storage.tests.FileStoragePermissions) ... ok
+test_base_url (file_storage.tests.OverwritingStorageTests) ... ok
+test_delete_deletes_directories (file_storage.tests.OverwritingStorageTests) ... ok
+test_delete_no_name (file_storage.tests.OverwritingStorageTests) ... ok
+test_empty_location (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_access_options (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_chunks_error (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_get_accessed_time (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_get_accessed_time_timezone (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_get_created_time (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_get_created_time_timezone (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_get_modified_time (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_get_modified_time_timezone (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_path (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_save_with_path (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_save_without_name (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_storage_prevents_directory_traversal (file_storage.tests.OverwritingStorageTests) ... ok
+test_file_url (file_storage.tests.OverwritingStorageTests) ... ok
+test_listdir (file_storage.tests.OverwritingStorageTests) ... ok
+test_makedirs_race_handling (file_storage.tests.OverwritingStorageTests) ... ok
+test_remove_race_handling (file_storage.tests.OverwritingStorageTests) ... ok
+test_save_doesnt_close (file_storage.tests.OverwritingStorageTests) ... ok
+test_setting_changed (file_storage.tests.OverwritingStorageTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.112s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application file_storage
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+
+test_base_url (file_storage.tests.CustomStorageTests) ... ok
+test_custom_get_available_name (file_storage.tests.CustomStorageTests) ... ok
+test_delete_deletes_directories (file_storage.tests.CustomStorageTests) ... ok
+test_delete_no_name (file_storage.tests.CustomStorageTests) ... ok
+test_empty_location (file_storage.tests.CustomStorageTests) ... ok
+test_file_access_options (file_storage.tests.CustomStorageTests) ... ok
+test_file_chunks_error (file_storage.tests.CustomStorageTests) ... ok
+test_file_get_accessed_time (file_storage.tests.CustomStorageTests) ... ok
+test_file_get_accessed_time_timezone (file_storage.tests.CustomStorageTests) ... ok
+test_file_get_created_time (file_storage.tests.CustomStorageTests) ... ok
+test_file_get_created_time_timezone (file_storage.tests.CustomStorageTests) ... ok
+test_file_get_modified_time (file_storage.tests.CustomStorageTests) ... ok
+test_file_get_modified_time_timezone (file_storage.tests.CustomStorageTests) ... ok
+test_file_path (file_storage.tests.CustomStorageTests) ... ok
+test_file_save_with_path (file_storage.tests.CustomStorageTests) ... ok
+test_file_save_without_name (file_storage.tests.CustomStorageTests) ... ok
+test_file_storage_prevents_directory_traversal (file_storage.tests.CustomStorageTests) ... ok
+test_file_url (file_storage.tests.CustomStorageTests) ... ok
+test_listdir (file_storage.tests.CustomStorageTests) ... ok
+test_makedirs_race_handling (file_storage.tests.CustomStorageTests) ... ok
+test_remove_race_handling (file_storage.tests.CustomStorageTests) ... ok
+test_save_doesnt_close (file_storage.tests.CustomStorageTests) ... ok
+test_setting_changed (file_storage.tests.CustomStorageTests) ... ok
+test_empty_location (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_access_options (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_chunks_error (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_get_accessed_time (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_get_accessed_time_timezone (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_get_created_time (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_get_created_time_timezone (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_get_modified_time (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_get_modified_time_timezone (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_path (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_save_with_path (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_save_without_name (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_storage_prevents_directory_traversal (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_file_url (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_listdir (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_makedirs_race_handling (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_remove_race_handling (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_save_doesnt_close (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_setting_changed (file_storage.tests.DiscardingFalseContentStorageTests) ... ok
+test_base_url (file_storage.tests.FileStorageTests) ... ok
+test_delete_deletes_directories (file_storage.tests.FileStorageTests) ... ok
+test_delete_no_name (file_storage.tests.FileStorageTests) ... ok
+test_empty_location (file_storage.tests.FileStorageTests) ... ok
+test_file_access_options (file_storage.tests.FileStorageTests) ... ok
+test_file_chunks_error (file_storage.tests.FileStorageTests) ... ok
+test_file_get_accessed_time (file_storage.tests.FileStorageTests) ... ok
+test_file_get_accessed_time_timezone (file_storage.tests.FileStorageTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.112s
+
+OK
+
+
+Testing against Django installed in '/testbed/django' with up to 2 processes
+Importing application file_storage
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, file_storage, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table file_storage_storage
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_file_get_created_time (file_storage.tests.FileStorageTests) ... ok
+test_file_get_created_time_timezone (file_storage.tests.FileStorageTests) ... ok
+test_file_get_modified_time (file_storage.tests.FileStorageTests) ... ok
+test_file_get_modified_time_timezone (file_storage.tests.FileStorageTests) ... ok
+test_file_path (file_storage.tests.FileStorageTests) ... ok
+test_file_save_with_path (file_storage.tests.FileStorageTests) ... ok
+test_file_save_without_name (file_storage.tests.FileStorageTests) ... ok
+test_file_storage_prevents_directory_traversal (file_storage.tests.FileStorageTests) ... ok
+test_file_url (file_storage.tests.FileStorageTests) ... ok
+test_listdir (file_storage.tests.FileStorageTests) ... ok
+test_makedirs_race_handling (file_storage.tests.FileStorageTests) ... ok
+test_remove_race_handling (file_storage.tests.FileStorageTests) ... ok
+test_save_doesnt_close (file_storage.tests.FileStorageTests) ... ok
+test_setting_changed (file_storage.tests.FileStorageTests) ... ok
+test_urllib_request_urlopen (file_storage.tests.FileLikeObjectTestCase) ... ok
+test_race_condition (file_storage.tests.FileSaveRaceConditionTest) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.114s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+
+===== PHASE SUMMARY =====
+FAIL_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['settings_tests.tests.MediaURLStaticURLPrefixTest.test_add_script_name_prefix', 'settings_tests.tests.MediaURLStaticURLPrefixTest.test_not_prefixed']}
+PASS_TO_PASS: {'ok': False, 'exit_code': 1, 'failing_selectors': ['settings_tests.tests.ClassDecoratedTestCaseSuper.test_max_recursion_error', 'settings_tests.tests.ChildDecoratedTestCase.test_override_settings_inheritance', 'settings_tests.tests.FullyDecoratedTestCase.test_method_override', 'settings_tests.tests.FullyDecoratedTestCase.test_override', 'settings_tests.tests.ClassDecoratedTestCase.test_max_recursion_error', 'settings_tests.tests.ClassDecoratedTestCase.test_method_override', 'settings_tests.tests.ClassDecoratedTestCase.test_override', 'file_storage.tests.FileStoragePathParsing.test_first_character_dot', 'file_storage.tests.GetStorageClassTests.test_get_filesystem_storage', 'file_storage.tests.GetStorageClassTests.test_get_invalid_storage_module', 'file_storage.tests.GetStorageClassTests.test_get_nonexistent_storage_class', 'file_storage.tests.GetStorageClassTests.test_get_nonexistent_storage_module', 'settings_tests.tests.OverrideSettingsIsolationOnExceptionTests.test_override_settings_reusable_on_enter', 'settings_tests.tests.IsOverriddenTest.test_configure', 'settings_tests.tests.IsOverriddenTest.test_evaluated_lazysettings_repr', 'settings_tests.tests.IsOverriddenTest.test_module', 'settings_tests.tests.IsOverriddenTest.test_override', 'settings_tests.tests.IsOverriddenTest.test_settings_repr', 'settings_tests.tests.IsOverriddenTest.test_unevaluated_lazysettings_repr', 'settings_tests.tests.IsOverriddenTest.test_usersettingsholder_repr', 'file_storage.tests.ContentFileStorageTestCase.test_content_saving', 'settings_tests.tests.SecureProxySslHeaderTest.test_none', 'settings_tests.tests.SecureProxySslHeaderTest.test_set_with_xheader_right', 'settings_tests.tests.SecureProxySslHeaderTest.test_set_with_xheader_wrong', 'settings_tests.tests.SecureProxySslHeaderTest.test_set_without_xheader', 'settings_tests.tests.SecureProxySslHeaderTest.test_xheader_preferred_to_underlying_request', 'settings_tests.tests.SettingsTests.test_already_configured', 'settings_tests.tests.SettingsTests.test_class_decorator', 'settings_tests.tests.SettingsTests.test_context_manager', 'settings_tests.tests.SettingsTests.test_decorator', 'settings_tests.tests.SettingsTests.test_incorrect_timezone', 'settings_tests.tests.SettingsTests.test_no_secret_key', 'settings_tests.tests.SettingsTests.test_no_settings_module', 'settings_tests.tests.SettingsTests.test_nonupper_settings_ignored_in_default_settings', 'settings_tests.tests.SettingsTests.test_nonupper_settings_prohibited_in_configure', 'settings_tests.tests.SettingsTests.test_override', 'settings_tests.tests.SettingsTests.test_override_change', 'settings_tests.tests.SettingsTests.test_override_doesnt_leak', 'settings_tests.tests.SettingsTests.test_override_settings_delete', 'settings_tests.tests.SettingsTests.test_override_settings_nested', 'settings_tests.tests.SettingsTests.test_settings_delete', 'settings_tests.tests.SettingsTests.test_settings_delete_wrapped', 'settings_tests.tests.SettingsTests.test_signal_callback_context_manager', 'settings_tests.tests.SettingsTests.test_signal_callback_decorator', 'settings_tests.tests.TestListSettings.test_tuple_settings', 'file_storage.tests.FileSystemStorageTests.test_deconstruction', 'file_storage.tests.FileSystemStorageTests.test_lazy_base_url_init', 'file_storage.tests.FileStoragePermissions.test_file_upload_default_permissions', 'file_storage.tests.FileStoragePermissions.test_file_upload_directory_default_permissions', 'file_storage.tests.FileStoragePermissions.test_file_upload_directory_permissions']}
+>>>>> End Test Output
+>>>>> Some Tests Failed
